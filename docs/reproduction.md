@@ -6,7 +6,7 @@ Run `python reproduce.py`. Inputs in `paper/data/` are hash-checked before and
 after reporting. The entry runs tests, checks hashes and scoring alignment for
 800 retained raw request/response records, independently rescores the 3,520-record
 prompt/control archive, rebuilds tables and figures, verifies
-Figure 3's four paired outcome partitions, and checks Algorithm 1. It makes no
+the retained-intent figure's four paired outcome partitions, and checks Algorithm 1. It also checks the two archived ticket traces. It makes no
 model calls. `--pdf` adds LaTeX compilation. The source can also be compiled with
 `latexmk -pdf paper.tex` from `paper/`.
 
@@ -70,3 +70,6 @@ The runtime and inference harness use the standard library. NumPy and Matplotlib
 are needed for paper statistics and figures, and pypdf for manuscript checks.
 The optional runner is supported on Linux and macOS; no operating-system-specific
 CLI model installation is required.
+
+For a per-result mapping of inputs, cohort units, scorers, and verification levels,
+see [the evidence map](evidence_map.md).

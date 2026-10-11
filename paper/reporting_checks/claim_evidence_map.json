@@ -3,7 +3,7 @@
     "claim": "Formulate risk-aware decisions from natural-language delegation with retained decision-relevant alternatives and no further user interaction",
     "object": "State-wise interpretations/events, requirements, consequences, risk permissions and utility; Equations (1)-(4)",
     "evidence": "Section 3.1; fixed-set decision principle attributed to RAC",
-    "scope": "Faithful decision-relevant representation is the condition for decision analysis, not an assumption of uniquely resolved intent; no new max-min theorem or conformal calibration claim"
+    "scope": "Target decision semantics are defined from the request; compiled semantics may differ and are evaluated end to end. No unique interpretation, new max-min theorem, or conformal calibration is assumed."
   },
   {
     "claim": "Provide an ambiguity-preserving state-wise representation and fixed executable risk/value decision framework",
@@ -23,15 +23,15 @@
     "object": "Separate fixed cohorts with explicit denominators",
     "evidence": "11 reported primary configurations; 25 complete effort profiles; 4 original language profiles; reuse 175429 to 22160 tokens.",
     "scope": "24/25 effort improvements, including one decline; updated Astra language n=200, original DS language n=60; no extrapolation or pooling",
-    "main_location": "Table 1 evaluation scope; Figure 1 model coverage; Figure 2 three GPT-5.6 effort facets and DeepSeek language bars; Table 2 reuse.",
-    "figure2_reporting": "No Astra in either figure panel. 19 GPT-5.6 effort configurations, 18 gains and one decline. The compact appendix table details 18 settings from off through max; grouped controls retain the complete effort cohort. Twelve DeepSeek language bars, n=60 each."
+    "main_location": "Table 2 research questions; Figure 1 primary model coverage; Figure 4 in Appendix E for effort and language; Table 4 reuse.",
+    "effort_language_reporting": "Figure 4 omits Astra in both panels. All 19 complete GPT-5.6 settings are in Table 21, including Sol ultra; 18 improve and one declines. DeepSeek language cells each contain 60 tasks."
   },
   {
     "claim": "Explain remaining semantic failures",
     "object": "Frozen-rule replays and offline component interventions",
-    "evidence": "Reported DeepSeek audit: 648 frozen artifacts, 1296 replays, 23 unsafe domains; 16 selected component interventions.",
+    "evidence": "648 frozen DeepSeek artifacts, 1296 replays, 23 unsafe domains, 8 unsafe-only selections, and 12 invalid executions per condition. Six reference-assisted interventions on 16 selected faulty outputs.",
     "scope": "Diagnostic evidence, not runtime repair or proof of universal semantic fidelity",
-    "main_location": "Section 5.4 and Figure 4; the appendix retains DeepSeek replay counts and reference interventions."
+    "main_location": "Section 5.3, Figure 3, and Table 3. Appendix F retains sampling, full replay counts, and input interventions."
   },
   {
     "claim": "Incorporate author-confirmed results from another computer",
@@ -44,13 +44,13 @@
     "evidence": "data/supplements/intent_ambiguity_20261011/parameter_summary.json",
     "scope": "Three explicitly signalled semantic families; 66 variants, 616 recorded trials; retrospective, separate cohorts; not open-ended discovery.",
     "diagnostics": "One request / 36 input interventions; 16 selected rules omit the Li interpretation.",
-    "main_location": "Figure 3: API exactness percentages; selected omitted-state and input interventions remain in the existing appendix.",
-    "reporting_units": "544 API outcomes in the retained archive; Figure 3 uses 294 Direct/Set outcomes on matched variants, with 42 or 21 variants per method. Appendix D gives a concise description rather than the historical all-configuration table."
+    "main_location": "Figure 2 and Table 16 give the four complete intent cohorts. The component intervention is in Table 3 and the input intervention in Appendix F.",
+    "reporting_units": "544 recorded API outcomes comprise 294 complete paired Direct/Set outcomes, 178 merged-expression controls, and 72 other Direct/Set outcomes. The displayed panel has 147 matched task-configuration units; Appendix D states the relationship."
   },
   {
     "claim": "Summarize the evaluation evidence actually reported in the paper",
-    "evidence": "Table 1 and main/appendix study-specific outcomes",
-    "scope": "Nine evaluation dimensions. The six-part appendix reports reproducible methods and controlled outcomes; development history and raw inventory totals are outside the paper."
+    "evidence": "Table 2 and the result-to-artifact map in Appendix B.6",
+    "scope": "Four research questions connect task construction, safe completion, retained intent, semantic diagnostics, and operational checks. Cohorts retain separate denominators."
   },
   {
     "claim": "Opus 5.5 medium primary comparison",
@@ -63,5 +63,15 @@
     "object": "Predefined language L; request-specific Q=f(x,Sigma); fixed state-wise predicates and value semantics",
     "evidence": "Section 3.2 and Appendix A; unchanged interface/evaluator code; ThingTalk and financial-contract language precedents",
     "scope": "JSON is the current serialization, not the framework definition; no additional semantic soundness or syntax-independence accuracy guarantee"
+  },
+  {
+    "claim": "Explain the method with an observed request-to-decision trace",
+    "evidence": "Table 1; Appendix A.4; bilingual/observed_trace/F02a.json and F02b.json; scripts/verify_observed_trace.py",
+    "scope": "Clean-context Astra max, first archived Set sample for two capability cases. Translation and notation shortening preserve the generated expressions; no new model call or condition repair."
+  },
+  {
+    "claim": "Distinguish archived action agreement from complete-domain certification",
+    "evidence": "Appendix A.2 and semantic_revision_audit.json",
+    "scope": "Read-only audit of primary, complete-effort, and language execution matrices identifies eight unresolved no-action records across overlapping cohorts, five with matching outcomes. Outcomes and source data are unchanged; incomplete certification is not asserted to be exact solving."
   }
 ]

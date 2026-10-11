@@ -16,26 +16,7 @@ The second catalogue contains only the 400,000-subunit offer, above the 200,000 
 
 Valid mixed-catalogue replays make no unsafe selections, while 23 artifacts admit an unsafe candidate. Unsafe-only replays yield eight unsafe selections; each condition has 12 invalid executions. Table~\ref{tab:replay} gives the DeepSeek counts. The visible-input realization additionally tests transfer from its compilation catalogue; matched-input realizations exclude catalogue attributes during compilation.
 
-\begin{table*}[t]
-\centering
-\begin{minipage}[t]{.48\textwidth}
-\centering\small
-\begin{tabular}{lrrr}
-\toprule
-Intervention & Exact & Unsafe & Unsafe set\\
-\midrule
-Original & 0 & 0 & 16\\
-Duplicate label only & 0 & 0 & 16\\
-Ref. admissibility & 0 & 0 & 0\\
-Ref. utility & 0 & 16 & 16\\
-Both components & 16 & 0 & 0\\
-Restore missing state & 16 & 0 & 0\\
-\bottomrule
-\end{tabular}
-\caption{All counts are out of 16 selected faulty specifications. Domain error here means admitting a reference-unsafe candidate. Correct selection, correct value, and correct permission set are separate targets.}
-\label{tab:oracle}
-\end{minipage}\hfill
-\begin{minipage}[t]{.48\textwidth}
+\begin{table}[t]
 \centering\small\setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}lrrr@{}}
 \toprule
@@ -48,8 +29,7 @@ Reference interpretations & 11 & 11 & 0\\
 \end{tabular}
 \caption{One ambiguous request; six configurations and two samples per condition. Unsafe domains are counted among valid executable outputs (11, 12, and 11 respectively). All outcomes remain in the exactness denominators.}
 \label{tab:intent-input}
-\end{minipage}
-\end{table*}
+\end{table}
 
 \subsection{Omitted-interpretation and component interventions}
 \label{app:oracle}

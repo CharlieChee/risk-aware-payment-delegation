@@ -203,13 +203,13 @@ save(draw_completion(R),'14_safe_completion',primary['sources']+[
  'data/derived/template_summary.json',
  'data/supplements/evaluation_redesign_20261010/verified_claims.json'], 'main')
 save(draw_robustness(R),'15_configuration_robustness',[
- 'data/derived/grid_summary.json','data/derived/language_all_methods_matched.json',REPORT], 'main')
+ 'data/derived/grid_summary.json','data/derived/language_all_methods_matched.json',REPORT], 'appendix')
 save(draw_intent(R),'16_retained_intent',[
  'data/supplements/intent_ambiguity_20261011/parameter_summary.json',
  'data/supplements/intent_ambiguity_20261011/parameter_rows.json'], 'main')
 # Keep uncited historical plots available without marking them as manuscript figures.
 for item in manifest:
- if item['placement']!='main':
+ if item['placement'] not in ('main','appendix'):
   item['placement']='archived_unused'
 (F/'figure_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(f'Generated {len(manifest)} figures; {sum(x["placement"]=="main" for x in manifest)} main figures.')

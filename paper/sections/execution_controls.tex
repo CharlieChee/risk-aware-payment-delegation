@@ -43,22 +43,28 @@ Set-Py generates a Python \texttt{assess(attrs)} function that returns joint fea
 
 In the two primary DeepSeek configurations, both implementations complete 186/200 feasible outcomes, while Set records nine unsafe acceptances versus eighteen for Set-Py across 400 outcomes per implementation. The unsafe-rate difference is $-2.25$ percentage points (95\% template-bootstrap interval $[-6.75,+0.75]$). This is a cohort-specific observation: Set-Py exactness matches or exceeds Set in several other groups. The control therefore separates risk, completion, and exactness rather than treating any one metric as sufficient. Systematic representation optimization is left to separate work.
 
+\begin{figure*}[t]
+\centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
+\caption{\textbf{Sensitivity to reasoning settings and task language.} (a) Direct and Set for Sol, Terra, and Luna across 19 complete settings on the 60-task panel, including Sol ultra. Lines connect requested settings, not measured compute. (b) Chinese (ZH) and English (EN) for DeepSeek low/high/max, with 60 tasks per language and method. Failures remain in the denominators. Cohorts overlap and are not pooled.}
+\label{fig:robustness}
+\end{figure*}
+
 \subsection{Requested reasoning settings}
 \label{app:grid}
-The fixed 60-case panel combines ten historical feasible/infeasible pairs with one pair from each of the 20 primary templates. Table~\ref{tab:grid} details 18 GPT-5.6 configurations from reasoning off through max. The full effort study covers 25 model--effort configurations and three methods, yielding $25\times3\times60=4{,}500$ outcomes; its grouped execution controls appear in Table~\ref{tab:execution-ablation}.
+The fixed 60-case panel combines ten historical feasible/infeasible pairs with one pair from each of the 20 primary templates. Table~\ref{tab:grid} details all 19 complete GPT-5.6 configurations shown in Figure~\ref{fig:robustness}, including Sol ultra (28/60 Direct; 37/60 Set). The full effort study covers 25 model--effort configurations and three methods, yielding $25\times3\times60=4{,}500$ outcomes; its grouped execution controls appear in Table~\ref{tab:execution-ablation}.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
 \input{tables/appendix_grid}
-\caption{GPT-5.6 reasoning settings from off through max: exact/$n$ and unsafe/false-refusal/other (U/R/O), with $n=60$ in every cell. The 18 configurations cover Sol, Terra, and Luna. Settings denote requested effort, not equal or measured compute.}
+\caption{All complete GPT-5.6 reasoning settings: exact/$n$ and unsafe/false-refusal/other (U/R/O), with $n=60$ in every cell. The 19 configurations cover Sol (seven), Terra (six), and Luna (six). Settings denote requested effort, not equal or measured compute.}
 \label{tab:grid}
 \end{table*}
 
-Set improves over Direct in 17 of the 18 listed configurations, with Luna off declining from 25 to 14. The panel overlaps earlier and primary tasks, so it is a configuration check rather than independent task-distribution generalization.
+Set improves over Direct in 18 of the 19 listed configurations, with Luna off declining from 25 to 14. The panel overlaps earlier and primary tasks, so it is a configuration check rather than independent task-distribution generalization.
 
 \subsection{Task language}
 \label{app:language}
-The original study uses the same 60 identifiers for four profiles, two languages, and three methods: 1,440 outcomes. A reviewed 183-phrase map preserves identifiers, quantities, types, events, and authorization; system-level method instructions stay fixed. Table~\ref{tab:language} gives Direct/Set results on the 60-task panel and a separate 200-task Astra panel. The two panels have different task counts and are reported separately.
+The original study uses the same 60 identifiers for four profiles, two languages, and three methods: 1,440 outcomes. A reviewed 183-phrase map preserves identifiers, quantities, types, events, and authorization; system-level method instructions stay fixed. Table~\ref{tab:language} gives Direct/Set results on the 60-task panel and a separate 200-task Astra panel. The two panels have different task counts and are reported separately. The 60-task cells come from distinct retained language runs. The 200-task Astra cells are supplied language-specific aggregate updates with identical reported partitions; equality of these totals is not evidence of identical outputs or language invariance.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}

@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "task_id": "F02a__clean__r1__set_mechanism",
+      "path": "bilingual/observed_trace/F02a.json",
+      "sha256": "d602bc829abc0bd56285e054b76c2fd29ae414ef4aede8236f1ee805d82e3ac7",
+      "decision": {
+        "decision": "reject",
+        "allowed_ids": [],
+        "guaranteed_utility": null,
+        "reason_code": "infeasible_complete_catalog"
+      }
+    },
+    {
+      "task_id": "F02b__clean__r1__set_mechanism",
+      "path": "bilingual/observed_trace/F02b.json",
+      "sha256": "53c6c8be4a5b16b378b377cafcc4e3a65935bee6f0db4b1c9ef4c19fab9ee770",
+      "decision": {
+        "decision": "accept",
+        "allowed_ids": [
+          "D"
+        ],
+        "guaranteed_utility": "1/5",
+        "reason_code": "optimal_certified"
+      }
+    }
+  ],
+  "selection": "F02a/F02b, clean context, first recorded Set sample; illustrative coverage, not comparative superiority."
+}

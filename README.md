@@ -108,3 +108,6 @@ decision principle; it does not implement conformal calibration.
 Use [`CITATION.cff`](CITATION.cff) or cite the accompanying manuscript. Original
 code and synthetic data are available under the MIT license. Third-party ACL
 formatting files retain their own notices; see [NOTICE](NOTICE).
+
+The [result-to-evidence map](docs/evidence_map.md) links the manuscript's claims,
+cohorts, retained responses, and offline verification commands.

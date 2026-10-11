@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "model_calls": 0,
-  "input_files_unchanged": 91,
+  "input_files_unchanged": 93,
   "input_sha256": {
     "data/author_reports/20261011_confirmed_aggregates.json": "1cbb25429fe03822a8f024c39324464570d05e13b3955de69847234605af8916",
     "data/author_reports/20261011_opus_output_review.json": "909b3549da81656f53751c23e5793acc5073c7fbaf2232d29fae4cd934d6c005",
@@ -41,7 +41,7 @@
     "data/diagnostics/v43_general_findings.json": "d581af22896e4601f0c428ab291ea6c9710e64e816a4d70f73518daaac645b07",
     "data/diagnostics/v43_verification.json": "5b71ef059942cf8ffd800f62fcd712031c38908eb97862d0c6de4d0fcc7a4232",
     "data/source_provenance.json": "2a38ddb9c5d2915b40d64f55efe301a7c96858432b9e4d9d42f93d6d3d24716d",
-    "data/supplements/evaluation_redesign_20261010/batch_inventory.csv": "aeede87d1533626ceaab0057f860f1824ec84f1db110496064fc2e7dfd643d94",
+    "data/supplements/evaluation_redesign_20261010/batch_inventory.csv": "064f017b7e8b6c55a0c9d1d6c8481e08d82e58108e4b47e43327b2b4d6403460",
     "data/supplements/evaluation_redesign_20261010/index_accounting.json": "f40fe94cdeb97165af4f90a819e75870bea85281a283be3e60103a42d4267971",
     "data/supplements/evaluation_redesign_20261010/provenance.json": "f3e50f463a85de2990f6441f9c1b210c978bd07435e9d99243896df369591515",
     "data/supplements/evaluation_redesign_20261010/verified_claims.json": "9e8b99e9b871aa3e1cf635ca262404c1d4481923dbf388d8e01619af8b0a7651",
@@ -84,6 +84,8 @@
     "data/supplements/primary200_gpt56_terra_medium/provenance.json": "af8cec50d9b75cd68038a65b27905ca25a859b339e29bfd73210c581d0e5fd82",
     "data/supplements/primary200_gpt56_terra_medium/rows.json": "8e8a6e5a1943b34857982688a47782488aa83eafd3d80267de83682192a82156",
     "data/supplements/primary200_gpt56_terra_medium/summary.json": "2c08df477e178ae23f1a09dac973c358fdb89ceedeb19acdb29ab6afc974dcd4",
+    "data/supplements/prompt_controls_20261011/cohorts.json": "3a53bdb41ae1a4107bf876c88e96a6586ae3fac1fef0fb47c98cde82134483b1",
+    "data/supplements/prompt_controls_20261011/rows.json": "489fe823558cc649100f3d818f8b7692aa63750a13f97fffd13cb750718b887c",
     "data/supplements/qwen_primary200/protocol.json": "e7413e8c1d50956fea6d79246178b07d6fd6533f43e224316019b942ea6b8884",
     "data/supplements/qwen_primary200/provenance.json": "e2a348896e8a11ed70024bf3a7854c0015e2bbd930c7407669d9e8703088110d",
     "data/supplements/qwen_primary200/rows.json": "5bdcc7dd4b160f1d0b29d2d6ee76a0ad15babe11813cbae2ec512cbe3cc5b948",
@@ -192,6 +194,8 @@
     }
   ],
   "decision_contract_checks": 10,
+  "prompt_engineering_calls": 1000,
+  "four_method_control_outcomes": 2080,
   "pdf": "output/reproduction/latex/paper.pdf",
   "outputs": [
     "tables/",

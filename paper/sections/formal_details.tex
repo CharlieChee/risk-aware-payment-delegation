@@ -1,7 +1,7 @@
 \section{Formalization and Executable Interface}
 \label{app:proofs}
 \subsection{Decision semantics and assumptions}
-RAC supplies the fixed-set risk-averse decision principle \citep{rac}. Our decision analysis fixes $x=(P,c)$, a nonempty retained state set $\Theta(x)$, and state-dependent hard requirements, risk permissions, and utilities before optimization. Utilities share a cardinal scale and are bounded over the finite experimental domain. The representation is assumed to preserve decision-relevant interpretations and their associated conditions and consequences. This does not require a uniquely resolved intent, a distribution over states, linearity, or convexity. No conformal coverage or action-conditional calibration is implemented.
+RAC supplies the fixed-set risk-averse decision principle \citep{rac}. The target decision problem fixes $x=(P,c)$, a nonempty retained state set $\Theta(x)$, and state-dependent hard requirements, risk permissions, and utilities. Utilities share a cardinal scale and are bounded over the finite experimental domain. Transferring an execution guarantee to this target requires the compiled specification to preserve its decision-relevant semantics; this is a condition on the guarantee, not an assumption that excludes compilation errors from evaluation. No unique reading, state distribution, linearity, or convexity is required. No conformal coverage or action-conditional calibration is implemented.
 
 \paragraph{One action across readings.}
 \label{app:ambiguity}
@@ -16,14 +16,31 @@ For generated states $j=1,\ldots,m$, evaluation gives
 \widehat f(z)&=\bigwedge_{j=1}^{m}(\widehat H_j(z)\wedge\widehat R_j(z)),\\
 \widehat\psi(z)&=\min_{1\le j\le m}\widehat u_j(z).
 \end{align}
-The fixed procedure first requires complete enumeration of $C$, a decided $\widehat f(z)$ for every candidate, and known state utilities whenever $\widehat f(z)=1$. An aggregate predicate with a known false conjunct is false even if another conjunct is unknown. Failure to establish these conditions produces \textsc{Fail}(uncertified), before any purchase is selected. The procedure then forms $\widehat F_C=\{z\in C:\widehat f(z)=1\}$ and maximizes $\widehat\psi$ over that domain. Any nonempty subset of tied positive-value maximizers is valid. An empty domain or nonpositive maximum produces refusal. Invalid expressions produce an interface/execution failure, not a certified refusal. State labels alone do not affect the decision; equivalent merged expressions may encode the same functions.
+The fixed procedure first requires complete enumeration of $C$, a decided $\widehat f(z)$ for every candidate, and known state utilities whenever $\widehat f(z)=1$. An aggregate predicate with a known false conjunct is false even if another conjunct is unknown. Failure to establish these conditions produces \textsc{Fail}(uncertified), before any purchase is selected. The evaluator forms $\widehat F_C=\{z\in C:\widehat f(z)=1\}$ and computes the full maximizing set $Z^\star$. The response protocol and scorer permit any nonempty subset of tied positive-value maximizers with the correct guaranteed value; this denotes alternative complete purchases, not an instruction to buy them all. An empty domain or nonpositive maximum produces refusal. Invalid expressions produce failure, not a certified refusal. Equivalent merged state expressions may encode the same decision functions.
 
 \paragraph{Exactness on the declared domain.}
 After these checks, membership in $\widehat F_C$ is decided for every $z\in C$, and all values over that domain are known. Finite enumeration therefore returns the complete set of maximizers when the maximum is positive. Otherwise, an empty domain or a nonpositive maximum proves that the compiled problem has no positive-value option. No unresolved candidate is silently excluded from the optimization.
 
-For unresolved inputs, the historical experiment executor operates only on the certified observed subset. Such outputs fall outside Algorithm~\ref{alg:decision}'s exact-solution contract. Recorded outcome accuracy compares returned actions and values with the reference; a matching no-action outcome does not by itself certify infeasibility. Runtime reasons distinguish insufficient evidence from an established negative result.
+For unresolved inputs, the historical executor operates only on the certified observed subset. Such outputs fall outside Algorithm~\ref{alg:decision}'s complete-domain contract. Archived exactness compares returned actions and values with the reference; a matching no-action outcome does not by itself certify infeasibility. The retained reason codes distinguish unresolved evidence from a proved negative result. Table~\ref{tab:execution-scope} reports the affected historical cohorts without rewriting their outcomes.
 
 These hatted functions are instantiated by the model. The reference $F$ and $\psi$ enter offline scoring, never runtime selection. Execution is exact for the generated expressions; correctness relative to the request additionally requires faithful state semantics.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Archived Set cohort & $n$ & Unresolved & Matches\\
+\midrule
+Primary (nine profiles) & 1,800 & 4 & 2\\
+Complete effort panel & 1,500 & 2 & 2\\
+Language panel & 480 & 2 & 1\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Outcome agreement versus certification.} Read-only inspection of retained execution matrices. Unresolved denotes a candidate not excluded by a known violation but lacking decided admissibility or value. All eight affected runs return no action; Matches counts agreement with the reference, not a complete-domain certificate. Cohorts overlap.}
+\label{tab:execution-scope}
+\end{table}
+
+The four primary cases occur in DeepSeek low (one matching outcome), GLM Flash low (two, one matching), and Luna medium (one, not matching). The effort cases are Luna off/high; the language cases are DeepSeek low/max in English. Other audited runs contain no decision-relevant unknowns after valid execution. Invalid outputs are separately scored as failures. These archived per-trial cohorts are distinct from later aggregate updates. The artifact retains the audit selectors and affected reason codes; no outcome has been replaced by the newer certification contract.
 
 \paragraph{Concrete syntax and serialization.}
 The implementation serializes intent-DSL instances as JSON, a carrier for the specification. Each state record contains a label and expressions for hard requirements, risk admissibility, and utility; their meaning comes from the expression language and evaluation rules. An illustrative record is:
@@ -70,7 +87,11 @@ For finite $C$, exact evaluation, bounded utility, and a language denoting every
 
 This conditional expressibility result neither proves that generated predicates are faithful nor gives a statistical guarantee. Context fixes authorization; infeasibility cannot create permission for extra spending. Reuse requires unchanged attribute meanings, requirements, state semantics, and authorization. That property is shared by executable realizations, including Set-Py.
 
-\subsection{Illustrative execution trace}
+\subsection{Recorded ambiguity trace and illustrative consequences}
+\label{app:observed-trace}
+Table~\ref{tab:observed-trace} uses the archived Astra max runs for F02a and F02b, clean context, first sample, Set. The model receives the stipulated utility $(3000-p)/1000$ and the catalogue. In both runs it emits two clauses: $p\le3000\wedge r_Z$ and $p\le3000\wedge r_L$, each with risk predicate True and the same utility. The executor refuses F02a and accepts order D in F02b with value $1/5$. The display translates the request and labels and renames \texttt{price}, \texttt{r1}, and \texttt{r2}; it does not reconstruct or repair the generated expressions. The artifact retains the original responses, input translation, and these exact execution records. This is a method illustration from measured outputs; its small capability panel does not establish superiority over other routes.
+
+\paragraph{Illustrative financial consequences.}
 A 1,000-MU budget, a 200-MU net-loss cap, and utility $1{,}100-\text{price}-\text{net loss}$ give Table~\ref{tab:trace}. Normal delivery has zero loss; the listed failure determines the worst case. A is unauthorized despite positive value. B and C pass, and B has higher guaranteed value. A catalogue containing only A is refused; one containing only C is accepted. These stipulated numbers illustrate the procedure, not a measured model output.
 \begin{table}[t]
 \centering\small

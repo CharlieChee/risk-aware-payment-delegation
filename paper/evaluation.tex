@@ -5,7 +5,7 @@ We construct 200 tasks from 20 contract templates in four families: coupon cance
 
 
 
-Each template contributes five feasible/infeasible pairs. A feasible task has exactly one authorized positive-value candidate. Changing only its administrative fee moves its worst loss one subunit above the limit; other attributes and offer order stay fixed. These 100 pairs test boundary adherence and solution finding \citep{checklist,contrastsets,hans}. Separate cash-ledger and expression implementations agree on 6,712,320 candidate--event checks, supplemented by 25,600 random-attribute checks and three hand-calculated witnesses. Both implementations arose within one development workflow. Inputs and references were frozen before primary calls (Appendix~\ref{app:data}).
+Each template contributes five feasible/infeasible pairs. A feasible task has exactly one authorized positive-value candidate. A fee perturbation determined by its feasible margin moves its worst loss exactly one subunit above the limit; other attributes and offer order stay fixed. These 100 pairs isolate responsiveness to authorization boundaries \citep{checklist,contrastsets,hans}, rather than estimating deployment error rates or broad ranking ability. Separate cash-ledger and expression implementations agree on 6,712,320 candidate--event checks, supplemented by 25,600 random-attribute checks and three hand-calculated witnesses. This checks consistency with stipulated synthetic semantics; both implementations arose within one development workflow. Inputs and references were frozen before primary calls (Appendix~\ref{app:data}).
 
 \begin{figure*}[t]
 \centering\includegraphics[width=\textwidth]{14_safe_completion.pdf}
@@ -14,26 +14,20 @@ Each template contributes five feasible/infeasible pairs. A feasible task has ex
 \end{figure*}
 
 \paragraph{Comparisons.}
-The \direct--\ours\ comparison evaluates the complete executable decision architecture. \direct\ receives the request, schema, full catalogue, and robust decision rules; it returns a decision, selected identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator under the same decision obligations. Controls using a procedural implementation of the same framework examine shared computational gains and realization-dependent outcomes (Appendix~\ref{app:execution-controls}, Table~\ref{tab:execution-ablation}).
+The \direct--\ours\ comparison evaluates the complete executable decision architecture under a shared decision policy. \direct\ receives the request, schema, full catalogue, and robust decision rules; it returns a decision, selected identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator. Appendix~\ref{app:execution} adds a generic prompt engineering checklist and Set-Py, a procedural realization of the same framework. Both executable realizations improve over Direct and the tested checklist in the matched panel; their relative reliability varies by configuration. These controls support executable processing, not universal superiority of one encoding.
 
 The primary comparison spans eleven model configurations: Astra max; Sol, Terra, and Luna medium; DeepSeek low and high; Qwen Flash and Max low; GLM Flash low and GLM high; and Opus 5.5 medium. Cohort definitions are in Appendix~\ref{app:primary-extensions}; other panels retain their own cohorts.
 
 \paragraph{Outcome scoring.}
-An \emph{exact decision} returns the reference decision, authorized maximizing choices, and correct utility. \emph{Safe task completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} returns a reference-infeasible choice; \emph{false refusal} rejects an available positive-value authorized purchase. Other groups remaining value and execution failures. Execution failures are never credited as correct refusals; all failures remain in each completed cohort's denominator (Appendix~\ref{app:protocol}). Authorization auditing also checks unselected admitted candidates. Archived trials retain one semantic attempt, bounded transport retries, responses, usage, duration, and evaluation. Syntax recovery preserves expression meaning. Comparisons are paired within configurations; service-specific compute budgets are not equivalent.
+An \emph{exact decision} agrees with the reference decision and, for acceptance, reports authorized maximizing choices and correct utility. \emph{Safe task completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} returns a reference-infeasible choice; \emph{false refusal} rejects an available positive-value authorized purchase. Other groups remaining value and invalid-execution failures; all failures stay in the denominator. Archived outcome agreement and full-domain certification are distinguished in Appendix~\ref{app:interface}. Authorization auditing also checks unselected admitted candidates. Trials retain one semantic attempt, bounded transport retries, responses, usage, duration, and evaluation. Syntax recovery preserves expression meaning. Comparisons are paired within configurations; provider compute budgets are not equivalent.
 
 \paragraph{Reproducibility.}
-The anonymous artifact provides code, benchmark inputs and references, prompts, configurations, retained responses, and evaluation records. An offline entry reconstructs tables and the four main figures from frozen reporting inputs, checks paired outcome partitions and Algorithm~\ref{alg:decision}, and records input hashes without model calls. Appendix~\ref{app:reproduction} details the material coverage and workflow; Table~\ref{tab:configurations} specifies generation settings.
+The anonymous artifact provides code, benchmark inputs and references, prompts, configurations, retained responses, and evaluation records. An offline entry reconstructs tables and figures, checks paired outcome partitions and Algorithm~\ref{alg:decision}, and records input hashes without model calls. Appendix~\ref{app:reproduction} maps results to records and verification tools; Table~\ref{tab:configurations} specifies generation settings.
 
 \section{Results and Analysis}
 \label{sec:evaluation}
 \label{sec:results}
-Table~\ref{tab:evaluation-coverage} maps nine evaluation dimensions: decision boundaries, structural coverage, model and effort settings, language, retained intent, authorization audits, semantic interventions, and reuse. The following results connect useful completion, robustness, and operational value; Appendices~\ref{app:protocol} and~\ref{app:execution} give cohort definitions and controls.
-
-\begin{figure*}[t]
-\centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
-\caption{\textbf{Sensitivity to reasoning settings and task language.} (a) Direct and Set rates for Sol, Terra, and Luna across 19 complete settings on the 60-task effort panel. Lines connect requested settings, not measured compute. (b) Chinese (ZH) and English (EN) rates for DeepSeek low/high/max, with 60 tasks per language and method. All failures remain in the denominators. Cohorts overlap and are not pooled; additional counts and controls appear in the appendix.}
-\label{fig:robustness}
-\end{figure*}
+Table~\ref{tab:evaluation-coverage} connects four questions: useful completion at risk boundaries, decisions across retained readings, the semantics concealed by current choices, and robustness and reuse. Each study retains its own input conditions and sample unit.
 
 \subsection{Safe Completion under Contractual Uncertainty}
 \label{sec:boundaries}
@@ -42,13 +36,13 @@ Table~\ref{tab:evaluation-coverage} maps nine evaluation dimensions: decision bo
 
 Figure~\ref{fig:completion} combines model coverage, joint safety--completion outcomes, and contract-level variation. All eleven configurations improve exactness, reduce unsafe acceptances, and complete more authorized purchases. Across the two primary DeepSeek configurations, exact decisions rise from 248/400 (62.0\%) to 370/400 (92.5\%). The gain is 30.5 percentage points, with a 95\% template-cluster bootstrap interval of $[22.75,37.75]$, retaining both settings within each template. Exact purchases rise from 100 to 186 across 200 feasible outcomes, while unsafe acceptances fall from 79 to 9 and false refusals from 53 to 1. Safety improves together with useful completion.
 
-Each paired task changes only one fee and requires the opposite decision. Joint metrics test responsiveness to financial conditions, beyond blanket acceptance or refusal.
+Each pair changes one fee and requires opposite decisions, testing more than blanket acceptance or refusal. The gains concern the full compilation-and-execution workflow; this comparison does not isolate catalogue visibility, exact arithmetic, state representation, and deterministic evaluation.
 
 The updated Astra max comparison scores 180/200 (90\%) for direct answering and 196/200 (98\%) for \ours. Direct has six unsafe acceptances, six false refusals, and eight Other failures; \ours\ has two unsafe acceptances and two false refusals. Traced errors from the original archived run illustrate both boundary failures (Appendix~\ref{app:witnesses}).
 
-\subsection{Decisions under Unresolved User Intent}
+\subsection{Decisions under Signaled Intent Ambiguity}
 \label{sec:intent-decisions}
-We audit 544 recorded API evaluations across three unresolved-intent families: ticket-holder reference, conditional hotel cancellation, and per-recipient versus whole-batch exchange-cost limits. Both methods receive the same catalogue, explicit ambiguity cues, and decision rules, without further user input. Figure~\ref{fig:intent} summarizes the complete paired API cohorts, separately from the primary event benchmark.
+Figure~\ref{fig:intent} reports 294 method outcomes from 147 matched task--configuration units across three intent families: ticket-holder reference, conditional hotel cancellation, and per-recipient versus whole-batch exchange-cost limits. Both methods receive the same catalogue, explicit ambiguity cues, and decision rules, without further user input. Unlike the primary Set protocol, compilation here is catalogue-visible. Table~\ref{tab:intent-figure3} gives configuration-specific denominators; Appendix~\ref{app:intent} relates them to the broader archive.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\columnwidth]{16_retained_intent.pdf}
@@ -56,31 +50,58 @@ We audit 544 recorded API evaluations across three unresolved-intent families: t
 \label{fig:intent}
 \end{figure}
 
-Exact-decision rates improve across the four displayed API configurations. The study spans risk limits, penalties, and the positive-value boundary; additional capability checks cover common purchases, empty cross-interpretation intersections, and max--min ranking (Appendix~\ref{app:intent}).
+Exactness improves across the four configurations as risk limits, penalties, and the positive-value boundary vary. Safety does not improve uniformly: Qwen has six unsafe Set acceptances versus five for Direct. The capability checks illustrated by Table~\ref{tab:observed-trace} additionally exercise common purchases, empty intersections, and max--min ranking. All compared routes solve those small checks; they establish behavior coverage, not a comparative ranking advantage.
 
-\subsection{Robustness across Structures and Settings}
-\label{sec:robustness}
-The improvement occurs in all four financial families (Figure~\ref{fig:completion}c) and in 18 of 20 templates at each DeepSeek setting (Appendix~\ref{app:statistics}). These are controlled structural checks, not repetitions of one numerical witness. The model overview in Figure~\ref{fig:completion}a includes GLM high rising from 64/200 to 188/200 and Sol medium from 137/200 to 196/200. Sol's 21 unsafe acceptances and 42 false refusals under Direct become two of each under \ours. Opus medium improves from 142/200 to 194/200, with exact purchases rising from 76 to 98 of 100 feasible tasks. Improvement is not uniform: Qwen Max low rises from 59 to 87 exact outcomes but still makes 46 unsafe acceptances, while Luna medium also retains errors. Execution and faithful compilation remain distinct requirements. Outcome partitions and cohort definitions are in Appendices~\ref{app:statistics} and~\ref{app:primary-extensions}.
-
-On the 60-task effort panel shown in Figure~\ref{fig:robustness}a, \ours\ improves exactness in 18 of 19 complete GPT-5.6 configurations; Luna with reasoning disabled declines from 25/60 to 14/60. The curves also show nonmonotonic changes, including Sol's decline at ultra. These are end-to-end outcomes that retain compilation and operational failures. Language changes preserve identifiers, quantities, events, and authorization. The paired DeepSeek results in Figure~\ref{fig:robustness}b retain improvements in both languages. Full effort and language controls are collected in Appendix~\ref{app:execution}. Budget controls recover some incomplete answers but leave semantic errors (Appendix~\ref{app:budget}). These are controlled configuration and language tests, not unrestricted deployment generalization.
+\subsection{Correct Choices Can Conceal Unsafe Authorization}
+\label{sec:permissions}
+\label{sec:components}
+\paragraph{Candidate changes expose hidden permissions.}
+We freeze 648 DeepSeek artifacts from 72 tasks, three effort settings, and three realizations: Set, catalogue-visible Set-Py, and matched-input Set-Py. Across 1,296 local replays, valid mixed-catalogue executions select no unauthorized offer, although 23 artifacts admit one. Eight select an unauthorized offer when the catalogue contains only that option (Figure~\ref{fig:ablations}); 12 artifacts have invalid executions per condition. No model is called again. Changing availability exposes an error that the original safe selection concealed, rather than measuring a deployment failure rate (Appendix~\ref{app:permissionaudit}).
 
 \begin{figure}[t]
 \centering\includegraphics[width=\columnwidth]{13_authorization_diagnostics.pdf}
-\caption{\textbf{Targeted DeepSeek replay diagnostics.} Bars compare unsafe admitted domains in mixed catalogues with unsafe selections in unsafe-only catalogues. Each configuration pools 216 frozen artifacts across three executable realizations. Invalid executions are recorded separately.}
+\caption{\textbf{A safe choice can mask an unsafe rule.} Frozen DeepSeek artifacts admit unauthorized candidates in mixed catalogues; some select them in unsafe-only catalogues. Valid mixed-catalogue runs make no unsafe selections. Each configuration pools 216 artifacts across three realizations; invalid executions are counted separately.}
 \label{fig:ablations}
 \end{figure}
 
-\subsection{Targeted Diagnostics}
-\label{sec:permissions}
-\label{sec:components}
+\paragraph{Correcting value alone can expose a permission error.}
+Table~\ref{tab:oracle} intervenes on 16 faulty Set outputs selected from one ambiguous ticket request. All omit Li's refund conditions and utility binding. Their current selections are safe despite incorrect domains and values. Replacing only utility with the reference makes an unauthorized offer win in all 16 outputs. Replacing permission alone repairs the domain but not value; replacing both, or restoring the omitted state's complete semantics, recovers exact decisions. Thus ranking errors can temporarily mask authorization errors. The interventions identify a failure mechanism, not its prevalence or an automatic repair procedure.
 
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Intervention & Exact & Unsafe & Unsafe domain\\
+\midrule
+Original & 0 & 0 & 16\\
+Duplicate label & 0 & 0 & 16\\
+Reference permission & 0 & 0 & 0\\
+Reference utility & 0 & 16 & 16\\
+Both components & 16 & 0 & 0\\
+Restore omitted state & 16 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Permission and value are distinct checks.} Counts are out of 16 selected faulty outputs, not independent requests. Unsafe counts selections; Unsafe domain counts rules admitting an unauthorized candidate. Interventions use reference information offline (Appendix~\ref{app:oracle}).}
+\label{tab:oracle}
+\end{table}
 
+\paragraph{Why retained states matter.}
+For fixed $x$ and unchanged remaining state functions, retaining only $\varnothing\ne\Theta'\subseteq\Theta$ gives
+\[
+F_{\Theta}\subseteq F_{\Theta'},\qquad
+\psi_{\Theta'}(z)\ge\psi_{\Theta}(z).
+\]
+Fewer conjuncts cannot shrink feasibility, and fewer terms cannot lower an infimum. This consequence of Equations~\eqref{eq:common}--\eqref{eq:robust} explains why a missing reading can enlarge permission and inflate guaranteed value simultaneously. It concerns semantic deletion, not an equivalent merging of states. Together, the replays and interventions motivate checking authorization and value separately from the current action.
 
-We replay 648 frozen DeepSeek artifacts from 72 tasks and three effort settings, using Set and its procedural implementation with matched or visible catalogue input (Appendix~\ref{app:permissionaudit}). Only catalogue availability changes. Across 1,296 replays, valid mixed-catalogue executions make no unsafe selections, although 23 rules admit an unauthorized offer. In an unsafe-only catalogue, eight select it (Figure~\ref{fig:ablations}); 12 artifacts fail execution per condition. Candidate availability can thus expose latent semantic errors. Reference-assisted state and component interventions isolate omitted or misrepresented conditions (Appendix~\ref{app:oracle}). These are offline diagnostics; improving semantic construction and validation remains future work.
+\subsection{Robustness across Structures and Settings}
+\label{sec:robustness}
+Improvements cover all four financial families (Figure~\ref{fig:completion}c) and 18 of 20 templates at each DeepSeek setting. Across models, GLM high improves from 64/200 to 188/200, Sol medium from 137/200 to 196/200, and Opus medium from 142/200 to 194/200. The gains vary: Qwen Max low increases from 59 to 87 exact outcomes while retaining 46 unsafe acceptances. Full partitions and template results are in Appendix~\ref{app:statistics}.
+
+On the 60-task effort panel, \ours\ improves exactness in 18 of 19 complete GPT-5.6 configurations, including Sol ultra; Luna with reasoning disabled declines from 25/60 to 14/60. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} report all 19 settings. Matched task-language tests preserve identifiers, quantities, events, and authorization; the DeepSeek improvements persist in both Chinese and English. These checks retain semantic and operational failures. Full effort, language, and budget controls are in Appendix~\ref{app:execution}.
 
 \subsection{Reuse and Execution Cost}
 \label{sec:reuse}
-Across two fixed requirements and eight catalogue snapshots each, Astra uses two compilations and 22,160 tokens instead of 16 calls and 175,429 tokens, with 16/16 exact decisions in both routes (Table~\ref{tab:reuse-main}). The 87.4\% reduction includes initial compilation. Reuse requires stable authorization; changed requirements trigger recompilation. Appendix~\ref{app:cost} reports the Direct/Set comparison and resource accounting.
+Across two fixed requirements and eight catalogue snapshots each, Astra uses two Set compilations and 22,160 tokens instead of 16 Direct calls and 175,429 tokens, with 16/16 exact decisions in both workflows (Table~\ref{tab:reuse-main}). This 87.4\% workflow-level token reduction includes initial compilation; it does not isolate caching within a single implementation. Reuse requires stable authorization; changed requirements trigger recompilation. Appendix~\ref{app:cost} gives full resource accounting.
 
 \begin{table}[t]
 \centering\small
@@ -88,8 +109,8 @@ Across two fixed requirements and eight catalogue snapshots each, Astra uses two
 \toprule
 Astra workflow & Calls & Tokens & Exact\\
 \midrule
-Regenerate per catalogue & 16 & 175,429 & 16/16\\
-Reuse compiled rule & 2 & 22,160 & 16/16\\
+Direct per catalogue & 16 & 175,429 & 16/16\\
+Set with rule reuse & 2 & 22,160 & 16/16\\
 \bottomrule
 \end{tabular}
 \caption{\textbf{Reuse includes the first compilation.} Two fixed requirements, eight catalogues each; tokens include recorded input and output usage.}

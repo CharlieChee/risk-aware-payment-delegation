@@ -18,7 +18,7 @@ and aggregate summaries. These are separate data units with complementary uses.
 | `paper/data/diagnostics/` | Frozen-rule replay and reference-assisted interventions |
 | `paper/data/author_reports/` | Later externally supplied aggregate updates and adjudications |
 
-The Figure 3 cohorts contain 294 Direct/Set outcomes in four complete matched
+The retained-intent figure cohorts contain 294 Direct/Set outcomes in four complete matched
 comparisons. The broader retained-intent archive contains 616 method outcomes
 and 36 input interventions. These are repeated evaluations, not hundreds of
 independent ambiguity types. Model settings and cohorts overlap; do not sum
@@ -60,7 +60,7 @@ exploratory and partial batches, not 52 complete primary comparisons.
 
 The [prompt engineering supplement](prompt_controls.md) compares Direct with
 additional textual verification guidance on five 200-task configurations. Its
-four-method panel also includes framework execution through Set and Python,
+four-method panel also includes framework execution through Set (DSL) and Set-Py,
 using each configuration's exact common task intersection. The offline verifier
 rescores all 3,520 supporting decisions and checks that each new Prompt request
 preserves the corresponding Direct input and settings apart from the checklist.

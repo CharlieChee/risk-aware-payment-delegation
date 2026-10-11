@@ -4,7 +4,7 @@
 \subsection{Contract structures and paired boundaries}
 The primary dataset contains 20 templates (Table~\ref{tab:templates}), with five feasible/infeasible pairs per template. Each purchase has six components; the retained events are the 57 affected subsets of size at most four, including the empty event. Empty events have zero assessment. A nonempty event incurs one administrative fee, outside insurance or compensation offsets. Public contracts state that no additional hidden clauses apply.
 
-The master construction seed is 39071007, with predetermined template and stratum offsets. In each feasible instance the unique authorized positive-value candidate has the margin in Table~\ref{tab:strata}. Increasing only its administrative fee makes the paired task infeasible: its maximum loss becomes 200,001 subunits, against a 200,000-subunit limit. Other candidates already exceed the limit by 1--20,000 subunits. Hashed candidate identifiers carry no answer labels; candidate positions are sampled before attributes are generated. Monetary reporting uses 100 integer subunits per MU without changing frozen prompts or calculations.
+The master construction seed is 39071007, with predetermined template and stratum offsets. In each feasible instance the unique authorized positive-value candidate has margin $m$ in Table~\ref{tab:strata}. Increasing only its administrative fee by $m+1$ makes the paired task infeasible: maximum loss becomes 200,001 subunits, against a 200,000-subunit limit. Thus the final violation is always one subunit; the fee increment is not always one. Other candidates already exceed the limit by 1--20,000 subunits. Hashed identifiers carry no answer labels; positions are sampled before attributes are generated. MU reporting does not change frozen numerical values.
 
 \begin{table*}[!tbp]
 \centering\small
@@ -71,7 +71,7 @@ All primary routes receive the same substantive policy, summarized below. Frozen
 \begin{quote}\small
 Retain applicable interpretations. Respect current authorization in every retained state. Evaluate hard requirements and the complete risk permission, then maximize the minimum state-dependent utility. Buy only for positive guaranteed value; otherwise refuse. Do not ask the user or change permissions.
 \end{quote}
-Direct returns a decision, allowed identifiers, and guaranteed utility. Set returns the state-wise expressions of Appendix~\ref{app:interface}. The supplementary Set-Py implementation is defined in Appendix~\ref{app:execution-controls}. Exactness requires the reference decision, authorized maximizing purchases, and correct value. Disjoint failures are unsafe acceptance, false refusal, and Other (remaining value or execution failures). Execution failure is never credited as correct refusal.
+Direct returns a decision, allowed identifiers, and guaranteed utility. Set returns the state-wise expressions of Appendix~\ref{app:interface}. Set-Py is defined in Appendix~\ref{app:execution-controls}. Exactness requires agreement with the reference decision and, for acceptance, a nonempty subset of authorized maximizers and correct value. Disjoint failures are unsafe acceptance, false refusal, and Other (remaining value or invalid-execution failures). An invalid execution is not a correct refusal. Historical unresolved no-action outcomes use the archived agreement scoring distinguished in Appendix~\ref{app:interface}.
 
 \begin{table}[!htbp]
 \centering\small
@@ -139,4 +139,22 @@ Semantic diagnostics & Frozen rules and controlled interventions & Admitted-doma
 \label{app:reproduction}
 The anonymous artifact package provides the implementation, benchmark inputs and references, prompts, model configurations, evaluation records, and frozen reporting inputs. It includes 800 original request/response records covering four primary DeepSeek Direct/Set cohorts, 8,046 archived parsed-output records, and 3,520 supporting records for the prompt engineering and execution controls (Appendix~\ref{app:prompt-controls}), including 1,000 new checklist calls. These overlapping collections serve distinct inspection and reporting purposes; they are not independent task counts. Reporting inputs distinguish per-trial observations from aggregate updates. The package is available at \url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}. After installing the declared dependencies, run from the repository root:
 \begin{quote}\small\verb|python reproduce.py --pdf|\end{quote}
-This offline entry regenerates result tables and the four main figures from frozen reporting inputs, checks Figure~\ref{fig:intent}'s paired outcomes and error partitions, runs deterministic checks of Algorithm~\ref{alg:decision}, verifies retained raw-record hashes and their alignment with published outcome rows, and compiles the manuscript. Omitting \texttt{-{}-pdf} reproduces the analysis without TeX. Adding \texttt{-{}-verify-references} recomputes the 200 primary reference decisions with the exact interpreter and separate cash-flow ledger. The command makes no model calls and does not modify experimental records. Its reports record the checks, input hashes, and regenerated outputs; Table~\ref{tab:configurations} specifies generation settings. Reconstructing tables from reporting inputs is distinct from re-scoring raw responses.
+This offline entry regenerates result tables and the reported figures from frozen reporting inputs, checks Figure~\ref{fig:intent}'s paired outcomes and error partitions, runs deterministic checks of Algorithm~\ref{alg:decision}, verifies retained raw-record hashes and their alignment with published outcome rows, and compiles the manuscript. Omitting \texttt{-{}-pdf} reproduces the analysis without TeX. Adding \texttt{-{}-verify-references} recomputes the 200 primary reference decisions with the exact interpreter and separate cash-flow ledger. The command makes no model calls and does not modify experimental records. Its reports record the checks, input hashes, and regenerated outputs; Table~\ref{tab:configurations} specifies generation settings. Reconstructing tables from reporting inputs is distinct from re-scoring raw responses.
+
+
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{.20\textwidth}p{.42\textwidth}p{.33\textwidth}@{}}
+\toprule
+Result & Artifact entry & Reproduction level\\
+\midrule
+Primary outcomes & \path{paper/data/derived/}, \path{paper/data/supplements/}, \path{paper/data/author_reports/} & Rebuild tables from their designated trial or aggregate inputs; reference checking is separate.\\
+Retained requests and decisions & \path{bilingual/raw_records/}, \path{bilingual/prompt_controls/}; \path{scripts/verify_raw_records.py}, \path{scripts/verify_prompt_controls.py} & Verify retained hashes and scoring alignment; the prompt-control verifier rescores final decisions.\\
+Intent and observed trace & \path{benchmarks/intent/}, \path{bilingual/observed_trace/}; \path{docs/evidence_map.md} & Inspect paired inputs and original generated clauses; rebuild intent counts and trace checks.\\
+Replay and interventions & \path{paper/data/diagnostics/}, \path{paper/data/supplements/intent_ambiguity_20261011/} & Recompute reported aggregates from recorded interventions; these are offline reference-assisted diagnostics.\\
+Execution contract and plots & \path{risk_payment/decision.py}, \path{risk_payment/engine.py}; \path{python reproduce.py --pdf} & Check Algorithm~\ref{alg:decision}, regenerate figures and tables; the historical engine is preserved.\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Result-to-artifact map.} The evidence map records task/cohort selectors, source hashes, and commands. Rebuilding reporting inputs, rescoring retained decisions, and new online inference are distinct operations. Aggregate updates are not substituted for archived per-trial observations.}
+\label{tab:artifact-map}
+\end{table*}

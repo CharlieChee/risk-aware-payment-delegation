@@ -71,7 +71,7 @@ def build(root, table_dir=None):
         r'Model & Setting & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O\\')
     for model, label in [('gpt56_sol', 'Sol'), ('gpt56_terra', 'Terra'), ('gpt56_luna', 'Luna')]:
         first = True
-        for effort in ('none', 'low', 'medium', 'high', 'xhigh', 'max'):
+        for effort in ('none', 'low', 'medium', 'high', 'xhigh', 'max', 'ultra'):
             profile = model + '_' + effort
             if (profile, 'direct') not in grid:
                 continue
