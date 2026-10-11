@@ -14,7 +14,7 @@ Each template contributes five feasible/infeasible pairs. A feasible task has ex
 \end{figure*}
 
 \paragraph{Comparisons.}
-The \direct--\ours\ comparison evaluates the complete executable decision architecture. \direct\ receives the request, schema, full catalogue, and robust decision rules; it returns a decision, selected identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator under the same decision obligations. Procedural execution controls, including a matched-input comparison, examine shared computational gains and realization-dependent outcomes (Appendix~\ref{app:execution-controls}, Table~\ref{tab:execution-ablation}).
+The \direct--\ours\ comparison evaluates the complete executable decision architecture. \direct\ receives the request, schema, full catalogue, and robust decision rules; it returns a decision, selected identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator under the same decision obligations. Controls using a procedural implementation of the same framework examine shared computational gains and realization-dependent outcomes (Appendix~\ref{app:execution-controls}, Table~\ref{tab:execution-ablation}).
 
 The primary comparison spans eleven model configurations: Astra max; Sol, Terra, and Luna medium; DeepSeek low and high; Qwen Flash and Max low; GLM Flash low and GLM high; and Opus 5.5 medium. Cohort definitions are in Appendix~\ref{app:primary-extensions}; other panels retain their own cohorts.
 
@@ -76,7 +76,7 @@ On the 60-task effort panel shown in Figure~\ref{fig:robustness}a, \ours\ improv
 
 
 
-We replay 648 frozen DeepSeek artifacts from 72 tasks and three effort settings, using Set and procedural controls with matched or visible catalogue input (Appendix~\ref{app:permissionaudit}). Only catalogue availability changes. Across 1,296 replays, valid mixed-catalogue executions make no unsafe selections, although 23 rules admit an unauthorized offer. In an unsafe-only catalogue, eight select it (Figure~\ref{fig:ablations}); 12 artifacts fail execution per condition. Candidate availability can thus expose latent semantic errors. Reference-assisted state and component interventions isolate omitted or misrepresented conditions (Appendix~\ref{app:oracle}). These are offline diagnostics; improving semantic construction and validation remains future work.
+We replay 648 frozen DeepSeek artifacts from 72 tasks and three effort settings, using Set and its procedural implementation with matched or visible catalogue input (Appendix~\ref{app:permissionaudit}). Only catalogue availability changes. Across 1,296 replays, valid mixed-catalogue executions make no unsafe selections, although 23 rules admit an unauthorized offer. In an unsafe-only catalogue, eight select it (Figure~\ref{fig:ablations}); 12 artifacts fail execution per condition. Candidate availability can thus expose latent semantic errors. Reference-assisted state and component interventions isolate omitted or misrepresented conditions (Appendix~\ref{app:oracle}). These are offline diagnostics; improving semantic construction and validation remains future work.
 
 \subsection{Reuse and Execution Cost}
 \label{sec:reuse}

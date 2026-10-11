@@ -17,31 +17,31 @@ We complete 200 new calls for each of DeepSeek low/high and Sol/Luna/Terra mediu
 \paragraph{Effect of textual guidance.}
 Table~\ref{tab:prompt-control} shows lower exactness in four configurations and a one-percentage-point increase for Terra. The observed changes range from $-6.5$ to $+1.0$ percentage points. This generic prompt engineering intervention does not yield a consistent improvement; the result concerns the tested checklist, not the effectiveness of prompt engineering in general.
 
-\paragraph{Four-method comparison.}
-Table~\ref{tab:four-way-controls} compares Direct, Prompt, Framework + Set, and Framework + Python on identical tasks within each row. The latter two generate executable representations under the same outer admissibility, worst-value, and selection policy. Set compiles without the catalogue, whereas the other three routes receive it; this comparison evaluates complete realizations rather than isolating syntax alone. DeepSeek has all 200 tasks for every method. For Sol, Luna, and Terra, the earlier Python control shares 40 primary tasks: one feasible/infeasible pair per template, selected for that earlier panel independently of outcomes. We verify that their task attributes and reference decisions agree with the primary versions. These paired controls use retained per-trial runs, separately from later aggregate primary updates.
+\paragraph{Decision routes.}
+Table~\ref{tab:four-way-controls} compares Direct and Prompt with two implementations of our framework: Set (DSL) and Set-Py. Set-Py expresses the same joint-feasibility, worst-value, and selection policy through model-generated Python assessment functions. Set compiles without the catalogue, whereas the other three routes receive it; this comparison evaluates complete realizations rather than isolating syntax alone. DeepSeek has all 200 tasks for every route. For Sol, Luna, and Terra, the earlier Set-Py runs share 40 primary tasks: one feasible/infeasible pair per template, selected for that earlier panel independently of outcomes. We verify that their task attributes and reference decisions agree with the primary versions. These paired controls use retained per-trial runs, separately from later aggregate primary updates.
 
 \begin{table*}[!tbp]
 \centering\small\setlength{\tabcolsep}{6pt}
 \input{tables/four_way_controls}
-\caption{\textbf{Textual guidance and two executable realizations.} Each cell gives exact-decision percentage above unsafe/false-refusal/other counts. All four methods use the same $n$ tasks within a configuration. The 40-task rows cover all 20 templates and use the pre-existing task intersection. The panel contains 2,080 method outcomes on overlapping cohorts; it is not an additional set of 2,080 tasks.}
+\caption{\textbf{Textual guidance and two implementations of the same framework.} Set uses the intent DSL; Set-Py uses generated Python assessment functions under the same decision policy. Each cell gives exact-decision percentage above unsafe/false-refusal/other counts. All four routes use the same $n$ tasks within a configuration. The 40-task rows cover all 20 templates and use the pre-existing task intersection. The panel contains 2,080 route outcomes on overlapping cohorts; it is not an additional set of 2,080 tasks.}
 \label{tab:four-way-controls}
 \end{table*}
 
-Both executable realizations exceed Direct and Prompt exactness in every row of this matched panel. This supports the value of executable decision processing beyond the tested textual guidance. Differences between Set and Python further show that this benefit is shared across executable realizations rather than exclusive to one encoding.
+Both framework implementations exceed Direct and Prompt exactness in every row of this matched panel. This supports the value of executable decision processing beyond the tested textual guidance. Their different results characterize realization-dependent reliability within the framework.
 
 \subsection{Execution Controls: Risk and Useful Completion}
 \label{app:execution-controls}
-The procedural control generates a Python \texttt{assess(attrs)} function under the same outer admissibility, worst-value, and selection policy as Set. It is a program-aided control, not an exact reproduction of PAL or Logic.py. Primary and effort controls receive the catalogue; the matched-input control and Set compile without it. Table~\ref{tab:execution-ablation} reports risk, useful completion, and exactness for the primary DeepSeek comparison, all completed effort groups, and the identical-input control.
+Set-Py generates a Python \texttt{assess(attrs)} function that returns joint feasibility and worst-case utility; the fixed selector then chooses a positive-value maximizer or refuses, as in the DSL implementation. Primary and effort Set-Py runs receive the catalogue; matched-input Set-Py and Set compile without it. Table~\ref{tab:execution-ablation} reports risk, useful completion, and exactness for the primary DeepSeek comparison, all completed effort groups, and the identical-input control.
 
 \begin{table*}[!tbp]
 \centering\footnotesize\setlength{\tabcolsep}{4pt}
 \input{tables/execution_controls}
-\caption{\textbf{Risk and useful completion under execution controls.} Arrows are Procedural$\to$State-wise; $n$ is per method. Unsafe counts unauthorized purchases; Safe requires exact purchase and utility on feasible tasks. Effort groups cover all 25 completed configurations. Matched-input controls use low/high/max, with 72 tasks per setting. Cohorts and reused Set results are not pooled across groups.}
+\caption{\textbf{Risk and useful completion across framework implementations.} Arrows are Set-Py$\to$Set (DSL); $n$ is per implementation. Unsafe counts unauthorized purchases; Safe requires exact purchase and utility on feasible tasks. Effort groups cover all 25 completed configurations. Matched-input controls use low/high/max, with 72 tasks per setting. Cohorts and reused Set results are not pooled across groups.}
 \label{tab:execution-ablation}
 \label{tab:authorization}
 \end{table*}
 
-In the two primary DeepSeek configurations, both realizations complete 186/200 feasible outcomes, while State-wise records nine unsafe acceptances versus eighteen for the procedural control across 400 outcomes per method. The unsafe-rate difference is $-2.25$ percentage points (95\% template-bootstrap interval $[-6.75,+0.75]$). This is a cohort-specific observation: procedural exactness matches or exceeds State-wise in several other groups. The control therefore separates risk, completion, and exactness rather than treating any one metric as sufficient. Systematic representation optimization is left to separate work.
+In the two primary DeepSeek configurations, both implementations complete 186/200 feasible outcomes, while Set records nine unsafe acceptances versus eighteen for Set-Py across 400 outcomes per implementation. The unsafe-rate difference is $-2.25$ percentage points (95\% template-bootstrap interval $[-6.75,+0.75]$). This is a cohort-specific observation: Set-Py exactness matches or exceeds Set in several other groups. The control therefore separates risk, completion, and exactness rather than treating any one metric as sufficient. Systematic representation optimization is left to separate work.
 
 \subsection{Requested reasoning settings}
 \label{app:grid}

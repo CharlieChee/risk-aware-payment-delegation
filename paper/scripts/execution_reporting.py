@@ -55,7 +55,7 @@ def build(root, table_dir=None):
                  if r['profile'] == 'deepseek_pooled' and r['baseline'] == 'python_fresh']
     manuscript_rows = [r for r in rows if r['group'] in
                        ('Primary decisions', 'Requested effort', 'Matched catalogue input')]
-    result = dict(direction='Procedural -> State-wise', decisions=rows, resources=resources,
+    result = dict(direction='Set-Py -> Set (DSL)', decisions=rows, resources=resources,
         manuscript_decisions=manuscript_rows, manuscript_resource_comparison=False,
         bootstrap_intervals=intervals, cohorts_pooled=False, observations_changed=False,
         resource_cohort='Original measured calls; no decision outcomes inferred from resource measurements')

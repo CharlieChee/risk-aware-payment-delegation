@@ -8,16 +8,21 @@ schema, model identifier, requested effort, and deadline are unchanged within
 each comparison. The original Direct instruction already includes the common
 feasibility, worst-case utility, and refusal policy.
 
-## Four methods
+## Decision routes and framework implementations
 
 | Method | Generated object | Decision execution |
 |---|---|---|
 | Direct | Purchase or refusal with a utility claim | Model answers directly |
 | Prompt engineering (Prompt) | Same final answer, with an additional verification checklist | Model answers directly |
-| Framework + Set | State-wise hard conditions, risk conditions, and utility | Fixed evaluator checks all states and ranks candidates |
-| Framework + Python | An `assess(attrs)` function | Generated function executes under the same outer decision policy |
+| Set (DSL) | State-wise hard conditions, risk conditions, and utility | Fixed evaluator checks all states and ranks candidates |
+| Set-Py | A model-generated Python `assess(attrs)` function | Implements the same joint-feasibility, worst-value, and selection policy |
 
-Direct, Prompt, and the visible-catalogue Python control see the catalogue.
+Set and Set-Py are two implementations of the same framework. Set-Py expresses
+its assessment through generated Python functions; it is not a translation of
+an already generated DSL instance. Historical machine-facing identifiers
+(`python`, `python_fresh`, and `python_cached`) remain unchanged in the records.
+
+Direct, Prompt, and the visible-catalogue Set-Py implementation see the catalogue.
 Set compiles without it. These are architecture controls; input length and
 execution are not held equal across all four methods. Prompt versus Direct
 changes only the system suffix in the recorded requests, but calls are from
@@ -29,7 +34,7 @@ different dates and server-version drift is not controlled.
   configuration. All 1,000 new calls are included, including failures.
 - Four-method comparison: DeepSeek low/high each use all 200 primary tasks.
   Sol/Luna/Terra medium each use the 40 primary tasks shared with the earlier
-  Python control. This fixed subset contains one feasible/infeasible pair per
+  Set-Py implementation. This fixed subset contains one feasible/infeasible pair per
   contract template. Its membership was defined in the earlier effort study
   without consulting model outcomes. Public tasks and reference decisions
   match exactly under the stored case mapping.

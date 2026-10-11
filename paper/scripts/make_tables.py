@@ -142,13 +142,13 @@ for table_name,arms in [('execution_ablation',['direct','python_fresh','set'])]:
  execution_profiles=[(p,lab) for p,lab in zip(profiles,labels) if p.startswith('ds_')]
  for p,lab in execution_profiles:
   for i,m in enumerate(arms):
-   r=by[p,m];name={'direct':'Direct','python_fresh':'Python','set':r'\textbf{Set contract}'}[m];other=r['n']-r['exact']-r['unsafe']-r['false_refusal']
+   r=by[p,m];name={'direct':'Direct','python_fresh':'Set-Py','set':r'\textbf{Set contract}'}[m];other=r['n']-r['exact']-r['unsafe']-r['false_refusal']
    exact=f"{r['exact']}/200";exact=(r'\textbf{'+exact+'}') if m=='set' else exact
    lines.append(f"{lab if i==0 else ''} & {name} & {exact} & {r['unsafe']} & {r['false_refusal']} & {other} & {r['correct_accept']}/100 "+r'\\')
   if p!=execution_profiles[-1][0]:lines.append(r'\midrule')
  lines+=[r'\bottomrule',r'\end{tabular}'];put(table_name, '\n'.join(lines))
 # Complete grid with partial rows explicitly separated.
-lines=[r'\begin{tabular}{llrrr}',r'\toprule',r'Model & Effort & Direct & Python & Set \\',r'\midrule']
+lines=[r'\begin{tabular}{llrrr}',r'\toprule',r'Model & Effort & Direct & Set-Py & Set \\',r'\midrule']
 mods=['astra','gpt56_sol','gpt56_luna','gpt56_terra'];names={'astra':'Astra','gpt56_sol':'5.6 Sol','gpt56_luna':'5.6 Luna','gpt56_terra':'5.6 Terra'}
 for mod in mods:
  for e in ['none','low','medium','high','xhigh','max','ultra']:
@@ -159,7 +159,7 @@ for mod in mods:
  if mod!=mods[-1]:lines.append(r'\midrule')
 lines+=[r'\bottomrule',r'\end{tabular}'];put('grid', '\n'.join(lines))
 # Failure grid, useful for distinguishing service / output errors.
-lines=[r'\begin{tabular}{llrrrrrrrrr}',r'\toprule',r'&&\multicolumn{3}{c}{Direct} & \multicolumn{3}{c}{Python} & \multicolumn{3}{c}{Set} \\',r'Model & Effort & U & R & O & U & R & O & U & R & O \\',r'\midrule']
+lines=[r'\begin{tabular}{llrrrrrrrrr}',r'\toprule',r'&&\multicolumn{3}{c}{Direct} & \multicolumn{3}{c}{Set-Py} & \multicolumn{3}{c}{Set} \\',r'Model & Effort & U & R & O & U & R & O & U & R & O \\',r'\midrule']
 for mod in mods:
  for e in ['none','low','medium','high','xhigh','max','ultra']:
   p=mod+'_'+e
@@ -170,7 +170,7 @@ for mod in mods:
  if mod!=mods[-1]:lines.append(r'\midrule')
 lines+=[r'\bottomrule',r'\end{tabular}'];put('grid_errors','\n'.join(lines))
 # Current language display; the original 60-case, three-method cohort is archived.
-lb=display_language(R);lines=[r'\begin{tabular}{llrrr}',r'\toprule',r'Model & Language & Direct & Python & Set \\',r'\midrule']
+lb=display_language(R);lines=[r'\begin{tabular}{llrrr}',r'\toprule',r'Model & Language & Direct & Set-Py & Set \\',r'\midrule']
 for p,lab in [('ds_flash_low','DS low'),('ds_flash_high','DS high'),('ds_flash_max','DS max'),('astra_max','Astra max')]:
  for language,ln in [('zh','Chinese'),('en','English')]:
   rs=[lb.get((p,m,language)) for m in ['direct','python_fresh','set']];mark=''
@@ -193,14 +193,14 @@ lines += [r'\bottomrule',r'\end{tabular}'];put('language_errors','\n'.join(lines
 lines=[r'\begin{tabular}{llrrr}',r'\toprule',r'Model & Method & Input & Output & Seconds \\',r'\midrule']
 for p,lab in zip(profiles,['DS low','DS high','Astra max']):
  for i,m in enumerate(['direct','python_fresh','set']):
-  r=by[p,m];lines.append(f"{lab if i==0 else ''} & "+{'direct':'Direct','python_fresh':'Python','set':'Set'}[m]+f" & {r['input_tokens']['mean']/1000:.1f}k & {r['output_tokens']['mean']/1000:.1f}k & {r['seconds']['median']:.1f} "+r'\\')
+  r=by[p,m];lines.append(f"{lab if i==0 else ''} & "+{'direct':'Direct','python_fresh':'Set-Py','set':'Set'}[m]+f" & {r['input_tokens']['mean']/1000:.1f}k & {r['output_tokens']['mean']/1000:.1f}k & {r['seconds']['median']:.1f} "+r'\\')
  if p!=profiles[-1]:lines.append(r'\midrule')
 lines+=[r'\bottomrule',r'\end{tabular}'];put('costs','\n'.join(lines))
 # Cluster intervals.
 lines=[r'\begin{tabular}{llrr}',r'\toprule',r'Control & Metric & Difference & 95\% interval \\',r'\midrule']
 for r in load('paired_cluster_intervals'):
  if r['profile']!='deepseek_pooled' or r['baseline']!='direct':continue
- lo,hi=r['cluster_bootstrap_95_interval_pp'];lines.append(('Direct' if r['baseline']=='direct' else 'Python')+' & '+('Exact' if r['metric']=='exact' else 'Unsafe')+f" & {r['delta_percentage_points']:+.2f} & [{lo:+.2f}, {hi:+.2f}] "+r'\\')
+ lo,hi=r['cluster_bootstrap_95_interval_pp'];lines.append(('Direct' if r['baseline']=='direct' else 'Set-Py')+' & '+('Exact' if r['metric']=='exact' else 'Unsafe')+f" & {r['delta_percentage_points']:+.2f} & [{lo:+.2f}, {hi:+.2f}] "+r'\\')
 lines+=[r'\bottomrule',r'\end{tabular}'];put('intervals','\n'.join(lines))
 
 # Consolidated appendix tables supersede repeated presentation fragments.

@@ -1,7 +1,7 @@
 \section{Targeted Semantic Diagnostics}
 \label{app:permissionaudit}
 \subsection{Frozen-rule replay}
-This diagnostic uses 648 frozen DeepSeek artifacts: 72 tasks, low/high/max settings, and three realizations (Set, matched-input Python, and catalogue-visible Python). The tasks cross six templates, three authorization conditions, two catalogue sizes, and feasible/infeasible pairs. All realizations use the same selector without private reference information. The artifacts are executed on two new catalogues: 1,296 local replays, with no further model calls. Legal candidate attributes are retained, administrative cost is set to zero, and only the first component's replacement/loss attribute changes. The mixed catalogue targets the following reference worst losses in integer subunits:
+This diagnostic uses 648 frozen DeepSeek artifacts: 72 tasks, low/high/max settings, and three configurations (Set, matched-input Set-Py, and catalogue-visible Set-Py). The tasks cross six templates, three authorization conditions, two catalogue sizes, and feasible/infeasible pairs. All realizations use the same selector without private reference information. The artifacts are executed on two new catalogues: 1,296 local replays, with no further model calls. Legal candidate attributes are retained, administrative cost is set to zero, and only the first component's replacement/loss attribute changes. The mixed catalogue targets the following reference worst losses in integer subunits:
 \begin{quote}\small
 100000, 199999, 200000, 200001, 210000, 225000, 250000, 300000, 350000, 399999, 400000, 400001, 500000, 600000.
 \end{quote}

@@ -78,7 +78,9 @@ def build(root, table_dir=None):
     lines += [r'\bottomrule', r'\end{tabular}']
     (dest / 'prompt_control.tex').write_text('\n'.join(lines) + '\n')
     lines = [r'\begin{tabular}{@{}llrrrr@{}}', r'\toprule',
-             r'Configuration & $n$ & Direct & Prompt & Framework + Set & Framework + Python\\', r'\midrule']
+             r'& & & & \multicolumn{2}{c}{Framework implementations}\\',
+             r'\cmidrule(l){5-6}',
+             r'Configuration & $n$ & Direct & Prompt & Set (DSL) & Set-Py\\', r'\midrule']
     for r in result['four_way_comparisons']:
         cells = []
         for method in ['direct', 'prompt', 'set', 'python']:

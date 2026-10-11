@@ -127,7 +127,7 @@ def build(root, table_dir=None):
         r'Configuration & Frozen realization & Unsafe domain & Unsafe selection & Unsafe selection & Invalid\\' + '\n' +
         r'&& Mixed & Mixed & Unsafe-only & Mixed / only\\')
     for profile, label in [('ds_flash_low','DS low'), ('ds_flash_high','DS high'), ('ds_flash_max','DS max')]:
-        for i, (arm, name) in enumerate([('python_cached','Python matched'), ('python_fresh','Python visible'), ('set','Set')]):
+        for i, (arm, name) in enumerate([('python_cached','Set-Py matched'), ('python_fresh','Set-Py visible'), ('set','Set')]):
             m = by[profile,arm,'risk_grid']; s = by[profile,arm,'single_4000_yuan']
             assert m['n'] == s['n'] == 72
             lines.append((label if i == 0 else '') + ' & ' + name + ' & ' +
