@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "cohort": "primary_deepseek",
+  "records": 800,
+  "tasks": 200,
+  "template_count": 20,
+  "selection": "All retained trials in the four DeepSeek primary Direct/Set cohorts.",
+  "language": "Historical prompt text is preserved; English task counterparts are linked.",
+  "files": [
+    {
+      "path": "bilingual/raw_records/ds_flash_high_direct.jsonl.gz",
+      "profile": "ds_flash_high",
+      "arm": "direct",
+      "records": 200,
+      "bytes": 23219516,
+      "sha256": "b16dfe3298f3993e36ae2f0cd7b522c07f69cf161ca33ce5df8ad37d58bb559b",
+      "metadata_fields_sanitized": 400,
+      "outcomes": {
+        "exact": 131,
+        "unsafe_accept": 31,
+        "false_refusal": 29,
+        "output_budget": 7,
+        "invalid_output": 2
+      }
+    },
+    {
+      "path": "bilingual/raw_records/ds_flash_high_set.jsonl.gz",
+      "profile": "ds_flash_high",
+      "arm": "set",
+      "records": 200,
+      "bytes": 16606315,
+      "sha256": "fda1ef7a783d32749435ede871352a8f7639cd48975ae4672c21532a0dd47570",
+      "metadata_fields_sanitized": 400,
+      "outcomes": {
+        "exact": 185,
+        "invalid_output": 9,
+        "unsafe_accept": 6
+      }
+    },
+    {
+      "path": "bilingual/raw_records/ds_flash_low_direct.jsonl.gz",
+      "profile": "ds_flash_low",
+      "arm": "direct",
+      "records": 200,
+      "bytes": 19088326,
+      "sha256": "4224be38e1b8e715170db978483a747cd52d44d11bc892ef6780e6ba41636178",
+      "metadata_fields_sanitized": 400,
+      "outcomes": {
+        "exact": 117,
+        "unsafe_accept": 48,
+        "false_refusal": 24,
+        "invalid_output": 9,
+        "certificate_overclaim": 1,
+        "output_budget": 1
+      }
+    },
+    {
+      "path": "bilingual/raw_records/ds_flash_low_set.jsonl.gz",
+      "profile": "ds_flash_low",
+      "arm": "set",
+      "records": 200,
+      "bytes": 12340272,
+      "sha256": "77590836879ce648f75e4da80369143de74c0b5db4b623b877713cee6ebbf485",
+      "metadata_fields_sanitized": 400,
+      "outcomes": {
+        "exact": 185,
+        "invalid_output": 11,
+        "unsafe_accept": 3,
+        "false_refusal": 1
+      }
+    }
+  ]
+}

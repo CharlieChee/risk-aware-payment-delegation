@@ -1,16 +1,16 @@
-# Data guide and provenance
+# Data guide
 
-## Reading the evidence
+## Data organization
 
-The release distinguishes task definitions, historical per-trial evidence,
-derived reporting tables, and author-provided aggregate updates. This avoids
-treating a figure's displayed count as an independent raw model response.
+The release includes task definitions, archived trial records, reporting tables,
+and aggregate summaries. These are separate data units with complementary uses.
 
 | Location | Unit and use |
 |---|---|
 | `benchmarks/primary/manifest.json` | 200 tasks, including 100 matched feasibility pairs; references are evaluation-only |
 | `benchmarks/intent/cases.json` | 66 numerical/context variants across three intent families; 42 API variants and 24 stress variants |
 | `bilingual/language_panel/` | 60 underlying tasks in two languages, with identical candidate values |
+| `bilingual/raw_records/` | 800 retained primary DeepSeek requests, responses, observations, and evaluations; English task counterparts are linked |
 | `data/artifacts/manifest.json` | 8,046 retained Direct/Set artifact projections in compressed JSONL shards |
 | `paper/data/derived/` | Historical scored rows and per-cohort summaries; these include archived implementation controls |
 | `paper/data/supplements/` | Model extensions, partial snapshots, and retained-intent evaluations |
@@ -45,17 +45,13 @@ semantics. Every exported artifact includes the source observation and content
 hash. The field-level projection inventories record omitted narrative fields.
 These are parsed-output projections, not byte-identical raw transcript exports.
 
-## Aggregate updates
+## Reporting and re-scoring
 
-Some current paper counts were supplied from experiments on another computer
-and are stored as aggregate reports. The local historical snapshots are kept
-separately, even where their counts differ. In this release, the external
-per-trial records underlying those updates are not included; the explicit
-`raw_records_received` and reconciliation fields preserve that distinction.
-The reporting scripts can reconstruct the displayed tables and figures from
-the supplied counts, but those particular external outcomes cannot be rescored
-from the archived local responses. No responses, error breakdowns, or template
-assignments are invented to fill that gap.
+The reporting scripts rebuild the manuscript's tables and figures from their
+designated inputs. `paper/data/author_reports/` supplies aggregate reporting
+inputs; `data/artifacts/` supplies archived trial-level projections. Aggregate
+reconstruction and response-level re-scoring are separate operations. Cohort
+identifiers and source metadata select the appropriate input for each analysis.
 
 The requested model/configuration inventory covers 12 model identifiers and
 52 model--effort settings. It describes observed request coverage, including

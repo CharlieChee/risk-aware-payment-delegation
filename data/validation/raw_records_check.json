@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "records": 800,
+  "cohorts": [
+    {
+      "profile": "ds_flash_high",
+      "arm": "direct",
+      "n": 200,
+      "outcomes": {
+        "exact": 131,
+        "unsafe_accept": 31,
+        "false_refusal": 29,
+        "output_budget": 7,
+        "invalid_output": 2
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "arm": "set",
+      "n": 200,
+      "outcomes": {
+        "exact": 185,
+        "invalid_output": 9,
+        "unsafe_accept": 6
+      }
+    },
+    {
+      "profile": "ds_flash_low",
+      "arm": "direct",
+      "n": 200,
+      "outcomes": {
+        "exact": 117,
+        "unsafe_accept": 48,
+        "false_refusal": 24,
+        "invalid_output": 9,
+        "certificate_overclaim": 1,
+        "output_budget": 1
+      }
+    },
+    {
+      "profile": "ds_flash_low",
+      "arm": "set",
+      "n": 200,
+      "outcomes": {
+        "exact": 185,
+        "invalid_output": 11,
+        "unsafe_accept": 3,
+        "false_refusal": 1
+      }
+    }
+  ],
+  "checks": [
+    "shard hashes",
+    "task identifiers",
+    "full cohort membership",
+    "recorded scoring alignment",
+    "unaltered response content",
+    "English task links"
+  ]
+}

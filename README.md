@@ -8,8 +8,8 @@ interpretations and contractual events. A fixed evaluator checks joint
 admissibility, compares worst-case utility, and selects a positive-value purchase
 or refuses. No payment is executed by this artifact.
 
-[Read the paper](paper/paper.pdf) · [Experimental protocol](docs/protocol.md) ·
-[Data and provenance](docs/data.md) · [Reproduction guide](docs/reproduction.md)
+[Anonymous artifact](https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/) · [Read the paper](paper/paper.pdf) · [Experimental protocol](docs/protocol.md) ·
+[Data guide](docs/data.md) · [Reproduction guide](docs/reproduction.md)
 
 ## Reproduce the results
 
@@ -23,7 +23,8 @@ python reproduce.py
 ```
 
 This runs decision and checkpoint tests, rebuilds reporting tables and the four
-main figures, and checks the paired retained-intent outcomes. Results are written
+main figures, checks 800 retained primary request/response records, and verifies
+the paired retained-intent outcomes. Results are written
 to `paper/output/reproduction/report.json`.
 
 To recompute **all 200 reference decisions** with the exact DSL interpreter and
@@ -45,7 +46,7 @@ feasibility pairs, and verifies 60 Chinese/English input pairs.
 | `risk_payment/` | Exact expression interpreter, decision procedure, separate financial ledger, seeded task generator, English prompts, resumable API runner |
 | `benchmarks/primary/` | 200 English tasks, 20 contract structures, 100 feasibility pairs, candidates, reference decisions, and symbolic specifications |
 | `benchmarks/intent/` | 66 translated intent-task variants, including the 42-variant API panel and 24 stress variants; reference states and outcomes |
-| `bilingual/` | 60 original Chinese/English task pairs and translation audit material |
+| `bilingual/` | 60 original Chinese/English task pairs, translation audit material, and 800 retained primary request/response records |
 | `data/artifacts/` | 8,046 archived Direct/Set parsed-output projections with per-record source hashes, usage, and scored outcomes |
 | `paper/data/` | Retained per-trial reporting data, diagnostics, controls, and separately identified aggregate updates |
 | `paper/` | Editable LaTeX, references, figure sources, plotting code, result tables, and PDF |
@@ -83,15 +84,14 @@ changing a request configuration requires a new output directory. Add `--effort`
 only if the endpoint supports `reasoning_effort`. Failed calls remain scored as
 failures; there is no silent retry or replacement by a more favorable answer.
 
-## Evidence scope
+## Using the released data
 
-The numerical datasets and historical outcomes are retained separately from
-English release translations. Translating a prompt does not constitute a model
-rerun. Reporting projections omit untranslated narrative notes while preserving
-decision fields, expressions, numerical outcomes, and hashes of their sources.
-Externally supplied aggregate updates remain identified separately from local
-trial records; rebuilding a figure from those counts is distinct from rescoring
-its individual responses. See [data provenance](docs/data.md).
+The repository provides the implementation, most experimental materials, and
+offline reproduction tools. Archived trial records support response-level
+inspection; aggregate inputs support reconstruction of the corresponding
+reported tables and figures. English release translations are provided for
+inspection and new runs. See the [data guide](docs/data.md) for cohort definitions,
+source mappings, and the distinction between reporting and re-scoring.
 
 The complete-catalogue decision procedure reports unresolved relevant evidence
 as a failure, not as a certified optimum or justified refusal. Its guarantees are

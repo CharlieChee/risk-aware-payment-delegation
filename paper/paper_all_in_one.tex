@@ -824,7 +824,7 @@ Semantic diagnostics & Frozen rules and controlled interventions & Admitted-doma
 
 \subsection{Unified reproduction entry point}
 \label{app:reproduction}
-The implementation, benchmark data, retained outcomes, and reproduction tools are available at \url{https://github.com/CharlieChee/risk-aware-payment-delegation}. After installing the declared dependencies, run the following command from the supplementary source package:
+The implementation, most experimental materials, and reproduction tools are available at \url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}. After installing the declared dependencies, run the following command from the supplementary source package:
 \begin{quote}\small\verb|python reproduce.py --pdf|\end{quote}
 This single offline entry regenerates result tables and the four main figures from the frozen reporting inputs, checks Figure~\ref{fig:intent}'s paired outcomes and error partitions, runs deterministic checks of Algorithm~\ref{alg:decision}, and compiles the manuscript. Omitting \texttt{-{}-pdf} reproduces the analysis without a TeX installation. The command makes no model calls and does not modify the experimental records; model-generation settings are specified in Table~\ref{tab:configurations}. Its machine-readable report records the checks, input hashes, and regenerated outputs.
 
