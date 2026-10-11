@@ -1,5 +1,34 @@
 \section{Essential Controls, Robustness, and Reuse}
 \label{app:execution}
+\subsection{Prompt Engineering and Executable Decisions}
+\label{app:prompt-controls}
+We test whether additional textual reasoning and verification guidance can substitute for executable decision processing. Our \emph{prompt engineering baseline}, abbreviated \emph{Prompt}, appends a generic checklist to the original Direct instruction: identify requirements, check all applicable conditions, verify financial arithmetic and boundaries, compare eligible purchases, and review the final decision. Direct already specifies joint feasibility, worst-case utility, and justified refusal. Thus Prompt tests additional guidance within the same decision policy; neither Direct nor the executable framework is prompt-free.
+
+\paragraph{Controlled inputs.}
+We complete 200 new calls for each of DeepSeek low/high and Sol/Luna/Terra medium. For each Direct--Prompt pair, the recorded task, catalogue, answer schema, model, requested reasoning setting, output-budget configuration, and deadline are unchanged. The appended checklist contains no task-specific examples or reference answers. Both routes return a decision without external execution or further user interaction. DeepSeek uses the original checklist; the native-model version retains its five checks but removes the additional prohibition on internal program-like representations. The comparisons use retained Direct runs, so service-version drift across run dates is not controlled. The two checklist versions are documented with the released prompts, rather than treated as a separate version ablation.
+
+\begin{table*}[!tbp]
+\centering\small\setlength{\tabcolsep}{7pt}
+\input{tables/prompt_control}
+\caption{\textbf{Additional prompt engineering on the primary tasks.} Direct and Prompt are exact-decision percentages on the same 200 tasks per configuration; $\Delta$ is Prompt minus Direct in percentage points. Prompt U/R/O reports unsafe acceptance, false refusal, and other errors. Every new call remains in the denominator.}
+\label{tab:prompt-control}
+\end{table*}
+
+\paragraph{Effect of textual guidance.}
+Table~\ref{tab:prompt-control} shows lower exactness in four configurations and a one-percentage-point increase for Terra. The observed changes range from $-6.5$ to $+1.0$ percentage points. This generic prompt engineering intervention does not yield a consistent improvement; the result concerns the tested checklist, not the effectiveness of prompt engineering in general.
+
+\paragraph{Four-method comparison.}
+Table~\ref{tab:four-way-controls} compares Direct, Prompt, Framework + Set, and Framework + Python on identical tasks within each row. The latter two generate executable representations under the same outer admissibility, worst-value, and selection policy. Set compiles without the catalogue, whereas the other three routes receive it; this comparison evaluates complete realizations rather than isolating syntax alone. DeepSeek has all 200 tasks for every method. For Sol, Luna, and Terra, the earlier Python control shares 40 primary tasks: one feasible/infeasible pair per template, selected for that earlier panel independently of outcomes. We verify that their task attributes and reference decisions agree with the primary versions. These paired controls use retained per-trial runs, separately from later aggregate primary updates.
+
+\begin{table*}[!tbp]
+\centering\small\setlength{\tabcolsep}{6pt}
+\input{tables/four_way_controls}
+\caption{\textbf{Textual guidance and two executable realizations.} Each cell gives exact-decision percentage above unsafe/false-refusal/other counts. All four methods use the same $n$ tasks within a configuration. The 40-task rows cover all 20 templates and use the pre-existing task intersection. The panel contains 2,080 method outcomes on overlapping cohorts; it is not an additional set of 2,080 tasks.}
+\label{tab:four-way-controls}
+\end{table*}
+
+Both executable realizations exceed Direct and Prompt exactness in every row of this matched panel. This supports the value of executable decision processing beyond the tested textual guidance. Differences between Set and Python further show that this benefit is shared across executable realizations rather than exclusive to one encoding.
+
 \subsection{Execution Controls: Risk and Useful Completion}
 \label{app:execution-controls}
 The procedural control generates a Python \texttt{assess(attrs)} function under the same outer admissibility, worst-value, and selection policy as Set. It is a program-aided control, not an exact reproduction of PAL or Logic.py. Primary and effort controls receive the catalogue; the matched-input control and Set compile without it. Table~\ref{tab:execution-ablation} reports risk, useful completion, and exactness for the primary DeepSeek comparison, all completed effort groups, and the identical-input control.

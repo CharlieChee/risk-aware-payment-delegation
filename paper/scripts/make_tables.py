@@ -206,5 +206,7 @@ lines+=[r'\bottomrule',r'\end{tabular}'];put('intervals','\n'.join(lines))
 # Consolidated appendix tables supersede repeated presentation fragments.
 from make_appendix_tables import build as build_compact_appendix
 from execution_reporting import build as build_execution_controls
+from prompt_control_reporting import build as build_prompt_controls
 build_execution_controls(R)
 build_compact_appendix(R, T)
+build_prompt_controls(R, T)

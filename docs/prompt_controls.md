@@ -59,6 +59,9 @@ checkpointed separately from decision scoring.
 
 ## Inspect and reproduce
 
+The manuscript presents the prompt engineering comparison and the four-method
+panel in Appendix E.1 (Tables 14 and 15).
+
 `bilingual/prompt_controls/manifest.json` indexes compressed original requests,
 observations, provider responses or native event streams, and evaluations.
 Only workstation metadata is anonymized; measured prompts and final response

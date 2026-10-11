@@ -1,0 +1,387 @@
+{
+  "prompt_calls": 1000,
+  "archived_comparison_records": 3520,
+  "prompt_comparisons": [
+    {
+      "profile": "ds_flash_low",
+      "label": "DS low",
+      "direct": {
+        "n": 200,
+        "exact": 117,
+        "unsafe": 48,
+        "false_refusal": 24,
+        "other": 11,
+        "feasible": 100,
+        "safe_completion": 45,
+        "exact_percent": 58.5
+      },
+      "prompt": {
+        "n": 200,
+        "exact": 107,
+        "unsafe": 48,
+        "false_refusal": 27,
+        "other": 18,
+        "feasible": 100,
+        "safe_completion": 42,
+        "exact_percent": 53.5
+      },
+      "delta_pp": -5.0,
+      "paired_transitions": {
+        "both_exact": 88,
+        "exact_to_error": 29,
+        "both_error": 64,
+        "error_to_exact": 19
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "label": "DS high",
+      "direct": {
+        "n": 200,
+        "exact": 131,
+        "unsafe": 31,
+        "false_refusal": 29,
+        "other": 9,
+        "feasible": 100,
+        "safe_completion": 55,
+        "exact_percent": 65.5
+      },
+      "prompt": {
+        "n": 200,
+        "exact": 118,
+        "unsafe": 43,
+        "false_refusal": 27,
+        "other": 12,
+        "feasible": 100,
+        "safe_completion": 49,
+        "exact_percent": 59.0
+      },
+      "delta_pp": -6.5,
+      "paired_transitions": {
+        "exact_to_error": 35,
+        "both_error": 47,
+        "both_exact": 96,
+        "error_to_exact": 22
+      }
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "label": "Sol medium",
+      "direct": {
+        "n": 200,
+        "exact": 137,
+        "unsafe": 21,
+        "false_refusal": 42,
+        "other": 0,
+        "feasible": 100,
+        "safe_completion": 49,
+        "exact_percent": 68.5
+      },
+      "prompt": {
+        "n": 200,
+        "exact": 135,
+        "unsafe": 23,
+        "false_refusal": 41,
+        "other": 1,
+        "feasible": 100,
+        "safe_completion": 45,
+        "exact_percent": 67.5
+      },
+      "delta_pp": -1.0,
+      "paired_transitions": {
+        "exact_to_error": 23,
+        "both_exact": 114,
+        "both_error": 42,
+        "error_to_exact": 21
+      }
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "label": "Luna medium",
+      "direct": {
+        "n": 200,
+        "exact": 41,
+        "unsafe": 129,
+        "false_refusal": 28,
+        "other": 2,
+        "feasible": 100,
+        "safe_completion": 13,
+        "exact_percent": 20.5
+      },
+      "prompt": {
+        "n": 200,
+        "exact": 38,
+        "unsafe": 129,
+        "false_refusal": 30,
+        "other": 3,
+        "feasible": 100,
+        "safe_completion": 6,
+        "exact_percent": 19.0
+      },
+      "delta_pp": -1.5,
+      "paired_transitions": {
+        "both_error": 135,
+        "exact_to_error": 27,
+        "both_exact": 14,
+        "error_to_exact": 24
+      }
+    },
+    {
+      "profile": "gpt56_terra_medium",
+      "label": "Terra medium",
+      "direct": {
+        "n": 200,
+        "exact": 81,
+        "unsafe": 78,
+        "false_refusal": 40,
+        "other": 1,
+        "feasible": 100,
+        "safe_completion": 24,
+        "exact_percent": 40.5
+      },
+      "prompt": {
+        "n": 200,
+        "exact": 83,
+        "unsafe": 74,
+        "false_refusal": 41,
+        "other": 2,
+        "feasible": 100,
+        "safe_completion": 22,
+        "exact_percent": 41.5
+      },
+      "delta_pp": 1.0,
+      "paired_transitions": {
+        "exact_to_error": 28,
+        "both_error": 89,
+        "both_exact": 53,
+        "error_to_exact": 30
+      }
+    }
+  ],
+  "four_way_comparisons": [
+    {
+      "profile": "ds_flash_low",
+      "label": "DS low",
+      "direct": {
+        "n": 200,
+        "exact": 117,
+        "unsafe": 48,
+        "false_refusal": 24,
+        "other": 11,
+        "feasible": 100,
+        "safe_completion": 45,
+        "exact_percent": 58.5
+      },
+      "prompt": {
+        "n": 200,
+        "exact": 107,
+        "unsafe": 48,
+        "false_refusal": 27,
+        "other": 18,
+        "feasible": 100,
+        "safe_completion": 42,
+        "exact_percent": 53.5
+      },
+      "set": {
+        "n": 200,
+        "exact": 185,
+        "unsafe": 3,
+        "false_refusal": 1,
+        "other": 11,
+        "feasible": 100,
+        "safe_completion": 94,
+        "exact_percent": 92.5
+      },
+      "python": {
+        "n": 200,
+        "exact": 189,
+        "unsafe": 6,
+        "false_refusal": 0,
+        "other": 5,
+        "feasible": 100,
+        "safe_completion": 93,
+        "exact_percent": 94.5
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "label": "DS high",
+      "direct": {
+        "n": 200,
+        "exact": 131,
+        "unsafe": 31,
+        "false_refusal": 29,
+        "other": 9,
+        "feasible": 100,
+        "safe_completion": 55,
+        "exact_percent": 65.5
+      },
+      "prompt": {
+        "n": 200,
+        "exact": 118,
+        "unsafe": 43,
+        "false_refusal": 27,
+        "other": 12,
+        "feasible": 100,
+        "safe_completion": 49,
+        "exact_percent": 59.0
+      },
+      "set": {
+        "n": 200,
+        "exact": 185,
+        "unsafe": 6,
+        "false_refusal": 0,
+        "other": 9,
+        "feasible": 100,
+        "safe_completion": 92,
+        "exact_percent": 92.5
+      },
+      "python": {
+        "n": 200,
+        "exact": 187,
+        "unsafe": 12,
+        "false_refusal": 0,
+        "other": 1,
+        "feasible": 100,
+        "safe_completion": 93,
+        "exact_percent": 93.5
+      }
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "label": "Sol medium",
+      "direct": {
+        "n": 40,
+        "exact": 30,
+        "unsafe": 3,
+        "false_refusal": 7,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 11,
+        "exact_percent": 75.0
+      },
+      "prompt": {
+        "n": 40,
+        "exact": 27,
+        "unsafe": 4,
+        "false_refusal": 9,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 9,
+        "exact_percent": 67.5
+      },
+      "set": {
+        "n": 40,
+        "exact": 40,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 20,
+        "exact_percent": 100.0
+      },
+      "python": {
+        "n": 40,
+        "exact": 40,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 20,
+        "exact_percent": 100.0
+      }
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "label": "Luna medium",
+      "direct": {
+        "n": 40,
+        "exact": 10,
+        "unsafe": 23,
+        "false_refusal": 7,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 3,
+        "exact_percent": 25.0
+      },
+      "prompt": {
+        "n": 40,
+        "exact": 5,
+        "unsafe": 26,
+        "false_refusal": 8,
+        "other": 1,
+        "feasible": 20,
+        "safe_completion": 1,
+        "exact_percent": 12.5
+      },
+      "set": {
+        "n": 40,
+        "exact": 18,
+        "unsafe": 16,
+        "false_refusal": 0,
+        "other": 6,
+        "feasible": 20,
+        "safe_completion": 6,
+        "exact_percent": 45.0
+      },
+      "python": {
+        "n": 40,
+        "exact": 40,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 20,
+        "exact_percent": 100.0
+      }
+    },
+    {
+      "profile": "gpt56_terra_medium",
+      "label": "Terra medium",
+      "direct": {
+        "n": 40,
+        "exact": 16,
+        "unsafe": 14,
+        "false_refusal": 10,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 5,
+        "exact_percent": 40.0
+      },
+      "prompt": {
+        "n": 40,
+        "exact": 17,
+        "unsafe": 12,
+        "false_refusal": 11,
+        "other": 0,
+        "feasible": 20,
+        "safe_completion": 6,
+        "exact_percent": 42.5
+      },
+      "set": {
+        "n": 40,
+        "exact": 32,
+        "unsafe": 6,
+        "false_refusal": 0,
+        "other": 2,
+        "feasible": 20,
+        "safe_completion": 15,
+        "exact_percent": 80.0
+      },
+      "python": {
+        "n": 40,
+        "exact": 39,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "other": 1,
+        "feasible": 20,
+        "safe_completion": 20,
+        "exact_percent": 97.5
+      }
+    }
+  ],
+  "full_four_way_evaluations": 2080,
+  "all_failures_retained": true,
+  "cohorts_overlap": true,
+  "inputs": "Retained per-trial outcomes; no external aggregate updates used in paired controls."
+}

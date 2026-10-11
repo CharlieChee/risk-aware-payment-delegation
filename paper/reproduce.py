@@ -52,6 +52,10 @@ def main():
 
     from intent_ambiguity_reporting import figure3_results
     from primary_profiles import display_primary
+    from prompt_control_reporting import analyze as analyze_prompt_controls
+    prompt_controls = analyze_prompt_controls(ROOT)
+    assert prompt_controls['prompt_calls'] == 1000
+    assert prompt_controls['full_four_way_evaluations'] == 2080
     paired = figure3_results(ROOT)
     plotted = json.loads((ROOT / 'figures/16_retained_intent_values.json').read_text())
     plot_by = {r['profile']: r for r in plotted['profiles']}
@@ -92,6 +96,8 @@ def main():
         'primary_profiles': primary['profiles'], 'primary_reported_outcomes': primary['display_trials'],
         'figure3_evaluations': sum(r[a]['n'] for r in paired for a in ['direct', 'set']),
         'figure3_complete_results': paired, 'decision_contract_checks': contract['cases'],
+        'prompt_engineering_calls': prompt_controls['prompt_calls'],
+        'four_method_control_outcomes': prompt_controls['full_four_way_evaluations'],
         'pdf': generated_pdf,
         'outputs': ['tables/' if (ROOT / 'paper.tex').exists() else 'tex/tables/', 'figures/',
                     'output/figure3_complete_results.json', 'output/algorithm_contract_check.json']
