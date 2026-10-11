@@ -86,12 +86,15 @@ failures; there is no silent retry or replacement by a more favorable answer.
 
 ## Using the released data
 
-The repository provides the implementation, most experimental materials, and
-offline reproduction tools. Archived trial records support response-level
-inspection; aggregate inputs support reconstruction of the corresponding
-reported tables and figures. English release translations are provided for
-inspection and new runs. See the [data guide](docs/data.md) for cohort definitions,
-source mappings, and the distinction between reporting and re-scoring.
+The repository provides the implementation, benchmark inputs and references,
+prompts, model configurations, evaluation records, and frozen reporting inputs.
+It includes 800 original request/response records from four complete primary
+DeepSeek cohorts and 8,046 archived parsed-output records. These overlapping
+collections support response-level inspection; separately identified aggregate
+inputs support reconstruction of the corresponding tables and figures. English
+release translations are provided for inspection and new runs. See the
+[data guide](docs/data.md) for cohort definitions, source mappings, and the
+distinction between reporting and re-scoring.
 
 The complete-catalogue decision procedure reports unresolved relevant evidence
 as a failure, not as a certified optimum or justified refusal. Its guarantees are

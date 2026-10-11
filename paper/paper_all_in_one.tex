@@ -57,7 +57,7 @@ Relevant uncertainty concerns both the meaning of a request and the consequences
 
 Existing research provides complementary foundations. Uncertainty-aware planning and clarification methods determine when information should be requested \citep{knowno,intentsim,sage}. Value of Information explicitly balances the benefit of asking against interaction costs, including in flight-booking and e-commerce tasks \citep{voi}. Risk-Averse Calibration (RAC) relates uncertainty sets to consequence-sensitive action selection \citep{rac}, while program-aided and neurosymbolic reasoning separate language interpretation from computation \citep{pal,logiclm,logicpy}. These advances motivate a specific language-to-decision task: with no further user response, construct executable purchasing conditions from the request's requirements, conditional scope, and financial consequences, then determine whether those conditions permit a useful action.
 
-Our approach retains decision-relevant possibilities and expresses what the \emph{same} purchase must satisfy in each. Hard requirements and authorized risk limits determine admissibility; utility ranks the admissible purchases. A favorable utility cannot compensate for a violated permission. Conversely, unresolved uncertainty is not itself a reason to refuse: an admissible purchase with positive guaranteed value remains actionable. This separation connects the meaning of the user's delegation to both successful completion and justified refusal. The representation must carry the retained alternatives and their consequences into the decision process.
+Our approach retains decision-relevant possibilities and expresses what the \emph{same} purchase must satisfy in each. Hard requirements and authorized risk limits determine admissibility; utility ranks the admissible purchases. A favorable utility cannot compensate for a violated permission. Conversely, unresolved uncertainty is not itself a reason to refuse: an admissible purchase with positive guaranteed value remains actionable.
 
 We present a \emph{state-wise executable framework} for risk-aware payment delegation under unresolved uncertainty. Its predefined representation associates decision-relevant interpretations and outcomes with state-dependent requirements, risk conditions, and utility. This carries unresolved ambiguity into purchasing: one action must remain admissible across the retained possibilities, while its value is assessed by worst-case utility. Building on RAC's fixed-set max--min principle, a fixed procedure selects a positive-value maximizing purchase or abstains when none exists. Our implementation uses a language-model front end to instantiate the representation from the request, context, and attribute schema, followed by deterministic evaluation over candidate offers.
 
@@ -67,6 +67,8 @@ We evaluate this approach on 200 reference-checked tasks spanning 20 contractual
 \item \textbf{An executable payment-decision framework:} an inspectable state-wise interface linking retained alternatives to requirements, financial permissions, and utility, with fixed decision semantics and reusable catalogue-independent specifications.
 \item \textbf{Controlled reliability evaluation:} reference-checked paired payment boundaries, cross-configuration studies, and semantic diagnostics that measure safe completion, missed feasible purchases, and remaining compilation failures.
 \end{itemize}
+
+Code, benchmark materials, retained model responses, evaluation records, and reproduction tools are publicly available in our anonymous artifact package (Appendix~\ref{app:reproduction}).\footnote{\url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}}
 
 \section{Related Work}
 \label{sec:related}
@@ -120,7 +122,7 @@ A semantic front end instantiates $Q=f(x,\Sigma)$ from the request and context. 
 
 \subsection{Decision Procedure}
 \label{sec:realization}
-Algorithm~\ref{alg:decision} specifies exact solution of Equation~\eqref{eq:decision} for the generated model on a complete finite catalogue. Hats distinguish compiled quantities from reference semantics: $\widehat F_C$ is the domain passing all generated hard and risk conditions, and $\widehat\psi$ is minimum generated utility. Before selection, the procedure requires every candidate's admissibility to be decided and every admissible candidate's state utilities to be known. It then returns all positive-value maximizers. Exact integer/rational arithmetic preserves inclusive bounds and one-subunit differences.
+Algorithm~\ref{alg:decision} exactly solves the compiled instance of Equation~\eqref{eq:decision} on a complete finite catalogue once the evaluation checks below succeed. This guarantee concerns execution of $Q$; natural-language compilation errors remain part of the end-to-end evaluation. Hats distinguish compiled quantities from reference semantics: $\widehat F_C$ passes all generated hard and risk conditions, and $\widehat\psi$ is minimum generated utility. Before selection, every candidate's admissibility must be decided and every admissible candidate's state utilities known. The procedure returns all positive-value maximizers using exact integer/rational arithmetic, preserving inclusive bounds and one-subunit differences.
 
 \begin{algorithm}[t]
 \caption{Compile once; evaluate risk and value}
@@ -146,7 +148,7 @@ Algorithm~\ref{alg:decision} specifies exact solution of Equation~\eqref{eq:deci
 \emph{Fixed evaluator: lines 2--13. Reference answers are used only in offline evaluation.}
 \end{algorithm}
 
-\textsc{Fail}(uncertified) means that feasibility or optimality cannot be established; it is distinct from proving that no positive-value purchase exists. In particular, a known feasible candidate cannot be certified optimal while another potentially feasible candidate has unknown value. Known violations already exclude a candidate, so its unknown utility need not block selection. The primary inputs supply complete catalogues and known attributes; unsupported or undefined generated expressions can still violate the evaluation conditions. Outcome agreement and decision certification remain distinct (Appendix~\ref{app:interface}). For $M$ candidates, $K$ generated states, and expression-evaluation cost $T$, exhaustive execution takes $O(MKT)$ work.
+Unresolved evidence prevents certification of feasibility or optimality. A known feasible candidate cannot be certified optimal while another potentially feasible candidate has unknown value; known violations already exclude a candidate regardless of its utility. Primary inputs supply complete catalogues and known attributes, although undefined generated expressions can still fail evaluation. For archived executions with unresolved inputs, agreement on a certified subset does not establish Algorithm~\ref{alg:decision}'s complete-domain guarantee (Appendix~\ref{app:interface}). For $M$ candidates, $K$ generated states, and expression-evaluation cost $T$, exhaustive execution takes $O(MKT)$ work.
 
 \begin{table*}[!t]
 \centering\small
@@ -196,17 +198,21 @@ Each template contributes five feasible/infeasible pairs. A feasible task has ex
 \label{fig:completion}
 \end{figure*}
 
-\paragraph{Comparison and outcomes.}
-\direct\ receives the request, schema, full catalogue, and explicit robust decision rules; it returns a decision, allowed identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator. Both follow the same decision obligations. The primary comparison evaluates the complete risk-aware architecture. Supplementary execution controls separate shared computational gains from configuration-dependent realization effects (Appendix~\ref{app:execution-controls}).
+\paragraph{Comparisons.}
+The \direct--\ours\ comparison evaluates the complete executable decision architecture. \direct\ receives the request, schema, full catalogue, and robust decision rules; it returns a decision, selected identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator under the same decision obligations. Procedural execution controls, including a matched-input comparison, examine shared computational gains and realization-dependent outcomes (Appendix~\ref{app:execution-controls}, Table~\ref{tab:execution-ablation}).
 
 The primary comparison spans eleven model configurations: Astra max; Sol, Terra, and Luna medium; DeepSeek low and high; Qwen Flash and Max low; GLM Flash low and GLM high; and Opus 5.5 medium. Cohort definitions are in Appendix~\ref{app:primary-extensions}; other panels retain their own cohorts.
 
-An \emph{exact decision} returns the reference decision, authorized maximizing choices, and correct utility. \emph{Safe task completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} returns a reference-infeasible choice; \emph{false refusal} rejects an available positive-value authorized purchase. Other groups the remaining value and execution failures. Authorization auditing separately checks every admitted candidate, including unselected ones. Locally archived trials retain one semantic attempt, bounded transport retries, responses, usage, duration, and evaluation. Syntax recovery does not change expression meaning. Local comparisons are paired within configurations; service-specific compute budgets are not equivalent.
+\paragraph{Outcome scoring.}
+An \emph{exact decision} returns the reference decision, authorized maximizing choices, and correct utility. \emph{Safe task completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} returns a reference-infeasible choice; \emph{false refusal} rejects an available positive-value authorized purchase. Other groups remaining value and execution failures. Execution failures are never credited as correct refusals; all failures remain in each completed cohort's denominator (Appendix~\ref{app:protocol}). Authorization auditing also checks unselected admitted candidates. Archived trials retain one semantic attempt, bounded transport retries, responses, usage, duration, and evaluation. Syntax recovery preserves expression meaning. Comparisons are paired within configurations; service-specific compute budgets are not equivalent.
+
+\paragraph{Reproducibility.}
+The anonymous artifact provides code, benchmark inputs and references, prompts, configurations, retained responses, and evaluation records. An offline entry reconstructs tables and the four main figures from frozen reporting inputs, checks paired outcome partitions and Algorithm~\ref{alg:decision}, and records input hashes without model calls. Appendix~\ref{app:reproduction} details the material coverage and workflow; Table~\ref{tab:configurations} specifies generation settings.
 
 \section{Results and Analysis}
 \label{sec:evaluation}
 \label{sec:results}
-Table~\ref{tab:evaluation-coverage} maps nine complementary evaluation dimensions to the evidence reported here. The primary comparison tests useful completion within authorization boundaries; model, effort, and language studies examine consistency across settings. Retained-intent tests examine decisions under unresolved meanings, frozen-rule audits expose hidden authorization errors, and reuse experiments quantify operational savings. Together, these studies connect decision reliability, semantic diagnosis, and practical value. Common cohort definitions and execution controls appear in Appendices~\ref{app:protocol} and~\ref{app:execution}.
+Table~\ref{tab:evaluation-coverage} maps nine evaluation dimensions: decision boundaries, structural coverage, model and effort settings, language, retained intent, authorization audits, semantic interventions, and reuse. The following results connect useful completion, robustness, and operational value; Appendices~\ref{app:protocol} and~\ref{app:execution} give cohort definitions and controls.
 
 \begin{figure*}[t]
 \centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
@@ -824,9 +830,9 @@ Semantic diagnostics & Frozen rules and controlled interventions & Admitted-doma
 
 \subsection{Unified reproduction entry point}
 \label{app:reproduction}
-The implementation, most experimental materials, and reproduction tools are available at \url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}. After installing the declared dependencies, run the following command from the supplementary source package:
+The anonymous artifact package provides the implementation, benchmark inputs and references, prompts, model configurations, evaluation records, and frozen reporting inputs. It includes 800 original request/response records covering the four complete primary DeepSeek Direct/Set cohorts and 8,046 archived parsed-output records. These overlapping collections serve distinct inspection and reporting purposes; they are not independent task counts. Reporting inputs distinguish per-trial observations from aggregate updates. The package is available at \url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}. After installing the declared dependencies, run from the repository root:
 \begin{quote}\small\verb|python reproduce.py --pdf|\end{quote}
-This single offline entry regenerates result tables and the four main figures from the frozen reporting inputs, checks Figure~\ref{fig:intent}'s paired outcomes and error partitions, runs deterministic checks of Algorithm~\ref{alg:decision}, and compiles the manuscript. Omitting \texttt{-{}-pdf} reproduces the analysis without a TeX installation. The command makes no model calls and does not modify the experimental records; model-generation settings are specified in Table~\ref{tab:configurations}. Its machine-readable report records the checks, input hashes, and regenerated outputs.
+This offline entry regenerates result tables and the four main figures from frozen reporting inputs, checks Figure~\ref{fig:intent}'s paired outcomes and error partitions, runs deterministic checks of Algorithm~\ref{alg:decision}, verifies retained raw-record hashes and their alignment with published outcome rows, and compiles the manuscript. Omitting \texttt{-{}-pdf} reproduces the analysis without TeX. Adding \texttt{-{}-verify-references} recomputes the 200 primary reference decisions with the exact interpreter and separate cash-flow ledger. The command makes no model calls and does not modify experimental records. Its reports record the checks, input hashes, and regenerated outputs; Table~\ref{tab:configurations} specifies generation settings. Reconstructing tables from reporting inputs is distinct from re-scoring raw responses.
 
 \section{Complete Results and Statistical Analysis}
 \label{app:statistics}

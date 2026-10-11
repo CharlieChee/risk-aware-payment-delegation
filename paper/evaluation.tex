@@ -13,17 +13,21 @@ Each template contributes five feasible/infeasible pairs. A feasible task has ex
 \label{fig:completion}
 \end{figure*}
 
-\paragraph{Comparison and outcomes.}
-\direct\ receives the request, schema, full catalogue, and explicit robust decision rules; it returns a decision, allowed identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator. Both follow the same decision obligations. The primary comparison evaluates the complete risk-aware architecture. Supplementary execution controls separate shared computational gains from configuration-dependent realization effects (Appendix~\ref{app:execution-controls}).
+\paragraph{Comparisons.}
+The \direct--\ours\ comparison evaluates the complete executable decision architecture. \direct\ receives the request, schema, full catalogue, and robust decision rules; it returns a decision, selected identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator under the same decision obligations. Procedural execution controls, including a matched-input comparison, examine shared computational gains and realization-dependent outcomes (Appendix~\ref{app:execution-controls}, Table~\ref{tab:execution-ablation}).
 
 The primary comparison spans eleven model configurations: Astra max; Sol, Terra, and Luna medium; DeepSeek low and high; Qwen Flash and Max low; GLM Flash low and GLM high; and Opus 5.5 medium. Cohort definitions are in Appendix~\ref{app:primary-extensions}; other panels retain their own cohorts.
 
-An \emph{exact decision} returns the reference decision, authorized maximizing choices, and correct utility. \emph{Safe task completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} returns a reference-infeasible choice; \emph{false refusal} rejects an available positive-value authorized purchase. Other groups the remaining value and execution failures. Authorization auditing separately checks every admitted candidate, including unselected ones. Locally archived trials retain one semantic attempt, bounded transport retries, responses, usage, duration, and evaluation. Syntax recovery does not change expression meaning. Local comparisons are paired within configurations; service-specific compute budgets are not equivalent.
+\paragraph{Outcome scoring.}
+An \emph{exact decision} returns the reference decision, authorized maximizing choices, and correct utility. \emph{Safe task completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} returns a reference-infeasible choice; \emph{false refusal} rejects an available positive-value authorized purchase. Other groups remaining value and execution failures. Execution failures are never credited as correct refusals; all failures remain in each completed cohort's denominator (Appendix~\ref{app:protocol}). Authorization auditing also checks unselected admitted candidates. Archived trials retain one semantic attempt, bounded transport retries, responses, usage, duration, and evaluation. Syntax recovery preserves expression meaning. Comparisons are paired within configurations; service-specific compute budgets are not equivalent.
+
+\paragraph{Reproducibility.}
+The anonymous artifact provides code, benchmark inputs and references, prompts, configurations, retained responses, and evaluation records. An offline entry reconstructs tables and the four main figures from frozen reporting inputs, checks paired outcome partitions and Algorithm~\ref{alg:decision}, and records input hashes without model calls. Appendix~\ref{app:reproduction} details the material coverage and workflow; Table~\ref{tab:configurations} specifies generation settings.
 
 \section{Results and Analysis}
 \label{sec:evaluation}
 \label{sec:results}
-Table~\ref{tab:evaluation-coverage} maps nine complementary evaluation dimensions to the evidence reported here. The primary comparison tests useful completion within authorization boundaries; model, effort, and language studies examine consistency across settings. Retained-intent tests examine decisions under unresolved meanings, frozen-rule audits expose hidden authorization errors, and reuse experiments quantify operational savings. Together, these studies connect decision reliability, semantic diagnosis, and practical value. Common cohort definitions and execution controls appear in Appendices~\ref{app:protocol} and~\ref{app:execution}.
+Table~\ref{tab:evaluation-coverage} maps nine evaluation dimensions: decision boundaries, structural coverage, model and effort settings, language, retained intent, authorization audits, semantic interventions, and reuse. The following results connect useful completion, robustness, and operational value; Appendices~\ref{app:protocol} and~\ref{app:execution} give cohort definitions and controls.
 
 \begin{figure*}[t]
 \centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}

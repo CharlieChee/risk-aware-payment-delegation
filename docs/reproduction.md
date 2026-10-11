@@ -3,7 +3,8 @@
 ## Offline reporting
 
 Run `python reproduce.py`. Inputs in `paper/data/` are hash-checked before and
-after reporting. The entry runs tests, rebuilds tables and figures, verifies
+after reporting. The entry runs tests, checks hashes and scoring alignment for
+800 retained raw request/response records, rebuilds tables and figures, verifies
 Figure 3's four paired outcome partitions, and checks Algorithm 1. It makes no
 model calls. `--pdf` adds LaTeX compilation. The source can also be compiled with
 `latexmk -pdf paper.tex` from `paper/`.

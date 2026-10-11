@@ -39,7 +39,7 @@ A semantic front end instantiates $Q=f(x,\Sigma)$ from the request and context. 
 
 \subsection{Decision Procedure}
 \label{sec:realization}
-Algorithm~\ref{alg:decision} specifies exact solution of Equation~\eqref{eq:decision} for the generated model on a complete finite catalogue. Hats distinguish compiled quantities from reference semantics: $\widehat F_C$ is the domain passing all generated hard and risk conditions, and $\widehat\psi$ is minimum generated utility. Before selection, the procedure requires every candidate's admissibility to be decided and every admissible candidate's state utilities to be known. It then returns all positive-value maximizers. Exact integer/rational arithmetic preserves inclusive bounds and one-subunit differences.
+Algorithm~\ref{alg:decision} exactly solves the compiled instance of Equation~\eqref{eq:decision} on a complete finite catalogue once the evaluation checks below succeed. This guarantee concerns execution of $Q$; natural-language compilation errors remain part of the end-to-end evaluation. Hats distinguish compiled quantities from reference semantics: $\widehat F_C$ passes all generated hard and risk conditions, and $\widehat\psi$ is minimum generated utility. Before selection, every candidate's admissibility must be decided and every admissible candidate's state utilities known. The procedure returns all positive-value maximizers using exact integer/rational arithmetic, preserving inclusive bounds and one-subunit differences.
 
 \begin{algorithm}[t]
 \caption{Compile once; evaluate risk and value}
@@ -65,7 +65,7 @@ Algorithm~\ref{alg:decision} specifies exact solution of Equation~\eqref{eq:deci
 \emph{Fixed evaluator: lines 2--13. Reference answers are used only in offline evaluation.}
 \end{algorithm}
 
-\textsc{Fail}(uncertified) means that feasibility or optimality cannot be established; it is distinct from proving that no positive-value purchase exists. In particular, a known feasible candidate cannot be certified optimal while another potentially feasible candidate has unknown value. Known violations already exclude a candidate, so its unknown utility need not block selection. The primary inputs supply complete catalogues and known attributes; unsupported or undefined generated expressions can still violate the evaluation conditions. Outcome agreement and decision certification remain distinct (Appendix~\ref{app:interface}). For $M$ candidates, $K$ generated states, and expression-evaluation cost $T$, exhaustive execution takes $O(MKT)$ work.
+Unresolved evidence prevents certification of feasibility or optimality. A known feasible candidate cannot be certified optimal while another potentially feasible candidate has unknown value; known violations already exclude a candidate regardless of its utility. Primary inputs supply complete catalogues and known attributes, although undefined generated expressions can still fail evaluation. For archived executions with unresolved inputs, agreement on a certified subset does not establish Algorithm~\ref{alg:decision}'s complete-domain guarantee (Appendix~\ref{app:interface}). For $M$ candidates, $K$ generated states, and expression-evaluation cost $T$, exhaustive execution takes $O(MKT)$ work.
 
 \begin{table*}[!t]
 \centering\small
