@@ -9,7 +9,8 @@ admissibility, compares worst-case utility, and selects a positive-value purchas
 or refuses. No payment is executed by this artifact.
 
 [Anonymous artifact](https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/) · [Read the paper](paper/paper.pdf) · [Experimental protocol](docs/protocol.md) ·
-[Data guide](docs/data.md) · [Reproduction guide](docs/reproduction.md)
+[Data guide](docs/data.md) · [Reproduction guide](docs/reproduction.md) ·
+[Prompt engineering controls](docs/prompt_controls.md)
 
 ## Reproduce the results
 
@@ -23,8 +24,9 @@ python reproduce.py
 ```
 
 This runs decision and checkpoint tests, rebuilds reporting tables and the four
-main figures, checks 800 retained primary request/response records, and verifies
-the paired retained-intent outcomes. Results are written
+main figures, checks the retained primary request/response records, independently
+rescores 3,520 supporting records for the prompt engineering and four-method
+controls, and verifies the paired retained-intent outcomes. Results are written
 to `paper/output/reproduction/report.json`.
 
 To recompute **all 200 reference decisions** with the exact DSL interpreter and
@@ -46,7 +48,7 @@ feasibility pairs, and verifies 60 Chinese/English input pairs.
 | `risk_payment/` | Exact expression interpreter, decision procedure, separate financial ledger, seeded task generator, English prompts, resumable API runner |
 | `benchmarks/primary/` | 200 English tasks, 20 contract structures, 100 feasibility pairs, candidates, reference decisions, and symbolic specifications |
 | `benchmarks/intent/` | 66 translated intent-task variants, including the 42-variant API panel and 24 stress variants; reference states and outcomes |
-| `bilingual/` | 60 original Chinese/English task pairs, translation audit material, and 800 retained primary request/response records |
+| `bilingual/` | 60 original Chinese/English task pairs, translation audits, the original 800-record release, and a 3,520-record prompt/control archive including 1,000 new calls |
 | `data/artifacts/` | 8,046 archived Direct/Set parsed-output projections with per-record source hashes, usage, and scored outcomes |
 | `paper/data/` | Retained per-trial reporting data, diagnostics, controls, and separately identified aggregate updates |
 | `paper/` | Editable LaTeX, references, figure sources, plotting code, result tables, and PDF |
@@ -88,8 +90,8 @@ failures; there is no silent retry or replacement by a more favorable answer.
 
 The repository provides the implementation, benchmark inputs and references,
 prompts, model configurations, evaluation records, and frozen reporting inputs.
-It includes 800 original request/response records from four complete primary
-DeepSeek cohorts and 8,046 archived parsed-output records. These overlapping
+It includes original request/response records from the primary DeepSeek cohorts,
+a 3,520-record prompt/control archive, and 8,046 archived parsed-output records. These overlapping
 collections support response-level inspection; separately identified aggregate
 inputs support reconstruction of the corresponding tables and figures. English
 release translations are provided for inspection and new runs. See the

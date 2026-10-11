@@ -11,6 +11,7 @@ and aggregate summaries. These are separate data units with complementary uses.
 | `benchmarks/intent/cases.json` | 66 numerical/context variants across three intent families; 42 API variants and 24 stress variants |
 | `bilingual/language_panel/` | 60 underlying tasks in two languages, with identical candidate values |
 | `bilingual/raw_records/` | 800 retained primary DeepSeek requests, responses, observations, and evaluations; English task counterparts are linked |
+| `bilingual/prompt_controls/` | 3,520 original records supporting prompt engineering and execution controls, including 1,000 new checklist calls; overlaps the 800-record release |
 | `data/artifacts/manifest.json` | 8,046 retained Direct/Set artifact projections in compressed JSONL shards |
 | `paper/data/derived/` | Historical scored rows and per-cohort summaries; these include archived implementation controls |
 | `paper/data/supplements/` | Model extensions, partial snapshots, and retained-intent evaluations |
@@ -56,6 +57,13 @@ identifiers and source metadata select the appropriate input for each analysis.
 The requested model/configuration inventory covers 12 model identifiers and
 52 model--effort settings. It describes observed request coverage, including
 exploratory and partial batches, not 52 complete primary comparisons.
+
+The [prompt engineering supplement](prompt_controls.md) compares Direct with
+additional textual verification guidance on five 200-task configurations. Its
+four-method panel also includes framework execution through Set and Python,
+using each configuration's exact common task intersection. The offline verifier
+rescores all 3,520 supporting decisions and checks that each new Prompt request
+preserves the corresponding Direct input and settings apart from the checklist.
 
 ## Artifact access
 

@@ -12,6 +12,8 @@ def main():
     args=p.parse_args()
     subprocess.run([sys.executable,'-m','unittest','discover','-s','tests'],cwd=ROOT,check=True)
     subprocess.run([sys.executable,'scripts/verify_raw_records.py'],cwd=ROOT,check=True)
+    subprocess.run([sys.executable,'scripts/verify_prompt_controls.py'],cwd=ROOT,check=True)
+    subprocess.run([sys.executable,'paper/scripts/prompt_control_reporting.py'],cwd=ROOT,check=True)
     if args.verify_references:
         subprocess.run([sys.executable,'-m','risk_payment.verify','--workers',str(args.workers)],cwd=ROOT,check=True)
     subprocess.run([sys.executable,'reproduce.py']+(['--pdf'] if args.pdf else []),cwd=ROOT/'paper',check=True)

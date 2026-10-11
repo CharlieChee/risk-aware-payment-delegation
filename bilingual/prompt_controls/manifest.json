@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "records": 3520,
+  "new_prompt_calls": 1000,
+  "primary_tasks": 200,
+  "groups": [
+    {
+      "profile": "ds_flash_high",
+      "method": "direct",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_high_direct.jsonl.gz",
+      "bytes": 23315062,
+      "sha256": "5130a307daab24ac03dfa79f4ceb602191986b566b09cafbfacad0c4928e707c",
+      "categories": {
+        "exact": 131,
+        "unsafe": 31,
+        "false_refusal": 29,
+        "other": 9
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "method": "prompt",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_high_prompt.jsonl.gz",
+      "bytes": 23517497,
+      "sha256": "304e4570cae2c150fa27112b66a79c75d5cf5110026b1852760362f2b3847783",
+      "categories": {
+        "exact": 118,
+        "unsafe": 43,
+        "other": 12,
+        "false_refusal": 27
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "method": "python",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_high_python.jsonl.gz",
+      "bytes": 13619118,
+      "sha256": "cf48b778f2fec237a31b302a0a5d11ac04a867620d11194fa71966d032130e04",
+      "categories": {
+        "exact": 187,
+        "unsafe": 12,
+        "other": 1
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "method": "set",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_high_set.jsonl.gz",
+      "bytes": 16846373,
+      "sha256": "058a3c6a857ec625e9634815cf1614d0f612d1c53e32c757485f8dad1374dc5a",
+      "categories": {
+        "exact": 185,
+        "other": 9,
+        "unsafe": 6
+      }
+    },
+    {
+      "profile": "ds_flash_low",
+      "method": "direct",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_low_direct.jsonl.gz",
+      "bytes": 19185824,
+      "sha256": "f52386ec4b3ed5e2a4acb9a3003e6f02c1e72dfae34c74812dc70d7c367448a4",
+      "categories": {
+        "exact": 117,
+        "unsafe": 48,
+        "false_refusal": 24,
+        "other": 11
+      }
+    },
+    {
+      "profile": "ds_flash_low",
+      "method": "prompt",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_low_prompt.jsonl.gz",
+      "bytes": 19209808,
+      "sha256": "fda030f27c8f88f0c8d1cf78ace3d55cbc3ce69f35e5e416cd17a001ddf632f4",
+      "categories": {
+        "exact": 107,
+        "false_refusal": 27,
+        "unsafe": 48,
+        "other": 18
+      }
+    },
+    {
+      "profile": "ds_flash_low",
+      "method": "python",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_low_python.jsonl.gz",
+      "bytes": 12339304,
+      "sha256": "2394cc388d69863311f6a265b58cdd1539ab1c9c83010cd12643b32dc08d92ea",
+      "categories": {
+        "exact": 189,
+        "other": 5,
+        "unsafe": 6
+      }
+    },
+    {
+      "profile": "ds_flash_low",
+      "method": "set",
+      "records": 200,
+      "path": "bilingual/prompt_controls/ds_flash_low_set.jsonl.gz",
+      "bytes": 12556990,
+      "sha256": "2252f6812dd0c3fd1e9546a792aade7fe29d540c9c30a14e9990e70a290b5a29",
+      "categories": {
+        "exact": 185,
+        "other": 11,
+        "unsafe": 3,
+        "false_refusal": 1
+      }
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "method": "direct",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_luna_medium_direct.jsonl.gz",
+      "bytes": 8193548,
+      "sha256": "26ab839c7be270493a5f2c107c6adb823ce6c703544895c317cc9b22f09c9cf4",
+      "categories": {
+        "unsafe": 129,
+        "false_refusal": 28,
+        "exact": 41,
+        "other": 2
+      }
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "method": "prompt",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_luna_medium_prompt.jsonl.gz",
+      "bytes": 8317986,
+      "sha256": "bb81917dc5aa7e28772479ae626b65fd563ec7a6b14169ca114d5622fe6a0f01",
+      "categories": {
+        "unsafe": 129,
+        "exact": 38,
+        "false_refusal": 30,
+        "other": 3
+      }
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "method": "python",
+      "records": 40,
+      "path": "bilingual/prompt_controls/gpt56_luna_medium_python.jsonl.gz",
+      "bytes": 2164830,
+      "sha256": "97f292185ec1b7019ed58d64d607c716c585b1e49320f3e000a84a3be8eafae9",
+      "categories": {
+        "exact": 40
+      }
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "method": "set",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_luna_medium_set.jsonl.gz",
+      "bytes": 11623471,
+      "sha256": "35144019ea22cd50b69c79d2775af673cf576ced692637279956e876be024ce6",
+      "categories": {
+        "other": 27,
+        "unsafe": 75,
+        "exact": 91,
+        "false_refusal": 7
+      }
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "method": "direct",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_sol_medium_direct.jsonl.gz",
+      "bytes": 8191103,
+      "sha256": "7551f0eefe311e1db6f015739e64ad84fb230d81d9e9ab2ade120a03c7a48f57",
+      "categories": {
+        "exact": 137,
+        "false_refusal": 42,
+        "unsafe": 21
+      }
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "method": "prompt",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_sol_medium_prompt.jsonl.gz",
+      "bytes": 8316825,
+      "sha256": "96da5679540902f7783c21497a53bb234c7091f6252bc1e98ef5ebbd7dcc63bc",
+      "categories": {
+        "false_refusal": 41,
+        "exact": 135,
+        "unsafe": 23,
+        "other": 1
+      }
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "method": "python",
+      "records": 40,
+      "path": "bilingual/prompt_controls/gpt56_sol_medium_python.jsonl.gz",
+      "bytes": 2170378,
+      "sha256": "0df6f965b57a613fdc7b11fc6c6b7ddcd493ee9cbbb03a4d6174f42286ec6b00",
+      "categories": {
+        "exact": 40
+      }
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "method": "set",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_sol_medium_set.jsonl.gz",
+      "bytes": 10848765,
+      "sha256": "6d23c928cebca9b03782d7638a8b0b1dcff60a4a23077aa42315e44d2e2ac1a9",
+      "categories": {
+        "exact": 200
+      }
+    },
+    {
+      "profile": "gpt56_terra_medium",
+      "method": "direct",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_terra_medium_direct.jsonl.gz",
+      "bytes": 8190840,
+      "sha256": "0080c9b5174a38a362480a4b5160f122a2d2145b8a5dd915af779210c08923b0",
+      "categories": {
+        "false_refusal": 40,
+        "exact": 81,
+        "unsafe": 78,
+        "other": 1
+      }
+    },
+    {
+      "profile": "gpt56_terra_medium",
+      "method": "prompt",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_terra_medium_prompt.jsonl.gz",
+      "bytes": 8315245,
+      "sha256": "5381ac3772b8f9dd543835e0176ac15e6552198ac997abc80addc284ba02f634",
+      "categories": {
+        "false_refusal": 41,
+        "exact": 83,
+        "unsafe": 74,
+        "other": 2
+      }
+    },
+    {
+      "profile": "gpt56_terra_medium",
+      "method": "python",
+      "records": 40,
+      "path": "bilingual/prompt_controls/gpt56_terra_medium_python.jsonl.gz",
+      "bytes": 2161458,
+      "sha256": "866776b08464357df0326fe924aaff0fca2a6532caedcce23775201623fcb631",
+      "categories": {
+        "exact": 39,
+        "other": 1
+      }
+    },
+    {
+      "profile": "gpt56_terra_medium",
+      "method": "set",
+      "records": 200,
+      "path": "bilingual/prompt_controls/gpt56_terra_medium_set.jsonl.gz",
+      "bytes": 12909357,
+      "sha256": "dd485f4990b7edd178ea7b992c85e799882d44bec014d69a484d78fc0dc140e2",
+      "categories": {
+        "exact": 158,
+        "unsafe": 24,
+        "other": 15,
+        "false_refusal": 3
+      }
+    }
+  ],
+  "selection": "All five complete prompt cohorts and their retained comparison cohorts; native Python uses the prespecified 40-task template-coverage intersection.",
+  "language": "Original measured prompts and answers are preserved here. English documentation and task counterparts are linked.",
+  "original_archives_unchanged": true
+}

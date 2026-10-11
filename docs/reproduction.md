@@ -4,10 +4,18 @@
 
 Run `python reproduce.py`. Inputs in `paper/data/` are hash-checked before and
 after reporting. The entry runs tests, checks hashes and scoring alignment for
-800 retained raw request/response records, rebuilds tables and figures, verifies
+800 retained raw request/response records, independently rescores the 3,520-record
+prompt/control archive, rebuilds tables and figures, verifies
 Figure 3's four paired outcome partitions, and checks Algorithm 1. It makes no
 model calls. `--pdf` adds LaTeX compilation. The source can also be compiled with
 `latexmk -pdf paper.tex` from `paper/`.
+
+For the prompt engineering comparison alone, run
+`python scripts/verify_prompt_controls.py` and
+`python paper/scripts/prompt_control_reporting.py`. These verify the 1,000 new
+input interventions and rebuild the full prompt comparison and paired
+four-method tables. See [the supplement protocol](prompt_controls.md) for prompt
+versions, cohort intersections, and exact denominators.
 
 The exact plotting values are stored beside the figures. The manuscript's
 LaTeX is editable in `paper/paper.tex`, `paper/evaluation.tex`, and
