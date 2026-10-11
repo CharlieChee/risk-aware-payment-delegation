@@ -1,0 +1,7781 @@
+{
+  "records": [
+    {
+      "id": "U-task",
+      "author": "user",
+      "status": "current",
+      "text": "Buy an indivisible package consisting of six prepaid itinerary services numbered 0 through 5 and insurance, with the premium already included in price. Only one catalog row can be selected and fixed today; the package cannot be changed afterward according to the adverse event. The products, dates, suppliers, and availability have been checked accurately."
+    },
+    {
+      "id": "U-events",
+      "author": "user",
+      "status": "current",
+      "text": "There may be no adverse event, or any set of at most 4 services may be cancelled; every specific subset satisfying the count limit may occur. There are no additional correlation restrictions, and no probabilities are provided."
+    },
+    {
+      "id": "U-contract",
+      "author": "user",
+      "status": "current",
+      "text": "The sum of loss for the services actually cancelled is the gross loss. First subtract the whole-order deductible from the gross loss; if it is not exceeded, the payout is 0. The insurance covers 50% of the excess, then the payout is capped at coverage. This pays half of the excess, rather than the user paying only half of the deductible. All loss and deductible amounts are even numbers of fen of RMB, so no monetary rounding is needed. Net loss equals gross loss minus the actual insurance payout, plus one admin charge; admin is not covered by any insurance. The assessed loss for the empty event is 0, with no admin or other charges. Unaffected items incur no adverse-event loss; there are no other unstated terms."
+    },
+    {
+      "id": "U-budget",
+      "author": "user",
+      "status": "current",
+      "text": "The attributes are complete and accurate, and are all nonnegative integers; monetary amounts are in fen of RMB, and weight is in grams. The original payment price must not exceed 1200000 fen of RMB, and the original payment and discount conditions stated in the contract must be satisfied. In each permitted event, the assessment amount described above must not exceed 200000 fen of RMB; equality with the limit is acceptable, and the limit must not be relaxed. This catalog is complete, with no hidden options."
+    },
+    {
+      "id": "U-utility",
+      "author": "user",
+      "status": "current",
+      "text": "Utility in each event is 2000000 minus price, then minus the assessment amount for that event. For candidates that satisfy the hard conditions and risk limits for all events simultaneously, take the lowest utility over all events, then choose the candidate with the greatest lowest utility; accept only if that value is strictly greater than 0, otherwise refuse. Do not ask the user questions."
+    }
+  ],
+  "attributes": {
+    "price": "Original amount actually paid for the whole order, in integer fen of RMB",
+    "admin": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+    "loss_0": "Gross loss not refunded by the supplier when service 0 is cancelled, in integer fen of RMB",
+    "loss_1": "Gross loss not refunded by the supplier when service 1 is cancelled, in integer fen of RMB",
+    "loss_2": "Gross loss not refunded by the supplier when service 2 is cancelled, in integer fen of RMB",
+    "loss_3": "Gross loss not refunded by the supplier when service 3 is cancelled, in integer fen of RMB",
+    "loss_4": "Gross loss not refunded by the supplier when service 4 is cancelled, in integer fen of RMB",
+    "loss_5": "Gross loss not refunded by the supplier when service 5 is cancelled, in integer fen of RMB",
+    "deductible": "Whole-order deductible, in integer fen of RMB",
+    "coverage": "Limit on the actual insurance payout, in integer fen of RMB"
+  },
+  "attribute_schema": {
+    "price": {
+      "description": "Original amount actually paid for the whole order, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "admin": {
+      "description": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_0": {
+      "description": "Gross loss not refunded by the supplier when service 0 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_1": {
+      "description": "Gross loss not refunded by the supplier when service 1 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_2": {
+      "description": "Gross loss not refunded by the supplier when service 2 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_3": {
+      "description": "Gross loss not refunded by the supplier when service 3 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_4": {
+      "description": "Gross loss not refunded by the supplier when service 4 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_5": {
+      "description": "Gross loss not refunded by the supplier when service 5 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "deductible": {
+      "description": "Whole-order deductible, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "coverage": {
+      "description": "Limit on the actual insurance payout, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    }
+  },
+  "catalog_complete": true,
+  "candidates": [
+    {
+      "id": "offer_253698ff58ed",
+      "attrs": {
+        "price": 508655,
+        "admin": 169530,
+        "loss_0": 12500,
+        "loss_1": 20600,
+        "loss_2": 23500,
+        "loss_3": 3000,
+        "loss_4": 17300,
+        "loss_5": 2600,
+        "deductible": 8600,
+        "coverage": 26800
+      }
+    },
+    {
+      "id": "offer_984b74963ff6",
+      "attrs": {
+        "price": 558414,
+        "admin": 170253,
+        "loss_0": 15500,
+        "loss_1": 8200,
+        "loss_2": 9500,
+        "loss_3": 26300,
+        "loss_4": 10100,
+        "loss_5": 4400,
+        "deductible": 7900,
+        "coverage": 21700
+      }
+    },
+    {
+      "id": "offer_0361ecc151a3",
+      "attrs": {
+        "price": 657847,
+        "admin": 121167,
+        "loss_0": 9600,
+        "loss_1": 28700,
+        "loss_2": 3800,
+        "loss_3": 19400,
+        "loss_4": 7200,
+        "loss_5": 27000,
+        "deductible": 6500,
+        "coverage": 5600
+      }
+    },
+    {
+      "id": "offer_1ff29a92931a",
+      "attrs": {
+        "price": 835740,
+        "admin": 169860,
+        "loss_0": 18100,
+        "loss_1": 11300,
+        "loss_2": 17700,
+        "loss_3": 17200,
+        "loss_4": 18400,
+        "loss_5": 9800,
+        "deductible": 18400,
+        "coverage": 25900
+      }
+    },
+    {
+      "id": "offer_a409a3b378cd",
+      "attrs": {
+        "price": 828197,
+        "admin": 168753,
+        "loss_0": 7600,
+        "loss_1": 27200,
+        "loss_2": 13500,
+        "loss_3": 20700,
+        "loss_4": 14500,
+        "loss_5": 10600,
+        "deductible": 15300,
+        "coverage": 30200
+      }
+    },
+    {
+      "id": "offer_07c2ffe7ef0f",
+      "attrs": {
+        "price": 704721,
+        "admin": 147434,
+        "loss_0": 2900,
+        "loss_1": 24500,
+        "loss_2": 2100,
+        "loss_3": 20000,
+        "loss_4": 7900,
+        "loss_5": 29700,
+        "deductible": 2600,
+        "coverage": 13300
+      }
+    },
+    {
+      "id": "offer_602de2303816",
+      "attrs": {
+        "price": 867968,
+        "admin": 149067,
+        "loss_0": 5500,
+        "loss_1": 3900,
+        "loss_2": 10100,
+        "loss_3": 20100,
+        "loss_4": 29200,
+        "loss_5": 10100,
+        "deductible": 29100,
+        "coverage": 17300
+      }
+    },
+    {
+      "id": "offer_7796c4e0a736",
+      "attrs": {
+        "price": 623013,
+        "admin": 126040,
+        "loss_0": 24900,
+        "loss_1": 23900,
+        "loss_2": 26700,
+        "loss_3": 1700,
+        "loss_4": 1200,
+        "loss_5": 14100,
+        "deductible": 6100,
+        "coverage": 11000
+      }
+    },
+    {
+      "id": "offer_7b56af49fd80",
+      "attrs": {
+        "price": 570120,
+        "admin": 152444,
+        "loss_0": 16000,
+        "loss_1": 20600,
+        "loss_2": 12000,
+        "loss_3": 29000,
+        "loss_4": 20000,
+        "loss_5": 17400,
+        "deductible": 9200,
+        "coverage": 24900
+      }
+    },
+    {
+      "id": "offer_bc15b3f36d1c",
+      "attrs": {
+        "price": 633339,
+        "admin": 158372,
+        "loss_0": 27100,
+        "loss_1": 17100,
+        "loss_2": 26200,
+        "loss_3": 17100,
+        "loss_4": 13400,
+        "loss_5": 17000,
+        "deductible": 5700,
+        "coverage": 27000
+      }
+    },
+    {
+      "id": "offer_761f6738408c",
+      "attrs": {
+        "price": 848212,
+        "admin": 172748,
+        "loss_0": 3200,
+        "loss_1": 29500,
+        "loss_2": 2600,
+        "loss_3": 2400,
+        "loss_4": 22900,
+        "loss_5": 17300,
+        "deductible": 6100,
+        "coverage": 37500
+      }
+    },
+    {
+      "id": "offer_aea11291670d",
+      "attrs": {
+        "price": 592351,
+        "admin": 170801,
+        "loss_0": 21400,
+        "loss_1": 18700,
+        "loss_2": 20100,
+        "loss_3": 2300,
+        "loss_4": 12100,
+        "loss_5": 1700,
+        "deductible": 4000,
+        "coverage": 31800
+      }
+    },
+    {
+      "id": "offer_14eb462c115d",
+      "attrs": {
+        "price": 724705,
+        "admin": 146620,
+        "loss_0": 12600,
+        "loss_1": 20600,
+        "loss_2": 18200,
+        "loss_3": 18900,
+        "loss_4": 1600,
+        "loss_5": 8700,
+        "deductible": 12800,
+        "coverage": 6800
+      }
+    },
+    {
+      "id": "offer_e53f4a17b6e4",
+      "attrs": {
+        "price": 633382,
+        "admin": 149600,
+        "loss_0": 13000,
+        "loss_1": 20400,
+        "loss_2": 26900,
+        "loss_3": 16300,
+        "loss_4": 8600,
+        "loss_5": 26100,
+        "deductible": 29800,
+        "coverage": 35900
+      }
+    },
+    {
+      "id": "offer_716c80ae5843",
+      "attrs": {
+        "price": 819139,
+        "admin": 138127,
+        "loss_0": 14700,
+        "loss_1": 21100,
+        "loss_2": 25700,
+        "loss_3": 4700,
+        "loss_4": 11200,
+        "loss_5": 8300,
+        "deductible": 23800,
+        "coverage": 9800
+      }
+    },
+    {
+      "id": "offer_10deabc2df5f",
+      "attrs": {
+        "price": 675584,
+        "admin": 139749,
+        "loss_0": 7800,
+        "loss_1": 13300,
+        "loss_2": 22000,
+        "loss_3": 12200,
+        "loss_4": 25000,
+        "loss_5": 16800,
+        "deductible": 17700,
+        "coverage": 11400
+      }
+    },
+    {
+      "id": "offer_7dbcea9255c5",
+      "attrs": {
+        "price": 751317,
+        "admin": 109595,
+        "loss_0": 13600,
+        "loss_1": 26200,
+        "loss_2": 1400,
+        "loss_3": 24200,
+        "loss_4": 24900,
+        "loss_5": 23500,
+        "deductible": 5200,
+        "coverage": 5700
+      }
+    },
+    {
+      "id": "offer_cd394d65b07c",
+      "attrs": {
+        "price": 613638,
+        "admin": 152297,
+        "loss_0": 13800,
+        "loss_1": 26900,
+        "loss_2": 28900,
+        "loss_3": 7300,
+        "loss_4": 15100,
+        "loss_5": 1000,
+        "deductible": 5400,
+        "coverage": 36900
+      }
+    },
+    {
+      "id": "offer_a83cc5a1e5a0",
+      "attrs": {
+        "price": 748458,
+        "admin": 119460,
+        "loss_0": 13800,
+        "loss_1": 10900,
+        "loss_2": 5300,
+        "loss_3": 28700,
+        "loss_4": 23800,
+        "loss_5": 29000,
+        "deductible": 2600,
+        "coverage": 9900
+      }
+    },
+    {
+      "id": "offer_0de8b8e153c1",
+      "attrs": {
+        "price": 686799,
+        "admin": 175167,
+        "loss_0": 18500,
+        "loss_1": 9000,
+        "loss_2": 3000,
+        "loss_3": 23200,
+        "loss_4": 4600,
+        "loss_5": 12800,
+        "deductible": 1400,
+        "coverage": 35600
+      }
+    },
+    {
+      "id": "offer_483040d490af",
+      "attrs": {
+        "price": 654891,
+        "admin": 186130,
+        "loss_0": 9900,
+        "loss_1": 3000,
+        "loss_2": 12000,
+        "loss_3": 4900,
+        "loss_4": 5900,
+        "loss_5": 16000,
+        "deductible": 10000,
+        "coverage": 18800
+      }
+    },
+    {
+      "id": "offer_44be100e0a6e",
+      "attrs": {
+        "price": 567966,
+        "admin": 155095,
+        "loss_0": 28000,
+        "loss_1": 15800,
+        "loss_2": 12400,
+        "loss_3": 19700,
+        "loss_4": 3600,
+        "loss_5": 1600,
+        "deductible": 3400,
+        "coverage": 23100
+      }
+    },
+    {
+      "id": "offer_20cd308f3165",
+      "attrs": {
+        "price": 791645,
+        "admin": 115750,
+        "loss_0": 15500,
+        "loss_1": 27400,
+        "loss_2": 28100,
+        "loss_3": 18200,
+        "loss_4": 28900,
+        "loss_5": 26900,
+        "deductible": 26900,
+        "coverage": 22300
+      }
+    },
+    {
+      "id": "offer_25d70f81b9bf",
+      "attrs": {
+        "price": 478703,
+        "admin": 140947,
+        "loss_0": 16000,
+        "loss_1": 26600,
+        "loss_2": 13500,
+        "loss_3": 28600,
+        "loss_4": 23400,
+        "loss_5": 11400,
+        "deductible": 9400,
+        "coverage": 30800
+      }
+    },
+    {
+      "id": "offer_679e0a984520",
+      "attrs": {
+        "price": 833394,
+        "admin": 166288,
+        "loss_0": 17700,
+        "loss_1": 3000,
+        "loss_2": 15600,
+        "loss_3": 29000,
+        "loss_4": 12300,
+        "loss_5": 1400,
+        "deductible": 3900,
+        "coverage": 30200
+      }
+    },
+    {
+      "id": "offer_bee8b296dc49",
+      "attrs": {
+        "price": 659717,
+        "admin": 127036,
+        "loss_0": 29100,
+        "loss_1": 27000,
+        "loss_2": 25700,
+        "loss_3": 12400,
+        "loss_4": 9300,
+        "loss_5": 7100,
+        "deductible": 12900,
+        "coverage": 9600
+      }
+    },
+    {
+      "id": "offer_a203cb2b6042",
+      "attrs": {
+        "price": 728917,
+        "admin": 139567,
+        "loss_0": 1300,
+        "loss_1": 26000,
+        "loss_2": 17500,
+        "loss_3": 10000,
+        "loss_4": 14000,
+        "loss_5": 21800,
+        "deductible": 5800,
+        "coverage": 12900
+      }
+    },
+    {
+      "id": "offer_99d98c307b51",
+      "attrs": {
+        "price": 722730,
+        "admin": 181459,
+        "loss_0": 4500,
+        "loss_1": 21000,
+        "loss_2": 2700,
+        "loss_3": 3800,
+        "loss_4": 11000,
+        "loss_5": 6100,
+        "deductible": 18300,
+        "coverage": 7100
+      }
+    },
+    {
+      "id": "offer_ac7f8122ec1e",
+      "attrs": {
+        "price": 757299,
+        "admin": 159664,
+        "loss_0": 14600,
+        "loss_1": 20100,
+        "loss_2": 23800,
+        "loss_3": 17700,
+        "loss_4": 15700,
+        "loss_5": 21000,
+        "deductible": 21700,
+        "coverage": 23700
+      }
+    },
+    {
+      "id": "offer_e615b98f16a6",
+      "attrs": {
+        "price": 763130,
+        "admin": 136466,
+        "loss_0": 7800,
+        "loss_1": 13700,
+        "loss_2": 19500,
+        "loss_3": 29400,
+        "loss_4": 26700,
+        "loss_5": 9800,
+        "deductible": 12400,
+        "coverage": 20000
+      }
+    },
+    {
+      "id": "offer_9b35551385c6",
+      "attrs": {
+        "price": 451935,
+        "admin": 128424,
+        "loss_0": 16800,
+        "loss_1": 25900,
+        "loss_2": 24100,
+        "loss_3": 3800,
+        "loss_4": 26400,
+        "loss_5": 1200,
+        "deductible": 15100,
+        "coverage": 6000
+      }
+    },
+    {
+      "id": "offer_5af1e815adf4",
+      "attrs": {
+        "price": 498952,
+        "admin": 139288,
+        "loss_0": 22600,
+        "loss_1": 13800,
+        "loss_2": 25100,
+        "loss_3": 1100,
+        "loss_4": 1100,
+        "loss_5": 14900,
+        "deductible": 2700,
+        "coverage": 13600
+      }
+    },
+    {
+      "id": "offer_9344470ba2f6",
+      "attrs": {
+        "price": 842403,
+        "admin": 130149,
+        "loss_0": 26600,
+        "loss_1": 10700,
+        "loss_2": 3600,
+        "loss_3": 24100,
+        "loss_4": 13900,
+        "loss_5": 13200,
+        "deductible": 1200,
+        "coverage": 6700
+      }
+    },
+    {
+      "id": "offer_22d9990e7ecf",
+      "attrs": {
+        "price": 761908,
+        "admin": 159577,
+        "loss_0": 2900,
+        "loss_1": 21800,
+        "loss_2": 19800,
+        "loss_3": 7900,
+        "loss_4": 5200,
+        "loss_5": 8500,
+        "deductible": 25700,
+        "coverage": 6800
+      }
+    },
+    {
+      "id": "offer_4ed823a36482",
+      "attrs": {
+        "price": 581461,
+        "admin": 150036,
+        "loss_0": 29700,
+        "loss_1": 29300,
+        "loss_2": 10500,
+        "loss_3": 12200,
+        "loss_4": 5400,
+        "loss_5": 4000,
+        "deductible": 5200,
+        "coverage": 23800
+      }
+    },
+    {
+      "id": "offer_43f6a1ef7981",
+      "attrs": {
+        "price": 697600,
+        "admin": 174420,
+        "loss_0": 10300,
+        "loss_1": 11400,
+        "loss_2": 6800,
+        "loss_3": 6100,
+        "loss_4": 4700,
+        "loss_5": 23200,
+        "deductible": 25100,
+        "coverage": 18900
+      }
+    },
+    {
+      "id": "offer_56f1932d7e75",
+      "attrs": {
+        "price": 868546,
+        "admin": 165809,
+        "loss_0": 10800,
+        "loss_1": 10500,
+        "loss_2": 10200,
+        "loss_3": 21200,
+        "loss_4": 11900,
+        "loss_5": 1800,
+        "deductible": 17400,
+        "coverage": 6400
+      }
+    },
+    {
+      "id": "offer_855fb06a9fcc",
+      "attrs": {
+        "price": 468663,
+        "admin": 127446,
+        "loss_0": 28900,
+        "loss_1": 28400,
+        "loss_2": 2600,
+        "loss_3": 22800,
+        "loss_4": 23600,
+        "loss_5": 29600,
+        "deductible": 18400,
+        "coverage": 30100
+      }
+    },
+    {
+      "id": "offer_2828059cc76b",
+      "attrs": {
+        "price": 782633,
+        "admin": 144420,
+        "loss_0": 23800,
+        "loss_1": 23000,
+        "loss_2": 15600,
+        "loss_3": 12700,
+        "loss_4": 18800,
+        "loss_5": 16000,
+        "deductible": 4800,
+        "coverage": 20400
+      }
+    },
+    {
+      "id": "offer_e008e0294d75",
+      "attrs": {
+        "price": 872822,
+        "admin": 163482,
+        "loss_0": 4000,
+        "loss_1": 13900,
+        "loss_2": 15400,
+        "loss_3": 7500,
+        "loss_4": 16000,
+        "loss_5": 24500,
+        "deductible": 9100,
+        "coverage": 27500
+      }
+    },
+    {
+      "id": "offer_bf98843d680a",
+      "attrs": {
+        "price": 541352,
+        "admin": 156632,
+        "loss_0": 3200,
+        "loss_1": 28000,
+        "loss_2": 27100,
+        "loss_3": 16500,
+        "loss_4": 5500,
+        "loss_5": 7600,
+        "deductible": 27700,
+        "coverage": 28300
+      }
+    },
+    {
+      "id": "offer_a62d676a7835",
+      "attrs": {
+        "price": 809501,
+        "admin": 160145,
+        "loss_0": 17700,
+        "loss_1": 7700,
+        "loss_2": 22700,
+        "loss_3": 25100,
+        "loss_4": 17500,
+        "loss_5": 7800,
+        "deductible": 19500,
+        "coverage": 39500
+      }
+    },
+    {
+      "id": "offer_f574408b8ec5",
+      "attrs": {
+        "price": 480141,
+        "admin": 167197,
+        "loss_0": 6400,
+        "loss_1": 12600,
+        "loss_2": 25200,
+        "loss_3": 16700,
+        "loss_4": 19100,
+        "loss_5": 3100,
+        "deductible": 23900,
+        "coverage": 34900
+      }
+    },
+    {
+      "id": "offer_b8a3f2b798f8",
+      "attrs": {
+        "price": 783584,
+        "admin": 184035,
+        "loss_0": 15300,
+        "loss_1": 4900,
+        "loss_2": 2800,
+        "loss_3": 16100,
+        "loss_4": 2300,
+        "loss_5": 7800,
+        "deductible": 1100,
+        "coverage": 39400
+      }
+    },
+    {
+      "id": "offer_60f8e6252352",
+      "attrs": {
+        "price": 524531,
+        "admin": 121374,
+        "loss_0": 8200,
+        "loss_1": 24700,
+        "loss_2": 22100,
+        "loss_3": 28200,
+        "loss_4": 23400,
+        "loss_5": 12900,
+        "deductible": 1900,
+        "coverage": 11800
+      }
+    },
+    {
+      "id": "offer_f17ff92bed7a",
+      "attrs": {
+        "price": 774939,
+        "admin": 115011,
+        "loss_0": 28600,
+        "loss_1": 18800,
+        "loss_2": 25000,
+        "loss_3": 8500,
+        "loss_4": 5000,
+        "loss_5": 28200,
+        "deductible": 20800,
+        "coverage": 13900
+      }
+    },
+    {
+      "id": "offer_56a30e479f41",
+      "attrs": {
+        "price": 792949,
+        "admin": 122096,
+        "loss_0": 29500,
+        "loss_1": 22000,
+        "loss_2": 21500,
+        "loss_3": 29000,
+        "loss_4": 16000,
+        "loss_5": 23500,
+        "deductible": 18800,
+        "coverage": 25600
+      }
+    },
+    {
+      "id": "offer_9353236a1780",
+      "attrs": {
+        "price": 735195,
+        "admin": 153638,
+        "loss_0": 27300,
+        "loss_1": 9800,
+        "loss_2": 6000,
+        "loss_3": 12600,
+        "loss_4": 13400,
+        "loss_5": 15200,
+        "deductible": 22000,
+        "coverage": 16200
+      }
+    },
+    {
+      "id": "offer_03cb89493601",
+      "attrs": {
+        "price": 643588,
+        "admin": 137810,
+        "loss_0": 23900,
+        "loss_1": 9800,
+        "loss_2": 24100,
+        "loss_3": 15600,
+        "loss_4": 14400,
+        "loss_5": 9200,
+        "deductible": 5800,
+        "coverage": 5300
+      }
+    },
+    {
+      "id": "offer_6a815f385d9d",
+      "attrs": {
+        "price": 501498,
+        "admin": 148528,
+        "loss_0": 5600,
+        "loss_1": 15200,
+        "loss_2": 17800,
+        "loss_3": 23500,
+        "loss_4": 8200,
+        "loss_5": 23100,
+        "deductible": 1000,
+        "coverage": 19900
+      }
+    },
+    {
+      "id": "offer_9f0b8d4c5a18",
+      "attrs": {
+        "price": 660950,
+        "admin": 168661,
+        "loss_0": 4900,
+        "loss_1": 15500,
+        "loss_2": 13000,
+        "loss_3": 20700,
+        "loss_4": 22400,
+        "loss_5": 17700,
+        "deductible": 20800,
+        "coverage": 27800
+      }
+    },
+    {
+      "id": "offer_da0f26321a7b",
+      "attrs": {
+        "price": 834335,
+        "admin": 156468,
+        "loss_0": 29900,
+        "loss_1": 17700,
+        "loss_2": 9100,
+        "loss_3": 27200,
+        "loss_4": 11000,
+        "loss_5": 9100,
+        "deductible": 1700,
+        "coverage": 22500
+      }
+    },
+    {
+      "id": "offer_011e709f7ef4",
+      "attrs": {
+        "price": 484165,
+        "admin": 140897,
+        "loss_0": 1400,
+        "loss_1": 15900,
+        "loss_2": 13700,
+        "loss_3": 23800,
+        "loss_4": 18400,
+        "loss_5": 16800,
+        "deductible": 13500,
+        "coverage": 15400
+      }
+    },
+    {
+      "id": "offer_f5c5766d8458",
+      "attrs": {
+        "price": 685362,
+        "admin": 176102,
+        "loss_0": 8700,
+        "loss_1": 6000,
+        "loss_2": 22000,
+        "loss_3": 1500,
+        "loss_4": 3600,
+        "loss_5": 2100,
+        "deductible": 19700,
+        "coverage": 22700
+      }
+    },
+    {
+      "id": "offer_09f725e86b12",
+      "attrs": {
+        "price": 573340,
+        "admin": 156266,
+        "loss_0": 11600,
+        "loss_1": 5800,
+        "loss_2": 3200,
+        "loss_3": 5200,
+        "loss_4": 28000,
+        "loss_5": 20500,
+        "deductible": 2600,
+        "coverage": 11500
+      }
+    },
+    {
+      "id": "offer_6463a48b6330",
+      "attrs": {
+        "price": 531373,
+        "admin": 174830,
+        "loss_0": 25500,
+        "loss_1": 19200,
+        "loss_2": 3600,
+        "loss_3": 2500,
+        "loss_4": 21300,
+        "loss_5": 3200,
+        "deductible": 2800,
+        "coverage": 25200
+      }
+    },
+    {
+      "id": "offer_89b80d9a7f02",
+      "attrs": {
+        "price": 638527,
+        "admin": 176147,
+        "loss_0": 28500,
+        "loss_1": 17500,
+        "loss_2": 6100,
+        "loss_3": 2200,
+        "loss_4": 15200,
+        "loss_5": 9000,
+        "deductible": 5200,
+        "coverage": 26600
+      }
+    },
+    {
+      "id": "offer_e676a01b1d67",
+      "attrs": {
+        "price": 504649,
+        "admin": 128240,
+        "loss_0": 22100,
+        "loss_1": 23200,
+        "loss_2": 17200,
+        "loss_3": 24100,
+        "loss_4": 25200,
+        "loss_5": 10900,
+        "deductible": 6800,
+        "coverage": 20200
+      }
+    },
+    {
+      "id": "offer_fc9798f1fcab",
+      "attrs": {
+        "price": 559788,
+        "admin": 155200,
+        "loss_0": 15300,
+        "loss_1": 21800,
+        "loss_2": 7000,
+        "loss_3": 15200,
+        "loss_4": 7200,
+        "loss_5": 6500,
+        "deductible": 28500,
+        "coverage": 5800
+      }
+    },
+    {
+      "id": "offer_329f2ea2bc87",
+      "attrs": {
+        "price": 706610,
+        "admin": 178429,
+        "loss_0": 12600,
+        "loss_1": 7800,
+        "loss_2": 3700,
+        "loss_3": 10000,
+        "loss_4": 2600,
+        "loss_5": 9700,
+        "deductible": 29600,
+        "coverage": 34500
+      }
+    },
+    {
+      "id": "offer_142329734014",
+      "attrs": {
+        "price": 576786,
+        "admin": 153488,
+        "loss_0": 3600,
+        "loss_1": 22000,
+        "loss_2": 17800,
+        "loss_3": 25300,
+        "loss_4": 13900,
+        "loss_5": 10500,
+        "deductible": 27700,
+        "coverage": 14300
+      }
+    },
+    {
+      "id": "offer_da8d0f40747b",
+      "attrs": {
+        "price": 672387,
+        "admin": 156946,
+        "loss_0": 14000,
+        "loss_1": 27900,
+        "loss_2": 5200,
+        "loss_3": 25400,
+        "loss_4": 6400,
+        "loss_5": 23400,
+        "deductible": 24000,
+        "coverage": 28400
+      }
+    },
+    {
+      "id": "offer_de795d74713a",
+      "attrs": {
+        "price": 590990,
+        "admin": 126092,
+        "loss_0": 7300,
+        "loss_1": 10100,
+        "loss_2": 10100,
+        "loss_3": 25500,
+        "loss_4": 29300,
+        "loss_5": 21200,
+        "deductible": 16800,
+        "coverage": 9400
+      }
+    },
+    {
+      "id": "offer_824576c20df5",
+      "attrs": {
+        "price": 619925,
+        "admin": 161046,
+        "loss_0": 11500,
+        "loss_1": 8000,
+        "loss_2": 9900,
+        "loss_3": 30000,
+        "loss_4": 5000,
+        "loss_5": 15500,
+        "deductible": 8000,
+        "coverage": 27300
+      }
+    },
+    {
+      "id": "offer_5ed4986f5b2a",
+      "attrs": {
+        "price": 568224,
+        "admin": 152197,
+        "loss_0": 22600,
+        "loss_1": 15300,
+        "loss_2": 8200,
+        "loss_3": 30000,
+        "loss_4": 5000,
+        "loss_5": 16100,
+        "deductible": 7200,
+        "coverage": 19700
+      }
+    },
+    {
+      "id": "offer_220187b9aad2",
+      "attrs": {
+        "price": 487174,
+        "admin": 130313,
+        "loss_0": 4100,
+        "loss_1": 16300,
+        "loss_2": 27700,
+        "loss_3": 9800,
+        "loss_4": 24900,
+        "loss_5": 26300,
+        "deductible": 5500,
+        "coverage": 19700
+      }
+    },
+    {
+      "id": "offer_466c28c09996",
+      "attrs": {
+        "price": 659540,
+        "admin": 147868,
+        "loss_0": 13800,
+        "loss_1": 28100,
+        "loss_2": 11000,
+        "loss_3": 8500,
+        "loss_4": 23200,
+        "loss_5": 18800,
+        "deductible": 12000,
+        "coverage": 22900
+      }
+    },
+    {
+      "id": "offer_3bbab511eae8",
+      "attrs": {
+        "price": 818049,
+        "admin": 168674,
+        "loss_0": 14100,
+        "loss_1": 9200,
+        "loss_2": 19800,
+        "loss_3": 1800,
+        "loss_4": 6400,
+        "loss_5": 4900,
+        "deductible": 17700,
+        "coverage": 34300
+      }
+    },
+    {
+      "id": "offer_dfae698c5009",
+      "attrs": {
+        "price": 536794,
+        "admin": 152754,
+        "loss_0": 22900,
+        "loss_1": 3600,
+        "loss_2": 28100,
+        "loss_3": 2100,
+        "loss_4": 2700,
+        "loss_5": 11300,
+        "deductible": 14100,
+        "coverage": 5800
+      }
+    },
+    {
+      "id": "offer_03a854676a16",
+      "attrs": {
+        "price": 856826,
+        "admin": 163441,
+        "loss_0": 12800,
+        "loss_1": 27300,
+        "loss_2": 12800,
+        "loss_3": 1900,
+        "loss_4": 18500,
+        "loss_5": 1500,
+        "deductible": 4700,
+        "coverage": 31000
+      }
+    },
+    {
+      "id": "offer_b1a26bccd95c",
+      "attrs": {
+        "price": 528007,
+        "admin": 151092,
+        "loss_0": 19600,
+        "loss_1": 14300,
+        "loss_2": 3300,
+        "loss_3": 5600,
+        "loss_4": 26300,
+        "loss_5": 24000,
+        "deductible": 5200,
+        "coverage": 17200
+      }
+    },
+    {
+      "id": "offer_a431acf84785",
+      "attrs": {
+        "price": 539519,
+        "admin": 148141,
+        "loss_0": 4900,
+        "loss_1": 18400,
+        "loss_2": 25600,
+        "loss_3": 8100,
+        "loss_4": 20100,
+        "loss_5": 28700,
+        "deductible": 10400,
+        "coverage": 24800
+      }
+    },
+    {
+      "id": "offer_89f98bd2812d",
+      "attrs": {
+        "price": 616761,
+        "admin": 160928,
+        "loss_0": 26400,
+        "loss_1": 13900,
+        "loss_2": 3600,
+        "loss_3": 22900,
+        "loss_4": 17500,
+        "loss_5": 1400,
+        "deductible": 18400,
+        "coverage": 30100
+      }
+    },
+    {
+      "id": "offer_62dfb2362369",
+      "attrs": {
+        "price": 548773,
+        "admin": 137274,
+        "loss_0": 23200,
+        "loss_1": 18800,
+        "loss_2": 24500,
+        "loss_3": 18700,
+        "loss_4": 12600,
+        "loss_5": 13300,
+        "deductible": 21000,
+        "coverage": 21600
+      }
+    },
+    {
+      "id": "offer_5b0fc8f4a942",
+      "attrs": {
+        "price": 653523,
+        "admin": 188566,
+        "loss_0": 6400,
+        "loss_1": 4400,
+        "loss_2": 16200,
+        "loss_3": 5900,
+        "loss_4": 2300,
+        "loss_5": 15700,
+        "deductible": 15100,
+        "coverage": 24200
+      }
+    },
+    {
+      "id": "offer_68f39e4e8dfe",
+      "attrs": {
+        "price": 754237,
+        "admin": 183510,
+        "loss_0": 23200,
+        "loss_1": 6400,
+        "loss_2": 25100,
+        "loss_3": 3700,
+        "loss_4": 2800,
+        "loss_5": 2300,
+        "deductible": 12100,
+        "coverage": 35300
+      }
+    },
+    {
+      "id": "offer_8debd44c2baa",
+      "attrs": {
+        "price": 514361,
+        "admin": 154615,
+        "loss_0": 7100,
+        "loss_1": 26000,
+        "loss_2": 17700,
+        "loss_3": 12100,
+        "loss_4": 4500,
+        "loss_5": 10400,
+        "deductible": 8900,
+        "coverage": 15800
+      }
+    },
+    {
+      "id": "offer_2506c5719eca",
+      "attrs": {
+        "price": 455993,
+        "admin": 174177,
+        "loss_0": 25100,
+        "loss_1": 23100,
+        "loss_2": 8500,
+        "loss_3": 6700,
+        "loss_4": 8900,
+        "loss_5": 2200,
+        "deductible": 11300,
+        "coverage": 27100
+      }
+    },
+    {
+      "id": "offer_82de5424ff5d",
+      "attrs": {
+        "price": 838184,
+        "admin": 146049,
+        "loss_0": 13400,
+        "loss_1": 10400,
+        "loss_2": 18400,
+        "loss_3": 9100,
+        "loss_4": 13100,
+        "loss_5": 28700,
+        "deductible": 28200,
+        "coverage": 5200
+      }
+    },
+    {
+      "id": "offer_08cfda140aeb",
+      "attrs": {
+        "price": 807423,
+        "admin": 114093,
+        "loss_0": 22800,
+        "loss_1": 1000,
+        "loss_2": 26600,
+        "loss_3": 29600,
+        "loss_4": 22900,
+        "loss_5": 26100,
+        "deductible": 9400,
+        "coverage": 16300
+      }
+    },
+    {
+      "id": "offer_6e349184792b",
+      "attrs": {
+        "price": 594951,
+        "admin": 146944,
+        "loss_0": 4100,
+        "loss_1": 26600,
+        "loss_2": 16400,
+        "loss_3": 2200,
+        "loss_4": 20000,
+        "loss_5": 2400,
+        "deductible": 11500,
+        "coverage": 14000
+      }
+    },
+    {
+      "id": "offer_941348369e61",
+      "attrs": {
+        "price": 542171,
+        "admin": 138083,
+        "loss_0": 11400,
+        "loss_1": 25200,
+        "loss_2": 1200,
+        "loss_3": 18600,
+        "loss_4": 24000,
+        "loss_5": 21500,
+        "deductible": 21000,
+        "coverage": 22400
+      }
+    },
+    {
+      "id": "offer_d27c9b6f0a65",
+      "attrs": {
+        "price": 516313,
+        "admin": 171170,
+        "loss_0": 11600,
+        "loss_1": 11300,
+        "loss_2": 29900,
+        "loss_3": 20700,
+        "loss_4": 16700,
+        "loss_5": 3700,
+        "deductible": 5200,
+        "coverage": 30700
+      }
+    },
+    {
+      "id": "offer_21f92125d7cb",
+      "attrs": {
+        "price": 470992,
+        "admin": 177380,
+        "loss_0": 27800,
+        "loss_1": 6200,
+        "loss_2": 4600,
+        "loss_3": 16600,
+        "loss_4": 11400,
+        "loss_5": 14600,
+        "deductible": 8600,
+        "coverage": 38600
+      }
+    },
+    {
+      "id": "offer_409d7cf1daae",
+      "attrs": {
+        "price": 626780,
+        "admin": 177072,
+        "loss_0": 13400,
+        "loss_1": 3900,
+        "loss_2": 12700,
+        "loss_3": 1100,
+        "loss_4": 19800,
+        "loss_5": 18900,
+        "deductible": 14200,
+        "coverage": 36900
+      }
+    },
+    {
+      "id": "offer_49198659f79d",
+      "attrs": {
+        "price": 480003,
+        "admin": 165722,
+        "loss_0": 14300,
+        "loss_1": 3600,
+        "loss_2": 25700,
+        "loss_3": 23800,
+        "loss_4": 1700,
+        "loss_5": 9700,
+        "deductible": 1900,
+        "coverage": 26000
+      }
+    },
+    {
+      "id": "offer_f65631525faf",
+      "attrs": {
+        "price": 629937,
+        "admin": 147810,
+        "loss_0": 8300,
+        "loss_1": 8100,
+        "loss_2": 8300,
+        "loss_3": 25900,
+        "loss_4": 22400,
+        "loss_5": 25900,
+        "deductible": 11500,
+        "coverage": 27300
+      }
+    },
+    {
+      "id": "offer_67520c4960e5",
+      "attrs": {
+        "price": 678357,
+        "admin": 124657,
+        "loss_0": 15600,
+        "loss_1": 21400,
+        "loss_2": 21400,
+        "loss_3": 2700,
+        "loss_4": 26600,
+        "loss_5": 24900,
+        "deductible": 29600,
+        "coverage": 13300
+      }
+    },
+    {
+      "id": "offer_09a11c3a9d30",
+      "attrs": {
+        "price": 610448,
+        "admin": 159031,
+        "loss_0": 12900,
+        "loss_1": 18600,
+        "loss_2": 23200,
+        "loss_3": 16500,
+        "loss_4": 9700,
+        "loss_5": 14500,
+        "deductible": 19600,
+        "coverage": 29500
+      }
+    },
+    {
+      "id": "offer_844886a43972",
+      "attrs": {
+        "price": 460432,
+        "admin": 163607,
+        "loss_0": 6300,
+        "loss_1": 12800,
+        "loss_2": 8200,
+        "loss_3": 26900,
+        "loss_4": 22800,
+        "loss_5": 22000,
+        "deductible": 27000,
+        "coverage": 34500
+      }
+    },
+    {
+      "id": "offer_bb1c0e46bbd9",
+      "attrs": {
+        "price": 880809,
+        "admin": 153554,
+        "loss_0": 3800,
+        "loss_1": 7400,
+        "loss_2": 24700,
+        "loss_3": 15600,
+        "loss_4": 9500,
+        "loss_5": 28700,
+        "deductible": 17200,
+        "coverage": 23100
+      }
+    },
+    {
+      "id": "offer_3f9a04c0671d",
+      "attrs": {
+        "price": 471690,
+        "admin": 166018,
+        "loss_0": 5400,
+        "loss_1": 16100,
+        "loss_2": 8000,
+        "loss_3": 30000,
+        "loss_4": 11500,
+        "loss_5": 2900,
+        "deductible": 9600,
+        "coverage": 35900
+      }
+    },
+    {
+      "id": "offer_722ceebea1a7",
+      "attrs": {
+        "price": 687150,
+        "admin": 145111,
+        "loss_0": 21000,
+        "loss_1": 10100,
+        "loss_2": 24100,
+        "loss_3": 3100,
+        "loss_4": 21300,
+        "loss_5": 22200,
+        "deductible": 24300,
+        "coverage": 16500
+      }
+    },
+    {
+      "id": "offer_604996bb0f73",
+      "attrs": {
+        "price": 881488,
+        "admin": 149932,
+        "loss_0": 4500,
+        "loss_1": 17500,
+        "loss_2": 12600,
+        "loss_3": 22100,
+        "loss_4": 18100,
+        "loss_5": 26900,
+        "deductible": 1900,
+        "coverage": 31400
+      }
+    },
+    {
+      "id": "offer_c4bec721e8e1",
+      "attrs": {
+        "price": 685397,
+        "admin": 146510,
+        "loss_0": 28800,
+        "loss_1": 20500,
+        "loss_2": 3500,
+        "loss_3": 28900,
+        "loss_4": 6700,
+        "loss_5": 12800,
+        "deductible": 20000,
+        "coverage": 33400
+      }
+    },
+    {
+      "id": "offer_e4070754f611",
+      "attrs": {
+        "price": 655284,
+        "admin": 168296,
+        "loss_0": 26200,
+        "loss_1": 4100,
+        "loss_2": 22800,
+        "loss_3": 11700,
+        "loss_4": 12400,
+        "loss_5": 26200,
+        "deductible": 12500,
+        "coverage": 36400
+      }
+    },
+    {
+      "id": "offer_77926345dfce",
+      "attrs": {
+        "price": 626643,
+        "admin": 154026,
+        "loss_0": 16400,
+        "loss_1": 16500,
+        "loss_2": 20800,
+        "loss_3": 14600,
+        "loss_4": 24600,
+        "loss_5": 16000,
+        "deductible": 20000,
+        "coverage": 22600
+      }
+    },
+    {
+      "id": "offer_3762f08ad123",
+      "attrs": {
+        "price": 826933,
+        "admin": 115412,
+        "loss_0": 27600,
+        "loss_1": 11900,
+        "loss_2": 27700,
+        "loss_3": 24300,
+        "loss_4": 1300,
+        "loss_5": 17100,
+        "deductible": 8500,
+        "coverage": 8900
+      }
+    },
+    {
+      "id": "offer_239e16311b57",
+      "attrs": {
+        "price": 892929,
+        "admin": 175553,
+        "loss_0": 16000,
+        "loss_1": 18200,
+        "loss_2": 21500,
+        "loss_3": 16800,
+        "loss_4": 19300,
+        "loss_5": 7400,
+        "deductible": 7500,
+        "coverage": 32300
+      }
+    },
+    {
+      "id": "offer_806dbc94ff4c",
+      "attrs": {
+        "price": 594056,
+        "admin": 139323,
+        "loss_0": 5100,
+        "loss_1": 6000,
+        "loss_2": 1900,
+        "loss_3": 28800,
+        "loss_4": 9200,
+        "loss_5": 25000,
+        "deductible": 14300,
+        "coverage": 6500
+      }
+    },
+    {
+      "id": "offer_c0ee35873f3e",
+      "attrs": {
+        "price": 703172,
+        "admin": 160181,
+        "loss_0": 19600,
+        "loss_1": 1700,
+        "loss_2": 26600,
+        "loss_3": 17400,
+        "loss_4": 6500,
+        "loss_5": 12100,
+        "deductible": 11400,
+        "coverage": 36200
+      }
+    },
+    {
+      "id": "offer_5abf71f860fe",
+      "attrs": {
+        "price": 588970,
+        "admin": 148273,
+        "loss_0": 20200,
+        "loss_1": 4000,
+        "loss_2": 17300,
+        "loss_3": 8100,
+        "loss_4": 1000,
+        "loss_5": 23500,
+        "deductible": 16700,
+        "coverage": 12300
+      }
+    },
+    {
+      "id": "offer_6a0755ab2baf",
+      "attrs": {
+        "price": 589529,
+        "admin": 121055,
+        "loss_0": 4300,
+        "loss_1": 23600,
+        "loss_2": 16100,
+        "loss_3": 26200,
+        "loss_4": 28600,
+        "loss_5": 18400,
+        "deductible": 13100,
+        "coverage": 8500
+      }
+    },
+    {
+      "id": "offer_3bb87eb951db",
+      "attrs": {
+        "price": 858334,
+        "admin": 171931,
+        "loss_0": 6600,
+        "loss_1": 13600,
+        "loss_2": 15100,
+        "loss_3": 26400,
+        "loss_4": 6100,
+        "loss_5": 3000,
+        "deductible": 16900,
+        "coverage": 20300
+      }
+    },
+    {
+      "id": "offer_30961b59485f",
+      "attrs": {
+        "price": 597100,
+        "admin": 164100,
+        "loss_0": 1000,
+        "loss_1": 23300,
+        "loss_2": 19500,
+        "loss_3": 11200,
+        "loss_4": 12300,
+        "loss_5": 29800,
+        "deductible": 24800,
+        "coverage": 37400
+      }
+    },
+    {
+      "id": "offer_fd2b66363bcd",
+      "attrs": {
+        "price": 742293,
+        "admin": 154116,
+        "loss_0": 6200,
+        "loss_1": 27800,
+        "loss_2": 26600,
+        "loss_3": 13400,
+        "loss_4": 14400,
+        "loss_5": 20900,
+        "deductible": 27100,
+        "coverage": 36400
+      }
+    },
+    {
+      "id": "offer_8ef9dadff612",
+      "attrs": {
+        "price": 637782,
+        "admin": 161150,
+        "loss_0": 18500,
+        "loss_1": 26700,
+        "loss_2": 19000,
+        "loss_3": 17000,
+        "loss_4": 3900,
+        "loss_5": 4100,
+        "deductible": 29500,
+        "coverage": 39800
+      }
+    },
+    {
+      "id": "offer_d9a375e07a01",
+      "attrs": {
+        "price": 488436,
+        "admin": 168726,
+        "loss_0": 26000,
+        "loss_1": 6900,
+        "loss_2": 21000,
+        "loss_3": 11300,
+        "loss_4": 13900,
+        "loss_5": 9300,
+        "deductible": 21600,
+        "coverage": 37700
+      }
+    },
+    {
+      "id": "offer_1b17c4978fc8",
+      "attrs": {
+        "price": 834544,
+        "admin": 160907,
+        "loss_0": 14900,
+        "loss_1": 15600,
+        "loss_2": 7200,
+        "loss_3": 3200,
+        "loss_4": 20100,
+        "loss_5": 25900,
+        "deductible": 5700,
+        "coverage": 31000
+      }
+    },
+    {
+      "id": "offer_0e75279a5558",
+      "attrs": {
+        "price": 451610,
+        "admin": 163039,
+        "loss_0": 14500,
+        "loss_1": 5600,
+        "loss_2": 11800,
+        "loss_3": 9300,
+        "loss_4": 13500,
+        "loss_5": 24900,
+        "deductible": 27500,
+        "coverage": 12000
+      }
+    },
+    {
+      "id": "offer_c51b1462ca30",
+      "attrs": {
+        "price": 494408,
+        "admin": 170456,
+        "loss_0": 20500,
+        "loss_1": 18100,
+        "loss_2": 19000,
+        "loss_3": 5000,
+        "loss_4": 5700,
+        "loss_5": 10900,
+        "deductible": 5800,
+        "coverage": 37200
+      }
+    },
+    {
+      "id": "offer_8d280c5fb6b2",
+      "attrs": {
+        "price": 751184,
+        "admin": 149420,
+        "loss_0": 27200,
+        "loss_1": 6300,
+        "loss_2": 29200,
+        "loss_3": 8900,
+        "loss_4": 8800,
+        "loss_5": 9200,
+        "deductible": 3700,
+        "coverage": 16700
+      }
+    },
+    {
+      "id": "offer_d8339f68f79b",
+      "attrs": {
+        "price": 635264,
+        "admin": 170130,
+        "loss_0": 7500,
+        "loss_1": 11700,
+        "loss_2": 18100,
+        "loss_3": 6500,
+        "loss_4": 25100,
+        "loss_5": 20600,
+        "deductible": 5400,
+        "coverage": 34800
+      }
+    },
+    {
+      "id": "offer_8ba231316a6e",
+      "attrs": {
+        "price": 770360,
+        "admin": 147977,
+        "loss_0": 24900,
+        "loss_1": 12700,
+        "loss_2": 14700,
+        "loss_3": 3600,
+        "loss_4": 22400,
+        "loss_5": 27900,
+        "deductible": 1000,
+        "coverage": 35400
+      }
+    },
+    {
+      "id": "offer_328c5aaa0c24",
+      "attrs": {
+        "price": 897604,
+        "admin": 164371,
+        "loss_0": 28400,
+        "loss_1": 19900,
+        "loss_2": 4500,
+        "loss_3": 17300,
+        "loss_4": 3400,
+        "loss_5": 15500,
+        "deductible": 13300,
+        "coverage": 26100
+      }
+    },
+    {
+      "id": "offer_bdf0979d52d2",
+      "attrs": {
+        "price": 784036,
+        "admin": 159948,
+        "loss_0": 13800,
+        "loss_1": 20800,
+        "loss_2": 13400,
+        "loss_3": 21000,
+        "loss_4": 21400,
+        "loss_5": 20900,
+        "deductible": 23800,
+        "coverage": 31700
+      }
+    },
+    {
+      "id": "offer_11a7711feae4",
+      "attrs": {
+        "price": 560027,
+        "admin": 152025,
+        "loss_0": 12700,
+        "loss_1": 28300,
+        "loss_2": 5500,
+        "loss_3": 12200,
+        "loss_4": 14900,
+        "loss_5": 24600,
+        "deductible": 28500,
+        "coverage": 29600
+      }
+    },
+    {
+      "id": "offer_40db33065edf",
+      "attrs": {
+        "price": 750401,
+        "admin": 146893,
+        "loss_0": 9000,
+        "loss_1": 27700,
+        "loss_2": 22900,
+        "loss_3": 5500,
+        "loss_4": 23800,
+        "loss_5": 7900,
+        "deductible": 23900,
+        "coverage": 23800
+      }
+    },
+    {
+      "id": "offer_ccd6323191fc",
+      "attrs": {
+        "price": 685706,
+        "admin": 154393,
+        "loss_0": 23300,
+        "loss_1": 21900,
+        "loss_2": 5700,
+        "loss_3": 9000,
+        "loss_4": 10200,
+        "loss_5": 26700,
+        "deductible": 11200,
+        "coverage": 39300
+      }
+    },
+    {
+      "id": "offer_3ea0a8499aa5",
+      "attrs": {
+        "price": 832956,
+        "admin": 162519,
+        "loss_0": 17500,
+        "loss_1": 21500,
+        "loss_2": 2000,
+        "loss_3": 12900,
+        "loss_4": 17800,
+        "loss_5": 1000,
+        "deductible": 12600,
+        "coverage": 35000
+      }
+    },
+    {
+      "id": "offer_774af55f720c",
+      "attrs": {
+        "price": 521582,
+        "admin": 142098,
+        "loss_0": 15200,
+        "loss_1": 10500,
+        "loss_2": 13900,
+        "loss_3": 9400,
+        "loss_4": 21000,
+        "loss_5": 23000,
+        "deductible": 16600,
+        "coverage": 5900
+      }
+    },
+    {
+      "id": "offer_9016e7b701bb",
+      "attrs": {
+        "price": 508398,
+        "admin": 168000,
+        "loss_0": 22700,
+        "loss_1": 12700,
+        "loss_2": 2400,
+        "loss_3": 2400,
+        "loss_4": 25600,
+        "loss_5": 26900,
+        "deductible": 15800,
+        "coverage": 39200
+      }
+    },
+    {
+      "id": "offer_4ff9b3f2ec9c",
+      "attrs": {
+        "price": 864521,
+        "admin": 122818,
+        "loss_0": 19500,
+        "loss_1": 2100,
+        "loss_2": 22900,
+        "loss_3": 3900,
+        "loss_4": 28800,
+        "loss_5": 29600,
+        "deductible": 7200,
+        "coverage": 13700
+      }
+    },
+    {
+      "id": "offer_b2f3d01094bc",
+      "attrs": {
+        "price": 618350,
+        "admin": 169138,
+        "loss_0": 19000,
+        "loss_1": 16100,
+        "loss_2": 5500,
+        "loss_3": 5100,
+        "loss_4": 3900,
+        "loss_5": 17700,
+        "deductible": 24600,
+        "coverage": 21500
+      }
+    },
+    {
+      "id": "offer_4b16c29ce921",
+      "attrs": {
+        "price": 535066,
+        "admin": 158859,
+        "loss_0": 9000,
+        "loss_1": 4200,
+        "loss_2": 16600,
+        "loss_3": 4000,
+        "loss_4": 22100,
+        "loss_5": 3700,
+        "deductible": 13800,
+        "coverage": 5400
+      }
+    },
+    {
+      "id": "offer_4311b1614222",
+      "attrs": {
+        "price": 867894,
+        "admin": 127782,
+        "loss_0": 1200,
+        "loss_1": 25600,
+        "loss_2": 22300,
+        "loss_3": 22100,
+        "loss_4": 23000,
+        "loss_5": 24600,
+        "deductible": 20600,
+        "coverage": 17600
+      }
+    },
+    {
+      "id": "offer_24d9697d075e",
+      "attrs": {
+        "price": 788998,
+        "admin": 160827,
+        "loss_0": 20600,
+        "loss_1": 8700,
+        "loss_2": 4200,
+        "loss_3": 18800,
+        "loss_4": 11300,
+        "loss_5": 18500,
+        "deductible": 4200,
+        "coverage": 24200
+      }
+    },
+    {
+      "id": "offer_a75074935fc6",
+      "attrs": {
+        "price": 819870,
+        "admin": 178419,
+        "loss_0": 2000,
+        "loss_1": 18600,
+        "loss_2": 6100,
+        "loss_3": 11700,
+        "loss_4": 2900,
+        "loss_5": 16300,
+        "deductible": 23700,
+        "coverage": 14600
+      }
+    },
+    {
+      "id": "offer_64006228eb38",
+      "attrs": {
+        "price": 664561,
+        "admin": 122371,
+        "loss_0": 12300,
+        "loss_1": 25400,
+        "loss_2": 28200,
+        "loss_3": 26200,
+        "loss_4": 3400,
+        "loss_5": 19500,
+        "deductible": 29800,
+        "coverage": 13100
+      }
+    },
+    {
+      "id": "offer_510969a53b36",
+      "attrs": {
+        "price": 820278,
+        "admin": 119798,
+        "loss_0": 24700,
+        "loss_1": 9600,
+        "loss_2": 29100,
+        "loss_3": 27100,
+        "loss_4": 22600,
+        "loss_5": 29800,
+        "deductible": 19500,
+        "coverage": 16400
+      }
+    },
+    {
+      "id": "offer_9787a65cd9a4",
+      "attrs": {
+        "price": 584209,
+        "admin": 160103,
+        "loss_0": 30000,
+        "loss_1": 5600,
+        "loss_2": 8900,
+        "loss_3": 22600,
+        "loss_4": 20600,
+        "loss_5": 20300,
+        "deductible": 4500,
+        "coverage": 34200
+      }
+    },
+    {
+      "id": "offer_9d3e709728f6",
+      "attrs": {
+        "price": 759714,
+        "admin": 135370,
+        "loss_0": 18000,
+        "loss_1": 24900,
+        "loss_2": 23600,
+        "loss_3": 25200,
+        "loss_4": 2700,
+        "loss_5": 7800,
+        "deductible": 10300,
+        "coverage": 21700
+      }
+    },
+    {
+      "id": "offer_e289c3695a5c",
+      "attrs": {
+        "price": 887798,
+        "admin": 142612,
+        "loss_0": 3700,
+        "loss_1": 24400,
+        "loss_2": 4800,
+        "loss_3": 27600,
+        "loss_4": 21800,
+        "loss_5": 21900,
+        "deductible": 21200,
+        "coverage": 33300
+      }
+    },
+    {
+      "id": "offer_25fb522b0f98",
+      "attrs": {
+        "price": 758240,
+        "admin": 130619,
+        "loss_0": 26400,
+        "loss_1": 4900,
+        "loss_2": 26400,
+        "loss_3": 6700,
+        "loss_4": 24200,
+        "loss_5": 10600,
+        "deductible": 17900,
+        "coverage": 8300
+      }
+    },
+    {
+      "id": "offer_9c90aaf332db",
+      "attrs": {
+        "price": 835118,
+        "admin": 147366,
+        "loss_0": 11800,
+        "loss_1": 8500,
+        "loss_2": 16400,
+        "loss_3": 27300,
+        "loss_4": 10900,
+        "loss_5": 5700,
+        "deductible": 16400,
+        "coverage": 5600
+      }
+    },
+    {
+      "id": "offer_cc061eb88b78",
+      "attrs": {
+        "price": 765234,
+        "admin": 137218,
+        "loss_0": 18100,
+        "loss_1": 29800,
+        "loss_2": 12700,
+        "loss_3": 19000,
+        "loss_4": 8400,
+        "loss_5": 12500,
+        "deductible": 1300,
+        "coverage": 7300
+      }
+    },
+    {
+      "id": "offer_fb22a13e513b",
+      "attrs": {
+        "price": 839280,
+        "admin": 140527,
+        "loss_0": 16200,
+        "loss_1": 9400,
+        "loss_2": 21800,
+        "loss_3": 19600,
+        "loss_4": 14600,
+        "loss_5": 6600,
+        "deductible": 2800,
+        "coverage": 9800
+      }
+    },
+    {
+      "id": "offer_94cd59c845c9",
+      "attrs": {
+        "price": 699628,
+        "admin": 165145,
+        "loss_0": 5300,
+        "loss_1": 16000,
+        "loss_2": 18300,
+        "loss_3": 7200,
+        "loss_4": 19300,
+        "loss_5": 15500,
+        "deductible": 27300,
+        "coverage": 26600
+      }
+    },
+    {
+      "id": "offer_e408f5399782",
+      "attrs": {
+        "price": 589158,
+        "admin": 143265,
+        "loss_0": 12000,
+        "loss_1": 27400,
+        "loss_2": 17700,
+        "loss_3": 6400,
+        "loss_4": 25300,
+        "loss_5": 28200,
+        "deductible": 22400,
+        "coverage": 27000
+      }
+    },
+    {
+      "id": "offer_88da22cc8a9f",
+      "attrs": {
+        "price": 506051,
+        "admin": 146480,
+        "loss_0": 6900,
+        "loss_1": 27100,
+        "loss_2": 25700,
+        "loss_3": 11200,
+        "loss_4": 6500,
+        "loss_5": 17500,
+        "deductible": 17200,
+        "coverage": 25800
+      }
+    },
+    {
+      "id": "offer_ef22e421ddc3",
+      "attrs": {
+        "price": 606562,
+        "admin": 166460,
+        "loss_0": 5100,
+        "loss_1": 1100,
+        "loss_2": 18000,
+        "loss_3": 27600,
+        "loss_4": 14000,
+        "loss_5": 3300,
+        "deductible": 19500,
+        "coverage": 34600
+      }
+    },
+    {
+      "id": "offer_3baa02c2e4e0",
+      "attrs": {
+        "price": 473290,
+        "admin": 122899,
+        "loss_0": 15600,
+        "loss_1": 24400,
+        "loss_2": 14800,
+        "loss_3": 24700,
+        "loss_4": 8800,
+        "loss_5": 24400,
+        "deductible": 27700,
+        "coverage": 10400
+      }
+    },
+    {
+      "id": "offer_491391196042",
+      "attrs": {
+        "price": 821508,
+        "admin": 151975,
+        "loss_0": 21400,
+        "loss_1": 17100,
+        "loss_2": 16800,
+        "loss_3": 4200,
+        "loss_4": 20500,
+        "loss_5": 10500,
+        "deductible": 21200,
+        "coverage": 19000
+      }
+    },
+    {
+      "id": "offer_b46b52fa7e00",
+      "attrs": {
+        "price": 898531,
+        "admin": 151338,
+        "loss_0": 26200,
+        "loss_1": 19600,
+        "loss_2": 8700,
+        "loss_3": 8500,
+        "loss_4": 14000,
+        "loss_5": 25600,
+        "deductible": 10600,
+        "coverage": 19500
+      }
+    },
+    {
+      "id": "offer_2e33df7620d6",
+      "attrs": {
+        "price": 460592,
+        "admin": 130703,
+        "loss_0": 28100,
+        "loss_1": 13500,
+        "loss_2": 5500,
+        "loss_3": 29700,
+        "loss_4": 22100,
+        "loss_5": 20000,
+        "deductible": 11600,
+        "coverage": 29400
+      }
+    },
+    {
+      "id": "offer_eb32bbc8fec6",
+      "attrs": {
+        "price": 549507,
+        "admin": 149110,
+        "loss_0": 27100,
+        "loss_1": 5100,
+        "loss_2": 21000,
+        "loss_3": 27700,
+        "loss_4": 5900,
+        "loss_5": 5800,
+        "deductible": 29200,
+        "coverage": 35500
+      }
+    },
+    {
+      "id": "offer_ddf8b464d430",
+      "attrs": {
+        "price": 466432,
+        "admin": 165070,
+        "loss_0": 18400,
+        "loss_1": 13300,
+        "loss_2": 1300,
+        "loss_3": 18300,
+        "loss_4": 15800,
+        "loss_5": 25900,
+        "deductible": 4900,
+        "coverage": 32200
+      }
+    },
+    {
+      "id": "offer_4c8da70e9284",
+      "attrs": {
+        "price": 849662,
+        "admin": 167298,
+        "loss_0": 15600,
+        "loss_1": 5000,
+        "loss_2": 20500,
+        "loss_3": 13400,
+        "loss_4": 11200,
+        "loss_5": 28200,
+        "deductible": 23200,
+        "coverage": 29600
+      }
+    },
+    {
+      "id": "offer_2be44ff41cc4",
+      "attrs": {
+        "price": 831564,
+        "admin": 163950,
+        "loss_0": 9800,
+        "loss_1": 5400,
+        "loss_2": 19900,
+        "loss_3": 21500,
+        "loss_4": 8500,
+        "loss_5": 9500,
+        "deductible": 15200,
+        "coverage": 27200
+      }
+    },
+    {
+      "id": "offer_63273dfd96f4",
+      "attrs": {
+        "price": 502360,
+        "admin": 153760,
+        "loss_0": 25600,
+        "loss_1": 9700,
+        "loss_2": 11900,
+        "loss_3": 18100,
+        "loss_4": 9500,
+        "loss_5": 12000,
+        "deductible": 26500,
+        "coverage": 16800
+      }
+    },
+    {
+      "id": "offer_cf0a90c9c6a8",
+      "attrs": {
+        "price": 629249,
+        "admin": 146342,
+        "loss_0": 24800,
+        "loss_1": 21700,
+        "loss_2": 29800,
+        "loss_3": 4100,
+        "loss_4": 15300,
+        "loss_5": 5200,
+        "deductible": 3700,
+        "coverage": 19600
+      }
+    },
+    {
+      "id": "offer_716b96fa98af",
+      "attrs": {
+        "price": 868537,
+        "admin": 130126,
+        "loss_0": 14800,
+        "loss_1": 8600,
+        "loss_2": 11100,
+        "loss_3": 22800,
+        "loss_4": 19900,
+        "loss_5": 22900,
+        "deductible": 16900,
+        "coverage": 9500
+      }
+    },
+    {
+      "id": "offer_fc8d0a899416",
+      "attrs": {
+        "price": 859211,
+        "admin": 126083,
+        "loss_0": 22000,
+        "loss_1": 5400,
+        "loss_2": 12900,
+        "loss_3": 24800,
+        "loss_4": 10800,
+        "loss_5": 25100,
+        "deductible": 12000,
+        "coverage": 7200
+      }
+    },
+    {
+      "id": "offer_17a481f965ac",
+      "attrs": {
+        "price": 887120,
+        "admin": 159335,
+        "loss_0": 2200,
+        "loss_1": 4900,
+        "loss_2": 15100,
+        "loss_3": 7300,
+        "loss_4": 23900,
+        "loss_5": 25000,
+        "deductible": 24800,
+        "coverage": 33600
+      }
+    },
+    {
+      "id": "offer_8a2f36b5023c",
+      "attrs": {
+        "price": 845373,
+        "admin": 146673,
+        "loss_0": 4300,
+        "loss_1": 10700,
+        "loss_2": 12700,
+        "loss_3": 28500,
+        "loss_4": 13300,
+        "loss_5": 18100,
+        "deductible": 28200,
+        "coverage": 8600
+      }
+    },
+    {
+      "id": "offer_a642fb366e16",
+      "attrs": {
+        "price": 823515,
+        "admin": 124168,
+        "loss_0": 28400,
+        "loss_1": 17300,
+        "loss_2": 18700,
+        "loss_3": 29100,
+        "loss_4": 3400,
+        "loss_5": 22900,
+        "deductible": 5900,
+        "coverage": 15600
+      }
+    },
+    {
+      "id": "offer_f0075163fe6f",
+      "attrs": {
+        "price": 857185,
+        "admin": 168652,
+        "loss_0": 27200,
+        "loss_1": 28500,
+        "loss_2": 9100,
+        "loss_3": 1700,
+        "loss_4": 2000,
+        "loss_5": 1700,
+        "deductible": 25000,
+        "coverage": 35900
+      }
+    },
+    {
+      "id": "offer_20559d7b063e",
+      "attrs": {
+        "price": 657190,
+        "admin": 145041,
+        "loss_0": 6200,
+        "loss_1": 25100,
+        "loss_2": 11800,
+        "loss_3": 28400,
+        "loss_4": 25200,
+        "loss_5": 5400,
+        "deductible": 16200,
+        "coverage": 28900
+      }
+    },
+    {
+      "id": "offer_f70b3c2a4c44",
+      "attrs": {
+        "price": 552385,
+        "admin": 159354,
+        "loss_0": 13600,
+        "loss_1": 15100,
+        "loss_2": 18600,
+        "loss_3": 6400,
+        "loss_4": 15000,
+        "loss_5": 16000,
+        "deductible": 27800,
+        "coverage": 28400
+      }
+    },
+    {
+      "id": "offer_7482148200ff",
+      "attrs": {
+        "price": 668693,
+        "admin": 162488,
+        "loss_0": 5400,
+        "loss_1": 21200,
+        "loss_2": 9000,
+        "loss_3": 3100,
+        "loss_4": 8800,
+        "loss_5": 16800,
+        "deductible": 29400,
+        "coverage": 21700
+      }
+    },
+    {
+      "id": "offer_4473785e23db",
+      "attrs": {
+        "price": 611362,
+        "admin": 160420,
+        "loss_0": 6200,
+        "loss_1": 27800,
+        "loss_2": 25700,
+        "loss_3": 1700,
+        "loss_4": 20400,
+        "loss_5": 1700,
+        "deductible": 28900,
+        "coverage": 26200
+      }
+    },
+    {
+      "id": "offer_1a0f505f1c10",
+      "attrs": {
+        "price": 547982,
+        "admin": 163319,
+        "loss_0": 9500,
+        "loss_1": 11000,
+        "loss_2": 21300,
+        "loss_3": 17400,
+        "loss_4": 2600,
+        "loss_5": 20400,
+        "deductible": 11700,
+        "coverage": 33600
+      }
+    },
+    {
+      "id": "offer_2816aecaa4c6",
+      "attrs": {
+        "price": 783569,
+        "admin": 160564,
+        "loss_0": 22100,
+        "loss_1": 21500,
+        "loss_2": 10200,
+        "loss_3": 2700,
+        "loss_4": 7000,
+        "loss_5": 4700,
+        "deductible": 7600,
+        "coverage": 7400
+      }
+    },
+    {
+      "id": "offer_a2d4a3c29722",
+      "attrs": {
+        "price": 691087,
+        "admin": 154157,
+        "loss_0": 4400,
+        "loss_1": 20700,
+        "loss_2": 5800,
+        "loss_3": 3100,
+        "loss_4": 20400,
+        "loss_5": 28800,
+        "deductible": 27700,
+        "coverage": 33600
+      }
+    },
+    {
+      "id": "offer_ec68ac98b30c",
+      "attrs": {
+        "price": 507768,
+        "admin": 155806,
+        "loss_0": 16800,
+        "loss_1": 24900,
+        "loss_2": 9500,
+        "loss_3": 11300,
+        "loss_4": 11800,
+        "loss_5": 7800,
+        "deductible": 6100,
+        "coverage": 18800
+      }
+    },
+    {
+      "id": "offer_44d67f5988b8",
+      "attrs": {
+        "price": 558310,
+        "admin": 165845,
+        "loss_0": 4900,
+        "loss_1": 25700,
+        "loss_2": 5600,
+        "loss_3": 2500,
+        "loss_4": 20400,
+        "loss_5": 24800,
+        "deductible": 27600,
+        "coverage": 37400
+      }
+    },
+    {
+      "id": "offer_c52e6c9ac51c",
+      "attrs": {
+        "price": 458522,
+        "admin": 157802,
+        "loss_0": 21800,
+        "loss_1": 20100,
+        "loss_2": 20500,
+        "loss_3": 17100,
+        "loss_4": 12200,
+        "loss_5": 23300,
+        "deductible": 19000,
+        "coverage": 24100
+      }
+    },
+    {
+      "id": "offer_829b0d7ebf29",
+      "attrs": {
+        "price": 752857,
+        "admin": 154645,
+        "loss_0": 6600,
+        "loss_1": 23300,
+        "loss_2": 9400,
+        "loss_3": 20700,
+        "loss_4": 18100,
+        "loss_5": 15500,
+        "deductible": 13900,
+        "coverage": 40000
+      }
+    },
+    {
+      "id": "offer_822d132273f9",
+      "attrs": {
+        "price": 456006,
+        "admin": 142183,
+        "loss_0": 10300,
+        "loss_1": 26000,
+        "loss_2": 1800,
+        "loss_3": 30000,
+        "loss_4": 18500,
+        "loss_5": 4100,
+        "deductible": 15900,
+        "coverage": 8300
+      }
+    },
+    {
+      "id": "offer_6b858d0b82b1",
+      "attrs": {
+        "price": 850668,
+        "admin": 131840,
+        "loss_0": 20800,
+        "loss_1": 28800,
+        "loss_2": 26200,
+        "loss_3": 7600,
+        "loss_4": 14000,
+        "loss_5": 27100,
+        "deductible": 6100,
+        "coverage": 34200
+      }
+    },
+    {
+      "id": "offer_1864c4ccb75f",
+      "attrs": {
+        "price": 583472,
+        "admin": 158012,
+        "loss_0": 12100,
+        "loss_1": 23300,
+        "loss_2": 14100,
+        "loss_3": 5800,
+        "loss_4": 1200,
+        "loss_5": 7600,
+        "deductible": 17600,
+        "coverage": 13700
+      }
+    },
+    {
+      "id": "offer_335b035c23cd",
+      "attrs": {
+        "price": 601161,
+        "admin": 156630,
+        "loss_0": 27600,
+        "loss_1": 20000,
+        "loss_2": 4900,
+        "loss_3": 3000,
+        "loss_4": 11200,
+        "loss_5": 13100,
+        "deductible": 9400,
+        "coverage": 28300
+      }
+    },
+    {
+      "id": "offer_9136ef9424ad",
+      "attrs": {
+        "price": 800564,
+        "admin": 182958,
+        "loss_0": 2700,
+        "loss_1": 14900,
+        "loss_2": 3500,
+        "loss_3": 8300,
+        "loss_4": 1100,
+        "loss_5": 1100,
+        "deductible": 29500,
+        "coverage": 10300
+      }
+    },
+    {
+      "id": "offer_84ac3fcc3b9b",
+      "attrs": {
+        "price": 704644,
+        "admin": 157880,
+        "loss_0": 1200,
+        "loss_1": 4500,
+        "loss_2": 29500,
+        "loss_3": 9400,
+        "loss_4": 26600,
+        "loss_5": 15000,
+        "deductible": 22400,
+        "coverage": 22700
+      }
+    },
+    {
+      "id": "offer_e4614cd944ad",
+      "attrs": {
+        "price": 482617,
+        "admin": 177079,
+        "loss_0": 25600,
+        "loss_1": 5300,
+        "loss_2": 1900,
+        "loss_3": 13800,
+        "loss_4": 17400,
+        "loss_5": 5000,
+        "deductible": 15400,
+        "coverage": 34800
+      }
+    },
+    {
+      "id": "offer_3948122e7c51",
+      "attrs": {
+        "price": 824655,
+        "admin": 153104,
+        "loss_0": 1500,
+        "loss_1": 22500,
+        "loss_2": 13100,
+        "loss_3": 23300,
+        "loss_4": 9800,
+        "loss_5": 30000,
+        "deductible": 9600,
+        "coverage": 36800
+      }
+    },
+    {
+      "id": "offer_abc1fc8c2e6b",
+      "attrs": {
+        "price": 503639,
+        "admin": 143802,
+        "loss_0": 24800,
+        "loss_1": 24000,
+        "loss_2": 13100,
+        "loss_3": 19600,
+        "loss_4": 29600,
+        "loss_5": 7800,
+        "deductible": 22700,
+        "coverage": 32600
+      }
+    },
+    {
+      "id": "offer_d85bb0065f88",
+      "attrs": {
+        "price": 636704,
+        "admin": 139900,
+        "loss_0": 14800,
+        "loss_1": 14500,
+        "loss_2": 17500,
+        "loss_3": 2700,
+        "loss_4": 26500,
+        "loss_5": 28500,
+        "deductible": 24400,
+        "coverage": 15800
+      }
+    },
+    {
+      "id": "offer_3ac3fb95c960",
+      "attrs": {
+        "price": 733193,
+        "admin": 123403,
+        "loss_0": 24400,
+        "loss_1": 27500,
+        "loss_2": 24100,
+        "loss_3": 20000,
+        "loss_4": 10300,
+        "loss_5": 26200,
+        "deductible": 16900,
+        "coverage": 18800
+      }
+    },
+    {
+      "id": "offer_49dce5198166",
+      "attrs": {
+        "price": 744046,
+        "admin": 142558,
+        "loss_0": 23600,
+        "loss_1": 29200,
+        "loss_2": 29200,
+        "loss_3": 16700,
+        "loss_4": 1100,
+        "loss_5": 21100,
+        "deductible": 1300,
+        "coverage": 33000
+      }
+    },
+    {
+      "id": "offer_b41a690d4438",
+      "attrs": {
+        "price": 733622,
+        "admin": 154643,
+        "loss_0": 20900,
+        "loss_1": 20800,
+        "loss_2": 24800,
+        "loss_3": 15300,
+        "loss_4": 3200,
+        "loss_5": 7300,
+        "deductible": 25400,
+        "coverage": 37600
+      }
+    },
+    {
+      "id": "offer_d149abb1c646",
+      "attrs": {
+        "price": 883805,
+        "admin": 165565,
+        "loss_0": 17100,
+        "loss_1": 27600,
+        "loss_2": 8500,
+        "loss_3": 6100,
+        "loss_4": 11600,
+        "loss_5": 8300,
+        "deductible": 4300,
+        "coverage": 24600
+      }
+    },
+    {
+      "id": "offer_840a9a269477",
+      "attrs": {
+        "price": 613316,
+        "admin": 165133,
+        "loss_0": 8500,
+        "loss_1": 17900,
+        "loss_2": 4400,
+        "loss_3": 11300,
+        "loss_4": 16400,
+        "loss_5": 21600,
+        "deductible": 1900,
+        "coverage": 16700
+      }
+    },
+    {
+      "id": "offer_d136a7eda3f4",
+      "attrs": {
+        "price": 551689,
+        "admin": 163568,
+        "loss_0": 1000,
+        "loss_1": 22000,
+        "loss_2": 16100,
+        "loss_3": 10100,
+        "loss_4": 28000,
+        "loss_5": 25000,
+        "deductible": 6500,
+        "coverage": 38200
+      }
+    },
+    {
+      "id": "offer_c08f7e5582d7",
+      "attrs": {
+        "price": 706239,
+        "admin": 134227,
+        "loss_0": 28400,
+        "loss_1": 25600,
+        "loss_2": 3500,
+        "loss_3": 21500,
+        "loss_4": 27000,
+        "loss_5": 15300,
+        "deductible": 22000,
+        "coverage": 31900
+      }
+    },
+    {
+      "id": "offer_bdab831d93e4",
+      "attrs": {
+        "price": 776889,
+        "admin": 175538,
+        "loss_0": 19000,
+        "loss_1": 2900,
+        "loss_2": 13200,
+        "loss_3": 4200,
+        "loss_4": 21900,
+        "loss_5": 4800,
+        "deductible": 24900,
+        "coverage": 33000
+      }
+    },
+    {
+      "id": "offer_62a15d1105b7",
+      "attrs": {
+        "price": 543799,
+        "admin": 171790,
+        "loss_0": 2000,
+        "loss_1": 13100,
+        "loss_2": 23100,
+        "loss_3": 6200,
+        "loss_4": 3700,
+        "loss_5": 18000,
+        "deductible": 26900,
+        "coverage": 25700
+      }
+    },
+    {
+      "id": "offer_72edad2f90fd",
+      "attrs": {
+        "price": 833558,
+        "admin": 147688,
+        "loss_0": 25200,
+        "loss_1": 18000,
+        "loss_2": 7200,
+        "loss_3": 11500,
+        "loss_4": 19900,
+        "loss_5": 21800,
+        "deductible": 16800,
+        "coverage": 18700
+      }
+    },
+    {
+      "id": "offer_b97c33d36730",
+      "attrs": {
+        "price": 875440,
+        "admin": 157467,
+        "loss_0": 5400,
+        "loss_1": 15200,
+        "loss_2": 18600,
+        "loss_3": 17500,
+        "loss_4": 2900,
+        "loss_5": 14500,
+        "deductible": 26900,
+        "coverage": 12800
+      }
+    },
+    {
+      "id": "offer_2528e7147972",
+      "attrs": {
+        "price": 847591,
+        "admin": 150868,
+        "loss_0": 29300,
+        "loss_1": 3700,
+        "loss_2": 27000,
+        "loss_3": 11000,
+        "loss_4": 11700,
+        "loss_5": 24200,
+        "deductible": 8800,
+        "coverage": 24900
+      }
+    },
+    {
+      "id": "offer_71f8c63f64be",
+      "attrs": {
+        "price": 805581,
+        "admin": 140926,
+        "loss_0": 24800,
+        "loss_1": 11800,
+        "loss_2": 6300,
+        "loss_3": 21000,
+        "loss_4": 13100,
+        "loss_5": 27700,
+        "deductible": 9400,
+        "coverage": 13500
+      }
+    },
+    {
+      "id": "offer_06eea5822ae7",
+      "attrs": {
+        "price": 775037,
+        "admin": 139487,
+        "loss_0": 24500,
+        "loss_1": 17300,
+        "loss_2": 16800,
+        "loss_3": 12300,
+        "loss_4": 27500,
+        "loss_5": 12800,
+        "deductible": 4100,
+        "coverage": 7700
+      }
+    },
+    {
+      "id": "offer_889ec437d124",
+      "attrs": {
+        "price": 816092,
+        "admin": 138882,
+        "loss_0": 20000,
+        "loss_1": 27800,
+        "loss_2": 6000,
+        "loss_3": 1300,
+        "loss_4": 16100,
+        "loss_5": 14100,
+        "deductible": 28500,
+        "coverage": 12200
+      }
+    },
+    {
+      "id": "offer_2f73d1a1b51e",
+      "attrs": {
+        "price": 515573,
+        "admin": 145523,
+        "loss_0": 9500,
+        "loss_1": 6800,
+        "loss_2": 19700,
+        "loss_3": 27000,
+        "loss_4": 10900,
+        "loss_5": 12300,
+        "deductible": 6800,
+        "coverage": 12500
+      }
+    },
+    {
+      "id": "offer_b03f664af794",
+      "attrs": {
+        "price": 504151,
+        "admin": 159788,
+        "loss_0": 23300,
+        "loss_1": 6400,
+        "loss_2": 22600,
+        "loss_3": 20200,
+        "loss_4": 9800,
+        "loss_5": 13300,
+        "deductible": 11700,
+        "coverage": 27700
+      }
+    },
+    {
+      "id": "offer_f16ff7bb2195",
+      "attrs": {
+        "price": 592179,
+        "admin": 159590,
+        "loss_0": 14500,
+        "loss_1": 29800,
+        "loss_2": 26100,
+        "loss_3": 2600,
+        "loss_4": 8700,
+        "loss_5": 4800,
+        "deductible": 3300,
+        "coverage": 35700
+      }
+    },
+    {
+      "id": "offer_fdc1db4b4d24",
+      "attrs": {
+        "price": 787933,
+        "admin": 147833,
+        "loss_0": 25800,
+        "loss_1": 8200,
+        "loss_2": 1800,
+        "loss_3": 28400,
+        "loss_4": 24900,
+        "loss_5": 29300,
+        "deductible": 24500,
+        "coverage": 37500
+      }
+    },
+    {
+      "id": "offer_967ab78a22dc",
+      "attrs": {
+        "price": 802048,
+        "admin": 174528,
+        "loss_0": 2500,
+        "loss_1": 4500,
+        "loss_2": 22500,
+        "loss_3": 29600,
+        "loss_4": 5700,
+        "loss_5": 15400,
+        "deductible": 4300,
+        "coverage": 39100
+      }
+    },
+    {
+      "id": "offer_537f8a0f1810",
+      "attrs": {
+        "price": 570689,
+        "admin": 149258,
+        "loss_0": 14100,
+        "loss_1": 24400,
+        "loss_2": 14700,
+        "loss_3": 17400,
+        "loss_4": 11400,
+        "loss_5": 19100,
+        "deductible": 27600,
+        "coverage": 39600
+      }
+    },
+    {
+      "id": "offer_ed53116b7068",
+      "attrs": {
+        "price": 563977,
+        "admin": 160667,
+        "loss_0": 14200,
+        "loss_1": 10500,
+        "loss_2": 29800,
+        "loss_3": 3200,
+        "loss_4": 26100,
+        "loss_5": 20000,
+        "deductible": 24900,
+        "coverage": 32100
+      }
+    },
+    {
+      "id": "offer_b10384c8929a",
+      "attrs": {
+        "price": 763413,
+        "admin": 127982,
+        "loss_0": 26800,
+        "loss_1": 21600,
+        "loss_2": 26600,
+        "loss_3": 7300,
+        "loss_4": 12700,
+        "loss_5": 29100,
+        "deductible": 7300,
+        "coverage": 26100
+      }
+    },
+    {
+      "id": "offer_ee42aa4aa11d",
+      "attrs": {
+        "price": 595907,
+        "admin": 159653,
+        "loss_0": 20300,
+        "loss_1": 27900,
+        "loss_2": 8900,
+        "loss_3": 2200,
+        "loss_4": 1300,
+        "loss_5": 19600,
+        "deductible": 9100,
+        "coverage": 35700
+      }
+    },
+    {
+      "id": "offer_93304674322a",
+      "attrs": {
+        "price": 564404,
+        "admin": 135771,
+        "loss_0": 5000,
+        "loss_1": 28800,
+        "loss_2": 11600,
+        "loss_3": 7300,
+        "loss_4": 25500,
+        "loss_5": 17700,
+        "deductible": 20200,
+        "coverage": 6800
+      }
+    },
+    {
+      "id": "offer_4b9567b2e91d",
+      "attrs": {
+        "price": 536058,
+        "admin": 171173,
+        "loss_0": 12000,
+        "loss_1": 7600,
+        "loss_2": 3700,
+        "loss_3": 25500,
+        "loss_4": 11500,
+        "loss_5": 5000,
+        "deductible": 9300,
+        "coverage": 39400
+      }
+    },
+    {
+      "id": "offer_d17a2c8e5f89",
+      "attrs": {
+        "price": 875069,
+        "admin": 138197,
+        "loss_0": 26200,
+        "loss_1": 24000,
+        "loss_2": 24300,
+        "loss_3": 12300,
+        "loss_4": 3700,
+        "loss_5": 5600,
+        "deductible": 17800,
+        "coverage": 24000
+      }
+    },
+    {
+      "id": "offer_ab798753060e",
+      "attrs": {
+        "price": 513170,
+        "admin": 147537,
+        "loss_0": 18100,
+        "loss_1": 18400,
+        "loss_2": 13700,
+        "loss_3": 1800,
+        "loss_4": 5100,
+        "loss_5": 28600,
+        "deductible": 5500,
+        "coverage": 25000
+      }
+    },
+    {
+      "id": "offer_269b6afe174c",
+      "attrs": {
+        "price": 837806,
+        "admin": 147236,
+        "loss_0": 3700,
+        "loss_1": 21400,
+        "loss_2": 19600,
+        "loss_3": 6500,
+        "loss_4": 17600,
+        "loss_5": 17200,
+        "deductible": 16200,
+        "coverage": 18200
+      }
+    },
+    {
+      "id": "offer_186d1060e168",
+      "attrs": {
+        "price": 724484,
+        "admin": 128229,
+        "loss_0": 13100,
+        "loss_1": 9600,
+        "loss_2": 28700,
+        "loss_3": 4600,
+        "loss_4": 28900,
+        "loss_5": 22800,
+        "deductible": 11300,
+        "coverage": 13100
+      }
+    },
+    {
+      "id": "offer_db2c30b7c0f6",
+      "attrs": {
+        "price": 626256,
+        "admin": 150526,
+        "loss_0": 9200,
+        "loss_1": 1300,
+        "loss_2": 29700,
+        "loss_3": 5200,
+        "loss_4": 13300,
+        "loss_5": 10100,
+        "deductible": 14600,
+        "coverage": 10900
+      }
+    },
+    {
+      "id": "offer_6936220973a2",
+      "attrs": {
+        "price": 704389,
+        "admin": 162280,
+        "loss_0": 12500,
+        "loss_1": 23600,
+        "loss_2": 2300,
+        "loss_3": 11600,
+        "loss_4": 24200,
+        "loss_5": 18500,
+        "deductible": 21900,
+        "coverage": 35300
+      }
+    },
+    {
+      "id": "offer_32604890e6a0",
+      "attrs": {
+        "price": 733198,
+        "admin": 147608,
+        "loss_0": 2400,
+        "loss_1": 29200,
+        "loss_2": 20000,
+        "loss_3": 6700,
+        "loss_4": 5200,
+        "loss_5": 23500,
+        "deductible": 26900,
+        "coverage": 30000
+      }
+    },
+    {
+      "id": "offer_17ab56964777",
+      "attrs": {
+        "price": 880997,
+        "admin": 175372,
+        "loss_0": 14800,
+        "loss_1": 14000,
+        "loss_2": 3100,
+        "loss_3": 3800,
+        "loss_4": 15800,
+        "loss_5": 27900,
+        "deductible": 13200,
+        "coverage": 33200
+      }
+    },
+    {
+      "id": "offer_33d22056441b",
+      "attrs": {
+        "price": 824873,
+        "admin": 132176,
+        "loss_0": 29100,
+        "loss_1": 29300,
+        "loss_2": 1800,
+        "loss_3": 21800,
+        "loss_4": 23000,
+        "loss_5": 16500,
+        "deductible": 12200,
+        "coverage": 29700
+      }
+    },
+    {
+      "id": "offer_e2a0aeaca478",
+      "attrs": {
+        "price": 838496,
+        "admin": 137119,
+        "loss_0": 15800,
+        "loss_1": 22000,
+        "loss_2": 6000,
+        "loss_3": 24000,
+        "loss_4": 2800,
+        "loss_5": 27200,
+        "deductible": 19200,
+        "coverage": 24400
+      }
+    },
+    {
+      "id": "offer_ac0d3255b594",
+      "attrs": {
+        "price": 606718,
+        "admin": 162302,
+        "loss_0": 6300,
+        "loss_1": 2800,
+        "loss_2": 22600,
+        "loss_3": 14200,
+        "loss_4": 11500,
+        "loss_5": 23000,
+        "deductible": 29200,
+        "coverage": 35200
+      }
+    },
+    {
+      "id": "offer_aa2156575f58",
+      "attrs": {
+        "price": 616698,
+        "admin": 131281,
+        "loss_0": 19900,
+        "loss_1": 29300,
+        "loss_2": 17100,
+        "loss_3": 5400,
+        "loss_4": 24200,
+        "loss_5": 14900,
+        "deductible": 28500,
+        "coverage": 19800
+      }
+    },
+    {
+      "id": "offer_3a71f80f3742",
+      "attrs": {
+        "price": 658747,
+        "admin": 148365,
+        "loss_0": 12700,
+        "loss_1": 11100,
+        "loss_2": 16200,
+        "loss_3": 13200,
+        "loss_4": 16400,
+        "loss_5": 26900,
+        "deductible": 16600,
+        "coverage": 15800
+      }
+    },
+    {
+      "id": "offer_15deae979a59",
+      "attrs": {
+        "price": 825906,
+        "admin": 162491,
+        "loss_0": 5300,
+        "loss_1": 17700,
+        "loss_2": 17100,
+        "loss_3": 17400,
+        "loss_4": 9400,
+        "loss_5": 4900,
+        "deductible": 9400,
+        "coverage": 16600
+      }
+    },
+    {
+      "id": "offer_48b08b2639c4",
+      "attrs": {
+        "price": 709581,
+        "admin": 189188,
+        "loss_0": 1900,
+        "loss_1": 4300,
+        "loss_2": 15200,
+        "loss_3": 18700,
+        "loss_4": 1800,
+        "loss_5": 9000,
+        "deductible": 2600,
+        "coverage": 20800
+      }
+    },
+    {
+      "id": "offer_a22af340dee5",
+      "attrs": {
+        "price": 639163,
+        "admin": 147421,
+        "loss_0": 24800,
+        "loss_1": 10300,
+        "loss_2": 23900,
+        "loss_3": 2800,
+        "loss_4": 3300,
+        "loss_5": 10400,
+        "deductible": 26200,
+        "coverage": 12200
+      }
+    },
+    {
+      "id": "offer_974d4748b8de",
+      "attrs": {
+        "price": 724954,
+        "admin": 180022,
+        "loss_0": 23400,
+        "loss_1": 10300,
+        "loss_2": 14600,
+        "loss_3": 14200,
+        "loss_4": 4900,
+        "loss_5": 9800,
+        "deductible": 3600,
+        "coverage": 27900
+      }
+    },
+    {
+      "id": "offer_4530cfd0ea7e",
+      "attrs": {
+        "price": 567005,
+        "admin": 166813,
+        "loss_0": 12100,
+        "loss_1": 8400,
+        "loss_2": 23400,
+        "loss_3": 16600,
+        "loss_4": 14600,
+        "loss_5": 13500,
+        "deductible": 11700,
+        "coverage": 32500
+      }
+    },
+    {
+      "id": "offer_018f98a40455",
+      "attrs": {
+        "price": 892429,
+        "admin": 160370,
+        "loss_0": 4200,
+        "loss_1": 2500,
+        "loss_2": 5200,
+        "loss_3": 29700,
+        "loss_4": 16100,
+        "loss_5": 18000,
+        "deductible": 29900,
+        "coverage": 14100
+      }
+    },
+    {
+      "id": "offer_afabc768466e",
+      "attrs": {
+        "price": 496944,
+        "admin": 159103,
+        "loss_0": 21900,
+        "loss_1": 12200,
+        "loss_2": 1500,
+        "loss_3": 18600,
+        "loss_4": 23900,
+        "loss_5": 20800,
+        "deductible": 24500,
+        "coverage": 37100
+      }
+    },
+    {
+      "id": "offer_5fec678fb90e",
+      "attrs": {
+        "price": 825813,
+        "admin": 138488,
+        "loss_0": 21100,
+        "loss_1": 25100,
+        "loss_2": 17600,
+        "loss_3": 4200,
+        "loss_4": 14100,
+        "loss_5": 20800,
+        "deductible": 10500,
+        "coverage": 18500
+      }
+    },
+    {
+      "id": "offer_03c8f6294be6",
+      "attrs": {
+        "price": 678736,
+        "admin": 160440,
+        "loss_0": 14100,
+        "loss_1": 9600,
+        "loss_2": 16400,
+        "loss_3": 7000,
+        "loss_4": 18500,
+        "loss_5": 14900,
+        "deductible": 14600,
+        "coverage": 21400
+      }
+    },
+    {
+      "id": "offer_b068508ea3b5",
+      "attrs": {
+        "price": 758165,
+        "admin": 168446,
+        "loss_0": 7900,
+        "loss_1": 11100,
+        "loss_2": 9500,
+        "loss_3": 13300,
+        "loss_4": 13600,
+        "loss_5": 16500,
+        "deductible": 15300,
+        "coverage": 17400
+      }
+    },
+    {
+      "id": "offer_181dd17678f0",
+      "attrs": {
+        "price": 789807,
+        "admin": 146236,
+        "loss_0": 5600,
+        "loss_1": 14300,
+        "loss_2": 26000,
+        "loss_3": 19500,
+        "loss_4": 28800,
+        "loss_5": 20600,
+        "deductible": 13200,
+        "coverage": 32700
+      }
+    },
+    {
+      "id": "offer_22863b6b48b0",
+      "attrs": {
+        "price": 772502,
+        "admin": 129260,
+        "loss_0": 15900,
+        "loss_1": 16900,
+        "loss_2": 19800,
+        "loss_3": 24300,
+        "loss_4": 16900,
+        "loss_5": 17000,
+        "deductible": 14500,
+        "coverage": 5200
+      }
+    },
+    {
+      "id": "offer_bc5198291bef",
+      "attrs": {
+        "price": 844589,
+        "admin": 171797,
+        "loss_0": 10300,
+        "loss_1": 11500,
+        "loss_2": 8000,
+        "loss_3": 23000,
+        "loss_4": 15600,
+        "loss_5": 23400,
+        "deductible": 22500,
+        "coverage": 39300
+      }
+    },
+    {
+      "id": "offer_a0eaeaa86611",
+      "attrs": {
+        "price": 726707,
+        "admin": 169617,
+        "loss_0": 10600,
+        "loss_1": 18300,
+        "loss_2": 18800,
+        "loss_3": 1300,
+        "loss_4": 27400,
+        "loss_5": 12700,
+        "deductible": 10200,
+        "coverage": 34700
+      }
+    },
+    {
+      "id": "offer_b688da556df6",
+      "attrs": {
+        "price": 680576,
+        "admin": 145572,
+        "loss_0": 7900,
+        "loss_1": 5700,
+        "loss_2": 11300,
+        "loss_3": 22300,
+        "loss_4": 22400,
+        "loss_5": 24200,
+        "deductible": 18800,
+        "coverage": 10200
+      }
+    },
+    {
+      "id": "offer_583f3fe83b6d",
+      "attrs": {
+        "price": 458150,
+        "admin": 118349,
+        "loss_0": 18900,
+        "loss_1": 28600,
+        "loss_2": 5400,
+        "loss_3": 25500,
+        "loss_4": 24800,
+        "loss_5": 24600,
+        "deductible": 11500,
+        "coverage": 15700
+      }
+    },
+    {
+      "id": "offer_a48472f1b172",
+      "attrs": {
+        "price": 723540,
+        "admin": 147124,
+        "loss_0": 10100,
+        "loss_1": 6200,
+        "loss_2": 12400,
+        "loss_3": 20200,
+        "loss_4": 25600,
+        "loss_5": 25300,
+        "deductible": 3600,
+        "coverage": 12300
+      }
+    },
+    {
+      "id": "offer_2d3e95823ee1",
+      "attrs": {
+        "price": 746469,
+        "admin": 138862,
+        "loss_0": 18700,
+        "loss_1": 25400,
+        "loss_2": 27000,
+        "loss_3": 14600,
+        "loss_4": 11400,
+        "loss_5": 25500,
+        "deductible": 10600,
+        "coverage": 18800
+      }
+    },
+    {
+      "id": "offer_e8864c241fec",
+      "attrs": {
+        "price": 614596,
+        "admin": 175912,
+        "loss_0": 2000,
+        "loss_1": 10700,
+        "loss_2": 10000,
+        "loss_3": 27300,
+        "loss_4": 4900,
+        "loss_5": 10200,
+        "deductible": 9200,
+        "coverage": 19000
+      }
+    },
+    {
+      "id": "offer_493fcf81950f",
+      "attrs": {
+        "price": 638931,
+        "admin": 150946,
+        "loss_0": 29700,
+        "loss_1": 22700,
+        "loss_2": 14400,
+        "loss_3": 11700,
+        "loss_4": 18700,
+        "loss_5": 1500,
+        "deductible": 21000,
+        "coverage": 24400
+      }
+    },
+    {
+      "id": "offer_f777740a0b5e",
+      "attrs": {
+        "price": 845351,
+        "admin": 162447,
+        "loss_0": 18100,
+        "loss_1": 13500,
+        "loss_2": 2200,
+        "loss_3": 1900,
+        "loss_4": 22800,
+        "loss_5": 28300,
+        "deductible": 2200,
+        "coverage": 30100
+      }
+    },
+    {
+      "id": "offer_114a3ac54493",
+      "attrs": {
+        "price": 703117,
+        "admin": 153961,
+        "loss_0": 27300,
+        "loss_1": 29800,
+        "loss_2": 2600,
+        "loss_3": 2400,
+        "loss_4": 2600,
+        "loss_5": 11400,
+        "deductible": 24500,
+        "coverage": 17700
+      }
+    },
+    {
+      "id": "offer_8bf970e8c5e4",
+      "attrs": {
+        "price": 620746,
+        "admin": 150642,
+        "loss_0": 6400,
+        "loss_1": 27100,
+        "loss_2": 15500,
+        "loss_3": 23900,
+        "loss_4": 18400,
+        "loss_5": 18000,
+        "deductible": 7900,
+        "coverage": 24200
+      }
+    },
+    {
+      "id": "offer_b48f541e3514",
+      "attrs": {
+        "price": 505596,
+        "admin": 152787,
+        "loss_0": 5000,
+        "loss_1": 23100,
+        "loss_2": 8800,
+        "loss_3": 14200,
+        "loss_4": 13300,
+        "loss_5": 2800,
+        "deductible": 24000,
+        "coverage": 7300
+      }
+    },
+    {
+      "id": "offer_aaf38c1b6888",
+      "attrs": {
+        "price": 486829,
+        "admin": 154284,
+        "loss_0": 14100,
+        "loss_1": 21400,
+        "loss_2": 10000,
+        "loss_3": 19900,
+        "loss_4": 5000,
+        "loss_5": 18300,
+        "deductible": 25000,
+        "coverage": 16300
+      }
+    },
+    {
+      "id": "offer_a8e9ec68b5fb",
+      "attrs": {
+        "price": 869876,
+        "admin": 139000,
+        "loss_0": 18200,
+        "loss_1": 18600,
+        "loss_2": 21900,
+        "loss_3": 23000,
+        "loss_4": 29200,
+        "loss_5": 8100,
+        "deductible": 5000,
+        "coverage": 25900
+      }
+    },
+    {
+      "id": "offer_9e9b4141e3e2",
+      "attrs": {
+        "price": 654678,
+        "admin": 144344,
+        "loss_0": 21700,
+        "loss_1": 24700,
+        "loss_2": 18600,
+        "loss_3": 4200,
+        "loss_4": 3900,
+        "loss_5": 7400,
+        "deductible": 7200,
+        "coverage": 16700
+      }
+    },
+    {
+      "id": "offer_7c0107788998",
+      "attrs": {
+        "price": 745344,
+        "admin": 136757,
+        "loss_0": 22600,
+        "loss_1": 18600,
+        "loss_2": 20700,
+        "loss_3": 4000,
+        "loss_4": 2200,
+        "loss_5": 27200,
+        "deductible": 28600,
+        "coverage": 21600
+      }
+    },
+    {
+      "id": "offer_6604fbc81040",
+      "attrs": {
+        "price": 778941,
+        "admin": 142193,
+        "loss_0": 11100,
+        "loss_1": 29500,
+        "loss_2": 5700,
+        "loss_3": 7200,
+        "loss_4": 23100,
+        "loss_5": 13000,
+        "deductible": 22500,
+        "coverage": 7100
+      }
+    },
+    {
+      "id": "offer_a7a893de410e",
+      "attrs": {
+        "price": 830990,
+        "admin": 146629,
+        "loss_0": 21800,
+        "loss_1": 6200,
+        "loss_2": 5800,
+        "loss_3": 15200,
+        "loss_4": 15000,
+        "loss_5": 12700,
+        "deductible": 8200,
+        "coverage": 9400
+      }
+    },
+    {
+      "id": "offer_ed45a858fa13",
+      "attrs": {
+        "price": 678230,
+        "admin": 146550,
+        "loss_0": 24100,
+        "loss_1": 18200,
+        "loss_2": 3000,
+        "loss_3": 20100,
+        "loss_4": 13400,
+        "loss_5": 14900,
+        "deductible": 26200,
+        "coverage": 5000
+      }
+    },
+    {
+      "id": "offer_4abdd59ac3be",
+      "attrs": {
+        "price": 554627,
+        "admin": 136620,
+        "loss_0": 30000,
+        "loss_1": 2200,
+        "loss_2": 5800,
+        "loss_3": 19200,
+        "loss_4": 24300,
+        "loss_5": 18100,
+        "deductible": 24300,
+        "coverage": 14600
+      }
+    },
+    {
+      "id": "offer_27d30afcae40",
+      "attrs": {
+        "price": 510854,
+        "admin": 131057,
+        "loss_0": 24800,
+        "loss_1": 23300,
+        "loss_2": 22900,
+        "loss_3": 10000,
+        "loss_4": 1700,
+        "loss_5": 13000,
+        "deductible": 18700,
+        "coverage": 12700
+      }
+    },
+    {
+      "id": "offer_4f58ae58baf2",
+      "attrs": {
+        "price": 474652,
+        "admin": 157853,
+        "loss_0": 5700,
+        "loss_1": 25600,
+        "loss_2": 17700,
+        "loss_3": 11300,
+        "loss_4": 24500,
+        "loss_5": 7700,
+        "deductible": 2800,
+        "coverage": 29400
+      }
+    },
+    {
+      "id": "offer_dfcfd0a2a071",
+      "attrs": {
+        "price": 615198,
+        "admin": 167710,
+        "loss_0": 3100,
+        "loss_1": 9700,
+        "loss_2": 24400,
+        "loss_3": 1700,
+        "loss_4": 14300,
+        "loss_5": 20800,
+        "deductible": 17800,
+        "coverage": 21000
+      }
+    },
+    {
+      "id": "offer_e22effc259b6",
+      "attrs": {
+        "price": 746364,
+        "admin": 179376,
+        "loss_0": 14200,
+        "loss_1": 11200,
+        "loss_2": 13400,
+        "loss_3": 7200,
+        "loss_4": 19800,
+        "loss_5": 1800,
+        "deductible": 18900,
+        "coverage": 28000
+      }
+    },
+    {
+      "id": "offer_a28672dea054",
+      "attrs": {
+        "price": 675273,
+        "admin": 158893,
+        "loss_0": 11200,
+        "loss_1": 23600,
+        "loss_2": 24000,
+        "loss_3": 6200,
+        "loss_4": 13600,
+        "loss_5": 11100,
+        "deductible": 13400,
+        "coverage": 40000
+      }
+    },
+    {
+      "id": "offer_32addd07fb6a",
+      "attrs": {
+        "price": 858244,
+        "admin": 157555,
+        "loss_0": 15200,
+        "loss_1": 8600,
+        "loss_2": 5200,
+        "loss_3": 6800,
+        "loss_4": 26900,
+        "loss_5": 19500,
+        "deductible": 17100,
+        "coverage": 18000
+      }
+    },
+    {
+      "id": "offer_b1ddadc81362",
+      "attrs": {
+        "price": 716088,
+        "admin": 172299,
+        "loss_0": 12100,
+        "loss_1": 11200,
+        "loss_2": 8400,
+        "loss_3": 16700,
+        "loss_4": 2200,
+        "loss_5": 9800,
+        "deductible": 24200,
+        "coverage": 30000
+      }
+    },
+    {
+      "id": "offer_945f6ac01de3",
+      "attrs": {
+        "price": 695555,
+        "admin": 145883,
+        "loss_0": 2500,
+        "loss_1": 20600,
+        "loss_2": 4200,
+        "loss_3": 21100,
+        "loss_4": 17200,
+        "loss_5": 14400,
+        "deductible": 1000,
+        "coverage": 5400
+      }
+    },
+    {
+      "id": "offer_48b973beb107",
+      "attrs": {
+        "price": 461159,
+        "admin": 141345,
+        "loss_0": 9400,
+        "loss_1": 6900,
+        "loss_2": 22200,
+        "loss_3": 27800,
+        "loss_4": 7400,
+        "loss_5": 24800,
+        "deductible": 23400,
+        "coverage": 9000
+      }
+    },
+    {
+      "id": "offer_76f2270543bd",
+      "attrs": {
+        "price": 890825,
+        "admin": 132199,
+        "loss_0": 11900,
+        "loss_1": 25000,
+        "loss_2": 26600,
+        "loss_3": 27000,
+        "loss_4": 8900,
+        "loss_5": 21600,
+        "deductible": 1600,
+        "coverage": 28300
+      }
+    },
+    {
+      "id": "offer_6d3978a27d48",
+      "attrs": {
+        "price": 462058,
+        "admin": 144078,
+        "loss_0": 5700,
+        "loss_1": 18500,
+        "loss_2": 29400,
+        "loss_3": 12400,
+        "loss_4": 9000,
+        "loss_5": 17800,
+        "deductible": 8300,
+        "coverage": 17600
+      }
+    },
+    {
+      "id": "offer_4dabbc33485c",
+      "attrs": {
+        "price": 654567,
+        "admin": 155767,
+        "loss_0": 26000,
+        "loss_1": 11100,
+        "loss_2": 20500,
+        "loss_3": 23000,
+        "loss_4": 18700,
+        "loss_5": 10600,
+        "deductible": 1500,
+        "coverage": 24000
+      }
+    },
+    {
+      "id": "offer_073fbc1dd1d0",
+      "attrs": {
+        "price": 808722,
+        "admin": 135758,
+        "loss_0": 12100,
+        "loss_1": 8100,
+        "loss_2": 6200,
+        "loss_3": 17300,
+        "loss_4": 26500,
+        "loss_5": 25300,
+        "deductible": 5500,
+        "coverage": 10300
+      }
+    },
+    {
+      "id": "offer_e4a7b96a61ae",
+      "attrs": {
+        "price": 647848,
+        "admin": 152377,
+        "loss_0": 25100,
+        "loss_1": 15900,
+        "loss_2": 23500,
+        "loss_3": 28100,
+        "loss_4": 13600,
+        "loss_5": 13900,
+        "deductible": 28900,
+        "coverage": 27700
+      }
+    },
+    {
+      "id": "offer_564eafb2f4a7",
+      "attrs": {
+        "price": 832087,
+        "admin": 174808,
+        "loss_0": 19000,
+        "loss_1": 9200,
+        "loss_2": 8600,
+        "loss_3": 18600,
+        "loss_4": 2100,
+        "loss_5": 19100,
+        "deductible": 13300,
+        "coverage": 21600
+      }
+    },
+    {
+      "id": "offer_daade58c092e",
+      "attrs": {
+        "price": 850663,
+        "admin": 150130,
+        "loss_0": 19700,
+        "loss_1": 23400,
+        "loss_2": 25700,
+        "loss_3": 11700,
+        "loss_4": 19200,
+        "loss_5": 9900,
+        "deductible": 24200,
+        "coverage": 25500
+      }
+    },
+    {
+      "id": "offer_55a9d0e4d0ef",
+      "attrs": {
+        "price": 565059,
+        "admin": 175689,
+        "loss_0": 4900,
+        "loss_1": 22400,
+        "loss_2": 5500,
+        "loss_3": 19400,
+        "loss_4": 5800,
+        "loss_5": 8600,
+        "deductible": 26500,
+        "coverage": 13300
+      }
+    },
+    {
+      "id": "offer_dbc8d5e38a63",
+      "attrs": {
+        "price": 666886,
+        "admin": 167338,
+        "loss_0": 2600,
+        "loss_1": 10300,
+        "loss_2": 13700,
+        "loss_3": 21500,
+        "loss_4": 19500,
+        "loss_5": 20400,
+        "deductible": 22500,
+        "coverage": 25900
+      }
+    },
+    {
+      "id": "offer_864df1f11479",
+      "attrs": {
+        "price": 799563,
+        "admin": 160122,
+        "loss_0": 3300,
+        "loss_1": 26500,
+        "loss_2": 18100,
+        "loss_3": 12500,
+        "loss_4": 23800,
+        "loss_5": 13800,
+        "deductible": 22900,
+        "coverage": 25200
+      }
+    },
+    {
+      "id": "offer_7eb32df1aa8e",
+      "attrs": {
+        "price": 691319,
+        "admin": 174953,
+        "loss_0": 15200,
+        "loss_1": 3600,
+        "loss_2": 4300,
+        "loss_3": 11800,
+        "loss_4": 21000,
+        "loss_5": 18200,
+        "deductible": 1200,
+        "coverage": 34400
+      }
+    },
+    {
+      "id": "offer_bf9dc5e39033",
+      "attrs": {
+        "price": 761040,
+        "admin": 160958,
+        "loss_0": 13100,
+        "loss_1": 23300,
+        "loss_2": 19000,
+        "loss_3": 1300,
+        "loss_4": 8000,
+        "loss_5": 22400,
+        "deductible": 23400,
+        "coverage": 30000
+      }
+    },
+    {
+      "id": "offer_5e2bb0aceec6",
+      "attrs": {
+        "price": 882451,
+        "admin": 168373,
+        "loss_0": 14600,
+        "loss_1": 19600,
+        "loss_2": 6200,
+        "loss_3": 17500,
+        "loss_4": 4000,
+        "loss_5": 7900,
+        "deductible": 25500,
+        "coverage": 34300
+      }
+    },
+    {
+      "id": "offer_c8823b2cd02a",
+      "attrs": {
+        "price": 649137,
+        "admin": 167886,
+        "loss_0": 20800,
+        "loss_1": 14800,
+        "loss_2": 8000,
+        "loss_3": 14300,
+        "loss_4": 5200,
+        "loss_5": 4300,
+        "deductible": 7000,
+        "coverage": 22300
+      }
+    },
+    {
+      "id": "offer_1d3b7145d054",
+      "attrs": {
+        "price": 668555,
+        "admin": 129122,
+        "loss_0": 11100,
+        "loss_1": 2800,
+        "loss_2": 19400,
+        "loss_3": 27800,
+        "loss_4": 29500,
+        "loss_5": 1800,
+        "deductible": 24900,
+        "coverage": 5900
+      }
+    },
+    {
+      "id": "offer_308c02edd650",
+      "attrs": {
+        "price": 543408,
+        "admin": 162274,
+        "loss_0": 16900,
+        "loss_1": 24500,
+        "loss_2": 22200,
+        "loss_3": 7100,
+        "loss_4": 6200,
+        "loss_5": 14100,
+        "deductible": 13600,
+        "coverage": 21600
+      }
+    },
+    {
+      "id": "offer_97f099930140",
+      "attrs": {
+        "price": 891120,
+        "admin": 139770,
+        "loss_0": 25300,
+        "loss_1": 17700,
+        "loss_2": 13000,
+        "loss_3": 20600,
+        "loss_4": 5800,
+        "loss_5": 9000,
+        "deductible": 2000,
+        "coverage": 10000
+      }
+    },
+    {
+      "id": "offer_05a170e729e5",
+      "attrs": {
+        "price": 618303,
+        "admin": 160230,
+        "loss_0": 16400,
+        "loss_1": 6700,
+        "loss_2": 24800,
+        "loss_3": 15600,
+        "loss_4": 16500,
+        "loss_5": 2000,
+        "deductible": 15200,
+        "coverage": 23600
+      }
+    },
+    {
+      "id": "offer_e344e95f108f",
+      "attrs": {
+        "price": 625392,
+        "admin": 154429,
+        "loss_0": 22100,
+        "loss_1": 9600,
+        "loss_2": 3600,
+        "loss_3": 3400,
+        "loss_4": 18200,
+        "loss_5": 4600,
+        "deductible": 17000,
+        "coverage": 5900
+      }
+    },
+    {
+      "id": "offer_49dc58b72614",
+      "attrs": {
+        "price": 829545,
+        "admin": 164500,
+        "loss_0": 2700,
+        "loss_1": 15200,
+        "loss_2": 12400,
+        "loss_3": 17000,
+        "loss_4": 1700,
+        "loss_5": 13700,
+        "deductible": 26300,
+        "coverage": 26700
+      }
+    },
+    {
+      "id": "offer_214ca4012684",
+      "attrs": {
+        "price": 699577,
+        "admin": 130422,
+        "loss_0": 14700,
+        "loss_1": 21000,
+        "loss_2": 1100,
+        "loss_3": 25200,
+        "loss_4": 17200,
+        "loss_5": 19900,
+        "deductible": 3200,
+        "coverage": 5100
+      }
+    },
+    {
+      "id": "offer_a7749b396841",
+      "attrs": {
+        "price": 654209,
+        "admin": 130636,
+        "loss_0": 28300,
+        "loss_1": 26900,
+        "loss_2": 17400,
+        "loss_3": 15300,
+        "loss_4": 23000,
+        "loss_5": 28200,
+        "deductible": 23000,
+        "coverage": 20000
+      }
+    },
+    {
+      "id": "offer_9efbc6528def",
+      "attrs": {
+        "price": 894676,
+        "admin": 128465,
+        "loss_0": 23600,
+        "loss_1": 29200,
+        "loss_2": 27600,
+        "loss_3": 17900,
+        "loss_4": 10000,
+        "loss_5": 3900,
+        "deductible": 17600,
+        "coverage": 17600
+      }
+    },
+    {
+      "id": "offer_8da0d822ff1c",
+      "attrs": {
+        "price": 663373,
+        "admin": 154430,
+        "loss_0": 12800,
+        "loss_1": 3900,
+        "loss_2": 20100,
+        "loss_3": 23700,
+        "loss_4": 17000,
+        "loss_5": 3500,
+        "deductible": 28800,
+        "coverage": 13000
+      }
+    },
+    {
+      "id": "offer_78c0684364fd",
+      "attrs": {
+        "price": 801973,
+        "admin": 170920,
+        "loss_0": 3400,
+        "loss_1": 14600,
+        "loss_2": 11600,
+        "loss_3": 17000,
+        "loss_4": 23200,
+        "loss_5": 6900,
+        "deductible": 18700,
+        "coverage": 33500
+      }
+    },
+    {
+      "id": "offer_267e455b711a",
+      "attrs": {
+        "price": 530621,
+        "admin": 135900,
+        "loss_0": 23600,
+        "loss_1": 12200,
+        "loss_2": 24800,
+        "loss_3": 15100,
+        "loss_4": 27900,
+        "loss_5": 11700,
+        "deductible": 17700,
+        "coverage": 22500
+      }
+    },
+    {
+      "id": "offer_314da9a0f73a",
+      "attrs": {
+        "price": 608115,
+        "admin": 161482,
+        "loss_0": 10500,
+        "loss_1": 21400,
+        "loss_2": 25300,
+        "loss_3": 8000,
+        "loss_4": 17000,
+        "loss_5": 2000,
+        "deductible": 24800,
+        "coverage": 32600
+      }
+    },
+    {
+      "id": "offer_52f72e212be2",
+      "attrs": {
+        "price": 857930,
+        "admin": 145721,
+        "loss_0": 17400,
+        "loss_1": 28400,
+        "loss_2": 16400,
+        "loss_3": 29300,
+        "loss_4": 7600,
+        "loss_5": 12200,
+        "deductible": 3600,
+        "coverage": 36900
+      }
+    },
+    {
+      "id": "offer_1fce9ee4451a",
+      "attrs": {
+        "price": 631162,
+        "admin": 161235,
+        "loss_0": 13400,
+        "loss_1": 1800,
+        "loss_2": 27300,
+        "loss_3": 1900,
+        "loss_4": 19800,
+        "loss_5": 23700,
+        "deductible": 14500,
+        "coverage": 34900
+      }
+    },
+    {
+      "id": "offer_2f3a09751a0b",
+      "attrs": {
+        "price": 889860,
+        "admin": 149425,
+        "loss_0": 8600,
+        "loss_1": 16400,
+        "loss_2": 12600,
+        "loss_3": 24600,
+        "loss_4": 7200,
+        "loss_5": 25100,
+        "deductible": 11300,
+        "coverage": 17200
+      }
+    },
+    {
+      "id": "offer_21bc162e3d71",
+      "attrs": {
+        "price": 775541,
+        "admin": 152979,
+        "loss_0": 10900,
+        "loss_1": 25200,
+        "loss_2": 22900,
+        "loss_3": 20100,
+        "loss_4": 21900,
+        "loss_5": 22400,
+        "deductible": 25100,
+        "coverage": 38900
+      }
+    },
+    {
+      "id": "offer_12de83512fed",
+      "attrs": {
+        "price": 696374,
+        "admin": 149814,
+        "loss_0": 20700,
+        "loss_1": 21800,
+        "loss_2": 29000,
+        "loss_3": 21500,
+        "loss_4": 3000,
+        "loss_5": 28700,
+        "deductible": 20200,
+        "coverage": 32800
+      }
+    },
+    {
+      "id": "offer_5a934e58e007",
+      "attrs": {
+        "price": 545357,
+        "admin": 148970,
+        "loss_0": 16000,
+        "loss_1": 9000,
+        "loss_2": 14000,
+        "loss_3": 22000,
+        "loss_4": 14700,
+        "loss_5": 26200,
+        "deductible": 24100,
+        "coverage": 16400
+      }
+    },
+    {
+      "id": "offer_55f9a6b388e3",
+      "attrs": {
+        "price": 873540,
+        "admin": 155469,
+        "loss_0": 18400,
+        "loss_1": 13700,
+        "loss_2": 9000,
+        "loss_3": 7400,
+        "loss_4": 8100,
+        "loss_5": 25900,
+        "deductible": 23700,
+        "coverage": 29400
+      }
+    },
+    {
+      "id": "offer_897dbfe761c6",
+      "attrs": {
+        "price": 461072,
+        "admin": 166806,
+        "loss_0": 6100,
+        "loss_1": 26100,
+        "loss_2": 14500,
+        "loss_3": 8300,
+        "loss_4": 23000,
+        "loss_5": 7400,
+        "deductible": 29200,
+        "coverage": 34300
+      }
+    },
+    {
+      "id": "offer_1305fb524ab3",
+      "attrs": {
+        "price": 846271,
+        "admin": 126602,
+        "loss_0": 10400,
+        "loss_1": 25500,
+        "loss_2": 25100,
+        "loss_3": 21700,
+        "loss_4": 18300,
+        "loss_5": 2600,
+        "deductible": 15000,
+        "coverage": 14000
+      }
+    },
+    {
+      "id": "offer_ec738900ea68",
+      "attrs": {
+        "price": 568503,
+        "admin": 158770,
+        "loss_0": 14800,
+        "loss_1": 24700,
+        "loss_2": 8400,
+        "loss_3": 9200,
+        "loss_4": 1500,
+        "loss_5": 18700,
+        "deductible": 28400,
+        "coverage": 31400
+      }
+    },
+    {
+      "id": "offer_dfb916431570",
+      "attrs": {
+        "price": 870250,
+        "admin": 124238,
+        "loss_0": 22600,
+        "loss_1": 28800,
+        "loss_2": 22800,
+        "loss_3": 2500,
+        "loss_4": 19800,
+        "loss_5": 25500,
+        "deductible": 18000,
+        "coverage": 11200
+      }
+    },
+    {
+      "id": "offer_4dcd3a8e7793",
+      "attrs": {
+        "price": 574731,
+        "admin": 159206,
+        "loss_0": 10800,
+        "loss_1": 7500,
+        "loss_2": 13900,
+        "loss_3": 17800,
+        "loss_4": 10200,
+        "loss_5": 29200,
+        "deductible": 12900,
+        "coverage": 17900
+      }
+    },
+    {
+      "id": "offer_21a32b081185",
+      "attrs": {
+        "price": 620322,
+        "admin": 139132,
+        "loss_0": 11200,
+        "loss_1": 29800,
+        "loss_2": 12100,
+        "loss_3": 9800,
+        "loss_4": 22100,
+        "loss_5": 24400,
+        "deductible": 8700,
+        "coverage": 26600
+      }
+    },
+    {
+      "id": "offer_76f233a2dcf4",
+      "attrs": {
+        "price": 729590,
+        "admin": 175518,
+        "loss_0": 15800,
+        "loss_1": 22300,
+        "loss_2": 4300,
+        "loss_3": 4700,
+        "loss_4": 5700,
+        "loss_5": 11000,
+        "deductible": 3200,
+        "coverage": 27900
+      }
+    },
+    {
+      "id": "offer_e37fb6f4c0a9",
+      "attrs": {
+        "price": 737837,
+        "admin": 153216,
+        "loss_0": 22700,
+        "loss_1": 3500,
+        "loss_2": 5200,
+        "loss_3": 24600,
+        "loss_4": 24100,
+        "loss_5": 5800,
+        "deductible": 11200,
+        "coverage": 21800
+      }
+    },
+    {
+      "id": "offer_a73203771cf3",
+      "attrs": {
+        "price": 533867,
+        "admin": 165787,
+        "loss_0": 16500,
+        "loss_1": 4700,
+        "loss_2": 23200,
+        "loss_3": 16800,
+        "loss_4": 24200,
+        "loss_5": 3100,
+        "deductible": 25200,
+        "coverage": 36300
+      }
+    },
+    {
+      "id": "offer_56e5d401a461",
+      "attrs": {
+        "price": 693749,
+        "admin": 164218,
+        "loss_0": 23700,
+        "loss_1": 10900,
+        "loss_2": 9900,
+        "loss_3": 13400,
+        "loss_4": 13300,
+        "loss_5": 4700,
+        "deductible": 28000,
+        "coverage": 36200
+      }
+    },
+    {
+      "id": "offer_fff9cc28e6b0",
+      "attrs": {
+        "price": 723669,
+        "admin": 159077,
+        "loss_0": 21600,
+        "loss_1": 17200,
+        "loss_2": 15500,
+        "loss_3": 7600,
+        "loss_4": 7900,
+        "loss_5": 21500,
+        "deductible": 5300,
+        "coverage": 22200
+      }
+    },
+    {
+      "id": "offer_b5c38ae31004",
+      "attrs": {
+        "price": 682830,
+        "admin": 139171,
+        "loss_0": 17100,
+        "loss_1": 26200,
+        "loss_2": 6400,
+        "loss_3": 13300,
+        "loss_4": 10100,
+        "loss_5": 25800,
+        "deductible": 17300,
+        "coverage": 14900
+      }
+    },
+    {
+      "id": "offer_acb5e5f28eef",
+      "attrs": {
+        "price": 605310,
+        "admin": 140073,
+        "loss_0": 16600,
+        "loss_1": 29700,
+        "loss_2": 24200,
+        "loss_3": 5700,
+        "loss_4": 25400,
+        "loss_5": 16900,
+        "deductible": 5800,
+        "coverage": 30100
+      }
+    },
+    {
+      "id": "offer_a58fa1587905",
+      "attrs": {
+        "price": 593778,
+        "admin": 146120,
+        "loss_0": 17300,
+        "loss_1": 16900,
+        "loss_2": 26700,
+        "loss_3": 8600,
+        "loss_4": 6100,
+        "loss_5": 19800,
+        "deductible": 10300,
+        "coverage": 10700
+      }
+    },
+    {
+      "id": "offer_e9f44d34c1e3",
+      "attrs": {
+        "price": 775812,
+        "admin": 170003,
+        "loss_0": 19800,
+        "loss_1": 12800,
+        "loss_2": 2000,
+        "loss_3": 20800,
+        "loss_4": 9900,
+        "loss_5": 13500,
+        "deductible": 11500,
+        "coverage": 35400
+      }
+    },
+    {
+      "id": "offer_aa28f3af03b6",
+      "attrs": {
+        "price": 454529,
+        "admin": 169737,
+        "loss_0": 5100,
+        "loss_1": 8900,
+        "loss_2": 6500,
+        "loss_3": 14300,
+        "loss_4": 9100,
+        "loss_5": 20300,
+        "deductible": 3900,
+        "coverage": 6200
+      }
+    },
+    {
+      "id": "offer_3938752e9807",
+      "attrs": {
+        "price": 472510,
+        "admin": 135866,
+        "loss_0": 8200,
+        "loss_1": 15200,
+        "loss_2": 3600,
+        "loss_3": 17200,
+        "loss_4": 21800,
+        "loss_5": 28200,
+        "deductible": 29700,
+        "coverage": 17200
+      }
+    },
+    {
+      "id": "offer_b5f1bc1d1c58",
+      "attrs": {
+        "price": 878101,
+        "admin": 164430,
+        "loss_0": 14600,
+        "loss_1": 19600,
+        "loss_2": 15600,
+        "loss_3": 20400,
+        "loss_4": 16500,
+        "loss_5": 21900,
+        "deductible": 19500,
+        "coverage": 24000
+      }
+    },
+    {
+      "id": "offer_5f569b5ab63d",
+      "attrs": {
+        "price": 788348,
+        "admin": 131848,
+        "loss_0": 1000,
+        "loss_1": 1500,
+        "loss_2": 26500,
+        "loss_3": 14900,
+        "loss_4": 28800,
+        "loss_5": 22100,
+        "deductible": 7400,
+        "coverage": 17100
+      }
+    },
+    {
+      "id": "offer_7b5b96d490fd",
+      "attrs": {
+        "price": 728003,
+        "admin": 165401,
+        "loss_0": 14000,
+        "loss_1": 5600,
+        "loss_2": 6700,
+        "loss_3": 23000,
+        "loss_4": 8800,
+        "loss_5": 25000,
+        "deductible": 18800,
+        "coverage": 22100
+      }
+    },
+    {
+      "id": "offer_bb2579d1b188",
+      "attrs": {
+        "price": 550307,
+        "admin": 151559,
+        "loss_0": 12100,
+        "loss_1": 15900,
+        "loss_2": 28200,
+        "loss_3": 19000,
+        "loss_4": 26200,
+        "loss_5": 16900,
+        "deductible": 22600,
+        "coverage": 23900
+      }
+    },
+    {
+      "id": "offer_62827917ad27",
+      "attrs": {
+        "price": 587552,
+        "admin": 163607,
+        "loss_0": 9100,
+        "loss_1": 11400,
+        "loss_2": 24200,
+        "loss_3": 12000,
+        "loss_4": 16700,
+        "loss_5": 6300,
+        "deductible": 22600,
+        "coverage": 8500
+      }
+    },
+    {
+      "id": "offer_50db629fff95",
+      "attrs": {
+        "price": 454818,
+        "admin": 159089,
+        "loss_0": 24200,
+        "loss_1": 27800,
+        "loss_2": 11100,
+        "loss_3": 10600,
+        "loss_4": 7100,
+        "loss_5": 25200,
+        "deductible": 1200,
+        "coverage": 35600
+      }
+    },
+    {
+      "id": "offer_0e13bddd1e81",
+      "attrs": {
+        "price": 771266,
+        "admin": 174297,
+        "loss_0": 13300,
+        "loss_1": 4800,
+        "loss_2": 5500,
+        "loss_3": 22400,
+        "loss_4": 28900,
+        "loss_5": 20000,
+        "deductible": 6200,
+        "coverage": 39500
+      }
+    },
+    {
+      "id": "offer_c69c31b83896",
+      "attrs": {
+        "price": 453834,
+        "admin": 171099,
+        "loss_0": 3500,
+        "loss_1": 21300,
+        "loss_2": 18000,
+        "loss_3": 4100,
+        "loss_4": 20600,
+        "loss_5": 19900,
+        "deductible": 2300,
+        "coverage": 38400
+      }
+    },
+    {
+      "id": "offer_a379caa36ad2",
+      "attrs": {
+        "price": 518474,
+        "admin": 159227,
+        "loss_0": 9100,
+        "loss_1": 5500,
+        "loss_2": 15500,
+        "loss_3": 24400,
+        "loss_4": 10500,
+        "loss_5": 17700,
+        "deductible": 9300,
+        "coverage": 26900
+      }
+    },
+    {
+      "id": "offer_59ed45363f9e",
+      "attrs": {
+        "price": 713664,
+        "admin": 144291,
+        "loss_0": 28600,
+        "loss_1": 30000,
+        "loss_2": 15900,
+        "loss_3": 1000,
+        "loss_4": 22800,
+        "loss_5": 26000,
+        "deductible": 3400,
+        "coverage": 39600
+      }
+    },
+    {
+      "id": "offer_7e1d1440a324",
+      "attrs": {
+        "price": 893229,
+        "admin": 130181,
+        "loss_0": 27900,
+        "loss_1": 13200,
+        "loss_2": 21000,
+        "loss_3": 29400,
+        "loss_4": 27300,
+        "loss_5": 24600,
+        "deductible": 22300,
+        "coverage": 36300
+      }
+    },
+    {
+      "id": "offer_582294c7fd3a",
+      "attrs": {
+        "price": 848896,
+        "admin": 170794,
+        "loss_0": 7100,
+        "loss_1": 1200,
+        "loss_2": 18100,
+        "loss_3": 11800,
+        "loss_4": 28500,
+        "loss_5": 1500,
+        "deductible": 1700,
+        "coverage": 36800
+      }
+    },
+    {
+      "id": "offer_482de00126e7",
+      "attrs": {
+        "price": 815449,
+        "admin": 126741,
+        "loss_0": 6800,
+        "loss_1": 10300,
+        "loss_2": 28000,
+        "loss_3": 26700,
+        "loss_4": 1600,
+        "loss_5": 29500,
+        "deductible": 10300,
+        "coverage": 16800
+      }
+    },
+    {
+      "id": "offer_b6c84cd8b616",
+      "attrs": {
+        "price": 499366,
+        "admin": 179355,
+        "loss_0": 1800,
+        "loss_1": 4900,
+        "loss_2": 1900,
+        "loss_3": 15200,
+        "loss_4": 10500,
+        "loss_5": 9600,
+        "deductible": 25900,
+        "coverage": 28200
+      }
+    },
+    {
+      "id": "offer_079c7a6420e8",
+      "attrs": {
+        "price": 699494,
+        "admin": 124457,
+        "loss_0": 27600,
+        "loss_1": 26300,
+        "loss_2": 17400,
+        "loss_3": 14000,
+        "loss_4": 6500,
+        "loss_5": 28700,
+        "deductible": 3000,
+        "coverage": 24400
+      }
+    },
+    {
+      "id": "offer_fed5d410f512",
+      "attrs": {
+        "price": 519395,
+        "admin": 156844,
+        "loss_0": 10300,
+        "loss_1": 29500,
+        "loss_2": 25500,
+        "loss_3": 12100,
+        "loss_4": 11100,
+        "loss_5": 17900,
+        "deductible": 18000,
+        "coverage": 32100
+      }
+    },
+    {
+      "id": "offer_febcf03bc1ff",
+      "attrs": {
+        "price": 527179,
+        "admin": 127730,
+        "loss_0": 8700,
+        "loss_1": 18200,
+        "loss_2": 15800,
+        "loss_3": 27900,
+        "loss_4": 3700,
+        "loss_5": 23500,
+        "deductible": 24900,
+        "coverage": 9300
+      }
+    },
+    {
+      "id": "offer_cb706ae3610a",
+      "attrs": {
+        "price": 712537,
+        "admin": 181503,
+        "loss_0": 6100,
+        "loss_1": 1000,
+        "loss_2": 19400,
+        "loss_3": 26900,
+        "loss_4": 6600,
+        "loss_5": 10400,
+        "deductible": 3000,
+        "coverage": 35300
+      }
+    },
+    {
+      "id": "offer_a76220a57673",
+      "attrs": {
+        "price": 538451,
+        "admin": 134918,
+        "loss_0": 4400,
+        "loss_1": 24000,
+        "loss_2": 25000,
+        "loss_3": 26700,
+        "loss_4": 8000,
+        "loss_5": 4800,
+        "deductible": 22300,
+        "coverage": 16900
+      }
+    },
+    {
+      "id": "offer_e8436048f3c3",
+      "attrs": {
+        "price": 486273,
+        "admin": 123319,
+        "loss_0": 7300,
+        "loss_1": 14600,
+        "loss_2": 29000,
+        "loss_3": 27900,
+        "loss_4": 8600,
+        "loss_5": 26600,
+        "deductible": 15800,
+        "coverage": 17600
+      }
+    },
+    {
+      "id": "offer_43e629bb06a2",
+      "attrs": {
+        "price": 664503,
+        "admin": 164263,
+        "loss_0": 12500,
+        "loss_1": 15400,
+        "loss_2": 12100,
+        "loss_3": 12400,
+        "loss_4": 18800,
+        "loss_5": 8900,
+        "deductible": 9300,
+        "coverage": 13200
+      }
+    },
+    {
+      "id": "offer_7bc8af4fd1ce",
+      "attrs": {
+        "price": 801473,
+        "admin": 153570,
+        "loss_0": 27300,
+        "loss_1": 8500,
+        "loss_2": 19800,
+        "loss_3": 13500,
+        "loss_4": 9900,
+        "loss_5": 22400,
+        "deductible": 21800,
+        "coverage": 34600
+      }
+    },
+    {
+      "id": "offer_d687150875a6",
+      "attrs": {
+        "price": 472797,
+        "admin": 129779,
+        "loss_0": 9100,
+        "loss_1": 13800,
+        "loss_2": 22200,
+        "loss_3": 27600,
+        "loss_4": 23300,
+        "loss_5": 25900,
+        "deductible": 4600,
+        "coverage": 27700
+      }
+    },
+    {
+      "id": "offer_c2fb5f7d1850",
+      "attrs": {
+        "price": 600451,
+        "admin": 137911,
+        "loss_0": 27000,
+        "loss_1": 19200,
+        "loss_2": 12200,
+        "loss_3": 22300,
+        "loss_4": 12600,
+        "loss_5": 2500,
+        "deductible": 24200,
+        "coverage": 6700
+      }
+    },
+    {
+      "id": "offer_583e802d4a83",
+      "attrs": {
+        "price": 667418,
+        "admin": 158850,
+        "loss_0": 29600,
+        "loss_1": 20200,
+        "loss_2": 6800,
+        "loss_3": 2800,
+        "loss_4": 7100,
+        "loss_5": 21900,
+        "deductible": 14700,
+        "coverage": 37400
+      }
+    },
+    {
+      "id": "offer_0238b01619e8",
+      "attrs": {
+        "price": 879813,
+        "admin": 138762,
+        "loss_0": 28200,
+        "loss_1": 27400,
+        "loss_2": 13000,
+        "loss_3": 23400,
+        "loss_4": 18700,
+        "loss_5": 2800,
+        "deductible": 26900,
+        "coverage": 35600
+      }
+    },
+    {
+      "id": "offer_04e601862552",
+      "attrs": {
+        "price": 596107,
+        "admin": 154899,
+        "loss_0": 22200,
+        "loss_1": 17200,
+        "loss_2": 29200,
+        "loss_3": 21700,
+        "loss_4": 7200,
+        "loss_5": 6100,
+        "deductible": 18800,
+        "coverage": 31800
+      }
+    },
+    {
+      "id": "offer_3614634dc1f5",
+      "attrs": {
+        "price": 496040,
+        "admin": 138630,
+        "loss_0": 5800,
+        "loss_1": 15500,
+        "loss_2": 15000,
+        "loss_3": 29800,
+        "loss_4": 23100,
+        "loss_5": 11400,
+        "deductible": 15900,
+        "coverage": 12800
+      }
+    },
+    {
+      "id": "offer_0c2c553bd0be",
+      "attrs": {
+        "price": 734854,
+        "admin": 168555,
+        "loss_0": 9600,
+        "loss_1": 27900,
+        "loss_2": 1300,
+        "loss_3": 18200,
+        "loss_4": 7600,
+        "loss_5": 3100,
+        "deductible": 13100,
+        "coverage": 29500
+      }
+    },
+    {
+      "id": "offer_a983b261d15d",
+      "attrs": {
+        "price": 618868,
+        "admin": 184604,
+        "loss_0": 7000,
+        "loss_1": 13400,
+        "loss_2": 5400,
+        "loss_3": 7600,
+        "loss_4": 20500,
+        "loss_5": 21800,
+        "deductible": 5400,
+        "coverage": 29600
+      }
+    },
+    {
+      "id": "offer_7a5eb3808bee",
+      "attrs": {
+        "price": 722629,
+        "admin": 166281,
+        "loss_0": 8300,
+        "loss_1": 6200,
+        "loss_2": 17000,
+        "loss_3": 4800,
+        "loss_4": 13500,
+        "loss_5": 23600,
+        "deductible": 4000,
+        "coverage": 18400
+      }
+    },
+    {
+      "id": "offer_990d2511c5b0",
+      "attrs": {
+        "price": 677175,
+        "admin": 155120,
+        "loss_0": 12300,
+        "loss_1": 9400,
+        "loss_2": 24800,
+        "loss_3": 29600,
+        "loss_4": 5800,
+        "loss_5": 7700,
+        "deductible": 13700,
+        "coverage": 14000
+      }
+    },
+    {
+      "id": "offer_f41b0b00bc52",
+      "attrs": {
+        "price": 649171,
+        "admin": 168187,
+        "loss_0": 11100,
+        "loss_1": 22200,
+        "loss_2": 8900,
+        "loss_3": 2200,
+        "loss_4": 16600,
+        "loss_5": 3000,
+        "deductible": 25800,
+        "coverage": 32400
+      }
+    },
+    {
+      "id": "offer_b50a4d071b32",
+      "attrs": {
+        "price": 775595,
+        "admin": 138045,
+        "loss_0": 29000,
+        "loss_1": 24000,
+        "loss_2": 28100,
+        "loss_3": 24900,
+        "loss_4": 22400,
+        "loss_5": 16300,
+        "deductible": 10500,
+        "coverage": 30500
+      }
+    },
+    {
+      "id": "offer_42a9d0f61b3e",
+      "attrs": {
+        "price": 536919,
+        "admin": 150725,
+        "loss_0": 18400,
+        "loss_1": 21200,
+        "loss_2": 12700,
+        "loss_3": 4500,
+        "loss_4": 12500,
+        "loss_5": 6300,
+        "deductible": 7600,
+        "coverage": 12000
+      }
+    },
+    {
+      "id": "offer_0564dee5b4d3",
+      "attrs": {
+        "price": 492903,
+        "admin": 150361,
+        "loss_0": 6400,
+        "loss_1": 9800,
+        "loss_2": 22600,
+        "loss_3": 15800,
+        "loss_4": 12100,
+        "loss_5": 21500,
+        "deductible": 28600,
+        "coverage": 10900
+      }
+    },
+    {
+      "id": "offer_ee6f269801fe",
+      "attrs": {
+        "price": 694285,
+        "admin": 164631,
+        "loss_0": 7500,
+        "loss_1": 1800,
+        "loss_2": 25800,
+        "loss_3": 13500,
+        "loss_4": 11400,
+        "loss_5": 29300,
+        "deductible": 29500,
+        "coverage": 32300
+      }
+    },
+    {
+      "id": "offer_8a8217277bb7",
+      "attrs": {
+        "price": 772339,
+        "admin": 138289,
+        "loss_0": 4100,
+        "loss_1": 22100,
+        "loss_2": 3300,
+        "loss_3": 2500,
+        "loss_4": 28000,
+        "loss_5": 25400,
+        "deductible": 1900,
+        "coverage": 16900
+      }
+    },
+    {
+      "id": "offer_33a342e207ab",
+      "attrs": {
+        "price": 850875,
+        "admin": 172936,
+        "loss_0": 16700,
+        "loss_1": 15700,
+        "loss_2": 1000,
+        "loss_3": 9200,
+        "loss_4": 2600,
+        "loss_5": 21500,
+        "deductible": 27300,
+        "coverage": 21000
+      }
+    },
+    {
+      "id": "offer_967ea5d99eeb",
+      "attrs": {
+        "price": 809958,
+        "admin": 169616,
+        "loss_0": 8400,
+        "loss_1": 10900,
+        "loss_2": 24600,
+        "loss_3": 9200,
+        "loss_4": 19200,
+        "loss_5": 16800,
+        "deductible": 16600,
+        "coverage": 22700
+      }
+    },
+    {
+      "id": "offer_2e0bc0813c24",
+      "attrs": {
+        "price": 762995,
+        "admin": 165578,
+        "loss_0": 15800,
+        "loss_1": 20400,
+        "loss_2": 15300,
+        "loss_3": 8100,
+        "loss_4": 4700,
+        "loss_5": 8600,
+        "deductible": 4300,
+        "coverage": 11400
+      }
+    },
+    {
+      "id": "offer_6166117b88ad",
+      "attrs": {
+        "price": 591495,
+        "admin": 149002,
+        "loss_0": 4200,
+        "loss_1": 21400,
+        "loss_2": 2400,
+        "loss_3": 19600,
+        "loss_4": 17200,
+        "loss_5": 14700,
+        "deductible": 16700,
+        "coverage": 15500
+      }
+    },
+    {
+      "id": "offer_47278d6cc803",
+      "attrs": {
+        "price": 713955,
+        "admin": 161429,
+        "loss_0": 14100,
+        "loss_1": 28300,
+        "loss_2": 13200,
+        "loss_3": 15700,
+        "loss_4": 5200,
+        "loss_5": 8600,
+        "deductible": 10200,
+        "coverage": 36500
+      }
+    },
+    {
+      "id": "offer_0dececc5203a",
+      "attrs": {
+        "price": 525346,
+        "admin": 163654,
+        "loss_0": 28600,
+        "loss_1": 13400,
+        "loss_2": 8500,
+        "loss_3": 13600,
+        "loss_4": 19200,
+        "loss_5": 10900,
+        "deductible": 28200,
+        "coverage": 22500
+      }
+    },
+    {
+      "id": "offer_13ce054bbd5f",
+      "attrs": {
+        "price": 756189,
+        "admin": 129093,
+        "loss_0": 17500,
+        "loss_1": 25500,
+        "loss_2": 16700,
+        "loss_3": 8200,
+        "loss_4": 7000,
+        "loss_5": 19900,
+        "deductible": 13000,
+        "coverage": 7800
+      }
+    },
+    {
+      "id": "offer_6b0aa91930e3",
+      "attrs": {
+        "price": 557513,
+        "admin": 146739,
+        "loss_0": 22700,
+        "loss_1": 18200,
+        "loss_2": 13100,
+        "loss_3": 1300,
+        "loss_4": 23300,
+        "loss_5": 2400,
+        "deductible": 29900,
+        "coverage": 12900
+      }
+    },
+    {
+      "id": "offer_f864c30e8ca9",
+      "attrs": {
+        "price": 695110,
+        "admin": 143121,
+        "loss_0": 22100,
+        "loss_1": 4200,
+        "loss_2": 25000,
+        "loss_3": 22400,
+        "loss_4": 6300,
+        "loss_5": 5300,
+        "deductible": 1100,
+        "coverage": 12200
+      }
+    },
+    {
+      "id": "offer_bc75ee13afcb",
+      "attrs": {
+        "price": 648910,
+        "admin": 158214,
+        "loss_0": 22500,
+        "loss_1": 7200,
+        "loss_2": 17300,
+        "loss_3": 17700,
+        "loss_4": 28900,
+        "loss_5": 8700,
+        "deductible": 20900,
+        "coverage": 30500
+      }
+    },
+    {
+      "id": "offer_6e51784b09bf",
+      "attrs": {
+        "price": 708047,
+        "admin": 171841,
+        "loss_0": 13000,
+        "loss_1": 7600,
+        "loss_2": 1100,
+        "loss_3": 28400,
+        "loss_4": 7200,
+        "loss_5": 14000,
+        "deductible": 21400,
+        "coverage": 21800
+      }
+    },
+    {
+      "id": "offer_361e93759fe7",
+      "attrs": {
+        "price": 877627,
+        "admin": 145820,
+        "loss_0": 22000,
+        "loss_1": 12900,
+        "loss_2": 14800,
+        "loss_3": 28600,
+        "loss_4": 9600,
+        "loss_5": 11300,
+        "deductible": 18900,
+        "coverage": 18500
+      }
+    },
+    {
+      "id": "offer_b9e29de46c7e",
+      "attrs": {
+        "price": 897129,
+        "admin": 178279,
+        "loss_0": 7400,
+        "loss_1": 15600,
+        "loss_2": 14300,
+        "loss_3": 22400,
+        "loss_4": 1700,
+        "loss_5": 11700,
+        "deductible": 17300,
+        "coverage": 32200
+      }
+    },
+    {
+      "id": "offer_e34322a2c793",
+      "attrs": {
+        "price": 490512,
+        "admin": 192152,
+        "loss_0": 8800,
+        "loss_1": 1200,
+        "loss_2": 3800,
+        "loss_3": 2500,
+        "loss_4": 5600,
+        "loss_5": 9500,
+        "deductible": 9400,
+        "coverage": 5400
+      }
+    },
+    {
+      "id": "offer_69c19cb015b5",
+      "attrs": {
+        "price": 740188,
+        "admin": 155516,
+        "loss_0": 21200,
+        "loss_1": 27800,
+        "loss_2": 18000,
+        "loss_3": 15100,
+        "loss_4": 7200,
+        "loss_5": 12800,
+        "deductible": 26800,
+        "coverage": 19200
+      }
+    },
+    {
+      "id": "offer_5f67b8bc3efb",
+      "attrs": {
+        "price": 874246,
+        "admin": 130815,
+        "loss_0": 22800,
+        "loss_1": 23200,
+        "loss_2": 8800,
+        "loss_3": 12300,
+        "loss_4": 28300,
+        "loss_5": 9700,
+        "deductible": 24500,
+        "coverage": 16800
+      }
+    },
+    {
+      "id": "offer_611caa17ef9c",
+      "attrs": {
+        "price": 467261,
+        "admin": 168367,
+        "loss_0": 15500,
+        "loss_1": 16500,
+        "loss_2": 24600,
+        "loss_3": 1100,
+        "loss_4": 17900,
+        "loss_5": 7200,
+        "deductible": 25000,
+        "coverage": 36400
+      }
+    },
+    {
+      "id": "offer_c536214eaafc",
+      "attrs": {
+        "price": 465015,
+        "admin": 160808,
+        "loss_0": 21400,
+        "loss_1": 8300,
+        "loss_2": 12200,
+        "loss_3": 30000,
+        "loss_4": 5500,
+        "loss_5": 4800,
+        "deductible": 4500,
+        "coverage": 17200
+      }
+    },
+    {
+      "id": "offer_701800f37e34",
+      "attrs": {
+        "price": 530793,
+        "admin": 120071,
+        "loss_0": 8400,
+        "loss_1": 30000,
+        "loss_2": 28800,
+        "loss_3": 2000,
+        "loss_4": 29100,
+        "loss_5": 20200,
+        "deductible": 2100,
+        "coverage": 14800
+      }
+    },
+    {
+      "id": "offer_2b6007ea7b17",
+      "attrs": {
+        "price": 712417,
+        "admin": 176684,
+        "loss_0": 19500,
+        "loss_1": 3800,
+        "loss_2": 14200,
+        "loss_3": 16400,
+        "loss_4": 10500,
+        "loss_5": 10900,
+        "deductible": 23100,
+        "coverage": 20200
+      }
+    },
+    {
+      "id": "offer_06454e8e1d22",
+      "attrs": {
+        "price": 636764,
+        "admin": 141318,
+        "loss_0": 5300,
+        "loss_1": 27000,
+        "loss_2": 26200,
+        "loss_3": 9800,
+        "loss_4": 11500,
+        "loss_5": 16700,
+        "deductible": 9300,
+        "coverage": 9500
+      }
+    },
+    {
+      "id": "offer_75f4c62e868e",
+      "attrs": {
+        "price": 611595,
+        "admin": 150642,
+        "loss_0": 26700,
+        "loss_1": 8700,
+        "loss_2": 21800,
+        "loss_3": 19000,
+        "loss_4": 10700,
+        "loss_5": 15500,
+        "deductible": 29300,
+        "coverage": 22900
+      }
+    },
+    {
+      "id": "offer_62bde01cdc0f",
+      "attrs": {
+        "price": 672964,
+        "admin": 125400,
+        "loss_0": 5100,
+        "loss_1": 29800,
+        "loss_2": 15200,
+        "loss_3": 24300,
+        "loss_4": 15600,
+        "loss_5": 28600,
+        "deductible": 4000,
+        "coverage": 6300
+      }
+    },
+    {
+      "id": "offer_4a491e05b0bb",
+      "attrs": {
+        "price": 663125,
+        "admin": 157797,
+        "loss_0": 11600,
+        "loss_1": 9100,
+        "loss_2": 15000,
+        "loss_3": 12500,
+        "loss_4": 28300,
+        "loss_5": 23300,
+        "deductible": 23400,
+        "coverage": 30800
+      }
+    },
+    {
+      "id": "offer_71e75489ba5d",
+      "attrs": {
+        "price": 682783,
+        "admin": 117905,
+        "loss_0": 11500,
+        "loss_1": 25000,
+        "loss_2": 29400,
+        "loss_3": 26400,
+        "loss_4": 9500,
+        "loss_5": 17200,
+        "deductible": 1700,
+        "coverage": 9400
+      }
+    },
+    {
+      "id": "offer_8ec4736889eb",
+      "attrs": {
+        "price": 545908,
+        "admin": 138531,
+        "loss_0": 22600,
+        "loss_1": 9100,
+        "loss_2": 25200,
+        "loss_3": 7200,
+        "loss_4": 16200,
+        "loss_5": 3200,
+        "deductible": 27100,
+        "coverage": 11000
+      }
+    },
+    {
+      "id": "offer_b18ac58b3211",
+      "attrs": {
+        "price": 541337,
+        "admin": 130526,
+        "loss_0": 19400,
+        "loss_1": 3800,
+        "loss_2": 18400,
+        "loss_3": 27100,
+        "loss_4": 28800,
+        "loss_5": 21400,
+        "deductible": 4100,
+        "coverage": 24100
+      }
+    },
+    {
+      "id": "offer_8e0f66e869c7",
+      "attrs": {
+        "price": 814894,
+        "admin": 126946,
+        "loss_0": 28900,
+        "loss_1": 29600,
+        "loss_2": 12800,
+        "loss_3": 21700,
+        "loss_4": 2100,
+        "loss_5": 19900,
+        "deductible": 18600,
+        "coverage": 11400
+      }
+    },
+    {
+      "id": "offer_83f0ff3e7863",
+      "attrs": {
+        "price": 892346,
+        "admin": 143303,
+        "loss_0": 19900,
+        "loss_1": 11000,
+        "loss_2": 18200,
+        "loss_3": 21300,
+        "loss_4": 20500,
+        "loss_5": 27400,
+        "deductible": 5600,
+        "coverage": 18800
+      }
+    },
+    {
+      "id": "offer_f9f487d3309c",
+      "attrs": {
+        "price": 452687,
+        "admin": 169507,
+        "loss_0": 11600,
+        "loss_1": 28600,
+        "loss_2": 17700,
+        "loss_3": 3100,
+        "loss_4": 8100,
+        "loss_5": 12500,
+        "deductible": 23000,
+        "coverage": 30500
+      }
+    },
+    {
+      "id": "offer_7a149d4462ae",
+      "attrs": {
+        "price": 573683,
+        "admin": 157903,
+        "loss_0": 17400,
+        "loss_1": 21400,
+        "loss_2": 27500,
+        "loss_3": 12600,
+        "loss_4": 26800,
+        "loss_5": 10800,
+        "deductible": 6800,
+        "coverage": 38400
+      }
+    },
+    {
+      "id": "offer_b42c735826c0",
+      "attrs": {
+        "price": 772110,
+        "admin": 172975,
+        "loss_0": 2100,
+        "loss_1": 5100,
+        "loss_2": 22900,
+        "loss_3": 4600,
+        "loss_4": 8600,
+        "loss_5": 21500,
+        "deductible": 15500,
+        "coverage": 15200
+      }
+    },
+    {
+      "id": "offer_2d8742641f9c",
+      "attrs": {
+        "price": 594189,
+        "admin": 150653,
+        "loss_0": 29300,
+        "loss_1": 18800,
+        "loss_2": 15000,
+        "loss_3": 16900,
+        "loss_4": 7300,
+        "loss_5": 8400,
+        "deductible": 27800,
+        "coverage": 24200
+      }
+    },
+    {
+      "id": "offer_aab0024bfe46",
+      "attrs": {
+        "price": 670093,
+        "admin": 125321,
+        "loss_0": 9900,
+        "loss_1": 28800,
+        "loss_2": 10900,
+        "loss_3": 27300,
+        "loss_4": 4200,
+        "loss_5": 24600,
+        "deductible": 16000,
+        "coverage": 6200
+      }
+    },
+    {
+      "id": "offer_6025edcf0cb1",
+      "attrs": {
+        "price": 523555,
+        "admin": 125429,
+        "loss_0": 14000,
+        "loss_1": 19100,
+        "loss_2": 4200,
+        "loss_3": 26700,
+        "loss_4": 20800,
+        "loss_5": 21400,
+        "deductible": 14200,
+        "coverage": 6200
+      }
+    },
+    {
+      "id": "offer_54454796dcc6",
+      "attrs": {
+        "price": 751547,
+        "admin": 129974,
+        "loss_0": 22200,
+        "loss_1": 29000,
+        "loss_2": 5700,
+        "loss_3": 25000,
+        "loss_4": 21200,
+        "loss_5": 25500,
+        "deductible": 25200,
+        "coverage": 26900
+      }
+    },
+    {
+      "id": "offer_e2c83c6600a1",
+      "attrs": {
+        "price": 704505,
+        "admin": 163863,
+        "loss_0": 3900,
+        "loss_1": 7100,
+        "loss_2": 18000,
+        "loss_3": 6700,
+        "loss_4": 28700,
+        "loss_5": 7000,
+        "deductible": 22300,
+        "coverage": 13000
+      }
+    },
+    {
+      "id": "offer_d8953061e32c",
+      "attrs": {
+        "price": 846274,
+        "admin": 157076,
+        "loss_0": 13700,
+        "loss_1": 9200,
+        "loss_2": 9000,
+        "loss_3": 25600,
+        "loss_4": 20400,
+        "loss_5": 5700,
+        "deductible": 26000,
+        "coverage": 39500
+      }
+    },
+    {
+      "id": "offer_a08c68ff7f62",
+      "attrs": {
+        "price": 625875,
+        "admin": 165729,
+        "loss_0": 9200,
+        "loss_1": 10000,
+        "loss_2": 10600,
+        "loss_3": 1300,
+        "loss_4": 7300,
+        "loss_5": 23700,
+        "deductible": 17500,
+        "coverage": 39500
+      }
+    },
+    {
+      "id": "offer_a691dece8df4",
+      "attrs": {
+        "price": 876463,
+        "admin": 158742,
+        "loss_0": 18600,
+        "loss_1": 1000,
+        "loss_2": 18300,
+        "loss_3": 2500,
+        "loss_4": 19000,
+        "loss_5": 17600,
+        "deductible": 14400,
+        "coverage": 18000
+      }
+    },
+    {
+      "id": "offer_d1cac0761acd",
+      "attrs": {
+        "price": 841011,
+        "admin": 156653,
+        "loss_0": 12100,
+        "loss_1": 1400,
+        "loss_2": 8600,
+        "loss_3": 29700,
+        "loss_4": 22200,
+        "loss_5": 8800,
+        "deductible": 27400,
+        "coverage": 22100
+      }
+    },
+    {
+      "id": "offer_76b0006e8334",
+      "attrs": {
+        "price": 855207,
+        "admin": 99062,
+        "loss_0": 29400,
+        "loss_1": 16400,
+        "loss_2": 4900,
+        "loss_3": 29400,
+        "loss_4": 27100,
+        "loss_5": 25400,
+        "deductible": 20300,
+        "coverage": 5800
+      }
+    },
+    {
+      "id": "offer_e3266237171e",
+      "attrs": {
+        "price": 638472,
+        "admin": 153747,
+        "loss_0": 15800,
+        "loss_1": 25000,
+        "loss_2": 21800,
+        "loss_3": 18100,
+        "loss_4": 1800,
+        "loss_5": 3800,
+        "deductible": 8400,
+        "coverage": 30800
+      }
+    },
+    {
+      "id": "offer_8e3e49f010c0",
+      "attrs": {
+        "price": 638606,
+        "admin": 143765,
+        "loss_0": 7200,
+        "loss_1": 2300,
+        "loss_2": 21800,
+        "loss_3": 21300,
+        "loss_4": 29400,
+        "loss_5": 9700,
+        "deductible": 12800,
+        "coverage": 14200
+      }
+    },
+    {
+      "id": "offer_562e14c57355",
+      "attrs": {
+        "price": 481773,
+        "admin": 159667,
+        "loss_0": 24300,
+        "loss_1": 5900,
+        "loss_2": 16500,
+        "loss_3": 13000,
+        "loss_4": 8700,
+        "loss_5": 4800,
+        "deductible": 27300,
+        "coverage": 20500
+      }
+    },
+    {
+      "id": "offer_52ea924a7ab1",
+      "attrs": {
+        "price": 783845,
+        "admin": 125698,
+        "loss_0": 21900,
+        "loss_1": 21000,
+        "loss_2": 3600,
+        "loss_3": 29100,
+        "loss_4": 21000,
+        "loss_5": 28600,
+        "deductible": 12900,
+        "coverage": 7800
+      }
+    },
+    {
+      "id": "offer_b7157f322d87",
+      "attrs": {
+        "price": 679979,
+        "admin": 166377,
+        "loss_0": 16600,
+        "loss_1": 9500,
+        "loss_2": 5100,
+        "loss_3": 10000,
+        "loss_4": 17300,
+        "loss_5": 10100,
+        "deductible": 1600,
+        "coverage": 16000
+      }
+    },
+    {
+      "id": "offer_a79dc34454d3",
+      "attrs": {
+        "price": 728042,
+        "admin": 158573,
+        "loss_0": 3100,
+        "loss_1": 24800,
+        "loss_2": 27100,
+        "loss_3": 5800,
+        "loss_4": 17600,
+        "loss_5": 18100,
+        "deductible": 12500,
+        "coverage": 29900
+      }
+    },
+    {
+      "id": "offer_fc7fa26f1213",
+      "attrs": {
+        "price": 855035,
+        "admin": 140132,
+        "loss_0": 19200,
+        "loss_1": 16800,
+        "loss_2": 22400,
+        "loss_3": 19900,
+        "loss_4": 18300,
+        "loss_5": 8800,
+        "deductible": 9400,
+        "coverage": 18100
+      }
+    },
+    {
+      "id": "offer_133995d4015c",
+      "attrs": {
+        "price": 856646,
+        "admin": 162411,
+        "loss_0": 16900,
+        "loss_1": 18300,
+        "loss_2": 6900,
+        "loss_3": 13200,
+        "loss_4": 6400,
+        "loss_5": 8600,
+        "deductible": 22100,
+        "coverage": 15800
+      }
+    },
+    {
+      "id": "offer_1bf048a6df06",
+      "attrs": {
+        "price": 485522,
+        "admin": 126175,
+        "loss_0": 8800,
+        "loss_1": 17600,
+        "loss_2": 26400,
+        "loss_3": 1600,
+        "loss_4": 13400,
+        "loss_5": 27000,
+        "deductible": 17700,
+        "coverage": 8700
+      }
+    },
+    {
+      "id": "offer_ecdedda78a79",
+      "attrs": {
+        "price": 563216,
+        "admin": 139483,
+        "loss_0": 24800,
+        "loss_1": 9100,
+        "loss_2": 19900,
+        "loss_3": 18900,
+        "loss_4": 25200,
+        "loss_5": 19400,
+        "deductible": 4600,
+        "coverage": 28300
+      }
+    },
+    {
+      "id": "offer_e2406067ce3a",
+      "attrs": {
+        "price": 551726,
+        "admin": 178031,
+        "loss_0": 9600,
+        "loss_1": 7200,
+        "loss_2": 5100,
+        "loss_3": 13900,
+        "loss_4": 16100,
+        "loss_5": 5600,
+        "deductible": 17700,
+        "coverage": 28200
+      }
+    },
+    {
+      "id": "offer_746061455ee3",
+      "attrs": {
+        "price": 743837,
+        "admin": 164647,
+        "loss_0": 5600,
+        "loss_1": 12600,
+        "loss_2": 23200,
+        "loss_3": 25000,
+        "loss_4": 8400,
+        "loss_5": 15700,
+        "deductible": 5300,
+        "coverage": 34500
+      }
+    },
+    {
+      "id": "offer_219441c9c72a",
+      "attrs": {
+        "price": 753475,
+        "admin": 155424,
+        "loss_0": 19000,
+        "loss_1": 7800,
+        "loss_2": 29500,
+        "loss_3": 14400,
+        "loss_4": 10600,
+        "loss_5": 24100,
+        "deductible": 29300,
+        "coverage": 35500
+      }
+    },
+    {
+      "id": "offer_270765171902",
+      "attrs": {
+        "price": 552919,
+        "admin": 148196,
+        "loss_0": 29900,
+        "loss_1": 11200,
+        "loss_2": 3700,
+        "loss_3": 20800,
+        "loss_4": 7400,
+        "loss_5": 13500,
+        "deductible": 6100,
+        "coverage": 8600
+      }
+    },
+    {
+      "id": "offer_cde3705aeaf3",
+      "attrs": {
+        "price": 503643,
+        "admin": 151371,
+        "loss_0": 8100,
+        "loss_1": 6300,
+        "loss_2": 29900,
+        "loss_3": 16300,
+        "loss_4": 3100,
+        "loss_5": 29900,
+        "deductible": 10500,
+        "coverage": 25200
+      }
+    },
+    {
+      "id": "offer_159b3661cc04",
+      "attrs": {
+        "price": 705798,
+        "admin": 134062,
+        "loss_0": 25200,
+        "loss_1": 19900,
+        "loss_2": 29500,
+        "loss_3": 1900,
+        "loss_4": 18100,
+        "loss_5": 9100,
+        "deductible": 9800,
+        "coverage": 14800
+      }
+    },
+    {
+      "id": "offer_af6a14fc53fb",
+      "attrs": {
+        "price": 707258,
+        "admin": 121513,
+        "loss_0": 28700,
+        "loss_1": 23700,
+        "loss_2": 27200,
+        "loss_3": 21700,
+        "loss_4": 23500,
+        "loss_5": 26000,
+        "deductible": 22900,
+        "coverage": 12400
+      }
+    },
+    {
+      "id": "offer_d5c2ee497b5e",
+      "attrs": {
+        "price": 736011,
+        "admin": 158861,
+        "loss_0": 4600,
+        "loss_1": 24000,
+        "loss_2": 14700,
+        "loss_3": 27400,
+        "loss_4": 19600,
+        "loss_5": 6000,
+        "deductible": 21700,
+        "coverage": 25100
+      }
+    },
+    {
+      "id": "offer_b87b7aa07d18",
+      "attrs": {
+        "price": 604315,
+        "admin": 147331,
+        "loss_0": 27100,
+        "loss_1": 12200,
+        "loss_2": 6300,
+        "loss_3": 26400,
+        "loss_4": 28200,
+        "loss_5": 17200,
+        "deductible": 19200,
+        "coverage": 32400
+      }
+    },
+    {
+      "id": "offer_b10229171b14",
+      "attrs": {
+        "price": 482946,
+        "admin": 164212,
+        "loss_0": 5100,
+        "loss_1": 17400,
+        "loss_2": 13200,
+        "loss_3": 19700,
+        "loss_4": 9600,
+        "loss_5": 23500,
+        "deductible": 21600,
+        "coverage": 37100
+      }
+    },
+    {
+      "id": "offer_da3dd79953cd",
+      "attrs": {
+        "price": 760682,
+        "admin": 154701,
+        "loss_0": 13100,
+        "loss_1": 9300,
+        "loss_2": 13600,
+        "loss_3": 18000,
+        "loss_4": 22600,
+        "loss_5": 25200,
+        "deductible": 10200,
+        "coverage": 19600
+      }
+    },
+    {
+      "id": "offer_2425c9216941",
+      "attrs": {
+        "price": 580651,
+        "admin": 150904,
+        "loss_0": 21000,
+        "loss_1": 10500,
+        "loss_2": 17000,
+        "loss_3": 1700,
+        "loss_4": 10300,
+        "loss_5": 15200,
+        "deductible": 8200,
+        "coverage": 6700
+      }
+    },
+    {
+      "id": "offer_721b79c845f8",
+      "attrs": {
+        "price": 886021,
+        "admin": 162997,
+        "loss_0": 16200,
+        "loss_1": 18800,
+        "loss_2": 29000,
+        "loss_3": 13600,
+        "loss_4": 9100,
+        "loss_5": 6700,
+        "deductible": 2500,
+        "coverage": 30700
+      }
+    },
+    {
+      "id": "offer_49e4545f0bd7",
+      "attrs": {
+        "price": 589474,
+        "admin": 172383,
+        "loss_0": 2900,
+        "loss_1": 5300,
+        "loss_2": 22100,
+        "loss_3": 5700,
+        "loss_4": 9000,
+        "loss_5": 23700,
+        "deductible": 19200,
+        "coverage": 35100
+      }
+    },
+    {
+      "id": "offer_5bfef72f9de4",
+      "attrs": {
+        "price": 454590,
+        "admin": 135090,
+        "loss_0": 27900,
+        "loss_1": 28300,
+        "loss_2": 18200,
+        "loss_3": 18000,
+        "loss_4": 6300,
+        "loss_5": 27000,
+        "deductible": 4100,
+        "coverage": 24800
+      }
+    },
+    {
+      "id": "offer_c0eed480b937",
+      "attrs": {
+        "price": 550352,
+        "admin": 149496,
+        "loss_0": 9900,
+        "loss_1": 29100,
+        "loss_2": 15800,
+        "loss_3": 5000,
+        "loss_4": 8300,
+        "loss_5": 25200,
+        "deductible": 24800,
+        "coverage": 33400
+      }
+    },
+    {
+      "id": "offer_a032dd6ef4d7",
+      "attrs": {
+        "price": 535995,
+        "admin": 159679,
+        "loss_0": 26800,
+        "loss_1": 14800,
+        "loss_2": 3500,
+        "loss_3": 22000,
+        "loss_4": 9200,
+        "loss_5": 7700,
+        "deductible": 3800,
+        "coverage": 17400
+      }
+    },
+    {
+      "id": "offer_90881f72e866",
+      "attrs": {
+        "price": 741377,
+        "admin": 163356,
+        "loss_0": 23800,
+        "loss_1": 6200,
+        "loss_2": 12500,
+        "loss_3": 8900,
+        "loss_4": 24100,
+        "loss_5": 13600,
+        "deductible": 23800,
+        "coverage": 24300
+      }
+    },
+    {
+      "id": "offer_f2fa854e10d4",
+      "attrs": {
+        "price": 897416,
+        "admin": 169148,
+        "loss_0": 9500,
+        "loss_1": 22700,
+        "loss_2": 5700,
+        "loss_3": 23200,
+        "loss_4": 9800,
+        "loss_5": 23000,
+        "deductible": 3500,
+        "coverage": 37200
+      }
+    },
+    {
+      "id": "offer_37f81a942727",
+      "attrs": {
+        "price": 654337,
+        "admin": 150394,
+        "loss_0": 23200,
+        "loss_1": 18400,
+        "loss_2": 21600,
+        "loss_3": 17200,
+        "loss_4": 27000,
+        "loss_5": 15600,
+        "deductible": 2400,
+        "coverage": 26900
+      }
+    },
+    {
+      "id": "offer_b0123ea22c7e",
+      "attrs": {
+        "price": 485646,
+        "admin": 144578,
+        "loss_0": 21600,
+        "loss_1": 18400,
+        "loss_2": 6000,
+        "loss_3": 4700,
+        "loss_4": 23300,
+        "loss_5": 2600,
+        "deductible": 14600,
+        "coverage": 6400
+      }
+    },
+    {
+      "id": "offer_063d3f9b614c",
+      "attrs": {
+        "price": 790425,
+        "admin": 156102,
+        "loss_0": 5100,
+        "loss_1": 14200,
+        "loss_2": 24400,
+        "loss_3": 29000,
+        "loss_4": 12600,
+        "loss_5": 22400,
+        "deductible": 15300,
+        "coverage": 35700
+      }
+    },
+    {
+      "id": "offer_a2b8897476c8",
+      "attrs": {
+        "price": 581499,
+        "admin": 132649,
+        "loss_0": 8400,
+        "loss_1": 27800,
+        "loss_2": 25200,
+        "loss_3": 13200,
+        "loss_4": 7900,
+        "loss_5": 25900,
+        "deductible": 5500,
+        "coverage": 22900
+      }
+    },
+    {
+      "id": "offer_fb13f091cfad",
+      "attrs": {
+        "price": 845957,
+        "admin": 119222,
+        "loss_0": 23700,
+        "loss_1": 16900,
+        "loss_2": 24600,
+        "loss_3": 7500,
+        "loss_4": 29500,
+        "loss_5": 25300,
+        "deductible": 7800,
+        "coverage": 19900
+      }
+    },
+    {
+      "id": "offer_f86c890ecddb",
+      "attrs": {
+        "price": 572341,
+        "admin": 119302,
+        "loss_0": 25800,
+        "loss_1": 1600,
+        "loss_2": 15600,
+        "loss_3": 1300,
+        "loss_4": 23700,
+        "loss_5": 22500,
+        "deductible": 14600,
+        "coverage": 5000
+      }
+    },
+    {
+      "id": "offer_caab56b7e30e",
+      "attrs": {
+        "price": 487523,
+        "admin": 146358,
+        "loss_0": 28300,
+        "loss_1": 10100,
+        "loss_2": 18200,
+        "loss_3": 29400,
+        "loss_4": 22600,
+        "loss_5": 3800,
+        "deductible": 10100,
+        "coverage": 28500
+      }
+    },
+    {
+      "id": "offer_e844199d7258",
+      "attrs": {
+        "price": 893826,
+        "admin": 164828,
+        "loss_0": 5700,
+        "loss_1": 10300,
+        "loss_2": 14500,
+        "loss_3": 14800,
+        "loss_4": 22500,
+        "loss_5": 18300,
+        "deductible": 25000,
+        "coverage": 27300
+      }
+    },
+    {
+      "id": "offer_635e63870e61",
+      "attrs": {
+        "price": 692609,
+        "admin": 146156,
+        "loss_0": 15200,
+        "loss_1": 22800,
+        "loss_2": 28100,
+        "loss_3": 2500,
+        "loss_4": 22200,
+        "loss_5": 13500,
+        "deductible": 29800,
+        "coverage": 38100
+      }
+    },
+    {
+      "id": "offer_5f6aae2def74",
+      "attrs": {
+        "price": 503536,
+        "admin": 126647,
+        "loss_0": 28800,
+        "loss_1": 2900,
+        "loss_2": 24600,
+        "loss_3": 3400,
+        "loss_4": 27200,
+        "loss_5": 28400,
+        "deductible": 7400,
+        "coverage": 33500
+      }
+    },
+    {
+      "id": "offer_1dead50558db",
+      "attrs": {
+        "price": 451558,
+        "admin": 140648,
+        "loss_0": 23800,
+        "loss_1": 25500,
+        "loss_2": 7100,
+        "loss_3": 2900,
+        "loss_4": 18200,
+        "loss_5": 21800,
+        "deductible": 14900,
+        "coverage": 28900
+      }
+    },
+    {
+      "id": "offer_ed91d661f0fc",
+      "attrs": {
+        "price": 700745,
+        "admin": 122883,
+        "loss_0": 29500,
+        "loss_1": 2800,
+        "loss_2": 27900,
+        "loss_3": 20000,
+        "loss_4": 19100,
+        "loss_5": 20600,
+        "deductible": 16400,
+        "coverage": 7000
+      }
+    },
+    {
+      "id": "offer_61ca988a6fc4",
+      "attrs": {
+        "price": 622962,
+        "admin": 150650,
+        "loss_0": 29200,
+        "loss_1": 11100,
+        "loss_2": 21200,
+        "loss_3": 4800,
+        "loss_4": 14900,
+        "loss_5": 24900,
+        "deductible": 1600,
+        "coverage": 37100
+      }
+    },
+    {
+      "id": "offer_8721304f92ad",
+      "attrs": {
+        "price": 746036,
+        "admin": 137116,
+        "loss_0": 14100,
+        "loss_1": 29600,
+        "loss_2": 16600,
+        "loss_3": 27500,
+        "loss_4": 10300,
+        "loss_5": 16200,
+        "deductible": 3300,
+        "coverage": 11700
+      }
+    },
+    {
+      "id": "offer_106e021c9563",
+      "attrs": {
+        "price": 537901,
+        "admin": 152596,
+        "loss_0": 22500,
+        "loss_1": 3900,
+        "loss_2": 8500,
+        "loss_3": 28300,
+        "loss_4": 24300,
+        "loss_5": 12900,
+        "deductible": 19600,
+        "coverage": 21200
+      }
+    },
+    {
+      "id": "offer_0e9d818b9539",
+      "attrs": {
+        "price": 871390,
+        "admin": 167038,
+        "loss_0": 15700,
+        "loss_1": 4100,
+        "loss_2": 2600,
+        "loss_3": 26100,
+        "loss_4": 4600,
+        "loss_5": 23400,
+        "deductible": 19900,
+        "coverage": 19700
+      }
+    },
+    {
+      "id": "offer_2c664002a2f4",
+      "attrs": {
+        "price": 863747,
+        "admin": 162878,
+        "loss_0": 4900,
+        "loss_1": 12300,
+        "loss_2": 11700,
+        "loss_3": 23600,
+        "loss_4": 29100,
+        "loss_5": 17700,
+        "deductible": 29200,
+        "coverage": 34300
+      }
+    },
+    {
+      "id": "offer_1fe2accf1d0b",
+      "attrs": {
+        "price": 662929,
+        "admin": 168550,
+        "loss_0": 16400,
+        "loss_1": 25300,
+        "loss_2": 22300,
+        "loss_3": 8700,
+        "loss_4": 10200,
+        "loss_5": 12000,
+        "deductible": 21500,
+        "coverage": 29700
+      }
+    },
+    {
+      "id": "offer_c264a85b9311",
+      "attrs": {
+        "price": 879095,
+        "admin": 148915,
+        "loss_0": 17800,
+        "loss_1": 23500,
+        "loss_2": 9200,
+        "loss_3": 24500,
+        "loss_4": 21600,
+        "loss_5": 29900,
+        "deductible": 13200,
+        "coverage": 36700
+      }
+    },
+    {
+      "id": "offer_5cb261635542",
+      "attrs": {
+        "price": 646218,
+        "admin": 108897,
+        "loss_0": 26400,
+        "loss_1": 27100,
+        "loss_2": 28100,
+        "loss_3": 20400,
+        "loss_4": 29800,
+        "loss_5": 20400,
+        "deductible": 18000,
+        "coverage": 12100
+      }
+    },
+    {
+      "id": "offer_ba4722377cf5",
+      "attrs": {
+        "price": 731187,
+        "admin": 136400,
+        "loss_0": 28200,
+        "loss_1": 18300,
+        "loss_2": 15700,
+        "loss_3": 27100,
+        "loss_4": 17900,
+        "loss_5": 16700,
+        "deductible": 29100,
+        "coverage": 17300
+      }
+    },
+    {
+      "id": "offer_2ffda731e1d3",
+      "attrs": {
+        "price": 521291,
+        "admin": 180267,
+        "loss_0": 7600,
+        "loss_1": 1900,
+        "loss_2": 2900,
+        "loss_3": 16500,
+        "loss_4": 13200,
+        "loss_5": 13400,
+        "deductible": 22700,
+        "coverage": 15400
+      }
+    },
+    {
+      "id": "offer_61178491e307",
+      "attrs": {
+        "price": 617490,
+        "admin": 156654,
+        "loss_0": 19400,
+        "loss_1": 20100,
+        "loss_2": 2500,
+        "loss_3": 26100,
+        "loss_4": 12600,
+        "loss_5": 7100,
+        "deductible": 17600,
+        "coverage": 16800
+      }
+    },
+    {
+      "id": "offer_b66c5b822d81",
+      "attrs": {
+        "price": 731472,
+        "admin": 182282,
+        "loss_0": 9600,
+        "loss_1": 9300,
+        "loss_2": 4000,
+        "loss_3": 8300,
+        "loss_4": 11300,
+        "loss_5": 6600,
+        "deductible": 23000,
+        "coverage": 14600
+      }
+    },
+    {
+      "id": "offer_f0c0128d0c10",
+      "attrs": {
+        "price": 493263,
+        "admin": 139901,
+        "loss_0": 17600,
+        "loss_1": 11500,
+        "loss_2": 28600,
+        "loss_3": 11400,
+        "loss_4": 26800,
+        "loss_5": 16100,
+        "deductible": 16200,
+        "coverage": 13700
+      }
+    },
+    {
+      "id": "offer_086bd88c0b37",
+      "attrs": {
+        "price": 843790,
+        "admin": 136548,
+        "loss_0": 20200,
+        "loss_1": 15700,
+        "loss_2": 28200,
+        "loss_3": 12400,
+        "loss_4": 21600,
+        "loss_5": 18800,
+        "deductible": 25900,
+        "coverage": 5900
+      }
+    },
+    {
+      "id": "offer_9625d99e8299",
+      "attrs": {
+        "price": 492411,
+        "admin": 150988,
+        "loss_0": 18200,
+        "loss_1": 4400,
+        "loss_2": 25300,
+        "loss_3": 5800,
+        "loss_4": 21400,
+        "loss_5": 13400,
+        "deductible": 7600,
+        "coverage": 24000
+      }
+    },
+    {
+      "id": "offer_67bc7f4c2ea2",
+      "attrs": {
+        "price": 589960,
+        "admin": 185608,
+        "loss_0": 6000,
+        "loss_1": 7300,
+        "loss_2": 12700,
+        "loss_3": 13900,
+        "loss_4": 14900,
+        "loss_5": 8900,
+        "deductible": 3900,
+        "coverage": 39000
+      }
+    },
+    {
+      "id": "offer_ade448b27fde",
+      "attrs": {
+        "price": 744255,
+        "admin": 156058,
+        "loss_0": 10100,
+        "loss_1": 4800,
+        "loss_2": 21400,
+        "loss_3": 25700,
+        "loss_4": 5600,
+        "loss_5": 26300,
+        "deductible": 8400,
+        "coverage": 21200
+      }
+    },
+    {
+      "id": "offer_59b9a3d2d4eb",
+      "attrs": {
+        "price": 819560,
+        "admin": 163381,
+        "loss_0": 12900,
+        "loss_1": 8900,
+        "loss_2": 29500,
+        "loss_3": 18600,
+        "loss_4": 2300,
+        "loss_5": 29600,
+        "deductible": 15900,
+        "coverage": 36500
+      }
+    },
+    {
+      "id": "offer_616ba2f46494",
+      "attrs": {
+        "price": 876078,
+        "admin": 136117,
+        "loss_0": 14000,
+        "loss_1": 24700,
+        "loss_2": 23100,
+        "loss_3": 25500,
+        "loss_4": 15900,
+        "loss_5": 16200,
+        "deductible": 23300,
+        "coverage": 18200
+      }
+    },
+    {
+      "id": "offer_defaba30c933",
+      "attrs": {
+        "price": 615425,
+        "admin": 176985,
+        "loss_0": 10700,
+        "loss_1": 4600,
+        "loss_2": 5200,
+        "loss_3": 5000,
+        "loss_4": 24200,
+        "loss_5": 12100,
+        "deductible": 26500,
+        "coverage": 12100
+      }
+    },
+    {
+      "id": "offer_992c7bb58e2a",
+      "attrs": {
+        "price": 576903,
+        "admin": 176417,
+        "loss_0": 10900,
+        "loss_1": 25500,
+        "loss_2": 13000,
+        "loss_3": 2800,
+        "loss_4": 16400,
+        "loss_5": 4600,
+        "deductible": 7300,
+        "coverage": 38200
+      }
+    },
+    {
+      "id": "offer_ef9be6d877ad",
+      "attrs": {
+        "price": 472841,
+        "admin": 156803,
+        "loss_0": 14700,
+        "loss_1": 21000,
+        "loss_2": 26800,
+        "loss_3": 28800,
+        "loss_4": 10100,
+        "loss_5": 10900,
+        "deductible": 12100,
+        "coverage": 37500
+      }
+    },
+    {
+      "id": "offer_ffd0f5ae5c46",
+      "attrs": {
+        "price": 809641,
+        "admin": 151875,
+        "loss_0": 24500,
+        "loss_1": 5900,
+        "loss_2": 20900,
+        "loss_3": 12400,
+        "loss_4": 2100,
+        "loss_5": 25400,
+        "deductible": 2500,
+        "coverage": 24500
+      }
+    },
+    {
+      "id": "offer_62fcc4af4879",
+      "attrs": {
+        "price": 822987,
+        "admin": 154982,
+        "loss_0": 8600,
+        "loss_1": 24900,
+        "loss_2": 27000,
+        "loss_3": 1600,
+        "loss_4": 20300,
+        "loss_5": 8500,
+        "deductible": 11800,
+        "coverage": 22800
+      }
+    },
+    {
+      "id": "offer_542f1873a910",
+      "attrs": {
+        "price": 612300,
+        "admin": 142441,
+        "loss_0": 13700,
+        "loss_1": 28800,
+        "loss_2": 28800,
+        "loss_3": 13700,
+        "loss_4": 11900,
+        "loss_5": 27500,
+        "deductible": 23000,
+        "coverage": 27700
+      }
+    },
+    {
+      "id": "offer_33d5e51f591f",
+      "attrs": {
+        "price": 627292,
+        "admin": 162434,
+        "loss_0": 6400,
+        "loss_1": 25300,
+        "loss_2": 15000,
+        "loss_3": 19700,
+        "loss_4": 23200,
+        "loss_5": 14800,
+        "deductible": 16900,
+        "coverage": 39700
+      }
+    },
+    {
+      "id": "offer_efb4e2de5938",
+      "attrs": {
+        "price": 863992,
+        "admin": 164667,
+        "loss_0": 21300,
+        "loss_1": 29000,
+        "loss_2": 7500,
+        "loss_3": 11100,
+        "loss_4": 15300,
+        "loss_5": 8900,
+        "deductible": 4400,
+        "coverage": 24800
+      }
+    },
+    {
+      "id": "offer_626e92d24889",
+      "attrs": {
+        "price": 733480,
+        "admin": 165224,
+        "loss_0": 24300,
+        "loss_1": 1100,
+        "loss_2": 17700,
+        "loss_3": 4600,
+        "loss_4": 26600,
+        "loss_5": 8300,
+        "deductible": 12300,
+        "coverage": 33000
+      }
+    },
+    {
+      "id": "offer_3744c7756fda",
+      "attrs": {
+        "price": 799002,
+        "admin": 128772,
+        "loss_0": 28000,
+        "loss_1": 29000,
+        "loss_2": 23700,
+        "loss_3": 26800,
+        "loss_4": 22600,
+        "loss_5": 12800,
+        "deductible": 13700,
+        "coverage": 17900
+      }
+    },
+    {
+      "id": "offer_982f63681f14",
+      "attrs": {
+        "price": 505317,
+        "admin": 150761,
+        "loss_0": 2400,
+        "loss_1": 26400,
+        "loss_2": 22700,
+        "loss_3": 4600,
+        "loss_4": 12800,
+        "loss_5": 10000,
+        "deductible": 29200,
+        "coverage": 32900
+      }
+    },
+    {
+      "id": "offer_c6d19bfb01e7",
+      "attrs": {
+        "price": 771104,
+        "admin": 136874,
+        "loss_0": 28800,
+        "loss_1": 24100,
+        "loss_2": 11700,
+        "loss_3": 14800,
+        "loss_4": 21800,
+        "loss_5": 18200,
+        "deductible": 17800,
+        "coverage": 21700
+      }
+    },
+    {
+      "id": "offer_08fa7d161533",
+      "attrs": {
+        "price": 883412,
+        "admin": 158670,
+        "loss_0": 2900,
+        "loss_1": 12100,
+        "loss_2": 4800,
+        "loss_3": 6600,
+        "loss_4": 29100,
+        "loss_5": 2900,
+        "deductible": 4200,
+        "coverage": 8300
+      }
+    },
+    {
+      "id": "offer_5e577df973c3",
+      "attrs": {
+        "price": 780467,
+        "admin": 167165,
+        "loss_0": 6200,
+        "loss_1": 5700,
+        "loss_2": 14500,
+        "loss_3": 19400,
+        "loss_4": 12000,
+        "loss_5": 23800,
+        "deductible": 16100,
+        "coverage": 23100
+      }
+    },
+    {
+      "id": "offer_a9a518f11222",
+      "attrs": {
+        "price": 636552,
+        "admin": 129808,
+        "loss_0": 14400,
+        "loss_1": 5700,
+        "loss_2": 27400,
+        "loss_3": 28200,
+        "loss_4": 16900,
+        "loss_5": 17200,
+        "deductible": 2200,
+        "coverage": 14300
+      }
+    },
+    {
+      "id": "offer_97c38de02a18",
+      "attrs": {
+        "price": 737543,
+        "admin": 161206,
+        "loss_0": 12500,
+        "loss_1": 2200,
+        "loss_2": 6500,
+        "loss_3": 29900,
+        "loss_4": 24200,
+        "loss_5": 7400,
+        "deductible": 29100,
+        "coverage": 38200
+      }
+    },
+    {
+      "id": "offer_b18d786ee87d",
+      "attrs": {
+        "price": 535997,
+        "admin": 168404,
+        "loss_0": 26700,
+        "loss_1": 16500,
+        "loss_2": 6400,
+        "loss_3": 8300,
+        "loss_4": 3600,
+        "loss_5": 5200,
+        "deductible": 17200,
+        "coverage": 8100
+      }
+    },
+    {
+      "id": "offer_8f15a6a770ad",
+      "attrs": {
+        "price": 639377,
+        "admin": 149949,
+        "loss_0": 27100,
+        "loss_1": 18800,
+        "loss_2": 14100,
+        "loss_3": 26500,
+        "loss_4": 14700,
+        "loss_5": 3900,
+        "deductible": 10000,
+        "coverage": 24600
+      }
+    },
+    {
+      "id": "offer_dbf044499395",
+      "attrs": {
+        "price": 823592,
+        "admin": 166333,
+        "loss_0": 2100,
+        "loss_1": 9800,
+        "loss_2": 26600,
+        "loss_3": 2000,
+        "loss_4": 10000,
+        "loss_5": 18500,
+        "deductible": 22900,
+        "coverage": 18500
+      }
+    },
+    {
+      "id": "offer_f461f92e9590",
+      "attrs": {
+        "price": 477272,
+        "admin": 124141,
+        "loss_0": 29400,
+        "loss_1": 24600,
+        "loss_2": 22400,
+        "loss_3": 1700,
+        "loss_4": 29200,
+        "loss_5": 25200,
+        "deductible": 13100,
+        "coverage": 15900
+      }
+    },
+    {
+      "id": "offer_8a28e8a88e26",
+      "attrs": {
+        "price": 819896,
+        "admin": 168298,
+        "loss_0": 3800,
+        "loss_1": 12500,
+        "loss_2": 12900,
+        "loss_3": 16000,
+        "loss_4": 13300,
+        "loss_5": 22800,
+        "deductible": 29900,
+        "coverage": 31900
+      }
+    },
+    {
+      "id": "offer_394ec0d1de4c",
+      "attrs": {
+        "price": 638753,
+        "admin": 162723,
+        "loss_0": 18700,
+        "loss_1": 9200,
+        "loss_2": 21300,
+        "loss_3": 12800,
+        "loss_4": 9500,
+        "loss_5": 7200,
+        "deductible": 4900,
+        "coverage": 11700
+      }
+    },
+    {
+      "id": "offer_37eb7d14ee67",
+      "attrs": {
+        "price": 787673,
+        "admin": 141650,
+        "loss_0": 10300,
+        "loss_1": 27700,
+        "loss_2": 29400,
+        "loss_3": 5400,
+        "loss_4": 27700,
+        "loss_5": 24100,
+        "deductible": 17000,
+        "coverage": 34200
+      }
+    },
+    {
+      "id": "offer_00d6085a7210",
+      "attrs": {
+        "price": 556193,
+        "admin": 149074,
+        "loss_0": 17000,
+        "loss_1": 4000,
+        "loss_2": 9000,
+        "loss_3": 25800,
+        "loss_4": 22900,
+        "loss_5": 12800,
+        "deductible": 20700,
+        "coverage": 18800
+      }
+    },
+    {
+      "id": "offer_1f0342b5abd0",
+      "attrs": {
+        "price": 837347,
+        "admin": 177831,
+        "loss_0": 7300,
+        "loss_1": 2000,
+        "loss_2": 10600,
+        "loss_3": 1600,
+        "loss_4": 7500,
+        "loss_5": 6000,
+        "deductible": 22400,
+        "coverage": 11500
+      }
+    },
+    {
+      "id": "offer_e2deb8bfdc7d",
+      "attrs": {
+        "price": 755232,
+        "admin": 157660,
+        "loss_0": 5100,
+        "loss_1": 2000,
+        "loss_2": 10700,
+        "loss_3": 14700,
+        "loss_4": 28000,
+        "loss_5": 28100,
+        "deductible": 20600,
+        "coverage": 37500
+      }
+    },
+    {
+      "id": "offer_6dc8296ae0b3",
+      "attrs": {
+        "price": 533215,
+        "admin": 161242,
+        "loss_0": 8600,
+        "loss_1": 4900,
+        "loss_2": 21900,
+        "loss_3": 13600,
+        "loss_4": 19600,
+        "loss_5": 10000,
+        "deductible": 7300,
+        "coverage": 14500
+      }
+    },
+    {
+      "id": "offer_450e76bcb94c",
+      "attrs": {
+        "price": 644630,
+        "admin": 136125,
+        "loss_0": 13600,
+        "loss_1": 21000,
+        "loss_2": 23000,
+        "loss_3": 7300,
+        "loss_4": 18500,
+        "loss_5": 18600,
+        "deductible": 8400,
+        "coverage": 6900
+      }
+    },
+    {
+      "id": "offer_8aa99b844848",
+      "attrs": {
+        "price": 681939,
+        "admin": 175932,
+        "loss_0": 7600,
+        "loss_1": 6700,
+        "loss_2": 13500,
+        "loss_3": 1000,
+        "loss_4": 22900,
+        "loss_5": 20300,
+        "deductible": 5500,
+        "coverage": 20900
+      }
+    },
+    {
+      "id": "offer_21ab3ac01c2d",
+      "attrs": {
+        "price": 882473,
+        "admin": 135393,
+        "loss_0": 7700,
+        "loss_1": 28700,
+        "loss_2": 5700,
+        "loss_3": 10900,
+        "loss_4": 23400,
+        "loss_5": 22400,
+        "deductible": 28400,
+        "coverage": 18000
+      }
+    },
+    {
+      "id": "offer_d4b2d86ead68",
+      "attrs": {
+        "price": 460566,
+        "admin": 127804,
+        "loss_0": 24700,
+        "loss_1": 4700,
+        "loss_2": 7600,
+        "loss_3": 25400,
+        "loss_4": 23000,
+        "loss_5": 16700,
+        "deductible": 16400,
+        "coverage": 16600
+      }
+    },
+    {
+      "id": "offer_ce517bababfd",
+      "attrs": {
+        "price": 851757,
+        "admin": 177058,
+        "loss_0": 8900,
+        "loss_1": 29900,
+        "loss_2": 5300,
+        "loss_3": 14800,
+        "loss_4": 7200,
+        "loss_5": 19000,
+        "deductible": 10000,
+        "coverage": 33300
+      }
+    },
+    {
+      "id": "offer_de640d342edc",
+      "attrs": {
+        "price": 571820,
+        "admin": 136157,
+        "loss_0": 20400,
+        "loss_1": 29600,
+        "loss_2": 30000,
+        "loss_3": 26900,
+        "loss_4": 21300,
+        "loss_5": 5700,
+        "deductible": 25200,
+        "coverage": 33700
+      }
+    },
+    {
+      "id": "offer_958eddb8b7c2",
+      "attrs": {
+        "price": 543734,
+        "admin": 149746,
+        "loss_0": 18000,
+        "loss_1": 7600,
+        "loss_2": 16200,
+        "loss_3": 24800,
+        "loss_4": 9900,
+        "loss_5": 16400,
+        "deductible": 24700,
+        "coverage": 15800
+      }
+    },
+    {
+      "id": "offer_6b4d73d06ef2",
+      "attrs": {
+        "price": 670864,
+        "admin": 131722,
+        "loss_0": 27800,
+        "loss_1": 26700,
+        "loss_2": 14600,
+        "loss_3": 10100,
+        "loss_4": 12300,
+        "loss_5": 24000,
+        "deductible": 8000,
+        "coverage": 12000
+      }
+    },
+    {
+      "id": "offer_900f96668ff9",
+      "attrs": {
+        "price": 474391,
+        "admin": 152262,
+        "loss_0": 20000,
+        "loss_1": 17600,
+        "loss_2": 1600,
+        "loss_3": 17500,
+        "loss_4": 30000,
+        "loss_5": 27100,
+        "deductible": 6400,
+        "coverage": 31800
+      }
+    },
+    {
+      "id": "offer_22e0d82ae5fd",
+      "attrs": {
+        "price": 893541,
+        "admin": 157861,
+        "loss_0": 9800,
+        "loss_1": 20400,
+        "loss_2": 28900,
+        "loss_3": 7500,
+        "loss_4": 3800,
+        "loss_5": 21600,
+        "deductible": 10000,
+        "coverage": 23200
+      }
+    },
+    {
+      "id": "offer_846a05f59ce9",
+      "attrs": {
+        "price": 582938,
+        "admin": 140607,
+        "loss_0": 21500,
+        "loss_1": 27000,
+        "loss_2": 1700,
+        "loss_3": 14600,
+        "loss_4": 20700,
+        "loss_5": 12800,
+        "deductible": 14600,
+        "coverage": 19400
+      }
+    },
+    {
+      "id": "offer_20caad2314ac",
+      "attrs": {
+        "price": 710445,
+        "admin": 184523,
+        "loss_0": 3800,
+        "loss_1": 14000,
+        "loss_2": 6800,
+        "loss_3": 6800,
+        "loss_4": 1800,
+        "loss_5": 16500,
+        "deductible": 23200,
+        "coverage": 9800
+      }
+    },
+    {
+      "id": "offer_9992ef26a081",
+      "attrs": {
+        "price": 770643,
+        "admin": 163050,
+        "loss_0": 22200,
+        "loss_1": 19400,
+        "loss_2": 25500,
+        "loss_3": 4400,
+        "loss_4": 11100,
+        "loss_5": 7000,
+        "deductible": 13300,
+        "coverage": 35300
+      }
+    },
+    {
+      "id": "offer_93f23a94183b",
+      "attrs": {
+        "price": 607266,
+        "admin": 158938,
+        "loss_0": 27000,
+        "loss_1": 10000,
+        "loss_2": 7800,
+        "loss_3": 2700,
+        "loss_4": 10200,
+        "loss_5": 29900,
+        "deductible": 24000,
+        "coverage": 31900
+      }
+    },
+    {
+      "id": "offer_002cce002622",
+      "attrs": {
+        "price": 517185,
+        "admin": 151364,
+        "loss_0": 24200,
+        "loss_1": 3900,
+        "loss_2": 15500,
+        "loss_3": 27700,
+        "loss_4": 16100,
+        "loss_5": 27500,
+        "deductible": 27800,
+        "coverage": 34800
+      }
+    },
+    {
+      "id": "offer_ad975aeb6935",
+      "attrs": {
+        "price": 762247,
+        "admin": 148843,
+        "loss_0": 1900,
+        "loss_1": 7300,
+        "loss_2": 11800,
+        "loss_3": 1900,
+        "loss_4": 28700,
+        "loss_5": 28100,
+        "deductible": 3100,
+        "coverage": 17900
+      }
+    },
+    {
+      "id": "offer_604be378d8b3",
+      "attrs": {
+        "price": 511820,
+        "admin": 166979,
+        "loss_0": 20700,
+        "loss_1": 6000,
+        "loss_2": 22600,
+        "loss_3": 23700,
+        "loss_4": 9400,
+        "loss_5": 3500,
+        "deductible": 15100,
+        "coverage": 37400
+      }
+    },
+    {
+      "id": "offer_1d51bc81fd9d",
+      "attrs": {
+        "price": 748051,
+        "admin": 166052,
+        "loss_0": 15000,
+        "loss_1": 2400,
+        "loss_2": 23600,
+        "loss_3": 3300,
+        "loss_4": 8600,
+        "loss_5": 19800,
+        "deductible": 26500,
+        "coverage": 21000
+      }
+    },
+    {
+      "id": "offer_26d13b3edb95",
+      "attrs": {
+        "price": 693138,
+        "admin": 127747,
+        "loss_0": 13500,
+        "loss_1": 20700,
+        "loss_2": 14100,
+        "loss_3": 19000,
+        "loss_4": 28300,
+        "loss_5": 27200,
+        "deductible": 8000,
+        "coverage": 20500
+      }
+    },
+    {
+      "id": "offer_40cf38714d39",
+      "attrs": {
+        "price": 837415,
+        "admin": 127108,
+        "loss_0": 29900,
+        "loss_1": 21800,
+        "loss_2": 4500,
+        "loss_3": 15000,
+        "loss_4": 26300,
+        "loss_5": 17500,
+        "deductible": 3700,
+        "coverage": 20500
+      }
+    },
+    {
+      "id": "offer_7b4e42ae73a2",
+      "attrs": {
+        "price": 898987,
+        "admin": 129684,
+        "loss_0": 27600,
+        "loss_1": 18000,
+        "loss_2": 6900,
+        "loss_3": 29800,
+        "loss_4": 2900,
+        "loss_5": 16600,
+        "deductible": 21000,
+        "coverage": 11000
+      }
+    },
+    {
+      "id": "offer_54e6d53348bb",
+      "attrs": {
+        "price": 721203,
+        "admin": 178980,
+        "loss_0": 1900,
+        "loss_1": 8200,
+        "loss_2": 3700,
+        "loss_3": 4400,
+        "loss_4": 4100,
+        "loss_5": 22300,
+        "deductible": 30000,
+        "coverage": 25400
+      }
+    },
+    {
+      "id": "offer_0be854e41541",
+      "attrs": {
+        "price": 479863,
+        "admin": 162066,
+        "loss_0": 11600,
+        "loss_1": 1900,
+        "loss_2": 1900,
+        "loss_3": 29100,
+        "loss_4": 16400,
+        "loss_5": 1100,
+        "deductible": 7500,
+        "coverage": 14900
+      }
+    },
+    {
+      "id": "offer_b047f3876838",
+      "attrs": {
+        "price": 566253,
+        "admin": 160264,
+        "loss_0": 24400,
+        "loss_1": 7800,
+        "loss_2": 9900,
+        "loss_3": 16100,
+        "loss_4": 1300,
+        "loss_5": 12000,
+        "deductible": 29800,
+        "coverage": 38800
+      }
+    },
+    {
+      "id": "offer_01d14732d527",
+      "attrs": {
+        "price": 845517,
+        "admin": 173804,
+        "loss_0": 20400,
+        "loss_1": 19200,
+        "loss_2": 21000,
+        "loss_3": 3000,
+        "loss_4": 8500,
+        "loss_5": 11900,
+        "deductible": 9300,
+        "coverage": 31700
+      }
+    },
+    {
+      "id": "offer_3b314dba82e7",
+      "attrs": {
+        "price": 455277,
+        "admin": 181135,
+        "loss_0": 11500,
+        "loss_1": 8000,
+        "loss_2": 21900,
+        "loss_3": 10600,
+        "loss_4": 4200,
+        "loss_5": 5400,
+        "deductible": 18200,
+        "coverage": 25100
+      }
+    },
+    {
+      "id": "offer_96a17fd88ba4",
+      "attrs": {
+        "price": 707798,
+        "admin": 121381,
+        "loss_0": 8700,
+        "loss_1": 28600,
+        "loss_2": 7400,
+        "loss_3": 17300,
+        "loss_4": 29500,
+        "loss_5": 27500,
+        "deductible": 8000,
+        "coverage": 11000
+      }
+    },
+    {
+      "id": "offer_70c36d606c3e",
+      "attrs": {
+        "price": 649511,
+        "admin": 173879,
+        "loss_0": 6400,
+        "loss_1": 3100,
+        "loss_2": 17600,
+        "loss_3": 12100,
+        "loss_4": 18700,
+        "loss_5": 24900,
+        "deductible": 14200,
+        "coverage": 33000
+      }
+    },
+    {
+      "id": "offer_bd8b68e5f3b1",
+      "attrs": {
+        "price": 561872,
+        "admin": 147102,
+        "loss_0": 21400,
+        "loss_1": 28200,
+        "loss_2": 5700,
+        "loss_3": 15200,
+        "loss_4": 4100,
+        "loss_5": 19600,
+        "deductible": 23300,
+        "coverage": 39500
+      }
+    },
+    {
+      "id": "offer_7b768df2c65b",
+      "attrs": {
+        "price": 469028,
+        "admin": 133803,
+        "loss_0": 27300,
+        "loss_1": 11100,
+        "loss_2": 26700,
+        "loss_3": 16000,
+        "loss_4": 30000,
+        "loss_5": 15700,
+        "deductible": 27000,
+        "coverage": 17300
+      }
+    },
+    {
+      "id": "offer_dba320d70ae7",
+      "attrs": {
+        "price": 881542,
+        "admin": 145837,
+        "loss_0": 14400,
+        "loss_1": 15500,
+        "loss_2": 7800,
+        "loss_3": 29900,
+        "loss_4": 25300,
+        "loss_5": 17700,
+        "deductible": 12800,
+        "coverage": 31200
+      }
+    },
+    {
+      "id": "offer_f9b7c20436f1",
+      "attrs": {
+        "price": 611502,
+        "admin": 194321,
+        "loss_0": 1200,
+        "loss_1": 9900,
+        "loss_2": 8000,
+        "loss_3": 9500,
+        "loss_4": 9400,
+        "loss_5": 11200,
+        "deductible": 7300,
+        "coverage": 17800
+      }
+    },
+    {
+      "id": "offer_3bbd047afbd2",
+      "attrs": {
+        "price": 626244,
+        "admin": 147529,
+        "loss_0": 23100,
+        "loss_1": 22600,
+        "loss_2": 21400,
+        "loss_3": 25600,
+        "loss_4": 25700,
+        "loss_5": 19700,
+        "deductible": 22800,
+        "coverage": 28700
+      }
+    },
+    {
+      "id": "offer_7e4709f3464f",
+      "attrs": {
+        "price": 491381,
+        "admin": 147482,
+        "loss_0": 25500,
+        "loss_1": 13300,
+        "loss_2": 27400,
+        "loss_3": 9800,
+        "loss_4": 5900,
+        "loss_5": 1700,
+        "deductible": 29900,
+        "coverage": 10300
+      }
+    },
+    {
+      "id": "offer_ce06f68bc17e",
+      "attrs": {
+        "price": 748254,
+        "admin": 158751,
+        "loss_0": 10900,
+        "loss_1": 15200,
+        "loss_2": 2200,
+        "loss_3": 23900,
+        "loss_4": 2000,
+        "loss_5": 4100,
+        "deductible": 28400,
+        "coverage": 19200
+      }
+    },
+    {
+      "id": "offer_3d33ff1239ad",
+      "attrs": {
+        "price": 450397,
+        "admin": 133931,
+        "loss_0": 14600,
+        "loss_1": 19800,
+        "loss_2": 24000,
+        "loss_3": 19200,
+        "loss_4": 25000,
+        "loss_5": 19800,
+        "deductible": 13200,
+        "coverage": 13900
+      }
+    }
+  ]
+}

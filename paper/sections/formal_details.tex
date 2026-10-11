@@ -1,0 +1,88 @@
+\section{Formalization and Executable Interface}
+\label{app:proofs}
+\subsection{Decision semantics and assumptions}
+RAC supplies the fixed-set risk-averse decision principle \citep{rac}. Our decision analysis fixes $x=(P,c)$, a nonempty retained state set $\Theta(x)$, and state-dependent hard requirements, risk permissions, and utilities before optimization. Utilities share a cardinal scale and are bounded over the finite experimental domain. The representation is assumed to preserve decision-relevant interpretations and their associated conditions and consequences. This does not require a uniquely resolved intent, a distribution over states, linearity, or convexity. No conformal coverage or action-conditional calibration is implemented.
+
+\paragraph{One action across readings.}
+\label{app:ambiguity}
+For ``Buy tickets for Wang and Li; his ticket must be refundable,'' retain $\theta_W$ and $\theta_L$. One candidate $z$ specifies both tickets. Membership in $F_{\theta_W}(x)\cap F_{\theta_L}(x)$ requires both refundability conditions and the shared budget. Buying two refundable tickets is compatible with each reading; it does not assert that the user explicitly requested both to be refundable. A common positive-value purchase can be selected without resolving the referent or asking the user. Controlled evaluations of this behavior are in Appendix~\ref{app:intent}.
+
+\subsection{Representation and evaluation}
+\label{app:interface}
+Each state record contains a label and expressions \texttt{hard}, \texttt{risk}, and \texttt{utility}. Boolean expressions support conjunction, disjunction, negation, comparisons, and conditionals. Arithmetic supports exact literals, basic operations, minimum, maximum, and absolute value. Boolean and numeric values have distinct types. The attribute schema grounds expression variables; an unavailable applicable attribute cannot certify feasibility. The primary benchmark provides complete attributes.
+
+For generated states $j=1,\ldots,m$, evaluation gives
+\begin{align}
+\widehat f(z)&=\bigwedge_{j=1}^{m}(\widehat H_j(z)\wedge\widehat R_j(z)),\\
+\widehat\psi(z)&=\min_{1\le j\le m}\widehat u_j(z).
+\end{align}
+The fixed procedure first requires complete enumeration of $C$, a decided $\widehat f(z)$ for every candidate, and known state utilities whenever $\widehat f(z)=1$. An aggregate predicate with a known false conjunct is false even if another conjunct is unknown. Failure to establish these conditions produces \textsc{Fail}(uncertified), before any purchase is selected. The procedure then forms $\widehat F_C=\{z\in C:\widehat f(z)=1\}$ and maximizes $\widehat\psi$ over that domain. Any nonempty subset of tied positive-value maximizers is valid. An empty domain or nonpositive maximum produces refusal. Invalid expressions produce an interface/execution failure, not a certified refusal. State labels alone do not affect the decision; equivalent merged expressions may encode the same functions.
+
+\paragraph{Exactness on the declared domain.}
+After these checks, membership in $\widehat F_C$ is decided for every $z\in C$, and all values over that domain are known. Finite enumeration therefore returns the complete set of maximizers when the maximum is positive. Otherwise, an empty domain or a nonpositive maximum proves that the compiled problem has no positive-value option. No unresolved candidate is silently excluded from the optimization.
+
+For unresolved inputs, the historical experiment executor operates only on the certified observed subset. Such outputs fall outside Algorithm~\ref{alg:decision}'s exact-solution contract. Recorded outcome accuracy compares returned actions and values with the reference; a matching no-action outcome does not by itself certify infeasibility. Runtime reasons distinguish insufficient evidence from an established negative result.
+
+These hatted functions are instantiated by the model. The reference $F$ and $\psi$ enter offline scoring, never runtime selection. Execution is exact for the generated expressions; correctness relative to the request additionally requires faithful state semantics.
+
+\paragraph{Concrete syntax and serialization.}
+The implementation serializes intent-DSL instances as JSON, a carrier for the specification. Each state record contains a label and expressions for hard requirements, risk admissibility, and utility; their meaning comes from the expression language and evaluation rules. An illustrative record is:
+\begin{quote}\small
+\begin{verbatim}
+{"label": "service_failure",
+ "hard": "price <= 100000",
+ "risk": "max(0,loss-cover) <= 20000",
+ "utility":
+   "110000-price-max(0,loss-cover)"}
+\end{verbatim}
+\end{quote}
+Here the schema defines price, gross loss, and compensation in integer monetary subunits. This record encodes the failure-state conditions in Table~\ref{tab:trace}; a full specification includes the nonempty state list and runtime metadata. It is an interface illustration, not an observed model output. State-indexed semantics, rather than JSON keys alone, define the intent DSL.
+
+\paragraph{Carrier decoding and bounds.}
+A shared schema-aware decoder may recover a uniquely identifiable schema-valid JSON object without consulting reference answers; it does not edit expression meaning. The expression engine permits 200,000 characters per expression, 100,000 AST nodes, depth 100, 256 states, 10,000 candidates, and one million state--candidate combinations. All primary problems are expressible within these bounds. The Python control allows loops, functions, conditionals, \texttt{math}, \texttt{itertools}, and exact fractions, with four CPU seconds/eight wall seconds per catalogue and a one-MiB output bound. A reference program, withheld from models, verifies that the largest primary catalogue fits this execution budget.
+
+\subsection{Output contracts and finite realization}
+For completeness, distinguish a compiled model $Q$, whose pre-selection domain is $\widehat F_C$, from an output contract $Q_{\mathrm{out}}$, whose denotation $S_x(Q_{\mathrm{out}})\subseteq\Z$ contains its permitted purchases. Relative to reference semantics, an accepted contract satisfies
+\begin{equation}
+\varnothing\ne S_x(Q_{\mathrm{out}})\subseteq F(x).
+\label{eq:contract}
+\end{equation}
+Its guaranteed value is
+\begin{equation}
+W_x(Q_{\mathrm{out}})=\inf_{z\in S_x(Q_{\mathrm{out}})}\psi_x(z).
+\label{eq:value}
+\end{equation}
+For a promised value $t>0$, feasibility and $W_x\ge t$ are equivalent to
+\begin{equation}
+\begin{aligned}
+&\varnothing\ne S_x(Q_{\mathrm{out}})\subseteq K_t(x),\\
+&K_t(x)=\{z\in F(x):\psi_x(z)\ge t\}.
+\end{aligned}
+\label{eq:certificate}
+\end{equation}
+Indeed, membership gives feasibility and the pointwise bound $\psi_x(z)\ge t$; conversely, a lower bound on the infimum bounds every permitted purchase. These are reference obligations, not an extra runtime oracle. Restricting a sound outcome set preserves its requirements; deleting a predicate may instead enlarge the domain.
+
+\begin{proposition}[Finite contract realization]
+\label{prop:finite}
+For finite $C$, exact evaluation, bounded utility, and a language denoting every singleton in $C$, if $F_C=F(x)\cap C\ne\varnothing$, the best guaranteed value of a nonempty admissible contract in $C$ equals $\max_{z\in F_C}\psi_x(z)$.
+\end{proposition}
+\noindent\emph{Proof.} A maximizer $z^*$ exists on finite $F_C$. Every nonempty $S\subseteq F_C$ has $\inf_{z\in S}\psi_x(z)\le\psi_x(z^*)$; a contract denoting $\{z^*\}$ attains equality. Acceptance improves on the zero outside option exactly when this maximum is positive. If $F_C$ is empty, no nonempty admissible contract exists.\hfill$\square$
+
+This conditional expressibility result neither proves that generated predicates are faithful nor gives a statistical guarantee. Context fixes authorization; infeasibility cannot create permission for extra spending. Reuse requires unchanged attribute meanings, requirements, state semantics, and authorization. That property is shared by executable realizations, including Python.
+
+\subsection{Illustrative execution trace}
+A 1,000-MU budget, a 200-MU net-loss cap, and utility $1{,}100-\text{price}-\text{net loss}$ give Table~\ref{tab:trace}. Normal delivery has zero loss; the listed failure determines the worst case. A is unauthorized despite positive value. B and C pass, and B has higher guaranteed value. A catalogue containing only A is refused; one containing only C is accepted. These stipulated numbers illustrate the procedure, not a measured model output.
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Offer & Price & Max. loss & Min. utility & Allowed?\\
+\midrule
+A & 800 & 250 & 50 & No\\
+B & 850 & 120 & 130 & Yes\\
+C & 900 & 100 & 100 & Yes\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Illustrative decision trace.} All monetary amounts are in MU. B has the highest guaranteed value among risk-authorized offers. This hand-checkable example explains the method; it is not an experimental observation.}
+\label{tab:trace}
+\end{table}

@@ -1,0 +1,317 @@
+{
+  "status": "checked_with_explicit_scope",
+  "scope": "Exact paper contract on complete, decision-relevant-evaluable inputs; historical observed-candidate behavior is retained and distinguished.",
+  "model_calls": 0,
+  "source_hashes": {
+    "vendor/engine.py": "1cbadcc911e33f94570f0f9ed6916f8cc823db75d63eb3d3c879fb7b879473b0",
+    "campaigns/20260929_semantic_boundaries_v1/runtime.py": "6ffa7eeca7cd3883fffd42ef773e9be4ed5603c5c23a7d26b8e9e094d6c5db8f",
+    "campaigns/20260929_semantic_boundaries_v1/scoring.py": "e68a29a0a41a0c29c4848b79757c62de1e94402f971e960d0f043a5e99560265",
+    "campaigns/20261005_direct_mode_risks_v27/methods.py": "8dee3e22e1599b34135c196e2696da64b9bfbd4a7a1611c4bfd7c96b3a42db72"
+  },
+  "algorithm": "The revised paper checks catalogue coverage, aggregate admissibility, and every admissible candidate state utility before returning all positive-value maximizers. Unresolved evidence returns Fail(uncertified), not a certified refusal.",
+  "metadata": "reject_utility=0 and catalog_complete are fixed by public input in runtime, not model controlled",
+  "interface_example": {
+    "label": "service_failure",
+    "hard": "price <= 100000",
+    "risk": "max(0,loss-cover) <= 20000",
+    "utility": "110000-price-max(0,loss-cover)"
+  },
+  "results": {
+    "ABC": {
+      "decision": "accept",
+      "allowed_ids": [
+        "B"
+      ],
+      "guaranteed_utility": "13000",
+      "reason_code": "optimal_certified",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": true,
+              "risk": true,
+              "utility": "30000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": false,
+              "utility": "5000"
+            }
+          ],
+          "safe": false,
+          "psi": "5000",
+          "proven_unsafe": true,
+          "evidence_code": "required_predicate_false",
+          "missing_attributes": []
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": true,
+              "risk": true,
+              "utility": "25000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": true,
+              "utility": "13000"
+            }
+          ],
+          "safe": true,
+          "psi": "13000",
+          "proven_unsafe": false,
+          "evidence_code": "certified_eligible",
+          "missing_attributes": []
+        },
+        {
+          "id": "C",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": true,
+              "risk": true,
+              "utility": "20000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": true,
+              "utility": "10000"
+            }
+          ],
+          "safe": true,
+          "psi": "10000",
+          "proven_unsafe": false,
+          "evidence_code": "certified_eligible",
+          "missing_attributes": []
+        }
+      ],
+      "no_orders_executed": true,
+      "optimization_scope": "certified_observed_candidates",
+      "mode": "full",
+      "catalog_complete": true,
+      "reject_utility": "0",
+      "utility_floor": null,
+      "retained_states": [
+        "delivery",
+        "service_failure"
+      ],
+      "optimization_applied": true,
+      "detail": "all_maximin_ties_among_certified_observed_candidates"
+    },
+    "A": {
+      "decision": "reject",
+      "allowed_ids": [],
+      "guaranteed_utility": null,
+      "reason_code": "infeasible_complete_catalog",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": true,
+              "risk": true,
+              "utility": "30000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": false,
+              "utility": "5000"
+            }
+          ],
+          "safe": false,
+          "psi": "5000",
+          "proven_unsafe": true,
+          "evidence_code": "required_predicate_false",
+          "missing_attributes": []
+        }
+      ],
+      "no_orders_executed": true,
+      "optimization_scope": "certified_observed_candidates",
+      "mode": "full",
+      "catalog_complete": true,
+      "reject_utility": "0",
+      "utility_floor": null,
+      "retained_states": [
+        "delivery",
+        "service_failure"
+      ],
+      "optimization_applied": true,
+      "detail": "every_catalog_candidate_is_proven_unsafe_or_catalog_is_empty"
+    },
+    "C": {
+      "decision": "accept",
+      "allowed_ids": [
+        "C"
+      ],
+      "guaranteed_utility": "10000",
+      "reason_code": "optimal_certified",
+      "matrix": [
+        {
+          "id": "C",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": true,
+              "risk": true,
+              "utility": "20000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": true,
+              "utility": "10000"
+            }
+          ],
+          "safe": true,
+          "psi": "10000",
+          "proven_unsafe": false,
+          "evidence_code": "certified_eligible",
+          "missing_attributes": []
+        }
+      ],
+      "no_orders_executed": true,
+      "optimization_scope": "certified_observed_candidates",
+      "mode": "full",
+      "catalog_complete": true,
+      "reject_utility": "0",
+      "utility_floor": null,
+      "retained_states": [
+        "delivery",
+        "service_failure"
+      ],
+      "optimization_applied": true,
+      "detail": "all_maximin_ties_among_certified_observed_candidates"
+    },
+    "invalid": {
+      "decision": "reject",
+      "allowed_ids": [],
+      "guaranteed_utility": null,
+      "reason_code": "invalid_spec",
+      "matrix": [],
+      "no_orders_executed": true,
+      "optimization_scope": "certified_observed_candidates",
+      "mode": "full",
+      "catalog_complete": true,
+      "reject_utility": "0",
+      "utility_floor": null,
+      "detail": "invalid expression syntax"
+    },
+    "unknown": {
+      "decision": "reject",
+      "allowed_ids": [],
+      "guaranteed_utility": null,
+      "reason_code": "no_certified_observed_candidate",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": null,
+              "risk": true,
+              "utility": "30000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": false,
+              "utility": "5000"
+            }
+          ],
+          "safe": false,
+          "psi": "5000",
+          "proven_unsafe": true,
+          "evidence_code": "required_predicate_false",
+          "missing_attributes": [
+            "missing_attribute"
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": null,
+              "risk": true,
+              "utility": "25000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": true,
+              "utility": "13000"
+            }
+          ],
+          "safe": false,
+          "psi": "13000",
+          "proven_unsafe": false,
+          "evidence_code": "required_predicate_unknown",
+          "missing_attributes": [
+            "missing_attribute"
+          ]
+        },
+        {
+          "id": "C",
+          "states": [
+            {
+              "label": "delivery",
+              "hard": null,
+              "risk": true,
+              "utility": "20000"
+            },
+            {
+              "label": "service_failure",
+              "hard": true,
+              "risk": true,
+              "utility": "10000"
+            }
+          ],
+          "safe": false,
+          "psi": "10000",
+          "proven_unsafe": false,
+          "evidence_code": "required_predicate_unknown",
+          "missing_attributes": [
+            "missing_attribute"
+          ]
+        }
+      ],
+      "no_orders_executed": true,
+      "optimization_scope": "certified_observed_candidates",
+      "mode": "full",
+      "catalog_complete": true,
+      "reject_utility": "0",
+      "utility_floor": null,
+      "retained_states": [
+        "delivery",
+        "service_failure"
+      ],
+      "optimization_applied": true,
+      "detail": "relevant_evidence_is_unknown"
+    }
+  },
+  "historical_executor_scope": "On unresolved inputs, the historical executor optimizes only over the certified observed subset. The known-10/unknown-value example returns A in that executor and Fail(uncertified) under the revised exact paper contract.",
+  "paper_contract_checks": {
+    "path": "output/algorithm_contract_check.json",
+    "cases": 10,
+    "status": "passed",
+    "model_calls": 0
+  },
+  "local_historical_primary_check": {
+    "records": 1800,
+    "accepted_with_decision_relevant_unknown": 0,
+    "uncertified_no_action": 4,
+    "outcome_matches_without_certification": 2,
+    "scope": "Read-only audit of locally indexed historical primary Set evaluations; external aggregates are not per-trial records.",
+    "source": "output/algorithm_unknown_evidence_audit.json",
+    "reported_results_modified": false
+  }
+}

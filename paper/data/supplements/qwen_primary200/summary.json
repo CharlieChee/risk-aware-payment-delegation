@@ -1,0 +1,77 @@
+[
+  {
+    "profile": "qwen_flash_low",
+    "arm": "direct",
+    "n": 200,
+    "exact": 66,
+    "unsafe": 52,
+    "false_refusal": 26,
+    "expected_accept": 100,
+    "correct_accept": 20,
+    "outcomes": {
+      "false_refusal": 26,
+      "unsafe_accept": 52,
+      "output_budget": 53,
+      "exact": 66,
+      "certificate_underclaim": 2,
+      "transport_or_provider_failure": 1
+    },
+    "other": 56
+  },
+  {
+    "profile": "qwen_flash_low",
+    "arm": "set",
+    "n": 200,
+    "exact": 194,
+    "unsafe": 1,
+    "false_refusal": 0,
+    "expected_accept": 100,
+    "correct_accept": 99,
+    "outcomes": {
+      "exact": 194,
+      "invalid_output": 5,
+      "unsafe_accept": 1
+    },
+    "other": 5
+  },
+  {
+    "profile": "qwen_max_low",
+    "arm": "direct",
+    "n": 200,
+    "exact": 59,
+    "unsafe": 49,
+    "false_refusal": 57,
+    "expected_accept": 100,
+    "correct_accept": 0,
+    "outcomes": {
+      "false_refusal": 57,
+      "exact": 59,
+      "unsafe_accept": 49,
+      "timeout": 13,
+      "transport_or_provider_failure": 19,
+      "output_budget": 2,
+      "invalid_output": 1
+    },
+    "other": 35
+  },
+  {
+    "profile": "qwen_max_low",
+    "arm": "set",
+    "n": 200,
+    "exact": 87,
+    "unsafe": 46,
+    "false_refusal": 41,
+    "expected_accept": 100,
+    "correct_accept": 26,
+    "outcomes": {
+      "exact": 87,
+      "unsafe_accept": 46,
+      "invalid_output": 20,
+      "false_refusal": 41,
+      "certificate_underclaim": 3,
+      "transport_or_provider_failure": 2,
+      "certificate_overclaim": 1
+    },
+    "other": 26
+  }
+]

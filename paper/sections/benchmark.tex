@@ -1,0 +1,142 @@
+\section{Benchmark Construction and Experimental Protocol}
+\label{app:data}
+\label{app:protocol}
+\subsection{Contract structures and paired boundaries}
+The primary dataset contains 20 templates (Table~\ref{tab:templates}), with five feasible/infeasible pairs per template. Each purchase has six components; the retained events are the 57 affected subsets of size at most four, including the empty event. Empty events have zero assessment. A nonempty event incurs one administrative fee, outside insurance or compensation offsets. Public contracts state that no additional hidden clauses apply.
+
+The master construction seed is 39071007, with predetermined template and stratum offsets. In each feasible instance the unique authorized positive-value candidate has the margin in Table~\ref{tab:strata}. Increasing only its administrative fee makes the paired task infeasible: its maximum loss becomes 200,001 subunits, against a 200,000-subunit limit. Other candidates already exceed the limit by 1--20,000 subunits. Hashed candidate identifiers carry no answer labels; candidate positions are sampled before attributes are generated. Monetary reporting uses 100 integer subunits per MU without changing frozen prompts or calculations.
+
+\begin{table*}[!tbp]
+\centering\small
+\begin{tabular}{llp{10.4cm}}
+\toprule
+ID & Family & Distinct contractual structure \\
+\midrule
+a1 & Coupon cancellation & Overlapping three-person groups; a clawback applies to partial but not full group cancellation.\\
+a2 & Coupon cancellation & Different settlement charges for one versus both members of a two-person group.\\
+a3 & Coupon cancellation & A cap on group clawbacks plus a conditional order-level clawback.\\
+a4 & Coupon cancellation & A rebate offsets group charges only after multiple groups are broken.\\
+a5 & Coupon cancellation & Only the largest group clawback is charged, with a specified combination surcharge.\\
+\midrule
+b1 & Insured cancellation & Item deductibles and item payout limits, followed by an aggregate payout cap.\\
+b2 & Insured cancellation & An order-level deductible followed by proportional coinsurance.\\
+b3 & Insured cancellation & The number of cancellations changes the aggregate insurance limit.\\
+b4 & Insured cancellation & Primary insurance followed by secondary insurance on remaining loss.\\
+b5 & Insured cancellation & Payout is triggered by a strict threshold, then calculated from the first unit of loss.\\
+\midrule
+c1 & Threshold returns & Two product groups have separate retained-value discount clawbacks.\\
+c2 & Threshold returns & Fixed shipping parcels; return freight is the largest item fee within each affected parcel.\\
+c3 & Threshold returns & Retained purchase value determines a tiered retained discount.\\
+c4 & Threshold returns & Separate retained-value and retained-weight thresholds govern two subsidies.\\
+c5 & Threshold returns & Restocking fees are capped; sufficiently large returns waive return freight.\\
+\midrule
+d1 & Service replacement & Item-level compensation limits apply before an order-level cap.\\
+d2 & Service replacement & Activating replacement service incurs a fixed fee per affected group.\\
+d3 & Service replacement & The number of failures determines the aggregate compensation cap.\\
+d4 & Service replacement & Cash compensation combines with explicitly authorized, discounted service credits.\\
+d5 & Service replacement & Overlapping group dispatch fees and threshold-triggered additional compensation.\\
+\bottomrule
+\end{tabular}
+\caption{All 20 primary structures. Numerical instances vary within each template; the four families contain 50 cases each. These contracts define synthetic assessment rules and are not claims about actual merchants' terms.}
+\label{tab:templates}
+\end{table*}
+
+\begin{table}[!htbp]
+\centering\small
+\begin{tabular}{rrrr}
+\toprule
+Stratum & Candidates & Margin (subunits) & Cases\\
+\midrule
+1 & 128 & 1 & 40\\
+2 & 256 & 100 & 40\\
+3 & 512 & 10,000 & 40\\
+4 & 1,024 & 100 & 40\\
+5 & 1,024 & 1 & 40\\
+\bottomrule
+\end{tabular}
+\caption{Each stratum includes one pair for every template. Catalogue size, margin, and seed change together; these strata do not isolate their individual causal effects.}
+\label{tab:strata}
+\end{table}
+
+Unique feasibility, balanced acceptance/refusal, and complete catalogues are controlled design choices. The strata change size, margin, and seed together; they do not identify separate causal effects of those factors or estimate real purchasing frequencies.
+
+\subsection{Reference calculations and freezing}
+A cash-flow ledger evaluates bitmask events with integer or rational arithmetic; a separate expression implementation uses the rule engine. Before model evaluation, they agree on each candidate's feasibility, worst loss, guaranteed utility, and the final decision: 6,712,320 candidate--event checks. Twenty fresh attribute assignments per template are also checked on all 64 subsets, yielding $20\times20\times64=25{,}600$ checks, plus three hand-calculated threshold witnesses. The implementations arose within one development workflow; agreement does not exclude a shared misunderstanding of a clause.
+
+Tasks, references, prompts, and evaluator code are frozen before model evaluation. Public inputs exclude construction seeds, reference matrices, labels, and designated safe identifiers. Candidate visibility follows Table~\ref{tab:visibility}.
+
+\subsection{Common instructions and outcome protocol}
+\label{app:implementation}
+All primary routes receive the same substantive policy, summarized below. Frozen model-facing prompts retain their original language; this English rendering describes the policy rather than replacing those prompts.
+\begin{quote}\small
+Retain applicable interpretations. Respect current authorization in every retained state. Evaluate hard requirements and the complete risk permission, then maximize the minimum state-dependent utility. Buy only for positive guaranteed value; otherwise refuse. Do not ask the user or change permissions.
+\end{quote}
+Direct returns a decision, allowed identifiers, and guaranteed utility. Set returns the state-wise expressions of Appendix~\ref{app:interface}. The supplementary procedural control is defined in Appendix~\ref{app:execution-controls}. Exactness requires the reference decision, authorized maximizing purchases, and correct value. Disjoint failures are unsafe acceptance, false refusal, and Other (remaining value or execution failures). Execution failure is never credited as correct refusal.
+
+\begin{table}[!htbp]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+Property & Direct & Set\\
+\midrule
+Natural-language records & Yes & Yes\\
+Attribute schema & Yes & Yes\\
+Catalogue in model input & Yes & No\\
+Deterministic row evaluation & No & Yes\\
+Exact arithmetic in executor & --- & Yes\\
+Observable allowed domain & No & Yes\\
+Model calls per primary trial & 1 & 1\\
+\bottomrule
+\end{tabular}
+\caption{Primary method controls. Different catalogue visibility is a declared architectural choice. ``One call'' refers to a logical trial; transport retries are separately retained.}
+\label{tab:visibility}
+\end{table}
+
+One logical trial retains one semantic attempt. Identifiable transport failures permit bounded retries; formatting, semantic, and output-budget failures terminate the trial. Every received result is durably saved before scoring. Within a completed cohort all failures remain in its denominator; unissued calls remain missing. Historical results are reused only when messages, schema, model, effort, deadline, budget, and public/private hashes match, with source priority independent of correctness. Other panels state their departures from this protocol locally.
+
+\subsection{Model configurations}
+\label{app:model-configurations}
+Table~\ref{tab:configurations} gives the primary and retained-intent settings, followed by a consolidated configuration inventory. The inventory covers 52 observed model--setting combinations across 12 requested model identities. Beyond the main comparison, these settings occur in effort and language studies, ambiguity and risk-parameter tests, catalogue and context controls, budget recovery, rule reuse, and semantic diagnostics. Historical exploratory settings are included for completeness of configuration coverage, without adding them to the primary result denominators. The same settings apply to Direct and Set within a paired comparison. Primary CLI runs use fresh contexts with external tools and delegation disabled. API routes use their native structured-output carrier followed by the common local validator. Requested effort and output ceilings do not imply matched compute across providers.
+
+\begin{table*}[!tbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\input{tables/model_configurations}
+\caption{Requested model configurations. Output caps are in tokens and deadlines in seconds. Each named primary configuration uses 200 tasks per method. The lower block gives the four configurations in Figure~\ref{fig:intent}; their task counts appear in Table~\ref{tab:intent-figure3}. Configuration names refer to requests, not independently attested backend versions.}
+\label{tab:configurations}
+\end{table*}
+
+\begin{table*}[!tbp]
+\addtocounter{table}{-1}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\input{tables/model_configurations_extended}
+\caption{Requested model configurations (continued): complete recorded model--setting coverage. Off denotes the native \texttt{none} setting. Output caps are in tokens and deadlines in seconds. Multiple values summarize settings observed in separate studies; they are not a fully crossed experimental grid. The primary and retained-intent settings are specified in the preceding part. Performance comparisons retain their own study cohorts.}
+\label{tab:configurations-extended}
+\end{table*}
+
+\subsection{Comparison cohorts}
+\label{app:qwen}
+\label{app:primary-extensions}
+Table~\ref{tab:provenance} identifies the sample unit and comparison scope of each study.
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{.23\textwidth}p{.33\textwidth}p{.38\textwidth}@{}}
+\toprule
+Comparison cohort & Sample unit & Analysis\\
+\midrule
+Primary decisions & 200 tasks per method and configuration & Exact decisions, unsafe acceptance, false refusal, and feasible-task completion.\\
+Execution controls & Separate matched implementation runs & Attribution of executable decision gains under a shared outer decision policy.\\
+Task language & Matched Chinese/English tasks; 60-task and 200-task panels reported separately & Method and language effects within the same task panel.\\
+Semantic diagnostics & Frozen rules and controlled interventions & Admitted-domain errors and the effects of changing candidate availability or state semantics.\\
+\bottomrule
+\end{tabular}
+\caption{Comparison cohorts. Statistics are computed within their designated task sets; separate runs and panels are not pooled into a single success rate.}
+\label{tab:provenance}
+\end{table*}
+
+\subsection{Unified reproduction entry point}
+\label{app:reproduction}
+The implementation, benchmark data, retained outcomes, and reproduction tools are available at \url{https://github.com/CharlieChee/risk-aware-payment-delegation}. After installing the declared dependencies, run the following command from the supplementary source package:
+\begin{quote}\small\verb|python reproduce.py --pdf|\end{quote}
+This single offline entry regenerates result tables and the four main figures from the frozen reporting inputs, checks Figure~\ref{fig:intent}'s paired outcomes and error partitions, runs deterministic checks of Algorithm~\ref{alg:decision}, and compiles the manuscript. Omitting \texttt{-{}-pdf} reproduces the analysis without a TeX installation. The command makes no model calls and does not modify the experimental records; model-generation settings are specified in Table~\ref{tab:configurations}. Its machine-readable report records the checks, input hashes, and regenerated outputs.

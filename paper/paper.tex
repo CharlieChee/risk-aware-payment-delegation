@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times,latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype,inconsolata}
+\usepackage{graphicx,booktabs,multirow,array}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{float}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+\graphicspath{{figures/}}
+\hypersetup{pdftitle={Risk-Aware Payment Delegation: From Intent to Executable Decisions},pdfauthor={Anonymous authors},pdfsubject={Research manuscript, October 2026 revision}}
+\newtheorem{proposition}{Proposition}
+\newcommand{\Z}{\mathcal Z}
+\newcommand{\Lang}{\mathcal L}
+\newcommand{\A}{\mathcal A}
+\newcommand{\ours}{\textsc{Set}}
+\newcommand{\py}{\textsc{Python}}
+\newcommand{\direct}{\textsc{Direct}}
+\input{tables/primary_stats}
+\input{tables/evaluation_inventory_stats}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\title{Risk-Aware Payment Delegation:\\From Intent to Executable Decisions}
+\author{Anonymous authors}
+\date{}
+\setcounter{dbltopnumber}{1}
+\renewcommand{\dbltopfraction}{0.85}
+\begin{document}
+\maketitle
+\begin{abstract}
+Payment agents may need to commit to a purchase while relevant uncertainty remains and without further user interaction. Their decisions must respect interacting requirements and financial consequences while preserving opportunities for useful completion. We study risk-aware payment delegation as a language-to-decision problem: identify one purchase that is admissible across retained interpretations or contractual events and has positive worst-case value, or refuse when none exists. We present a state-wise intent DSL and an executable framework that carry decision-relevant alternatives from natural-language requests into hard requirements, risk conditions, and utility. A language-model front end instantiates this predefined representation; a fixed evaluator checks candidates and performs selection or abstention. Reference-checked contractual boundary tasks show improvements in both safe completion and justified refusal over direct answering. Cross-model, reasoning-effort, language, and reuse studies examine the scope and cost of these gains. Controlled intent-ambiguity tests and semantic diagnostics examine decisions across unresolved readings and errors that execution cannot repair. The formulation, implementation, and controlled testbed support the study of useful payment decisions within explicit risk boundaries.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+
+\input{evaluation}
+
+\section{Conclusion}
+We study payment delegation without further user interaction while uncertainty remains. State-wise executable requirements, risk conditions, and utilities support a fixed procedure for admissibility, value, and refusal. Contractual-boundary and controlled intent-ambiguity tests examine useful decisions across retained possibilities; semantic diagnostics identify failures that execution alone cannot repair. Cross-configuration and reuse studies characterize reliability and cost. These tools support further study of payment agents acting within explicit risk boundaries, including broader interpretations and incomplete information.
+\label{mainend}
+
+\clearpage
+\section*{Limitations}
+\paragraph{Semantic and decision scope.}
+The experiments use synthetic purchasing contracts, complete catalogues, correct item grounding, known attributes, and finite uncertainty sets. The primary benchmark concerns contractual events; the historical intent panel supplies explicit cues to unresolved pronouns and scope. Open-ended discovery of plausible interpretations remains to be evaluated. Preferences and risk boundaries are specified rather than learned. Faithfully instantiating ambiguity and contractual semantics remains a limitation of the current front end. End-to-end evaluations retain representation errors. Conformal coverage would require additional calibration. Actual settlement, hidden merchant terms, fraud, and incomplete inventory are outside the tested task.
+
+\paragraph{Evaluation and implementation scope.}
+The primary benchmark deliberately pairs numerical boundaries with one feasible candidate or none. It supports controlled boundary comparisons, not deployment error-rate estimates or broad ranking over many feasible purchases. The references are separate implementations within one development workflow. Historical diagnostics, effort settings, translations, and replays share cases and are reported as distinct cohorts. Catalogue visibility and service compute budgets vary by architecture or provider; matched-input and execution controls are retained in the appendix. Some generated specifications remain incorrect or invalid. The experiments establish gains over direct answering and diagnose their components, without identifying one executable representation as uniformly best. Operational failures remain in their designated denominators.
+
+\section*{Ethical Considerations}
+All purchases are synthetic, with no monetary transfers or customer records. Financial consequences follow stipulated benchmark contracts. Saved artifacts distinguish original responses, reference-assisted interventions, and subsequent analysis.
+
+\bibliography{references}
+\clearpage
+\appendix
+\setcounter{dbltopnumber}{2}
+\renewcommand{\dbltopfraction}{0.7}
+\input{sections/appendix}
+\end{document}

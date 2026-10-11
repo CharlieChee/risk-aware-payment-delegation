@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "status": "author_confirmed_aggregates_pending_raw_import",
+  "confirmed_at": "2026-10-11T00:44:04.225495+00:00",
+  "source": "User-provided primary experiment completion metrics in conversation",
+  "source_statement": "GLM high Unsafe 20→5, Refusal 4→0, Other 112→7, Accept/feasible 34/100→94/100; Sol medium Accept/feasible 49/100→97/100; Astra max Accept/feasible 87/100→97/100; Opus 5.5 Exact 142→194, Unsafe 8→1, Refusal 14→1, Other 36→4, Accept/feasible 76/100→98/100.",
+  "context": "The previously confirmed exact and error counts for GLM/Astra/Sol remain unchanged. Opus supersedes the earlier partial primary display with 200 tasks per method. Original and historical records remain archived separately.",
+  "raw_records_received": false,
+  "primary": [
+    {
+      "profile": "glm53_high",
+      "arm": "direct",
+      "n": 200,
+      "exact": 64,
+      "unsafe": 20,
+      "false_refusal": 4,
+      "outcomes": {
+        "exact": 64,
+        "unsafe_accept": 20,
+        "false_refusal": 4,
+        "other_failure": 112
+      },
+      "correct_accept": 34,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "other": 112,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "failure_subtypes_reported": false
+    },
+    {
+      "profile": "glm53_high",
+      "arm": "set",
+      "n": 200,
+      "exact": 188,
+      "unsafe": 5,
+      "false_refusal": 0,
+      "outcomes": {
+        "exact": 188,
+        "unsafe_accept": 5,
+        "false_refusal": 0,
+        "other_failure": 7
+      },
+      "correct_accept": 94,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "other": 7,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "failure_subtypes_reported": false
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "arm": "direct",
+      "n": 200,
+      "exact": 137,
+      "unsafe": 21,
+      "false_refusal": 42,
+      "expected_accept": 100,
+      "correct_accept": 49,
+      "outcomes": {
+        "exact": 137,
+        "false_refusal": 42,
+        "unsafe_accept": 21
+      },
+      "other": 0,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "failure_subtypes_reported": true
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "arm": "set",
+      "n": 200,
+      "exact": 196,
+      "unsafe": 2,
+      "false_refusal": 2,
+      "outcomes": {
+        "exact": 196,
+        "unsafe_accept": 2,
+        "false_refusal": 2,
+        "timeout": 0
+      },
+      "correct_accept": 97,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "other": 0,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "failure_subtypes_reported": true
+    },
+    {
+      "profile": "astra_max",
+      "arm": "direct",
+      "n": 200,
+      "exact": 180,
+      "unsafe": 6,
+      "false_refusal": 6,
+      "outcomes": {
+        "exact": 180,
+        "unsafe_accept": 6,
+        "false_refusal": 6,
+        "timeout": 8
+      },
+      "correct_accept": 87,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "other": 8,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "failure_subtypes_reported": true
+    },
+    {
+      "profile": "astra_max",
+      "arm": "set",
+      "n": 200,
+      "exact": 196,
+      "unsafe": 2,
+      "false_refusal": 2,
+      "outcomes": {
+        "exact": 196,
+        "unsafe_accept": 2,
+        "false_refusal": 2,
+        "timeout": 0
+      },
+      "correct_accept": 97,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "other": 0,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "failure_subtypes_reported": true
+    },
+    {
+      "profile": "opus55_medium",
+      "arm": "direct",
+      "n": 200,
+      "exact": 142,
+      "unsafe": 8,
+      "false_refusal": 14,
+      "other": 36,
+      "correct_accept": 76,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "outcomes": {
+        "exact": 142,
+        "unsafe_accept": 8,
+        "false_refusal": 14,
+        "other_failure": 36
+      },
+      "failure_subtypes_reported": false
+    },
+    {
+      "profile": "opus55_medium",
+      "arm": "set",
+      "n": 200,
+      "exact": 194,
+      "unsafe": 1,
+      "false_refusal": 1,
+      "other": 4,
+      "correct_accept": 98,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "report_source": "data/author_reports/20261011_primary200_completion.json",
+      "outcomes": {
+        "exact": 194,
+        "unsafe_accept": 1,
+        "false_refusal": 1,
+        "other_failure": 4
+      },
+      "failure_subtypes_reported": false
+    }
+  ],
+  "language": [],
+  "new_model_calls": 0,
+  "missing": [
+    "Case-level outputs and classifications for external runs",
+    "GLM high and Opus failure-subtype splits",
+    "Per-template external-run results",
+    "Runtime/token usage and exact run configurations"
+  ],
+  "scope": "Primary 200-task comparison only; effort panels, language panels, execution controls, and diagnostics are not overwritten."
+}

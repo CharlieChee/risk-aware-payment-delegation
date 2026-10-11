@@ -1,0 +1,11 @@
+{
+  "max_completion_tokens": 131072,
+  "timeout_seconds": 1800,
+  "effort": "requested low",
+  "endpoint": "Token Plan",
+  "strict_json_schema": true,
+  "selection": "Both complete Qwen low profiles; all original 200 cases per method.",
+  "incomplete_xhigh_excluded_from_complete_panel": true,
+  "parameter_caveat": "Effective reasoning budget not attested. One Flash response reports 190000 completion tokens against a requested 131072 cap.",
+  "no_cross_provider_compute_matching": true
+}

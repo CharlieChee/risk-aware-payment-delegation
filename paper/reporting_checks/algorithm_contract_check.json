@@ -1,0 +1,325 @@
+{
+  "status": "passed",
+  "cases": 10,
+  "model_calls": 0,
+  "scope": "Reference checks of the revised manuscript contract; historical records unchanged.",
+  "checks": [
+    {
+      "name": "known_10_and_unknown",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": null
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "fail",
+        "reason": "uncertified",
+        "allowed_ids": []
+      },
+      "expected_status": "fail",
+      "expected_ids": []
+    },
+    {
+      "name": "unresolved_admissibility",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": null,
+              "risk": true,
+              "utility": 100
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "fail",
+        "reason": "uncertified",
+        "allowed_ids": []
+      },
+      "expected_status": "fail",
+      "expected_ids": []
+    },
+    {
+      "name": "resolved_better_candidate",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 100
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "accept",
+        "allowed_ids": [
+          "B"
+        ],
+        "guaranteed_utility": "100"
+      },
+      "expected_status": "accept",
+      "expected_ids": [
+        "B"
+      ]
+    },
+    {
+      "name": "all_positive_ties",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "accept",
+        "allowed_ids": [
+          "A",
+          "B"
+        ],
+        "guaranteed_utility": "10"
+      },
+      "expected_status": "accept",
+      "expected_ids": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "nonpositive_maximum",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": -1
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 0
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "refuse",
+        "reason": "nonpositive_value",
+        "allowed_ids": []
+      },
+      "expected_status": "refuse",
+      "expected_ids": []
+    },
+    {
+      "name": "proven_infeasible_unknown_utility",
+      "matrix": [
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": false,
+              "risk": true,
+              "utility": null
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "refuse",
+        "reason": "infeasible",
+        "allowed_ids": []
+      },
+      "expected_status": "refuse",
+      "expected_ids": []
+    },
+    {
+      "name": "irrelevant_unknowns",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": false,
+              "risk": null,
+              "utility": null
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "accept",
+        "allowed_ids": [
+          "A"
+        ],
+        "guaranteed_utility": "10"
+      },
+      "expected_status": "accept",
+      "expected_ids": [
+        "A"
+      ]
+    },
+    {
+      "name": "incomplete_catalogue",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": false,
+      "result": {
+        "status": "fail",
+        "reason": "uncertified",
+        "allowed_ids": []
+      },
+      "expected_status": "fail",
+      "expected_ids": []
+    },
+    {
+      "name": "empty_complete_catalogue",
+      "matrix": [],
+      "catalogue_complete": true,
+      "result": {
+        "status": "refuse",
+        "reason": "infeasible",
+        "allowed_ids": []
+      },
+      "expected_status": "refuse",
+      "expected_ids": []
+    },
+    {
+      "name": "state_wise_minimum",
+      "matrix": [
+        {
+          "id": "A",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 100
+            },
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 1
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "states": [
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            },
+            {
+              "hard": true,
+              "risk": true,
+              "utility": 10
+            }
+          ]
+        }
+      ],
+      "catalogue_complete": true,
+      "result": {
+        "status": "accept",
+        "allowed_ids": [
+          "B"
+        ],
+        "guaranteed_utility": "10"
+      },
+      "expected_status": "accept",
+      "expected_ids": [
+        "B"
+      ]
+    }
+  ]
+}

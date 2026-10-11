@@ -1,0 +1,24 @@
+% Preamble: \usepackage{float}; \floatstyle{ruled}; \newfloat{algorithm}{tbp}{loa}; \floatname{algorithm}{Algorithm}
+\begin{algorithm}[t]
+\caption{Compile once; evaluate risk and value}
+\label{alg:decision}
+\small
+\textbf{Input:} request/context $x$, schema $\Sigma$, catalogue $C$\par
+\textbf{Output:} \textsc{Accept}, \textsc{Refuse}, or \textsc{Fail}, with diagnostics\par\smallskip
+\begin{tabular}{@{}r@{\quad}p{.88\columnwidth}@{}}
+1 & $Q\leftarrow f(x,\Sigma)$ \quad\emph{model compilation; no $C$}\\
+2 & Decode and validate $Q$ against the interface.\\
+3 & If invalid, return \textsc{Fail}(compilation).\\
+4 & Evaluate every generated state on every $z\in C$; retain the condition/value matrix.\\
+5 & If execution is invalid, return \textsc{Fail}(execution).\\
+6 & For each $z\in C$, set $\widehat f(z)=\bigwedge_j(\widehat H_j(z)\wedge\widehat R_j(z))$.\\
+7 & If catalogue coverage or any $\widehat f(z)$ is unresolved, or a candidate with $\widehat f(z)=1$ has an unknown state utility, return \textsc{Fail}(uncertified).\\
+8 & $\widehat F_C\leftarrow\{z\in C:\widehat f(z)=1\}$.\\
+9 & If $\widehat F_C=\varnothing$, return \textsc{Refuse}(infeasible).\\
+10 & For $z\in\widehat F_C$, set $\widehat\psi(z)=\min_j\widehat u_j(z)$.\\
+11 & $v\leftarrow\max_{z\in\widehat F_C}\widehat\psi(z)$.\\
+12 & If $v\le0$, return \textsc{Refuse}(nonpositive value).\\
+13 & Return \textsc{Accept}($\{z\in\widehat F_C:\widehat\psi(z)=v\},v$).\\
+\end{tabular}\smallskip\par
+\emph{Fixed evaluator: lines 2--13. Reference answers are used only in offline evaluation.}
+\end{algorithm}

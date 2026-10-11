@@ -1,0 +1,18 @@
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Configuration & Frozen realization & Unsafe domain & Unsafe selection & Unsafe selection & Invalid\\
+&& Mixed & Mixed & Unsafe-only & Mixed / only\\
+\midrule
+DS low & Python matched & 2 & 0 & 1 & 1/1\\
+ & Python visible & 2 & 0 & 0 & 3/3\\
+ & Set & 1 & 0 & 1 & 3/3\\
+\midrule
+DS high & Python matched & 1 & 0 & 1 & 0/0\\
+ & Python visible & 5 & 0 & 0 & 0/0\\
+ & Set & 2 & 0 & 0 & 1/1\\
+\midrule
+DS max & Python matched & 4 & 0 & 1 & 0/0\\
+ & Python visible & 2 & 0 & 1 & 0/0\\
+ & Set & 4 & 0 & 3 & 4/4\\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,7781 @@
+{
+  "records": [
+    {
+      "id": "U-task",
+      "author": "user",
+      "status": "current",
+      "text": "购买含编号0至5共六项预付行程服务和退订保险的不可拆分套餐。保险保费已包含在price内。今天只能选择一个目录套餐，之后不能随实际事件换套餐。商品、基础服务、日期和可用性已准确核对。"
+    },
+    {
+      "id": "U-events",
+      "author": "user",
+      "status": "current",
+      "text": "六项服务之后可能没有退订，也可能任意最多3项退订；每个满足人数上限的具体集合都可能，没有其他相关性限制或概率。"
+    },
+    {
+      "id": "U-settlement",
+      "author": "user",
+      "status": "current",
+      "text": "对于实际退订的项目，先合计其loss作为供应商不退回的毛损失。保险只赔付毛损失超过整单免赔额deductible的部分，但整单赔付款最多为coverage；毛损失未超过免赔额时赔付0。净损失是毛损失减保险实际赔付款，再加一次admin处理费。admin不在保险赔付范围内。无人退订时损失为0且不收admin。未退订项目不产生退订损失，没有其他费用。"
+    },
+    {
+      "id": "U-budget",
+      "author": "user",
+      "status": "current",
+      "text": "所有属性均完整、准确、非负整数，单位为人民币分。原支付price不得超过1200000分；每一种允许的事件下，上述风险考核金额都不得超过200000分，等于上限可以接受。不能放宽这些上限。目录已完整列出全部可选套餐，没有隐藏候选和未知条款。"
+    },
+    {
+      "id": "U-utility",
+      "author": "user",
+      "status": "current",
+      "text": "每种允许事件下的效用为2000000减原支付price，再减该事件上述风险考核金额。候选须满足所有允许事件的硬条件和风险上限，取该候选所有事件的最低效用，选择这个最低效用最大的套餐；只有该最优保证效用严格大于0才接受，否则拒绝。不得询问。"
+    }
+  ],
+  "attributes": {
+    "price": "整单预付总金额，含原订单所有税费，整数分",
+    "admin": "任一非空异常事件只收取一次的整单处理费用，整数分",
+    "loss_0": "项目0退订时供应商不退的毛损失，不含保险和处理费，整数分",
+    "loss_1": "项目1退订时供应商不退的毛损失，不含保险和处理费，整数分",
+    "loss_2": "项目2退订时供应商不退的毛损失，不含保险和处理费，整数分",
+    "loss_3": "项目3退订时供应商不退的毛损失，不含保险和处理费，整数分",
+    "loss_4": "项目4退订时供应商不退的毛损失，不含保险和处理费，整数分",
+    "loss_5": "项目5退订时供应商不退的毛损失，不含保险和处理费，整数分",
+    "deductible": "整单退订保险的免赔额，整数分",
+    "coverage": "一次退订事件整单保险赔付上限，整数分"
+  },
+  "attribute_schema": {
+    "price": {
+      "description": "整单预付总金额，含原订单所有税费，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "admin": {
+      "description": "任一非空异常事件只收取一次的整单处理费用，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_0": {
+      "description": "项目0退订时供应商不退的毛损失，不含保险和处理费，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_1": {
+      "description": "项目1退订时供应商不退的毛损失，不含保险和处理费，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_2": {
+      "description": "项目2退订时供应商不退的毛损失，不含保险和处理费，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_3": {
+      "description": "项目3退订时供应商不退的毛损失，不含保险和处理费，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_4": {
+      "description": "项目4退订时供应商不退的毛损失，不含保险和处理费，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_5": {
+      "description": "项目5退订时供应商不退的毛损失，不含保险和处理费，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "deductible": {
+      "description": "整单退订保险的免赔额，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "coverage": {
+      "description": "一次退订事件整单保险赔付上限，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    }
+  },
+  "catalog_complete": true,
+  "candidates": [
+    {
+      "id": "C7B1967B9BA94",
+      "attrs": {
+        "loss_0": 36686,
+        "loss_1": 14645,
+        "loss_2": 18575,
+        "loss_3": 16914,
+        "loss_4": 22162,
+        "loss_5": 47320,
+        "deductible": 10595,
+        "coverage": 52692,
+        "price": 689769,
+        "admin": 146525
+      }
+    },
+    {
+      "id": "CFF27DBC86E9A",
+      "attrs": {
+        "loss_0": 47019,
+        "loss_1": 20351,
+        "loss_2": 29198,
+        "loss_3": 31392,
+        "loss_4": 31336,
+        "loss_5": 40866,
+        "deductible": 24918,
+        "coverage": 56067,
+        "price": 565046,
+        "admin": 136791
+      }
+    },
+    {
+      "id": "CE22FF55894B4",
+      "attrs": {
+        "loss_0": 14826,
+        "loss_1": 19112,
+        "loss_2": 38675,
+        "loss_3": 20710,
+        "loss_4": 35645,
+        "loss_5": 14887,
+        "deductible": 10985,
+        "coverage": 31288,
+        "price": 526922,
+        "admin": 136259
+      }
+    },
+    {
+      "id": "CFE0F6C2599F6",
+      "attrs": {
+        "loss_0": 28475,
+        "loss_1": 31000,
+        "loss_2": 16418,
+        "loss_3": 15985,
+        "loss_4": 44380,
+        "loss_5": 18941,
+        "deductible": 7465,
+        "coverage": 29456,
+        "price": 695953,
+        "admin": 125602
+      }
+    },
+    {
+      "id": "C8847CBEC3D9C",
+      "attrs": {
+        "loss_0": 19085,
+        "loss_1": 25590,
+        "loss_2": 24479,
+        "loss_3": 39386,
+        "loss_4": 42384,
+        "loss_5": 38969,
+        "deductible": 13653,
+        "coverage": 51876,
+        "price": 678749,
+        "admin": 131138
+      }
+    },
+    {
+      "id": "C486CE5FD0566",
+      "attrs": {
+        "loss_0": 28317,
+        "loss_1": 15557,
+        "loss_2": 41879,
+        "loss_3": 17444,
+        "loss_4": 39035,
+        "loss_5": 40553,
+        "deductible": 19567,
+        "coverage": 37241,
+        "price": 598912,
+        "admin": 115775
+      }
+    },
+    {
+      "id": "CF24B014E8F08",
+      "attrs": {
+        "loss_0": 44670,
+        "loss_1": 34653,
+        "loss_2": 43213,
+        "loss_3": 32713,
+        "loss_4": 38568,
+        "loss_5": 16747,
+        "deductible": 14386,
+        "coverage": 64921,
+        "price": 558551,
+        "admin": 138471
+      }
+    },
+    {
+      "id": "CE1A02977BFAB",
+      "attrs": {
+        "loss_0": 15076,
+        "loss_1": 26500,
+        "loss_2": 32280,
+        "loss_3": 17234,
+        "loss_4": 13965,
+        "loss_5": 43302,
+        "deductible": 11135,
+        "coverage": 54685,
+        "price": 524945,
+        "admin": 152604
+      }
+    },
+    {
+      "id": "CC5C3EC4A880F",
+      "attrs": {
+        "loss_0": 41133,
+        "loss_1": 28021,
+        "loss_2": 19743,
+        "loss_3": 32973,
+        "loss_4": 33893,
+        "loss_5": 19865,
+        "deductible": 10949,
+        "coverage": 34447,
+        "price": 625419,
+        "admin": 126449
+      }
+    },
+    {
+      "id": "C6983D64917CE",
+      "attrs": {
+        "loss_0": 33685,
+        "loss_1": 45718,
+        "loss_2": 14516,
+        "loss_3": 29036,
+        "loss_4": 14636,
+        "loss_5": 44615,
+        "deductible": 6038,
+        "coverage": 45598,
+        "price": 553332,
+        "admin": 121581
+      }
+    },
+    {
+      "id": "CD08B50436B21",
+      "attrs": {
+        "loss_0": 34882,
+        "loss_1": 18823,
+        "loss_2": 30667,
+        "loss_3": 16933,
+        "loss_4": 20295,
+        "loss_5": 35260,
+        "deductible": 14980,
+        "coverage": 56429,
+        "price": 671337,
+        "admin": 155621
+      }
+    },
+    {
+      "id": "C2599FFA26585",
+      "attrs": {
+        "loss_0": 13925,
+        "loss_1": 24859,
+        "loss_2": 14152,
+        "loss_3": 18416,
+        "loss_4": 21106,
+        "loss_5": 21160,
+        "deductible": 13165,
+        "coverage": 58218,
+        "price": 729677,
+        "admin": 186836
+      }
+    },
+    {
+      "id": "C9DF8B21E5842",
+      "attrs": {
+        "loss_0": 42629,
+        "loss_1": 31156,
+        "loss_2": 47884,
+        "loss_3": 37469,
+        "loss_4": 44327,
+        "loss_5": 18116,
+        "deductible": 24695,
+        "coverage": 40240,
+        "price": 572393,
+        "admin": 105401
+      }
+    },
+    {
+      "id": "C0A6CE20937A0",
+      "attrs": {
+        "loss_0": 43020,
+        "loss_1": 41805,
+        "loss_2": 27051,
+        "loss_3": 25303,
+        "loss_4": 26959,
+        "loss_5": 14657,
+        "deductible": 18207,
+        "coverage": 44594,
+        "price": 549487,
+        "admin": 132719
+      }
+    },
+    {
+      "id": "C34CC1873605A",
+      "attrs": {
+        "loss_0": 23950,
+        "loss_1": 19201,
+        "loss_2": 14393,
+        "loss_3": 38809,
+        "loss_4": 42035,
+        "loss_5": 15292,
+        "deductible": 22436,
+        "coverage": 46014,
+        "price": 655625,
+        "admin": 141221
+      }
+    },
+    {
+      "id": "C165A0A14AB43",
+      "attrs": {
+        "loss_0": 47623,
+        "loss_1": 20275,
+        "loss_2": 13874,
+        "loss_3": 14427,
+        "loss_4": 15369,
+        "loss_5": 15180,
+        "deductible": 23970,
+        "coverage": 43000,
+        "price": 587838,
+        "admin": 159734
+      }
+    },
+    {
+      "id": "CEEE2E45FBF18",
+      "attrs": {
+        "loss_0": 29059,
+        "loss_1": 13342,
+        "loss_2": 33253,
+        "loss_3": 38921,
+        "loss_4": 40086,
+        "loss_5": 28888,
+        "deductible": 22868,
+        "coverage": 56805,
+        "price": 616870,
+        "admin": 144546
+      }
+    },
+    {
+      "id": "C507379ABD6FE",
+      "attrs": {
+        "loss_0": 26649,
+        "loss_1": 17867,
+        "loss_2": 44489,
+        "loss_3": 35082,
+        "loss_4": 37022,
+        "loss_5": 38154,
+        "deductible": 7140,
+        "coverage": 64888,
+        "price": 683364,
+        "admin": 145224
+      }
+    },
+    {
+      "id": "C11AC92A93425",
+      "attrs": {
+        "loss_0": 26622,
+        "loss_1": 43639,
+        "loss_2": 42534,
+        "loss_3": 12499,
+        "loss_4": 40425,
+        "loss_5": 20204,
+        "deductible": 12682,
+        "coverage": 50398,
+        "price": 543715,
+        "admin": 123801
+      }
+    },
+    {
+      "id": "C2FFBC77A5BB4",
+      "attrs": {
+        "loss_0": 30585,
+        "loss_1": 30116,
+        "loss_2": 21143,
+        "loss_3": 47270,
+        "loss_4": 13241,
+        "loss_5": 40468,
+        "deductible": 19928,
+        "coverage": 33463,
+        "price": 567310,
+        "admin": 115141
+      }
+    },
+    {
+      "id": "C2CEF91FB467A",
+      "attrs": {
+        "loss_0": 36774,
+        "loss_1": 18448,
+        "loss_2": 19153,
+        "loss_3": 33816,
+        "loss_4": 16758,
+        "loss_5": 21192,
+        "deductible": 15949,
+        "coverage": 54484,
+        "price": 525075,
+        "admin": 162703
+      }
+    },
+    {
+      "id": "CA01FBFABF2C0",
+      "attrs": {
+        "loss_0": 40578,
+        "loss_1": 25704,
+        "loss_2": 37819,
+        "loss_3": 27459,
+        "loss_4": 22407,
+        "loss_5": 28679,
+        "deductible": 20462,
+        "coverage": 59371,
+        "price": 538972,
+        "admin": 152296
+      }
+    },
+    {
+      "id": "C5B35278CDF57",
+      "attrs": {
+        "loss_0": 46889,
+        "loss_1": 29121,
+        "loss_2": 47916,
+        "loss_3": 26308,
+        "loss_4": 22091,
+        "loss_5": 19553,
+        "deductible": 5065,
+        "coverage": 33099,
+        "price": 588906,
+        "admin": 109174
+      }
+    },
+    {
+      "id": "CC4454D8D6C5D",
+      "attrs": {
+        "loss_0": 20081,
+        "loss_1": 15032,
+        "loss_2": 41809,
+        "loss_3": 47464,
+        "loss_4": 28532,
+        "loss_5": 19781,
+        "deductible": 6500,
+        "coverage": 21942,
+        "price": 668306,
+        "admin": 104138
+      }
+    },
+    {
+      "id": "C62CB474D7DA0",
+      "attrs": {
+        "loss_0": 24903,
+        "loss_1": 28591,
+        "loss_2": 28742,
+        "loss_3": 13310,
+        "loss_4": 14919,
+        "loss_5": 37620,
+        "deductible": 16102,
+        "coverage": 38309,
+        "price": 731213,
+        "admin": 143357
+      }
+    },
+    {
+      "id": "C2B41F57C4535",
+      "attrs": {
+        "loss_0": 47922,
+        "loss_1": 30897,
+        "loss_2": 29078,
+        "loss_3": 13589,
+        "loss_4": 38740,
+        "loss_5": 42184,
+        "deductible": 23404,
+        "coverage": 64223,
+        "price": 609081,
+        "admin": 135378
+      }
+    },
+    {
+      "id": "C95D593546D2C",
+      "attrs": {
+        "loss_0": 40523,
+        "loss_1": 16071,
+        "loss_2": 41694,
+        "loss_3": 13672,
+        "loss_4": 44976,
+        "loss_5": 35420,
+        "deductible": 9405,
+        "coverage": 55451,
+        "price": 564111,
+        "admin": 128259
+      }
+    },
+    {
+      "id": "CDA3A366E98F4",
+      "attrs": {
+        "loss_0": 45735,
+        "loss_1": 26917,
+        "loss_2": 29387,
+        "loss_3": 24162,
+        "loss_4": 13277,
+        "loss_5": 25875,
+        "deductible": 20280,
+        "coverage": 23685,
+        "price": 577336,
+        "admin": 121647
+      }
+    },
+    {
+      "id": "CF421A882C856",
+      "attrs": {
+        "loss_0": 38438,
+        "loss_1": 41415,
+        "loss_2": 20137,
+        "loss_3": 31575,
+        "loss_4": 27225,
+        "loss_5": 24737,
+        "deductible": 15177,
+        "coverage": 47104,
+        "price": 670688,
+        "admin": 135677
+      }
+    },
+    {
+      "id": "C57526413B1D9",
+      "attrs": {
+        "loss_0": 12590,
+        "loss_1": 37854,
+        "loss_2": 32615,
+        "loss_3": 27862,
+        "loss_4": 46490,
+        "loss_5": 32833,
+        "deductible": 22721,
+        "coverage": 55071,
+        "price": 539878,
+        "admin": 137895
+      }
+    },
+    {
+      "id": "C88FAC0368B27",
+      "attrs": {
+        "loss_0": 36664,
+        "loss_1": 21036,
+        "loss_2": 28034,
+        "loss_3": 43590,
+        "loss_4": 33822,
+        "loss_5": 17918,
+        "deductible": 20379,
+        "coverage": 50460,
+        "price": 702948,
+        "admin": 136385
+      }
+    },
+    {
+      "id": "CFAF3F77AF275",
+      "attrs": {
+        "loss_0": 40708,
+        "loss_1": 13349,
+        "loss_2": 20446,
+        "loss_3": 22654,
+        "loss_4": 34163,
+        "loss_5": 23501,
+        "deductible": 23138,
+        "coverage": 58933,
+        "price": 564356,
+        "admin": 160562
+      }
+    },
+    {
+      "id": "C6BE12ACC2D94",
+      "attrs": {
+        "loss_0": 38027,
+        "loss_1": 35854,
+        "loss_2": 14867,
+        "loss_3": 29244,
+        "loss_4": 28000,
+        "loss_5": 41259,
+        "deductible": 5150,
+        "coverage": 54914,
+        "price": 581835,
+        "admin": 139775
+      }
+    },
+    {
+      "id": "CEF9F977C3C70",
+      "attrs": {
+        "loss_0": 21161,
+        "loss_1": 38995,
+        "loss_2": 29019,
+        "loss_3": 41094,
+        "loss_4": 45774,
+        "loss_5": 38874,
+        "deductible": 12023,
+        "coverage": 58825,
+        "price": 597253,
+        "admin": 132963
+      }
+    },
+    {
+      "id": "CD1CD27F7ACC0",
+      "attrs": {
+        "loss_0": 34457,
+        "loss_1": 43573,
+        "loss_2": 31985,
+        "loss_3": 38388,
+        "loss_4": 30182,
+        "loss_5": 23398,
+        "deductible": 15569,
+        "coverage": 48231,
+        "price": 674393,
+        "admin": 131814
+      }
+    },
+    {
+      "id": "C9FB0A1FAB364",
+      "attrs": {
+        "loss_0": 20941,
+        "loss_1": 33446,
+        "loss_2": 37926,
+        "loss_3": 36980,
+        "loss_4": 41160,
+        "loss_5": 46740,
+        "deductible": 21702,
+        "coverage": 21114,
+        "price": 614618,
+        "admin": 95289
+      }
+    },
+    {
+      "id": "CAB0674B1A663",
+      "attrs": {
+        "loss_0": 34397,
+        "loss_1": 28319,
+        "loss_2": 17483,
+        "loss_3": 27382,
+        "loss_4": 28774,
+        "loss_5": 44330,
+        "deductible": 7533,
+        "coverage": 54425,
+        "price": 641760,
+        "admin": 146925
+      }
+    },
+    {
+      "id": "CDA5953584408",
+      "attrs": {
+        "loss_0": 19810,
+        "loss_1": 28216,
+        "loss_2": 27137,
+        "loss_3": 43880,
+        "loss_4": 37267,
+        "loss_5": 36169,
+        "deductible": 9240,
+        "coverage": 25386,
+        "price": 552162,
+        "admin": 108071
+      }
+    },
+    {
+      "id": "CD163530EB891",
+      "attrs": {
+        "loss_0": 44104,
+        "loss_1": 18876,
+        "loss_2": 42374,
+        "loss_3": 20351,
+        "loss_4": 30591,
+        "loss_5": 33530,
+        "deductible": 6318,
+        "coverage": 42740,
+        "price": 736496,
+        "admin": 122733
+      }
+    },
+    {
+      "id": "C3876D027C2D4",
+      "attrs": {
+        "loss_0": 42831,
+        "loss_1": 15289,
+        "loss_2": 12970,
+        "loss_3": 17453,
+        "loss_4": 19273,
+        "loss_5": 31096,
+        "deductible": 12921,
+        "coverage": 63772,
+        "price": 641158,
+        "admin": 170573
+      }
+    },
+    {
+      "id": "C3FCA9FEFBD9B",
+      "attrs": {
+        "loss_0": 32549,
+        "loss_1": 46761,
+        "loss_2": 12055,
+        "loss_3": 27884,
+        "loss_4": 19018,
+        "loss_5": 21523,
+        "deductible": 12645,
+        "coverage": 56597,
+        "price": 687761,
+        "admin": 149404
+      }
+    },
+    {
+      "id": "C7DC985F918BF",
+      "attrs": {
+        "loss_0": 46385,
+        "loss_1": 28030,
+        "loss_2": 46892,
+        "loss_3": 41905,
+        "loss_4": 15738,
+        "loss_5": 40770,
+        "deductible": 6028,
+        "coverage": 35803,
+        "price": 686412,
+        "admin": 100622
+      }
+    },
+    {
+      "id": "C17AAFF878C5B",
+      "attrs": {
+        "loss_0": 20822,
+        "loss_1": 43575,
+        "loss_2": 14534,
+        "loss_3": 38707,
+        "loss_4": 44204,
+        "loss_5": 31552,
+        "deductible": 22665,
+        "coverage": 60461,
+        "price": 528565,
+        "admin": 133976
+      }
+    },
+    {
+      "id": "C649C7D6EF53B",
+      "attrs": {
+        "loss_0": 42946,
+        "loss_1": 12367,
+        "loss_2": 12532,
+        "loss_3": 28897,
+        "loss_4": 38885,
+        "loss_5": 31794,
+        "deductible": 10659,
+        "coverage": 44488,
+        "price": 606631,
+        "admin": 130864
+      }
+    },
+    {
+      "id": "CA752131C4A13",
+      "attrs": {
+        "loss_0": 24167,
+        "loss_1": 31574,
+        "loss_2": 43129,
+        "loss_3": 14085,
+        "loss_4": 47855,
+        "loss_5": 47569,
+        "deductible": 22130,
+        "coverage": 18592,
+        "price": 710515,
+        "admin": 80040
+      }
+    },
+    {
+      "id": "C8F3F4449BB9B",
+      "attrs": {
+        "loss_0": 23624,
+        "loss_1": 39109,
+        "loss_2": 24103,
+        "loss_3": 23934,
+        "loss_4": 41285,
+        "loss_5": 28936,
+        "deductible": 14198,
+        "coverage": 52519,
+        "price": 611318,
+        "admin": 143190
+      }
+    },
+    {
+      "id": "CB570989CE154",
+      "attrs": {
+        "loss_0": 15268,
+        "loss_1": 37929,
+        "loss_2": 26966,
+        "loss_3": 41461,
+        "loss_4": 27883,
+        "loss_5": 27029,
+        "deductible": 22600,
+        "coverage": 37458,
+        "price": 533788,
+        "admin": 130186
+      }
+    },
+    {
+      "id": "CAF2756D97225",
+      "attrs": {
+        "loss_0": 41230,
+        "loss_1": 12537,
+        "loss_2": 31181,
+        "loss_3": 25507,
+        "loss_4": 37272,
+        "loss_5": 14396,
+        "deductible": 23962,
+        "coverage": 61708,
+        "price": 650333,
+        "admin": 152026
+      }
+    },
+    {
+      "id": "C513540ABE57F",
+      "attrs": {
+        "loss_0": 16724,
+        "loss_1": 16642,
+        "loss_2": 15821,
+        "loss_3": 13168,
+        "loss_4": 45379,
+        "loss_5": 20073,
+        "deductible": 5123,
+        "coverage": 44957,
+        "price": 584096,
+        "admin": 162782
+      }
+    },
+    {
+      "id": "CF7175329F5D4",
+      "attrs": {
+        "loss_0": 28539,
+        "loss_1": 24692,
+        "loss_2": 45628,
+        "loss_3": 23840,
+        "loss_4": 27295,
+        "loss_5": 39924,
+        "deductible": 6139,
+        "coverage": 60648,
+        "price": 607236,
+        "admin": 146558
+      }
+    },
+    {
+      "id": "C20164F0D6475",
+      "attrs": {
+        "loss_0": 38275,
+        "loss_1": 18300,
+        "loss_2": 35169,
+        "loss_3": 16539,
+        "loss_4": 29498,
+        "loss_5": 40966,
+        "deductible": 8628,
+        "coverage": 32512,
+        "price": 726193,
+        "admin": 118103
+      }
+    },
+    {
+      "id": "CD027DCBBF4FC",
+      "attrs": {
+        "loss_0": 16693,
+        "loss_1": 44918,
+        "loss_2": 33278,
+        "loss_3": 19530,
+        "loss_4": 41049,
+        "loss_5": 40522,
+        "deductible": 9008,
+        "coverage": 63735,
+        "price": 581434,
+        "admin": 137247
+      }
+    },
+    {
+      "id": "CF56C1DA620CA",
+      "attrs": {
+        "loss_0": 39661,
+        "loss_1": 39789,
+        "loss_2": 22265,
+        "loss_3": 14722,
+        "loss_4": 31420,
+        "loss_5": 38138,
+        "deductible": 17642,
+        "coverage": 33175,
+        "price": 583644,
+        "admin": 115588
+      }
+    },
+    {
+      "id": "C2ADECFBD9279",
+      "attrs": {
+        "loss_0": 45462,
+        "loss_1": 25135,
+        "loss_2": 16610,
+        "loss_3": 42280,
+        "loss_4": 14261,
+        "loss_5": 40512,
+        "deductible": 9147,
+        "coverage": 27271,
+        "price": 603401,
+        "admin": 99018
+      }
+    },
+    {
+      "id": "C0A9991CB342B",
+      "attrs": {
+        "loss_0": 38130,
+        "loss_1": 46335,
+        "loss_2": 16010,
+        "loss_3": 22834,
+        "loss_4": 38455,
+        "loss_5": 43027,
+        "deductible": 13691,
+        "coverage": 31078,
+        "price": 698064,
+        "admin": 103262
+      }
+    },
+    {
+      "id": "C076F09B32E4C",
+      "attrs": {
+        "loss_0": 41129,
+        "loss_1": 34041,
+        "loss_2": 17654,
+        "loss_3": 40609,
+        "loss_4": 47108,
+        "loss_5": 26446,
+        "deductible": 6361,
+        "coverage": 41635,
+        "price": 714872,
+        "admin": 112790
+      }
+    },
+    {
+      "id": "C88DFA58D5943",
+      "attrs": {
+        "loss_0": 28957,
+        "loss_1": 44108,
+        "loss_2": 34219,
+        "loss_3": 39496,
+        "loss_4": 25515,
+        "loss_5": 13065,
+        "deductible": 24057,
+        "coverage": 51048,
+        "price": 540190,
+        "admin": 133226
+      }
+    },
+    {
+      "id": "CA88AFE0ADCDC",
+      "attrs": {
+        "loss_0": 26538,
+        "loss_1": 35213,
+        "loss_2": 28412,
+        "loss_3": 18504,
+        "loss_4": 31636,
+        "loss_5": 33726,
+        "deductible": 14451,
+        "coverage": 23904,
+        "price": 687141,
+        "admin": 123330
+      }
+    },
+    {
+      "id": "C109BBCDF4326",
+      "attrs": {
+        "loss_0": 32701,
+        "loss_1": 42112,
+        "loss_2": 44602,
+        "loss_3": 22093,
+        "loss_4": 21367,
+        "loss_5": 14391,
+        "deductible": 7176,
+        "coverage": 37571,
+        "price": 564256,
+        "admin": 118157
+      }
+    },
+    {
+      "id": "CB6E27C233509",
+      "attrs": {
+        "loss_0": 16877,
+        "loss_1": 16180,
+        "loss_2": 40491,
+        "loss_3": 43310,
+        "loss_4": 38063,
+        "loss_5": 33632,
+        "deductible": 8423,
+        "coverage": 22188,
+        "price": 522416,
+        "admin": 100325
+      }
+    },
+    {
+      "id": "C96A2F7ABED3E",
+      "attrs": {
+        "loss_0": 23265,
+        "loss_1": 45765,
+        "loss_2": 31525,
+        "loss_3": 44496,
+        "loss_4": 36883,
+        "loss_5": 27081,
+        "deductible": 10553,
+        "coverage": 56159,
+        "price": 734241,
+        "admin": 129016
+      }
+    },
+    {
+      "id": "C0ABAEA806AD7",
+      "attrs": {
+        "loss_0": 21817,
+        "loss_1": 18629,
+        "loss_2": 40035,
+        "loss_3": 23697,
+        "loss_4": 33168,
+        "loss_5": 34025,
+        "deductible": 14176,
+        "coverage": 42623,
+        "price": 710199,
+        "admin": 135396
+      }
+    },
+    {
+      "id": "CDEC83B6FA1CA",
+      "attrs": {
+        "loss_0": 14226,
+        "loss_1": 15681,
+        "loss_2": 45925,
+        "loss_3": 32888,
+        "loss_4": 46619,
+        "loss_5": 35130,
+        "deductible": 24328,
+        "coverage": 50485,
+        "price": 621477,
+        "admin": 122812
+      }
+    },
+    {
+      "id": "C52F52D257D73",
+      "attrs": {
+        "loss_0": 46275,
+        "loss_1": 15051,
+        "loss_2": 47660,
+        "loss_3": 22968,
+        "loss_4": 39952,
+        "loss_5": 42915,
+        "deductible": 24429,
+        "coverage": 31201,
+        "price": 668509,
+        "admin": 94352
+      }
+    },
+    {
+      "id": "CED2E72774675",
+      "attrs": {
+        "loss_0": 31769,
+        "loss_1": 19712,
+        "loss_2": 21006,
+        "loss_3": 15614,
+        "loss_4": 14983,
+        "loss_5": 16987,
+        "deductible": 13368,
+        "coverage": 18317,
+        "price": 533946,
+        "admin": 145831
+      }
+    },
+    {
+      "id": "CC5D290285385",
+      "attrs": {
+        "loss_0": 19254,
+        "loss_1": 38262,
+        "loss_2": 28795,
+        "loss_3": 37341,
+        "loss_4": 23923,
+        "loss_5": 22582,
+        "deductible": 19136,
+        "coverage": 52413,
+        "price": 561609,
+        "admin": 148016
+      }
+    },
+    {
+      "id": "C99B34CA8C485",
+      "attrs": {
+        "loss_0": 46191,
+        "loss_1": 44480,
+        "loss_2": 29335,
+        "loss_3": 16439,
+        "loss_4": 44310,
+        "loss_5": 38721,
+        "deductible": 19240,
+        "coverage": 47512,
+        "price": 607946,
+        "admin": 112532
+      }
+    },
+    {
+      "id": "CDFBE96A399A7",
+      "attrs": {
+        "loss_0": 43850,
+        "loss_1": 41848,
+        "loss_2": 27159,
+        "loss_3": 22214,
+        "loss_4": 39624,
+        "loss_5": 23435,
+        "deductible": 9227,
+        "coverage": 21755,
+        "price": 635450,
+        "admin": 96434
+      }
+    },
+    {
+      "id": "CA11B0092E2C6",
+      "attrs": {
+        "loss_0": 17344,
+        "loss_1": 21673,
+        "loss_2": 38140,
+        "loss_3": 27863,
+        "loss_4": 42162,
+        "loss_5": 15997,
+        "deductible": 18819,
+        "coverage": 62283,
+        "price": 690901,
+        "admin": 154119
+      }
+    },
+    {
+      "id": "C4859330379D7",
+      "attrs": {
+        "loss_0": 43245,
+        "loss_1": 29321,
+        "loss_2": 30962,
+        "loss_3": 19579,
+        "loss_4": 34632,
+        "loss_5": 37622,
+        "deductible": 24200,
+        "coverage": 54878,
+        "price": 716702,
+        "admin": 139379
+      }
+    },
+    {
+      "id": "CF33BC861DBA1",
+      "attrs": {
+        "loss_0": 18611,
+        "loss_1": 29982,
+        "loss_2": 39075,
+        "loss_3": 33117,
+        "loss_4": 16170,
+        "loss_5": 46118,
+        "deductible": 9660,
+        "coverage": 30266,
+        "price": 572450,
+        "admin": 111957
+      }
+    },
+    {
+      "id": "C34C574498679",
+      "attrs": {
+        "loss_0": 12527,
+        "loss_1": 12513,
+        "loss_2": 41872,
+        "loss_3": 43524,
+        "loss_4": 24872,
+        "loss_5": 35765,
+        "deductible": 19866,
+        "coverage": 38611,
+        "price": 527346,
+        "admin": 117451
+      }
+    },
+    {
+      "id": "CA3F3042DB1F6",
+      "attrs": {
+        "loss_0": 39415,
+        "loss_1": 34827,
+        "loss_2": 36847,
+        "loss_3": 14751,
+        "loss_4": 23335,
+        "loss_5": 16432,
+        "deductible": 23177,
+        "coverage": 55496,
+        "price": 731475,
+        "admin": 144408
+      }
+    },
+    {
+      "id": "C5275CA1DE306",
+      "attrs": {
+        "loss_0": 24651,
+        "loss_1": 24409,
+        "loss_2": 27869,
+        "loss_3": 17111,
+        "loss_4": 42798,
+        "loss_5": 23606,
+        "deductible": 23437,
+        "coverage": 52754,
+        "price": 717176,
+        "admin": 157437
+      }
+    },
+    {
+      "id": "C1C2FFBEA4DB4",
+      "attrs": {
+        "loss_0": 36537,
+        "loss_1": 16782,
+        "loss_2": 26830,
+        "loss_3": 24767,
+        "loss_4": 33339,
+        "loss_5": 31508,
+        "deductible": 17596,
+        "coverage": 59551,
+        "price": 533250,
+        "admin": 158168
+      }
+    },
+    {
+      "id": "CF265C78C53D8",
+      "attrs": {
+        "loss_0": 45135,
+        "loss_1": 19950,
+        "loss_2": 29711,
+        "loss_3": 43435,
+        "loss_4": 35888,
+        "loss_5": 31503,
+        "deductible": 11744,
+        "coverage": 63181,
+        "price": 568027,
+        "admin": 138724
+      }
+    },
+    {
+      "id": "CAAAB0C5DB8AB",
+      "attrs": {
+        "loss_0": 46760,
+        "loss_1": 33509,
+        "loss_2": 15180,
+        "loss_3": 40384,
+        "loss_4": 17171,
+        "loss_5": 30607,
+        "deductible": 5983,
+        "coverage": 35381,
+        "price": 687744,
+        "admin": 114729
+      }
+    },
+    {
+      "id": "C80E3BD609854",
+      "attrs": {
+        "loss_0": 46414,
+        "loss_1": 35145,
+        "loss_2": 30370,
+        "loss_3": 36910,
+        "loss_4": 20134,
+        "loss_5": 36919,
+        "deductible": 10528,
+        "coverage": 60669,
+        "price": 534351,
+        "admin": 140427
+      }
+    },
+    {
+      "id": "C47080509E40D",
+      "attrs": {
+        "loss_0": 21573,
+        "loss_1": 45716,
+        "loss_2": 32155,
+        "loss_3": 15954,
+        "loss_4": 32042,
+        "loss_5": 14728,
+        "deductible": 21302,
+        "coverage": 53317,
+        "price": 712658,
+        "admin": 143405
+      }
+    },
+    {
+      "id": "CF72578CF8F79",
+      "attrs": {
+        "loss_0": 28889,
+        "loss_1": 23082,
+        "loss_2": 24736,
+        "loss_3": 24329,
+        "loss_4": 28232,
+        "loss_5": 15534,
+        "deductible": 16391,
+        "coverage": 34369,
+        "price": 633441,
+        "admin": 152513
+      }
+    },
+    {
+      "id": "CEEC6D4C82EA7",
+      "attrs": {
+        "loss_0": 24169,
+        "loss_1": 37185,
+        "loss_2": 36099,
+        "loss_3": 13369,
+        "loss_4": 16210,
+        "loss_5": 39543,
+        "deductible": 15949,
+        "coverage": 23216,
+        "price": 713475,
+        "admin": 110390
+      }
+    },
+    {
+      "id": "C2A8BF2347321",
+      "attrs": {
+        "loss_0": 34270,
+        "loss_1": 19411,
+        "loss_2": 42230,
+        "loss_3": 37069,
+        "loss_4": 15585,
+        "loss_5": 18952,
+        "deductible": 5786,
+        "coverage": 60098,
+        "price": 529326,
+        "admin": 146530
+      }
+    },
+    {
+      "id": "CB166967233CF",
+      "attrs": {
+        "loss_0": 21839,
+        "loss_1": 34533,
+        "loss_2": 32073,
+        "loss_3": 36860,
+        "loss_4": 18213,
+        "loss_5": 15518,
+        "deductible": 14599,
+        "coverage": 50998,
+        "price": 708119,
+        "admin": 147533
+      }
+    },
+    {
+      "id": "C3AE256D84656",
+      "attrs": {
+        "loss_0": 20061,
+        "loss_1": 16769,
+        "loss_2": 12126,
+        "loss_3": 23333,
+        "loss_4": 15880,
+        "loss_5": 21206,
+        "deductible": 20671,
+        "coverage": 18751,
+        "price": 608161,
+        "admin": 154152
+      }
+    },
+    {
+      "id": "C3660049D337E",
+      "attrs": {
+        "loss_0": 42462,
+        "loss_1": 17881,
+        "loss_2": 23854,
+        "loss_3": 46551,
+        "loss_4": 32975,
+        "loss_5": 46977,
+        "deductible": 21077,
+        "coverage": 61484,
+        "price": 649222,
+        "admin": 125495
+      }
+    },
+    {
+      "id": "C28783EAC2BD0",
+      "attrs": {
+        "loss_0": 40850,
+        "loss_1": 15272,
+        "loss_2": 25328,
+        "loss_3": 14349,
+        "loss_4": 12822,
+        "loss_5": 13187,
+        "deductible": 23952,
+        "coverage": 47209,
+        "price": 691776,
+        "admin": 165760
+      }
+    },
+    {
+      "id": "C80506E8EA3CC",
+      "attrs": {
+        "loss_0": 37221,
+        "loss_1": 12954,
+        "loss_2": 35820,
+        "loss_3": 24734,
+        "loss_4": 32668,
+        "loss_5": 29898,
+        "deductible": 19359,
+        "coverage": 61254,
+        "price": 609153,
+        "admin": 155546
+      }
+    },
+    {
+      "id": "C0329C148256A",
+      "attrs": {
+        "loss_0": 35654,
+        "loss_1": 19862,
+        "loss_2": 46175,
+        "loss_3": 45892,
+        "loss_4": 30795,
+        "loss_5": 40576,
+        "deductible": 8748,
+        "coverage": 25070,
+        "price": 568621,
+        "admin": 92428
+      }
+    },
+    {
+      "id": "CD86429E429C5",
+      "attrs": {
+        "loss_0": 47062,
+        "loss_1": 32364,
+        "loss_2": 23772,
+        "loss_3": 29663,
+        "loss_4": 32077,
+        "loss_5": 46582,
+        "deductible": 23104,
+        "coverage": 22889,
+        "price": 712763,
+        "admin": 96882
+      }
+    },
+    {
+      "id": "CC36D8E704878",
+      "attrs": {
+        "loss_0": 33452,
+        "loss_1": 21811,
+        "loss_2": 45711,
+        "loss_3": 21330,
+        "loss_4": 16212,
+        "loss_5": 32611,
+        "deductible": 11582,
+        "coverage": 19069,
+        "price": 652834,
+        "admin": 107296
+      }
+    },
+    {
+      "id": "C48462A6EB6BF",
+      "attrs": {
+        "loss_0": 22198,
+        "loss_1": 18721,
+        "loss_2": 28410,
+        "loss_3": 31383,
+        "loss_4": 26992,
+        "loss_5": 43929,
+        "deductible": 11141,
+        "coverage": 46764,
+        "price": 738771,
+        "admin": 143043
+      }
+    },
+    {
+      "id": "CD2C73FB4DED5",
+      "attrs": {
+        "loss_0": 34710,
+        "loss_1": 27043,
+        "loss_2": 36239,
+        "loss_3": 43119,
+        "loss_4": 46942,
+        "loss_5": 42424,
+        "deductible": 9035,
+        "coverage": 64948,
+        "price": 705240,
+        "admin": 132464
+      }
+    },
+    {
+      "id": "C8E3D8F987B6B",
+      "attrs": {
+        "loss_0": 24081,
+        "loss_1": 20892,
+        "loss_2": 12306,
+        "loss_3": 40013,
+        "loss_4": 25997,
+        "loss_5": 31399,
+        "deductible": 15604,
+        "coverage": 27879,
+        "price": 659871,
+        "admin": 130471
+      }
+    },
+    {
+      "id": "CA6B0AF4D8407",
+      "attrs": {
+        "loss_0": 14756,
+        "loss_1": 30857,
+        "loss_2": 32372,
+        "loss_3": 12529,
+        "loss_4": 14918,
+        "loss_5": 25303,
+        "deductible": 12277,
+        "coverage": 47338,
+        "price": 579258,
+        "admin": 158807
+      }
+    },
+    {
+      "id": "CD2C96BEB2384",
+      "attrs": {
+        "loss_0": 34678,
+        "loss_1": 35507,
+        "loss_2": 28781,
+        "loss_3": 32197,
+        "loss_4": 46490,
+        "loss_5": 32884,
+        "deductible": 7653,
+        "coverage": 46172,
+        "price": 574789,
+        "admin": 129498
+      }
+    },
+    {
+      "id": "C802387801DE3",
+      "attrs": {
+        "loss_0": 45303,
+        "loss_1": 34084,
+        "loss_2": 36384,
+        "loss_3": 24628,
+        "loss_4": 15733,
+        "loss_5": 21828,
+        "deductible": 22999,
+        "coverage": 62053,
+        "price": 541895,
+        "admin": 146283
+      }
+    },
+    {
+      "id": "CACFD7CD84358",
+      "attrs": {
+        "loss_0": 25731,
+        "loss_1": 29480,
+        "loss_2": 42187,
+        "loss_3": 26512,
+        "loss_4": 25488,
+        "loss_5": 19426,
+        "deductible": 24147,
+        "coverage": 34945,
+        "price": 525166,
+        "admin": 136767
+      }
+    },
+    {
+      "id": "C169719B4F3D9",
+      "attrs": {
+        "loss_0": 40220,
+        "loss_1": 34869,
+        "loss_2": 43473,
+        "loss_3": 24601,
+        "loss_4": 42147,
+        "loss_5": 35844,
+        "deductible": 24670,
+        "coverage": 50100,
+        "price": 721031,
+        "admin": 124261
+      }
+    },
+    {
+      "id": "C31DFEBCC74F5",
+      "attrs": {
+        "loss_0": 32693,
+        "loss_1": 45611,
+        "loss_2": 42580,
+        "loss_3": 36219,
+        "loss_4": 31249,
+        "loss_5": 25767,
+        "deductible": 15865,
+        "coverage": 53401,
+        "price": 532009,
+        "admin": 128992
+      }
+    },
+    {
+      "id": "C6AE98F8BDCFC",
+      "attrs": {
+        "loss_0": 47061,
+        "loss_1": 20659,
+        "loss_2": 19018,
+        "loss_3": 46279,
+        "loss_4": 31720,
+        "loss_5": 25183,
+        "deductible": 20548,
+        "coverage": 31188,
+        "price": 683577,
+        "admin": 106129
+      }
+    },
+    {
+      "id": "C223AE5E152E7",
+      "attrs": {
+        "loss_0": 47511,
+        "loss_1": 39780,
+        "loss_2": 14071,
+        "loss_3": 21503,
+        "loss_4": 18271,
+        "loss_5": 14266,
+        "deductible": 18472,
+        "coverage": 21413,
+        "price": 600916,
+        "admin": 112620
+      }
+    },
+    {
+      "id": "C75CB6A24CC29",
+      "attrs": {
+        "loss_0": 44315,
+        "loss_1": 14966,
+        "loss_2": 26247,
+        "loss_3": 27707,
+        "loss_4": 15971,
+        "loss_5": 29176,
+        "deductible": 15188,
+        "coverage": 45567,
+        "price": 701493,
+        "admin": 144370
+      }
+    },
+    {
+      "id": "C5403E8CEFD90",
+      "attrs": {
+        "loss_0": 23068,
+        "loss_1": 31560,
+        "loss_2": 28072,
+        "loss_3": 22436,
+        "loss_4": 43488,
+        "loss_5": 46800,
+        "deductible": 10550,
+        "coverage": 33927,
+        "price": 635480,
+        "admin": 112080
+      }
+    },
+    {
+      "id": "C09C22757D20E",
+      "attrs": {
+        "loss_0": 29789,
+        "loss_1": 28048,
+        "loss_2": 32895,
+        "loss_3": 15345,
+        "loss_4": 40555,
+        "loss_5": 47644,
+        "deductible": 18566,
+        "coverage": 47176,
+        "price": 704520,
+        "admin": 126083
+      }
+    },
+    {
+      "id": "CBDE02A733CAF",
+      "attrs": {
+        "loss_0": 14060,
+        "loss_1": 29371,
+        "loss_2": 45938,
+        "loss_3": 42578,
+        "loss_4": 22260,
+        "loss_5": 25472,
+        "deductible": 8402,
+        "coverage": 42647,
+        "price": 670008,
+        "admin": 124761
+      }
+    },
+    {
+      "id": "C9ABBB09B3539",
+      "attrs": {
+        "loss_0": 43816,
+        "loss_1": 28972,
+        "loss_2": 45589,
+        "loss_3": 40285,
+        "loss_4": 15642,
+        "loss_5": 22916,
+        "deductible": 11886,
+        "coverage": 28336,
+        "price": 604036,
+        "admin": 98647
+      }
+    },
+    {
+      "id": "C023C99DE7AE4",
+      "attrs": {
+        "loss_0": 41519,
+        "loss_1": 47478,
+        "loss_2": 24795,
+        "loss_3": 41264,
+        "loss_4": 26967,
+        "loss_5": 25508,
+        "deductible": 22585,
+        "coverage": 41519,
+        "price": 681793,
+        "admin": 111259
+      }
+    },
+    {
+      "id": "C9F03B5BD6401",
+      "attrs": {
+        "loss_0": 14038,
+        "loss_1": 36916,
+        "loss_2": 26989,
+        "loss_3": 26960,
+        "loss_4": 47856,
+        "loss_5": 27853,
+        "deductible": 17032,
+        "coverage": 45145,
+        "price": 633212,
+        "admin": 132521
+      }
+    },
+    {
+      "id": "C9204D8983DDC",
+      "attrs": {
+        "loss_0": 47410,
+        "loss_1": 40377,
+        "loss_2": 24762,
+        "loss_3": 38433,
+        "loss_4": 27597,
+        "loss_5": 21746,
+        "deductible": 6643,
+        "coverage": 54062,
+        "price": 562297,
+        "admin": 127843
+      }
+    },
+    {
+      "id": "C2CA52D84FE5B",
+      "attrs": {
+        "loss_0": 37640,
+        "loss_1": 30513,
+        "loss_2": 14751,
+        "loss_3": 34844,
+        "loss_4": 39410,
+        "loss_5": 16542,
+        "deductible": 20788,
+        "coverage": 49050,
+        "price": 734962,
+        "admin": 137157
+      }
+    },
+    {
+      "id": "CC90DC6C24D61",
+      "attrs": {
+        "loss_0": 32690,
+        "loss_1": 13800,
+        "loss_2": 27903,
+        "loss_3": 44457,
+        "loss_4": 45516,
+        "loss_5": 36163,
+        "deductible": 7708,
+        "coverage": 55451,
+        "price": 590727,
+        "admin": 129316
+      }
+    },
+    {
+      "id": "CF01406060057",
+      "attrs": {
+        "loss_0": 46012,
+        "loss_1": 33536,
+        "loss_2": 37590,
+        "loss_3": 20884,
+        "loss_4": 14755,
+        "loss_5": 28128,
+        "deductible": 6793,
+        "coverage": 50018,
+        "price": 521025,
+        "admin": 132881
+      }
+    },
+    {
+      "id": "CBA81E2881EA2",
+      "attrs": {
+        "loss_0": 47542,
+        "loss_1": 27361,
+        "loss_2": 16646,
+        "loss_3": 15431,
+        "loss_4": 17093,
+        "loss_5": 43603,
+        "deductible": 10623,
+        "coverage": 51344,
+        "price": 599317,
+        "admin": 132839
+      }
+    },
+    {
+      "id": "C5BFC893B607E",
+      "attrs": {
+        "loss_0": 33734,
+        "loss_1": 35226,
+        "loss_2": 35494,
+        "loss_3": 26616,
+        "loss_4": 29277,
+        "loss_5": 46491,
+        "deductible": 22066,
+        "coverage": 32512,
+        "price": 670536,
+        "admin": 115302
+      }
+    },
+    {
+      "id": "CD60B9AB09414",
+      "attrs": {
+        "loss_0": 43318,
+        "loss_1": 32501,
+        "loss_2": 37445,
+        "loss_3": 45072,
+        "loss_4": 26133,
+        "loss_5": 26274,
+        "deductible": 22983,
+        "coverage": 36149,
+        "price": 548417,
+        "admin": 110315
+      }
+    },
+    {
+      "id": "CE7C03D5D71C8",
+      "attrs": {
+        "loss_0": 23909,
+        "loss_1": 29443,
+        "loss_2": 34126,
+        "loss_3": 37186,
+        "loss_4": 43901,
+        "loss_5": 41434,
+        "deductible": 21069,
+        "coverage": 22410,
+        "price": 559605,
+        "admin": 99890
+      }
+    },
+    {
+      "id": "C8BC1A70696C7",
+      "attrs": {
+        "loss_0": 41282,
+        "loss_1": 12369,
+        "loss_2": 30371,
+        "loss_3": 47882,
+        "loss_4": 12132,
+        "loss_5": 31707,
+        "deductible": 16710,
+        "coverage": 38264,
+        "price": 585696,
+        "admin": 117394
+      }
+    },
+    {
+      "id": "C35D238685A35",
+      "attrs": {
+        "loss_0": 37226,
+        "loss_1": 34556,
+        "loss_2": 24137,
+        "loss_3": 22869,
+        "loss_4": 28537,
+        "loss_5": 30777,
+        "deductible": 20936,
+        "coverage": 63982,
+        "price": 599369,
+        "admin": 161424
+      }
+    },
+    {
+      "id": "C62459F81F300",
+      "attrs": {
+        "loss_0": 13621,
+        "loss_1": 33829,
+        "loss_2": 46129,
+        "loss_3": 35277,
+        "loss_4": 16935,
+        "loss_5": 17225,
+        "deductible": 22115,
+        "coverage": 46281,
+        "price": 721373,
+        "admin": 131047
+      }
+    },
+    {
+      "id": "CE681849B4140",
+      "attrs": {
+        "loss_0": 25168,
+        "loss_1": 45657,
+        "loss_2": 42965,
+        "loss_3": 44884,
+        "loss_4": 30635,
+        "loss_5": 30932,
+        "deductible": 18642,
+        "coverage": 24625,
+        "price": 571257,
+        "admin": 91120
+      }
+    },
+    {
+      "id": "C6A015E3320FA",
+      "attrs": {
+        "loss_0": 40141,
+        "loss_1": 39897,
+        "loss_2": 12237,
+        "loss_3": 28759,
+        "loss_4": 39312,
+        "loss_5": 41271,
+        "deductible": 6498,
+        "coverage": 43621,
+        "price": 731196,
+        "admin": 122313
+      }
+    },
+    {
+      "id": "CEA622CFB393E",
+      "attrs": {
+        "loss_0": 27393,
+        "loss_1": 31413,
+        "loss_2": 46131,
+        "loss_3": 25762,
+        "loss_4": 32065,
+        "loss_5": 42096,
+        "deductible": 7722,
+        "coverage": 64123,
+        "price": 636990,
+        "admin": 143832
+      }
+    },
+    {
+      "id": "CD37C0878B9E9",
+      "attrs": {
+        "loss_0": 19296,
+        "loss_1": 19723,
+        "loss_2": 35519,
+        "loss_3": 30123,
+        "loss_4": 26938,
+        "loss_5": 15895,
+        "deductible": 5218,
+        "coverage": 20201,
+        "price": 711553,
+        "admin": 127622
+      }
+    },
+    {
+      "id": "C7CD51C8C5F7D",
+      "attrs": {
+        "loss_0": 18739,
+        "loss_1": 12559,
+        "loss_2": 25205,
+        "loss_3": 29189,
+        "loss_4": 12551,
+        "loss_5": 29533,
+        "deductible": 17297,
+        "coverage": 47924,
+        "price": 712524,
+        "admin": 163998
+      }
+    },
+    {
+      "id": "CD06E229BC151",
+      "attrs": {
+        "loss_0": 45786,
+        "loss_1": 33616,
+        "loss_2": 31213,
+        "loss_3": 41831,
+        "loss_4": 47987,
+        "loss_5": 41360,
+        "deductible": 5115,
+        "coverage": 27513,
+        "price": 588805,
+        "admin": 91910
+      }
+    },
+    {
+      "id": "C26E049EA38A0",
+      "attrs": {
+        "loss_0": 16130,
+        "loss_1": 32164,
+        "loss_2": 34427,
+        "loss_3": 40595,
+        "loss_4": 20646,
+        "loss_5": 46907,
+        "deductible": 20998,
+        "coverage": 33457,
+        "price": 659183,
+        "admin": 111529
+      }
+    },
+    {
+      "id": "C3BB7BA23D68C",
+      "attrs": {
+        "loss_0": 20488,
+        "loss_1": 40642,
+        "loss_2": 42072,
+        "loss_3": 14469,
+        "loss_4": 39710,
+        "loss_5": 47860,
+        "deductible": 22765,
+        "coverage": 64458,
+        "price": 565896,
+        "admin": 133885
+      }
+    },
+    {
+      "id": "C9CA143B03B5A",
+      "attrs": {
+        "loss_0": 37198,
+        "loss_1": 25498,
+        "loss_2": 14654,
+        "loss_3": 31340,
+        "loss_4": 35454,
+        "loss_5": 29917,
+        "deductible": 15667,
+        "coverage": 29709,
+        "price": 593593,
+        "admin": 125718
+      }
+    },
+    {
+      "id": "CC1D909D260E5",
+      "attrs": {
+        "loss_0": 29795,
+        "loss_1": 23186,
+        "loss_2": 37020,
+        "loss_3": 37834,
+        "loss_4": 13779,
+        "loss_5": 32560,
+        "deductible": 19104,
+        "coverage": 55656,
+        "price": 688035,
+        "admin": 148243
+      }
+    },
+    {
+      "id": "CFFDF80AB5903",
+      "attrs": {
+        "loss_0": 21375,
+        "loss_1": 20572,
+        "loss_2": 30726,
+        "loss_3": 38802,
+        "loss_4": 22735,
+        "loss_5": 39526,
+        "deductible": 12321,
+        "coverage": 47447,
+        "price": 709796,
+        "admin": 138394
+      }
+    },
+    {
+      "id": "C7AC94A40BF95",
+      "attrs": {
+        "loss_0": 12203,
+        "loss_1": 38527,
+        "loss_2": 44943,
+        "loss_3": 32700,
+        "loss_4": 28826,
+        "loss_5": 12055,
+        "deductible": 9152,
+        "coverage": 39927,
+        "price": 539324,
+        "admin": 123758
+      }
+    },
+    {
+      "id": "C637879506D8F",
+      "attrs": {
+        "loss_0": 26679,
+        "loss_1": 45568,
+        "loss_2": 20931,
+        "loss_3": 44297,
+        "loss_4": 30517,
+        "loss_5": 25686,
+        "deductible": 7646,
+        "coverage": 49494,
+        "price": 726936,
+        "admin": 129113
+      }
+    },
+    {
+      "id": "CB2CFA3148D0A",
+      "attrs": {
+        "loss_0": 35629,
+        "loss_1": 39335,
+        "loss_2": 35346,
+        "loss_3": 45691,
+        "loss_4": 42086,
+        "loss_5": 39602,
+        "deductible": 17691,
+        "coverage": 57162,
+        "price": 657983,
+        "admin": 129784
+      }
+    },
+    {
+      "id": "CD621DCDF5E75",
+      "attrs": {
+        "loss_0": 36951,
+        "loss_1": 45146,
+        "loss_2": 39852,
+        "loss_3": 22233,
+        "loss_4": 23212,
+        "loss_5": 31279,
+        "deductible": 20887,
+        "coverage": 21895,
+        "price": 617476,
+        "admin": 99947
+      }
+    },
+    {
+      "id": "C8986C23F33C9",
+      "attrs": {
+        "loss_0": 43041,
+        "loss_1": 45361,
+        "loss_2": 21442,
+        "loss_3": 44876,
+        "loss_4": 21163,
+        "loss_5": 26711,
+        "deductible": 6475,
+        "coverage": 55094,
+        "price": 686786,
+        "admin": 121817
+      }
+    },
+    {
+      "id": "C2897A9F89A34",
+      "attrs": {
+        "loss_0": 47850,
+        "loss_1": 40857,
+        "loss_2": 12201,
+        "loss_3": 17959,
+        "loss_4": 37909,
+        "loss_5": 26988,
+        "deductible": 19151,
+        "coverage": 64258,
+        "price": 665285,
+        "admin": 137643
+      }
+    },
+    {
+      "id": "C715308AD3264",
+      "attrs": {
+        "loss_0": 38114,
+        "loss_1": 44881,
+        "loss_2": 19113,
+        "loss_3": 42069,
+        "loss_4": 16235,
+        "loss_5": 13445,
+        "deductible": 14078,
+        "coverage": 59690,
+        "price": 677292,
+        "admin": 134627
+      }
+    },
+    {
+      "id": "CF8F982A5F091",
+      "attrs": {
+        "loss_0": 47398,
+        "loss_1": 26539,
+        "loss_2": 26597,
+        "loss_3": 45666,
+        "loss_4": 41697,
+        "loss_5": 37132,
+        "deductible": 19358,
+        "coverage": 29873,
+        "price": 682499,
+        "admin": 95113
+      }
+    },
+    {
+      "id": "C725DC78FAEF3",
+      "attrs": {
+        "loss_0": 24577,
+        "loss_1": 23044,
+        "loss_2": 19219,
+        "loss_3": 16902,
+        "loss_4": 43997,
+        "loss_5": 22767,
+        "deductible": 18192,
+        "coverage": 58801,
+        "price": 699209,
+        "admin": 167184
+      }
+    },
+    {
+      "id": "C7E96CCD202C8",
+      "attrs": {
+        "loss_0": 43640,
+        "loss_1": 31516,
+        "loss_2": 20994,
+        "loss_3": 37214,
+        "loss_4": 26508,
+        "loss_5": 19446,
+        "deductible": 18218,
+        "coverage": 45471,
+        "price": 520446,
+        "admin": 133102
+      }
+    },
+    {
+      "id": "CD73B08272EA0",
+      "attrs": {
+        "loss_0": 41335,
+        "loss_1": 17108,
+        "loss_2": 26432,
+        "loss_3": 26485,
+        "loss_4": 37370,
+        "loss_5": 15832,
+        "deductible": 18696,
+        "coverage": 19540,
+        "price": 706348,
+        "admin": 114351
+      }
+    },
+    {
+      "id": "CD3E5BC9E68B1",
+      "attrs": {
+        "loss_0": 13052,
+        "loss_1": 25439,
+        "loss_2": 29812,
+        "loss_3": 12452,
+        "loss_4": 43234,
+        "loss_5": 30095,
+        "deductible": 18850,
+        "coverage": 35260,
+        "price": 687881,
+        "admin": 132120
+      }
+    },
+    {
+      "id": "CC49A7C8FDFAD",
+      "attrs": {
+        "loss_0": 29893,
+        "loss_1": 24705,
+        "loss_2": 13153,
+        "loss_3": 46315,
+        "loss_4": 21518,
+        "loss_5": 32942,
+        "deductible": 7993,
+        "coverage": 27651,
+        "price": 715756,
+        "admin": 118502
+      }
+    },
+    {
+      "id": "C2A43C76BC95B",
+      "attrs": {
+        "loss_0": 13646,
+        "loss_1": 39310,
+        "loss_2": 35403,
+        "loss_3": 13292,
+        "loss_4": 17045,
+        "loss_5": 23410,
+        "deductible": 22830,
+        "coverage": 64627,
+        "price": 556399,
+        "admin": 166505
+      }
+    },
+    {
+      "id": "CD88FBFAD2AE1",
+      "attrs": {
+        "loss_0": 15143,
+        "loss_1": 18318,
+        "loss_2": 35620,
+        "loss_3": 41866,
+        "loss_4": 32316,
+        "loss_5": 12695,
+        "deductible": 17035,
+        "coverage": 52050,
+        "price": 735977,
+        "admin": 142249
+      }
+    },
+    {
+      "id": "C435F847A7F72",
+      "attrs": {
+        "loss_0": 12699,
+        "loss_1": 21696,
+        "loss_2": 33630,
+        "loss_3": 27582,
+        "loss_4": 17491,
+        "loss_5": 44244,
+        "deductible": 18704,
+        "coverage": 27791,
+        "price": 535381,
+        "admin": 122336
+      }
+    },
+    {
+      "id": "CEB7E09E2F032",
+      "attrs": {
+        "loss_0": 19186,
+        "loss_1": 30539,
+        "loss_2": 37768,
+        "loss_3": 36612,
+        "loss_4": 38226,
+        "loss_5": 34924,
+        "deductible": 24253,
+        "coverage": 53832,
+        "price": 661557,
+        "admin": 141227
+      }
+    },
+    {
+      "id": "C7B79694634EF",
+      "attrs": {
+        "loss_0": 12947,
+        "loss_1": 19815,
+        "loss_2": 32019,
+        "loss_3": 17895,
+        "loss_4": 28904,
+        "loss_5": 29605,
+        "deductible": 9961,
+        "coverage": 45930,
+        "price": 705430,
+        "admin": 155403
+      }
+    },
+    {
+      "id": "C18F4DA43DF45",
+      "attrs": {
+        "loss_0": 20217,
+        "loss_1": 46168,
+        "loss_2": 39693,
+        "loss_3": 27003,
+        "loss_4": 36529,
+        "loss_5": 41397,
+        "deductible": 19949,
+        "coverage": 24365,
+        "price": 603962,
+        "admin": 97108
+      }
+    },
+    {
+      "id": "C1297ACCA505E",
+      "attrs": {
+        "loss_0": 43052,
+        "loss_1": 37646,
+        "loss_2": 19247,
+        "loss_3": 18270,
+        "loss_4": 12349,
+        "loss_5": 22627,
+        "deductible": 19423,
+        "coverage": 29752,
+        "price": 556205,
+        "admin": 126428
+      }
+    },
+    {
+      "id": "C5FD342640105",
+      "attrs": {
+        "loss_0": 37000,
+        "loss_1": 21297,
+        "loss_2": 35597,
+        "loss_3": 14353,
+        "loss_4": 21230,
+        "loss_5": 29194,
+        "deductible": 10683,
+        "coverage": 41625,
+        "price": 523131,
+        "admin": 139835
+      }
+    },
+    {
+      "id": "C85A08B294AA6",
+      "attrs": {
+        "loss_0": 38717,
+        "loss_1": 41458,
+        "loss_2": 12060,
+        "loss_3": 15619,
+        "loss_4": 47357,
+        "loss_5": 32068,
+        "deductible": 12294,
+        "coverage": 49356,
+        "price": 571646,
+        "admin": 121825
+      }
+    },
+    {
+      "id": "CCE239D9FB028",
+      "attrs": {
+        "loss_0": 40013,
+        "loss_1": 38105,
+        "loss_2": 35630,
+        "loss_3": 15193,
+        "loss_4": 20193,
+        "loss_5": 39582,
+        "deductible": 18194,
+        "coverage": 18285,
+        "price": 719771,
+        "admin": 100586
+      }
+    },
+    {
+      "id": "C11E6F82662EC",
+      "attrs": {
+        "loss_0": 22985,
+        "loss_1": 30282,
+        "loss_2": 12866,
+        "loss_3": 33694,
+        "loss_4": 15972,
+        "loss_5": 32434,
+        "deductible": 24640,
+        "coverage": 32795,
+        "price": 566619,
+        "admin": 136386
+      }
+    },
+    {
+      "id": "C715567C15F79",
+      "attrs": {
+        "loss_0": 22248,
+        "loss_1": 16696,
+        "loss_2": 37298,
+        "loss_3": 15464,
+        "loss_4": 20618,
+        "loss_5": 19243,
+        "deductible": 17617,
+        "coverage": 55691,
+        "price": 710866,
+        "admin": 175528
+      }
+    },
+    {
+      "id": "C9DE25A7C6C24",
+      "attrs": {
+        "loss_0": 46770,
+        "loss_1": 25967,
+        "loss_2": 45035,
+        "loss_3": 38310,
+        "loss_4": 28808,
+        "loss_5": 28973,
+        "deductible": 21659,
+        "coverage": 52754,
+        "price": 561340,
+        "admin": 122640
+      }
+    },
+    {
+      "id": "C6E7B69BEA63B",
+      "attrs": {
+        "loss_0": 44454,
+        "loss_1": 15193,
+        "loss_2": 28975,
+        "loss_3": 12145,
+        "loss_4": 44086,
+        "loss_5": 40797,
+        "deductible": 6906,
+        "coverage": 47907,
+        "price": 726522,
+        "admin": 118571
+      }
+    },
+    {
+      "id": "C26E6AAC98FA0",
+      "attrs": {
+        "loss_0": 43294,
+        "loss_1": 35400,
+        "loss_2": 42256,
+        "loss_3": 25557,
+        "loss_4": 23118,
+        "loss_5": 18341,
+        "deductible": 23314,
+        "coverage": 62636,
+        "price": 613965,
+        "admin": 141687
+      }
+    },
+    {
+      "id": "CBE64C05E971C",
+      "attrs": {
+        "loss_0": 37347,
+        "loss_1": 37899,
+        "loss_2": 25048,
+        "loss_3": 28997,
+        "loss_4": 26818,
+        "loss_5": 12579,
+        "deductible": 9270,
+        "coverage": 24271,
+        "price": 531038,
+        "admin": 120029
+      }
+    },
+    {
+      "id": "C8DF4843AA9D6",
+      "attrs": {
+        "loss_0": 16908,
+        "loss_1": 32003,
+        "loss_2": 33606,
+        "loss_3": 34227,
+        "loss_4": 30722,
+        "loss_5": 12838,
+        "deductible": 11706,
+        "coverage": 33675,
+        "price": 553904,
+        "admin": 133840
+      }
+    },
+    {
+      "id": "C78726E50133E",
+      "attrs": {
+        "loss_0": 36046,
+        "loss_1": 24998,
+        "loss_2": 47431,
+        "loss_3": 34031,
+        "loss_4": 45968,
+        "loss_5": 38497,
+        "deductible": 20807,
+        "coverage": 28503,
+        "price": 684080,
+        "admin": 96608
+      }
+    },
+    {
+      "id": "C7474117EB553",
+      "attrs": {
+        "loss_0": 12240,
+        "loss_1": 25871,
+        "loss_2": 38078,
+        "loss_3": 30038,
+        "loss_4": 33175,
+        "loss_5": 16074,
+        "deductible": 13905,
+        "coverage": 62346,
+        "price": 649696,
+        "admin": 161056
+      }
+    },
+    {
+      "id": "CE0FF962C4D59",
+      "attrs": {
+        "loss_0": 25538,
+        "loss_1": 39557,
+        "loss_2": 24659,
+        "loss_3": 33138,
+        "loss_4": 40308,
+        "loss_5": 15297,
+        "deductible": 20606,
+        "coverage": 22449,
+        "price": 528342,
+        "admin": 109447
+      }
+    },
+    {
+      "id": "CE5C7477F7525",
+      "attrs": {
+        "loss_0": 35610,
+        "loss_1": 16132,
+        "loss_2": 17236,
+        "loss_3": 19979,
+        "loss_4": 22591,
+        "loss_5": 35510,
+        "deductible": 22767,
+        "coverage": 61271,
+        "price": 715781,
+        "admin": 167561
+      }
+    },
+    {
+      "id": "C2C3039D82312",
+      "attrs": {
+        "loss_0": 20424,
+        "loss_1": 42448,
+        "loss_2": 26704,
+        "loss_3": 47215,
+        "loss_4": 18841,
+        "loss_5": 31620,
+        "deductible": 9605,
+        "coverage": 61315,
+        "price": 667106,
+        "admin": 140033
+      }
+    },
+    {
+      "id": "C1DFB4318D318",
+      "attrs": {
+        "loss_0": 45903,
+        "loss_1": 34253,
+        "loss_2": 16044,
+        "loss_3": 19568,
+        "loss_4": 20947,
+        "loss_5": 38697,
+        "deductible": 10334,
+        "coverage": 55185,
+        "price": 665960,
+        "admin": 136333
+      }
+    },
+    {
+      "id": "C8D6AAEB15D3F",
+      "attrs": {
+        "loss_0": 42659,
+        "loss_1": 15135,
+        "loss_2": 16476,
+        "loss_3": 29877,
+        "loss_4": 39739,
+        "loss_5": 14998,
+        "deductible": 17762,
+        "coverage": 64837,
+        "price": 703034,
+        "admin": 152563
+      }
+    },
+    {
+      "id": "C82C07E20F8AE",
+      "attrs": {
+        "loss_0": 29019,
+        "loss_1": 30608,
+        "loss_2": 18305,
+        "loss_3": 13608,
+        "loss_4": 30538,
+        "loss_5": 38685,
+        "deductible": 16430,
+        "coverage": 19059,
+        "price": 523820,
+        "admin": 119229
+      }
+    },
+    {
+      "id": "CC88C49433996",
+      "attrs": {
+        "loss_0": 39533,
+        "loss_1": 20150,
+        "loss_2": 39120,
+        "loss_3": 39259,
+        "loss_4": 14008,
+        "loss_5": 46282,
+        "deductible": 23614,
+        "coverage": 43476,
+        "price": 730337,
+        "admin": 118403
+      }
+    },
+    {
+      "id": "C9EB907805BAE",
+      "attrs": {
+        "loss_0": 19306,
+        "loss_1": 15562,
+        "loss_2": 45032,
+        "loss_3": 21993,
+        "loss_4": 36595,
+        "loss_5": 39292,
+        "deductible": 23961,
+        "coverage": 42131,
+        "price": 697153,
+        "admin": 121213
+      }
+    },
+    {
+      "id": "C60A66C0E08E7",
+      "attrs": {
+        "loss_0": 46471,
+        "loss_1": 14937,
+        "loss_2": 41503,
+        "loss_3": 41514,
+        "loss_4": 20796,
+        "loss_5": 45685,
+        "deductible": 24865,
+        "coverage": 31909,
+        "price": 577135,
+        "admin": 98240
+      }
+    },
+    {
+      "id": "CAB9D055FAC58",
+      "attrs": {
+        "loss_0": 43224,
+        "loss_1": 20310,
+        "loss_2": 25302,
+        "loss_3": 34389,
+        "loss_4": 20193,
+        "loss_5": 14881,
+        "deductible": 19101,
+        "coverage": 46713,
+        "price": 645721,
+        "admin": 143799
+      }
+    },
+    {
+      "id": "CC5CF83DEE9CD",
+      "attrs": {
+        "loss_0": 25698,
+        "loss_1": 42899,
+        "loss_2": 14598,
+        "loss_3": 20161,
+        "loss_4": 37848,
+        "loss_5": 35700,
+        "deductible": 5483,
+        "coverage": 20457,
+        "price": 576530,
+        "admin": 104011
+      }
+    },
+    {
+      "id": "C8A5FC0B09702",
+      "attrs": {
+        "loss_0": 47811,
+        "loss_1": 20276,
+        "loss_2": 14002,
+        "loss_3": 32258,
+        "loss_4": 21390,
+        "loss_5": 20530,
+        "deductible": 9310,
+        "coverage": 58483,
+        "price": 580991,
+        "admin": 157025
+      }
+    },
+    {
+      "id": "C28996916C8C9",
+      "attrs": {
+        "loss_0": 28041,
+        "loss_1": 27524,
+        "loss_2": 35920,
+        "loss_3": 33678,
+        "loss_4": 43863,
+        "loss_5": 15419,
+        "deductible": 18860,
+        "coverage": 59324,
+        "price": 675123,
+        "admin": 145864
+      }
+    },
+    {
+      "id": "C094CB4C0DE90",
+      "attrs": {
+        "loss_0": 14340,
+        "loss_1": 44672,
+        "loss_2": 37616,
+        "loss_3": 27731,
+        "loss_4": 42581,
+        "loss_5": 15551,
+        "deductible": 16369,
+        "coverage": 32764,
+        "price": 552275,
+        "admin": 107896
+      }
+    },
+    {
+      "id": "CFC461509005D",
+      "attrs": {
+        "loss_0": 31218,
+        "loss_1": 36040,
+        "loss_2": 47016,
+        "loss_3": 34984,
+        "loss_4": 14149,
+        "loss_5": 19130,
+        "deductible": 7109,
+        "coverage": 41377,
+        "price": 527595,
+        "admin": 123338
+      }
+    },
+    {
+      "id": "C3DD8A283BD34",
+      "attrs": {
+        "loss_0": 20564,
+        "loss_1": 41657,
+        "loss_2": 20108,
+        "loss_3": 38634,
+        "loss_4": 18352,
+        "loss_5": 25638,
+        "deductible": 20679,
+        "coverage": 23563,
+        "price": 548632,
+        "admin": 117635
+      }
+    },
+    {
+      "id": "C950A8903CAA1",
+      "attrs": {
+        "loss_0": 32542,
+        "loss_1": 34169,
+        "loss_2": 34937,
+        "loss_3": 23447,
+        "loss_4": 31487,
+        "loss_5": 13466,
+        "deductible": 16541,
+        "coverage": 40029,
+        "price": 637053,
+        "admin": 138382
+      }
+    },
+    {
+      "id": "C25A52839B1E2",
+      "attrs": {
+        "loss_0": 17054,
+        "loss_1": 20420,
+        "loss_2": 42018,
+        "loss_3": 37301,
+        "loss_4": 46323,
+        "loss_5": 30106,
+        "deductible": 18521,
+        "coverage": 18740,
+        "price": 703561,
+        "admin": 93099
+      }
+    },
+    {
+      "id": "C96FEAE277035",
+      "attrs": {
+        "loss_0": 39758,
+        "loss_1": 27483,
+        "loss_2": 37334,
+        "loss_3": 32425,
+        "loss_4": 29584,
+        "loss_5": 45836,
+        "deductible": 6413,
+        "coverage": 18356,
+        "price": 648062,
+        "admin": 95429
+      }
+    },
+    {
+      "id": "C2F9F9713C288",
+      "attrs": {
+        "loss_0": 44172,
+        "loss_1": 37737,
+        "loss_2": 34956,
+        "loss_3": 41877,
+        "loss_4": 35008,
+        "loss_5": 27607,
+        "deductible": 22602,
+        "coverage": 45830,
+        "price": 623593,
+        "admin": 122045
+      }
+    },
+    {
+      "id": "C30CF3C161EAE",
+      "attrs": {
+        "loss_0": 29533,
+        "loss_1": 32659,
+        "loss_2": 40493,
+        "loss_3": 22927,
+        "loss_4": 23426,
+        "loss_5": 12047,
+        "deductible": 16362,
+        "coverage": 25994,
+        "price": 520325,
+        "admin": 123310
+      }
+    },
+    {
+      "id": "C7A16BB09F42F",
+      "attrs": {
+        "loss_0": 17746,
+        "loss_1": 30303,
+        "loss_2": 37418,
+        "loss_3": 39334,
+        "loss_4": 13508,
+        "loss_5": 45368,
+        "deductible": 11243,
+        "coverage": 33778,
+        "price": 595119,
+        "admin": 111659
+      }
+    },
+    {
+      "id": "C3B29D3A8E7A7",
+      "attrs": {
+        "loss_0": 36082,
+        "loss_1": 39608,
+        "loss_2": 22082,
+        "loss_3": 31026,
+        "loss_4": 41069,
+        "loss_5": 47926,
+        "deductible": 5291,
+        "coverage": 42014,
+        "price": 618234,
+        "admin": 113412
+      }
+    },
+    {
+      "id": "C53CC764E1BB8",
+      "attrs": {
+        "loss_0": 45243,
+        "loss_1": 23647,
+        "loss_2": 14814,
+        "loss_3": 31151,
+        "loss_4": 16105,
+        "loss_5": 24215,
+        "deductible": 15244,
+        "coverage": 44780,
+        "price": 623703,
+        "admin": 144172
+      }
+    },
+    {
+      "id": "CFFF7AED1E7BE",
+      "attrs": {
+        "loss_0": 46795,
+        "loss_1": 17226,
+        "loss_2": 17400,
+        "loss_3": 47718,
+        "loss_4": 43691,
+        "loss_5": 20130,
+        "deductible": 12686,
+        "coverage": 62855,
+        "price": 660180,
+        "admin": 124652
+      }
+    },
+    {
+      "id": "CC5555FB4AF91",
+      "attrs": {
+        "loss_0": 38460,
+        "loss_1": 45587,
+        "loss_2": 40514,
+        "loss_3": 17980,
+        "loss_4": 19261,
+        "loss_5": 42484,
+        "deductible": 24400,
+        "coverage": 48976,
+        "price": 570324,
+        "admin": 120392
+      }
+    },
+    {
+      "id": "CD6937D330F4B",
+      "attrs": {
+        "loss_0": 35395,
+        "loss_1": 45038,
+        "loss_2": 40588,
+        "loss_3": 25406,
+        "loss_4": 40520,
+        "loss_5": 12709,
+        "deductible": 5023,
+        "coverage": 40340,
+        "price": 688003,
+        "admin": 114195
+      }
+    },
+    {
+      "id": "CC0438B57E702",
+      "attrs": {
+        "loss_0": 33103,
+        "loss_1": 47374,
+        "loss_2": 25058,
+        "loss_3": 15562,
+        "loss_4": 41554,
+        "loss_5": 30905,
+        "deductible": 12223,
+        "coverage": 42516,
+        "price": 713788,
+        "admin": 120486
+      }
+    },
+    {
+      "id": "C4B5387439D16",
+      "attrs": {
+        "loss_0": 44933,
+        "loss_1": 20496,
+        "loss_2": 31645,
+        "loss_3": 44896,
+        "loss_4": 35137,
+        "loss_5": 19650,
+        "deductible": 21012,
+        "coverage": 28825,
+        "price": 637155,
+        "admin": 103860
+      }
+    },
+    {
+      "id": "C6EFF5C45740B",
+      "attrs": {
+        "loss_0": 27672,
+        "loss_1": 46306,
+        "loss_2": 44717,
+        "loss_3": 39884,
+        "loss_4": 15058,
+        "loss_5": 15757,
+        "deductible": 12570,
+        "coverage": 37807,
+        "price": 608003,
+        "admin": 106901
+      }
+    },
+    {
+      "id": "CFBD1A36FAE1A",
+      "attrs": {
+        "loss_0": 26120,
+        "loss_1": 31764,
+        "loss_2": 29157,
+        "loss_3": 22595,
+        "loss_4": 41070,
+        "loss_5": 38647,
+        "deductible": 10827,
+        "coverage": 60797,
+        "price": 607377,
+        "admin": 149317
+      }
+    },
+    {
+      "id": "C25BF609ED8BE",
+      "attrs": {
+        "loss_0": 23497,
+        "loss_1": 14036,
+        "loss_2": 21534,
+        "loss_3": 44114,
+        "loss_4": 45454,
+        "loss_5": 33253,
+        "deductible": 16612,
+        "coverage": 44437,
+        "price": 554097,
+        "admin": 121617
+      }
+    },
+    {
+      "id": "CB11FC80D9AC6",
+      "attrs": {
+        "loss_0": 42475,
+        "loss_1": 30423,
+        "loss_2": 44721,
+        "loss_3": 15606,
+        "loss_4": 18793,
+        "loss_5": 12751,
+        "deductible": 7301,
+        "coverage": 24090,
+        "price": 691141,
+        "admin": 106472
+      }
+    },
+    {
+      "id": "C349B80F407A9",
+      "attrs": {
+        "loss_0": 27199,
+        "loss_1": 22524,
+        "loss_2": 30278,
+        "loss_3": 19798,
+        "loss_4": 45080,
+        "loss_5": 31180,
+        "deductible": 18308,
+        "coverage": 40129,
+        "price": 727495,
+        "admin": 133592
+      }
+    },
+    {
+      "id": "C50C00952F265",
+      "attrs": {
+        "loss_0": 28493,
+        "loss_1": 13941,
+        "loss_2": 19355,
+        "loss_3": 33044,
+        "loss_4": 17895,
+        "loss_5": 36406,
+        "deductible": 10191,
+        "coverage": 64616,
+        "price": 553724,
+        "admin": 166674
+      }
+    },
+    {
+      "id": "C7EA71C3D43B3",
+      "attrs": {
+        "loss_0": 22865,
+        "loss_1": 20267,
+        "loss_2": 17256,
+        "loss_3": 15663,
+        "loss_4": 34255,
+        "loss_5": 31777,
+        "deductible": 21187,
+        "coverage": 36962,
+        "price": 694405,
+        "admin": 148066
+      }
+    },
+    {
+      "id": "C54F2D0B7A81B",
+      "attrs": {
+        "loss_0": 23270,
+        "loss_1": 37022,
+        "loss_2": 45962,
+        "loss_3": 42314,
+        "loss_4": 13616,
+        "loss_5": 20973,
+        "deductible": 5783,
+        "coverage": 19692,
+        "price": 707045,
+        "admin": 94395
+      }
+    },
+    {
+      "id": "C98092E5707DA",
+      "attrs": {
+        "loss_0": 18367,
+        "loss_1": 13036,
+        "loss_2": 16722,
+        "loss_3": 13591,
+        "loss_4": 16705,
+        "loss_5": 23470,
+        "deductible": 23646,
+        "coverage": 28406,
+        "price": 555859,
+        "admin": 169848
+      }
+    },
+    {
+      "id": "C32A3FF619C99",
+      "attrs": {
+        "loss_0": 13351,
+        "loss_1": 23997,
+        "loss_2": 26471,
+        "loss_3": 21244,
+        "loss_4": 15501,
+        "loss_5": 13009,
+        "deductible": 5269,
+        "coverage": 39621,
+        "price": 556975,
+        "admin": 167910
+      }
+    },
+    {
+      "id": "CCDB47B28B1E0",
+      "attrs": {
+        "loss_0": 33368,
+        "loss_1": 21564,
+        "loss_2": 32281,
+        "loss_3": 16451,
+        "loss_4": 44925,
+        "loss_5": 40535,
+        "deductible": 18289,
+        "coverage": 33447,
+        "price": 725716,
+        "admin": 114620
+      }
+    },
+    {
+      "id": "C1D32FE211129",
+      "attrs": {
+        "loss_0": 35136,
+        "loss_1": 20586,
+        "loss_2": 25202,
+        "loss_3": 45728,
+        "loss_4": 28727,
+        "loss_5": 44692,
+        "deductible": 15612,
+        "coverage": 54683,
+        "price": 667855,
+        "admin": 129128
+      }
+    },
+    {
+      "id": "CA037A61242A3",
+      "attrs": {
+        "loss_0": 32822,
+        "loss_1": 17134,
+        "loss_2": 39232,
+        "loss_3": 34624,
+        "loss_4": 12095,
+        "loss_5": 15490,
+        "deductible": 24208,
+        "coverage": 57483,
+        "price": 549089,
+        "admin": 150806
+      }
+    },
+    {
+      "id": "C5BBE71B3243B",
+      "attrs": {
+        "loss_0": 32852,
+        "loss_1": 37801,
+        "loss_2": 31166,
+        "loss_3": 12256,
+        "loss_4": 16757,
+        "loss_5": 39342,
+        "deductible": 14755,
+        "coverage": 30039,
+        "price": 537793,
+        "admin": 120045
+      }
+    },
+    {
+      "id": "CEA296B2F3741",
+      "attrs": {
+        "loss_0": 29830,
+        "loss_1": 38640,
+        "loss_2": 21915,
+        "loss_3": 44840,
+        "loss_4": 44438,
+        "loss_5": 35619,
+        "deductible": 8572,
+        "coverage": 38399,
+        "price": 659180,
+        "admin": 110482
+      }
+    },
+    {
+      "id": "C93EC604F0C8C",
+      "attrs": {
+        "loss_0": 37661,
+        "loss_1": 30725,
+        "loss_2": 31162,
+        "loss_3": 16688,
+        "loss_4": 33115,
+        "loss_5": 37684,
+        "deductible": 22758,
+        "coverage": 39015,
+        "price": 608539,
+        "admin": 130556
+      }
+    },
+    {
+      "id": "C05FE39274934",
+      "attrs": {
+        "loss_0": 31658,
+        "loss_1": 47176,
+        "loss_2": 16398,
+        "loss_3": 20930,
+        "loss_4": 39944,
+        "loss_5": 24020,
+        "deductible": 21989,
+        "coverage": 21805,
+        "price": 692598,
+        "admin": 103028
+      }
+    },
+    {
+      "id": "C783A24ACAB44",
+      "attrs": {
+        "loss_0": 40850,
+        "loss_1": 45297,
+        "loss_2": 43926,
+        "loss_3": 14810,
+        "loss_4": 28245,
+        "loss_5": 24776,
+        "deductible": 10231,
+        "coverage": 29843,
+        "price": 611813,
+        "admin": 99771
+      }
+    },
+    {
+      "id": "C18BC292123B6",
+      "attrs": {
+        "loss_0": 31203,
+        "loss_1": 16294,
+        "loss_2": 28125,
+        "loss_3": 12081,
+        "loss_4": 12803,
+        "loss_5": 36363,
+        "deductible": 17249,
+        "coverage": 21559,
+        "price": 531594,
+        "admin": 125869
+      }
+    },
+    {
+      "id": "C56FE6444F7FA",
+      "attrs": {
+        "loss_0": 30388,
+        "loss_1": 17669,
+        "loss_2": 14310,
+        "loss_3": 37632,
+        "loss_4": 27729,
+        "loss_5": 15939,
+        "deductible": 12815,
+        "coverage": 35718,
+        "price": 727056,
+        "admin": 139970
+      }
+    },
+    {
+      "id": "C1C82BA42F5C5",
+      "attrs": {
+        "loss_0": 36682,
+        "loss_1": 38603,
+        "loss_2": 45417,
+        "loss_3": 44098,
+        "loss_4": 42982,
+        "loss_5": 41760,
+        "deductible": 21144,
+        "coverage": 47807,
+        "price": 586082,
+        "admin": 115311
+      }
+    },
+    {
+      "id": "CC996AB7531F4",
+      "attrs": {
+        "loss_0": 37558,
+        "loss_1": 46495,
+        "loss_2": 20039,
+        "loss_3": 38614,
+        "loss_4": 34071,
+        "loss_5": 27841,
+        "deductible": 5655,
+        "coverage": 18319,
+        "price": 606309,
+        "admin": 95653
+      }
+    },
+    {
+      "id": "C57B34A632C24",
+      "attrs": {
+        "loss_0": 20929,
+        "loss_1": 32085,
+        "loss_2": 43899,
+        "loss_3": 33573,
+        "loss_4": 24095,
+        "loss_5": 47992,
+        "deductible": 21460,
+        "coverage": 40458,
+        "price": 600513,
+        "admin": 114995
+      }
+    },
+    {
+      "id": "C84B290DF9E62",
+      "attrs": {
+        "loss_0": 29987,
+        "loss_1": 13370,
+        "loss_2": 42034,
+        "loss_3": 47353,
+        "loss_4": 44161,
+        "loss_5": 19227,
+        "deductible": 19566,
+        "coverage": 22259,
+        "price": 591375,
+        "admin": 88712
+      }
+    },
+    {
+      "id": "C4349505E08FB",
+      "attrs": {
+        "loss_0": 46675,
+        "loss_1": 41683,
+        "loss_2": 39149,
+        "loss_3": 25788,
+        "loss_4": 26693,
+        "loss_5": 12787,
+        "deductible": 17822,
+        "coverage": 44755,
+        "price": 653148,
+        "admin": 117249
+      }
+    },
+    {
+      "id": "C778B8B427F18",
+      "attrs": {
+        "loss_0": 28158,
+        "loss_1": 21388,
+        "loss_2": 44419,
+        "loss_3": 30111,
+        "loss_4": 22345,
+        "loss_5": 31749,
+        "deductible": 15735,
+        "coverage": 21022,
+        "price": 570675,
+        "admin": 114744
+      }
+    },
+    {
+      "id": "CA1D738E01396",
+      "attrs": {
+        "loss_0": 16329,
+        "loss_1": 15785,
+        "loss_2": 46545,
+        "loss_3": 31520,
+        "loss_4": 36351,
+        "loss_5": 17098,
+        "deductible": 17013,
+        "coverage": 19509,
+        "price": 714130,
+        "admin": 105094
+      }
+    },
+    {
+      "id": "CEFF9A5EB6548",
+      "attrs": {
+        "loss_0": 39572,
+        "loss_1": 38347,
+        "loss_2": 42560,
+        "loss_3": 42552,
+        "loss_4": 36401,
+        "loss_5": 22199,
+        "deductible": 14628,
+        "coverage": 64006,
+        "price": 661910,
+        "admin": 139323
+      }
+    },
+    {
+      "id": "CF6EFFFC0E5D9",
+      "attrs": {
+        "loss_0": 15505,
+        "loss_1": 47965,
+        "loss_2": 21699,
+        "loss_3": 42971,
+        "loss_4": 15369,
+        "loss_5": 24783,
+        "deductible": 8503,
+        "coverage": 24524,
+        "price": 572520,
+        "admin": 108806
+      }
+    },
+    {
+      "id": "C8D48DEF742C2",
+      "attrs": {
+        "loss_0": 16643,
+        "loss_1": 15199,
+        "loss_2": 18755,
+        "loss_3": 30252,
+        "loss_4": 36660,
+        "loss_5": 44207,
+        "deductible": 21634,
+        "coverage": 58411,
+        "price": 532030,
+        "admin": 147293
+      }
+    },
+    {
+      "id": "C75189439447D",
+      "attrs": {
+        "loss_0": 37777,
+        "loss_1": 21184,
+        "loss_2": 33667,
+        "loss_3": 17740,
+        "loss_4": 35605,
+        "loss_5": 42019,
+        "deductible": 8296,
+        "coverage": 37549,
+        "price": 647763,
+        "admin": 122149
+      }
+    },
+    {
+      "id": "CB32E33D48DAA",
+      "attrs": {
+        "loss_0": 42725,
+        "loss_1": 15921,
+        "loss_2": 38290,
+        "loss_3": 31653,
+        "loss_4": 31935,
+        "loss_5": 35766,
+        "deductible": 23974,
+        "coverage": 22674,
+        "price": 624684,
+        "admin": 105894
+      }
+    },
+    {
+      "id": "C8D6B1DA3556A",
+      "attrs": {
+        "loss_0": 39541,
+        "loss_1": 44550,
+        "loss_2": 14638,
+        "loss_3": 42741,
+        "loss_4": 23955,
+        "loss_5": 31228,
+        "deductible": 11481,
+        "coverage": 29899,
+        "price": 600780,
+        "admin": 103068
+      }
+    },
+    {
+      "id": "CCEBFE1FDACFC",
+      "attrs": {
+        "loss_0": 44251,
+        "loss_1": 22551,
+        "loss_2": 12686,
+        "loss_3": 29006,
+        "loss_4": 28794,
+        "loss_5": 21765,
+        "deductible": 7302,
+        "coverage": 38513,
+        "price": 623417,
+        "admin": 136463
+      }
+    },
+    {
+      "id": "CAC119C9772B8",
+      "attrs": {
+        "loss_0": 40838,
+        "loss_1": 31372,
+        "loss_2": 21669,
+        "loss_3": 31435,
+        "loss_4": 24439,
+        "loss_5": 17318,
+        "deductible": 20001,
+        "coverage": 45672,
+        "price": 732388,
+        "admin": 142028
+      }
+    },
+    {
+      "id": "C4C4D4EF59E70",
+      "attrs": {
+        "loss_0": 34717,
+        "loss_1": 43237,
+        "loss_2": 18124,
+        "loss_3": 37130,
+        "loss_4": 22959,
+        "loss_5": 32819,
+        "deductible": 16393,
+        "coverage": 58768,
+        "price": 620791,
+        "admin": 143685
+      }
+    },
+    {
+      "id": "C7EAD53296934",
+      "attrs": {
+        "loss_0": 30713,
+        "loss_1": 41659,
+        "loss_2": 42113,
+        "loss_3": 24014,
+        "loss_4": 33870,
+        "loss_5": 13406,
+        "deductible": 20389,
+        "coverage": 33868,
+        "price": 565769,
+        "admin": 116227
+      }
+    },
+    {
+      "id": "C5A0C0E974601",
+      "attrs": {
+        "loss_0": 15106,
+        "loss_1": 23237,
+        "loss_2": 40976,
+        "loss_3": 30665,
+        "loss_4": 18176,
+        "loss_5": 15951,
+        "deductible": 9454,
+        "coverage": 33018,
+        "price": 689698,
+        "admin": 138141
+      }
+    },
+    {
+      "id": "CD40BDCE29F78",
+      "attrs": {
+        "loss_0": 15380,
+        "loss_1": 20331,
+        "loss_2": 18157,
+        "loss_3": 47712,
+        "loss_4": 38938,
+        "loss_5": 44236,
+        "deductible": 8675,
+        "coverage": 35454,
+        "price": 534721,
+        "admin": 104569
+      }
+    },
+    {
+      "id": "C2A8F1893716A",
+      "attrs": {
+        "loss_0": 43590,
+        "loss_1": 18339,
+        "loss_2": 46342,
+        "loss_3": 19585,
+        "loss_4": 43822,
+        "loss_5": 12952,
+        "deductible": 20844,
+        "coverage": 41235,
+        "price": 558557,
+        "admin": 107482
+      }
+    },
+    {
+      "id": "CF8FB21B9233E",
+      "attrs": {
+        "loss_0": 18820,
+        "loss_1": 46457,
+        "loss_2": 32007,
+        "loss_3": 12108,
+        "loss_4": 32598,
+        "loss_5": 40723,
+        "deductible": 16360,
+        "coverage": 42835,
+        "price": 630179,
+        "admin": 123058
+      }
+    },
+    {
+      "id": "C64AF089A2B1C",
+      "attrs": {
+        "loss_0": 32686,
+        "loss_1": 22922,
+        "loss_2": 44704,
+        "loss_3": 14627,
+        "loss_4": 14481,
+        "loss_5": 30229,
+        "deductible": 17252,
+        "coverage": 25568,
+        "price": 695795,
+        "admin": 117950
+      }
+    },
+    {
+      "id": "CB100C50D2229",
+      "attrs": {
+        "loss_0": 17975,
+        "loss_1": 15630,
+        "loss_2": 13015,
+        "loss_3": 12465,
+        "loss_4": 32468,
+        "loss_5": 14121,
+        "deductible": 19005,
+        "coverage": 18266,
+        "price": 650682,
+        "admin": 152194
+      }
+    },
+    {
+      "id": "C49CBF46F04F8",
+      "attrs": {
+        "loss_0": 44706,
+        "loss_1": 17933,
+        "loss_2": 25205,
+        "loss_3": 29720,
+        "loss_4": 34194,
+        "loss_5": 29081,
+        "deductible": 20479,
+        "coverage": 62807,
+        "price": 597525,
+        "admin": 154188
+      }
+    },
+    {
+      "id": "CC31BB9652206",
+      "attrs": {
+        "loss_0": 37477,
+        "loss_1": 35050,
+        "loss_2": 31068,
+        "loss_3": 45384,
+        "loss_4": 35259,
+        "loss_5": 23763,
+        "deductible": 11911,
+        "coverage": 24565,
+        "price": 621168,
+        "admin": 106446
+      }
+    },
+    {
+      "id": "C6135A4E4C30F",
+      "attrs": {
+        "loss_0": 24248,
+        "loss_1": 23033,
+        "loss_2": 18010,
+        "loss_3": 21545,
+        "loss_4": 40394,
+        "loss_5": 34067,
+        "deductible": 6923,
+        "coverage": 38174,
+        "price": 660048,
+        "admin": 139466
+      }
+    },
+    {
+      "id": "C9D15ACA16969",
+      "attrs": {
+        "loss_0": 28930,
+        "loss_1": 30844,
+        "loss_2": 22318,
+        "loss_3": 40743,
+        "loss_4": 18889,
+        "loss_5": 12135,
+        "deductible": 18210,
+        "coverage": 61340,
+        "price": 566439,
+        "admin": 160824
+      }
+    },
+    {
+      "id": "CF5D47CBA5F57",
+      "attrs": {
+        "loss_0": 28425,
+        "loss_1": 33098,
+        "loss_2": 25529,
+        "loss_3": 24942,
+        "loss_4": 23243,
+        "loss_5": 12576,
+        "deductible": 23314,
+        "coverage": 32640,
+        "price": 602262,
+        "admin": 145589
+      }
+    },
+    {
+      "id": "C09592502BC48",
+      "attrs": {
+        "loss_0": 28014,
+        "loss_1": 35157,
+        "loss_2": 38211,
+        "loss_3": 24965,
+        "loss_4": 24148,
+        "loss_5": 44020,
+        "deductible": 5121,
+        "coverage": 18532,
+        "price": 641775,
+        "admin": 101145
+      }
+    },
+    {
+      "id": "CA02A04725998",
+      "attrs": {
+        "loss_0": 39002,
+        "loss_1": 37505,
+        "loss_2": 21123,
+        "loss_3": 36328,
+        "loss_4": 30663,
+        "loss_5": 13353,
+        "deductible": 12952,
+        "coverage": 56379,
+        "price": 526216,
+        "admin": 143545
+      }
+    },
+    {
+      "id": "C394490EF0B18",
+      "attrs": {
+        "loss_0": 45385,
+        "loss_1": 19956,
+        "loss_2": 35557,
+        "loss_3": 45657,
+        "loss_4": 16686,
+        "loss_5": 33175,
+        "deductible": 24554,
+        "coverage": 35760,
+        "price": 667004,
+        "admin": 109162
+      }
+    },
+    {
+      "id": "CBEB13B1EC2CF",
+      "attrs": {
+        "loss_0": 17071,
+        "loss_1": 45481,
+        "loss_2": 13423,
+        "loss_3": 32202,
+        "loss_4": 41926,
+        "loss_5": 47599,
+        "deductible": 12572,
+        "coverage": 50796,
+        "price": 539056,
+        "admin": 115791
+      }
+    },
+    {
+      "id": "C2751FE9889CC",
+      "attrs": {
+        "loss_0": 39082,
+        "loss_1": 23917,
+        "loss_2": 27176,
+        "loss_3": 44675,
+        "loss_4": 23904,
+        "loss_5": 29809,
+        "deductible": 21214,
+        "coverage": 55872,
+        "price": 561399,
+        "admin": 142307
+      }
+    },
+    {
+      "id": "CE64AF6807208",
+      "attrs": {
+        "loss_0": 30860,
+        "loss_1": 31252,
+        "loss_2": 40825,
+        "loss_3": 17422,
+        "loss_4": 16245,
+        "loss_5": 38998,
+        "deductible": 14498,
+        "coverage": 47858,
+        "price": 582810,
+        "admin": 136784
+      }
+    },
+    {
+      "id": "C75F1EAD4C538",
+      "attrs": {
+        "loss_0": 32000,
+        "loss_1": 19512,
+        "loss_2": 13656,
+        "loss_3": 19978,
+        "loss_4": 14132,
+        "loss_5": 46040,
+        "deductible": 15657,
+        "coverage": 55015,
+        "price": 645664,
+        "admin": 156998
+      }
+    },
+    {
+      "id": "C75D9277CE7B2",
+      "attrs": {
+        "loss_0": 41767,
+        "loss_1": 12226,
+        "loss_2": 15752,
+        "loss_3": 14444,
+        "loss_4": 24784,
+        "loss_5": 45481,
+        "deductible": 16300,
+        "coverage": 54710,
+        "price": 663727,
+        "admin": 142679
+      }
+    },
+    {
+      "id": "C06A5EE30E4E3",
+      "attrs": {
+        "loss_0": 22083,
+        "loss_1": 41293,
+        "loss_2": 29930,
+        "loss_3": 38684,
+        "loss_4": 25786,
+        "loss_5": 47892,
+        "deductible": 10232,
+        "coverage": 52920,
+        "price": 573562,
+        "admin": 125052
+      }
+    },
+    {
+      "id": "C0EBBEEE27554",
+      "attrs": {
+        "loss_0": 21579,
+        "loss_1": 21937,
+        "loss_2": 30007,
+        "loss_3": 37941,
+        "loss_4": 34965,
+        "loss_5": 44700,
+        "deductible": 22164,
+        "coverage": 24949,
+        "price": 680593,
+        "admin": 107344
+      }
+    },
+    {
+      "id": "C97BF068A3C09",
+      "attrs": {
+        "loss_0": 32314,
+        "loss_1": 27719,
+        "loss_2": 46424,
+        "loss_3": 18341,
+        "loss_4": 39930,
+        "loss_5": 43116,
+        "deductible": 5699,
+        "coverage": 39550,
+        "price": 612466,
+        "admin": 110081
+      }
+    },
+    {
+      "id": "CB2681207EC04",
+      "attrs": {
+        "loss_0": 21341,
+        "loss_1": 33586,
+        "loss_2": 16483,
+        "loss_3": 17600,
+        "loss_4": 47909,
+        "loss_5": 46825,
+        "deductible": 22803,
+        "coverage": 20865,
+        "price": 619071,
+        "admin": 92546
+      }
+    },
+    {
+      "id": "C19F98E61A66B",
+      "attrs": {
+        "loss_0": 15175,
+        "loss_1": 24364,
+        "loss_2": 30749,
+        "loss_3": 30416,
+        "loss_4": 36509,
+        "loss_5": 19667,
+        "deductible": 18571,
+        "coverage": 21058,
+        "price": 595938,
+        "admin": 123385
+      }
+    },
+    {
+      "id": "CD3D6645FB040",
+      "attrs": {
+        "loss_0": 42407,
+        "loss_1": 17757,
+        "loss_2": 17414,
+        "loss_3": 26048,
+        "loss_4": 43988,
+        "loss_5": 44151,
+        "deductible": 19352,
+        "coverage": 33281,
+        "price": 538333,
+        "admin": 102736
+      }
+    },
+    {
+      "id": "C7AF9888527DC",
+      "attrs": {
+        "loss_0": 18880,
+        "loss_1": 45778,
+        "loss_2": 17016,
+        "loss_3": 19107,
+        "loss_4": 15447,
+        "loss_5": 46452,
+        "deductible": 20912,
+        "coverage": 59862,
+        "price": 520176,
+        "admin": 148526
+      }
+    },
+    {
+      "id": "CF9917F6CA90C",
+      "attrs": {
+        "loss_0": 13046,
+        "loss_1": 28387,
+        "loss_2": 12169,
+        "loss_3": 33439,
+        "loss_4": 13925,
+        "loss_5": 21931,
+        "deductible": 9596,
+        "coverage": 28682,
+        "price": 576988,
+        "admin": 144926
+      }
+    },
+    {
+      "id": "C74CA17502C75",
+      "attrs": {
+        "loss_0": 19782,
+        "loss_1": 36599,
+        "loss_2": 32740,
+        "loss_3": 35165,
+        "loss_4": 12596,
+        "loss_5": 20784,
+        "deductible": 20547,
+        "coverage": 23645,
+        "price": 571377,
+        "admin": 119142
+      }
+    },
+    {
+      "id": "C15F9FCF80CB9",
+      "attrs": {
+        "loss_0": 22442,
+        "loss_1": 41301,
+        "loss_2": 19191,
+        "loss_3": 22339,
+        "loss_4": 14647,
+        "loss_5": 31453,
+        "deductible": 12633,
+        "coverage": 31727,
+        "price": 683549,
+        "admin": 136532
+      }
+    },
+    {
+      "id": "C269782F7D6B9",
+      "attrs": {
+        "loss_0": 18009,
+        "loss_1": 28877,
+        "loss_2": 37034,
+        "loss_3": 37177,
+        "loss_4": 38244,
+        "loss_5": 22983,
+        "deductible": 6073,
+        "coverage": 38350,
+        "price": 687000,
+        "admin": 125896
+      }
+    },
+    {
+      "id": "C55A1A169E7CF",
+      "attrs": {
+        "loss_0": 34090,
+        "loss_1": 26835,
+        "loss_2": 32661,
+        "loss_3": 36195,
+        "loss_4": 25574,
+        "loss_5": 44426,
+        "deductible": 16106,
+        "coverage": 47575,
+        "price": 665722,
+        "admin": 132865
+      }
+    },
+    {
+      "id": "C9B68D52F4751",
+      "attrs": {
+        "loss_0": 13395,
+        "loss_1": 25858,
+        "loss_2": 33343,
+        "loss_3": 39602,
+        "loss_4": 23697,
+        "loss_5": 36627,
+        "deductible": 17423,
+        "coverage": 62090,
+        "price": 697864,
+        "admin": 152519
+      }
+    },
+    {
+      "id": "C56EA403FFCE8",
+      "attrs": {
+        "loss_0": 25263,
+        "loss_1": 30649,
+        "loss_2": 13186,
+        "loss_3": 32582,
+        "loss_4": 36027,
+        "loss_5": 19073,
+        "deductible": 17656,
+        "coverage": 56352,
+        "price": 638720,
+        "admin": 157095
+      }
+    },
+    {
+      "id": "CE10C6871DF4A",
+      "attrs": {
+        "loss_0": 37004,
+        "loss_1": 25651,
+        "loss_2": 27450,
+        "loss_3": 25542,
+        "loss_4": 18447,
+        "loss_5": 21528,
+        "deductible": 10847,
+        "coverage": 45766,
+        "price": 578143,
+        "admin": 155662
+      }
+    },
+    {
+      "id": "CA7C6018ABD04",
+      "attrs": {
+        "loss_0": 24864,
+        "loss_1": 32373,
+        "loss_2": 22289,
+        "loss_3": 30727,
+        "loss_4": 20017,
+        "loss_5": 39862,
+        "deductible": 11340,
+        "coverage": 63958,
+        "price": 586894,
+        "admin": 160997
+      }
+    },
+    {
+      "id": "C5334AC9DB15D",
+      "attrs": {
+        "loss_0": 21114,
+        "loss_1": 26317,
+        "loss_2": 25652,
+        "loss_3": 14609,
+        "loss_4": 19529,
+        "loss_5": 35881,
+        "deductible": 16240,
+        "coverage": 45536,
+        "price": 639112,
+        "admin": 157687
+      }
+    },
+    {
+      "id": "CDDA8A8F28684",
+      "attrs": {
+        "loss_0": 33250,
+        "loss_1": 42738,
+        "loss_2": 25288,
+        "loss_3": 23973,
+        "loss_4": 18493,
+        "loss_5": 45908,
+        "deductible": 8920,
+        "coverage": 42396,
+        "price": 530505,
+        "admin": 120501
+      }
+    },
+    {
+      "id": "CFE144F483512",
+      "attrs": {
+        "loss_0": 46856,
+        "loss_1": 42644,
+        "loss_2": 32545,
+        "loss_3": 12908,
+        "loss_4": 36898,
+        "loss_5": 15679,
+        "deductible": 17967,
+        "coverage": 43890,
+        "price": 688336,
+        "admin": 117493
+      }
+    },
+    {
+      "id": "C80C4D6369AC5",
+      "attrs": {
+        "loss_0": 20304,
+        "loss_1": 18170,
+        "loss_2": 38649,
+        "loss_3": 29950,
+        "loss_4": 20421,
+        "loss_5": 37692,
+        "deductible": 16715,
+        "coverage": 51352,
+        "price": 596709,
+        "admin": 145062
+      }
+    },
+    {
+      "id": "C5E13730EA81A",
+      "attrs": {
+        "loss_0": 29741,
+        "loss_1": 27237,
+        "loss_2": 25421,
+        "loss_3": 23999,
+        "loss_4": 41804,
+        "loss_5": 37592,
+        "deductible": 22413,
+        "coverage": 63703,
+        "price": 562038,
+        "admin": 154567
+      }
+    },
+    {
+      "id": "C2008918E3B05",
+      "attrs": {
+        "loss_0": 40811,
+        "loss_1": 12368,
+        "loss_2": 13133,
+        "loss_3": 40101,
+        "loss_4": 12933,
+        "loss_5": 13884,
+        "deductible": 23173,
+        "coverage": 57670,
+        "price": 574951,
+        "admin": 162875
+      }
+    },
+    {
+      "id": "C666884E5C603",
+      "attrs": {
+        "loss_0": 46826,
+        "loss_1": 31421,
+        "loss_2": 44212,
+        "loss_3": 47866,
+        "loss_4": 44198,
+        "loss_5": 25016,
+        "deductible": 15537,
+        "coverage": 25729,
+        "price": 699251,
+        "admin": 86826
+      }
+    },
+    {
+      "id": "CAD1FD952F407",
+      "attrs": {
+        "loss_0": 13777,
+        "loss_1": 22915,
+        "loss_2": 35391,
+        "loss_3": 40789,
+        "loss_4": 43192,
+        "loss_5": 14768,
+        "deductible": 21236,
+        "coverage": 37168,
+        "price": 596366,
+        "admin": 117797
+      }
+    },
+    {
+      "id": "C2F2146965F32",
+      "attrs": {
+        "loss_0": 15005,
+        "loss_1": 14528,
+        "loss_2": 33511,
+        "loss_3": 33285,
+        "loss_4": 35237,
+        "loss_5": 38737,
+        "deductible": 6043,
+        "coverage": 35318,
+        "price": 739532,
+        "admin": 127834
+      }
+    },
+    {
+      "id": "C6FF64F0AA039",
+      "attrs": {
+        "loss_0": 40247,
+        "loss_1": 45521,
+        "loss_2": 12578,
+        "loss_3": 22662,
+        "loss_4": 47418,
+        "loss_5": 31595,
+        "deductible": 6616,
+        "coverage": 24380,
+        "price": 652035,
+        "admin": 91195
+      }
+    },
+    {
+      "id": "C0B839862D967",
+      "attrs": {
+        "loss_0": 37976,
+        "loss_1": 42133,
+        "loss_2": 41029,
+        "loss_3": 41199,
+        "loss_4": 25328,
+        "loss_5": 35514,
+        "deductible": 16382,
+        "coverage": 43079,
+        "price": 535668,
+        "admin": 118719
+      }
+    },
+    {
+      "id": "C1E9DF126AFC3",
+      "attrs": {
+        "loss_0": 29805,
+        "loss_1": 33112,
+        "loss_2": 20676,
+        "loss_3": 18023,
+        "loss_4": 47067,
+        "loss_5": 12971,
+        "deductible": 12525,
+        "coverage": 20401,
+        "price": 703434,
+        "admin": 110418
+      }
+    },
+    {
+      "id": "C963FEE34B103",
+      "attrs": {
+        "loss_0": 46081,
+        "loss_1": 23529,
+        "loss_2": 36767,
+        "loss_3": 22821,
+        "loss_4": 27818,
+        "loss_5": 25189,
+        "deductible": 10573,
+        "coverage": 18633,
+        "price": 578159,
+        "admin": 107968
+      }
+    },
+    {
+      "id": "CEC44264FC918",
+      "attrs": {
+        "loss_0": 36920,
+        "loss_1": 13517,
+        "loss_2": 31566,
+        "loss_3": 46669,
+        "loss_4": 35041,
+        "loss_5": 40506,
+        "deductible": 7364,
+        "coverage": 54601,
+        "price": 733076,
+        "admin": 130507
+      }
+    },
+    {
+      "id": "CB38B3F7CFC39",
+      "attrs": {
+        "loss_0": 31575,
+        "loss_1": 16342,
+        "loss_2": 35557,
+        "loss_3": 20570,
+        "loss_4": 43458,
+        "loss_5": 41141,
+        "deductible": 12810,
+        "coverage": 49634,
+        "price": 604738,
+        "admin": 129479
+      }
+    },
+    {
+      "id": "C459F8E8F46A5",
+      "attrs": {
+        "loss_0": 25533,
+        "loss_1": 17386,
+        "loss_2": 32431,
+        "loss_3": 39036,
+        "loss_4": 15638,
+        "loss_5": 30939,
+        "deductible": 9669,
+        "coverage": 44196,
+        "price": 610999,
+        "admin": 141791
+      }
+    },
+    {
+      "id": "CDA7E7B80C4A3",
+      "attrs": {
+        "loss_0": 45613,
+        "loss_1": 21195,
+        "loss_2": 27722,
+        "loss_3": 20052,
+        "loss_4": 38718,
+        "loss_5": 20336,
+        "deductible": 19498,
+        "coverage": 23140,
+        "price": 577730,
+        "admin": 111088
+      }
+    },
+    {
+      "id": "C98FDC87EF37F",
+      "attrs": {
+        "loss_0": 39548,
+        "loss_1": 35088,
+        "loss_2": 22295,
+        "loss_3": 30832,
+        "loss_4": 22093,
+        "loss_5": 27657,
+        "deductible": 6058,
+        "coverage": 48018,
+        "price": 737305,
+        "admin": 142551
+      }
+    },
+    {
+      "id": "C874423080C72",
+      "attrs": {
+        "loss_0": 43763,
+        "loss_1": 40672,
+        "loss_2": 21714,
+        "loss_3": 13586,
+        "loss_4": 25197,
+        "loss_5": 13004,
+        "deductible": 11145,
+        "coverage": 22025,
+        "price": 618438,
+        "admin": 112394
+      }
+    },
+    {
+      "id": "C3E343FD1E158",
+      "attrs": {
+        "loss_0": 24855,
+        "loss_1": 40159,
+        "loss_2": 39152,
+        "loss_3": 29865,
+        "loss_4": 18715,
+        "loss_5": 42788,
+        "deductible": 14429,
+        "coverage": 29995,
+        "price": 641422,
+        "admin": 107897
+      }
+    },
+    {
+      "id": "CF617F3138B86",
+      "attrs": {
+        "loss_0": 27206,
+        "loss_1": 12035,
+        "loss_2": 17335,
+        "loss_3": 29992,
+        "loss_4": 30926,
+        "loss_5": 27295,
+        "deductible": 10094,
+        "coverage": 29612,
+        "price": 539943,
+        "admin": 141400
+      }
+    },
+    {
+      "id": "C62D3641046B0",
+      "attrs": {
+        "loss_0": 32615,
+        "loss_1": 45069,
+        "loss_2": 27004,
+        "loss_3": 38516,
+        "loss_4": 20111,
+        "loss_5": 28290,
+        "deductible": 15643,
+        "coverage": 59866,
+        "price": 705804,
+        "admin": 143667
+      }
+    },
+    {
+      "id": "CBE8FA4D8635E",
+      "attrs": {
+        "loss_0": 21445,
+        "loss_1": 23864,
+        "loss_2": 22987,
+        "loss_3": 42275,
+        "loss_4": 24118,
+        "loss_5": 31297,
+        "deductible": 22042,
+        "coverage": 24962,
+        "price": 584747,
+        "admin": 127273
+      }
+    },
+    {
+      "id": "CAECEC764E280",
+      "attrs": {
+        "loss_0": 34412,
+        "loss_1": 32263,
+        "loss_2": 12396,
+        "loss_3": 41462,
+        "loss_4": 46640,
+        "loss_5": 28239,
+        "deductible": 17770,
+        "coverage": 54107,
+        "price": 721431,
+        "admin": 131594
+      }
+    },
+    {
+      "id": "C2522B82090BE",
+      "attrs": {
+        "loss_0": 13699,
+        "loss_1": 32421,
+        "loss_2": 27856,
+        "loss_3": 14594,
+        "loss_4": 30524,
+        "loss_5": 35478,
+        "deductible": 16568,
+        "coverage": 44997,
+        "price": 708844,
+        "admin": 146575
+      }
+    },
+    {
+      "id": "C78041E187796",
+      "attrs": {
+        "loss_0": 18011,
+        "loss_1": 16084,
+        "loss_2": 38671,
+        "loss_3": 36589,
+        "loss_4": 32318,
+        "loss_5": 37834,
+        "deductible": 16382,
+        "coverage": 45835,
+        "price": 695202,
+        "admin": 132742
+      }
+    },
+    {
+      "id": "C138B85A71902",
+      "attrs": {
+        "loss_0": 12137,
+        "loss_1": 25105,
+        "loss_2": 33881,
+        "loss_3": 39315,
+        "loss_4": 45971,
+        "loss_5": 31893,
+        "deductible": 20006,
+        "coverage": 37910,
+        "price": 691079,
+        "admin": 118744
+      }
+    },
+    {
+      "id": "C579A38929100",
+      "attrs": {
+        "loss_0": 23679,
+        "loss_1": 33640,
+        "loss_2": 13636,
+        "loss_3": 30483,
+        "loss_4": 33079,
+        "loss_5": 26528,
+        "deductible": 14384,
+        "coverage": 42935,
+        "price": 570527,
+        "admin": 145734
+      }
+    },
+    {
+      "id": "CE46A01F01212",
+      "attrs": {
+        "loss_0": 43531,
+        "loss_1": 39143,
+        "loss_2": 47200,
+        "loss_3": 18109,
+        "loss_4": 32522,
+        "loss_5": 21069,
+        "deductible": 23129,
+        "coverage": 37770,
+        "price": 709122,
+        "admin": 107897
+      }
+    },
+    {
+      "id": "C0DDE4E3CD708",
+      "attrs": {
+        "loss_0": 17902,
+        "loss_1": 26294,
+        "loss_2": 27571,
+        "loss_3": 18332,
+        "loss_4": 12140,
+        "loss_5": 25941,
+        "deductible": 5278,
+        "coverage": 33252,
+        "price": 567128,
+        "admin": 153447
+      }
+    },
+    {
+      "id": "C74206B531624",
+      "attrs": {
+        "loss_0": 15035,
+        "loss_1": 45579,
+        "loss_2": 36519,
+        "loss_3": 47325,
+        "loss_4": 28432,
+        "loss_5": 15596,
+        "deductible": 15292,
+        "coverage": 35304,
+        "price": 566591,
+        "admin": 105882
+      }
+    },
+    {
+      "id": "CAFD7A11600A4",
+      "attrs": {
+        "loss_0": 30101,
+        "loss_1": 41595,
+        "loss_2": 40334,
+        "loss_3": 24925,
+        "loss_4": 47057,
+        "loss_5": 31181,
+        "deductible": 18160,
+        "coverage": 49835,
+        "price": 737195,
+        "admin": 120850
+      }
+    },
+    {
+      "id": "C822070B6B328",
+      "attrs": {
+        "loss_0": 28233,
+        "loss_1": 34299,
+        "loss_2": 44628,
+        "loss_3": 39197,
+        "loss_4": 20993,
+        "loss_5": 21556,
+        "deductible": 16218,
+        "coverage": 28555,
+        "price": 670878,
+        "admin": 110432
+      }
+    },
+    {
+      "id": "C02B575012D0E",
+      "attrs": {
+        "loss_0": 27837,
+        "loss_1": 45690,
+        "loss_2": 32237,
+        "loss_3": 46691,
+        "loss_4": 42899,
+        "loss_5": 25642,
+        "deductible": 6753,
+        "coverage": 49025,
+        "price": 542961,
+        "admin": 113746
+      }
+    },
+    {
+      "id": "C1FD5E158C717",
+      "attrs": {
+        "loss_0": 33865,
+        "loss_1": 32806,
+        "loss_2": 40790,
+        "loss_3": 37810,
+        "loss_4": 33128,
+        "loss_5": 27293,
+        "deductible": 23726,
+        "coverage": 56007,
+        "price": 569332,
+        "admin": 143543
+      }
+    },
+    {
+      "id": "CBB5FAE52DA9F",
+      "attrs": {
+        "loss_0": 12772,
+        "loss_1": 30411,
+        "loss_2": 16107,
+        "loss_3": 32198,
+        "loss_4": 32831,
+        "loss_5": 35460,
+        "deductible": 12505,
+        "coverage": 44052,
+        "price": 544436,
+        "admin": 143564
+      }
+    },
+    {
+      "id": "C352D1A33AEE9",
+      "attrs": {
+        "loss_0": 34712,
+        "loss_1": 26519,
+        "loss_2": 14997,
+        "loss_3": 30996,
+        "loss_4": 16191,
+        "loss_5": 16359,
+        "deductible": 6340,
+        "coverage": 21103,
+        "price": 557711,
+        "admin": 128877
+      }
+    },
+    {
+      "id": "C4BF9237E2292",
+      "attrs": {
+        "loss_0": 21907,
+        "loss_1": 39630,
+        "loss_2": 41862,
+        "loss_3": 38121,
+        "loss_4": 41664,
+        "loss_5": 47846,
+        "deductible": 16769,
+        "coverage": 51836,
+        "price": 690333,
+        "admin": 120465
+      }
+    },
+    {
+      "id": "C10AED24675DA",
+      "attrs": {
+        "loss_0": 20288,
+        "loss_1": 44723,
+        "loss_2": 43626,
+        "loss_3": 15082,
+        "loss_4": 17702,
+        "loss_5": 18060,
+        "deductible": 14403,
+        "coverage": 44488,
+        "price": 602274,
+        "admin": 135852
+      }
+    },
+    {
+      "id": "C23CA0F00CA0A",
+      "attrs": {
+        "loss_0": 47973,
+        "loss_1": 17257,
+        "loss_2": 17214,
+        "loss_3": 33251,
+        "loss_4": 34939,
+        "loss_5": 37042,
+        "deductible": 10893,
+        "coverage": 44696,
+        "price": 695960,
+        "admin": 124743
+      }
+    },
+    {
+      "id": "C6E6975BCEB1E",
+      "attrs": {
+        "loss_0": 24024,
+        "loss_1": 13114,
+        "loss_2": 13924,
+        "loss_3": 40823,
+        "loss_4": 38713,
+        "loss_5": 19990,
+        "deductible": 11935,
+        "coverage": 44171,
+        "price": 574191,
+        "admin": 140612
+      }
+    },
+    {
+      "id": "C1D4DDBFDD414",
+      "attrs": {
+        "loss_0": 29976,
+        "loss_1": 12082,
+        "loss_2": 21077,
+        "loss_3": 46391,
+        "loss_4": 25966,
+        "loss_5": 47384,
+        "deductible": 6404,
+        "coverage": 24882,
+        "price": 522564,
+        "admin": 101132
+      }
+    },
+    {
+      "id": "CA95F96382953",
+      "attrs": {
+        "loss_0": 46496,
+        "loss_1": 28710,
+        "loss_2": 19022,
+        "loss_3": 18118,
+        "loss_4": 23319,
+        "loss_5": 17034,
+        "deductible": 13031,
+        "coverage": 53775,
+        "price": 536186,
+        "admin": 155251
+      }
+    },
+    {
+      "id": "C64F615CAC9C4",
+      "attrs": {
+        "loss_0": 17757,
+        "loss_1": 47524,
+        "loss_2": 26024,
+        "loss_3": 46682,
+        "loss_4": 18855,
+        "loss_5": 12958,
+        "deductible": 10796,
+        "coverage": 25077,
+        "price": 698695,
+        "admin": 104848
+      }
+    },
+    {
+      "id": "C97CF3EE35465",
+      "attrs": {
+        "loss_0": 20402,
+        "loss_1": 34086,
+        "loss_2": 47318,
+        "loss_3": 40532,
+        "loss_4": 22205,
+        "loss_5": 27988,
+        "deductible": 5401,
+        "coverage": 18513,
+        "price": 531759,
+        "admin": 96578
+      }
+    },
+    {
+      "id": "C2248B5B37D25",
+      "attrs": {
+        "loss_0": 23930,
+        "loss_1": 28079,
+        "loss_2": 25760,
+        "loss_3": 33594,
+        "loss_4": 42054,
+        "loss_5": 30042,
+        "deductible": 21106,
+        "coverage": 54309,
+        "price": 702632,
+        "admin": 148620
+      }
+    },
+    {
+      "id": "C168709A46679",
+      "attrs": {
+        "loss_0": 30605,
+        "loss_1": 19772,
+        "loss_2": 32419,
+        "loss_3": 26676,
+        "loss_4": 26157,
+        "loss_5": 32917,
+        "deductible": 23181,
+        "coverage": 53853,
+        "price": 646634,
+        "admin": 157913
+      }
+    },
+    {
+      "id": "C578FEBC054C2",
+      "attrs": {
+        "loss_0": 25125,
+        "loss_1": 22694,
+        "loss_2": 13955,
+        "loss_3": 32366,
+        "loss_4": 38483,
+        "loss_5": 32333,
+        "deductible": 6610,
+        "coverage": 18250,
+        "price": 719270,
+        "admin": 115069
+      }
+    },
+    {
+      "id": "C4808537646DE",
+      "attrs": {
+        "loss_0": 25551,
+        "loss_1": 37490,
+        "loss_2": 46865,
+        "loss_3": 21232,
+        "loss_4": 43036,
+        "loss_5": 24535,
+        "deductible": 7340,
+        "coverage": 55174,
+        "price": 615401,
+        "admin": 127784
+      }
+    },
+    {
+      "id": "C95822CD2AA3A",
+      "attrs": {
+        "loss_0": 14870,
+        "loss_1": 31382,
+        "loss_2": 37708,
+        "loss_3": 37525,
+        "loss_4": 23883,
+        "loss_5": 34588,
+        "deductible": 24164,
+        "coverage": 20604,
+        "price": 596762,
+        "admin": 110784
+      }
+    },
+    {
+      "id": "C4C922D6BF578",
+      "attrs": {
+        "loss_0": 18976,
+        "loss_1": 46859,
+        "loss_2": 36149,
+        "loss_3": 41189,
+        "loss_4": 47095,
+        "loss_5": 22516,
+        "deductible": 17168,
+        "coverage": 54263,
+        "price": 598106,
+        "admin": 119121
+      }
+    },
+    {
+      "id": "CDA9D56CD7FA2",
+      "attrs": {
+        "loss_0": 20085,
+        "loss_1": 28531,
+        "loss_2": 26750,
+        "loss_3": 38571,
+        "loss_4": 29619,
+        "loss_5": 24196,
+        "deductible": 22164,
+        "coverage": 43410,
+        "price": 562433,
+        "admin": 146690
+      }
+    },
+    {
+      "id": "C21BBB7521202",
+      "attrs": {
+        "loss_0": 34840,
+        "loss_1": 24193,
+        "loss_2": 47315,
+        "loss_3": 19151,
+        "loss_4": 34886,
+        "loss_5": 20601,
+        "deductible": 19378,
+        "coverage": 51474,
+        "price": 583917,
+        "admin": 134434
+      }
+    },
+    {
+      "id": "CBFA80639302A",
+      "attrs": {
+        "loss_0": 41319,
+        "loss_1": 33057,
+        "loss_2": 31439,
+        "loss_3": 36663,
+        "loss_4": 17607,
+        "loss_5": 27092,
+        "deductible": 8004,
+        "coverage": 35798,
+        "price": 637188,
+        "admin": 124760
+      }
+    },
+    {
+      "id": "C27E22C108568",
+      "attrs": {
+        "loss_0": 15514,
+        "loss_1": 32562,
+        "loss_2": 47248,
+        "loss_3": 28068,
+        "loss_4": 32451,
+        "loss_5": 13965,
+        "deductible": 12353,
+        "coverage": 41334,
+        "price": 656440,
+        "admin": 129074
+      }
+    },
+    {
+      "id": "CA18B6A5567B8",
+      "attrs": {
+        "loss_0": 42231,
+        "loss_1": 22637,
+        "loss_2": 20925,
+        "loss_3": 17838,
+        "loss_4": 42769,
+        "loss_5": 33651,
+        "deductible": 10317,
+        "coverage": 21195,
+        "price": 610320,
+        "admin": 102545
+      }
+    },
+    {
+      "id": "CDFECD3DBF65C",
+      "attrs": {
+        "loss_0": 15903,
+        "loss_1": 29523,
+        "loss_2": 24940,
+        "loss_3": 16254,
+        "loss_4": 16421,
+        "loss_5": 30351,
+        "deductible": 10346,
+        "coverage": 41313,
+        "price": 647929,
+        "admin": 156500
+      }
+    },
+    {
+      "id": "C13A1D23B14A0",
+      "attrs": {
+        "loss_0": 18781,
+        "loss_1": 43557,
+        "loss_2": 21238,
+        "loss_3": 33599,
+        "loss_4": 18529,
+        "loss_5": 44824,
+        "deductible": 16143,
+        "coverage": 21685,
+        "price": 680372,
+        "admin": 99706
+      }
+    },
+    {
+      "id": "CD13735EF60AE",
+      "attrs": {
+        "loss_0": 29563,
+        "loss_1": 31562,
+        "loss_2": 19108,
+        "loss_3": 35648,
+        "loss_4": 17089,
+        "loss_5": 43520,
+        "deductible": 24573,
+        "coverage": 24028,
+        "price": 602659,
+        "admin": 113299
+      }
+    },
+    {
+      "id": "C6207267D38DD",
+      "attrs": {
+        "loss_0": 21503,
+        "loss_1": 30929,
+        "loss_2": 35999,
+        "loss_3": 40140,
+        "loss_4": 29312,
+        "loss_5": 19575,
+        "deductible": 19574,
+        "coverage": 60099,
+        "price": 535943,
+        "admin": 153032
+      }
+    },
+    {
+      "id": "CD45164ED52A4",
+      "attrs": {
+        "loss_0": 22534,
+        "loss_1": 29112,
+        "loss_2": 12695,
+        "loss_3": 24904,
+        "loss_4": 29943,
+        "loss_5": 25761,
+        "deductible": 8829,
+        "coverage": 60577,
+        "price": 657080,
+        "admin": 175762
+      }
+    },
+    {
+      "id": "C1364F5CD16A2",
+      "attrs": {
+        "loss_0": 18587,
+        "loss_1": 32251,
+        "loss_2": 12666,
+        "loss_3": 42102,
+        "loss_4": 14502,
+        "loss_5": 29804,
+        "deductible": 8403,
+        "coverage": 60572,
+        "price": 708855,
+        "admin": 156416
+      }
+    },
+    {
+      "id": "C0383BCCB3B3E",
+      "attrs": {
+        "loss_0": 20962,
+        "loss_1": 18403,
+        "loss_2": 26164,
+        "loss_3": 39851,
+        "loss_4": 39204,
+        "loss_5": 29384,
+        "deductible": 18746,
+        "coverage": 48665,
+        "price": 567941,
+        "admin": 140227
+      }
+    },
+    {
+      "id": "CBD4FBF2E32A0",
+      "attrs": {
+        "loss_0": 39763,
+        "loss_1": 32888,
+        "loss_2": 26955,
+        "loss_3": 13835,
+        "loss_4": 33026,
+        "loss_5": 15712,
+        "deductible": 23288,
+        "coverage": 44381,
+        "price": 605157,
+        "admin": 138705
+      }
+    },
+    {
+      "id": "C538C99CC81BF",
+      "attrs": {
+        "loss_0": 44568,
+        "loss_1": 39251,
+        "loss_2": 45119,
+        "loss_3": 25913,
+        "loss_4": 45770,
+        "loss_5": 41257,
+        "deductible": 21243,
+        "coverage": 27209,
+        "price": 520890,
+        "admin": 91753
+      }
+    },
+    {
+      "id": "CD4C86797FDD2",
+      "attrs": {
+        "loss_0": 40257,
+        "loss_1": 15131,
+        "loss_2": 36478,
+        "loss_3": 27036,
+        "loss_4": 43124,
+        "loss_5": 46206,
+        "deductible": 20115,
+        "coverage": 24077,
+        "price": 622823,
+        "admin": 94491
+      }
+    },
+    {
+      "id": "C6FA4FE9C14A9",
+      "attrs": {
+        "loss_0": 20876,
+        "loss_1": 41600,
+        "loss_2": 41479,
+        "loss_3": 27785,
+        "loss_4": 17512,
+        "loss_5": 40397,
+        "deductible": 15894,
+        "coverage": 25009,
+        "price": 669207,
+        "admin": 101534
+      }
+    },
+    {
+      "id": "C69ABD7E88F9A",
+      "attrs": {
+        "loss_0": 12542,
+        "loss_1": 22096,
+        "loss_2": 19516,
+        "loss_3": 34352,
+        "loss_4": 15597,
+        "loss_5": 27846,
+        "deductible": 13787,
+        "coverage": 46901,
+        "price": 539460,
+        "admin": 162608
+      }
+    },
+    {
+      "id": "C16F25E2E56B0",
+      "attrs": {
+        "loss_0": 36355,
+        "loss_1": 15006,
+        "loss_2": 26231,
+        "loss_3": 43921,
+        "loss_4": 41866,
+        "loss_5": 23935,
+        "deductible": 18494,
+        "coverage": 20496,
+        "price": 551399,
+        "admin": 98355
+      }
+    },
+    {
+      "id": "C630A29A5D8B6",
+      "attrs": {
+        "loss_0": 29542,
+        "loss_1": 37952,
+        "loss_2": 35026,
+        "loss_3": 16447,
+        "loss_4": 12943,
+        "loss_5": 36090,
+        "deductible": 9155,
+        "coverage": 61413,
+        "price": 702370,
+        "admin": 152346
+      }
+    },
+    {
+      "id": "CB3406F641AFB",
+      "attrs": {
+        "loss_0": 28294,
+        "loss_1": 30009,
+        "loss_2": 32127,
+        "loss_3": 29105,
+        "loss_4": 32657,
+        "loss_5": 38414,
+        "deductible": 15206,
+        "coverage": 26907,
+        "price": 652041,
+        "admin": 123710
+      }
+    },
+    {
+      "id": "CE957E3601FC3",
+      "attrs": {
+        "loss_0": 35898,
+        "loss_1": 12888,
+        "loss_2": 17188,
+        "loss_3": 47936,
+        "loss_4": 27020,
+        "loss_5": 39384,
+        "deductible": 12537,
+        "coverage": 42973,
+        "price": 552190,
+        "admin": 119756
+      }
+    },
+    {
+      "id": "C3659060A4FA0",
+      "attrs": {
+        "loss_0": 41678,
+        "loss_1": 21267,
+        "loss_2": 27835,
+        "loss_3": 34923,
+        "loss_4": 33433,
+        "loss_5": 28916,
+        "deductible": 13356,
+        "coverage": 48489,
+        "price": 589700,
+        "admin": 138456
+      }
+    },
+    {
+      "id": "CB4ACE745FB5E",
+      "attrs": {
+        "loss_0": 43961,
+        "loss_1": 47443,
+        "loss_2": 18409,
+        "loss_3": 26931,
+        "loss_4": 45953,
+        "loss_5": 26785,
+        "deductible": 13923,
+        "coverage": 56806,
+        "price": 703410,
+        "admin": 119450
+      }
+    },
+    {
+      "id": "CB375F40B6C5D",
+      "attrs": {
+        "loss_0": 15076,
+        "loss_1": 28511,
+        "loss_2": 32304,
+        "loss_3": 23575,
+        "loss_4": 24943,
+        "loss_5": 39589,
+        "deductible": 15132,
+        "coverage": 28321,
+        "price": 614387,
+        "admin": 127918
+      }
+    },
+    {
+      "id": "CC708AC4858BF",
+      "attrs": {
+        "loss_0": 44834,
+        "loss_1": 16321,
+        "loss_2": 44664,
+        "loss_3": 22982,
+        "loss_4": 37343,
+        "loss_5": 25049,
+        "deductible": 6307,
+        "coverage": 20946,
+        "price": 730074,
+        "admin": 94106
+      }
+    },
+    {
+      "id": "C4AD270321798",
+      "attrs": {
+        "loss_0": 15025,
+        "loss_1": 22607,
+        "loss_2": 44652,
+        "loss_3": 19248,
+        "loss_4": 42999,
+        "loss_5": 44447,
+        "deductible": 6499,
+        "coverage": 25028,
+        "price": 541797,
+        "admin": 92931
+      }
+    },
+    {
+      "id": "C74C8F9216827",
+      "attrs": {
+        "loss_0": 20663,
+        "loss_1": 33442,
+        "loss_2": 29288,
+        "loss_3": 27398,
+        "loss_4": 22620,
+        "loss_5": 24442,
+        "deductible": 22605,
+        "coverage": 51277,
+        "price": 692590,
+        "admin": 161150
+      }
+    },
+    {
+      "id": "C6FE7D4A87075",
+      "attrs": {
+        "loss_0": 31845,
+        "loss_1": 44470,
+        "loss_2": 14453,
+        "loss_3": 26887,
+        "loss_4": 21342,
+        "loss_5": 26826,
+        "deductible": 20255,
+        "coverage": 33632,
+        "price": 579709,
+        "admin": 130431
+      }
+    },
+    {
+      "id": "C7EC51C174426",
+      "attrs": {
+        "loss_0": 46645,
+        "loss_1": 39891,
+        "loss_2": 37757,
+        "loss_3": 38161,
+        "loss_4": 27590,
+        "loss_5": 17154,
+        "deductible": 17700,
+        "coverage": 43084,
+        "price": 624135,
+        "admin": 118388
+      }
+    },
+    {
+      "id": "CCE065AB65873",
+      "attrs": {
+        "loss_0": 43368,
+        "loss_1": 24356,
+        "loss_2": 20870,
+        "loss_3": 37828,
+        "loss_4": 46979,
+        "loss_5": 12032,
+        "deductible": 13344,
+        "coverage": 64472,
+        "price": 701286,
+        "admin": 136298
+      }
+    },
+    {
+      "id": "C25B1672EDB91",
+      "attrs": {
+        "loss_0": 19011,
+        "loss_1": 42879,
+        "loss_2": 15586,
+        "loss_3": 18883,
+        "loss_4": 46413,
+        "loss_5": 32773,
+        "deductible": 17111,
+        "coverage": 48117,
+        "price": 675620,
+        "admin": 126053
+      }
+    },
+    {
+      "id": "C06951F1953F2",
+      "attrs": {
+        "loss_0": 21693,
+        "loss_1": 29652,
+        "loss_2": 22087,
+        "loss_3": 41587,
+        "loss_4": 22390,
+        "loss_5": 14501,
+        "deductible": 9476,
+        "coverage": 63085,
+        "price": 580954,
+        "admin": 169457
+      }
+    },
+    {
+      "id": "CFEC7CE4D239F",
+      "attrs": {
+        "loss_0": 39359,
+        "loss_1": 14272,
+        "loss_2": 43659,
+        "loss_3": 32466,
+        "loss_4": 24498,
+        "loss_5": 23868,
+        "deductible": 14412,
+        "coverage": 35222,
+        "price": 619283,
+        "admin": 119739
+      }
+    },
+    {
+      "id": "CBF36830E992E",
+      "attrs": {
+        "loss_0": 26062,
+        "loss_1": 13901,
+        "loss_2": 15582,
+        "loss_3": 45322,
+        "loss_4": 21655,
+        "loss_5": 47301,
+        "deductible": 7664,
+        "coverage": 55269,
+        "price": 524877,
+        "admin": 136585
+      }
+    },
+    {
+      "id": "C44789A354752",
+      "attrs": {
+        "loss_0": 31265,
+        "loss_1": 37409,
+        "loss_2": 15278,
+        "loss_3": 20264,
+        "loss_4": 40240,
+        "loss_5": 18260,
+        "deductible": 14583,
+        "coverage": 64774,
+        "price": 555227,
+        "admin": 155861
+      }
+    },
+    {
+      "id": "CF1BCA8572084",
+      "attrs": {
+        "loss_0": 12820,
+        "loss_1": 28859,
+        "loss_2": 30386,
+        "loss_3": 13534,
+        "loss_4": 40459,
+        "loss_5": 37209,
+        "deductible": 6253,
+        "coverage": 57626,
+        "price": 654211,
+        "admin": 149573
+      }
+    },
+    {
+      "id": "CCAB05E106101",
+      "attrs": {
+        "loss_0": 20617,
+        "loss_1": 43814,
+        "loss_2": 41118,
+        "loss_3": 23091,
+        "loss_4": 19419,
+        "loss_5": 30006,
+        "deductible": 12675,
+        "coverage": 22661,
+        "price": 577330,
+        "admin": 107724
+      }
+    },
+    {
+      "id": "C8D6642755088",
+      "attrs": {
+        "loss_0": 15143,
+        "loss_1": 18137,
+        "loss_2": 13225,
+        "loss_3": 19530,
+        "loss_4": 41787,
+        "loss_5": 44427,
+        "deductible": 19172,
+        "coverage": 53675,
+        "price": 582015,
+        "admin": 147932
+      }
+    },
+    {
+      "id": "C348E75A19315",
+      "attrs": {
+        "loss_0": 46677,
+        "loss_1": 13176,
+        "loss_2": 17925,
+        "loss_3": 18048,
+        "loss_4": 26748,
+        "loss_5": 46172,
+        "deductible": 24855,
+        "coverage": 25486,
+        "price": 536108,
+        "admin": 105890
+      }
+    },
+    {
+      "id": "CADD274288620",
+      "attrs": {
+        "loss_0": 17423,
+        "loss_1": 15239,
+        "loss_2": 34524,
+        "loss_3": 20027,
+        "loss_4": 23980,
+        "loss_5": 34498,
+        "deductible": 13654,
+        "coverage": 55220,
+        "price": 543585,
+        "admin": 162219
+      }
+    },
+    {
+      "id": "C48D0A38CF850",
+      "attrs": {
+        "loss_0": 29342,
+        "loss_1": 43266,
+        "loss_2": 14303,
+        "loss_3": 37259,
+        "loss_4": 30821,
+        "loss_5": 25875,
+        "deductible": 22836,
+        "coverage": 51951,
+        "price": 640421,
+        "admin": 140606
+      }
+    },
+    {
+      "id": "C3871CE649ED2",
+      "attrs": {
+        "loss_0": 35596,
+        "loss_1": 29911,
+        "loss_2": 37425,
+        "loss_3": 12248,
+        "loss_4": 22245,
+        "loss_5": 27409,
+        "deductible": 20905,
+        "coverage": 49027,
+        "price": 662004,
+        "admin": 146096
+      }
+    },
+    {
+      "id": "C22821F182771",
+      "attrs": {
+        "loss_0": 44823,
+        "loss_1": 39964,
+        "loss_2": 45361,
+        "loss_3": 30357,
+        "loss_4": 47860,
+        "loss_5": 29414,
+        "deductible": 21170,
+        "coverage": 55788,
+        "price": 730561,
+        "admin": 117745
+      }
+    },
+    {
+      "id": "CEBA248B8BF96",
+      "attrs": {
+        "loss_0": 43748,
+        "loss_1": 22915,
+        "loss_2": 23975,
+        "loss_3": 44152,
+        "loss_4": 17277,
+        "loss_5": 44438,
+        "deductible": 22822,
+        "coverage": 28115,
+        "price": 716265,
+        "admin": 95778
+      }
+    },
+    {
+      "id": "C1E09FAEA8096",
+      "attrs": {
+        "loss_0": 14919,
+        "loss_1": 46686,
+        "loss_2": 47242,
+        "loss_3": 36390,
+        "loss_4": 47471,
+        "loss_5": 21869,
+        "deductible": 5131,
+        "coverage": 50341,
+        "price": 709291,
+        "admin": 108943
+      }
+    },
+    {
+      "id": "CA34E68A7D893",
+      "attrs": {
+        "loss_0": 31207,
+        "loss_1": 42915,
+        "loss_2": 27328,
+        "loss_3": 20465,
+        "loss_4": 13375,
+        "loss_5": 45117,
+        "deductible": 10131,
+        "coverage": 32826,
+        "price": 722081,
+        "admin": 113588
+      }
+    },
+    {
+      "id": "C6723F4703210",
+      "attrs": {
+        "loss_0": 31046,
+        "loss_1": 30213,
+        "loss_2": 38627,
+        "loss_3": 38976,
+        "loss_4": 19074,
+        "loss_5": 24398,
+        "deductible": 10576,
+        "coverage": 34267,
+        "price": 549105,
+        "admin": 125619
+      }
+    },
+    {
+      "id": "C2AF8B6F627CD",
+      "attrs": {
+        "loss_0": 45993,
+        "loss_1": 36641,
+        "loss_2": 46531,
+        "loss_3": 14453,
+        "loss_4": 44126,
+        "loss_5": 39953,
+        "deductible": 20220,
+        "coverage": 28925,
+        "price": 642097,
+        "admin": 92276
+      }
+    },
+    {
+      "id": "CA14D394192B0",
+      "attrs": {
+        "loss_0": 46086,
+        "loss_1": 42068,
+        "loss_2": 30373,
+        "loss_3": 25278,
+        "loss_4": 13396,
+        "loss_5": 26946,
+        "deductible": 13220,
+        "coverage": 63958,
+        "price": 687989,
+        "admin": 145432
+      }
+    },
+    {
+      "id": "C5C184A46D551",
+      "attrs": {
+        "loss_0": 21457,
+        "loss_1": 25842,
+        "loss_2": 29104,
+        "loss_3": 17579,
+        "loss_4": 25564,
+        "loss_5": 24627,
+        "deductible": 6382,
+        "coverage": 27816,
+        "price": 667574,
+        "admin": 147307
+      }
+    },
+    {
+      "id": "CE939BCE112B6",
+      "attrs": {
+        "loss_0": 45665,
+        "loss_1": 39026,
+        "loss_2": 29021,
+        "loss_3": 21723,
+        "loss_4": 43670,
+        "loss_5": 14584,
+        "deductible": 9175,
+        "coverage": 63576,
+        "price": 631923,
+        "admin": 135216
+      }
+    },
+    {
+      "id": "C02C537B80D63",
+      "attrs": {
+        "loss_0": 24900,
+        "loss_1": 35596,
+        "loss_2": 12351,
+        "loss_3": 45450,
+        "loss_4": 13660,
+        "loss_5": 44061,
+        "deductible": 17155,
+        "coverage": 22824,
+        "price": 611047,
+        "admin": 97718
+      }
+    },
+    {
+      "id": "C4ECC8E491B22",
+      "attrs": {
+        "loss_0": 40515,
+        "loss_1": 39032,
+        "loss_2": 21179,
+        "loss_3": 17065,
+        "loss_4": 21651,
+        "loss_5": 41961,
+        "deductible": 21651,
+        "coverage": 29848,
+        "price": 671408,
+        "admin": 108341
+      }
+    },
+    {
+      "id": "C353473B1436C",
+      "attrs": {
+        "loss_0": 17233,
+        "loss_1": 47877,
+        "loss_2": 14406,
+        "loss_3": 33335,
+        "loss_4": 33345,
+        "loss_5": 19528,
+        "deductible": 18748,
+        "coverage": 52847,
+        "price": 605755,
+        "admin": 138291
+      }
+    },
+    {
+      "id": "C781154548DBC",
+      "attrs": {
+        "loss_0": 17582,
+        "loss_1": 46218,
+        "loss_2": 44925,
+        "loss_3": 35741,
+        "loss_4": 23976,
+        "loss_5": 36987,
+        "deductible": 19485,
+        "coverage": 58846,
+        "price": 597698,
+        "admin": 130717
+      }
+    },
+    {
+      "id": "C674E01AD226C",
+      "attrs": {
+        "loss_0": 43974,
+        "loss_1": 37364,
+        "loss_2": 43167,
+        "loss_3": 33357,
+        "loss_4": 43797,
+        "loss_5": 29909,
+        "deductible": 14355,
+        "coverage": 26173,
+        "price": 713374,
+        "admin": 95236
+      }
+    },
+    {
+      "id": "C7FCA3451F5C7",
+      "attrs": {
+        "loss_0": 23524,
+        "loss_1": 27264,
+        "loss_2": 45080,
+        "loss_3": 28462,
+        "loss_4": 35780,
+        "loss_5": 30968,
+        "deductible": 12810,
+        "coverage": 48671,
+        "price": 603059,
+        "admin": 136844
+      }
+    },
+    {
+      "id": "C255B2D82B35C",
+      "attrs": {
+        "loss_0": 34894,
+        "loss_1": 21861,
+        "loss_2": 23845,
+        "loss_3": 47326,
+        "loss_4": 32875,
+        "loss_5": 44612,
+        "deductible": 18173,
+        "coverage": 45442,
+        "price": 625404,
+        "admin": 118611
+      }
+    },
+    {
+      "id": "CEDB32EC61095",
+      "attrs": {
+        "loss_0": 47496,
+        "loss_1": 47150,
+        "loss_2": 45905,
+        "loss_3": 19993,
+        "loss_4": 19509,
+        "loss_5": 38511,
+        "deductible": 12131,
+        "coverage": 57866,
+        "price": 531781,
+        "admin": 117316
+      }
+    },
+    {
+      "id": "CBC03A516FDD4",
+      "attrs": {
+        "loss_0": 13330,
+        "loss_1": 44689,
+        "loss_2": 46712,
+        "loss_3": 31494,
+        "loss_4": 13428,
+        "loss_5": 22757,
+        "deductible": 20120,
+        "coverage": 31001,
+        "price": 660517,
+        "admin": 108107
+      }
+    },
+    {
+      "id": "C5E058694FBFF",
+      "attrs": {
+        "loss_0": 14781,
+        "loss_1": 21102,
+        "loss_2": 22931,
+        "loss_3": 31587,
+        "loss_4": 27219,
+        "loss_5": 16679,
+        "deductible": 10361,
+        "coverage": 54451,
+        "price": 627807,
+        "admin": 172715
+      }
+    },
+    {
+      "id": "C0107A21598E1",
+      "attrs": {
+        "loss_0": 32381,
+        "loss_1": 16031,
+        "loss_2": 43049,
+        "loss_3": 38486,
+        "loss_4": 35802,
+        "loss_5": 16462,
+        "deductible": 19479,
+        "coverage": 47053,
+        "price": 579136,
+        "admin": 129717
+      }
+    },
+    {
+      "id": "CA370628E5BAA",
+      "attrs": {
+        "loss_0": 44402,
+        "loss_1": 20991,
+        "loss_2": 14480,
+        "loss_3": 19550,
+        "loss_4": 26193,
+        "loss_5": 18387,
+        "deductible": 5263,
+        "coverage": 45257,
+        "price": 706053,
+        "admin": 153672
+      }
+    },
+    {
+      "id": "CDA42C2F6F96C",
+      "attrs": {
+        "loss_0": 29451,
+        "loss_1": 12256,
+        "loss_2": 38318,
+        "loss_3": 42641,
+        "loss_4": 18861,
+        "loss_5": 28877,
+        "deductible": 15279,
+        "coverage": 61933,
+        "price": 717825,
+        "admin": 151524
+      }
+    },
+    {
+      "id": "C0041D9048A16",
+      "attrs": {
+        "loss_0": 33727,
+        "loss_1": 41744,
+        "loss_2": 27083,
+        "loss_3": 43460,
+        "loss_4": 47198,
+        "loss_5": 38309,
+        "deductible": 24834,
+        "coverage": 31890,
+        "price": 579861,
+        "admin": 99489
+      }
+    },
+    {
+      "id": "CB827E1EFF66C",
+      "attrs": {
+        "loss_0": 24752,
+        "loss_1": 33925,
+        "loss_2": 21410,
+        "loss_3": 30866,
+        "loss_4": 37177,
+        "loss_5": 37925,
+        "deductible": 10871,
+        "coverage": 54099,
+        "price": 636176,
+        "admin": 145073
+      }
+    },
+    {
+      "id": "CD285686A0334",
+      "attrs": {
+        "loss_0": 24189,
+        "loss_1": 17488,
+        "loss_2": 19748,
+        "loss_3": 31600,
+        "loss_4": 46133,
+        "loss_5": 14488,
+        "deductible": 18462,
+        "coverage": 41487,
+        "price": 705779,
+        "admin": 139566
+      }
+    },
+    {
+      "id": "C267AF3250286",
+      "attrs": {
+        "loss_0": 16175,
+        "loss_1": 17154,
+        "loss_2": 29154,
+        "loss_3": 37334,
+        "loss_4": 34681,
+        "loss_5": 34993,
+        "deductible": 18255,
+        "coverage": 36404,
+        "price": 687192,
+        "admin": 129397
+      }
+    },
+    {
+      "id": "CD05EB079910A",
+      "attrs": {
+        "loss_0": 23773,
+        "loss_1": 37392,
+        "loss_2": 28689,
+        "loss_3": 45138,
+        "loss_4": 36924,
+        "loss_5": 47508,
+        "deductible": 14502,
+        "coverage": 27769,
+        "price": 698891,
+        "admin": 97732
+      }
+    },
+    {
+      "id": "C856DBF15FC11",
+      "attrs": {
+        "loss_0": 27938,
+        "loss_1": 23383,
+        "loss_2": 46169,
+        "loss_3": 46534,
+        "loss_4": 29703,
+        "loss_5": 45142,
+        "deductible": 17401,
+        "coverage": 50809,
+        "price": 579399,
+        "admin": 112965
+      }
+    },
+    {
+      "id": "C3236A200160C",
+      "attrs": {
+        "loss_0": 41021,
+        "loss_1": 41163,
+        "loss_2": 21367,
+        "loss_3": 29323,
+        "loss_4": 22534,
+        "loss_5": 31771,
+        "deductible": 22089,
+        "coverage": 20915,
+        "price": 573736,
+        "admin": 106961
+      }
+    },
+    {
+      "id": "CDBCD5C474AB2",
+      "attrs": {
+        "loss_0": 25412,
+        "loss_1": 46320,
+        "loss_2": 23069,
+        "loss_3": 42947,
+        "loss_4": 13003,
+        "loss_5": 47699,
+        "deductible": 14334,
+        "coverage": 20866,
+        "price": 556059,
+        "admin": 83901
+      }
+    },
+    {
+      "id": "CD84345939BAF",
+      "attrs": {
+        "loss_0": 15628,
+        "loss_1": 28207,
+        "loss_2": 39710,
+        "loss_3": 32935,
+        "loss_4": 32469,
+        "loss_5": 19580,
+        "deductible": 8477,
+        "coverage": 50348,
+        "price": 644304,
+        "admin": 145235
+      }
+    },
+    {
+      "id": "C1E841FF1C7BE",
+      "attrs": {
+        "loss_0": 35771,
+        "loss_1": 47887,
+        "loss_2": 31621,
+        "loss_3": 31866,
+        "loss_4": 40266,
+        "loss_5": 38313,
+        "deductible": 16500,
+        "coverage": 58320,
+        "price": 605146,
+        "admin": 131855
+      }
+    },
+    {
+      "id": "C2E572C748525",
+      "attrs": {
+        "loss_0": 37829,
+        "loss_1": 16621,
+        "loss_2": 19364,
+        "loss_3": 12735,
+        "loss_4": 42059,
+        "loss_5": 36991,
+        "deductible": 14120,
+        "coverage": 60149,
+        "price": 541454,
+        "admin": 143271
+      }
+    },
+    {
+      "id": "C48AB2BB9B738",
+      "attrs": {
+        "loss_0": 29650,
+        "loss_1": 26600,
+        "loss_2": 22188,
+        "loss_3": 23312,
+        "loss_4": 35935,
+        "loss_5": 22210,
+        "deductible": 18493,
+        "coverage": 45897,
+        "price": 623884,
+        "admin": 153713
+      }
+    },
+    {
+      "id": "C13AF41F39D76",
+      "attrs": {
+        "loss_0": 30754,
+        "loss_1": 21979,
+        "loss_2": 35743,
+        "loss_3": 12937,
+        "loss_4": 31501,
+        "loss_5": 26268,
+        "deductible": 6072,
+        "coverage": 60946,
+        "price": 684703,
+        "admin": 162949
+      }
+    },
+    {
+      "id": "C304EE3577C00",
+      "attrs": {
+        "loss_0": 16790,
+        "loss_1": 34527,
+        "loss_2": 37228,
+        "loss_3": 25557,
+        "loss_4": 20076,
+        "loss_5": 34175,
+        "deductible": 5750,
+        "coverage": 62034,
+        "price": 604029,
+        "admin": 156105
+      }
+    },
+    {
+      "id": "C401A9218F17C",
+      "attrs": {
+        "loss_0": 24011,
+        "loss_1": 26973,
+        "loss_2": 47927,
+        "loss_3": 17835,
+        "loss_4": 37479,
+        "loss_5": 46248,
+        "deductible": 12391,
+        "coverage": 18936,
+        "price": 601993,
+        "admin": 87283
+      }
+    },
+    {
+      "id": "C0AF27B80EE00",
+      "attrs": {
+        "loss_0": 19657,
+        "loss_1": 31000,
+        "loss_2": 14799,
+        "loss_3": 21754,
+        "loss_4": 30302,
+        "loss_5": 21858,
+        "deductible": 9172,
+        "coverage": 55999,
+        "price": 588953,
+        "admin": 172840
+      }
+    },
+    {
+      "id": "CFE85BCCEBCA1",
+      "attrs": {
+        "loss_0": 23102,
+        "loss_1": 24543,
+        "loss_2": 27480,
+        "loss_3": 43269,
+        "loss_4": 20725,
+        "loss_5": 38858,
+        "deductible": 22204,
+        "coverage": 23663,
+        "price": 569133,
+        "admin": 114057
+      }
+    },
+    {
+      "id": "C87C5E8FF9689",
+      "attrs": {
+        "loss_0": 25776,
+        "loss_1": 41155,
+        "loss_2": 41782,
+        "loss_3": 16518,
+        "loss_4": 23390,
+        "loss_5": 47335,
+        "deductible": 20235,
+        "coverage": 54690,
+        "price": 681914,
+        "admin": 124419
+      }
+    },
+    {
+      "id": "CDB0818EF4762",
+      "attrs": {
+        "loss_0": 30154,
+        "loss_1": 27055,
+        "loss_2": 41049,
+        "loss_3": 44167,
+        "loss_4": 27430,
+        "loss_5": 23379,
+        "deductible": 23152,
+        "coverage": 41071,
+        "price": 526047,
+        "admin": 125702
+      }
+    },
+    {
+      "id": "C89EACF0192CB",
+      "attrs": {
+        "loss_0": 42123,
+        "loss_1": 41796,
+        "loss_2": 25452,
+        "loss_3": 12213,
+        "loss_4": 25093,
+        "loss_5": 43076,
+        "deductible": 23040,
+        "coverage": 27389,
+        "price": 623981,
+        "admin": 100395
+      }
+    },
+    {
+      "id": "CA674E7BF4BEC",
+      "attrs": {
+        "loss_0": 33243,
+        "loss_1": 16039,
+        "loss_2": 25222,
+        "loss_3": 45833,
+        "loss_4": 42216,
+        "loss_5": 15689,
+        "deductible": 10625,
+        "coverage": 27048,
+        "price": 565609,
+        "admin": 105757
+      }
+    },
+    {
+      "id": "CED95F02C5530",
+      "attrs": {
+        "loss_0": 40536,
+        "loss_1": 17513,
+        "loss_2": 20104,
+        "loss_3": 14171,
+        "loss_4": 38935,
+        "loss_5": 21116,
+        "deductible": 20058,
+        "coverage": 19186,
+        "price": 550957,
+        "admin": 118600
+      }
+    },
+    {
+      "id": "CE710BEA04631",
+      "attrs": {
+        "loss_0": 41811,
+        "loss_1": 34067,
+        "loss_2": 44561,
+        "loss_3": 25979,
+        "loss_4": 30323,
+        "loss_5": 17743,
+        "deductible": 21061,
+        "coverage": 56449,
+        "price": 615059,
+        "admin": 136011
+      }
+    },
+    {
+      "id": "C84BAE4CA2083",
+      "attrs": {
+        "loss_0": 35322,
+        "loss_1": 27337,
+        "loss_2": 14952,
+        "loss_3": 14481,
+        "loss_4": 14567,
+        "loss_5": 35055,
+        "deductible": 9939,
+        "coverage": 55547,
+        "price": 710783,
+        "admin": 157834
+      }
+    },
+    {
+      "id": "C99483825C8F4",
+      "attrs": {
+        "loss_0": 22396,
+        "loss_1": 31261,
+        "loss_2": 33870,
+        "loss_3": 40535,
+        "loss_4": 27314,
+        "loss_5": 47156,
+        "deductible": 24158,
+        "coverage": 51671,
+        "price": 716864,
+        "admin": 130111
+      }
+    },
+    {
+      "id": "CCBE1E0DF0A45",
+      "attrs": {
+        "loss_0": 14711,
+        "loss_1": 14607,
+        "loss_2": 23542,
+        "loss_3": 12068,
+        "loss_4": 24675,
+        "loss_5": 24575,
+        "deductible": 13276,
+        "coverage": 40413,
+        "price": 669420,
+        "admin": 167622
+      }
+    },
+    {
+      "id": "C3CD4C4490CEE",
+      "attrs": {
+        "loss_0": 13719,
+        "loss_1": 18913,
+        "loss_2": 30669,
+        "loss_3": 30461,
+        "loss_4": 26506,
+        "loss_5": 27753,
+        "deductible": 16821,
+        "coverage": 43548,
+        "price": 597951,
+        "admin": 154666
+      }
+    },
+    {
+      "id": "CB40D2151FE69",
+      "attrs": {
+        "loss_0": 21688,
+        "loss_1": 28342,
+        "loss_2": 18924,
+        "loss_3": 37233,
+        "loss_4": 44052,
+        "loss_5": 35721,
+        "deductible": 5319,
+        "coverage": 59560,
+        "price": 662494,
+        "admin": 142555
+      }
+    },
+    {
+      "id": "CCC216802C987",
+      "attrs": {
+        "loss_0": 36133,
+        "loss_1": 20947,
+        "loss_2": 40564,
+        "loss_3": 23137,
+        "loss_4": 21517,
+        "loss_5": 12711,
+        "deductible": 8786,
+        "coverage": 44948,
+        "price": 608014,
+        "admin": 145115
+      }
+    },
+    {
+      "id": "C16B49B0909BA",
+      "attrs": {
+        "loss_0": 29934,
+        "loss_1": 18897,
+        "loss_2": 41484,
+        "loss_3": 13150,
+        "loss_4": 22553,
+        "loss_5": 36872,
+        "deductible": 9836,
+        "coverage": 55202,
+        "price": 525939,
+        "admin": 146913
+      }
+    },
+    {
+      "id": "C0B4CA898D3AE",
+      "attrs": {
+        "loss_0": 35082,
+        "loss_1": 36707,
+        "loss_2": 20427,
+        "loss_3": 36066,
+        "loss_4": 28035,
+        "loss_5": 25760,
+        "deductible": 23029,
+        "coverage": 63142,
+        "price": 689359,
+        "admin": 155288
+      }
+    },
+    {
+      "id": "CA89E1BEB3C3A",
+      "attrs": {
+        "loss_0": 15367,
+        "loss_1": 12405,
+        "loss_2": 21104,
+        "loss_3": 43314,
+        "loss_4": 40833,
+        "loss_5": 14547,
+        "deductible": 12344,
+        "coverage": 38910,
+        "price": 585125,
+        "admin": 133660
+      }
+    },
+    {
+      "id": "C7A752F9E045A",
+      "attrs": {
+        "loss_0": 19833,
+        "loss_1": 38708,
+        "loss_2": 34447,
+        "loss_3": 27197,
+        "loss_4": 28071,
+        "loss_5": 45647,
+        "deductible": 8752,
+        "coverage": 57794,
+        "price": 583998,
+        "admin": 138993
+      }
+    },
+    {
+      "id": "CFF84546211AC",
+      "attrs": {
+        "loss_0": 35471,
+        "loss_1": 35334,
+        "loss_2": 39379,
+        "loss_3": 18454,
+        "loss_4": 38936,
+        "loss_5": 40542,
+        "deductible": 20769,
+        "coverage": 37032,
+        "price": 689876,
+        "admin": 118176
+      }
+    },
+    {
+      "id": "C4D316FA68A4D",
+      "attrs": {
+        "loss_0": 34536,
+        "loss_1": 13738,
+        "loss_2": 18844,
+        "loss_3": 14718,
+        "loss_4": 47323,
+        "loss_5": 23247,
+        "deductible": 24407,
+        "coverage": 29421,
+        "price": 601228,
+        "admin": 124316
+      }
+    },
+    {
+      "id": "C44369059906E",
+      "attrs": {
+        "loss_0": 20575,
+        "loss_1": 18820,
+        "loss_2": 35839,
+        "loss_3": 17569,
+        "loss_4": 13795,
+        "loss_5": 45407,
+        "deductible": 24882,
+        "coverage": 18631,
+        "price": 579119,
+        "admin": 116811
+      }
+    },
+    {
+      "id": "C18C3D41B7EB6",
+      "attrs": {
+        "loss_0": 22912,
+        "loss_1": 13735,
+        "loss_2": 42433,
+        "loss_3": 13553,
+        "loss_4": 40448,
+        "loss_5": 34086,
+        "deductible": 12802,
+        "coverage": 46800,
+        "price": 623060,
+        "admin": 129834
+      }
+    },
+    {
+      "id": "C503AE038FB2E",
+      "attrs": {
+        "loss_0": 28326,
+        "loss_1": 44528,
+        "loss_2": 18718,
+        "loss_3": 42972,
+        "loss_4": 44952,
+        "loss_5": 40679,
+        "deductible": 7860,
+        "coverage": 39224,
+        "price": 623223,
+        "admin": 106773
+      }
+    },
+    {
+      "id": "C374803D68A80",
+      "attrs": {
+        "loss_0": 47764,
+        "loss_1": 21524,
+        "loss_2": 22871,
+        "loss_3": 18908,
+        "loss_4": 47222,
+        "loss_5": 30623,
+        "deductible": 13919,
+        "coverage": 27009,
+        "price": 574170,
+        "admin": 101401
+      }
+    },
+    {
+      "id": "CC08A7A06CE8A",
+      "attrs": {
+        "loss_0": 33547,
+        "loss_1": 40475,
+        "loss_2": 17237,
+        "loss_3": 34398,
+        "loss_4": 35867,
+        "loss_5": 24917,
+        "deductible": 13198,
+        "coverage": 25944,
+        "price": 713544,
+        "admin": 115205
+      }
+    },
+    {
+      "id": "C9D47B96AC6F0",
+      "attrs": {
+        "loss_0": 22642,
+        "loss_1": 15806,
+        "loss_2": 37212,
+        "loss_3": 46194,
+        "loss_4": 22815,
+        "loss_5": 44225,
+        "deductible": 8017,
+        "coverage": 52777,
+        "price": 524353,
+        "admin": 125147
+      }
+    },
+    {
+      "id": "C8DFE0B691373",
+      "attrs": {
+        "loss_0": 15389,
+        "loss_1": 47741,
+        "loss_2": 33294,
+        "loss_3": 34515,
+        "loss_4": 46592,
+        "loss_5": 40063,
+        "deductible": 11128,
+        "coverage": 26746,
+        "price": 610787,
+        "admin": 92351
+      }
+    },
+    {
+      "id": "C44DEB0AD2D12",
+      "attrs": {
+        "loss_0": 36170,
+        "loss_1": 15586,
+        "loss_2": 28014,
+        "loss_3": 33771,
+        "loss_4": 13100,
+        "loss_5": 35692,
+        "deductible": 15306,
+        "coverage": 49588,
+        "price": 715118,
+        "admin": 143956
+      }
+    },
+    {
+      "id": "C81D910805254",
+      "attrs": {
+        "loss_0": 28485,
+        "loss_1": 22789,
+        "loss_2": 42969,
+        "loss_3": 12972,
+        "loss_4": 28841,
+        "loss_5": 43052,
+        "deductible": 15639,
+        "coverage": 37071,
+        "price": 710358,
+        "admin": 122210
+      }
+    },
+    {
+      "id": "CD42ED81BE066",
+      "attrs": {
+        "loss_0": 26744,
+        "loss_1": 25803,
+        "loss_2": 35204,
+        "loss_3": 31308,
+        "loss_4": 16674,
+        "loss_5": 17922,
+        "deductible": 9250,
+        "coverage": 21886,
+        "price": 703176,
+        "admin": 128631
+      }
+    },
+    {
+      "id": "CD53B8C5490A7",
+      "attrs": {
+        "loss_0": 28625,
+        "loss_1": 22364,
+        "loss_2": 13774,
+        "loss_3": 15269,
+        "loss_4": 16811,
+        "loss_5": 39483,
+        "deductible": 20628,
+        "coverage": 41743,
+        "price": 529712,
+        "admin": 151272
+      }
+    },
+    {
+      "id": "CBF2A1D43D5EF",
+      "attrs": {
+        "loss_0": 42264,
+        "loss_1": 41827,
+        "loss_2": 16736,
+        "loss_3": 28693,
+        "loss_4": 44636,
+        "loss_5": 42978,
+        "deductible": 18267,
+        "coverage": 50642,
+        "price": 521477,
+        "admin": 120765
+      }
+    },
+    {
+      "id": "C0AFE108FB4A9",
+      "attrs": {
+        "loss_0": 34313,
+        "loss_1": 21642,
+        "loss_2": 18099,
+        "loss_3": 23121,
+        "loss_4": 42591,
+        "loss_5": 15970,
+        "deductible": 16730,
+        "coverage": 47677,
+        "price": 570302,
+        "admin": 147653
+      }
+    },
+    {
+      "id": "C40F2B1F6B5EA",
+      "attrs": {
+        "loss_0": 27530,
+        "loss_1": 47455,
+        "loss_2": 14406,
+        "loss_3": 24106,
+        "loss_4": 34124,
+        "loss_5": 15072,
+        "deductible": 9825,
+        "coverage": 26744,
+        "price": 703384,
+        "admin": 117636
+      }
+    },
+    {
+      "id": "CBB2034857441",
+      "attrs": {
+        "loss_0": 34796,
+        "loss_1": 42154,
+        "loss_2": 17701,
+        "loss_3": 12243,
+        "loss_4": 36515,
+        "loss_5": 13807,
+        "deductible": 15498,
+        "coverage": 27847,
+        "price": 655117,
+        "admin": 114383
+      }
+    },
+    {
+      "id": "CE369CB5BD51C",
+      "attrs": {
+        "loss_0": 19911,
+        "loss_1": 33462,
+        "loss_2": 19933,
+        "loss_3": 15630,
+        "loss_4": 21914,
+        "loss_5": 32032,
+        "deductible": 5000,
+        "coverage": 40998,
+        "price": 714118,
+        "admin": 153591
+      }
+    },
+    {
+      "id": "C1CA0F5FD7781",
+      "attrs": {
+        "loss_0": 22156,
+        "loss_1": 13860,
+        "loss_2": 36330,
+        "loss_3": 37099,
+        "loss_4": 14351,
+        "loss_5": 16453,
+        "deductible": 20625,
+        "coverage": 52403,
+        "price": 700599,
+        "admin": 156819
+      }
+    },
+    {
+      "id": "CE0E16084FDC6",
+      "attrs": {
+        "loss_0": 45946,
+        "loss_1": 18085,
+        "loss_2": 17585,
+        "loss_3": 47077,
+        "loss_4": 18138,
+        "loss_5": 18814,
+        "deductible": 5795,
+        "coverage": 37002,
+        "price": 544248,
+        "admin": 125166
+      }
+    },
+    {
+      "id": "CA0EB45F19CFB",
+      "attrs": {
+        "loss_0": 47015,
+        "loss_1": 22496,
+        "loss_2": 16508,
+        "loss_3": 26317,
+        "loss_4": 30515,
+        "loss_5": 42949,
+        "deductible": 12802,
+        "coverage": 18374,
+        "price": 520039,
+        "admin": 97896
+      }
+    },
+    {
+      "id": "CA712890FC360",
+      "attrs": {
+        "loss_0": 16735,
+        "loss_1": 41590,
+        "loss_2": 41032,
+        "loss_3": 29154,
+        "loss_4": 21910,
+        "loss_5": 22531,
+        "deductible": 9392,
+        "coverage": 31207,
+        "price": 683822,
+        "admin": 119432
+      }
+    },
+    {
+      "id": "CF74960254638",
+      "attrs": {
+        "loss_0": 46882,
+        "loss_1": 43936,
+        "loss_2": 39966,
+        "loss_3": 14358,
+        "loss_4": 38557,
+        "loss_5": 47253,
+        "deductible": 5804,
+        "coverage": 52553,
+        "price": 595458,
+        "admin": 114483
+      }
+    },
+    {
+      "id": "CA337AC504E8F",
+      "attrs": {
+        "loss_0": 43599,
+        "loss_1": 29858,
+        "loss_2": 14546,
+        "loss_3": 28528,
+        "loss_4": 40391,
+        "loss_5": 27198,
+        "deductible": 11842,
+        "coverage": 56346,
+        "price": 630340,
+        "admin": 142499
+      }
+    },
+    {
+      "id": "C13CC15816C56",
+      "attrs": {
+        "loss_0": 36062,
+        "loss_1": 32228,
+        "loss_2": 41641,
+        "loss_3": 34440,
+        "loss_4": 45525,
+        "loss_5": 43418,
+        "deductible": 21587,
+        "coverage": 48565,
+        "price": 577144,
+        "admin": 117982
+      }
+    },
+    {
+      "id": "C18F08EBCFF17",
+      "attrs": {
+        "loss_0": 38171,
+        "loss_1": 16139,
+        "loss_2": 26080,
+        "loss_3": 24364,
+        "loss_4": 17799,
+        "loss_5": 45987,
+        "deductible": 15364,
+        "coverage": 58308,
+        "price": 685317,
+        "admin": 148071
+      }
+    },
+    {
+      "id": "C5EAA3BE1269D",
+      "attrs": {
+        "loss_0": 45733,
+        "loss_1": 32560,
+        "loss_2": 34248,
+        "loss_3": 38985,
+        "loss_4": 31437,
+        "loss_5": 12479,
+        "deductible": 10185,
+        "coverage": 49814,
+        "price": 682556,
+        "admin": 130849
+      }
+    },
+    {
+      "id": "C6EBC429FC353",
+      "attrs": {
+        "loss_0": 34203,
+        "loss_1": 12265,
+        "loss_2": 41634,
+        "loss_3": 38893,
+        "loss_4": 26714,
+        "loss_5": 14925,
+        "deductible": 17040,
+        "coverage": 58631,
+        "price": 737326,
+        "admin": 143902
+      }
+    },
+    {
+      "id": "C0F189CDD596B",
+      "attrs": {
+        "loss_0": 35260,
+        "loss_1": 21194,
+        "loss_2": 20118,
+        "loss_3": 41166,
+        "loss_4": 29555,
+        "loss_5": 12454,
+        "deductible": 11190,
+        "coverage": 40361,
+        "price": 685348,
+        "admin": 134381
+      }
+    },
+    {
+      "id": "C2BB1EBFD1D4E",
+      "attrs": {
+        "loss_0": 25018,
+        "loss_1": 47990,
+        "loss_2": 16180,
+        "loss_3": 31175,
+        "loss_4": 38947,
+        "loss_5": 46717,
+        "deductible": 16168,
+        "coverage": 27050,
+        "price": 719526,
+        "admin": 93397
+      }
+    },
+    {
+      "id": "CBF76AAB04626",
+      "attrs": {
+        "loss_0": 27245,
+        "loss_1": 43159,
+        "loss_2": 44176,
+        "loss_3": 45305,
+        "loss_4": 46840,
+        "loss_5": 45270,
+        "deductible": 22877,
+        "coverage": 39754,
+        "price": 717495,
+        "admin": 102340
+      }
+    },
+    {
+      "id": "C5A696652CA89",
+      "attrs": {
+        "loss_0": 43718,
+        "loss_1": 33370,
+        "loss_2": 15550,
+        "loss_3": 21132,
+        "loss_4": 40546,
+        "loss_5": 29647,
+        "deductible": 14072,
+        "coverage": 54536,
+        "price": 619483,
+        "admin": 136903
+      }
+    },
+    {
+      "id": "CC705A6FF6F62",
+      "attrs": {
+        "loss_0": 36218,
+        "loss_1": 32401,
+        "loss_2": 32054,
+        "loss_3": 46088,
+        "loss_4": 38555,
+        "loss_5": 13244,
+        "deductible": 12471,
+        "coverage": 51500,
+        "price": 615898,
+        "admin": 130640
+      }
+    },
+    {
+      "id": "C3B8F781FCC1D",
+      "attrs": {
+        "loss_0": 28850,
+        "loss_1": 45727,
+        "loss_2": 19082,
+        "loss_3": 18555,
+        "loss_4": 31351,
+        "loss_5": 21689,
+        "deductible": 5178,
+        "coverage": 52589,
+        "price": 589579,
+        "admin": 146662
+      }
+    },
+    {
+      "id": "C27191D637DB3",
+      "attrs": {
+        "loss_0": 47953,
+        "loss_1": 24769,
+        "loss_2": 12929,
+        "loss_3": 18645,
+        "loss_4": 47917,
+        "loss_5": 22600,
+        "deductible": 17635,
+        "coverage": 57227,
+        "price": 608218,
+        "admin": 136589
+      }
+    },
+    {
+      "id": "C128CDB24120A",
+      "attrs": {
+        "loss_0": 31197,
+        "loss_1": 22087,
+        "loss_2": 36806,
+        "loss_3": 20425,
+        "loss_4": 26482,
+        "loss_5": 28204,
+        "deductible": 22941,
+        "coverage": 29592,
+        "price": 620710,
+        "admin": 133386
+      }
+    },
+    {
+      "id": "C85B91699BF85",
+      "attrs": {
+        "loss_0": 40906,
+        "loss_1": 13148,
+        "loss_2": 20728,
+        "loss_3": 21620,
+        "loss_4": 33441,
+        "loss_5": 25497,
+        "deductible": 21590,
+        "coverage": 29750,
+        "price": 545429,
+        "admin": 129907
+      }
+    },
+    {
+      "id": "CE629BB3F9CE3",
+      "attrs": {
+        "loss_0": 25353,
+        "loss_1": 41679,
+        "loss_2": 43602,
+        "loss_3": 33099,
+        "loss_4": 36726,
+        "loss_5": 15324,
+        "deductible": 21784,
+        "coverage": 51553,
+        "price": 668083,
+        "admin": 129547
+      }
+    },
+    {
+      "id": "CAA386F08FD21",
+      "attrs": {
+        "loss_0": 45804,
+        "loss_1": 22699,
+        "loss_2": 42769,
+        "loss_3": 26253,
+        "loss_4": 27137,
+        "loss_5": 41557,
+        "deductible": 10668,
+        "coverage": 37233,
+        "price": 541403,
+        "admin": 107104
+      }
+    },
+    {
+      "id": "CE6A1CF402D3C",
+      "attrs": {
+        "loss_0": 32408,
+        "loss_1": 26092,
+        "loss_2": 43297,
+        "loss_3": 15791,
+        "loss_4": 29861,
+        "loss_5": 12198,
+        "deductible": 17238,
+        "coverage": 30639,
+        "price": 702161,
+        "admin": 125074
+      }
+    },
+    {
+      "id": "C8596E69CB6BF",
+      "attrs": {
+        "loss_0": 45150,
+        "loss_1": 41071,
+        "loss_2": 19766,
+        "loss_3": 16701,
+        "loss_4": 18342,
+        "loss_5": 21799,
+        "deductible": 10044,
+        "coverage": 43106,
+        "price": 557974,
+        "admin": 135087
+      }
+    },
+    {
+      "id": "C8FD11184BB9A",
+      "attrs": {
+        "loss_0": 19206,
+        "loss_1": 12915,
+        "loss_2": 23507,
+        "loss_3": 37350,
+        "loss_4": 40908,
+        "loss_5": 39509,
+        "deductible": 17292,
+        "coverage": 21254,
+        "price": 679231,
+        "admin": 103488
+      }
+    },
+    {
+      "id": "CB6158EFAF944",
+      "attrs": {
+        "loss_0": 31879,
+        "loss_1": 14281,
+        "loss_2": 25198,
+        "loss_3": 15861,
+        "loss_4": 31851,
+        "loss_5": 19837,
+        "deductible": 24151,
+        "coverage": 20378,
+        "price": 586356,
+        "admin": 131451
+      }
+    },
+    {
+      "id": "C69224ED297CA",
+      "attrs": {
+        "loss_0": 12951,
+        "loss_1": 40725,
+        "loss_2": 45134,
+        "loss_3": 38477,
+        "loss_4": 41246,
+        "loss_5": 23002,
+        "deductible": 19394,
+        "coverage": 29670,
+        "price": 733401,
+        "admin": 102566
+      }
+    },
+    {
+      "id": "C49FDB79B14CF",
+      "attrs": {
+        "loss_0": 35873,
+        "loss_1": 46841,
+        "loss_2": 35895,
+        "loss_3": 47756,
+        "loss_4": 45764,
+        "loss_5": 22145,
+        "deductible": 15637,
+        "coverage": 29538,
+        "price": 719182,
+        "admin": 89178
+      }
+    },
+    {
+      "id": "C49ABF4FC134E",
+      "attrs": {
+        "loss_0": 42091,
+        "loss_1": 18644,
+        "loss_2": 30482,
+        "loss_3": 19027,
+        "loss_4": 17141,
+        "loss_5": 38745,
+        "deductible": 6019,
+        "coverage": 44173,
+        "price": 533322,
+        "admin": 132856
+      }
+    },
+    {
+      "id": "C15AE1CEAFDA2",
+      "attrs": {
+        "loss_0": 40348,
+        "loss_1": 47005,
+        "loss_2": 28402,
+        "loss_3": 45218,
+        "loss_4": 13140,
+        "loss_5": 19706,
+        "deductible": 19519,
+        "coverage": 38543,
+        "price": 652744,
+        "admin": 105973
+      }
+    },
+    {
+      "id": "C6EDADAAE03E2",
+      "attrs": {
+        "loss_0": 33498,
+        "loss_1": 29816,
+        "loss_2": 33585,
+        "loss_3": 31660,
+        "loss_4": 26694,
+        "loss_5": 26732,
+        "deductible": 19499,
+        "coverage": 57606,
+        "price": 674149,
+        "admin": 158864
+      }
+    },
+    {
+      "id": "CE7CF85C5DCA9",
+      "attrs": {
+        "loss_0": 32238,
+        "loss_1": 22042,
+        "loss_2": 21324,
+        "loss_3": 38636,
+        "loss_4": 40221,
+        "loss_5": 22963,
+        "deductible": 11220,
+        "coverage": 59777,
+        "price": 639763,
+        "admin": 148683
+      }
+    },
+    {
+      "id": "C6BF2C78286EE",
+      "attrs": {
+        "loss_0": 23270,
+        "loss_1": 37183,
+        "loss_2": 24755,
+        "loss_3": 12175,
+        "loss_4": 28471,
+        "loss_5": 38738,
+        "deductible": 24889,
+        "coverage": 36606,
+        "price": 590461,
+        "admin": 132215
+      }
+    },
+    {
+      "id": "C8308A826576C",
+      "attrs": {
+        "loss_0": 47078,
+        "loss_1": 32724,
+        "loss_2": 45484,
+        "loss_3": 23587,
+        "loss_4": 29668,
+        "loss_5": 29766,
+        "deductible": 21801,
+        "coverage": 58335,
+        "price": 565686,
+        "admin": 133050
+      }
+    },
+    {
+      "id": "C2A60620D56F7",
+      "attrs": {
+        "loss_0": 35893,
+        "loss_1": 30946,
+        "loss_2": 35043,
+        "loss_3": 44656,
+        "loss_4": 30800,
+        "loss_5": 41630,
+        "deductible": 9284,
+        "coverage": 54061,
+        "price": 574951,
+        "admin": 131883
+      }
+    },
+    {
+      "id": "C74A73B50890F",
+      "attrs": {
+        "loss_0": 44251,
+        "loss_1": 24124,
+        "loss_2": 19416,
+        "loss_3": 15581,
+        "loss_4": 17879,
+        "loss_5": 43515,
+        "deductible": 24208,
+        "coverage": 57630,
+        "price": 651717,
+        "admin": 145741
+      }
+    },
+    {
+      "id": "C948BA71E7CFF",
+      "attrs": {
+        "loss_0": 30712,
+        "loss_1": 37570,
+        "loss_2": 42922,
+        "loss_3": 42643,
+        "loss_4": 13060,
+        "loss_5": 47218,
+        "deductible": 18492,
+        "coverage": 44277,
+        "price": 568932,
+        "admin": 111495
+      }
+    },
+    {
+      "id": "CC1763CE75E62",
+      "attrs": {
+        "loss_0": 45401,
+        "loss_1": 22571,
+        "loss_2": 16107,
+        "loss_3": 18540,
+        "loss_4": 24599,
+        "loss_5": 41199,
+        "deductible": 9734,
+        "coverage": 63678,
+        "price": 680574,
+        "admin": 152480
+      }
+    },
+    {
+      "id": "C05C75FF4D617",
+      "attrs": {
+        "loss_0": 16611,
+        "loss_1": 30795,
+        "loss_2": 16778,
+        "loss_3": 36255,
+        "loss_4": 37802,
+        "loss_5": 45793,
+        "deductible": 15346,
+        "coverage": 18862,
+        "price": 661436,
+        "admin": 99013
+      }
+    },
+    {
+      "id": "C204D75DD7F16",
+      "attrs": {
+        "loss_0": 27848,
+        "loss_1": 30909,
+        "loss_2": 24242,
+        "loss_3": 26914,
+        "loss_4": 13044,
+        "loss_5": 27984,
+        "deductible": 19937,
+        "coverage": 64757,
+        "price": 520771,
+        "admin": 178017
+      }
+    },
+    {
+      "id": "C565FB054D66C",
+      "attrs": {
+        "loss_0": 34911,
+        "loss_1": 34606,
+        "loss_2": 27286,
+        "loss_3": 17455,
+        "loss_4": 35587,
+        "loss_5": 12389,
+        "deductible": 23849,
+        "coverage": 31525,
+        "price": 686595,
+        "admin": 126422
+      }
+    },
+    {
+      "id": "C8A5331889E33",
+      "attrs": {
+        "loss_0": 26855,
+        "loss_1": 12630,
+        "loss_2": 38651,
+        "loss_3": 34511,
+        "loss_4": 22105,
+        "loss_5": 12849,
+        "deductible": 16232,
+        "coverage": 22683,
+        "price": 707039,
+        "admin": 122667
+      }
+    },
+    {
+      "id": "CE3E22B7579A3",
+      "attrs": {
+        "loss_0": 26421,
+        "loss_1": 15382,
+        "loss_2": 28002,
+        "loss_3": 18481,
+        "loss_4": 22850,
+        "loss_5": 22751,
+        "deductible": 12478,
+        "coverage": 50231,
+        "price": 647782,
+        "admin": 172959
+      }
+    },
+    {
+      "id": "C24005929D88F",
+      "attrs": {
+        "loss_0": 33767,
+        "loss_1": 14431,
+        "loss_2": 14441,
+        "loss_3": 47599,
+        "loss_4": 28782,
+        "loss_5": 40957,
+        "deductible": 16856,
+        "coverage": 37144,
+        "price": 638966,
+        "admin": 114822
+      }
+    },
+    {
+      "id": "C95F6E6D26A55",
+      "attrs": {
+        "loss_0": 25880,
+        "loss_1": 26973,
+        "loss_2": 14292,
+        "loss_3": 32884,
+        "loss_4": 45281,
+        "loss_5": 16267,
+        "deductible": 16948,
+        "coverage": 38967,
+        "price": 608509,
+        "admin": 133830
+      }
+    },
+    {
+      "id": "CD9E03D8F0DFB",
+      "attrs": {
+        "loss_0": 35912,
+        "loss_1": 13794,
+        "loss_2": 19037,
+        "loss_3": 46901,
+        "loss_4": 17488,
+        "loss_5": 44278,
+        "deductible": 17324,
+        "coverage": 36045,
+        "price": 599156,
+        "admin": 108955
+      }
+    },
+    {
+      "id": "C8BEA3BF0D0E5",
+      "attrs": {
+        "loss_0": 31577,
+        "loss_1": 45510,
+        "loss_2": 32248,
+        "loss_3": 16275,
+        "loss_4": 24335,
+        "loss_5": 12411,
+        "deductible": 23657,
+        "coverage": 58812,
+        "price": 538827,
+        "admin": 149478
+      }
+    },
+    {
+      "id": "C13AD225E6078",
+      "attrs": {
+        "loss_0": 38067,
+        "loss_1": 29891,
+        "loss_2": 15755,
+        "loss_3": 37004,
+        "loss_4": 20110,
+        "loss_5": 18821,
+        "deductible": 13107,
+        "coverage": 54689,
+        "price": 570068,
+        "admin": 149728
+      }
+    },
+    {
+      "id": "CC19C9BA9403F",
+      "attrs": {
+        "loss_0": 28439,
+        "loss_1": 13127,
+        "loss_2": 30561,
+        "loss_3": 32330,
+        "loss_4": 30050,
+        "loss_5": 15244,
+        "deductible": 7697,
+        "coverage": 41945,
+        "price": 659268,
+        "admin": 149005
+      }
+    },
+    {
+      "id": "C59FC07E644D0",
+      "attrs": {
+        "loss_0": 45783,
+        "loss_1": 20368,
+        "loss_2": 39804,
+        "loss_3": 34504,
+        "loss_4": 17025,
+        "loss_5": 22410,
+        "deductible": 9736,
+        "coverage": 45103,
+        "price": 688278,
+        "admin": 125013
+      }
+    },
+    {
+      "id": "CC8B656BCB7ED",
+      "attrs": {
+        "loss_0": 19731,
+        "loss_1": 29009,
+        "loss_2": 31323,
+        "loss_3": 22870,
+        "loss_4": 46173,
+        "loss_5": 27852,
+        "deductible": 22256,
+        "coverage": 62384,
+        "price": 617423,
+        "admin": 155880
+      }
+    },
+    {
+      "id": "C2A0B3FF0EDF1",
+      "attrs": {
+        "loss_0": 39826,
+        "loss_1": 13484,
+        "loss_2": 14686,
+        "loss_3": 29538,
+        "loss_4": 22841,
+        "loss_5": 35924,
+        "deductible": 20355,
+        "coverage": 33633,
+        "price": 607030,
+        "admin": 128346
+      }
+    },
+    {
+      "id": "C61B5861E14D6",
+      "attrs": {
+        "loss_0": 13726,
+        "loss_1": 35145,
+        "loss_2": 42534,
+        "loss_3": 26352,
+        "loss_4": 38872,
+        "loss_5": 15854,
+        "deductible": 19993,
+        "coverage": 30351,
+        "price": 538044,
+        "admin": 113801
+      }
+    },
+    {
+      "id": "C91360AB5A4FB",
+      "attrs": {
+        "loss_0": 29814,
+        "loss_1": 12328,
+        "loss_2": 12397,
+        "loss_3": 27645,
+        "loss_4": 42548,
+        "loss_5": 38704,
+        "deductible": 20547,
+        "coverage": 23437,
+        "price": 653744,
+        "admin": 112372
+      }
+    },
+    {
+      "id": "C05038CB45C4F",
+      "attrs": {
+        "loss_0": 14025,
+        "loss_1": 42428,
+        "loss_2": 44865,
+        "loss_3": 19682,
+        "loss_4": 42436,
+        "loss_5": 27303,
+        "deductible": 24330,
+        "coverage": 64544,
+        "price": 731993,
+        "admin": 134816
+      }
+    },
+    {
+      "id": "C5086CA9A1990",
+      "attrs": {
+        "loss_0": 22708,
+        "loss_1": 17322,
+        "loss_2": 40592,
+        "loss_3": 19612,
+        "loss_4": 18590,
+        "loss_5": 42982,
+        "deductible": 20139,
+        "coverage": 37531,
+        "price": 618101,
+        "admin": 131250
+      }
+    },
+    {
+      "id": "C8465C6F8E9D7",
+      "attrs": {
+        "loss_0": 31295,
+        "loss_1": 19365,
+        "loss_2": 30366,
+        "loss_3": 21349,
+        "loss_4": 34865,
+        "loss_5": 24203,
+        "deductible": 13758,
+        "coverage": 21266,
+        "price": 612621,
+        "admin": 124741
+      }
+    },
+    {
+      "id": "CF538363DE993",
+      "attrs": {
+        "loss_0": 27120,
+        "loss_1": 40021,
+        "loss_2": 25346,
+        "loss_3": 32304,
+        "loss_4": 32987,
+        "loss_5": 17379,
+        "deductible": 15004,
+        "coverage": 47498,
+        "price": 593010,
+        "admin": 142187
+      }
+    },
+    {
+      "id": "CADBFF68722D9",
+      "attrs": {
+        "loss_0": 27380,
+        "loss_1": 38253,
+        "loss_2": 32490,
+        "loss_3": 32068,
+        "loss_4": 17821,
+        "loss_5": 41368,
+        "deductible": 22134,
+        "coverage": 24536,
+        "price": 702293,
+        "admin": 112426
+      }
+    },
+    {
+      "id": "C7ED9CC46441B",
+      "attrs": {
+        "loss_0": 17141,
+        "loss_1": 22116,
+        "loss_2": 33404,
+        "loss_3": 19997,
+        "loss_4": 14490,
+        "loss_5": 13228,
+        "deductible": 9223,
+        "coverage": 53322,
+        "price": 562344,
+        "admin": 177806
+      }
+    },
+    {
+      "id": "CB985B9238F67",
+      "attrs": {
+        "loss_0": 25686,
+        "loss_1": 20041,
+        "loss_2": 32040,
+        "loss_3": 26681,
+        "loss_4": 22405,
+        "loss_5": 17551,
+        "deductible": 16921,
+        "coverage": 34354,
+        "price": 583814,
+        "admin": 149948
+      }
+    },
+    {
+      "id": "C5277394974A4",
+      "attrs": {
+        "loss_0": 28489,
+        "loss_1": 25650,
+        "loss_2": 42004,
+        "loss_3": 17675,
+        "loss_4": 44723,
+        "loss_5": 17899,
+        "deductible": 19737,
+        "coverage": 40208,
+        "price": 663610,
+        "admin": 124993
+      }
+    },
+    {
+      "id": "CF4CE0A167077",
+      "attrs": {
+        "loss_0": 24868,
+        "loss_1": 28528,
+        "loss_2": 30794,
+        "loss_3": 13505,
+        "loss_4": 40260,
+        "loss_5": 26706,
+        "deductible": 13556,
+        "coverage": 46094,
+        "price": 706213,
+        "admin": 146513
+      }
+    },
+    {
+      "id": "C0DCA8952DF3E",
+      "attrs": {
+        "loss_0": 12828,
+        "loss_1": 37965,
+        "loss_2": 24654,
+        "loss_3": 41644,
+        "loss_4": 30758,
+        "loss_5": 36824,
+        "deductible": 20274,
+        "coverage": 56250,
+        "price": 532975,
+        "admin": 139818
+      }
+    },
+    {
+      "id": "C0F869AD84633",
+      "attrs": {
+        "loss_0": 45686,
+        "loss_1": 41335,
+        "loss_2": 32432,
+        "loss_3": 33244,
+        "loss_4": 35228,
+        "loss_5": 37826,
+        "deductible": 18920,
+        "coverage": 40963,
+        "price": 661349,
+        "admin": 116117
+      }
+    },
+    {
+      "id": "C11B505F3DACC",
+      "attrs": {
+        "loss_0": 21421,
+        "loss_1": 35424,
+        "loss_2": 34442,
+        "loss_3": 20140,
+        "loss_4": 16218,
+        "loss_5": 26582,
+        "deductible": 17030,
+        "coverage": 40121,
+        "price": 578325,
+        "admin": 143674
+      }
+    },
+    {
+      "id": "CAEF77D7BFC56",
+      "attrs": {
+        "loss_0": 43979,
+        "loss_1": 46687,
+        "loss_2": 27446,
+        "loss_3": 32598,
+        "loss_4": 30168,
+        "loss_5": 14809,
+        "deductible": 11195,
+        "coverage": 51019,
+        "price": 703125,
+        "admin": 127756
+      }
+    },
+    {
+      "id": "C215D29089148",
+      "attrs": {
+        "loss_0": 14188,
+        "loss_1": 35416,
+        "loss_2": 43010,
+        "loss_3": 25330,
+        "loss_4": 25467,
+        "loss_5": 20448,
+        "deductible": 12177,
+        "coverage": 33336,
+        "price": 697549,
+        "admin": 129444
+      }
+    },
+    {
+      "id": "C0C205B5383F8",
+      "attrs": {
+        "loss_0": 42408,
+        "loss_1": 15183,
+        "loss_2": 47939,
+        "loss_3": 16256,
+        "loss_4": 14462,
+        "loss_5": 40261,
+        "deductible": 5839,
+        "coverage": 19172,
+        "price": 655106,
+        "admin": 88565
+      }
+    },
+    {
+      "id": "CC5C48980F9D0",
+      "attrs": {
+        "loss_0": 47978,
+        "loss_1": 44870,
+        "loss_2": 27003,
+        "loss_3": 44375,
+        "loss_4": 29294,
+        "loss_5": 41053,
+        "deductible": 16388,
+        "coverage": 52848,
+        "price": 678233,
+        "admin": 115626
+      }
+    },
+    {
+      "id": "CC58B71D958D3",
+      "attrs": {
+        "loss_0": 46620,
+        "loss_1": 20287,
+        "loss_2": 37469,
+        "loss_3": 18599,
+        "loss_4": 17170,
+        "loss_5": 17710,
+        "deductible": 16834,
+        "coverage": 33527,
+        "price": 545117,
+        "admin": 129152
+      }
+    },
+    {
+      "id": "C15213D561B6D",
+      "attrs": {
+        "loss_0": 12821,
+        "loss_1": 29844,
+        "loss_2": 12274,
+        "loss_3": 12489,
+        "loss_4": 45483,
+        "loss_5": 24432,
+        "deductible": 7113,
+        "coverage": 63831,
+        "price": 738664,
+        "admin": 164073
+      }
+    },
+    {
+      "id": "C376CEDC02C80",
+      "attrs": {
+        "loss_0": 24185,
+        "loss_1": 37046,
+        "loss_2": 21483,
+        "loss_3": 29856,
+        "loss_4": 47168,
+        "loss_5": 13622,
+        "deductible": 21262,
+        "coverage": 45339,
+        "price": 665382,
+        "admin": 131270
+      }
+    },
+    {
+      "id": "CD49A190D7EFF",
+      "attrs": {
+        "loss_0": 16896,
+        "loss_1": 36656,
+        "loss_2": 37699,
+        "loss_3": 45689,
+        "loss_4": 24692,
+        "loss_5": 18362,
+        "deductible": 12521,
+        "coverage": 29179,
+        "price": 577609,
+        "admin": 109136
+      }
+    },
+    {
+      "id": "C604B3A708C7F",
+      "attrs": {
+        "loss_0": 44945,
+        "loss_1": 33436,
+        "loss_2": 47300,
+        "loss_3": 16047,
+        "loss_4": 36989,
+        "loss_5": 16938,
+        "deductible": 7170,
+        "coverage": 60291,
+        "price": 546306,
+        "admin": 131058
+      }
+    },
+    {
+      "id": "CA3199E92FE78",
+      "attrs": {
+        "loss_0": 21654,
+        "loss_1": 18894,
+        "loss_2": 37569,
+        "loss_3": 14693,
+        "loss_4": 13301,
+        "loss_5": 29397,
+        "deductible": 24811,
+        "coverage": 22373,
+        "price": 540521,
+        "admin": 133754
+      }
+    },
+    {
+      "id": "C7D4C815E5667",
+      "attrs": {
+        "loss_0": 14980,
+        "loss_1": 14239,
+        "loss_2": 26858,
+        "loss_3": 15262,
+        "loss_4": 41128,
+        "loss_5": 24768,
+        "deductible": 7171,
+        "coverage": 48866,
+        "price": 523246,
+        "admin": 156113
+      }
+    },
+    {
+      "id": "CD31BE4D8DF34",
+      "attrs": {
+        "loss_0": 13383,
+        "loss_1": 32804,
+        "loss_2": 44428,
+        "loss_3": 30538,
+        "loss_4": 38992,
+        "loss_5": 35453,
+        "deductible": 16465,
+        "coverage": 25632,
+        "price": 677792,
+        "admin": 106760
+      }
+    },
+    {
+      "id": "CE41F025424DB",
+      "attrs": {
+        "loss_0": 47003,
+        "loss_1": 39929,
+        "loss_2": 15879,
+        "loss_3": 31928,
+        "loss_4": 42108,
+        "loss_5": 26702,
+        "deductible": 18733,
+        "coverage": 43212,
+        "price": 667623,
+        "admin": 114173
+      }
+    },
+    {
+      "id": "CE213C8FE9903",
+      "attrs": {
+        "loss_0": 47208,
+        "loss_1": 39224,
+        "loss_2": 37585,
+        "loss_3": 47020,
+        "loss_4": 21702,
+        "loss_5": 37371,
+        "deductible": 6533,
+        "coverage": 18768,
+        "price": 539299,
+        "admin": 85317
+      }
+    },
+    {
+      "id": "C068E18BA0FF4",
+      "attrs": {
+        "loss_0": 23468,
+        "loss_1": 31556,
+        "loss_2": 32761,
+        "loss_3": 13084,
+        "loss_4": 32848,
+        "loss_5": 39506,
+        "deductible": 12952,
+        "coverage": 57541,
+        "price": 719914,
+        "admin": 152427
+      }
+    },
+    {
+      "id": "C13B403B2A5C6",
+      "attrs": {
+        "loss_0": 45528,
+        "loss_1": 22762,
+        "loss_2": 45675,
+        "loss_3": 35772,
+        "loss_4": 16983,
+        "loss_5": 46197,
+        "deductible": 21437,
+        "coverage": 55170,
+        "price": 546819,
+        "admin": 117771
+      }
+    },
+    {
+      "id": "C41914F3BBFAB",
+      "attrs": {
+        "loss_0": 22134,
+        "loss_1": 25140,
+        "loss_2": 12372,
+        "loss_3": 29433,
+        "loss_4": 31618,
+        "loss_5": 28406,
+        "deductible": 9953,
+        "coverage": 29975,
+        "price": 576263,
+        "admin": 140519
+      }
+    },
+    {
+      "id": "CD777273430A9",
+      "attrs": {
+        "loss_0": 21473,
+        "loss_1": 38297,
+        "loss_2": 39828,
+        "loss_3": 26004,
+        "loss_4": 36366,
+        "loss_5": 38474,
+        "deductible": 6141,
+        "coverage": 29049,
+        "price": 609452,
+        "admin": 112451
+      }
+    }
+  ]
+}

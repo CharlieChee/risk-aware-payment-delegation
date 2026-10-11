@@ -1,0 +1,289 @@
+{
+  "bases": [
+    {
+      "base_id": "F01a",
+      "candidates": [
+        {
+          "id": "A",
+          "attrs": {
+            "r1": false,
+            "r2": false,
+            "price": 2000
+          }
+        },
+        {
+          "id": "B",
+          "attrs": {
+            "r1": true,
+            "r2": false,
+            "price": 2400
+          }
+        },
+        {
+          "id": "C",
+          "attrs": {
+            "r1": false,
+            "r2": true,
+            "price": 2400
+          }
+        },
+        {
+          "id": "D",
+          "attrs": {
+            "r1": true,
+            "r2": true,
+            "price": 2800
+          }
+        },
+        {
+          "id": "E",
+          "attrs": {
+            "r1": true,
+            "r2": true,
+            "price": 3200
+          }
+        }
+      ],
+      "common_candidates": 1,
+      "separately_feasible": [
+        2,
+        2
+      ],
+      "best_guarantee": "1/5",
+      "expected_ids": [
+        "D"
+      ],
+      "methods": {
+        "direct": {
+          "n": 6,
+          "exact": 6
+        },
+        "direct_skill": {
+          "n": 6,
+          "exact": 6
+        },
+        "flat_program": {
+          "n": 6,
+          "exact": 6
+        },
+        "oracle_direct": {
+          "n": 2,
+          "exact": 2
+        },
+        "set_mechanism": {
+          "n": 6,
+          "exact": 6
+        }
+      }
+    },
+    {
+      "base_id": "F02a",
+      "candidates": [
+        {
+          "id": "B",
+          "attrs": {
+            "r1": true,
+            "r2": false,
+            "price": 2400
+          }
+        },
+        {
+          "id": "C",
+          "attrs": {
+            "r1": false,
+            "r2": true,
+            "price": 2400
+          }
+        }
+      ],
+      "common_candidates": 0,
+      "separately_feasible": [
+        1,
+        1
+      ],
+      "best_guarantee": "None",
+      "expected_ids": [],
+      "methods": {
+        "direct": {
+          "n": 6,
+          "exact": 6
+        },
+        "direct_skill": {
+          "n": 6,
+          "exact": 6
+        },
+        "flat_program": {
+          "n": 6,
+          "exact": 6
+        },
+        "oracle_direct": {
+          "n": 2,
+          "exact": 2
+        },
+        "set_mechanism": {
+          "n": 6,
+          "exact": 6
+        }
+      }
+    },
+    {
+      "base_id": "F02b",
+      "candidates": [
+        {
+          "id": "B",
+          "attrs": {
+            "r1": true,
+            "r2": false,
+            "price": 2400
+          }
+        },
+        {
+          "id": "C",
+          "attrs": {
+            "r1": false,
+            "r2": true,
+            "price": 2400
+          }
+        },
+        {
+          "id": "D",
+          "attrs": {
+            "r1": true,
+            "r2": true,
+            "price": 2800
+          }
+        }
+      ],
+      "common_candidates": 1,
+      "separately_feasible": [
+        2,
+        2
+      ],
+      "best_guarantee": "1/5",
+      "expected_ids": [
+        "D"
+      ],
+      "methods": {
+        "direct": {
+          "n": 6,
+          "exact": 6
+        },
+        "direct_skill": {
+          "n": 6,
+          "exact": 6
+        },
+        "flat_program": {
+          "n": 6,
+          "exact": 6
+        },
+        "oracle_direct": {
+          "n": 2,
+          "exact": 2
+        },
+        "set_mechanism": {
+          "n": 6,
+          "exact": 6
+        }
+      }
+    },
+    {
+      "base_id": "F04a",
+      "candidates": [
+        {
+          "id": "A",
+          "attrs": {
+            "u1": "3",
+            "u2": "-1"
+          }
+        },
+        {
+          "id": "B",
+          "attrs": {
+            "u1": "0.2",
+            "u2": "0.2"
+          }
+        }
+      ],
+      "common_candidates": 2,
+      "separately_feasible": [
+        2,
+        2
+      ],
+      "best_guarantee": "1/5",
+      "expected_ids": [
+        "B"
+      ],
+      "methods": {
+        "direct": {
+          "n": 6,
+          "exact": 6
+        },
+        "direct_skill": {
+          "n": 6,
+          "exact": 6
+        },
+        "flat_program": {
+          "n": 6,
+          "exact": 6
+        },
+        "oracle_direct": {
+          "n": 2,
+          "exact": 2
+        },
+        "set_mechanism": {
+          "n": 6,
+          "exact": 6
+        }
+      }
+    },
+    {
+      "base_id": "F04b",
+      "candidates": [
+        {
+          "id": "A",
+          "attrs": {
+            "u1": "3",
+            "u2": "-1"
+          }
+        },
+        {
+          "id": "B",
+          "attrs": {
+            "u1": "0",
+            "u2": "0"
+          }
+        }
+      ],
+      "common_candidates": 2,
+      "separately_feasible": [
+        2,
+        2
+      ],
+      "best_guarantee": "0",
+      "expected_ids": [],
+      "methods": {
+        "direct": {
+          "n": 6,
+          "exact": 6
+        },
+        "direct_skill": {
+          "n": 6,
+          "exact": 6
+        },
+        "flat_program": {
+          "n": 6,
+          "exact": 6
+        },
+        "oracle_direct": {
+          "n": 2,
+          "exact": 2
+        },
+        "set_mechanism": {
+          "n": 6,
+          "exact": 6
+        }
+      }
+    }
+  ],
+  "scope": "Five selected capability checks; no superiority claim; three contexts and two repeats per non-oracle method."
+}

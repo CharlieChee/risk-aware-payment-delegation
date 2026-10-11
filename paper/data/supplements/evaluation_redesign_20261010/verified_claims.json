@@ -1,0 +1,175 @@
+{
+  "frozen_at_utc": "2026-10-10T11:12:23.747980+00:00",
+  "pooled_deepseek": {
+    "direct": {
+      "n": 400,
+      "distinct_tasks": 200,
+      "profiles": 2,
+      "exact": 248,
+      "unsafe": 79,
+      "false_refusal": 53,
+      "feasible_trials": 200,
+      "safe_exact_completion": 100,
+      "other_failures": 20
+    },
+    "set": {
+      "n": 400,
+      "distinct_tasks": 200,
+      "profiles": 2,
+      "exact": 370,
+      "unsafe": 9,
+      "false_refusal": 1,
+      "feasible_trials": 200,
+      "safe_exact_completion": 186,
+      "other_failures": 20
+    }
+  },
+  "families": {
+    "coupon_cancellation": {
+      "direct": {
+        "n": 100,
+        "exact": 68
+      },
+      "set": {
+        "n": 100,
+        "exact": 97
+      }
+    },
+    "insured_cancellation": {
+      "direct": {
+        "n": 100,
+        "exact": 72
+      },
+      "set": {
+        "n": 100,
+        "exact": 93
+      }
+    },
+    "service_replacement": {
+      "direct": {
+        "n": 100,
+        "exact": 49
+      },
+      "set": {
+        "n": 100,
+        "exact": 84
+      }
+    },
+    "threshold_returns": {
+      "direct": {
+        "n": 100,
+        "exact": 59
+      },
+      "set": {
+        "n": 100,
+        "exact": 96
+      }
+    }
+  },
+  "template_comparisons": {
+    "ds_flash_low": {
+      "improved": 18,
+      "tied": 1,
+      "worse": 1,
+      "templates": 20
+    },
+    "ds_flash_high": {
+      "improved": 18,
+      "tied": 1,
+      "worse": 1,
+      "templates": 20
+    }
+  },
+  "frozen_rule_audit": {
+    "n": 1296,
+    "grid_unsafe_selection": 0,
+    "grid_unsafe_domain": 23,
+    "single_unsafe_selection": 8,
+    "grid_invalid": 13,
+    "single_invalid": 13
+  },
+  "selected_component_interventions": [
+    {
+      "variant": "original",
+      "n": "16",
+      "exact": "0",
+      "unsafe": "0",
+      "overpermissive": "16"
+    },
+    {
+      "variant": "duplicate_label_only",
+      "n": "16",
+      "exact": "0",
+      "unsafe": "0",
+      "overpermissive": "16"
+    },
+    {
+      "variant": "oracle_admissibility_only",
+      "n": "16",
+      "exact": "0",
+      "unsafe": "0",
+      "overpermissive": "0"
+    },
+    {
+      "variant": "oracle_utility_only",
+      "n": "16",
+      "exact": "0",
+      "unsafe": "16",
+      "overpermissive": "16"
+    },
+    {
+      "variant": "oracle_both",
+      "n": "16",
+      "exact": "16",
+      "unsafe": "0",
+      "overpermissive": "0"
+    },
+    {
+      "variant": "append_missing_li_state",
+      "n": "16",
+      "exact": "16",
+      "unsafe": "0",
+      "overpermissive": "0"
+    }
+  ],
+  "astra_reuse": {
+    "direct": {
+      "profile": "gpt6_max",
+      "method": "direct",
+      "catalogue_evaluations": 16,
+      "calls": 16,
+      "input_tokens": 163295,
+      "output_tokens": 12134,
+      "serial_request_seconds": 344.6437979992479,
+      "all_sequences_exact": true,
+      "total_tokens": 175429
+    },
+    "set": {
+      "profile": "gpt6_max",
+      "method": "set",
+      "catalogue_evaluations": 16,
+      "calls": 2,
+      "input_tokens": 18635,
+      "output_tokens": 3525,
+      "serial_request_seconds": 81.6943406672217,
+      "all_sequences_exact": true,
+      "total_tokens": 22160
+    }
+  },
+  "reuse_token_reduction": 0.8736810903556425,
+  "effort_panel": {
+    "cases": 60,
+    "complete_profiles": 25,
+    "improved": 24,
+    "tied": 0,
+    "worse": 1
+  },
+  "language_panel": {
+    "cases": 60,
+    "profiles": 4,
+    "languages": 2,
+    "methods": 3,
+    "logical_evaluations": 1440
+  },
+  "accounting": "Cohorts overlap; no pooled cross-cohort accuracy or independent-sample total"
+}

@@ -1,0 +1,34 @@
+\section{Complete Results and Statistical Analysis}
+\label{app:statistics}
+\subsection{Primary outcomes and matched comparisons}
+Table~\ref{tab:main} consolidates the comparison in Figure~\ref{fig:completion}: eleven configurations with 200 tasks per method. Error categories and feasible-task completion share the same cohort definitions. Cohort definitions are in Table~\ref{tab:provenance}.
+
+\begin{table*}[!tbp]
+\centering\small
+\input{tables/main}
+\caption{\textbf{Primary comparison: Direct$\to$Set.} Counts use the stated $n$. Exact requires decision and value correctness. Unsafe, Refusal, and Other partition failures. Accept is exact completion among feasible cases. Execution controls appear in Table~\ref{tab:execution-ablation}.}
+\label{tab:main}
+\end{table*}
+
+\subsection{Structural coverage}
+Table~\ref{tab:templates-results} decomposes the primary DeepSeek comparison over all 20 ten-task templates. Each setting improves over Direct on 18 templates, ties on one, and declines on one. The four families have 50 cases each; low-effort service replacement changes from 20 to 42 exact decisions, and high-effort threshold returns from 30 to 49. Astra's 180-to-196 aggregate is reported in Table~\ref{tab:main}.
+
+\begin{table}[!t]
+\centering\small
+\input{tables/primary_templates}
+\caption{Primary template coverage: Direct$\to$Set exact decisions, each out of ten. All 20 templates are included; family boundaries follow Table~\ref{tab:templates}.}
+\label{tab:templates-results}
+\end{table}
+
+\subsection{Paired statistical analysis}
+For a configuration and metric, compute a mean paired difference $d_k$ over the cases of template $k$. For the pooled DeepSeek comparison, both configurations remain inside the same template cluster. Resample 20 template indices with replacement, average their $d_k$, repeat 20,000 times with seed 20261008, and take the 2.5th/97.5th percentiles. This preserves feasibility-pair and template dependence \citep{stats}; 20 clusters limit precision. Table~\ref{tab:intervals} reports descriptive percentage-point intervals, without multiplicity-adjusted hypothesis claims. The 400 pooled outcomes per method represent 200 tasks under two configurations, not 400 independent problems.
+
+\begin{table}[!htbp]
+\centering\small
+\input{tables/intervals}
+\caption{Paired template-bootstrap differences, \ours\ minus the listed control, on the pooled DeepSeek primary results. Larger exactness and smaller unsafe rate are desirable. Intervals are descriptive, without multiplicity-adjusted hypothesis claims.}
+\label{tab:intervals}
+\end{table}
+
+\paragraph{Execution controls.}
+Appendix~\ref{app:execution} consolidates the essential procedural controls and corresponding uncertainty intervals. Appendix~\ref{app:permissionaudit} separately examines admitted-domain errors beyond the selected outcome.

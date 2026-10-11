@@ -1,0 +1,84 @@
+\section{Essential Controls, Robustness, and Reuse}
+\label{app:execution}
+\subsection{Minimal Execution Controls}
+\label{app:execution-controls}
+The procedural control generates a Python \texttt{assess(attrs)} function under the same outer admissibility, worst-value, and selection policy as Set. It is a program-aided control, not an exact reproduction of PAL or Logic.py. The primary and effort controls receive the catalogue; the matched-input control and Set compile without it. Table~\ref{tab:execution-ablation} retains the primary DeepSeek comparison, all completed effort groups, and the identical-input control. It provides the attribution check needed for this paper without treating implementation ranking as a separate research question.
+
+\begin{table*}[!tbp]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\input{tables/execution_controls}
+\caption{\textbf{Essential execution controls.} Arrows are Procedural$\to$State-wise; $n$ is per method. Safe requires an exact purchase and utility on feasible tasks. The effort groups cover all 25 completed configurations. Matched-input controls use low/high/max for each model family, with 72 tasks per setting. Cohorts and reused Set results are not pooled across groups.}
+\label{tab:execution-ablation}
+\label{tab:authorization}
+\end{table*}
+
+The controls confirm that deterministic execution contributes benefits shared across realizations; they do not establish a uniformly best encoding. Detailed representation rankings, resource comparisons, and realization-specific optimization are outside this paper's scope. Complete retained outcomes remain part of the supplementary experiment records.
+
+\subsection{Requested reasoning settings}
+\label{app:grid}
+The fixed 60-case panel combines ten historical feasible/infeasible pairs with one pair from each of the 20 primary templates. Table~\ref{tab:grid} details 18 GPT-5.6 configurations from reasoning off through max. The full effort study covers 25 model--effort configurations and three methods, yielding $25\times3\times60=4{,}500$ outcomes; its grouped execution controls appear in Table~\ref{tab:execution-ablation}.
+
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{5pt}
+\input{tables/appendix_grid}
+\caption{GPT-5.6 reasoning settings from off through max: exact/$n$ and unsafe/false-refusal/other (U/R/O), with $n=60$ in every cell. The 18 configurations cover Sol, Terra, and Luna. Settings denote requested effort, not equal or measured compute.}
+\label{tab:grid}
+\end{table*}
+
+Set improves over Direct in 17 of the 18 listed configurations, with Luna off declining from 25 to 14. The panel overlaps earlier and primary tasks, so it is a configuration check rather than independent task-distribution generalization.
+
+\subsection{Task language}
+\label{app:language}
+The original study uses the same 60 identifiers for four profiles, two languages, and three methods: 1,440 outcomes. A reviewed 183-phrase map preserves identifiers, quantities, types, events, and authorization; system-level method instructions stay fixed. Table~\ref{tab:language} gives Direct/Set results on the 60-task panel and a separate 200-task Astra panel. The two panels have different task counts and are reported separately.
+
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\input{tables/appendix_language}
+\caption{Language outcomes and failure partitions in one table. U/R/O denotes unsafe/false-refusal/other. Panels with $n=60$ and $n=200$ are identified separately. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
+\label{tab:language}
+\end{table*}
+
+For DeepSeek low, Direct exactness decreases from 36 to 34 under translation while unsafe acceptances fall from nine to six. Set has zero unsafe acceptances in these cells; their residual errors include invalid outputs. Translation therefore affects safety and exactness differently. This controlled task-language test is neither expert linguistic annotation nor a change of the entire system language.
+
+\subsection{Output-budget control}
+\label{app:budget}
+The Direct budget control pairs original output caps with a 262,144-token cap on 46 historically budget-sensitive tasks, yielding 92 new calls. Each pair uses the same 1,800-second deadline and differs only in output cap. Exact decisions increase from 10/46 to 26/46 (Table~\ref{tab:budget}). These new attempts do not overwrite first outcomes.
+
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+Configuration & Method & $n$ per cap & Exact & Budget & Unsafe & Refusal & Other\\
+\midrule
+DS high & Direct & 21 & $4\to12$ & $11\to0$ & $0\to3$ & $6\to6$ & $0\to0$\\
+DS low & Direct & 25 & $6\to14$ & $11\to1$ & $0\to1$ & $7\to7$ & $1\to2$\\
+\bottomrule
+\end{tabular}
+\caption{Original$\to$expanded output cap for Direct; the columns partition each row's outcomes. Other denotes a remaining value error. Selection of historically budget-sensitive tasks limits prevalence estimates.}
+\label{tab:budget}
+\end{table*}
+
+The larger budget recovers some outputs but leaves unsafe decisions and false refusals. It addresses a resource failure mode without constituting semantic repair.
+
+\subsection{Rule reuse and resource accounting}
+\label{app:cost}
+Two fixed requirements each have eight frozen catalogue snapshots. Direct invokes the model per snapshot; Set compiles once per requirement and reuses the same rule. Table~\ref{tab:reuse} includes initial compilation. Summed request durations measure serial request cost, not parallel wall-clock latency. Token totals use recorded input plus output, without assuming equal provider prices.
+
+\begin{table*}[!tbp]
+\centering\small
+\begin{tabular}{llrrr}
+\toprule
+Model & Method & Model calls & Input + output tokens & Serial request seconds\\
+\midrule
+Astra max & Direct & 16 & 175,429 & 344.64\\
+& Set contract & 2 & 22,160 & 81.69\\
+\midrule
+DeepSeek low & Direct & 16 & 136,345 & 351.47\\
+& Set contract & 2 & 12,418 & 33.61\\
+\bottomrule
+\end{tabular}
+\caption{Direct/Set reuse costs including cold compilation, over 16 catalogue evaluations per row. Both Astra routes and DeepSeek Set are exact on all snapshots; DeepSeek Direct is exact on 15/16. Summed request durations are serial cost measures, not parallel wall-clock latency.}
+\label{tab:reuse}
+\end{table*}
+
+Astra is exact on all 16 snapshots for both routes; DeepSeek Direct is exact on 15/16 and Set on 16/16. Reusing a rule requires unchanged authorization and state semantics, not merely a previously correct answer.

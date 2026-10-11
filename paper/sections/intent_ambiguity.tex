@@ -1,0 +1,50 @@
+\section{Controlled Decisions under Retained Intent Ambiguity}
+\label{app:intent}
+\subsection{Task semantics and controlled inputs}
+The frozen parameter-boundary campaign contains three families with unresolved user interpretations. We include all three, selecting by task semantics; five other families with conditional but unambiguous requirements are excluded. This retrospective study is separate from the contractual-event primary benchmark.
+
+\paragraph{Ticket-holder reference.}
+Two male travellers need tickets; ``his'' ticket must be refundable with a fee below the authorized limit. Utility penalizes that same traveller's delay and refund fee. Both referents remain possible, linking each interpretation's hard requirement, risk bound, and value function.
+
+\paragraph{Hotel reference and conditional binding.}
+Two guests need correctly registered rooms. ``His room'' must permit cancellation at 18:00 if he arrives at or after 18:00, or 24 hours before his expected arrival otherwise. The cancellation fee and utility weights refer to the same guest, so the unresolved antecedent affects conditional requirements and value.
+
+\paragraph{Distributive versus collective scope.}
+Gifts must satisfy recipients' preferences and wrapping requirements. ``Buy one for each; the exchange top-up is at most $r$'' may bound each recipient or the batch. Stipulated utility uses the corresponding maximum individual or total top-up. With nonnegative charges the batch bound may dominate; the correct bound and score still need to be retained.
+
+All requests explicitly signal unresolved reference or scope. Methods see identical user text, complete catalogue attributes, synthetic utility formulas, and the common decision policy. These historical compilation calls see the catalogue, unlike the primary Set protocol. No reference expressions, answer, or subsequent user clarification is supplied. The study tests decisions with retained meanings, not automatic discovery of unrestricted ambiguity.
+
+\subsection{Parameter design and findings}
+Three families, seven settings, and two frozen seeds give 42 API variants. Within each parameter group the candidates and identifiers stay fixed. The authorized risk limit varies over 0, 500, and 1,000 subunits; the risk penalty over 1, 3, and 10; a value offset places the best common candidate at exactly zero or one. Each seed has 18 acceptance and three zero-value refusal variants. These refusals test the value boundary, not an empty feasible intersection. The second seed changes the instance within the same templates.
+
+Figure~\ref{fig:intent} summarizes 294 Direct/Set outcomes on matched variants: DeepSeek low/max and GLM low each use 42 variants per method, and Qwen Max low uses 21 variants per method. Table~\ref{tab:intent-figure3} gives the four complete outcome partitions. State-wise execution improves exact decisions in each of these four configurations, covering unresolved reference, conditional binding, and collective scope under risk and value constraints. Exactness and safety remain distinct: Qwen has six unsafe Set acceptances versus five for Direct. Reference-arithmetic checks and response replay reproduce the recorded evaluations.
+
+\begin{table*}[!tbp]
+\centering\small
+\setlength{\tabcolsep}{6pt}
+\input{tables/intent_figure3}
+\caption{Complete results underlying Figure~\ref{fig:intent}. Each arrow is Direct$\to$Set; $n$ is the number of matched tasks per method. Exact, unsafe acceptance, false refusal, and Other form a disjoint partition of each method's $n$ outcomes. Other includes remaining value and execution failures. The four rows contain 294 evaluations in total and are separate from the primary 200-task benchmark.}
+\label{tab:intent-figure3}
+\end{table*}
+
+\subsection{Common purchase, empty intersection, and value boundaries}
+Table~\ref{tab:intent-behaviors} adds five earlier base checks. Each is repeated under three context conditions with two samples per method. Direct, rule-reinforced Direct, Merged, and Set each obtain 30/30; reference-assisted Direct has a separate 10/10. These ceiling results verify tested behaviors, not an accuracy advantage. In particular, F02a tests the empty intersection missing from the parameter panel.
+
+\begin{table*}[!tbp]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lp{.57\textwidth}p{.27\textwidth}@{}}
+\toprule
+Base & Retained meanings and candidate control & Reference decision\\
+\midrule
+F01a & Zhang or Li needs a refundable ticket; a 2,800-MU order refunds both within a 3,000-MU budget. & Buy the common refundable order.\\
+F02a & Only two 2,400-MU orders remain: one refunds Zhang, the other Li. Each meaning is separately feasible. & Refuse: the common feasible set is empty.\\
+F02b & Add the 2,800-MU order refunding both to F02a. & Buy: ambiguity itself does not require refusal.\\
+F04a & ``His experience'' may mean Zhang or Li; two feasible options have utilities $(3,-1)$ and $(0.2,0.2)$. & Choose the latter by worst-case value.\\
+F04b & Replace $(0.2,0.2)$ by $(0,0)$, keeping the other option unchanged. & Refuse: the best guarantee is zero.\\
+\bottomrule
+\end{tabular}
+\caption{Recorded capability checks, not new examples substituted for measured tasks. Monetary labels use the paper's MU convention; numerical values are unchanged. Six non-oracle generations per base/method are repeated measurements.}
+\label{tab:intent-behaviors}
+\end{table*}
+
+The separate input and omitted-state interventions are summarized in Appendix~\ref{app:oracle}.

@@ -1,0 +1,4594 @@
+{
+  "source_calls": 56,
+  "selected_rules": 16,
+  "unique_requests": 1,
+  "catalogue_sizes": [
+    128,
+    512
+  ],
+  "omitted_interpretation": "The pronoun can refer to Li; its refund condition and utility binding are both missing.",
+  "variants": {
+    "original": {
+      "n": 16,
+      "correct": 0,
+      "unsafe_accept": 0,
+      "calls_with_extra_unsafe": 16
+    },
+    "duplicate_label_only": {
+      "n": 16,
+      "correct": 0,
+      "unsafe_accept": 0,
+      "calls_with_extra_unsafe": 16
+    },
+    "oracle_admissibility_only": {
+      "n": 16,
+      "correct": 0,
+      "unsafe_accept": 0,
+      "calls_with_extra_unsafe": 0
+    },
+    "oracle_utility_only": {
+      "n": 16,
+      "correct": 0,
+      "unsafe_accept": 16,
+      "calls_with_extra_unsafe": 16
+    },
+    "oracle_both": {
+      "n": 16,
+      "correct": 16,
+      "unsafe_accept": 0,
+      "calls_with_extra_unsafe": 0
+    },
+    "append_missing_li_state": {
+      "n": 16,
+      "correct": 16,
+      "unsafe_accept": 0,
+      "calls_with_extra_unsafe": 0
+    }
+  },
+  "examples": [
+    {
+      "task_id": "N0128_D0000__glm53_flash_low__set_mechanism__r1",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0128_D0000__glm53_flash_low__set_mechanism__r1.json",
+      "result_sha256": "40ce5d4d3a513ac7f6bb6fb1020096e2f01524d54d420cecb55d68cdf840a58f",
+      "observation_sha256": "6852a35202bb1fc0a41db919b395ed01e0d92d084f3a435b5bce4d961cb68018",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "glm53_flash_low",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_97673ad267cb",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - delay_z * 10 - delay_l * 2"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__glm53_flash_low__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0012525408528745174
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0018566250801086426
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010380828753113747
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015301667153835297
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015103328041732311
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0018361248075962067
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008279159665107727
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013630841858685017
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__glm53_flash_low__set_mechanism__r2",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0128_D0000__glm53_flash_low__set_mechanism__r2.json",
+      "result_sha256": "7f217e43960c18549247eea2cbc4696ac5c07c36cb58ae6c1455e8545d2091c4",
+      "observation_sha256": "8b8f422ead2cdf537baf278344338f7b4c6a2695be59c074f6020de39823e02c",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "glm53_flash_low",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_71a3ba6c1bfa",
+          "hard": "price_cent <= 100000 and refund_z == True",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10*delay_z - 2*delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__glm53_flash_low__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "31062",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0011102082207798958
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017922497354447842
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010456251911818981
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.003383832983672619
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014940411783754826
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.00174325006082654
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008299578912556171
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014006667770445347
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__glm53_flash_max__set_mechanism__r2",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0128_D0000__glm53_flash_max__set_mechanism__r2.json",
+      "result_sha256": "f2afba565edfcc6d69eec4071bfbf3381bb850d60d75b0665c9cc5241651bd27",
+      "observation_sha256": "358617f9cd1b0d2b0cb3b396d7b27d51dba94fadc080257a1ef07a07188a616c",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "glm53_flash_max",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_3dab1741155f",
+          "hard": "price_cent <= 100000 and refund_z == True",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10 * delay_z - 2 * delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__glm53_flash_max__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "31062",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010928753763437271
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0018730000592768192
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010015829466283321
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015132906846702099
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014652921818196774
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017962907440960407
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008776248432695866
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001353750005364418
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__qwen_flash_low__set_mechanism__r2",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0128_D0000__qwen_flash_low__set_mechanism__r2.json",
+      "result_sha256": "316d9408febb07031255f6b944732421d4f5b6c647093a7788b7c10e2701fbc4",
+      "observation_sha256": "28c795a104760eac6ea0a7dcba9dcd86720399909a43b1c05dc537f05626e319",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_flash_low",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_b3a34a30c567",
+          "hard": "price_cent <= 100000 and refund_z == True",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10*delay_z - 2*delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__qwen_flash_low__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "31062",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0011329161934554577
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0018582921475172043
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001015624962747097
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015309997834265232
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014699166640639305
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017906669527292252
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.000867083203047514
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013474170118570328
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__qwen_flash_xhigh__set_mechanism__r2",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0128_D0000__qwen_flash_xhigh__set_mechanism__r2.json",
+      "result_sha256": "64e7a3ec36deaa013bfa52bdbd62d1ccc2bbabdae6e2936e48f7b9769327a140",
+      "observation_sha256": "b21b84f6e1df0fe9b5482c6ef10a7c159a94c7e65dafcdd0cc926b82079b99af",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_flash_xhigh",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "his_refund_is_z",
+          "hard": "(refund_z) and (price_cent <= 100000)",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10 * delay_z - 2 * delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__qwen_flash_xhigh__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "31062",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001051166094839573
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017436668276786804
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0009932075627148151
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014365827664732933
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014819158241152763
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017094169743359089
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.00084304204210639
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013504172675311565
+        }
+      }
+    },
+    {
+      "task_id": "N0512_D0000__glm53_flash_low__set_mechanism__r1",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0512_D0000__glm53_flash_low__set_mechanism__r1.json",
+      "result_sha256": "c65fc919ffdc7c1f926678734d398be4fbba8c3f8edf6bfe1feaf304db4d76c5",
+      "observation_sha256": "5f16729f4653f6aaef8aab68a81583c1192c475f38ebcfc82d4a952798e53bb0",
+      "extra_unsafe": 32,
+      "category": "safe_suboptimal",
+      "profile_id": "glm53_flash_low",
+      "case_id": "N0512_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_26c1dd20ad9b",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - delay_z * 10 - delay_l * 2"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0512_D0000__glm53_flash_low__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004265583120286465
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.009102584328502417
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0040783751755952835
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4DDBB371"
+            ],
+            "guaranteed_utility": "50199",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.005929791834205389
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.005924417171627283
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006989582907408476
+        }
+      },
+      "availability_change": {
+        "removed_count": 4,
+        "witness_id": "T4F1F6012",
+        "remaining": 508,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4F1F6012"
+            ],
+            "guaranteed_utility": "54017",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004189374856650829
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0067925406619906425
+        }
+      }
+    },
+    {
+      "task_id": "N0512_D0000__qwen_max_low__set_mechanism__r2",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0512_D0000__qwen_max_low__set_mechanism__r2.json",
+      "result_sha256": "0afaf4058dc7deea2c8d5de0570a1b2a1515f1b2c8968f65459d820da517e8b9",
+      "observation_sha256": "40f77aef06a5c307301cfcc61342a5eea34e8edf9ca028c3e1ffe07f58dcd7cc",
+      "extra_unsafe": 32,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_low",
+      "case_id": "N0512_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_1385225cce49",
+          "hard": "price_cent <= 100000 and refund_z",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10 * delay_z - 2 * delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0512_D0000__qwen_max_low__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006162791978567839
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006850082892924547
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004055333323776722
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4DDBB371"
+            ],
+            "guaranteed_utility": "50199",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.005758999846875668
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.005830666981637478
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006779666990041733
+        }
+      },
+      "availability_change": {
+        "removed_count": 4,
+        "witness_id": "T4F1F6012",
+        "remaining": 508,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4F1F6012"
+            ],
+            "guaranteed_utility": "54017",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.003975667059421539
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.008845416828989983
+        }
+      }
+    },
+    {
+      "task_id": "N0512_D0000__qwen_max_none__set_mechanism__r2",
+      "source_job_id": "20260920_163205_af13afc",
+      "result_path": "jobs/20260920_163205_af13afc/results/N0512_D0000__qwen_max_none__set_mechanism__r2.json",
+      "result_sha256": "59d88c2cf2fca7afc71a7da259c681f5df214e159ca4a1e4584d05128657ebea",
+      "observation_sha256": "3d0c321dcfeebf24127a061625c3640aebb136682060d959c23cfb334f36b7b7",
+      "extra_unsafe": 32,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_none",
+      "case_id": "N0512_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_9d0a118f26c2",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - delay_z * 10 - delay_l * 2"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0512_D0000__qwen_max_none__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004328834358602762
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0072058336809277534
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0041635832749307156
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4DDBB371"
+            ],
+            "guaranteed_utility": "50199",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.00595479179173708
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.005824290681630373
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.007027416955679655
+        }
+      },
+      "availability_change": {
+        "removed_count": 4,
+        "witness_id": "T4F1F6012",
+        "remaining": 508,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4F1F6012"
+            ],
+            "guaranteed_utility": "54017",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006347957998514175
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006675750017166138
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__glm53_flash_high__set_mechanism__r1",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0128_D0000__glm53_flash_high__set_mechanism__r1.json",
+      "result_sha256": "5b59979f95eed1dbde276f47eaaada87ca7b4d523a3d65280908bf42cb64b78b",
+      "observation_sha256": "4076d002e6c7f4dba319a0c89dfb9e1e23835e32f46a34f2e24001c9f4662504",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "glm53_flash_high",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_d36a8eeb7154",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10 * delay_z - 2 * delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__glm53_flash_high__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010707499459385872
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001840207725763321
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001013374887406826
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015026251785457134
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014918330125510693
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0018009580671787262
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008708331733942032
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013799997977912426
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__qwen_flash_medium__set_mechanism__r1",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0128_D0000__qwen_flash_medium__set_mechanism__r1.json",
+      "result_sha256": "0ce10d0853d850930230955d2648667428c0d1b904ea5dd39094854d216faf27",
+      "observation_sha256": "9931d859c0251c373646ce897673a251c01d9381ec2370334d1a21e254b2688f",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_flash_medium",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "current_budget_refund_zhang",
+          "hard": "price_cent <= 100000 and refund_z == True",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10 * delay_z - 2 * delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__qwen_flash_medium__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0011929171159863472
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017647091299295425
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0009877909906208515
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015210420824587345
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014859167858958244
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001724041998386383
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008567497134208679
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013887081295251846
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__qwen_max_medium__set_mechanism__r1",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0128_D0000__qwen_max_medium__set_mechanism__r1.json",
+      "result_sha256": "9c3f429148b85b58ca23292000f695a2f6f7958707bcd16e0a814985f4aef4ad",
+      "observation_sha256": "a87938a9b099bf5825f598f5917f67ace3729bd9c1ce22026a77d2d4c722fa20",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_medium",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_cc8b64718a0a",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - 10 * delay_z - 2 * delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__qwen_max_medium__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010611247271299362
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0018478748388588428
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010073333978652954
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015148329548537731
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014870832674205303
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017845840193331242
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008950834162533283
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013519995845854282
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__qwen_max_medium__set_mechanism__r2",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0128_D0000__qwen_max_medium__set_mechanism__r2.json",
+      "result_sha256": "06a0aa10ad3542c0edfb0e5d9100e1a205ca4f07c0b9b1a8e5ad2149a4799319",
+      "observation_sha256": "54b7fd4eb1c4a7abb522f158b2fb50d077f49691ff98aab99d125eed3fc568c1",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_medium",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_ec74752a6e83",
+          "hard": "price_cent <= 100000",
+          "risk": "refund_z == True",
+          "utility": "150000 - price_cent - 10 * delay_z - 2 * delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__qwen_max_medium__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001152832992374897
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017261249013245106
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0009850827045738697
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.003263542428612709
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001457500271499157
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017189579084515572
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008174590766429901
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013864999637007713
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__qwen_max_none__set_mechanism__r1",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0128_D0000__qwen_max_none__set_mechanism__r1.json",
+      "result_sha256": "0da26188f0b30e65d22851fc60a8d289c3eb44e2e6bb2365b18027b09a6e3aa9",
+      "observation_sha256": "9473f0a048ab93c61dea90d8a17e188e72dffefa65c036aa39c73e445eec24fb",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_none",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_6204e1915408",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - delay_z * 10 - delay_l * 2"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__qwen_max_none__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "31062",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010853749699890614
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0018438748084008694
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001008208841085434
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014949170872569084
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001470792107284069
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017562503926455975
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008534593507647514
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013416251167654991
+        }
+      }
+    },
+    {
+      "task_id": "N0128_D0000__qwen_max_none__set_mechanism__r2",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0128_D0000__qwen_max_none__set_mechanism__r2.json",
+      "result_sha256": "577b10cac0ed49c35437520593958def7274f4348fe7243d6e97051291020202",
+      "observation_sha256": "5f80c67254a3b90a16b30fd4e19d390ba9b4f22f2dedc01c51be3ffa6575d3ec",
+      "extra_unsafe": 8,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_none",
+      "case_id": "N0128_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_60203e614d02",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - delay_z * 10 - delay_l * 2"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0128_D0000__qwen_max_none__set_mechanism__r2",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "31062",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0012317919172346592
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.001805041916668415
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4BBC7E83"
+            ],
+            "guaranteed_utility": "53559",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0010407082736492157
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T70406761"
+            ],
+            "guaranteed_utility": "50171",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0015473752282559872
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0014878329820930958
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0017510000616312027
+        }
+      },
+      "availability_change": {
+        "removed_count": 26,
+        "witness_id": "T523AE25C",
+        "remaining": 102,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T523AE25C"
+            ],
+            "guaranteed_utility": "51233",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 8,
+          "extra_unsafe_ids": [
+            "T727C317F",
+            "T2C0ED5B1",
+            "T68303BA5",
+            "T523AE25C",
+            "TA66FFAF0",
+            "T69510AA4",
+            "T8A1028DA",
+            "T70406761"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0008645420894026756
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0013644159771502018
+        }
+      }
+    },
+    {
+      "task_id": "N0512_D0000__qwen_max_medium__set_mechanism__r1",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0512_D0000__qwen_max_medium__set_mechanism__r1.json",
+      "result_sha256": "d6f025253ea8bd5bf0effe11e6b4f2f02a8ae939765e579c1194826880f1f9d5",
+      "observation_sha256": "61f151c73af678c3f754d9f58c60d19a20c4a8984baafbd5bab232b85e60abb0",
+      "extra_unsafe": 32,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_medium",
+      "case_id": "N0512_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "main",
+          "hard": "price_cent <= 100000",
+          "risk": "refund_z == True",
+          "utility": "150000 - price_cent - 10*delay_z - 2*delay_l"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0512_D0000__qwen_max_medium__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004103625193238258
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006859125103801489
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004100332967936993
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4DDBB371"
+            ],
+            "guaranteed_utility": "50199",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.007728542201220989
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.005989584140479565
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006845999974757433
+        }
+      },
+      "availability_change": {
+        "removed_count": 4,
+        "witness_id": "T4F1F6012",
+        "remaining": 508,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4F1F6012"
+            ],
+            "guaranteed_utility": "54017",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0040942090563476086
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006759666837751865
+        }
+      }
+    },
+    {
+      "task_id": "N0512_D0000__qwen_max_none__set_mechanism__r1",
+      "source_job_id": "20260920_220813_002763b",
+      "result_path": "jobs/20260920_220813_002763b/results/N0512_D0000__qwen_max_none__set_mechanism__r1.json",
+      "result_sha256": "b23322b9653828908b839b5fd0f755f8b0513898ad315d1612351366ce3678be",
+      "observation_sha256": "3d7cefcfde03093e3e839ff36db3f39d45aabd01e59e04a3b9e7c214f69dbb8c",
+      "extra_unsafe": 32,
+      "category": "safe_suboptimal",
+      "profile_id": "qwen_max_none",
+      "case_id": "N0512_D0000",
+      "state_count": 1,
+      "states": [
+        {
+          "label": "state_641936c6a8da",
+          "hard": "refund_z == True and price_cent <= 100000",
+          "risk": "True",
+          "utility": "150000 - price_cent - delay_z * 10 - delay_l * 2"
+        }
+      ],
+      "symbolic": {
+        "task_id": "N0512_D0000__qwen_max_none__set_mechanism__r1",
+        "assessed": true,
+        "admits_unsafe": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "32086",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "domain_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "True",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "0"
+          },
+          "reason_unknown": null
+        },
+        "utility_equivalence": {
+          "result": "sat",
+          "witness": {
+            "price_cent": "0",
+            "refund_z": "False",
+            "refund_l": "False",
+            "delay_z": "0",
+            "delay_l": "1"
+          },
+          "reason_unknown": null
+        },
+        "equals_zhang_domain": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        },
+        "equals_zhang_utility": {
+          "result": "unsat",
+          "witness": null,
+          "reason_unknown": null
+        }
+      },
+      "variants": {
+        "original": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004260750021785498
+        },
+        "duplicate_label_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.00939191598445177
+        },
+        "oracle_admissibility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "TE110C232"
+            ],
+            "guaranteed_utility": "54276",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0041535417549312115
+        },
+        "oracle_utility_only": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4DDBB371"
+            ],
+            "guaranteed_utility": "50199",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006022334098815918
+        },
+        "oracle_both": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.005938750226050615
+        },
+        "append_missing_li_state": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.006988249719142914
+        }
+      },
+      "availability_change": {
+        "removed_count": 4,
+        "witness_id": "T4F1F6012",
+        "remaining": 508,
+        "original_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T4F1F6012"
+            ],
+            "guaranteed_utility": "54017",
+            "reason_code": "optimal_certified"
+          },
+          "correct": false,
+          "unsafe_accept": true,
+          "false_refusal": false,
+          "contract_equal": false,
+          "extra_unsafe_count": 32,
+          "extra_unsafe_ids": [
+            "T5829A011",
+            "T727C317F",
+            "TFCA540D2",
+            "T0F8B50F0",
+            "T4F1F6012",
+            "T21A3547A",
+            "T0B5F1873",
+            "T2C0ED5B1",
+            "TAC491A4B",
+            "T0468EFFB",
+            "T27BF11C7",
+            "T738EA03F",
+            "T56723DBE",
+            "T3EF2F49B",
+            "T68303BA5",
+            "T523AE25C",
+            "TE83A3334",
+            "T605B4A21",
+            "T687E8DA4",
+            "TA66FFAF0",
+            "T4DDBB371",
+            "T69510AA4",
+            "T8A1028DA",
+            "T607F6BA6",
+            "T552E163D",
+            "T595CBA66",
+            "TA65B9D0E",
+            "T70406761",
+            "T5490B50F",
+            "TE5FCD468",
+            "T9E843F7B",
+            "T1ECA2F11"
+          ],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.004303082823753357
+        },
+        "oracle_program": {
+          "decision": {
+            "decision": "accept",
+            "allowed_ids": [
+              "T7FB5DDBE"
+            ],
+            "guaranteed_utility": "50000",
+            "reason_code": "optimal_certified"
+          },
+          "correct": true,
+          "unsafe_accept": false,
+          "false_refusal": false,
+          "contract_equal": true,
+          "extra_unsafe_count": 0,
+          "extra_unsafe_ids": [],
+          "output_satisfies_generated_predicates": true,
+          "execution_seconds": 0.0067947921343147755
+        }
+      }
+    }
+  ]
+}

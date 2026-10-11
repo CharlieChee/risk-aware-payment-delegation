@@ -1,0 +1,8299 @@
+{
+  "records": [
+    {
+      "id": "U-task",
+      "author": "user",
+      "status": "current",
+      "text": "购买编号0至5六项预付行程服务及保险组成的不可拆分套餐，保费已包含在price。今天只能固定选择一个目录行，不能事后按异常事件换套餐。商品、日期、供应商和可用性已准确核对。"
+    },
+    {
+      "id": "U-events",
+      "author": "user",
+      "status": "current",
+      "text": "可能没有异常，也可能发生任意最多4项退订项目；每一个满足数量上限的具体子集都可能发生。没有额外相关性限制，也不给概率。"
+    },
+    {
+      "id": "U-contract",
+      "author": "user",
+      "status": "current",
+      "text": "实际退订项目的loss合计为毛损失。仅赔毛损失超过整单deductible的部分，未超过时赔0。退订1或2项时赔款以上限small_cap计算；退订3项或更多时改用large_cap，上限不累加。净损失等于毛损失减去保险实赔，再加一次admin；admin不在任何保险赔付范围内。空事件的考核损失为0，无admin或其他费用。未受影响项目不产生异常损失；没有其他未写明条款。"
+    },
+    {
+      "id": "U-budget",
+      "author": "user",
+      "status": "current",
+      "text": "属性完整准确，均为非负整数，金额单位为人民币分，weight为克。原支付price不得超过1200000分，必须满足合同写明的原始支付及优惠条件。每个允许事件下上述考核金额不得超过200000分，等于上限可接受，不允许放宽。此目录完整，没有隐藏可选项。"
+    },
+    {
+      "id": "U-utility",
+      "author": "user",
+      "status": "current",
+      "text": "每个事件的效用为2000000减price再减该事件考核金额。对同时满足全部事件硬条件及风险上限的候选，取所有事件的最低效用，再选择最低效用最大的候选；其值严格大于0才接受，否则拒绝。不询问用户。"
+    }
+  ],
+  "attributes": {
+    "price": "原整单实付金额，整数分",
+    "admin": "一次非空异常事件的整单处理费；不能被补偿或保险抵扣，整数分",
+    "loss_0": "编号0的退订时供应商不退的毛损失，整数分",
+    "loss_1": "编号1的退订时供应商不退的毛损失，整数分",
+    "loss_2": "编号2的退订时供应商不退的毛损失，整数分",
+    "loss_3": "编号3的退订时供应商不退的毛损失，整数分",
+    "loss_4": "编号4的退订时供应商不退的毛损失，整数分",
+    "loss_5": "编号5的退订时供应商不退的毛损失，整数分",
+    "deductible": "整单免赔额，整数分",
+    "small_cap": "退订1或2项时保险赔款上限，整数分",
+    "large_cap": "退订至少3项时保险赔款上限，整数分"
+  },
+  "attribute_schema": {
+    "price": {
+      "description": "原整单实付金额，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "admin": {
+      "description": "一次非空异常事件的整单处理费；不能被补偿或保险抵扣，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_0": {
+      "description": "编号0的退订时供应商不退的毛损失，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_1": {
+      "description": "编号1的退订时供应商不退的毛损失，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_2": {
+      "description": "编号2的退订时供应商不退的毛损失，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_3": {
+      "description": "编号3的退订时供应商不退的毛损失，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_4": {
+      "description": "编号4的退订时供应商不退的毛损失，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_5": {
+      "description": "编号5的退订时供应商不退的毛损失，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "deductible": {
+      "description": "整单免赔额，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "small_cap": {
+      "description": "退订1或2项时保险赔款上限，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "large_cap": {
+      "description": "退订至少3项时保险赔款上限，整数分",
+      "type": "nonnegative_integer",
+      "nullable": false
+    }
+  },
+  "catalog_complete": true,
+  "candidates": [
+    {
+      "id": "offer_9027a2100e63",
+      "attrs": {
+        "price": 861381,
+        "admin": 160353,
+        "loss_0": 17200,
+        "loss_1": 16200,
+        "loss_2": 18800,
+        "loss_3": 2800,
+        "loss_4": 10100,
+        "loss_5": 11200,
+        "deductible": 24300,
+        "small_cap": 45900,
+        "large_cap": 7900
+      }
+    },
+    {
+      "id": "offer_10647f594e15",
+      "attrs": {
+        "price": 847654,
+        "admin": 170779,
+        "loss_0": 8600,
+        "loss_1": 19100,
+        "loss_2": 2000,
+        "loss_3": 7400,
+        "loss_4": 14000,
+        "loss_5": 11300,
+        "deductible": 9300,
+        "small_cap": 24500,
+        "large_cap": 7700
+      }
+    },
+    {
+      "id": "offer_72d045d2089f",
+      "attrs": {
+        "price": 743564,
+        "admin": 131695,
+        "loss_0": 9200,
+        "loss_1": 4900,
+        "loss_2": 23700,
+        "loss_3": 21500,
+        "loss_4": 15500,
+        "loss_5": 24600,
+        "deductible": 9700,
+        "small_cap": 34700,
+        "large_cap": 16500
+      }
+    },
+    {
+      "id": "offer_51c7006b331c",
+      "attrs": {
+        "price": 895009,
+        "admin": 165841,
+        "loss_0": 16000,
+        "loss_1": 7700,
+        "loss_2": 2000,
+        "loss_3": 17900,
+        "loss_4": 20200,
+        "loss_5": 15100,
+        "deductible": 22900,
+        "small_cap": 43800,
+        "large_cap": 15400
+      }
+    },
+    {
+      "id": "offer_3bdb4f785b27",
+      "attrs": {
+        "price": 797102,
+        "admin": 123627,
+        "loss_0": 18700,
+        "loss_1": 24200,
+        "loss_2": 9900,
+        "loss_3": 21000,
+        "loss_4": 9600,
+        "loss_5": 25300,
+        "deductible": 18700,
+        "small_cap": 30100,
+        "large_cap": 3000
+      }
+    },
+    {
+      "id": "offer_926a0c72a8fc",
+      "attrs": {
+        "price": 542940,
+        "admin": 141142,
+        "loss_0": 29400,
+        "loss_1": 12700,
+        "loss_2": 29300,
+        "loss_3": 1300,
+        "loss_4": 7100,
+        "loss_5": 2700,
+        "deductible": 4500,
+        "small_cap": 38500,
+        "large_cap": 12000
+      }
+    },
+    {
+      "id": "offer_2e25647ce4e6",
+      "attrs": {
+        "price": 622114,
+        "admin": 162580,
+        "loss_0": 12900,
+        "loss_1": 15500,
+        "loss_2": 10500,
+        "loss_3": 6400,
+        "loss_4": 8000,
+        "loss_5": 23600,
+        "deductible": 1900,
+        "small_cap": 23800,
+        "large_cap": 12800
+      }
+    },
+    {
+      "id": "offer_eec84e15e9ef",
+      "attrs": {
+        "price": 615852,
+        "admin": 125980,
+        "loss_0": 19500,
+        "loss_1": 25600,
+        "loss_2": 13800,
+        "loss_3": 19200,
+        "loss_4": 22100,
+        "loss_5": 4100,
+        "deductible": 12200,
+        "small_cap": 35700,
+        "large_cap": 5000
+      }
+    },
+    {
+      "id": "offer_bbafcdd6fe58",
+      "attrs": {
+        "price": 626077,
+        "admin": 137193,
+        "loss_0": 14000,
+        "loss_1": 18800,
+        "loss_2": 17500,
+        "loss_3": 2300,
+        "loss_4": 26000,
+        "loss_5": 17500,
+        "deductible": 14600,
+        "small_cap": 42400,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_812f900b6882",
+      "attrs": {
+        "price": 517468,
+        "admin": 114355,
+        "loss_0": 28200,
+        "loss_1": 24700,
+        "loss_2": 28700,
+        "loss_3": 16700,
+        "loss_4": 9100,
+        "loss_5": 9700,
+        "deductible": 8500,
+        "small_cap": 45000,
+        "large_cap": 2700
+      }
+    },
+    {
+      "id": "offer_c06b5411ce26",
+      "attrs": {
+        "price": 664533,
+        "admin": 142202,
+        "loss_0": 23600,
+        "loss_1": 27400,
+        "loss_2": 3500,
+        "loss_3": 4700,
+        "loss_4": 12700,
+        "loss_5": 8900,
+        "deductible": 5300,
+        "small_cap": 37400,
+        "large_cap": 6900
+      }
+    },
+    {
+      "id": "offer_21067b966719",
+      "attrs": {
+        "price": 458771,
+        "admin": 143423,
+        "loss_0": 7900,
+        "loss_1": 3700,
+        "loss_2": 9400,
+        "loss_3": 26800,
+        "loss_4": 2700,
+        "loss_5": 27300,
+        "deductible": 23200,
+        "small_cap": 49100,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_9c2d5c47ce49",
+      "attrs": {
+        "price": 758323,
+        "admin": 105887,
+        "loss_0": 14000,
+        "loss_1": 22900,
+        "loss_2": 27900,
+        "loss_3": 25000,
+        "loss_4": 5200,
+        "loss_5": 26600,
+        "deductible": 21800,
+        "small_cap": 30000,
+        "large_cap": 4100
+      }
+    },
+    {
+      "id": "offer_d10ea4e7c11d",
+      "attrs": {
+        "price": 592510,
+        "admin": 122546,
+        "loss_0": 3500,
+        "loss_1": 13500,
+        "loss_2": 26000,
+        "loss_3": 26100,
+        "loss_4": 19500,
+        "loss_5": 28300,
+        "deductible": 25000,
+        "small_cap": 28600,
+        "large_cap": 8900
+      }
+    },
+    {
+      "id": "offer_3df2b93991c2",
+      "attrs": {
+        "price": 701830,
+        "admin": 109605,
+        "loss_0": 22400,
+        "loss_1": 24500,
+        "loss_2": 22600,
+        "loss_3": 27600,
+        "loss_4": 16600,
+        "loss_5": 26800,
+        "deductible": 6400,
+        "small_cap": 24600,
+        "large_cap": 7500
+      }
+    },
+    {
+      "id": "offer_90ae70dcc520",
+      "attrs": {
+        "price": 734895,
+        "admin": 125970,
+        "loss_0": 22000,
+        "loss_1": 1100,
+        "loss_2": 8600,
+        "loss_3": 26600,
+        "loss_4": 27400,
+        "loss_5": 16300,
+        "deductible": 10300,
+        "small_cap": 48600,
+        "large_cap": 2300
+      }
+    },
+    {
+      "id": "offer_5f5af8f2ebb4",
+      "attrs": {
+        "price": 508645,
+        "admin": 133942,
+        "loss_0": 26500,
+        "loss_1": 29500,
+        "loss_2": 7900,
+        "loss_3": 20700,
+        "loss_4": 15400,
+        "loss_5": 3700,
+        "deductible": 15600,
+        "small_cap": 34800,
+        "large_cap": 16900
+      }
+    },
+    {
+      "id": "offer_e0e1772d1119",
+      "attrs": {
+        "price": 566717,
+        "admin": 151486,
+        "loss_0": 1500,
+        "loss_1": 18300,
+        "loss_2": 16300,
+        "loss_3": 6200,
+        "loss_4": 15900,
+        "loss_5": 29400,
+        "deductible": 18200,
+        "small_cap": 27200,
+        "large_cap": 11700
+      }
+    },
+    {
+      "id": "offer_b91301561172",
+      "attrs": {
+        "price": 768767,
+        "admin": 144760,
+        "loss_0": 15000,
+        "loss_1": 16600,
+        "loss_2": 21100,
+        "loss_3": 24300,
+        "loss_4": 3100,
+        "loss_5": 5500,
+        "deductible": 11300,
+        "small_cap": 46900,
+        "large_cap": 15500
+      }
+    },
+    {
+      "id": "offer_40046ac20236",
+      "attrs": {
+        "price": 790218,
+        "admin": 150909,
+        "loss_0": 1700,
+        "loss_1": 7800,
+        "loss_2": 2200,
+        "loss_3": 25100,
+        "loss_4": 13700,
+        "loss_5": 20200,
+        "deductible": 10700,
+        "small_cap": 40000,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_55a49e1f31dc",
+      "attrs": {
+        "price": 694222,
+        "admin": 135065,
+        "loss_0": 20300,
+        "loss_1": 25400,
+        "loss_2": 16700,
+        "loss_3": 9100,
+        "loss_4": 15700,
+        "loss_5": 24700,
+        "deductible": 11000,
+        "small_cap": 47000,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_e19a5d65910b",
+      "attrs": {
+        "price": 805198,
+        "admin": 132550,
+        "loss_0": 23300,
+        "loss_1": 14500,
+        "loss_2": 28600,
+        "loss_3": 19300,
+        "loss_4": 28900,
+        "loss_5": 14600,
+        "deductible": 17200,
+        "small_cap": 47600,
+        "large_cap": 19000
+      }
+    },
+    {
+      "id": "offer_4a0fc2e66d40",
+      "attrs": {
+        "price": 524234,
+        "admin": 132943,
+        "loss_0": 1800,
+        "loss_1": 18000,
+        "loss_2": 27700,
+        "loss_3": 21400,
+        "loss_4": 14500,
+        "loss_5": 13200,
+        "deductible": 5800,
+        "small_cap": 22200,
+        "large_cap": 8700
+      }
+    },
+    {
+      "id": "offer_174e22986b93",
+      "attrs": {
+        "price": 680896,
+        "admin": 167455,
+        "loss_0": 10200,
+        "loss_1": 11800,
+        "loss_2": 15000,
+        "loss_3": 22700,
+        "loss_4": 13700,
+        "loss_5": 2400,
+        "deductible": 24800,
+        "small_cap": 25000,
+        "large_cap": 12100
+      }
+    },
+    {
+      "id": "offer_3e897e0eecc5",
+      "attrs": {
+        "price": 671760,
+        "admin": 131424,
+        "loss_0": 14800,
+        "loss_1": 2900,
+        "loss_2": 24200,
+        "loss_3": 26400,
+        "loss_4": 7700,
+        "loss_5": 21700,
+        "deductible": 10900,
+        "small_cap": 29000,
+        "large_cap": 3200
+      }
+    },
+    {
+      "id": "offer_15f26230ab41",
+      "attrs": {
+        "price": 824264,
+        "admin": 168869,
+        "loss_0": 1000,
+        "loss_1": 13100,
+        "loss_2": 4900,
+        "loss_3": 28100,
+        "loss_4": 6500,
+        "loss_5": 10900,
+        "deductible": 12100,
+        "small_cap": 31400,
+        "large_cap": 10400
+      }
+    },
+    {
+      "id": "offer_7c5495ab9d2a",
+      "attrs": {
+        "price": 560125,
+        "admin": 144852,
+        "loss_0": 23200,
+        "loss_1": 4500,
+        "loss_2": 8800,
+        "loss_3": 15500,
+        "loss_4": 19600,
+        "loss_5": 28400,
+        "deductible": 24000,
+        "small_cap": 48200,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_c7d8351ff0d5",
+      "attrs": {
+        "price": 797193,
+        "admin": 175562,
+        "loss_0": 5800,
+        "loss_1": 1200,
+        "loss_2": 9000,
+        "loss_3": 17600,
+        "loss_4": 26100,
+        "loss_5": 4900,
+        "deductible": 2300,
+        "small_cap": 45700,
+        "large_cap": 16000
+      }
+    },
+    {
+      "id": "offer_ec09caa7b2e4",
+      "attrs": {
+        "price": 490936,
+        "admin": 194642,
+        "loss_0": 1300,
+        "loss_1": 3100,
+        "loss_2": 2000,
+        "loss_3": 4800,
+        "loss_4": 4000,
+        "loss_5": 17000,
+        "deductible": 8400,
+        "small_cap": 43900,
+        "large_cap": 13000
+      }
+    },
+    {
+      "id": "offer_861cbe695edd",
+      "attrs": {
+        "price": 622897,
+        "admin": 139247,
+        "loss_0": 5400,
+        "loss_1": 28600,
+        "loss_2": 2800,
+        "loss_3": 8300,
+        "loss_4": 16100,
+        "loss_5": 29200,
+        "deductible": 11200,
+        "small_cap": 24400,
+        "large_cap": 13700
+      }
+    },
+    {
+      "id": "offer_ff991ed82a9d",
+      "attrs": {
+        "price": 866364,
+        "admin": 141210,
+        "loss_0": 6600,
+        "loss_1": 24600,
+        "loss_2": 3200,
+        "loss_3": 9200,
+        "loss_4": 23000,
+        "loss_5": 23400,
+        "deductible": 5500,
+        "small_cap": 49300,
+        "large_cap": 13900
+      }
+    },
+    {
+      "id": "offer_cac22a58cfb1",
+      "attrs": {
+        "price": 733712,
+        "admin": 150404,
+        "loss_0": 25700,
+        "loss_1": 9100,
+        "loss_2": 17400,
+        "loss_3": 12000,
+        "loss_4": 12500,
+        "loss_5": 1400,
+        "deductible": 23600,
+        "small_cap": 44000,
+        "large_cap": 17100
+      }
+    },
+    {
+      "id": "offer_fa5c7584efd1",
+      "attrs": {
+        "price": 467866,
+        "admin": 144106,
+        "loss_0": 2900,
+        "loss_1": 26000,
+        "loss_2": 22400,
+        "loss_3": 1200,
+        "loss_4": 25700,
+        "loss_5": 15700,
+        "deductible": 19000,
+        "small_cap": 23800,
+        "large_cap": 18700
+      }
+    },
+    {
+      "id": "offer_b04dbeb622aa",
+      "attrs": {
+        "price": 568339,
+        "admin": 100101,
+        "loss_0": 26400,
+        "loss_1": 17700,
+        "loss_2": 25100,
+        "loss_3": 9200,
+        "loss_4": 28800,
+        "loss_5": 26900,
+        "deductible": 10900,
+        "small_cap": 46700,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_5aa5c9925682",
+      "attrs": {
+        "price": 490884,
+        "admin": 165491,
+        "loss_0": 4900,
+        "loss_1": 13200,
+        "loss_2": 7500,
+        "loss_3": 6900,
+        "loss_4": 29800,
+        "loss_5": 13100,
+        "deductible": 2300,
+        "small_cap": 48900,
+        "large_cap": 16200
+      }
+    },
+    {
+      "id": "offer_307122a3ddcc",
+      "attrs": {
+        "price": 875979,
+        "admin": 166098,
+        "loss_0": 10200,
+        "loss_1": 15700,
+        "loss_2": 8800,
+        "loss_3": 13200,
+        "loss_4": 27700,
+        "loss_5": 14200,
+        "deductible": 23700,
+        "small_cap": 39400,
+        "large_cap": 18800
+      }
+    },
+    {
+      "id": "offer_b1b2147ff961",
+      "attrs": {
+        "price": 674597,
+        "admin": 142230,
+        "loss_0": 22000,
+        "loss_1": 22700,
+        "loss_2": 18900,
+        "loss_3": 18700,
+        "loss_4": 3700,
+        "loss_5": 12900,
+        "deductible": 2100,
+        "small_cap": 49200,
+        "large_cap": 7300
+      }
+    },
+    {
+      "id": "offer_d17ae00b5167",
+      "attrs": {
+        "price": 518723,
+        "admin": 145695,
+        "loss_0": 20900,
+        "loss_1": 11000,
+        "loss_2": 27200,
+        "loss_3": 4100,
+        "loss_4": 4000,
+        "loss_5": 21900,
+        "deductible": 15700,
+        "small_cap": 33500,
+        "large_cap": 15100
+      }
+    },
+    {
+      "id": "offer_ad52bb13882b",
+      "attrs": {
+        "price": 814714,
+        "admin": 190332,
+        "loss_0": 2800,
+        "loss_1": 2700,
+        "loss_2": 21300,
+        "loss_3": 6500,
+        "loss_4": 1700,
+        "loss_5": 9700,
+        "deductible": 18800,
+        "small_cap": 20000,
+        "large_cap": 17200
+      }
+    },
+    {
+      "id": "offer_bd6f7e9406c5",
+      "attrs": {
+        "price": 563738,
+        "admin": 143650,
+        "loss_0": 8100,
+        "loss_1": 15300,
+        "loss_2": 8900,
+        "loss_3": 18800,
+        "loss_4": 25600,
+        "loss_5": 9800,
+        "deductible": 13400,
+        "small_cap": 34100,
+        "large_cap": 5800
+      }
+    },
+    {
+      "id": "offer_925b0d5cfd57",
+      "attrs": {
+        "price": 583402,
+        "admin": 146087,
+        "loss_0": 28400,
+        "loss_1": 9100,
+        "loss_2": 7300,
+        "loss_3": 11200,
+        "loss_4": 12200,
+        "loss_5": 3200,
+        "deductible": 20600,
+        "small_cap": 20900,
+        "large_cap": 6700
+      }
+    },
+    {
+      "id": "offer_6c12efef8891",
+      "attrs": {
+        "price": 758613,
+        "admin": 136435,
+        "loss_0": 7500,
+        "loss_1": 25300,
+        "loss_2": 22700,
+        "loss_3": 11600,
+        "loss_4": 21700,
+        "loss_5": 9700,
+        "deductible": 14700,
+        "small_cap": 30000,
+        "large_cap": 15800
+      }
+    },
+    {
+      "id": "offer_24f93789b368",
+      "attrs": {
+        "price": 707121,
+        "admin": 139989,
+        "loss_0": 21700,
+        "loss_1": 25700,
+        "loss_2": 16600,
+        "loss_3": 4300,
+        "loss_4": 19200,
+        "loss_5": 13700,
+        "deductible": 7200,
+        "small_cap": 41200,
+        "large_cap": 7500
+      }
+    },
+    {
+      "id": "offer_10818362971f",
+      "attrs": {
+        "price": 695460,
+        "admin": 124454,
+        "loss_0": 27300,
+        "loss_1": 19700,
+        "loss_2": 5500,
+        "loss_3": 5600,
+        "loss_4": 22000,
+        "loss_5": 26800,
+        "deductible": 12000,
+        "small_cap": 23700,
+        "large_cap": 11500
+      }
+    },
+    {
+      "id": "offer_63a401fe8ec5",
+      "attrs": {
+        "price": 702339,
+        "admin": 156008,
+        "loss_0": 7900,
+        "loss_1": 3400,
+        "loss_2": 24800,
+        "loss_3": 2700,
+        "loss_4": 14400,
+        "loss_5": 23600,
+        "deductible": 8300,
+        "small_cap": 20400,
+        "large_cap": 8900
+      }
+    },
+    {
+      "id": "offer_3eff60c3eec2",
+      "attrs": {
+        "price": 793640,
+        "admin": 145967,
+        "loss_0": 21900,
+        "loss_1": 29400,
+        "loss_2": 21200,
+        "loss_3": 16600,
+        "loss_4": 4500,
+        "loss_5": 8600,
+        "deductible": 14300,
+        "small_cap": 38500,
+        "large_cap": 18800
+      }
+    },
+    {
+      "id": "offer_99af7931bde5",
+      "attrs": {
+        "price": 782853,
+        "admin": 125721,
+        "loss_0": 28800,
+        "loss_1": 24100,
+        "loss_2": 9000,
+        "loss_3": 24800,
+        "loss_4": 9400,
+        "loss_5": 16000,
+        "deductible": 10500,
+        "small_cap": 38900,
+        "large_cap": 10900
+      }
+    },
+    {
+      "id": "offer_44f18e3a01ba",
+      "attrs": {
+        "price": 684304,
+        "admin": 152312,
+        "loss_0": 18100,
+        "loss_1": 14700,
+        "loss_2": 2300,
+        "loss_3": 30000,
+        "loss_4": 16000,
+        "loss_5": 4500,
+        "deductible": 23100,
+        "small_cap": 49500,
+        "large_cap": 18500
+      }
+    },
+    {
+      "id": "offer_b7d79bdd75e9",
+      "attrs": {
+        "price": 737985,
+        "admin": 110407,
+        "loss_0": 20300,
+        "loss_1": 10600,
+        "loss_2": 13800,
+        "loss_3": 28000,
+        "loss_4": 27600,
+        "loss_5": 27600,
+        "deductible": 4000,
+        "small_cap": 28800,
+        "large_cap": 10000
+      }
+    },
+    {
+      "id": "offer_a5bddaee4710",
+      "attrs": {
+        "price": 615750,
+        "admin": 123016,
+        "loss_0": 23500,
+        "loss_1": 21200,
+        "loss_2": 3600,
+        "loss_3": 22900,
+        "loss_4": 15900,
+        "loss_5": 24400,
+        "deductible": 3200,
+        "small_cap": 25400,
+        "large_cap": 15000
+      }
+    },
+    {
+      "id": "offer_36eb16cea49c",
+      "attrs": {
+        "price": 749117,
+        "admin": 162155,
+        "loss_0": 27800,
+        "loss_1": 15000,
+        "loss_2": 1200,
+        "loss_3": 12200,
+        "loss_4": 1000,
+        "loss_5": 6500,
+        "deductible": 24800,
+        "small_cap": 41600,
+        "large_cap": 12500
+      }
+    },
+    {
+      "id": "offer_46be50bd780e",
+      "attrs": {
+        "price": 882376,
+        "admin": 159044,
+        "loss_0": 6300,
+        "loss_1": 2500,
+        "loss_2": 15100,
+        "loss_3": 13300,
+        "loss_4": 4800,
+        "loss_5": 27600,
+        "deductible": 19100,
+        "small_cap": 46100,
+        "large_cap": 3300
+      }
+    },
+    {
+      "id": "offer_07f891f7efd7",
+      "attrs": {
+        "price": 789162,
+        "admin": 166679,
+        "loss_0": 6200,
+        "loss_1": 23700,
+        "loss_2": 1900,
+        "loss_3": 2800,
+        "loss_4": 24700,
+        "loss_5": 6300,
+        "deductible": 5400,
+        "small_cap": 21700,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_8750ae2bf3c9",
+      "attrs": {
+        "price": 807848,
+        "admin": 129387,
+        "loss_0": 5400,
+        "loss_1": 25100,
+        "loss_2": 23000,
+        "loss_3": 23500,
+        "loss_4": 19200,
+        "loss_5": 23700,
+        "deductible": 22600,
+        "small_cap": 30100,
+        "large_cap": 4700
+      }
+    },
+    {
+      "id": "offer_5af591bfb77a",
+      "attrs": {
+        "price": 871825,
+        "admin": 175746,
+        "loss_0": 14800,
+        "loss_1": 11600,
+        "loss_2": 10100,
+        "loss_3": 8500,
+        "loss_4": 5500,
+        "loss_5": 13100,
+        "deductible": 3000,
+        "small_cap": 36600,
+        "large_cap": 15600
+      }
+    },
+    {
+      "id": "offer_3f7e608717a0",
+      "attrs": {
+        "price": 857058,
+        "admin": 138836,
+        "loss_0": 20900,
+        "loss_1": 4600,
+        "loss_2": 29400,
+        "loss_3": 22400,
+        "loss_4": 14400,
+        "loss_5": 11800,
+        "deductible": 22500,
+        "small_cap": 48300,
+        "large_cap": 12900
+      }
+    },
+    {
+      "id": "offer_24c56119e0f6",
+      "attrs": {
+        "price": 813049,
+        "admin": 145174,
+        "loss_0": 1000,
+        "loss_1": 10100,
+        "loss_2": 24400,
+        "loss_3": 23400,
+        "loss_4": 12000,
+        "loss_5": 29700,
+        "deductible": 17700,
+        "small_cap": 42500,
+        "large_cap": 15600
+      }
+    },
+    {
+      "id": "offer_c31b7e0273f3",
+      "attrs": {
+        "price": 695516,
+        "admin": 126347,
+        "loss_0": 10000,
+        "loss_1": 18500,
+        "loss_2": 25600,
+        "loss_3": 26400,
+        "loss_4": 21500,
+        "loss_5": 28900,
+        "deductible": 10200,
+        "small_cap": 39700,
+        "large_cap": 12400
+      }
+    },
+    {
+      "id": "offer_96b94cd12b65",
+      "attrs": {
+        "price": 820379,
+        "admin": 128351,
+        "loss_0": 28800,
+        "loss_1": 25500,
+        "loss_2": 19300,
+        "loss_3": 1800,
+        "loss_4": 13900,
+        "loss_5": 15600,
+        "deductible": 1600,
+        "small_cap": 25000,
+        "large_cap": 11100
+      }
+    },
+    {
+      "id": "offer_70456f5271ca",
+      "attrs": {
+        "price": 693263,
+        "admin": 128090,
+        "loss_0": 5600,
+        "loss_1": 29400,
+        "loss_2": 29700,
+        "loss_3": 23400,
+        "loss_4": 25500,
+        "loss_5": 22700,
+        "deductible": 8000,
+        "small_cap": 24100,
+        "large_cap": 16300
+      }
+    },
+    {
+      "id": "offer_ab234fd0bdae",
+      "attrs": {
+        "price": 649215,
+        "admin": 144798,
+        "loss_0": 29300,
+        "loss_1": 24500,
+        "loss_2": 6700,
+        "loss_3": 12700,
+        "loss_4": 10600,
+        "loss_5": 10500,
+        "deductible": 5100,
+        "small_cap": 21800,
+        "large_cap": 17000
+      }
+    },
+    {
+      "id": "offer_ce29d1bdef8f",
+      "attrs": {
+        "price": 640369,
+        "admin": 132199,
+        "loss_0": 17600,
+        "loss_1": 27900,
+        "loss_2": 9200,
+        "loss_3": 22100,
+        "loss_4": 12000,
+        "loss_5": 21700,
+        "deductible": 15100,
+        "small_cap": 25700,
+        "large_cap": 18400
+      }
+    },
+    {
+      "id": "offer_b627cbc606dd",
+      "attrs": {
+        "price": 477805,
+        "admin": 135126,
+        "loss_0": 13500,
+        "loss_1": 2000,
+        "loss_2": 15800,
+        "loss_3": 24200,
+        "loss_4": 2300,
+        "loss_5": 27200,
+        "deductible": 18100,
+        "small_cap": 29400,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_7e87b79ffc79",
+      "attrs": {
+        "price": 683309,
+        "admin": 126300,
+        "loss_0": 29400,
+        "loss_1": 20700,
+        "loss_2": 20500,
+        "loss_3": 21800,
+        "loss_4": 7600,
+        "loss_5": 19900,
+        "deductible": 17900,
+        "small_cap": 35600,
+        "large_cap": 10300
+      }
+    },
+    {
+      "id": "offer_0f7178be7a2d",
+      "attrs": {
+        "price": 562979,
+        "admin": 131091,
+        "loss_0": 3100,
+        "loss_1": 20300,
+        "loss_2": 3800,
+        "loss_3": 28600,
+        "loss_4": 15200,
+        "loss_5": 28900,
+        "deductible": 22100,
+        "small_cap": 35700,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_3ff46954c0d4",
+      "attrs": {
+        "price": 621798,
+        "admin": 141432,
+        "loss_0": 21200,
+        "loss_1": 14800,
+        "loss_2": 12300,
+        "loss_3": 25900,
+        "loss_4": 4600,
+        "loss_5": 23300,
+        "deductible": 5100,
+        "small_cap": 46200,
+        "large_cap": 13500
+      }
+    },
+    {
+      "id": "offer_1f86e5aa25ca",
+      "attrs": {
+        "price": 730586,
+        "admin": 129874,
+        "loss_0": 5900,
+        "loss_1": 27200,
+        "loss_2": 2200,
+        "loss_3": 18000,
+        "loss_4": 29100,
+        "loss_5": 17100,
+        "deductible": 19200,
+        "small_cap": 30600,
+        "large_cap": 3800
+      }
+    },
+    {
+      "id": "offer_402db2e3e2b2",
+      "attrs": {
+        "price": 560566,
+        "admin": 119631,
+        "loss_0": 15400,
+        "loss_1": 25500,
+        "loss_2": 26200,
+        "loss_3": 27100,
+        "loss_4": 22100,
+        "loss_5": 4800,
+        "deductible": 24300,
+        "small_cap": 41400,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_de39af8995bc",
+      "attrs": {
+        "price": 690938,
+        "admin": 148296,
+        "loss_0": 11500,
+        "loss_1": 6100,
+        "loss_2": 12700,
+        "loss_3": 16500,
+        "loss_4": 27300,
+        "loss_5": 21100,
+        "deductible": 7300,
+        "small_cap": 38900,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_260fa1dfde14",
+      "attrs": {
+        "price": 839373,
+        "admin": 148438,
+        "loss_0": 21800,
+        "loss_1": 18100,
+        "loss_2": 17500,
+        "loss_3": 22100,
+        "loss_4": 13600,
+        "loss_5": 8300,
+        "deductible": 19500,
+        "small_cap": 39200,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_f8fa19ff8bb3",
+      "attrs": {
+        "price": 641538,
+        "admin": 144062,
+        "loss_0": 2600,
+        "loss_1": 16400,
+        "loss_2": 13200,
+        "loss_3": 23600,
+        "loss_4": 21100,
+        "loss_5": 11900,
+        "deductible": 19500,
+        "small_cap": 31400,
+        "large_cap": 15000
+      }
+    },
+    {
+      "id": "offer_850006528a85",
+      "attrs": {
+        "price": 872233,
+        "admin": 146418,
+        "loss_0": 11900,
+        "loss_1": 24500,
+        "loss_2": 3600,
+        "loss_3": 20500,
+        "loss_4": 17500,
+        "loss_5": 13400,
+        "deductible": 6300,
+        "small_cap": 28800,
+        "large_cap": 3700
+      }
+    },
+    {
+      "id": "offer_480fb504521a",
+      "attrs": {
+        "price": 787423,
+        "admin": 163605,
+        "loss_0": 13000,
+        "loss_1": 7100,
+        "loss_2": 1700,
+        "loss_3": 12400,
+        "loss_4": 7700,
+        "loss_5": 24700,
+        "deductible": 11300,
+        "small_cap": 43400,
+        "large_cap": 9700
+      }
+    },
+    {
+      "id": "offer_8e0789262761",
+      "attrs": {
+        "price": 580866,
+        "admin": 115631,
+        "loss_0": 22100,
+        "loss_1": 4500,
+        "loss_2": 4500,
+        "loss_3": 28800,
+        "loss_4": 19800,
+        "loss_5": 20600,
+        "deductible": 21700,
+        "small_cap": 30500,
+        "large_cap": 5200
+      }
+    },
+    {
+      "id": "offer_caf399b31baf",
+      "attrs": {
+        "price": 804759,
+        "admin": 169542,
+        "loss_0": 15600,
+        "loss_1": 13500,
+        "loss_2": 8000,
+        "loss_3": 5600,
+        "loss_4": 10800,
+        "loss_5": 7300,
+        "deductible": 1700,
+        "small_cap": 34000,
+        "large_cap": 16000
+      }
+    },
+    {
+      "id": "offer_525024d30e03",
+      "attrs": {
+        "price": 474932,
+        "admin": 145909,
+        "loss_0": 22500,
+        "loss_1": 17000,
+        "loss_2": 18200,
+        "loss_3": 6300,
+        "loss_4": 24200,
+        "loss_5": 17500,
+        "deductible": 16800,
+        "small_cap": 32600,
+        "large_cap": 12200
+      }
+    },
+    {
+      "id": "offer_a670f49cd916",
+      "attrs": {
+        "price": 750392,
+        "admin": 171339,
+        "loss_0": 4000,
+        "loss_1": 2200,
+        "loss_2": 12600,
+        "loss_3": 22600,
+        "loss_4": 14900,
+        "loss_5": 4000,
+        "deductible": 6600,
+        "small_cap": 26500,
+        "large_cap": 17300
+      }
+    },
+    {
+      "id": "offer_bfe1c1f90aef",
+      "attrs": {
+        "price": 860404,
+        "admin": 137923,
+        "loss_0": 28000,
+        "loss_1": 3600,
+        "loss_2": 21000,
+        "loss_3": 15000,
+        "loss_4": 17400,
+        "loss_5": 7500,
+        "deductible": 12100,
+        "small_cap": 43700,
+        "large_cap": 9200
+      }
+    },
+    {
+      "id": "offer_49659f66d3b0",
+      "attrs": {
+        "price": 523699,
+        "admin": 118978,
+        "loss_0": 2700,
+        "loss_1": 27400,
+        "loss_2": 15500,
+        "loss_3": 27200,
+        "loss_4": 11600,
+        "loss_5": 23300,
+        "deductible": 6900,
+        "small_cap": 32600,
+        "large_cap": 3300
+      }
+    },
+    {
+      "id": "offer_c66f26f5c341",
+      "attrs": {
+        "price": 513427,
+        "admin": 140302,
+        "loss_0": 25900,
+        "loss_1": 8600,
+        "loss_2": 19700,
+        "loss_3": 2000,
+        "loss_4": 19000,
+        "loss_5": 28300,
+        "deductible": 4300,
+        "small_cap": 32000,
+        "large_cap": 15300
+      }
+    },
+    {
+      "id": "offer_730a63c945d9",
+      "attrs": {
+        "price": 781572,
+        "admin": 176032,
+        "loss_0": 7600,
+        "loss_1": 7600,
+        "loss_2": 3100,
+        "loss_3": 15600,
+        "loss_4": 9900,
+        "loss_5": 17300,
+        "deductible": 15400,
+        "small_cap": 41900,
+        "large_cap": 14000
+      }
+    },
+    {
+      "id": "offer_90f5c5364e82",
+      "attrs": {
+        "price": 510563,
+        "admin": 162834,
+        "loss_0": 1500,
+        "loss_1": 3100,
+        "loss_2": 29400,
+        "loss_3": 10600,
+        "loss_4": 19600,
+        "loss_5": 9700,
+        "deductible": 7200,
+        "small_cap": 48800,
+        "large_cap": 14200
+      }
+    },
+    {
+      "id": "offer_dc89cb03a844",
+      "attrs": {
+        "price": 782248,
+        "admin": 123673,
+        "loss_0": 4600,
+        "loss_1": 11300,
+        "loss_2": 1300,
+        "loss_3": 24800,
+        "loss_4": 23200,
+        "loss_5": 22700,
+        "deductible": 23300,
+        "small_cap": 24500,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_d9d8bb78b1af",
+      "attrs": {
+        "price": 669191,
+        "admin": 132439,
+        "loss_0": 24700,
+        "loss_1": 11100,
+        "loss_2": 18400,
+        "loss_3": 25200,
+        "loss_4": 2700,
+        "loss_5": 14100,
+        "deductible": 10700,
+        "small_cap": 30800,
+        "large_cap": 3500
+      }
+    },
+    {
+      "id": "offer_8927a10284a2",
+      "attrs": {
+        "price": 858416,
+        "admin": 144838,
+        "loss_0": 28300,
+        "loss_1": 3600,
+        "loss_2": 1000,
+        "loss_3": 11400,
+        "loss_4": 1500,
+        "loss_5": 26700,
+        "deductible": 18500,
+        "small_cap": 37200,
+        "large_cap": 6900
+      }
+    },
+    {
+      "id": "offer_d2dfee6d61d6",
+      "attrs": {
+        "price": 767204,
+        "admin": 129791,
+        "loss_0": 12400,
+        "loss_1": 11300,
+        "loss_2": 20200,
+        "loss_3": 24300,
+        "loss_4": 14600,
+        "loss_5": 24800,
+        "deductible": 16600,
+        "small_cap": 22900,
+        "large_cap": 4600
+      }
+    },
+    {
+      "id": "offer_fa47a52dafd1",
+      "attrs": {
+        "price": 824156,
+        "admin": 137502,
+        "loss_0": 27200,
+        "loss_1": 3300,
+        "loss_2": 10500,
+        "loss_3": 10000,
+        "loss_4": 28300,
+        "loss_5": 8300,
+        "deductible": 1900,
+        "small_cap": 39100,
+        "large_cap": 7700
+      }
+    },
+    {
+      "id": "offer_81ba36754d2e",
+      "attrs": {
+        "price": 727791,
+        "admin": 166895,
+        "loss_0": 7800,
+        "loss_1": 27200,
+        "loss_2": 10300,
+        "loss_3": 7500,
+        "loss_4": 11300,
+        "loss_5": 9700,
+        "deductible": 12500,
+        "small_cap": 47100,
+        "large_cap": 13800
+      }
+    },
+    {
+      "id": "offer_3474adf2f5df",
+      "attrs": {
+        "price": 717274,
+        "admin": 120714,
+        "loss_0": 1300,
+        "loss_1": 26400,
+        "loss_2": 11200,
+        "loss_3": 14900,
+        "loss_4": 28100,
+        "loss_5": 26500,
+        "deductible": 6100,
+        "small_cap": 49300,
+        "large_cap": 9700
+      }
+    },
+    {
+      "id": "offer_18e2890c6ea6",
+      "attrs": {
+        "price": 610404,
+        "admin": 139639,
+        "loss_0": 20800,
+        "loss_1": 16500,
+        "loss_2": 24100,
+        "loss_3": 1800,
+        "loss_4": 7400,
+        "loss_5": 27400,
+        "deductible": 8900,
+        "small_cap": 23500,
+        "large_cap": 17200
+      }
+    },
+    {
+      "id": "offer_dbfe153ffaea",
+      "attrs": {
+        "price": 513669,
+        "admin": 145940,
+        "loss_0": 1000,
+        "loss_1": 13500,
+        "loss_2": 20800,
+        "loss_3": 12300,
+        "loss_4": 1300,
+        "loss_5": 28300,
+        "deductible": 21800,
+        "small_cap": 38400,
+        "large_cap": 5500
+      }
+    },
+    {
+      "id": "offer_119b84243027",
+      "attrs": {
+        "price": 818341,
+        "admin": 143814,
+        "loss_0": 29100,
+        "loss_1": 25100,
+        "loss_2": 22600,
+        "loss_3": 14500,
+        "loss_4": 8600,
+        "loss_5": 12100,
+        "deductible": 1600,
+        "small_cap": 29500,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_8a2463c99c9c",
+      "attrs": {
+        "price": 769324,
+        "admin": 141173,
+        "loss_0": 7200,
+        "loss_1": 17000,
+        "loss_2": 11400,
+        "loss_3": 4600,
+        "loss_4": 27900,
+        "loss_5": 7800,
+        "deductible": 24300,
+        "small_cap": 46600,
+        "large_cap": 2900
+      }
+    },
+    {
+      "id": "offer_b1760380a7cc",
+      "attrs": {
+        "price": 685491,
+        "admin": 116360,
+        "loss_0": 29100,
+        "loss_1": 4300,
+        "loss_2": 20500,
+        "loss_3": 28100,
+        "loss_4": 6300,
+        "loss_5": 24600,
+        "deductible": 16100,
+        "small_cap": 49700,
+        "large_cap": 14400
+      }
+    },
+    {
+      "id": "offer_37f9499c497e",
+      "attrs": {
+        "price": 777460,
+        "admin": 115472,
+        "loss_0": 6700,
+        "loss_1": 29200,
+        "loss_2": 19500,
+        "loss_3": 28900,
+        "loss_4": 21500,
+        "loss_5": 27000,
+        "deductible": 15800,
+        "small_cap": 36600,
+        "large_cap": 11900
+      }
+    },
+    {
+      "id": "offer_d95260f547de",
+      "attrs": {
+        "price": 735520,
+        "admin": 112640,
+        "loss_0": 14900,
+        "loss_1": 25600,
+        "loss_2": 26100,
+        "loss_3": 12000,
+        "loss_4": 27500,
+        "loss_5": 17800,
+        "deductible": 8400,
+        "small_cap": 22300,
+        "large_cap": 8500
+      }
+    },
+    {
+      "id": "offer_403f702877b4",
+      "attrs": {
+        "price": 660166,
+        "admin": 146200,
+        "loss_0": 6000,
+        "loss_1": 19200,
+        "loss_2": 17600,
+        "loss_3": 1500,
+        "loss_4": 9900,
+        "loss_5": 26200,
+        "deductible": 16100,
+        "small_cap": 33900,
+        "large_cap": 4000
+      }
+    },
+    {
+      "id": "offer_ab62ffbfa734",
+      "attrs": {
+        "price": 878654,
+        "admin": 144848,
+        "loss_0": 18000,
+        "loss_1": 23500,
+        "loss_2": 9400,
+        "loss_3": 18700,
+        "loss_4": 18800,
+        "loss_5": 14000,
+        "deductible": 11500,
+        "small_cap": 32000,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_e5b70f7ffd23",
+      "attrs": {
+        "price": 830316,
+        "admin": 136251,
+        "loss_0": 7700,
+        "loss_1": 22600,
+        "loss_2": 18000,
+        "loss_3": 29900,
+        "loss_4": 18100,
+        "loss_5": 20100,
+        "deductible": 3700,
+        "small_cap": 48600,
+        "large_cap": 13800
+      }
+    },
+    {
+      "id": "offer_f0476cf8858a",
+      "attrs": {
+        "price": 878836,
+        "admin": 170260,
+        "loss_0": 14900,
+        "loss_1": 13300,
+        "loss_2": 13500,
+        "loss_3": 18700,
+        "loss_4": 11600,
+        "loss_5": 7100,
+        "deductible": 24400,
+        "small_cap": 31500,
+        "large_cap": 14600
+      }
+    },
+    {
+      "id": "offer_bcea72d8f75e",
+      "attrs": {
+        "price": 830563,
+        "admin": 142422,
+        "loss_0": 14800,
+        "loss_1": 7500,
+        "loss_2": 27100,
+        "loss_3": 4900,
+        "loss_4": 22000,
+        "loss_5": 18100,
+        "deductible": 4800,
+        "small_cap": 30300,
+        "large_cap": 8800
+      }
+    },
+    {
+      "id": "offer_4c87b5a6c26a",
+      "attrs": {
+        "price": 628066,
+        "admin": 158436,
+        "loss_0": 20100,
+        "loss_1": 8400,
+        "loss_2": 7200,
+        "loss_3": 7000,
+        "loss_4": 16200,
+        "loss_5": 2100,
+        "deductible": 20400,
+        "small_cap": 25900,
+        "large_cap": 3700
+      }
+    },
+    {
+      "id": "offer_e40c2c60668f",
+      "attrs": {
+        "price": 604909,
+        "admin": 170661,
+        "loss_0": 6200,
+        "loss_1": 8900,
+        "loss_2": 7300,
+        "loss_3": 5800,
+        "loss_4": 8600,
+        "loss_5": 25200,
+        "deductible": 9500,
+        "small_cap": 34600,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_3a7af0f0f47c",
+      "attrs": {
+        "price": 727789,
+        "admin": 152183,
+        "loss_0": 14200,
+        "loss_1": 26100,
+        "loss_2": 8800,
+        "loss_3": 12800,
+        "loss_4": 9500,
+        "loss_5": 7200,
+        "deductible": 19700,
+        "small_cap": 33000,
+        "large_cap": 2400
+      }
+    },
+    {
+      "id": "offer_17ba2aab319e",
+      "attrs": {
+        "price": 482117,
+        "admin": 127174,
+        "loss_0": 27200,
+        "loss_1": 3000,
+        "loss_2": 9500,
+        "loss_3": 18800,
+        "loss_4": 17200,
+        "loss_5": 20400,
+        "deductible": 11400,
+        "small_cap": 25300,
+        "large_cap": 10300
+      }
+    },
+    {
+      "id": "offer_43cd4cace780",
+      "attrs": {
+        "price": 677895,
+        "admin": 150222,
+        "loss_0": 6300,
+        "loss_1": 18000,
+        "loss_2": 18600,
+        "loss_3": 3900,
+        "loss_4": 23900,
+        "loss_5": 16800,
+        "deductible": 5900,
+        "small_cap": 29600,
+        "large_cap": 12900
+      }
+    },
+    {
+      "id": "offer_e0e5a2bf237b",
+      "attrs": {
+        "price": 821496,
+        "admin": 156902,
+        "loss_0": 14200,
+        "loss_1": 5300,
+        "loss_2": 19600,
+        "loss_3": 13200,
+        "loss_4": 13600,
+        "loss_5": 17100,
+        "deductible": 20800,
+        "small_cap": 22500,
+        "large_cap": 9000
+      }
+    },
+    {
+      "id": "offer_dc11a148fdf7",
+      "attrs": {
+        "price": 643106,
+        "admin": 154786,
+        "loss_0": 8900,
+        "loss_1": 19100,
+        "loss_2": 12200,
+        "loss_3": 23700,
+        "loss_4": 10100,
+        "loss_5": 14600,
+        "deductible": 13800,
+        "small_cap": 39300,
+        "large_cap": 11400
+      }
+    },
+    {
+      "id": "offer_7814dc59f8a3",
+      "attrs": {
+        "price": 855486,
+        "admin": 121199,
+        "loss_0": 3100,
+        "loss_1": 27600,
+        "loss_2": 23700,
+        "loss_3": 11400,
+        "loss_4": 28000,
+        "loss_5": 28600,
+        "deductible": 15500,
+        "small_cap": 29800,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_2a2a9d4803ad",
+      "attrs": {
+        "price": 821412,
+        "admin": 144653,
+        "loss_0": 29300,
+        "loss_1": 15900,
+        "loss_2": 16000,
+        "loss_3": 14200,
+        "loss_4": 7900,
+        "loss_5": 11300,
+        "deductible": 18500,
+        "small_cap": 22600,
+        "large_cap": 7200
+      }
+    },
+    {
+      "id": "offer_ac5ab431fa51",
+      "attrs": {
+        "price": 887842,
+        "admin": 127616,
+        "loss_0": 4600,
+        "loss_1": 27300,
+        "loss_2": 21800,
+        "loss_3": 26200,
+        "loss_4": 27000,
+        "loss_5": 17600,
+        "deductible": 24800,
+        "small_cap": 41100,
+        "large_cap": 11600
+      }
+    },
+    {
+      "id": "offer_3058a3476fdf",
+      "attrs": {
+        "price": 636292,
+        "admin": 150983,
+        "loss_0": 3100,
+        "loss_1": 7800,
+        "loss_2": 10000,
+        "loss_3": 17500,
+        "loss_4": 28100,
+        "loss_5": 15900,
+        "deductible": 4300,
+        "small_cap": 33500,
+        "large_cap": 16800
+      }
+    },
+    {
+      "id": "offer_ffd2b75776aa",
+      "attrs": {
+        "price": 699884,
+        "admin": 137785,
+        "loss_0": 15900,
+        "loss_1": 25800,
+        "loss_2": 28100,
+        "loss_3": 16400,
+        "loss_4": 16300,
+        "loss_5": 21600,
+        "deductible": 12700,
+        "small_cap": 36100,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_60fde126e53d",
+      "attrs": {
+        "price": 584525,
+        "admin": 131952,
+        "loss_0": 3200,
+        "loss_1": 6500,
+        "loss_2": 27500,
+        "loss_3": 24100,
+        "loss_4": 13300,
+        "loss_5": 24500,
+        "deductible": 22100,
+        "small_cap": 20600,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_ff2fd02cb01e",
+      "attrs": {
+        "price": 731204,
+        "admin": 130047,
+        "loss_0": 23000,
+        "loss_1": 3200,
+        "loss_2": 24200,
+        "loss_3": 21500,
+        "loss_4": 15400,
+        "loss_5": 2600,
+        "deductible": 15300,
+        "small_cap": 23200,
+        "large_cap": 2300
+      }
+    },
+    {
+      "id": "offer_4a86e891b807",
+      "attrs": {
+        "price": 670110,
+        "admin": 125979,
+        "loss_0": 15700,
+        "loss_1": 23100,
+        "loss_2": 27000,
+        "loss_3": 21700,
+        "loss_4": 3500,
+        "loss_5": 21400,
+        "deductible": 13200,
+        "small_cap": 29000,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_46352768a339",
+      "attrs": {
+        "price": 870731,
+        "admin": 131961,
+        "loss_0": 20600,
+        "loss_1": 16500,
+        "loss_2": 9300,
+        "loss_3": 4900,
+        "loss_4": 22800,
+        "loss_5": 27900,
+        "deductible": 13100,
+        "small_cap": 27400,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_38dd2f833ba5",
+      "attrs": {
+        "price": 524157,
+        "admin": 118869,
+        "loss_0": 20600,
+        "loss_1": 15300,
+        "loss_2": 24800,
+        "loss_3": 29700,
+        "loss_4": 14700,
+        "loss_5": 29600,
+        "deductible": 18900,
+        "small_cap": 30600,
+        "large_cap": 17200
+      }
+    },
+    {
+      "id": "offer_288c9f8532ef",
+      "attrs": {
+        "price": 781114,
+        "admin": 160513,
+        "loss_0": 11100,
+        "loss_1": 18000,
+        "loss_2": 12600,
+        "loss_3": 5900,
+        "loss_4": 5600,
+        "loss_5": 11600,
+        "deductible": 23000,
+        "small_cap": 44800,
+        "large_cap": 9600
+      }
+    },
+    {
+      "id": "offer_686802414e40",
+      "attrs": {
+        "price": 787691,
+        "admin": 147337,
+        "loss_0": 9100,
+        "loss_1": 20900,
+        "loss_2": 6800,
+        "loss_3": 2900,
+        "loss_4": 17300,
+        "loss_5": 18500,
+        "deductible": 8200,
+        "small_cap": 21400,
+        "large_cap": 6900
+      }
+    },
+    {
+      "id": "offer_eee521ffa46a",
+      "attrs": {
+        "price": 704647,
+        "admin": 133783,
+        "loss_0": 16100,
+        "loss_1": 19800,
+        "loss_2": 14500,
+        "loss_3": 13500,
+        "loss_4": 15600,
+        "loss_5": 25600,
+        "deductible": 3700,
+        "small_cap": 33000,
+        "large_cap": 10100
+      }
+    },
+    {
+      "id": "offer_a6b6f039f2be",
+      "attrs": {
+        "price": 503759,
+        "admin": 142551,
+        "loss_0": 9400,
+        "loss_1": 20900,
+        "loss_2": 18600,
+        "loss_3": 12800,
+        "loss_4": 24700,
+        "loss_5": 5000,
+        "deductible": 11800,
+        "small_cap": 33700,
+        "large_cap": 13600
+      }
+    },
+    {
+      "id": "offer_c4b68bf7cfd8",
+      "attrs": {
+        "price": 582371,
+        "admin": 117577,
+        "loss_0": 20400,
+        "loss_1": 1800,
+        "loss_2": 28200,
+        "loss_3": 5800,
+        "loss_4": 26000,
+        "loss_5": 15500,
+        "deductible": 14900,
+        "small_cap": 30800,
+        "large_cap": 5000
+      }
+    },
+    {
+      "id": "offer_4ef92551f9e1",
+      "attrs": {
+        "price": 501094,
+        "admin": 156479,
+        "loss_0": 21800,
+        "loss_1": 11900,
+        "loss_2": 7000,
+        "loss_3": 22500,
+        "loss_4": 3400,
+        "loss_5": 18900,
+        "deductible": 22200,
+        "small_cap": 28800,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_6c47f52ba501",
+      "attrs": {
+        "price": 567037,
+        "admin": 129105,
+        "loss_0": 23300,
+        "loss_1": 25700,
+        "loss_2": 27200,
+        "loss_3": 10900,
+        "loss_4": 12300,
+        "loss_5": 21000,
+        "deductible": 23600,
+        "small_cap": 25600,
+        "large_cap": 10300
+      }
+    },
+    {
+      "id": "offer_91409e640e4e",
+      "attrs": {
+        "price": 889269,
+        "admin": 148282,
+        "loss_0": 8700,
+        "loss_1": 16100,
+        "loss_2": 7600,
+        "loss_3": 24200,
+        "loss_4": 18500,
+        "loss_5": 19500,
+        "deductible": 21000,
+        "small_cap": 22500,
+        "large_cap": 11900
+      }
+    },
+    {
+      "id": "offer_8353c6e14d30",
+      "attrs": {
+        "price": 887048,
+        "admin": 129591,
+        "loss_0": 28700,
+        "loss_1": 7800,
+        "loss_2": 10200,
+        "loss_3": 8600,
+        "loss_4": 22800,
+        "loss_5": 26200,
+        "deductible": 14600,
+        "small_cap": 33600,
+        "large_cap": 6700
+      }
+    },
+    {
+      "id": "offer_06983b317bfe",
+      "attrs": {
+        "price": 883161,
+        "admin": 144392,
+        "loss_0": 21300,
+        "loss_1": 21600,
+        "loss_2": 2800,
+        "loss_3": 6500,
+        "loss_4": 24300,
+        "loss_5": 7900,
+        "deductible": 11900,
+        "small_cap": 25700,
+        "large_cap": 17900
+      }
+    },
+    {
+      "id": "offer_64ef5a0cd11c",
+      "attrs": {
+        "price": 502309,
+        "admin": 141634,
+        "loss_0": 8100,
+        "loss_1": 18300,
+        "loss_2": 19800,
+        "loss_3": 17300,
+        "loss_4": 16500,
+        "loss_5": 13300,
+        "deductible": 14300,
+        "small_cap": 45200,
+        "large_cap": 2300
+      }
+    },
+    {
+      "id": "offer_b77301d9cf98",
+      "attrs": {
+        "price": 574596,
+        "admin": 126072,
+        "loss_0": 20600,
+        "loss_1": 28100,
+        "loss_2": 12500,
+        "loss_3": 21600,
+        "loss_4": 6300,
+        "loss_5": 26800,
+        "deductible": 13500,
+        "small_cap": 23400,
+        "large_cap": 6100
+      }
+    },
+    {
+      "id": "offer_7fa4aeae4475",
+      "attrs": {
+        "price": 520398,
+        "admin": 131545,
+        "loss_0": 27300,
+        "loss_1": 8700,
+        "loss_2": 15900,
+        "loss_3": 1500,
+        "loss_4": 20100,
+        "loss_5": 1500,
+        "deductible": 22700,
+        "small_cap": 30800,
+        "large_cap": 2600
+      }
+    },
+    {
+      "id": "offer_80cec1ca419e",
+      "attrs": {
+        "price": 860049,
+        "admin": 130327,
+        "loss_0": 16600,
+        "loss_1": 25900,
+        "loss_2": 3300,
+        "loss_3": 13000,
+        "loss_4": 25600,
+        "loss_5": 26200,
+        "deductible": 14200,
+        "small_cap": 46900,
+        "large_cap": 15100
+      }
+    },
+    {
+      "id": "offer_ba650e4b76cc",
+      "attrs": {
+        "price": 494060,
+        "admin": 130418,
+        "loss_0": 3000,
+        "loss_1": 27800,
+        "loss_2": 30000,
+        "loss_3": 14800,
+        "loss_4": 23700,
+        "loss_5": 15900,
+        "deductible": 14200,
+        "small_cap": 40800,
+        "large_cap": 18200
+      }
+    },
+    {
+      "id": "offer_56ecd011affc",
+      "attrs": {
+        "price": 609147,
+        "admin": 117698,
+        "loss_0": 29200,
+        "loss_1": 29200,
+        "loss_2": 1200,
+        "loss_3": 21900,
+        "loss_4": 11000,
+        "loss_5": 27700,
+        "deductible": 23500,
+        "small_cap": 25700,
+        "large_cap": 18000
+      }
+    },
+    {
+      "id": "offer_bde5e53d9383",
+      "attrs": {
+        "price": 582421,
+        "admin": 137294,
+        "loss_0": 27100,
+        "loss_1": 1100,
+        "loss_2": 20000,
+        "loss_3": 14000,
+        "loss_4": 24100,
+        "loss_5": 9100,
+        "deductible": 10700,
+        "small_cap": 47500,
+        "large_cap": 5700
+      }
+    },
+    {
+      "id": "offer_40772cb8eff8",
+      "attrs": {
+        "price": 459064,
+        "admin": 124057,
+        "loss_0": 28400,
+        "loss_1": 13100,
+        "loss_2": 27000,
+        "loss_3": 20200,
+        "loss_4": 11100,
+        "loss_5": 17100,
+        "deductible": 12600,
+        "small_cap": 32200,
+        "large_cap": 4800
+      }
+    },
+    {
+      "id": "offer_dc76b27677fd",
+      "attrs": {
+        "price": 497699,
+        "admin": 129718,
+        "loss_0": 20100,
+        "loss_1": 11400,
+        "loss_2": 24900,
+        "loss_3": 17800,
+        "loss_4": 10100,
+        "loss_5": 8100,
+        "deductible": 3500,
+        "small_cap": 29700,
+        "large_cap": 2200
+      }
+    },
+    {
+      "id": "offer_db4b61a454eb",
+      "attrs": {
+        "price": 871359,
+        "admin": 163833,
+        "loss_0": 1800,
+        "loss_1": 1500,
+        "loss_2": 2700,
+        "loss_3": 25300,
+        "loss_4": 25700,
+        "loss_5": 9900,
+        "deductible": 9600,
+        "small_cap": 34200,
+        "large_cap": 9000
+      }
+    },
+    {
+      "id": "offer_6b4d18d13003",
+      "attrs": {
+        "price": 508631,
+        "admin": 127125,
+        "loss_0": 16000,
+        "loss_1": 14300,
+        "loss_2": 30000,
+        "loss_3": 14800,
+        "loss_4": 3000,
+        "loss_5": 22900,
+        "deductible": 17900,
+        "small_cap": 25300,
+        "large_cap": 7400
+      }
+    },
+    {
+      "id": "offer_9e8abbe6b8d7",
+      "attrs": {
+        "price": 706664,
+        "admin": 112970,
+        "loss_0": 30000,
+        "loss_1": 27300,
+        "loss_2": 8100,
+        "loss_3": 25600,
+        "loss_4": 19900,
+        "loss_5": 4100,
+        "deductible": 21300,
+        "small_cap": 22800,
+        "large_cap": 4900
+      }
+    },
+    {
+      "id": "offer_ca53f6b5434a",
+      "attrs": {
+        "price": 491646,
+        "admin": 132630,
+        "loss_0": 3200,
+        "loss_1": 16800,
+        "loss_2": 21600,
+        "loss_3": 29900,
+        "loss_4": 17600,
+        "loss_5": 26800,
+        "deductible": 12900,
+        "small_cap": 29200,
+        "large_cap": 9700
+      }
+    },
+    {
+      "id": "offer_4d47eee222f4",
+      "attrs": {
+        "price": 861772,
+        "admin": 115555,
+        "loss_0": 17500,
+        "loss_1": 2300,
+        "loss_2": 17300,
+        "loss_3": 24700,
+        "loss_4": 4800,
+        "loss_5": 29600,
+        "deductible": 20300,
+        "small_cap": 36100,
+        "large_cap": 2300
+      }
+    },
+    {
+      "id": "offer_040e3b26211a",
+      "attrs": {
+        "price": 557322,
+        "admin": 140365,
+        "loss_0": 6500,
+        "loss_1": 28000,
+        "loss_2": 8000,
+        "loss_3": 9000,
+        "loss_4": 3800,
+        "loss_5": 18400,
+        "deductible": 2200,
+        "small_cap": 21400,
+        "large_cap": 2100
+      }
+    },
+    {
+      "id": "offer_8841662f88de",
+      "attrs": {
+        "price": 565562,
+        "admin": 138662,
+        "loss_0": 25100,
+        "loss_1": 1000,
+        "loss_2": 5000,
+        "loss_3": 26900,
+        "loss_4": 17700,
+        "loss_5": 13900,
+        "deductible": 17500,
+        "small_cap": 44500,
+        "large_cap": 9600
+      }
+    },
+    {
+      "id": "offer_cb0f2123e67d",
+      "attrs": {
+        "price": 463963,
+        "admin": 171043,
+        "loss_0": 4800,
+        "loss_1": 8500,
+        "loss_2": 6500,
+        "loss_3": 14100,
+        "loss_4": 18900,
+        "loss_5": 13700,
+        "deductible": 13500,
+        "small_cap": 32200,
+        "large_cap": 11900
+      }
+    },
+    {
+      "id": "offer_aa9f529a0926",
+      "attrs": {
+        "price": 554681,
+        "admin": 136429,
+        "loss_0": 16100,
+        "loss_1": 9800,
+        "loss_2": 7200,
+        "loss_3": 22900,
+        "loss_4": 4800,
+        "loss_5": 29000,
+        "deductible": 2200,
+        "small_cap": 41100,
+        "large_cap": 10500
+      }
+    },
+    {
+      "id": "offer_ddaae33d69fc",
+      "attrs": {
+        "price": 774649,
+        "admin": 135340,
+        "loss_0": 1400,
+        "loss_1": 26600,
+        "loss_2": 5500,
+        "loss_3": 27400,
+        "loss_4": 12100,
+        "loss_5": 12700,
+        "deductible": 16000,
+        "small_cap": 40600,
+        "large_cap": 6800
+      }
+    },
+    {
+      "id": "offer_6423bb42f9da",
+      "attrs": {
+        "price": 490963,
+        "admin": 155675,
+        "loss_0": 6000,
+        "loss_1": 22600,
+        "loss_2": 4500,
+        "loss_3": 13000,
+        "loss_4": 20200,
+        "loss_5": 3000,
+        "deductible": 2200,
+        "small_cap": 20800,
+        "large_cap": 13000
+      }
+    },
+    {
+      "id": "offer_51ce66b5b3bf",
+      "attrs": {
+        "price": 671794,
+        "admin": 175831,
+        "loss_0": 6600,
+        "loss_1": 5100,
+        "loss_2": 4600,
+        "loss_3": 26700,
+        "loss_4": 14700,
+        "loss_5": 1600,
+        "deductible": 4400,
+        "small_cap": 23700,
+        "large_cap": 15300
+      }
+    },
+    {
+      "id": "offer_3347d53f0eb5",
+      "attrs": {
+        "price": 777527,
+        "admin": 160627,
+        "loss_0": 6200,
+        "loss_1": 11000,
+        "loss_2": 19000,
+        "loss_3": 17000,
+        "loss_4": 4000,
+        "loss_5": 12000,
+        "deductible": 6500,
+        "small_cap": 46200,
+        "large_cap": 4500
+      }
+    },
+    {
+      "id": "offer_9f6781024ca9",
+      "attrs": {
+        "price": 846519,
+        "admin": 141280,
+        "loss_0": 26900,
+        "loss_1": 22200,
+        "loss_2": 6000,
+        "loss_3": 23200,
+        "loss_4": 2600,
+        "loss_5": 19300,
+        "deductible": 6000,
+        "small_cap": 37500,
+        "large_cap": 12900
+      }
+    },
+    {
+      "id": "offer_7e1ecb5d8810",
+      "attrs": {
+        "price": 724271,
+        "admin": 157020,
+        "loss_0": 13100,
+        "loss_1": 8000,
+        "loss_2": 6900,
+        "loss_3": 14600,
+        "loss_4": 24300,
+        "loss_5": 8800,
+        "deductible": 16700,
+        "small_cap": 34500,
+        "large_cap": 7900
+      }
+    },
+    {
+      "id": "offer_4dd9e7e3375a",
+      "attrs": {
+        "price": 577213,
+        "admin": 156033,
+        "loss_0": 18500,
+        "loss_1": 1000,
+        "loss_2": 1700,
+        "loss_3": 27400,
+        "loss_4": 17900,
+        "loss_5": 3500,
+        "deductible": 15600,
+        "small_cap": 26600,
+        "large_cap": 7200
+      }
+    },
+    {
+      "id": "offer_9f94d885ca37",
+      "attrs": {
+        "price": 863076,
+        "admin": 157142,
+        "loss_0": 16800,
+        "loss_1": 28000,
+        "loss_2": 9100,
+        "loss_3": 10700,
+        "loss_4": 9600,
+        "loss_5": 4100,
+        "deductible": 3200,
+        "small_cap": 22100,
+        "large_cap": 17100
+      }
+    },
+    {
+      "id": "offer_c28c6057f60f",
+      "attrs": {
+        "price": 826468,
+        "admin": 132679,
+        "loss_0": 3100,
+        "loss_1": 19600,
+        "loss_2": 29300,
+        "loss_3": 10600,
+        "loss_4": 18000,
+        "loss_5": 11400,
+        "deductible": 8000,
+        "small_cap": 36800,
+        "large_cap": 5600
+      }
+    },
+    {
+      "id": "offer_0cdff80b2831",
+      "attrs": {
+        "price": 768494,
+        "admin": 136985,
+        "loss_0": 18400,
+        "loss_1": 13100,
+        "loss_2": 13200,
+        "loss_3": 25500,
+        "loss_4": 24800,
+        "loss_5": 26400,
+        "deductible": 15300,
+        "small_cap": 32100,
+        "large_cap": 16900
+      }
+    },
+    {
+      "id": "offer_383e54c993be",
+      "attrs": {
+        "price": 610098,
+        "admin": 151292,
+        "loss_0": 15600,
+        "loss_1": 11600,
+        "loss_2": 20500,
+        "loss_3": 19500,
+        "loss_4": 1900,
+        "loss_5": 13000,
+        "deductible": 2600,
+        "small_cap": 30600,
+        "large_cap": 16500
+      }
+    },
+    {
+      "id": "offer_7eb04b74edb1",
+      "attrs": {
+        "price": 506114,
+        "admin": 165640,
+        "loss_0": 5500,
+        "loss_1": 8000,
+        "loss_2": 27100,
+        "loss_3": 14700,
+        "loss_4": 5600,
+        "loss_5": 3900,
+        "deductible": 8000,
+        "small_cap": 36400,
+        "large_cap": 4800
+      }
+    },
+    {
+      "id": "offer_a6a0e1706591",
+      "attrs": {
+        "price": 846438,
+        "admin": 162276,
+        "loss_0": 5500,
+        "loss_1": 1500,
+        "loss_2": 6500,
+        "loss_3": 3500,
+        "loss_4": 27400,
+        "loss_5": 1000,
+        "deductible": 10800,
+        "small_cap": 22000,
+        "large_cap": 2700
+      }
+    },
+    {
+      "id": "offer_713600922c75",
+      "attrs": {
+        "price": 509560,
+        "admin": 184899,
+        "loss_0": 9300,
+        "loss_1": 13800,
+        "loss_2": 5200,
+        "loss_3": 4200,
+        "loss_4": 15200,
+        "loss_5": 7100,
+        "deductible": 11900,
+        "small_cap": 44100,
+        "large_cap": 16900
+      }
+    },
+    {
+      "id": "offer_5c1b09fc7185",
+      "attrs": {
+        "price": 780518,
+        "admin": 99059,
+        "loss_0": 29600,
+        "loss_1": 30000,
+        "loss_2": 27400,
+        "loss_3": 4800,
+        "loss_4": 4000,
+        "loss_5": 27300,
+        "deductible": 8600,
+        "small_cap": 39600,
+        "large_cap": 3100
+      }
+    },
+    {
+      "id": "offer_08a25af245a9",
+      "attrs": {
+        "price": 880068,
+        "admin": 122757,
+        "loss_0": 23400,
+        "loss_1": 10000,
+        "loss_2": 21400,
+        "loss_3": 28100,
+        "loss_4": 19900,
+        "loss_5": 27700,
+        "deductible": 22100,
+        "small_cap": 27900,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_d257cdb28d18",
+      "attrs": {
+        "price": 898790,
+        "admin": 133857,
+        "loss_0": 22100,
+        "loss_1": 10700,
+        "loss_2": 30000,
+        "loss_3": 30000,
+        "loss_4": 12100,
+        "loss_5": 7600,
+        "deductible": 12200,
+        "small_cap": 28300,
+        "large_cap": 12400
+      }
+    },
+    {
+      "id": "offer_70aa283c2ca6",
+      "attrs": {
+        "price": 579793,
+        "admin": 136836,
+        "loss_0": 12100,
+        "loss_1": 26500,
+        "loss_2": 16500,
+        "loss_3": 3700,
+        "loss_4": 1600,
+        "loss_5": 13500,
+        "deductible": 14300,
+        "small_cap": 32500,
+        "large_cap": 2900
+      }
+    },
+    {
+      "id": "offer_db7ab1d11fba",
+      "attrs": {
+        "price": 450915,
+        "admin": 142395,
+        "loss_0": 7700,
+        "loss_1": 28200,
+        "loss_2": 2100,
+        "loss_3": 17300,
+        "loss_4": 19300,
+        "loss_5": 2300,
+        "deductible": 1200,
+        "small_cap": 35700,
+        "large_cap": 11500
+      }
+    },
+    {
+      "id": "offer_78104b020081",
+      "attrs": {
+        "price": 853977,
+        "admin": 176547,
+        "loss_0": 6700,
+        "loss_1": 5000,
+        "loss_2": 27200,
+        "loss_3": 5700,
+        "loss_4": 1700,
+        "loss_5": 15200,
+        "deductible": 10000,
+        "small_cap": 25600,
+        "large_cap": 16700
+      }
+    },
+    {
+      "id": "offer_2d750aac9a47",
+      "attrs": {
+        "price": 657097,
+        "admin": 134241,
+        "loss_0": 7400,
+        "loss_1": 26800,
+        "loss_2": 27400,
+        "loss_3": 16200,
+        "loss_4": 9100,
+        "loss_5": 14200,
+        "deductible": 23100,
+        "small_cap": 42900,
+        "large_cap": 17000
+      }
+    },
+    {
+      "id": "offer_5bc809d049ec",
+      "attrs": {
+        "price": 740632,
+        "admin": 167194,
+        "loss_0": 8200,
+        "loss_1": 8200,
+        "loss_2": 13100,
+        "loss_3": 5400,
+        "loss_4": 5900,
+        "loss_5": 18700,
+        "deductible": 23500,
+        "small_cap": 31700,
+        "large_cap": 2400
+      }
+    },
+    {
+      "id": "offer_1c6373cc889f",
+      "attrs": {
+        "price": 719933,
+        "admin": 187236,
+        "loss_0": 12900,
+        "loss_1": 7700,
+        "loss_2": 2200,
+        "loss_3": 6900,
+        "loss_4": 10700,
+        "loss_5": 7500,
+        "deductible": 10400,
+        "small_cap": 45900,
+        "large_cap": 8400
+      }
+    },
+    {
+      "id": "offer_f1bea1e390cb",
+      "attrs": {
+        "price": 499604,
+        "admin": 133907,
+        "loss_0": 27500,
+        "loss_1": 16600,
+        "loss_2": 20500,
+        "loss_3": 18800,
+        "loss_4": 4700,
+        "loss_5": 16800,
+        "deductible": 13700,
+        "small_cap": 20800,
+        "large_cap": 11300
+      }
+    },
+    {
+      "id": "offer_9b61c4645155",
+      "attrs": {
+        "price": 765365,
+        "admin": 123768,
+        "loss_0": 28200,
+        "loss_1": 29800,
+        "loss_2": 4700,
+        "loss_3": 6300,
+        "loss_4": 14300,
+        "loss_5": 29700,
+        "deductible": 18700,
+        "small_cap": 41300,
+        "large_cap": 10500
+      }
+    },
+    {
+      "id": "offer_7b439123cdf5",
+      "attrs": {
+        "price": 568355,
+        "admin": 160866,
+        "loss_0": 7200,
+        "loss_1": 7000,
+        "loss_2": 5800,
+        "loss_3": 24300,
+        "loss_4": 13000,
+        "loss_5": 22500,
+        "deductible": 21900,
+        "small_cap": 32400,
+        "large_cap": 17700
+      }
+    },
+    {
+      "id": "offer_d3f57cf18675",
+      "attrs": {
+        "price": 839616,
+        "admin": 140179,
+        "loss_0": 20900,
+        "loss_1": 24500,
+        "loss_2": 3700,
+        "loss_3": 19800,
+        "loss_4": 13900,
+        "loss_5": 20700,
+        "deductible": 7400,
+        "small_cap": 36000,
+        "large_cap": 6900
+      }
+    },
+    {
+      "id": "offer_50437d314e05",
+      "attrs": {
+        "price": 845786,
+        "admin": 123805,
+        "loss_0": 25300,
+        "loss_1": 23200,
+        "loss_2": 23700,
+        "loss_3": 26500,
+        "loss_4": 23600,
+        "loss_5": 18000,
+        "deductible": 23100,
+        "small_cap": 22700,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_47e981312ad1",
+      "attrs": {
+        "price": 812197,
+        "admin": 144258,
+        "loss_0": 16500,
+        "loss_1": 20500,
+        "loss_2": 25900,
+        "loss_3": 14100,
+        "loss_4": 2600,
+        "loss_5": 1600,
+        "deductible": 14500,
+        "small_cap": 29900,
+        "large_cap": 16100
+      }
+    },
+    {
+      "id": "offer_bd1a63ee3851",
+      "attrs": {
+        "price": 494527,
+        "admin": 149366,
+        "loss_0": 18400,
+        "loss_1": 26100,
+        "loss_2": 4400,
+        "loss_3": 11000,
+        "loss_4": 7500,
+        "loss_5": 26400,
+        "deductible": 21600,
+        "small_cap": 32800,
+        "large_cap": 18500
+      }
+    },
+    {
+      "id": "offer_92c1572e23c4",
+      "attrs": {
+        "price": 650414,
+        "admin": 161696,
+        "loss_0": 8800,
+        "loss_1": 6600,
+        "loss_2": 10500,
+        "loss_3": 9100,
+        "loss_4": 28900,
+        "loss_5": 6300,
+        "deductible": 17900,
+        "small_cap": 33300,
+        "large_cap": 12200
+      }
+    },
+    {
+      "id": "offer_8f11adeca220",
+      "attrs": {
+        "price": 666068,
+        "admin": 139185,
+        "loss_0": 15800,
+        "loss_1": 11500,
+        "loss_2": 27500,
+        "loss_3": 18900,
+        "loss_4": 25900,
+        "loss_5": 16800,
+        "deductible": 14000,
+        "small_cap": 24300,
+        "large_cap": 10200
+      }
+    },
+    {
+      "id": "offer_11e5cb6aee3a",
+      "attrs": {
+        "price": 714150,
+        "admin": 121889,
+        "loss_0": 18700,
+        "loss_1": 25800,
+        "loss_2": 8500,
+        "loss_3": 29000,
+        "loss_4": 19400,
+        "loss_5": 18400,
+        "deductible": 10600,
+        "small_cap": 22100,
+        "large_cap": 8700
+      }
+    },
+    {
+      "id": "offer_3cbe9b63c9ee",
+      "attrs": {
+        "price": 883951,
+        "admin": 136024,
+        "loss_0": 9700,
+        "loss_1": 15800,
+        "loss_2": 20300,
+        "loss_3": 25600,
+        "loss_4": 6300,
+        "loss_5": 21500,
+        "deductible": 15700,
+        "small_cap": 39300,
+        "large_cap": 16100
+      }
+    },
+    {
+      "id": "offer_e6b7cc74b248",
+      "attrs": {
+        "price": 856189,
+        "admin": 167254,
+        "loss_0": 22300,
+        "loss_1": 11900,
+        "loss_2": 1800,
+        "loss_3": 8400,
+        "loss_4": 13400,
+        "loss_5": 12000,
+        "deductible": 3500,
+        "small_cap": 44600,
+        "large_cap": 12600
+      }
+    },
+    {
+      "id": "offer_e587458aec1d",
+      "attrs": {
+        "price": 457781,
+        "admin": 119549,
+        "loss_0": 23400,
+        "loss_1": 28400,
+        "loss_2": 15500,
+        "loss_3": 7500,
+        "loss_4": 25200,
+        "loss_5": 7000,
+        "deductible": 5400,
+        "small_cap": 32500,
+        "large_cap": 9400
+      }
+    },
+    {
+      "id": "offer_54bd5cd15ea6",
+      "attrs": {
+        "price": 687971,
+        "admin": 169422,
+        "loss_0": 7400,
+        "loss_1": 5300,
+        "loss_2": 16000,
+        "loss_3": 13700,
+        "loss_4": 20200,
+        "loss_5": 6000,
+        "deductible": 3700,
+        "small_cap": 48400,
+        "large_cap": 12200
+      }
+    },
+    {
+      "id": "offer_210d20cf9004",
+      "attrs": {
+        "price": 695803,
+        "admin": 124038,
+        "loss_0": 22200,
+        "loss_1": 27700,
+        "loss_2": 17200,
+        "loss_3": 11500,
+        "loss_4": 2900,
+        "loss_5": 27400,
+        "deductible": 8500,
+        "small_cap": 50000,
+        "large_cap": 2500
+      }
+    },
+    {
+      "id": "offer_22b39b6c5637",
+      "attrs": {
+        "price": 693557,
+        "admin": 177081,
+        "loss_0": 11100,
+        "loss_1": 4300,
+        "loss_2": 21700,
+        "loss_3": 16600,
+        "loss_4": 1700,
+        "loss_5": 1400,
+        "deductible": 2400,
+        "small_cap": 47900,
+        "large_cap": 12700
+      }
+    },
+    {
+      "id": "offer_fc73789ca4e2",
+      "attrs": {
+        "price": 657339,
+        "admin": 133919,
+        "loss_0": 3000,
+        "loss_1": 16300,
+        "loss_2": 22300,
+        "loss_3": 26800,
+        "loss_4": 4000,
+        "loss_5": 17100,
+        "deductible": 16200,
+        "small_cap": 40800,
+        "large_cap": 10600
+      }
+    },
+    {
+      "id": "offer_27679ffa5607",
+      "attrs": {
+        "price": 568421,
+        "admin": 143618,
+        "loss_0": 7900,
+        "loss_1": 5900,
+        "loss_2": 24800,
+        "loss_3": 26500,
+        "loss_4": 6800,
+        "loss_5": 19000,
+        "deductible": 5900,
+        "small_cap": 28000,
+        "large_cap": 9400
+      }
+    },
+    {
+      "id": "offer_6764be211c0d",
+      "attrs": {
+        "price": 611718,
+        "admin": 115585,
+        "loss_0": 25400,
+        "loss_1": 25400,
+        "loss_2": 22200,
+        "loss_3": 29100,
+        "loss_4": 24700,
+        "loss_5": 20700,
+        "deductible": 17700,
+        "small_cap": 37000,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_baeccbbbcfde",
+      "attrs": {
+        "price": 770299,
+        "admin": 162508,
+        "loss_0": 21300,
+        "loss_1": 4900,
+        "loss_2": 3300,
+        "loss_3": 16000,
+        "loss_4": 5800,
+        "loss_5": 12000,
+        "deductible": 21600,
+        "small_cap": 49300,
+        "large_cap": 4200
+      }
+    },
+    {
+      "id": "offer_d0cfb1fdbe49",
+      "attrs": {
+        "price": 522634,
+        "admin": 142099,
+        "loss_0": 23100,
+        "loss_1": 3400,
+        "loss_2": 16700,
+        "loss_3": 1700,
+        "loss_4": 24100,
+        "loss_5": 10300,
+        "deductible": 7800,
+        "small_cap": 21400,
+        "large_cap": 4300
+      }
+    },
+    {
+      "id": "offer_ffd4e45c7b84",
+      "attrs": {
+        "price": 880939,
+        "admin": 142060,
+        "loss_0": 15400,
+        "loss_1": 12000,
+        "loss_2": 20700,
+        "loss_3": 22400,
+        "loss_4": 23400,
+        "loss_5": 17300,
+        "deductible": 9300,
+        "small_cap": 43100,
+        "large_cap": 14200
+      }
+    },
+    {
+      "id": "offer_4b27dc67e4bb",
+      "attrs": {
+        "price": 724219,
+        "admin": 163061,
+        "loss_0": 14800,
+        "loss_1": 13000,
+        "loss_2": 12100,
+        "loss_3": 8700,
+        "loss_4": 22500,
+        "loss_5": 6800,
+        "deductible": 11800,
+        "small_cap": 48500,
+        "large_cap": 8600
+      }
+    },
+    {
+      "id": "offer_92ec79656dd7",
+      "attrs": {
+        "price": 866824,
+        "admin": 136369,
+        "loss_0": 17700,
+        "loss_1": 24600,
+        "loss_2": 19600,
+        "loss_3": 2500,
+        "loss_4": 25000,
+        "loss_5": 4800,
+        "deductible": 23700,
+        "small_cap": 32300,
+        "large_cap": 6000
+      }
+    },
+    {
+      "id": "offer_6944c28eaef4",
+      "attrs": {
+        "price": 547011,
+        "admin": 138492,
+        "loss_0": 9700,
+        "loss_1": 21800,
+        "loss_2": 27700,
+        "loss_3": 12800,
+        "loss_4": 19700,
+        "loss_5": 8300,
+        "deductible": 14600,
+        "small_cap": 33300,
+        "large_cap": 10300
+      }
+    },
+    {
+      "id": "offer_4993f1308776",
+      "attrs": {
+        "price": 644552,
+        "admin": 140926,
+        "loss_0": 13400,
+        "loss_1": 30000,
+        "loss_2": 19200,
+        "loss_3": 16700,
+        "loss_4": 9600,
+        "loss_5": 17400,
+        "deductible": 12100,
+        "small_cap": 42000,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_d1b76899ab90",
+      "attrs": {
+        "price": 531221,
+        "admin": 128846,
+        "loss_0": 13800,
+        "loss_1": 27600,
+        "loss_2": 18900,
+        "loss_3": 21200,
+        "loss_4": 8200,
+        "loss_5": 25000,
+        "deductible": 16700,
+        "small_cap": 22100,
+        "large_cap": 14500
+      }
+    },
+    {
+      "id": "offer_9233610a484a",
+      "attrs": {
+        "price": 587083,
+        "admin": 141946,
+        "loss_0": 11200,
+        "loss_1": 24200,
+        "loss_2": 8100,
+        "loss_3": 3100,
+        "loss_4": 27500,
+        "loss_5": 15300,
+        "deductible": 3400,
+        "small_cap": 44700,
+        "large_cap": 11200
+      }
+    },
+    {
+      "id": "offer_393dcd954053",
+      "attrs": {
+        "price": 686293,
+        "admin": 139534,
+        "loss_0": 17400,
+        "loss_1": 16600,
+        "loss_2": 27200,
+        "loss_3": 11400,
+        "loss_4": 10300,
+        "loss_5": 20200,
+        "deductible": 14000,
+        "small_cap": 29800,
+        "large_cap": 6900
+      }
+    },
+    {
+      "id": "offer_b833b746b95d",
+      "attrs": {
+        "price": 822218,
+        "admin": 151878,
+        "loss_0": 22800,
+        "loss_1": 21900,
+        "loss_2": 5300,
+        "loss_3": 2500,
+        "loss_4": 14100,
+        "loss_5": 4800,
+        "deductible": 2000,
+        "small_cap": 46300,
+        "large_cap": 5100
+      }
+    },
+    {
+      "id": "offer_9cb9871b3a19",
+      "attrs": {
+        "price": 486389,
+        "admin": 148198,
+        "loss_0": 11400,
+        "loss_1": 14300,
+        "loss_2": 4100,
+        "loss_3": 18900,
+        "loss_4": 6500,
+        "loss_5": 21100,
+        "deductible": 1100,
+        "small_cap": 46700,
+        "large_cap": 13400
+      }
+    },
+    {
+      "id": "offer_1d3b2768efb1",
+      "attrs": {
+        "price": 834431,
+        "admin": 143174,
+        "loss_0": 20100,
+        "loss_1": 9200,
+        "loss_2": 27500,
+        "loss_3": 4000,
+        "loss_4": 11100,
+        "loss_5": 12800,
+        "deductible": 22800,
+        "small_cap": 22700,
+        "large_cap": 9300
+      }
+    },
+    {
+      "id": "offer_4b08aeb6946a",
+      "attrs": {
+        "price": 838512,
+        "admin": 162553,
+        "loss_0": 13200,
+        "loss_1": 20000,
+        "loss_2": 4000,
+        "loss_3": 1100,
+        "loss_4": 14400,
+        "loss_5": 10300,
+        "deductible": 18700,
+        "small_cap": 22300,
+        "large_cap": 5500
+      }
+    },
+    {
+      "id": "offer_961dd1bdbe47",
+      "attrs": {
+        "price": 680855,
+        "admin": 126641,
+        "loss_0": 22900,
+        "loss_1": 11900,
+        "loss_2": 29700,
+        "loss_3": 3100,
+        "loss_4": 14400,
+        "loss_5": 23100,
+        "deductible": 18100,
+        "small_cap": 27700,
+        "large_cap": 16500
+      }
+    },
+    {
+      "id": "offer_58eea272b0d8",
+      "attrs": {
+        "price": 737030,
+        "admin": 161437,
+        "loss_0": 18100,
+        "loss_1": 7800,
+        "loss_2": 23300,
+        "loss_3": 1900,
+        "loss_4": 3500,
+        "loss_5": 8000,
+        "deductible": 23500,
+        "small_cap": 26700,
+        "large_cap": 5300
+      }
+    },
+    {
+      "id": "offer_ac30fed7aba0",
+      "attrs": {
+        "price": 737124,
+        "admin": 144951,
+        "loss_0": 1500,
+        "loss_1": 17200,
+        "loss_2": 9000,
+        "loss_3": 19700,
+        "loss_4": 24200,
+        "loss_5": 9800,
+        "deductible": 3600,
+        "small_cap": 24100,
+        "large_cap": 4300
+      }
+    },
+    {
+      "id": "offer_daf755993694",
+      "attrs": {
+        "price": 866161,
+        "admin": 168760,
+        "loss_0": 15300,
+        "loss_1": 10300,
+        "loss_2": 5400,
+        "loss_3": 25400,
+        "loss_4": 5800,
+        "loss_5": 4700,
+        "deductible": 15600,
+        "small_cap": 30500,
+        "large_cap": 18700
+      }
+    },
+    {
+      "id": "offer_8d0c149227d0",
+      "attrs": {
+        "price": 531707,
+        "admin": 121219,
+        "loss_0": 21500,
+        "loss_1": 29800,
+        "loss_2": 27300,
+        "loss_3": 27900,
+        "loss_4": 23000,
+        "loss_5": 25000,
+        "deductible": 12200,
+        "small_cap": 25800,
+        "large_cap": 16800
+      }
+    },
+    {
+      "id": "offer_2fff2710f4ed",
+      "attrs": {
+        "price": 727141,
+        "admin": 124399,
+        "loss_0": 6400,
+        "loss_1": 1500,
+        "loss_2": 27600,
+        "loss_3": 14700,
+        "loss_4": 17900,
+        "loss_5": 23100,
+        "deductible": 24400,
+        "small_cap": 33400,
+        "large_cap": 7300
+      }
+    },
+    {
+      "id": "offer_6ca98623bd5f",
+      "attrs": {
+        "price": 879206,
+        "admin": 127493,
+        "loss_0": 22000,
+        "loss_1": 16000,
+        "loss_2": 20800,
+        "loss_3": 29000,
+        "loss_4": 18500,
+        "loss_5": 6900,
+        "deductible": 9100,
+        "small_cap": 49100,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_1edb029ed3a9",
+      "attrs": {
+        "price": 700007,
+        "admin": 120873,
+        "loss_0": 3100,
+        "loss_1": 22900,
+        "loss_2": 12800,
+        "loss_3": 20700,
+        "loss_4": 26700,
+        "loss_5": 25400,
+        "deductible": 2300,
+        "small_cap": 43000,
+        "large_cap": 5200
+      }
+    },
+    {
+      "id": "offer_9dd4813e88b7",
+      "attrs": {
+        "price": 682453,
+        "admin": 203470,
+        "loss_0": 5700,
+        "loss_1": 1600,
+        "loss_2": 7300,
+        "loss_3": 6200,
+        "loss_4": 1400,
+        "loss_5": 1700,
+        "deductible": 4800,
+        "small_cap": 48400,
+        "large_cap": 18200
+      }
+    },
+    {
+      "id": "offer_3ab7d8f24cdb",
+      "attrs": {
+        "price": 493413,
+        "admin": 173657,
+        "loss_0": 29300,
+        "loss_1": 10400,
+        "loss_2": 6200,
+        "loss_3": 5000,
+        "loss_4": 2900,
+        "loss_5": 1400,
+        "deductible": 9700,
+        "small_cap": 23900,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_7dfe86113e47",
+      "attrs": {
+        "price": 895277,
+        "admin": 133683,
+        "loss_0": 27700,
+        "loss_1": 14700,
+        "loss_2": 19900,
+        "loss_3": 19100,
+        "loss_4": 21100,
+        "loss_5": 7700,
+        "deductible": 5800,
+        "small_cap": 44500,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_f403376a1c89",
+      "attrs": {
+        "price": 789462,
+        "admin": 129709,
+        "loss_0": 18800,
+        "loss_1": 24900,
+        "loss_2": 5300,
+        "loss_3": 27800,
+        "loss_4": 6700,
+        "loss_5": 27200,
+        "deductible": 14700,
+        "small_cap": 28700,
+        "large_cap": 16300
+      }
+    },
+    {
+      "id": "offer_6f91adce0f2f",
+      "attrs": {
+        "price": 527264,
+        "admin": 147289,
+        "loss_0": 23800,
+        "loss_1": 22000,
+        "loss_2": 8300,
+        "loss_3": 6000,
+        "loss_4": 18600,
+        "loss_5": 20400,
+        "deductible": 7300,
+        "small_cap": 31700,
+        "large_cap": 13600
+      }
+    },
+    {
+      "id": "offer_6c9db01c57ad",
+      "attrs": {
+        "price": 718494,
+        "admin": 177442,
+        "loss_0": 4000,
+        "loss_1": 3200,
+        "loss_2": 23300,
+        "loss_3": 4900,
+        "loss_4": 13800,
+        "loss_5": 5000,
+        "deductible": 17600,
+        "small_cap": 44300,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_25dfc46a32d1",
+      "attrs": {
+        "price": 453573,
+        "admin": 157444,
+        "loss_0": 25500,
+        "loss_1": 11200,
+        "loss_2": 15200,
+        "loss_3": 6600,
+        "loss_4": 5800,
+        "loss_5": 15300,
+        "deductible": 13600,
+        "small_cap": 26200,
+        "large_cap": 14100
+      }
+    },
+    {
+      "id": "offer_e34c62dd8a80",
+      "attrs": {
+        "price": 871818,
+        "admin": 126185,
+        "loss_0": 20400,
+        "loss_1": 4900,
+        "loss_2": 8100,
+        "loss_3": 18800,
+        "loss_4": 14200,
+        "loss_5": 29800,
+        "deductible": 12200,
+        "small_cap": 49200,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_a408c0dbc787",
+      "attrs": {
+        "price": 784235,
+        "admin": 162100,
+        "loss_0": 17900,
+        "loss_1": 4500,
+        "loss_2": 8900,
+        "loss_3": 27100,
+        "loss_4": 9400,
+        "loss_5": 4900,
+        "deductible": 3400,
+        "small_cap": 49500,
+        "large_cap": 7900
+      }
+    },
+    {
+      "id": "offer_afe03b514101",
+      "attrs": {
+        "price": 759601,
+        "admin": 135885,
+        "loss_0": 19900,
+        "loss_1": 6900,
+        "loss_2": 14000,
+        "loss_3": 13500,
+        "loss_4": 1500,
+        "loss_5": 27300,
+        "deductible": 21800,
+        "small_cap": 40200,
+        "large_cap": 6500
+      }
+    },
+    {
+      "id": "offer_97ffebfb94a8",
+      "attrs": {
+        "price": 469328,
+        "admin": 159510,
+        "loss_0": 3700,
+        "loss_1": 13100,
+        "loss_2": 12600,
+        "loss_3": 17700,
+        "loss_4": 10500,
+        "loss_5": 17400,
+        "deductible": 15100,
+        "small_cap": 36200,
+        "large_cap": 4200
+      }
+    },
+    {
+      "id": "offer_2b34f4ecc7ed",
+      "attrs": {
+        "price": 597868,
+        "admin": 123208,
+        "loss_0": 26900,
+        "loss_1": 17700,
+        "loss_2": 16200,
+        "loss_3": 5300,
+        "loss_4": 22700,
+        "loss_5": 26900,
+        "deductible": 8400,
+        "small_cap": 33800,
+        "large_cap": 17200
+      }
+    },
+    {
+      "id": "offer_7c9d6c32d265",
+      "attrs": {
+        "price": 834463,
+        "admin": 155809,
+        "loss_0": 11700,
+        "loss_1": 3400,
+        "loss_2": 8900,
+        "loss_3": 20600,
+        "loss_4": 21900,
+        "loss_5": 7800,
+        "deductible": 8700,
+        "small_cap": 21700,
+        "large_cap": 12900
+      }
+    },
+    {
+      "id": "offer_0dbbf689aa51",
+      "attrs": {
+        "price": 719932,
+        "admin": 139896,
+        "loss_0": 14400,
+        "loss_1": 17200,
+        "loss_2": 23400,
+        "loss_3": 17800,
+        "loss_4": 3300,
+        "loss_5": 26000,
+        "deductible": 5900,
+        "small_cap": 35200,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_e4b2eebd1b4c",
+      "attrs": {
+        "price": 676902,
+        "admin": 151509,
+        "loss_0": 5100,
+        "loss_1": 13600,
+        "loss_2": 24700,
+        "loss_3": 12700,
+        "loss_4": 3200,
+        "loss_5": 19900,
+        "deductible": 10700,
+        "small_cap": 45700,
+        "large_cap": 4500
+      }
+    },
+    {
+      "id": "offer_e611c5e92305",
+      "attrs": {
+        "price": 738595,
+        "admin": 157641,
+        "loss_0": 22700,
+        "loss_1": 14400,
+        "loss_2": 10500,
+        "loss_3": 7200,
+        "loss_4": 5500,
+        "loss_5": 3500,
+        "deductible": 13900,
+        "small_cap": 43100,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_255c9bc5f5c2",
+      "attrs": {
+        "price": 520880,
+        "admin": 134774,
+        "loss_0": 21400,
+        "loss_1": 23100,
+        "loss_2": 18000,
+        "loss_3": 20100,
+        "loss_4": 15300,
+        "loss_5": 22200,
+        "deductible": 2300,
+        "small_cap": 28100,
+        "large_cap": 8400
+      }
+    },
+    {
+      "id": "offer_f2a71e7e0ec5",
+      "attrs": {
+        "price": 802759,
+        "admin": 153974,
+        "loss_0": 9000,
+        "loss_1": 2000,
+        "loss_2": 20400,
+        "loss_3": 22700,
+        "loss_4": 1200,
+        "loss_5": 12800,
+        "deductible": 8900,
+        "small_cap": 43200,
+        "large_cap": 9400
+      }
+    },
+    {
+      "id": "offer_eb736c9accb3",
+      "attrs": {
+        "price": 833654,
+        "admin": 127831,
+        "loss_0": 29900,
+        "loss_1": 27300,
+        "loss_2": 2300,
+        "loss_3": 16600,
+        "loss_4": 17900,
+        "loss_5": 27400,
+        "deductible": 19000,
+        "small_cap": 33000,
+        "large_cap": 12100
+      }
+    },
+    {
+      "id": "offer_3b995ff383a9",
+      "attrs": {
+        "price": 547572,
+        "admin": 134126,
+        "loss_0": 26200,
+        "loss_1": 15300,
+        "loss_2": 2800,
+        "loss_3": 23300,
+        "loss_4": 19900,
+        "loss_5": 22400,
+        "deductible": 12100,
+        "small_cap": 38400,
+        "large_cap": 16400
+      }
+    },
+    {
+      "id": "offer_e28b58ffcf89",
+      "attrs": {
+        "price": 630258,
+        "admin": 113063,
+        "loss_0": 12800,
+        "loss_1": 26700,
+        "loss_2": 18000,
+        "loss_3": 20300,
+        "loss_4": 28000,
+        "loss_5": 11700,
+        "deductible": 21900,
+        "small_cap": 48300,
+        "large_cap": 4500
+      }
+    },
+    {
+      "id": "offer_2d1f5bcd650a",
+      "attrs": {
+        "price": 839923,
+        "admin": 134944,
+        "loss_0": 20300,
+        "loss_1": 9300,
+        "loss_2": 15100,
+        "loss_3": 3900,
+        "loss_4": 28700,
+        "loss_5": 10000,
+        "deductible": 5400,
+        "small_cap": 30900,
+        "large_cap": 4800
+      }
+    },
+    {
+      "id": "offer_05482f63fb37",
+      "attrs": {
+        "price": 454420,
+        "admin": 133088,
+        "loss_0": 28700,
+        "loss_1": 5900,
+        "loss_2": 13300,
+        "loss_3": 23100,
+        "loss_4": 2300,
+        "loss_5": 28800,
+        "deductible": 13200,
+        "small_cap": 45100,
+        "large_cap": 15000
+      }
+    },
+    {
+      "id": "offer_367a47fd5e5d",
+      "attrs": {
+        "price": 706997,
+        "admin": 149309,
+        "loss_0": 3900,
+        "loss_1": 16500,
+        "loss_2": 7100,
+        "loss_3": 16100,
+        "loss_4": 29700,
+        "loss_5": 17000,
+        "deductible": 4600,
+        "small_cap": 32400,
+        "large_cap": 17500
+      }
+    },
+    {
+      "id": "offer_d8786ad4c971",
+      "attrs": {
+        "price": 839764,
+        "admin": 150938,
+        "loss_0": 26000,
+        "loss_1": 9700,
+        "loss_2": 4900,
+        "loss_3": 20800,
+        "loss_4": 3800,
+        "loss_5": 22400,
+        "deductible": 21200,
+        "small_cap": 49500,
+        "large_cap": 13400
+      }
+    },
+    {
+      "id": "offer_d563c160ff1e",
+      "attrs": {
+        "price": 496764,
+        "admin": 116793,
+        "loss_0": 10800,
+        "loss_1": 19200,
+        "loss_2": 26000,
+        "loss_3": 6200,
+        "loss_4": 21100,
+        "loss_5": 27400,
+        "deductible": 20900,
+        "small_cap": 45000,
+        "large_cap": 7100
+      }
+    },
+    {
+      "id": "offer_1e627c9604c5",
+      "attrs": {
+        "price": 578019,
+        "admin": 166239,
+        "loss_0": 6500,
+        "loss_1": 5600,
+        "loss_2": 1500,
+        "loss_3": 1800,
+        "loss_4": 19500,
+        "loss_5": 6300,
+        "deductible": 20700,
+        "small_cap": 32700,
+        "large_cap": 3400
+      }
+    },
+    {
+      "id": "offer_76cd5978b180",
+      "attrs": {
+        "price": 460701,
+        "admin": 147504,
+        "loss_0": 15200,
+        "loss_1": 15200,
+        "loss_2": 9200,
+        "loss_3": 27400,
+        "loss_4": 3300,
+        "loss_5": 29200,
+        "deductible": 15000,
+        "small_cap": 44300,
+        "large_cap": 15800
+      }
+    },
+    {
+      "id": "offer_3405cfd2e775",
+      "attrs": {
+        "price": 572654,
+        "admin": 121706,
+        "loss_0": 15900,
+        "loss_1": 29800,
+        "loss_2": 17400,
+        "loss_3": 13000,
+        "loss_4": 25500,
+        "loss_5": 21600,
+        "deductible": 17500,
+        "small_cap": 37000,
+        "large_cap": 14100
+      }
+    },
+    {
+      "id": "offer_54165140d28f",
+      "attrs": {
+        "price": 679652,
+        "admin": 175492,
+        "loss_0": 1100,
+        "loss_1": 6400,
+        "loss_2": 26400,
+        "loss_3": 6400,
+        "loss_4": 8500,
+        "loss_5": 7700,
+        "deductible": 10600,
+        "small_cap": 22100,
+        "large_cap": 5900
+      }
+    },
+    {
+      "id": "offer_02f9514d92d4",
+      "attrs": {
+        "price": 832255,
+        "admin": 123040,
+        "loss_0": 18600,
+        "loss_1": 22400,
+        "loss_2": 1600,
+        "loss_3": 6100,
+        "loss_4": 21400,
+        "loss_5": 22100,
+        "deductible": 20200,
+        "small_cap": 23900,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_8287163409bd",
+      "attrs": {
+        "price": 879770,
+        "admin": 126826,
+        "loss_0": 24900,
+        "loss_1": 4900,
+        "loss_2": 29300,
+        "loss_3": 10700,
+        "loss_4": 17600,
+        "loss_5": 11200,
+        "deductible": 2500,
+        "small_cap": 40600,
+        "large_cap": 6400
+      }
+    },
+    {
+      "id": "offer_ab2176c97278",
+      "attrs": {
+        "price": 727323,
+        "admin": 129756,
+        "loss_0": 8000,
+        "loss_1": 24700,
+        "loss_2": 18100,
+        "loss_3": 22400,
+        "loss_4": 3300,
+        "loss_5": 12600,
+        "deductible": 5000,
+        "small_cap": 42200,
+        "large_cap": 6800
+      }
+    },
+    {
+      "id": "offer_17b452364099",
+      "attrs": {
+        "price": 812214,
+        "admin": 142063,
+        "loss_0": 7100,
+        "loss_1": 21400,
+        "loss_2": 22000,
+        "loss_3": 11000,
+        "loss_4": 22900,
+        "loss_5": 11900,
+        "deductible": 10600,
+        "small_cap": 34200,
+        "large_cap": 9200
+      }
+    },
+    {
+      "id": "offer_ea34964907a7",
+      "attrs": {
+        "price": 884228,
+        "admin": 136843,
+        "loss_0": 12400,
+        "loss_1": 15700,
+        "loss_2": 17000,
+        "loss_3": 23600,
+        "loss_4": 27200,
+        "loss_5": 5700,
+        "deductible": 5200,
+        "small_cap": 28000,
+        "large_cap": 14000
+      }
+    },
+    {
+      "id": "offer_12d68d7c6382",
+      "attrs": {
+        "price": 688209,
+        "admin": 121149,
+        "loss_0": 1500,
+        "loss_1": 25700,
+        "loss_2": 5900,
+        "loss_3": 17600,
+        "loss_4": 26600,
+        "loss_5": 15200,
+        "deductible": 7400,
+        "small_cap": 41900,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_7a1dedfb1f5b",
+      "attrs": {
+        "price": 466253,
+        "admin": 167688,
+        "loss_0": 5400,
+        "loss_1": 3200,
+        "loss_2": 16500,
+        "loss_3": 10200,
+        "loss_4": 9800,
+        "loss_5": 5900,
+        "deductible": 7700,
+        "small_cap": 42600,
+        "large_cap": 3300
+      }
+    },
+    {
+      "id": "offer_264c124f50d1",
+      "attrs": {
+        "price": 648201,
+        "admin": 155674,
+        "loss_0": 2000,
+        "loss_1": 27300,
+        "loss_2": 8900,
+        "loss_3": 3900,
+        "loss_4": 12500,
+        "loss_5": 20400,
+        "deductible": 21900,
+        "small_cap": 36900,
+        "large_cap": 8600
+      }
+    },
+    {
+      "id": "offer_796468b10642",
+      "attrs": {
+        "price": 643515,
+        "admin": 111940,
+        "loss_0": 23400,
+        "loss_1": 26000,
+        "loss_2": 16400,
+        "loss_3": 23800,
+        "loss_4": 27600,
+        "loss_5": 20800,
+        "deductible": 21400,
+        "small_cap": 45300,
+        "large_cap": 7200
+      }
+    },
+    {
+      "id": "offer_209f9b1a2875",
+      "attrs": {
+        "price": 516373,
+        "admin": 136334,
+        "loss_0": 26500,
+        "loss_1": 14100,
+        "loss_2": 15900,
+        "loss_3": 4800,
+        "loss_4": 10800,
+        "loss_5": 26800,
+        "deductible": 21900,
+        "small_cap": 39700,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_c45d9e695fd9",
+      "attrs": {
+        "price": 669663,
+        "admin": 117646,
+        "loss_0": 23000,
+        "loss_1": 7500,
+        "loss_2": 22500,
+        "loss_3": 21800,
+        "loss_4": 21100,
+        "loss_5": 3300,
+        "deductible": 14200,
+        "small_cap": 33600,
+        "large_cap": 2700
+      }
+    },
+    {
+      "id": "offer_16557b076a9a",
+      "attrs": {
+        "price": 661790,
+        "admin": 164631,
+        "loss_0": 9400,
+        "loss_1": 22400,
+        "loss_2": 5900,
+        "loss_3": 18900,
+        "loss_4": 1500,
+        "loss_5": 10200,
+        "deductible": 24800,
+        "small_cap": 48000,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_56799a5a7e35",
+      "attrs": {
+        "price": 774974,
+        "admin": 120588,
+        "loss_0": 26000,
+        "loss_1": 15600,
+        "loss_2": 16000,
+        "loss_3": 11300,
+        "loss_4": 29900,
+        "loss_5": 29100,
+        "deductible": 10300,
+        "small_cap": 25000,
+        "large_cap": 6600
+      }
+    },
+    {
+      "id": "offer_ff9cd8df9e66",
+      "attrs": {
+        "price": 772790,
+        "admin": 159977,
+        "loss_0": 3500,
+        "loss_1": 18000,
+        "loss_2": 9300,
+        "loss_3": 21100,
+        "loss_4": 9900,
+        "loss_5": 15400,
+        "deductible": 4200,
+        "small_cap": 35000,
+        "large_cap": 9000
+      }
+    },
+    {
+      "id": "offer_8398e3e0b018",
+      "attrs": {
+        "price": 654133,
+        "admin": 165104,
+        "loss_0": 2400,
+        "loss_1": 5100,
+        "loss_2": 28400,
+        "loss_3": 6000,
+        "loss_4": 19000,
+        "loss_5": 13200,
+        "deductible": 20000,
+        "small_cap": 33200,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_03f12252636b",
+      "attrs": {
+        "price": 524176,
+        "admin": 119089,
+        "loss_0": 5900,
+        "loss_1": 26600,
+        "loss_2": 26400,
+        "loss_3": 4000,
+        "loss_4": 10500,
+        "loss_5": 27100,
+        "deductible": 2200,
+        "small_cap": 31100,
+        "large_cap": 6700
+      }
+    },
+    {
+      "id": "offer_31eef04a94c5",
+      "attrs": {
+        "price": 793490,
+        "admin": 116712,
+        "loss_0": 19600,
+        "loss_1": 28600,
+        "loss_2": 29700,
+        "loss_3": 10900,
+        "loss_4": 11200,
+        "loss_5": 26600,
+        "deductible": 18000,
+        "small_cap": 36500,
+        "large_cap": 6400
+      }
+    },
+    {
+      "id": "offer_6881cbf5fd5b",
+      "attrs": {
+        "price": 769918,
+        "admin": 172287,
+        "loss_0": 4200,
+        "loss_1": 3700,
+        "loss_2": 20400,
+        "loss_3": 18000,
+        "loss_4": 8400,
+        "loss_5": 11700,
+        "deductible": 23400,
+        "small_cap": 24200,
+        "large_cap": 12000
+      }
+    },
+    {
+      "id": "offer_2ec76cb2e06c",
+      "attrs": {
+        "price": 835507,
+        "admin": 155014,
+        "loss_0": 20600,
+        "loss_1": 2400,
+        "loss_2": 20700,
+        "loss_3": 2900,
+        "loss_4": 23500,
+        "loss_5": 7100,
+        "deductible": 20200,
+        "small_cap": 35600,
+        "large_cap": 12000
+      }
+    },
+    {
+      "id": "offer_dc8439a60826",
+      "attrs": {
+        "price": 639444,
+        "admin": 149353,
+        "loss_0": 4000,
+        "loss_1": 24300,
+        "loss_2": 3500,
+        "loss_3": 1400,
+        "loss_4": 24500,
+        "loss_5": 18200,
+        "deductible": 23400,
+        "small_cap": 33000,
+        "large_cap": 8200
+      }
+    },
+    {
+      "id": "offer_1e81bc0d099d",
+      "attrs": {
+        "price": 478480,
+        "admin": 141248,
+        "loss_0": 28200,
+        "loss_1": 29100,
+        "loss_2": 1700,
+        "loss_3": 15900,
+        "loss_4": 7900,
+        "loss_5": 8200,
+        "deductible": 11800,
+        "small_cap": 46000,
+        "large_cap": 14700
+      }
+    },
+    {
+      "id": "offer_dbc48eaa7bb1",
+      "attrs": {
+        "price": 828151,
+        "admin": 148181,
+        "loss_0": 15200,
+        "loss_1": 9600,
+        "loss_2": 1800,
+        "loss_3": 27700,
+        "loss_4": 27400,
+        "loss_5": 7700,
+        "deductible": 19300,
+        "small_cap": 43700,
+        "large_cap": 16000
+      }
+    },
+    {
+      "id": "offer_7944a5dc7f17",
+      "attrs": {
+        "price": 898117,
+        "admin": 143545,
+        "loss_0": 20900,
+        "loss_1": 13300,
+        "loss_2": 17800,
+        "loss_3": 20700,
+        "loss_4": 23900,
+        "loss_5": 12600,
+        "deductible": 20600,
+        "small_cap": 39000,
+        "large_cap": 12200
+      }
+    },
+    {
+      "id": "offer_6000463167b4",
+      "attrs": {
+        "price": 640315,
+        "admin": 177050,
+        "loss_0": 10300,
+        "loss_1": 2200,
+        "loss_2": 12600,
+        "loss_3": 19300,
+        "loss_4": 11700,
+        "loss_5": 11300,
+        "deductible": 9200,
+        "small_cap": 42600,
+        "large_cap": 17200
+      }
+    },
+    {
+      "id": "offer_46a5a9614c72",
+      "attrs": {
+        "price": 599852,
+        "admin": 142755,
+        "loss_0": 6400,
+        "loss_1": 26400,
+        "loss_2": 15600,
+        "loss_3": 7700,
+        "loss_4": 25500,
+        "loss_5": 5700,
+        "deductible": 8900,
+        "small_cap": 39500,
+        "large_cap": 14300
+      }
+    },
+    {
+      "id": "offer_26f85156dfcb",
+      "attrs": {
+        "price": 825282,
+        "admin": 135954,
+        "loss_0": 1800,
+        "loss_1": 8500,
+        "loss_2": 27300,
+        "loss_3": 22200,
+        "loss_4": 17900,
+        "loss_5": 1600,
+        "deductible": 16200,
+        "small_cap": 48300,
+        "large_cap": 9200
+      }
+    },
+    {
+      "id": "offer_c0bd9701383d",
+      "attrs": {
+        "price": 523589,
+        "admin": 158748,
+        "loss_0": 25200,
+        "loss_1": 6100,
+        "loss_2": 10700,
+        "loss_3": 8000,
+        "loss_4": 28300,
+        "loss_5": 4700,
+        "deductible": 18400,
+        "small_cap": 45800,
+        "large_cap": 15800
+      }
+    },
+    {
+      "id": "offer_443863728e20",
+      "attrs": {
+        "price": 803021,
+        "admin": 142242,
+        "loss_0": 11500,
+        "loss_1": 16100,
+        "loss_2": 15300,
+        "loss_3": 14000,
+        "loss_4": 29800,
+        "loss_5": 18000,
+        "deductible": 13000,
+        "small_cap": 45600,
+        "large_cap": 15100
+      }
+    },
+    {
+      "id": "offer_df647a1c294e",
+      "attrs": {
+        "price": 784976,
+        "admin": 140134,
+        "loss_0": 21600,
+        "loss_1": 24800,
+        "loss_2": 19700,
+        "loss_3": 4500,
+        "loss_4": 18000,
+        "loss_5": 2100,
+        "deductible": 2700,
+        "small_cap": 37100,
+        "large_cap": 5500
+      }
+    },
+    {
+      "id": "offer_863d1eb41728",
+      "attrs": {
+        "price": 809158,
+        "admin": 167668,
+        "loss_0": 3300,
+        "loss_1": 4200,
+        "loss_2": 13900,
+        "loss_3": 26300,
+        "loss_4": 10200,
+        "loss_5": 7100,
+        "deductible": 7700,
+        "small_cap": 26400,
+        "large_cap": 9600
+      }
+    },
+    {
+      "id": "offer_21b38838759b",
+      "attrs": {
+        "price": 482129,
+        "admin": 114233,
+        "loss_0": 20000,
+        "loss_1": 27300,
+        "loss_2": 24500,
+        "loss_3": 27000,
+        "loss_4": 10000,
+        "loss_5": 11900,
+        "deductible": 3700,
+        "small_cap": 28700,
+        "large_cap": 4000
+      }
+    },
+    {
+      "id": "offer_efacfb68c414",
+      "attrs": {
+        "price": 770905,
+        "admin": 130543,
+        "loss_0": 22900,
+        "loss_1": 22600,
+        "loss_2": 2100,
+        "loss_3": 25000,
+        "loss_4": 18700,
+        "loss_5": 22200,
+        "deductible": 13100,
+        "small_cap": 49600,
+        "large_cap": 13600
+      }
+    },
+    {
+      "id": "offer_d0a4c66cad71",
+      "attrs": {
+        "price": 509081,
+        "admin": 142615,
+        "loss_0": 1700,
+        "loss_1": 8600,
+        "loss_2": 3100,
+        "loss_3": 22700,
+        "loss_4": 22300,
+        "loss_5": 21600,
+        "deductible": 21500,
+        "small_cap": 21300,
+        "large_cap": 12500
+      }
+    },
+    {
+      "id": "offer_af34fe3c9fb9",
+      "attrs": {
+        "price": 591858,
+        "admin": 132043,
+        "loss_0": 12400,
+        "loss_1": 19900,
+        "loss_2": 18500,
+        "loss_3": 18400,
+        "loss_4": 18200,
+        "loss_5": 20800,
+        "deductible": 24400,
+        "small_cap": 27100,
+        "large_cap": 6000
+      }
+    },
+    {
+      "id": "offer_ed19406130a1",
+      "attrs": {
+        "price": 672574,
+        "admin": 141336,
+        "loss_0": 10000,
+        "loss_1": 28300,
+        "loss_2": 9200,
+        "loss_3": 13400,
+        "loss_4": 27100,
+        "loss_5": 22500,
+        "deductible": 18300,
+        "small_cap": 38400,
+        "large_cap": 15000
+      }
+    },
+    {
+      "id": "offer_f8121758914c",
+      "attrs": {
+        "price": 453716,
+        "admin": 142660,
+        "loss_0": 22300,
+        "loss_1": 23300,
+        "loss_2": 27200,
+        "loss_3": 5600,
+        "loss_4": 11800,
+        "loss_5": 4700,
+        "deductible": 22800,
+        "small_cap": 39700,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_6dc891841a79",
+      "attrs": {
+        "price": 773412,
+        "admin": 152298,
+        "loss_0": 18000,
+        "loss_1": 12700,
+        "loss_2": 17000,
+        "loss_3": 11900,
+        "loss_4": 28300,
+        "loss_5": 2700,
+        "deductible": 22600,
+        "small_cap": 42900,
+        "large_cap": 15400
+      }
+    },
+    {
+      "id": "offer_eab5710115bf",
+      "attrs": {
+        "price": 554855,
+        "admin": 122215,
+        "loss_0": 21900,
+        "loss_1": 10100,
+        "loss_2": 24300,
+        "loss_3": 10400,
+        "loss_4": 23000,
+        "loss_5": 19100,
+        "deductible": 4700,
+        "small_cap": 25600,
+        "large_cap": 8700
+      }
+    },
+    {
+      "id": "offer_94d571da3063",
+      "attrs": {
+        "price": 627929,
+        "admin": 122177,
+        "loss_0": 6300,
+        "loss_1": 27400,
+        "loss_2": 13500,
+        "loss_3": 22300,
+        "loss_4": 27200,
+        "loss_5": 3700,
+        "deductible": 20300,
+        "small_cap": 47200,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_7fb8be754ee2",
+      "attrs": {
+        "price": 551980,
+        "admin": 142992,
+        "loss_0": 8700,
+        "loss_1": 23400,
+        "loss_2": 24200,
+        "loss_3": 22600,
+        "loss_4": 2200,
+        "loss_5": 3500,
+        "deductible": 16900,
+        "small_cap": 24300,
+        "large_cap": 16700
+      }
+    },
+    {
+      "id": "offer_29be09c79ff3",
+      "attrs": {
+        "price": 746864,
+        "admin": 140201,
+        "loss_0": 22200,
+        "loss_1": 12600,
+        "loss_2": 2100,
+        "loss_3": 12300,
+        "loss_4": 3400,
+        "loss_5": 26600,
+        "deductible": 14300,
+        "small_cap": 29000,
+        "large_cap": 13900
+      }
+    },
+    {
+      "id": "offer_ad6e712c7178",
+      "attrs": {
+        "price": 881067,
+        "admin": 161699,
+        "loss_0": 17600,
+        "loss_1": 10100,
+        "loss_2": 9500,
+        "loss_3": 5000,
+        "loss_4": 19800,
+        "loss_5": 17900,
+        "deductible": 22800,
+        "small_cap": 39700,
+        "large_cap": 13500
+      }
+    },
+    {
+      "id": "offer_30dd6e9aebbc",
+      "attrs": {
+        "price": 700989,
+        "admin": 136572,
+        "loss_0": 15700,
+        "loss_1": 15700,
+        "loss_2": 21800,
+        "loss_3": 27800,
+        "loss_4": 13700,
+        "loss_5": 11200,
+        "deductible": 20000,
+        "small_cap": 38800,
+        "large_cap": 16800
+      }
+    },
+    {
+      "id": "offer_df5b2f7fda96",
+      "attrs": {
+        "price": 610081,
+        "admin": 149147,
+        "loss_0": 21200,
+        "loss_1": 9200,
+        "loss_2": 9600,
+        "loss_3": 12200,
+        "loss_4": 8000,
+        "loss_5": 26900,
+        "deductible": 4800,
+        "small_cap": 22400,
+        "large_cap": 17400
+      }
+    },
+    {
+      "id": "offer_ae3757356871",
+      "attrs": {
+        "price": 811048,
+        "admin": 147480,
+        "loss_0": 9600,
+        "loss_1": 16100,
+        "loss_2": 20100,
+        "loss_3": 3900,
+        "loss_4": 29800,
+        "loss_5": 1500,
+        "deductible": 9700,
+        "small_cap": 48000,
+        "large_cap": 10200
+      }
+    },
+    {
+      "id": "offer_1e9d9691b90e",
+      "attrs": {
+        "price": 873115,
+        "admin": 151042,
+        "loss_0": 8000,
+        "loss_1": 8800,
+        "loss_2": 21600,
+        "loss_3": 1700,
+        "loss_4": 22000,
+        "loss_5": 9200,
+        "deductible": 19800,
+        "small_cap": 22100,
+        "large_cap": 4200
+      }
+    },
+    {
+      "id": "offer_37e275b76d6d",
+      "attrs": {
+        "price": 675481,
+        "admin": 132334,
+        "loss_0": 25300,
+        "loss_1": 5600,
+        "loss_2": 6300,
+        "loss_3": 13400,
+        "loss_4": 23500,
+        "loss_5": 10200,
+        "deductible": 24300,
+        "small_cap": 35000,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_a7e7f1214b30",
+      "attrs": {
+        "price": 600327,
+        "admin": 128655,
+        "loss_0": 11700,
+        "loss_1": 17000,
+        "loss_2": 19300,
+        "loss_3": 26300,
+        "loss_4": 10000,
+        "loss_5": 29400,
+        "deductible": 14600,
+        "small_cap": 22100,
+        "large_cap": 9100
+      }
+    },
+    {
+      "id": "offer_84e26a27a254",
+      "attrs": {
+        "price": 896846,
+        "admin": 178611,
+        "loss_0": 2800,
+        "loss_1": 4600,
+        "loss_2": 26600,
+        "loss_3": 3100,
+        "loss_4": 6000,
+        "loss_5": 3400,
+        "deductible": 11200,
+        "small_cap": 26000,
+        "large_cap": 3400
+      }
+    },
+    {
+      "id": "offer_17809074f767",
+      "attrs": {
+        "price": 610140,
+        "admin": 139020,
+        "loss_0": 13800,
+        "loss_1": 17100,
+        "loss_2": 18900,
+        "loss_3": 23800,
+        "loss_4": 22300,
+        "loss_5": 14600,
+        "deductible": 20500,
+        "small_cap": 32500,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_4926a2f37a0f",
+      "attrs": {
+        "price": 735030,
+        "admin": 147473,
+        "loss_0": 28000,
+        "loss_1": 16900,
+        "loss_2": 28700,
+        "loss_3": 2700,
+        "loss_4": 9600,
+        "loss_5": 2700,
+        "deductible": 21800,
+        "small_cap": 36500,
+        "large_cap": 14000
+      }
+    },
+    {
+      "id": "offer_6680d7056d6d",
+      "attrs": {
+        "price": 869114,
+        "admin": 112871,
+        "loss_0": 28400,
+        "loss_1": 24200,
+        "loss_2": 4000,
+        "loss_3": 22300,
+        "loss_4": 25000,
+        "loss_5": 27200,
+        "deductible": 3000,
+        "small_cap": 20700,
+        "large_cap": 7000
+      }
+    },
+    {
+      "id": "offer_58d33d202b8a",
+      "attrs": {
+        "price": 476098,
+        "admin": 143112,
+        "loss_0": 16200,
+        "loss_1": 7100,
+        "loss_2": 17500,
+        "loss_3": 23800,
+        "loss_4": 24900,
+        "loss_5": 13500,
+        "deductible": 5100,
+        "small_cap": 29000,
+        "large_cap": 12200
+      }
+    },
+    {
+      "id": "offer_e8592946c76d",
+      "attrs": {
+        "price": 459710,
+        "admin": 165544,
+        "loss_0": 18200,
+        "loss_1": 24300,
+        "loss_2": 6800,
+        "loss_3": 11700,
+        "loss_4": 15300,
+        "loss_5": 8900,
+        "deductible": 21500,
+        "small_cap": 23200,
+        "large_cap": 15300
+      }
+    },
+    {
+      "id": "offer_d71fafccc549",
+      "attrs": {
+        "price": 898593,
+        "admin": 121572,
+        "loss_0": 23400,
+        "loss_1": 20800,
+        "loss_2": 29000,
+        "loss_3": 13000,
+        "loss_4": 13900,
+        "loss_5": 29400,
+        "deductible": 20800,
+        "small_cap": 34400,
+        "large_cap": 10900
+      }
+    },
+    {
+      "id": "offer_3f814c9769dc",
+      "attrs": {
+        "price": 826239,
+        "admin": 141044,
+        "loss_0": 15100,
+        "loss_1": 27600,
+        "loss_2": 18600,
+        "loss_3": 18900,
+        "loss_4": 29800,
+        "loss_5": 6200,
+        "deductible": 3000,
+        "small_cap": 22900,
+        "large_cap": 18200
+      }
+    },
+    {
+      "id": "offer_73c95901bc2a",
+      "attrs": {
+        "price": 600786,
+        "admin": 143974,
+        "loss_0": 14600,
+        "loss_1": 13000,
+        "loss_2": 10200,
+        "loss_3": 25100,
+        "loss_4": 26500,
+        "loss_5": 5300,
+        "deductible": 22300,
+        "small_cap": 45400,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_5004ddd8b17c",
+      "attrs": {
+        "price": 813273,
+        "admin": 128924,
+        "loss_0": 15100,
+        "loss_1": 13100,
+        "loss_2": 17400,
+        "loss_3": 28400,
+        "loss_4": 20900,
+        "loss_5": 18400,
+        "deductible": 12900,
+        "small_cap": 40900,
+        "large_cap": 4600
+      }
+    },
+    {
+      "id": "offer_77a546a664a2",
+      "attrs": {
+        "price": 669632,
+        "admin": 127040,
+        "loss_0": 11100,
+        "loss_1": 20000,
+        "loss_2": 30000,
+        "loss_3": 29700,
+        "loss_4": 22400,
+        "loss_5": 3400,
+        "deductible": 20900,
+        "small_cap": 49000,
+        "large_cap": 13600
+      }
+    },
+    {
+      "id": "offer_ff5573a21645",
+      "attrs": {
+        "price": 757871,
+        "admin": 109793,
+        "loss_0": 21800,
+        "loss_1": 2200,
+        "loss_2": 25600,
+        "loss_3": 27700,
+        "loss_4": 29600,
+        "loss_5": 29200,
+        "deductible": 11300,
+        "small_cap": 30000,
+        "large_cap": 14000
+      }
+    },
+    {
+      "id": "offer_3c0709396b7c",
+      "attrs": {
+        "price": 887407,
+        "admin": 134750,
+        "loss_0": 26500,
+        "loss_1": 25100,
+        "loss_2": 1500,
+        "loss_3": 17700,
+        "loss_4": 20200,
+        "loss_5": 7200,
+        "deductible": 6900,
+        "small_cap": 46200,
+        "large_cap": 18700
+      }
+    },
+    {
+      "id": "offer_0a8dc12bbedf",
+      "attrs": {
+        "price": 500427,
+        "admin": 156863,
+        "loss_0": 14000,
+        "loss_1": 20600,
+        "loss_2": 9400,
+        "loss_3": 24200,
+        "loss_4": 11200,
+        "loss_5": 10500,
+        "deductible": 7800,
+        "small_cap": 49400,
+        "large_cap": 11200
+      }
+    },
+    {
+      "id": "offer_4f8ea31ef397",
+      "attrs": {
+        "price": 825897,
+        "admin": 169976,
+        "loss_0": 12900,
+        "loss_1": 3600,
+        "loss_2": 15900,
+        "loss_3": 4400,
+        "loss_4": 10600,
+        "loss_5": 17900,
+        "deductible": 9700,
+        "small_cap": 32800,
+        "large_cap": 14700
+      }
+    },
+    {
+      "id": "offer_29a24ee1e386",
+      "attrs": {
+        "price": 609390,
+        "admin": 165454,
+        "loss_0": 16300,
+        "loss_1": 6300,
+        "loss_2": 1400,
+        "loss_3": 6900,
+        "loss_4": 10600,
+        "loss_5": 7500,
+        "deductible": 6700,
+        "small_cap": 35700,
+        "large_cap": 5900
+      }
+    },
+    {
+      "id": "offer_5c55dea864bc",
+      "attrs": {
+        "price": 685759,
+        "admin": 123182,
+        "loss_0": 26700,
+        "loss_1": 26200,
+        "loss_2": 15700,
+        "loss_3": 4500,
+        "loss_4": 14700,
+        "loss_5": 29400,
+        "deductible": 6100,
+        "small_cap": 31500,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_8172df9c91a0",
+      "attrs": {
+        "price": 876662,
+        "admin": 143876,
+        "loss_0": 15500,
+        "loss_1": 2500,
+        "loss_2": 11900,
+        "loss_3": 21100,
+        "loss_4": 21800,
+        "loss_5": 29800,
+        "deductible": 4000,
+        "small_cap": 29700,
+        "large_cap": 17100
+      }
+    },
+    {
+      "id": "offer_358faffe391b",
+      "attrs": {
+        "price": 698302,
+        "admin": 135947,
+        "loss_0": 24700,
+        "loss_1": 3300,
+        "loss_2": 21300,
+        "loss_3": 13600,
+        "loss_4": 20400,
+        "loss_5": 17300,
+        "deductible": 3300,
+        "small_cap": 43200,
+        "large_cap": 7700
+      }
+    },
+    {
+      "id": "offer_f2691e86870c",
+      "attrs": {
+        "price": 698001,
+        "admin": 163872,
+        "loss_0": 14200,
+        "loss_1": 13200,
+        "loss_2": 3100,
+        "loss_3": 17400,
+        "loss_4": 18000,
+        "loss_5": 7600,
+        "deductible": 1800,
+        "small_cap": 36100,
+        "large_cap": 8500
+      }
+    },
+    {
+      "id": "offer_c4d40e62d84a",
+      "attrs": {
+        "price": 481548,
+        "admin": 127243,
+        "loss_0": 20600,
+        "loss_1": 27800,
+        "loss_2": 25600,
+        "loss_3": 19700,
+        "loss_4": 24400,
+        "loss_5": 23400,
+        "deductible": 11300,
+        "small_cap": 47400,
+        "large_cap": 12500
+      }
+    },
+    {
+      "id": "offer_7bb2f5bbbf8e",
+      "attrs": {
+        "price": 893786,
+        "admin": 151533,
+        "loss_0": 21900,
+        "loss_1": 5200,
+        "loss_2": 10800,
+        "loss_3": 9600,
+        "loss_4": 18100,
+        "loss_5": 15100,
+        "deductible": 11200,
+        "small_cap": 49800,
+        "large_cap": 14000
+      }
+    },
+    {
+      "id": "offer_1b9dab764c83",
+      "attrs": {
+        "price": 550730,
+        "admin": 143383,
+        "loss_0": 28000,
+        "loss_1": 8200,
+        "loss_2": 18700,
+        "loss_3": 5800,
+        "loss_4": 14700,
+        "loss_5": 18800,
+        "deductible": 18500,
+        "small_cap": 47500,
+        "large_cap": 16900
+      }
+    },
+    {
+      "id": "offer_9f899cf7b18c",
+      "attrs": {
+        "price": 671104,
+        "admin": 130873,
+        "loss_0": 24200,
+        "loss_1": 15300,
+        "loss_2": 9900,
+        "loss_3": 24300,
+        "loss_4": 28700,
+        "loss_5": 8600,
+        "deductible": 9100,
+        "small_cap": 42400,
+        "large_cap": 16200
+      }
+    },
+    {
+      "id": "offer_fbe79dc77951",
+      "attrs": {
+        "price": 723763,
+        "admin": 156835,
+        "loss_0": 12200,
+        "loss_1": 15600,
+        "loss_2": 16500,
+        "loss_3": 22800,
+        "loss_4": 1300,
+        "loss_5": 9600,
+        "deductible": 12800,
+        "small_cap": 49600,
+        "large_cap": 10900
+      }
+    },
+    {
+      "id": "offer_578cebe7ba29",
+      "attrs": {
+        "price": 751979,
+        "admin": 133810,
+        "loss_0": 15800,
+        "loss_1": 11500,
+        "loss_2": 26900,
+        "loss_3": 26600,
+        "loss_4": 19900,
+        "loss_5": 5000,
+        "deductible": 18300,
+        "small_cap": 45400,
+        "large_cap": 11700
+      }
+    },
+    {
+      "id": "offer_06731d92e566",
+      "attrs": {
+        "price": 635555,
+        "admin": 162231,
+        "loss_0": 14700,
+        "loss_1": 22600,
+        "loss_2": 6300,
+        "loss_3": 17500,
+        "loss_4": 3800,
+        "loss_5": 4300,
+        "deductible": 21300,
+        "small_cap": 46500,
+        "large_cap": 15500
+      }
+    },
+    {
+      "id": "offer_4add64208d1a",
+      "attrs": {
+        "price": 862365,
+        "admin": 154528,
+        "loss_0": 16900,
+        "loss_1": 15700,
+        "loss_2": 27300,
+        "loss_3": 4000,
+        "loss_4": 4900,
+        "loss_5": 3800,
+        "deductible": 7400,
+        "small_cap": 39800,
+        "large_cap": 8400
+      }
+    },
+    {
+      "id": "offer_0664f1075577",
+      "attrs": {
+        "price": 639216,
+        "admin": 158725,
+        "loss_0": 6000,
+        "loss_1": 14100,
+        "loss_2": 6700,
+        "loss_3": 13800,
+        "loss_4": 1600,
+        "loss_5": 14100,
+        "deductible": 6000,
+        "small_cap": 22400,
+        "large_cap": 4800
+      }
+    },
+    {
+      "id": "offer_a73dba302bad",
+      "attrs": {
+        "price": 701647,
+        "admin": 162192,
+        "loss_0": 14700,
+        "loss_1": 19600,
+        "loss_2": 12200,
+        "loss_3": 2000,
+        "loss_4": 18200,
+        "loss_5": 12500,
+        "deductible": 7100,
+        "small_cap": 46000,
+        "large_cap": 17500
+      }
+    },
+    {
+      "id": "offer_d78a83b47a0e",
+      "attrs": {
+        "price": 541335,
+        "admin": 129027,
+        "loss_0": 28100,
+        "loss_1": 19600,
+        "loss_2": 19600,
+        "loss_3": 25400,
+        "loss_4": 5700,
+        "loss_5": 2100,
+        "deductible": 9700,
+        "small_cap": 33700,
+        "large_cap": 4100
+      }
+    },
+    {
+      "id": "offer_3aa740b10022",
+      "attrs": {
+        "price": 678615,
+        "admin": 144801,
+        "loss_0": 11700,
+        "loss_1": 23400,
+        "loss_2": 4200,
+        "loss_3": 8100,
+        "loss_4": 23800,
+        "loss_5": 10000,
+        "deductible": 1700,
+        "small_cap": 44300,
+        "large_cap": 6900
+      }
+    },
+    {
+      "id": "offer_f628a6133f3d",
+      "attrs": {
+        "price": 618926,
+        "admin": 147909,
+        "loss_0": 13200,
+        "loss_1": 30000,
+        "loss_2": 7800,
+        "loss_3": 17600,
+        "loss_4": 5400,
+        "loss_5": 7300,
+        "deductible": 16400,
+        "small_cap": 24100,
+        "large_cap": 15700
+      }
+    },
+    {
+      "id": "offer_5f026e949fb4",
+      "attrs": {
+        "price": 711266,
+        "admin": 136572,
+        "loss_0": 19200,
+        "loss_1": 23300,
+        "loss_2": 29000,
+        "loss_3": 20500,
+        "loss_4": 8600,
+        "loss_5": 5400,
+        "deductible": 17600,
+        "small_cap": 25400,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_ba0ecabb811c",
+      "attrs": {
+        "price": 645832,
+        "admin": 166599,
+        "loss_0": 2500,
+        "loss_1": 20900,
+        "loss_2": 9400,
+        "loss_3": 7600,
+        "loss_4": 5100,
+        "loss_5": 8600,
+        "deductible": 4200,
+        "small_cap": 24100,
+        "large_cap": 8000
+      }
+    },
+    {
+      "id": "offer_9d67574c372c",
+      "attrs": {
+        "price": 586130,
+        "admin": 130003,
+        "loss_0": 1500,
+        "loss_1": 23400,
+        "loss_2": 14300,
+        "loss_3": 21400,
+        "loss_4": 17200,
+        "loss_5": 25100,
+        "deductible": 20000,
+        "small_cap": 32600,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_5c78250f86ee",
+      "attrs": {
+        "price": 574441,
+        "admin": 131031,
+        "loss_0": 5300,
+        "loss_1": 7400,
+        "loss_2": 17500,
+        "loss_3": 1100,
+        "loss_4": 30000,
+        "loss_5": 27600,
+        "deductible": 2400,
+        "small_cap": 32000,
+        "large_cap": 5800
+      }
+    },
+    {
+      "id": "offer_993109eb5fed",
+      "attrs": {
+        "price": 643077,
+        "admin": 145944,
+        "loss_0": 25300,
+        "loss_1": 21000,
+        "loss_2": 22300,
+        "loss_3": 5200,
+        "loss_4": 10100,
+        "loss_5": 10700,
+        "deductible": 20900,
+        "small_cap": 49800,
+        "large_cap": 12400
+      }
+    },
+    {
+      "id": "offer_7bb830dffde5",
+      "attrs": {
+        "price": 783447,
+        "admin": 131170,
+        "loss_0": 30000,
+        "loss_1": 1100,
+        "loss_2": 24900,
+        "loss_3": 10500,
+        "loss_4": 29000,
+        "loss_5": 16000,
+        "deductible": 18800,
+        "small_cap": 34500,
+        "large_cap": 17400
+      }
+    },
+    {
+      "id": "offer_7a8249fad4d7",
+      "attrs": {
+        "price": 516310,
+        "admin": 109490,
+        "loss_0": 27500,
+        "loss_1": 29100,
+        "loss_2": 29500,
+        "loss_3": 5500,
+        "loss_4": 27500,
+        "loss_5": 5600,
+        "deductible": 10400,
+        "small_cap": 38800,
+        "large_cap": 4100
+      }
+    },
+    {
+      "id": "offer_5ea7ea8b35f8",
+      "attrs": {
+        "price": 789227,
+        "admin": 122964,
+        "loss_0": 21400,
+        "loss_1": 25400,
+        "loss_2": 7200,
+        "loss_3": 26000,
+        "loss_4": 20900,
+        "loss_5": 25900,
+        "deductible": 2700,
+        "small_cap": 46900,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_f454036047bc",
+      "attrs": {
+        "price": 683357,
+        "admin": 152535,
+        "loss_0": 16100,
+        "loss_1": 14200,
+        "loss_2": 29700,
+        "loss_3": 7500,
+        "loss_4": 5200,
+        "loss_5": 8700,
+        "deductible": 10700,
+        "small_cap": 21700,
+        "large_cap": 17800
+      }
+    },
+    {
+      "id": "offer_8cbe972c5f07",
+      "attrs": {
+        "price": 485493,
+        "admin": 120558,
+        "loss_0": 7300,
+        "loss_1": 9500,
+        "loss_2": 29100,
+        "loss_3": 28700,
+        "loss_4": 26000,
+        "loss_5": 10200,
+        "deductible": 6200,
+        "small_cap": 21400,
+        "large_cap": 5900
+      }
+    },
+    {
+      "id": "offer_d85b1ec6a3cc",
+      "attrs": {
+        "price": 721925,
+        "admin": 135047,
+        "loss_0": 6100,
+        "loss_1": 16700,
+        "loss_2": 25900,
+        "loss_3": 10700,
+        "loss_4": 18500,
+        "loss_5": 25700,
+        "deductible": 23000,
+        "small_cap": 43500,
+        "large_cap": 15500
+      }
+    },
+    {
+      "id": "offer_5d952834b295",
+      "attrs": {
+        "price": 657044,
+        "admin": 148330,
+        "loss_0": 6900,
+        "loss_1": 4700,
+        "loss_2": 24300,
+        "loss_3": 26200,
+        "loss_4": 1800,
+        "loss_5": 5700,
+        "deductible": 4700,
+        "small_cap": 47100,
+        "large_cap": 8900
+      }
+    },
+    {
+      "id": "offer_f08b855bc333",
+      "attrs": {
+        "price": 821940,
+        "admin": 145171,
+        "loss_0": 17400,
+        "loss_1": 17200,
+        "loss_2": 8400,
+        "loss_3": 21200,
+        "loss_4": 9700,
+        "loss_5": 18400,
+        "deductible": 17500,
+        "small_cap": 45200,
+        "large_cap": 13000
+      }
+    },
+    {
+      "id": "offer_4bb86c4e17dd",
+      "attrs": {
+        "price": 769273,
+        "admin": 133391,
+        "loss_0": 1700,
+        "loss_1": 25500,
+        "loss_2": 4500,
+        "loss_3": 14500,
+        "loss_4": 28700,
+        "loss_5": 17600,
+        "deductible": 10000,
+        "small_cap": 41400,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_ca57254e38b6",
+      "attrs": {
+        "price": 473137,
+        "admin": 164776,
+        "loss_0": 12200,
+        "loss_1": 21400,
+        "loss_2": 13500,
+        "loss_3": 6500,
+        "loss_4": 5400,
+        "loss_5": 16800,
+        "deductible": 11600,
+        "small_cap": 45200,
+        "large_cap": 14400
+      }
+    },
+    {
+      "id": "offer_798bf5fa5483",
+      "attrs": {
+        "price": 715165,
+        "admin": 109237,
+        "loss_0": 28800,
+        "loss_1": 27100,
+        "loss_2": 16800,
+        "loss_3": 24600,
+        "loss_4": 6200,
+        "loss_5": 25400,
+        "deductible": 9900,
+        "small_cap": 32400,
+        "large_cap": 9300
+      }
+    },
+    {
+      "id": "offer_0ffc57681516",
+      "attrs": {
+        "price": 887138,
+        "admin": 151805,
+        "loss_0": 23300,
+        "loss_1": 3700,
+        "loss_2": 4900,
+        "loss_3": 10400,
+        "loss_4": 12500,
+        "loss_5": 24900,
+        "deductible": 11900,
+        "small_cap": 41600,
+        "large_cap": 16000
+      }
+    },
+    {
+      "id": "offer_29339a20a771",
+      "attrs": {
+        "price": 689810,
+        "admin": 151075,
+        "loss_0": 12900,
+        "loss_1": 7100,
+        "loss_2": 7200,
+        "loss_3": 11600,
+        "loss_4": 5000,
+        "loss_5": 29600,
+        "deductible": 10300,
+        "small_cap": 46000,
+        "large_cap": 4500
+      }
+    },
+    {
+      "id": "offer_f67dba84f48f",
+      "attrs": {
+        "price": 557194,
+        "admin": 144403,
+        "loss_0": 12000,
+        "loss_1": 7000,
+        "loss_2": 5100,
+        "loss_3": 18600,
+        "loss_4": 23700,
+        "loss_5": 25600,
+        "deductible": 6000,
+        "small_cap": 41900,
+        "large_cap": 6700
+      }
+    },
+    {
+      "id": "offer_0f12ba7af2dc",
+      "attrs": {
+        "price": 677116,
+        "admin": 146580,
+        "loss_0": 11000,
+        "loss_1": 28700,
+        "loss_2": 9900,
+        "loss_3": 25500,
+        "loss_4": 3200,
+        "loss_5": 6500,
+        "deductible": 14500,
+        "small_cap": 43000,
+        "large_cap": 3500
+      }
+    },
+    {
+      "id": "offer_ce3607b9654f",
+      "attrs": {
+        "price": 732567,
+        "admin": 172506,
+        "loss_0": 13500,
+        "loss_1": 5400,
+        "loss_2": 7300,
+        "loss_3": 15000,
+        "loss_4": 12400,
+        "loss_5": 4800,
+        "deductible": 4200,
+        "small_cap": 32600,
+        "large_cap": 14700
+      }
+    },
+    {
+      "id": "offer_c1afe7de6f28",
+      "attrs": {
+        "price": 867697,
+        "admin": 141964,
+        "loss_0": 17200,
+        "loss_1": 24300,
+        "loss_2": 14800,
+        "loss_3": 3500,
+        "loss_4": 12200,
+        "loss_5": 10100,
+        "deductible": 6500,
+        "small_cap": 46900,
+        "large_cap": 3200
+      }
+    },
+    {
+      "id": "offer_826bf7564cf2",
+      "attrs": {
+        "price": 779233,
+        "admin": 142984,
+        "loss_0": 18000,
+        "loss_1": 14600,
+        "loss_2": 24200,
+        "loss_3": 22800,
+        "loss_4": 13400,
+        "loss_5": 18200,
+        "deductible": 2300,
+        "small_cap": 40800,
+        "large_cap": 7700
+      }
+    },
+    {
+      "id": "offer_9e584de6a41a",
+      "attrs": {
+        "price": 571976,
+        "admin": 160839,
+        "loss_0": 26300,
+        "loss_1": 6800,
+        "loss_2": 15200,
+        "loss_3": 6600,
+        "loss_4": 10500,
+        "loss_5": 7300,
+        "deductible": 23200,
+        "small_cap": 49000,
+        "large_cap": 18200
+      }
+    },
+    {
+      "id": "offer_58159cc96c4c",
+      "attrs": {
+        "price": 685392,
+        "admin": 154076,
+        "loss_0": 8900,
+        "loss_1": 6100,
+        "loss_2": 3200,
+        "loss_3": 29500,
+        "loss_4": 14400,
+        "loss_5": 4500,
+        "deductible": 7300,
+        "small_cap": 28400,
+        "large_cap": 10800
+      }
+    },
+    {
+      "id": "offer_045651a35143",
+      "attrs": {
+        "price": 863443,
+        "admin": 131011,
+        "loss_0": 28000,
+        "loss_1": 8600,
+        "loss_2": 4400,
+        "loss_3": 16100,
+        "loss_4": 29500,
+        "loss_5": 14600,
+        "deductible": 10900,
+        "small_cap": 48100,
+        "large_cap": 11900
+      }
+    },
+    {
+      "id": "offer_c5f3af20a61f",
+      "attrs": {
+        "price": 867464,
+        "admin": 162163,
+        "loss_0": 3900,
+        "loss_1": 1000,
+        "loss_2": 2900,
+        "loss_3": 23300,
+        "loss_4": 13700,
+        "loss_5": 28900,
+        "deductible": 7000,
+        "small_cap": 42100,
+        "large_cap": 13200
+      }
+    },
+    {
+      "id": "offer_97ae6de0353f",
+      "attrs": {
+        "price": 516114,
+        "admin": 126917,
+        "loss_0": 4200,
+        "loss_1": 14300,
+        "loss_2": 25600,
+        "loss_3": 2400,
+        "loss_4": 18100,
+        "loss_5": 28300,
+        "deductible": 20800,
+        "small_cap": 25000,
+        "large_cap": 2100
+      }
+    },
+    {
+      "id": "offer_5799b17f0437",
+      "attrs": {
+        "price": 850766,
+        "admin": 182278,
+        "loss_0": 4100,
+        "loss_1": 4000,
+        "loss_2": 29900,
+        "loss_3": 5500,
+        "loss_4": 5100,
+        "loss_5": 5400,
+        "deductible": 12400,
+        "small_cap": 21500,
+        "large_cap": 13700
+      }
+    },
+    {
+      "id": "offer_7d9912c1fb37",
+      "attrs": {
+        "price": 564434,
+        "admin": 151288,
+        "loss_0": 19700,
+        "loss_1": 1400,
+        "loss_2": 18900,
+        "loss_3": 1300,
+        "loss_4": 15200,
+        "loss_5": 25300,
+        "deductible": 10300,
+        "small_cap": 36200,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_297091ee45b2",
+      "attrs": {
+        "price": 653769,
+        "admin": 149377,
+        "loss_0": 22700,
+        "loss_1": 21100,
+        "loss_2": 15100,
+        "loss_3": 17900,
+        "loss_4": 11700,
+        "loss_5": 9600,
+        "deductible": 7100,
+        "small_cap": 25800,
+        "large_cap": 15100
+      }
+    },
+    {
+      "id": "offer_bad4954ace3e",
+      "attrs": {
+        "price": 706828,
+        "admin": 139683,
+        "loss_0": 12300,
+        "loss_1": 18300,
+        "loss_2": 19500,
+        "loss_3": 19700,
+        "loss_4": 5200,
+        "loss_5": 26500,
+        "deductible": 9100,
+        "small_cap": 35300,
+        "large_cap": 7300
+      }
+    },
+    {
+      "id": "offer_5c01f26c5085",
+      "attrs": {
+        "price": 731493,
+        "admin": 152573,
+        "loss_0": 21400,
+        "loss_1": 18400,
+        "loss_2": 11200,
+        "loss_3": 6700,
+        "loss_4": 11000,
+        "loss_5": 28300,
+        "deductible": 5200,
+        "small_cap": 22800,
+        "large_cap": 17300
+      }
+    },
+    {
+      "id": "offer_d8e23f8881df",
+      "attrs": {
+        "price": 668891,
+        "admin": 130454,
+        "loss_0": 27300,
+        "loss_1": 17500,
+        "loss_2": 25100,
+        "loss_3": 28300,
+        "loss_4": 12900,
+        "loss_5": 21400,
+        "deductible": 18400,
+        "small_cap": 46700,
+        "large_cap": 15500
+      }
+    },
+    {
+      "id": "offer_9889d54fe703",
+      "attrs": {
+        "price": 527144,
+        "admin": 136141,
+        "loss_0": 18200,
+        "loss_1": 23500,
+        "loss_2": 11100,
+        "loss_3": 8500,
+        "loss_4": 18800,
+        "loss_5": 28400,
+        "deductible": 12600,
+        "small_cap": 42200,
+        "large_cap": 9200
+      }
+    },
+    {
+      "id": "offer_662d81f892ca",
+      "attrs": {
+        "price": 841699,
+        "admin": 131679,
+        "loss_0": 27200,
+        "loss_1": 15200,
+        "loss_2": 9800,
+        "loss_3": 29000,
+        "loss_4": 6800,
+        "loss_5": 21000,
+        "deductible": 24600,
+        "small_cap": 26100,
+        "large_cap": 15700
+      }
+    },
+    {
+      "id": "offer_411984240273",
+      "attrs": {
+        "price": 660655,
+        "admin": 126532,
+        "loss_0": 29200,
+        "loss_1": 19700,
+        "loss_2": 17300,
+        "loss_3": 16300,
+        "loss_4": 16400,
+        "loss_5": 21700,
+        "deductible": 19000,
+        "small_cap": 48000,
+        "large_cap": 3000
+      }
+    },
+    {
+      "id": "offer_6c33d5ebab1f",
+      "attrs": {
+        "price": 797981,
+        "admin": 163193,
+        "loss_0": 23900,
+        "loss_1": 10000,
+        "loss_2": 8900,
+        "loss_3": 3900,
+        "loss_4": 6500,
+        "loss_5": 25300,
+        "deductible": 20900,
+        "small_cap": 34500,
+        "large_cap": 11600
+      }
+    },
+    {
+      "id": "offer_e33b76c76715",
+      "attrs": {
+        "price": 799807,
+        "admin": 156753,
+        "loss_0": 14500,
+        "loss_1": 11600,
+        "loss_2": 6600,
+        "loss_3": 5400,
+        "loss_4": 8800,
+        "loss_5": 27500,
+        "deductible": 18500,
+        "small_cap": 41000,
+        "large_cap": 14100
+      }
+    },
+    {
+      "id": "offer_4982284abeeb",
+      "attrs": {
+        "price": 687541,
+        "admin": 140754,
+        "loss_0": 18500,
+        "loss_1": 21000,
+        "loss_2": 6300,
+        "loss_3": 28200,
+        "loss_4": 12700,
+        "loss_5": 12500,
+        "deductible": 16100,
+        "small_cap": 47800,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_f99dd0211558",
+      "attrs": {
+        "price": 828882,
+        "admin": 143074,
+        "loss_0": 9900,
+        "loss_1": 17800,
+        "loss_2": 20300,
+        "loss_3": 21600,
+        "loss_4": 22600,
+        "loss_5": 24300,
+        "deductible": 23700,
+        "small_cap": 42800,
+        "large_cap": 15500
+      }
+    },
+    {
+      "id": "offer_5bb34122a614",
+      "attrs": {
+        "price": 530102,
+        "admin": 137121,
+        "loss_0": 14300,
+        "loss_1": 19900,
+        "loss_2": 26800,
+        "loss_3": 23700,
+        "loss_4": 24500,
+        "loss_5": 24200,
+        "deductible": 13100,
+        "small_cap": 41200,
+        "large_cap": 17800
+      }
+    },
+    {
+      "id": "offer_96986cc2f3e0",
+      "attrs": {
+        "price": 465419,
+        "admin": 121498,
+        "loss_0": 26000,
+        "loss_1": 22800,
+        "loss_2": 27700,
+        "loss_3": 10900,
+        "loss_4": 17100,
+        "loss_5": 10800,
+        "deductible": 8500,
+        "small_cap": 28600,
+        "large_cap": 6700
+      }
+    },
+    {
+      "id": "offer_34e215d11b69",
+      "attrs": {
+        "price": 795238,
+        "admin": 141911,
+        "loss_0": 7800,
+        "loss_1": 9100,
+        "loss_2": 12900,
+        "loss_3": 13000,
+        "loss_4": 24900,
+        "loss_5": 28200,
+        "deductible": 7300,
+        "small_cap": 47100,
+        "large_cap": 5200
+      }
+    },
+    {
+      "id": "offer_979adbf2e14c",
+      "attrs": {
+        "price": 469761,
+        "admin": 124807,
+        "loss_0": 28100,
+        "loss_1": 6700,
+        "loss_2": 22800,
+        "loss_3": 24700,
+        "loss_4": 15000,
+        "loss_5": 21300,
+        "deductible": 14900,
+        "small_cap": 36800,
+        "large_cap": 8900
+      }
+    },
+    {
+      "id": "offer_97d2d6faea9b",
+      "attrs": {
+        "price": 616786,
+        "admin": 167441,
+        "loss_0": 9300,
+        "loss_1": 5500,
+        "loss_2": 1700,
+        "loss_3": 27300,
+        "loss_4": 9700,
+        "loss_5": 6200,
+        "deductible": 13900,
+        "small_cap": 34500,
+        "large_cap": 5000
+      }
+    },
+    {
+      "id": "offer_42d5222e08e1",
+      "attrs": {
+        "price": 643567,
+        "admin": 145394,
+        "loss_0": 6400,
+        "loss_1": 14900,
+        "loss_2": 12300,
+        "loss_3": 20000,
+        "loss_4": 3800,
+        "loss_5": 21900,
+        "deductible": 8600,
+        "small_cap": 38200,
+        "large_cap": 11700
+      }
+    },
+    {
+      "id": "offer_19903ea15e16",
+      "attrs": {
+        "price": 607553,
+        "admin": 134788,
+        "loss_0": 7600,
+        "loss_1": 6300,
+        "loss_2": 30000,
+        "loss_3": 6300,
+        "loss_4": 27800,
+        "loss_5": 14300,
+        "deductible": 9300,
+        "small_cap": 33400,
+        "large_cap": 10100
+      }
+    },
+    {
+      "id": "offer_d89360308a0c",
+      "attrs": {
+        "price": 722467,
+        "admin": 119169,
+        "loss_0": 25500,
+        "loss_1": 11000,
+        "loss_2": 21900,
+        "loss_3": 4300,
+        "loss_4": 24700,
+        "loss_5": 23100,
+        "deductible": 10500,
+        "small_cap": 31600,
+        "large_cap": 5300
+      }
+    },
+    {
+      "id": "offer_4665af18a27f",
+      "attrs": {
+        "price": 729733,
+        "admin": 141916,
+        "loss_0": 23400,
+        "loss_1": 18500,
+        "loss_2": 1400,
+        "loss_3": 27100,
+        "loss_4": 8900,
+        "loss_5": 20200,
+        "deductible": 16700,
+        "small_cap": 25900,
+        "large_cap": 13300
+      }
+    },
+    {
+      "id": "offer_a3d7637a90d4",
+      "attrs": {
+        "price": 644316,
+        "admin": 153962,
+        "loss_0": 12000,
+        "loss_1": 9300,
+        "loss_2": 8800,
+        "loss_3": 14600,
+        "loss_4": 9700,
+        "loss_5": 21400,
+        "deductible": 7300,
+        "small_cap": 42200,
+        "large_cap": 7200
+      }
+    },
+    {
+      "id": "offer_8b531b54f35b",
+      "attrs": {
+        "price": 562620,
+        "admin": 141343,
+        "loss_0": 13600,
+        "loss_1": 26600,
+        "loss_2": 22900,
+        "loss_3": 1000,
+        "loss_4": 9300,
+        "loss_5": 28300,
+        "deductible": 11200,
+        "small_cap": 26800,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_a16c32d76061",
+      "attrs": {
+        "price": 860181,
+        "admin": 133144,
+        "loss_0": 22600,
+        "loss_1": 16800,
+        "loss_2": 12700,
+        "loss_3": 2100,
+        "loss_4": 29400,
+        "loss_5": 21400,
+        "deductible": 7700,
+        "small_cap": 32900,
+        "large_cap": 7000
+      }
+    },
+    {
+      "id": "offer_fefc7c76b8c0",
+      "attrs": {
+        "price": 873292,
+        "admin": 159479,
+        "loss_0": 8300,
+        "loss_1": 6300,
+        "loss_2": 12200,
+        "loss_3": 18700,
+        "loss_4": 16700,
+        "loss_5": 17600,
+        "deductible": 8400,
+        "small_cap": 41800,
+        "large_cap": 5100
+      }
+    },
+    {
+      "id": "offer_be7b29bca21b",
+      "attrs": {
+        "price": 519822,
+        "admin": 117466,
+        "loss_0": 12300,
+        "loss_1": 23700,
+        "loss_2": 27500,
+        "loss_3": 23100,
+        "loss_4": 16600,
+        "loss_5": 15300,
+        "deductible": 5900,
+        "small_cap": 26400,
+        "large_cap": 8300
+      }
+    },
+    {
+      "id": "offer_57982797bcd8",
+      "attrs": {
+        "price": 744575,
+        "admin": 158967,
+        "loss_0": 15300,
+        "loss_1": 14100,
+        "loss_2": 26100,
+        "loss_3": 18100,
+        "loss_4": 5600,
+        "loss_5": 14100,
+        "deductible": 24600,
+        "small_cap": 26800,
+        "large_cap": 15500
+      }
+    },
+    {
+      "id": "offer_f1189375990e",
+      "attrs": {
+        "price": 470285,
+        "admin": 127300,
+        "loss_0": 21200,
+        "loss_1": 27300,
+        "loss_2": 29900,
+        "loss_3": 26700,
+        "loss_4": 26000,
+        "loss_5": 3200,
+        "deductible": 17100,
+        "small_cap": 35700,
+        "large_cap": 17500
+      }
+    },
+    {
+      "id": "offer_bc5b1153065e",
+      "attrs": {
+        "price": 485148,
+        "admin": 164052,
+        "loss_0": 15800,
+        "loss_1": 3400,
+        "loss_2": 15300,
+        "loss_3": 19800,
+        "loss_4": 17200,
+        "loss_5": 9000,
+        "deductible": 10900,
+        "small_cap": 38500,
+        "large_cap": 12400
+      }
+    },
+    {
+      "id": "offer_8253a0dcb0d7",
+      "attrs": {
+        "price": 861111,
+        "admin": 169261,
+        "loss_0": 7300,
+        "loss_1": 13500,
+        "loss_2": 3800,
+        "loss_3": 4700,
+        "loss_4": 6900,
+        "loss_5": 29400,
+        "deductible": 2000,
+        "small_cap": 27400,
+        "large_cap": 11100
+      }
+    },
+    {
+      "id": "offer_e8914d7c22f5",
+      "attrs": {
+        "price": 695124,
+        "admin": 144672,
+        "loss_0": 14400,
+        "loss_1": 5900,
+        "loss_2": 14800,
+        "loss_3": 18300,
+        "loss_4": 18600,
+        "loss_5": 22300,
+        "deductible": 24900,
+        "small_cap": 23100,
+        "large_cap": 5100
+      }
+    },
+    {
+      "id": "offer_5d4edc1b5668",
+      "attrs": {
+        "price": 687093,
+        "admin": 141645,
+        "loss_0": 27300,
+        "loss_1": 17300,
+        "loss_2": 27300,
+        "loss_3": 5600,
+        "loss_4": 3600,
+        "loss_5": 17300,
+        "deductible": 8700,
+        "small_cap": 45100,
+        "large_cap": 12800
+      }
+    },
+    {
+      "id": "offer_9da6a182903e",
+      "attrs": {
+        "price": 609942,
+        "admin": 142577,
+        "loss_0": 1300,
+        "loss_1": 20400,
+        "loss_2": 27800,
+        "loss_3": 3200,
+        "loss_4": 9400,
+        "loss_5": 8600,
+        "deductible": 1100,
+        "small_cap": 41500,
+        "large_cap": 2600
+      }
+    },
+    {
+      "id": "offer_45528096c4f0",
+      "attrs": {
+        "price": 750694,
+        "admin": 117203,
+        "loss_0": 21500,
+        "loss_1": 29400,
+        "loss_2": 17500,
+        "loss_3": 2400,
+        "loss_4": 15000,
+        "loss_5": 25800,
+        "deductible": 10500,
+        "small_cap": 41500,
+        "large_cap": 9800
+      }
+    },
+    {
+      "id": "offer_41f90f19573e",
+      "attrs": {
+        "price": 670721,
+        "admin": 169944,
+        "loss_0": 7300,
+        "loss_1": 9100,
+        "loss_2": 8900,
+        "loss_3": 16600,
+        "loss_4": 10300,
+        "loss_5": 16500,
+        "deductible": 17600,
+        "small_cap": 37800,
+        "large_cap": 9600
+      }
+    },
+    {
+      "id": "offer_85e7f63b02bf",
+      "attrs": {
+        "price": 703909,
+        "admin": 168714,
+        "loss_0": 17400,
+        "loss_1": 2600,
+        "loss_2": 5200,
+        "loss_3": 15500,
+        "loss_4": 10900,
+        "loss_5": 15100,
+        "deductible": 3000,
+        "small_cap": 44600,
+        "large_cap": 11200
+      }
+    },
+    {
+      "id": "offer_4467f6a0372a",
+      "attrs": {
+        "price": 828706,
+        "admin": 112951,
+        "loss_0": 23300,
+        "loss_1": 25100,
+        "loss_2": 27200,
+        "loss_3": 13500,
+        "loss_4": 20000,
+        "loss_5": 25600,
+        "deductible": 11100,
+        "small_cap": 46100,
+        "large_cap": 7900
+      }
+    },
+    {
+      "id": "offer_9b269f5ecf05",
+      "attrs": {
+        "price": 637957,
+        "admin": 106968,
+        "loss_0": 9300,
+        "loss_1": 29400,
+        "loss_2": 28200,
+        "loss_3": 9500,
+        "loss_4": 26900,
+        "loss_5": 16700,
+        "deductible": 5400,
+        "small_cap": 49000,
+        "large_cap": 2100
+      }
+    },
+    {
+      "id": "offer_c7ba839ed530",
+      "attrs": {
+        "price": 751582,
+        "admin": 114890,
+        "loss_0": 25600,
+        "loss_1": 28100,
+        "loss_2": 3700,
+        "loss_3": 24000,
+        "loss_4": 23100,
+        "loss_5": 15700,
+        "deductible": 23200,
+        "small_cap": 30100,
+        "large_cap": 2100
+      }
+    },
+    {
+      "id": "offer_d790498a60cd",
+      "attrs": {
+        "price": 498938,
+        "admin": 162996,
+        "loss_0": 13500,
+        "loss_1": 9900,
+        "loss_2": 4100,
+        "loss_3": 1500,
+        "loss_4": 25400,
+        "loss_5": 8900,
+        "deductible": 9900,
+        "small_cap": 44500,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_e867cd710f41",
+      "attrs": {
+        "price": 529328,
+        "admin": 129602,
+        "loss_0": 27700,
+        "loss_1": 7500,
+        "loss_2": 15100,
+        "loss_3": 30000,
+        "loss_4": 5900,
+        "loss_5": 26500,
+        "deductible": 9300,
+        "small_cap": 40300,
+        "large_cap": 15700
+      }
+    },
+    {
+      "id": "offer_3a84529eee84",
+      "attrs": {
+        "price": 828450,
+        "admin": 144351,
+        "loss_0": 17600,
+        "loss_1": 25200,
+        "loss_2": 3700,
+        "loss_3": 29200,
+        "loss_4": 9400,
+        "loss_5": 3900,
+        "deductible": 2600,
+        "small_cap": 48900,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_56684d3a9837",
+      "attrs": {
+        "price": 451552,
+        "admin": 162416,
+        "loss_0": 2700,
+        "loss_1": 4000,
+        "loss_2": 23600,
+        "loss_3": 5900,
+        "loss_4": 27100,
+        "loss_5": 16700,
+        "deductible": 13700,
+        "small_cap": 42300,
+        "large_cap": 18000
+      }
+    },
+    {
+      "id": "offer_c1647207c797",
+      "attrs": {
+        "price": 662330,
+        "admin": 152016,
+        "loss_0": 10500,
+        "loss_1": 20700,
+        "loss_2": 15400,
+        "loss_3": 21300,
+        "loss_4": 2100,
+        "loss_5": 15400,
+        "deductible": 4900,
+        "small_cap": 23800,
+        "large_cap": 7300
+      }
+    },
+    {
+      "id": "offer_e6bef222a08a",
+      "attrs": {
+        "price": 506847,
+        "admin": 158299,
+        "loss_0": 9900,
+        "loss_1": 22200,
+        "loss_2": 20700,
+        "loss_3": 19300,
+        "loss_4": 6900,
+        "loss_5": 1200,
+        "deductible": 14500,
+        "small_cap": 20700,
+        "large_cap": 11500
+      }
+    },
+    {
+      "id": "offer_6d728f50a1d3",
+      "attrs": {
+        "price": 688092,
+        "admin": 133264,
+        "loss_0": 22900,
+        "loss_1": 20100,
+        "loss_2": 6900,
+        "loss_3": 24500,
+        "loss_4": 17000,
+        "loss_5": 6100,
+        "deductible": 2200,
+        "small_cap": 49800,
+        "large_cap": 3500
+      }
+    },
+    {
+      "id": "offer_47ac39df91c3",
+      "attrs": {
+        "price": 481032,
+        "admin": 109286,
+        "loss_0": 25700,
+        "loss_1": 28300,
+        "loss_2": 24100,
+        "loss_3": 3900,
+        "loss_4": 19400,
+        "loss_5": 29200,
+        "deductible": 13000,
+        "small_cap": 46400,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_bb27e93050c1",
+      "attrs": {
+        "price": 520762,
+        "admin": 153746,
+        "loss_0": 22900,
+        "loss_1": 18600,
+        "loss_2": 8200,
+        "loss_3": 14500,
+        "loss_4": 5100,
+        "loss_5": 12400,
+        "deductible": 14500,
+        "small_cap": 39100,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_d22b1c1866d4",
+      "attrs": {
+        "price": 568085,
+        "admin": 127058,
+        "loss_0": 21000,
+        "loss_1": 7700,
+        "loss_2": 3500,
+        "loss_3": 26800,
+        "loss_4": 22300,
+        "loss_5": 14700,
+        "deductible": 23200,
+        "small_cap": 23600,
+        "large_cap": 10600
+      }
+    },
+    {
+      "id": "offer_298c76f28db5",
+      "attrs": {
+        "price": 645188,
+        "admin": 142108,
+        "loss_0": 7600,
+        "loss_1": 5400,
+        "loss_2": 1100,
+        "loss_3": 24900,
+        "loss_4": 26500,
+        "loss_5": 28400,
+        "deductible": 2700,
+        "small_cap": 26700,
+        "large_cap": 19000
+      }
+    },
+    {
+      "id": "offer_d4643dd21657",
+      "attrs": {
+        "price": 598847,
+        "admin": 154842,
+        "loss_0": 18600,
+        "loss_1": 5200,
+        "loss_2": 18100,
+        "loss_3": 15000,
+        "loss_4": 21700,
+        "loss_5": 11300,
+        "deductible": 18700,
+        "small_cap": 39400,
+        "large_cap": 14600
+      }
+    },
+    {
+      "id": "offer_928d6c665e54",
+      "attrs": {
+        "price": 801464,
+        "admin": 160093,
+        "loss_0": 23600,
+        "loss_1": 3600,
+        "loss_2": 7200,
+        "loss_3": 14100,
+        "loss_4": 22100,
+        "loss_5": 2500,
+        "deductible": 9800,
+        "small_cap": 31900,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_3ec69e134f71",
+      "attrs": {
+        "price": 571897,
+        "admin": 167631,
+        "loss_0": 4300,
+        "loss_1": 12800,
+        "loss_2": 8300,
+        "loss_3": 13300,
+        "loss_4": 19700,
+        "loss_5": 1600,
+        "deductible": 24000,
+        "small_cap": 29900,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_aca89ce382c4",
+      "attrs": {
+        "price": 629241,
+        "admin": 138492,
+        "loss_0": 25000,
+        "loss_1": 9800,
+        "loss_2": 7400,
+        "loss_3": 16900,
+        "loss_4": 12000,
+        "loss_5": 20500,
+        "deductible": 14200,
+        "small_cap": 27300,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_e75e295838fb",
+      "attrs": {
+        "price": 763830,
+        "admin": 154825,
+        "loss_0": 20400,
+        "loss_1": 20300,
+        "loss_2": 2100,
+        "loss_3": 1100,
+        "loss_4": 20600,
+        "loss_5": 3900,
+        "deductible": 13800,
+        "small_cap": 21300,
+        "large_cap": 11100
+      }
+    },
+    {
+      "id": "offer_898c4cb01ea2",
+      "attrs": {
+        "price": 580517,
+        "admin": 147750,
+        "loss_0": 7000,
+        "loss_1": 21100,
+        "loss_2": 21800,
+        "loss_3": 12600,
+        "loss_4": 8600,
+        "loss_5": 16300,
+        "deductible": 5000,
+        "small_cap": 33500,
+        "large_cap": 18600
+      }
+    },
+    {
+      "id": "offer_30ed95d35fa9",
+      "attrs": {
+        "price": 671569,
+        "admin": 157407,
+        "loss_0": 21000,
+        "loss_1": 23400,
+        "loss_2": 13100,
+        "loss_3": 11700,
+        "loss_4": 20400,
+        "loss_5": 8700,
+        "deductible": 9300,
+        "small_cap": 38200,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_c22b69de30ac",
+      "attrs": {
+        "price": 632444,
+        "admin": 138081,
+        "loss_0": 27900,
+        "loss_1": 17200,
+        "loss_2": 28900,
+        "loss_3": 8700,
+        "loss_4": 2400,
+        "loss_5": 14200,
+        "deductible": 11900,
+        "small_cap": 48600,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_f54ba35cddcc",
+      "attrs": {
+        "price": 808483,
+        "admin": 104535,
+        "loss_0": 26100,
+        "loss_1": 26100,
+        "loss_2": 2500,
+        "loss_3": 28600,
+        "loss_4": 27100,
+        "loss_5": 18900,
+        "deductible": 1500,
+        "small_cap": 29100,
+        "large_cap": 11400
+      }
+    },
+    {
+      "id": "offer_ce76749663ca",
+      "attrs": {
+        "price": 739335,
+        "admin": 146073,
+        "loss_0": 11100,
+        "loss_1": 11700,
+        "loss_2": 1500,
+        "loss_3": 14200,
+        "loss_4": 23800,
+        "loss_5": 22300,
+        "deductible": 8600,
+        "small_cap": 43900,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_2c978f01e213",
+      "attrs": {
+        "price": 581375,
+        "admin": 118018,
+        "loss_0": 2500,
+        "loss_1": 16100,
+        "loss_2": 26300,
+        "loss_3": 22900,
+        "loss_4": 14000,
+        "loss_5": 25600,
+        "deductible": 16300,
+        "small_cap": 20800,
+        "large_cap": 3700
+      }
+    },
+    {
+      "id": "offer_0056b99bf217",
+      "attrs": {
+        "price": 487071,
+        "admin": 142319,
+        "loss_0": 16900,
+        "loss_1": 19900,
+        "loss_2": 16900,
+        "loss_3": 15700,
+        "loss_4": 14300,
+        "loss_5": 18800,
+        "deductible": 22100,
+        "small_cap": 32700,
+        "large_cap": 10200
+      }
+    },
+    {
+      "id": "offer_777d3330053b",
+      "attrs": {
+        "price": 525572,
+        "admin": 163671,
+        "loss_0": 18700,
+        "loss_1": 5500,
+        "loss_2": 8200,
+        "loss_3": 26800,
+        "loss_4": 2500,
+        "loss_5": 14600,
+        "deductible": 7800,
+        "small_cap": 27900,
+        "large_cap": 18200
+      }
+    },
+    {
+      "id": "offer_1cfffc69b963",
+      "attrs": {
+        "price": 641179,
+        "admin": 158902,
+        "loss_0": 1200,
+        "loss_1": 11100,
+        "loss_2": 14300,
+        "loss_3": 28400,
+        "loss_4": 3600,
+        "loss_5": 22400,
+        "deductible": 24600,
+        "small_cap": 32900,
+        "large_cap": 16700
+      }
+    },
+    {
+      "id": "offer_4665a3d4d031",
+      "attrs": {
+        "price": 789234,
+        "admin": 145539,
+        "loss_0": 29000,
+        "loss_1": 18300,
+        "loss_2": 10300,
+        "loss_3": 6700,
+        "loss_4": 19000,
+        "loss_5": 9700,
+        "deductible": 8600,
+        "small_cap": 32100,
+        "large_cap": 16500
+      }
+    },
+    {
+      "id": "offer_c7991d275b4b",
+      "attrs": {
+        "price": 883672,
+        "admin": 136077,
+        "loss_0": 14100,
+        "loss_1": 20800,
+        "loss_2": 20100,
+        "loss_3": 3600,
+        "loss_4": 18500,
+        "loss_5": 19000,
+        "deductible": 10900,
+        "small_cap": 40300,
+        "large_cap": 13200
+      }
+    },
+    {
+      "id": "offer_c9c86a80c5fd",
+      "attrs": {
+        "price": 800014,
+        "admin": 140029,
+        "loss_0": 29000,
+        "loss_1": 12700,
+        "loss_2": 20600,
+        "loss_3": 9500,
+        "loss_4": 10000,
+        "loss_5": 16500,
+        "deductible": 18300,
+        "small_cap": 47700,
+        "large_cap": 11200
+      }
+    },
+    {
+      "id": "offer_191b94a1237a",
+      "attrs": {
+        "price": 871256,
+        "admin": 113073,
+        "loss_0": 27100,
+        "loss_1": 3800,
+        "loss_2": 29400,
+        "loss_3": 28200,
+        "loss_4": 20800,
+        "loss_5": 10900,
+        "deductible": 20100,
+        "small_cap": 35300,
+        "large_cap": 3500
+      }
+    },
+    {
+      "id": "offer_fb79681bb870",
+      "attrs": {
+        "price": 862834,
+        "admin": 140543,
+        "loss_0": 14600,
+        "loss_1": 3600,
+        "loss_2": 10600,
+        "loss_3": 16800,
+        "loss_4": 27400,
+        "loss_5": 8000,
+        "deductible": 7600,
+        "small_cap": 37800,
+        "large_cap": 3500
+      }
+    },
+    {
+      "id": "offer_8fd77940fc0e",
+      "attrs": {
+        "price": 693508,
+        "admin": 142269,
+        "loss_0": 29900,
+        "loss_1": 19800,
+        "loss_2": 8600,
+        "loss_3": 18500,
+        "loss_4": 24300,
+        "loss_5": 19200,
+        "deductible": 2800,
+        "small_cap": 38500,
+        "large_cap": 17200
+      }
+    },
+    {
+      "id": "offer_48686e910436",
+      "attrs": {
+        "price": 743662,
+        "admin": 152405,
+        "loss_0": 8100,
+        "loss_1": 7800,
+        "loss_2": 22100,
+        "loss_3": 21100,
+        "loss_4": 9400,
+        "loss_5": 1100,
+        "deductible": 16700,
+        "small_cap": 34200,
+        "large_cap": 3800
+      }
+    },
+    {
+      "id": "offer_f3a3486478ef",
+      "attrs": {
+        "price": 571547,
+        "admin": 146980,
+        "loss_0": 4500,
+        "loss_1": 27600,
+        "loss_2": 19000,
+        "loss_3": 5600,
+        "loss_4": 13000,
+        "loss_5": 10900,
+        "deductible": 10600,
+        "small_cap": 24700,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_5c930b111454",
+      "attrs": {
+        "price": 501092,
+        "admin": 144149,
+        "loss_0": 24800,
+        "loss_1": 22300,
+        "loss_2": 11900,
+        "loss_3": 16600,
+        "loss_4": 11300,
+        "loss_5": 12800,
+        "deductible": 3200,
+        "small_cap": 22400,
+        "large_cap": 7600
+      }
+    },
+    {
+      "id": "offer_53f1c85ec34b",
+      "attrs": {
+        "price": 611358,
+        "admin": 138646,
+        "loss_0": 6900,
+        "loss_1": 19300,
+        "loss_2": 17200,
+        "loss_3": 22700,
+        "loss_4": 20600,
+        "loss_5": 8600,
+        "deductible": 16300,
+        "small_cap": 37600,
+        "large_cap": 4000
+      }
+    },
+    {
+      "id": "offer_edb5efdba135",
+      "attrs": {
+        "price": 539663,
+        "admin": 124592,
+        "loss_0": 2100,
+        "loss_1": 19400,
+        "loss_2": 27200,
+        "loss_3": 26600,
+        "loss_4": 12300,
+        "loss_5": 16100,
+        "deductible": 20500,
+        "small_cap": 49400,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_e94c59a497c6",
+      "attrs": {
+        "price": 743965,
+        "admin": 138287,
+        "loss_0": 25300,
+        "loss_1": 18600,
+        "loss_2": 11400,
+        "loss_3": 15900,
+        "loss_4": 15700,
+        "loss_5": 25700,
+        "deductible": 12400,
+        "small_cap": 26600,
+        "large_cap": 19000
+      }
+    },
+    {
+      "id": "offer_b6e5df3ca876",
+      "attrs": {
+        "price": 861906,
+        "admin": 134512,
+        "loss_0": 12400,
+        "loss_1": 23800,
+        "loss_2": 1900,
+        "loss_3": 19500,
+        "loss_4": 21200,
+        "loss_5": 7000,
+        "deductible": 22800,
+        "small_cap": 44500,
+        "large_cap": 4000
+      }
+    },
+    {
+      "id": "offer_2c29cc3622b3",
+      "attrs": {
+        "price": 541260,
+        "admin": 139883,
+        "loss_0": 28500,
+        "loss_1": 12900,
+        "loss_2": 20100,
+        "loss_3": 6400,
+        "loss_4": 23700,
+        "loss_5": 9900,
+        "deductible": 19400,
+        "small_cap": 39200,
+        "large_cap": 6200
+      }
+    },
+    {
+      "id": "offer_76bdb00574aa",
+      "attrs": {
+        "price": 572358,
+        "admin": 119668,
+        "loss_0": 23100,
+        "loss_1": 28900,
+        "loss_2": 10900,
+        "loss_3": 28200,
+        "loss_4": 13500,
+        "loss_5": 9800,
+        "deductible": 7100,
+        "small_cap": 21500,
+        "large_cap": 7100
+      }
+    },
+    {
+      "id": "offer_77142c34ddd5",
+      "attrs": {
+        "price": 710398,
+        "admin": 130229,
+        "loss_0": 27600,
+        "loss_1": 8200,
+        "loss_2": 26100,
+        "loss_3": 4400,
+        "loss_4": 28400,
+        "loss_5": 16500,
+        "deductible": 23700,
+        "small_cap": 24700,
+        "large_cap": 17700
+      }
+    },
+    {
+      "id": "offer_8372c114016c",
+      "attrs": {
+        "price": 479269,
+        "admin": 172251,
+        "loss_0": 9600,
+        "loss_1": 6600,
+        "loss_2": 5800,
+        "loss_3": 11200,
+        "loss_4": 11700,
+        "loss_5": 17800,
+        "deductible": 8100,
+        "small_cap": 31500,
+        "large_cap": 14600
+      }
+    },
+    {
+      "id": "offer_dd375ddab025",
+      "attrs": {
+        "price": 565448,
+        "admin": 123049,
+        "loss_0": 26100,
+        "loss_1": 8400,
+        "loss_2": 21000,
+        "loss_3": 25800,
+        "loss_4": 19700,
+        "loss_5": 23100,
+        "deductible": 7300,
+        "small_cap": 23000,
+        "large_cap": 8700
+      }
+    },
+    {
+      "id": "offer_ea642bececac",
+      "attrs": {
+        "price": 610917,
+        "admin": 148816,
+        "loss_0": 3100,
+        "loss_1": 7000,
+        "loss_2": 17100,
+        "loss_3": 15000,
+        "loss_4": 14900,
+        "loss_5": 24000,
+        "deductible": 15700,
+        "small_cap": 41500,
+        "large_cap": 2100
+      }
+    },
+    {
+      "id": "offer_2a4c9daff58b",
+      "attrs": {
+        "price": 463454,
+        "admin": 160258,
+        "loss_0": 19000,
+        "loss_1": 28100,
+        "loss_2": 16400,
+        "loss_3": 10000,
+        "loss_4": 4000,
+        "loss_5": 12500,
+        "deductible": 1400,
+        "small_cap": 29600,
+        "large_cap": 16900
+      }
+    },
+    {
+      "id": "offer_edc734945dcf",
+      "attrs": {
+        "price": 535895,
+        "admin": 132637,
+        "loss_0": 23100,
+        "loss_1": 28000,
+        "loss_2": 8300,
+        "loss_3": 4600,
+        "loss_4": 12400,
+        "loss_5": 20600,
+        "deductible": 5600,
+        "small_cap": 42300,
+        "large_cap": 2700
+      }
+    },
+    {
+      "id": "offer_0bba46efa1b9",
+      "attrs": {
+        "price": 494681,
+        "admin": 133526,
+        "loss_0": 22400,
+        "loss_1": 3300,
+        "loss_2": 21500,
+        "loss_3": 15900,
+        "loss_4": 24200,
+        "loss_5": 16700,
+        "deductible": 8900,
+        "small_cap": 49900,
+        "large_cap": 2000
+      }
+    },
+    {
+      "id": "offer_8df6c1f0dfdb",
+      "attrs": {
+        "price": 579923,
+        "admin": 171011,
+        "loss_0": 24600,
+        "loss_1": 2500,
+        "loss_2": 5300,
+        "loss_3": 19100,
+        "loss_4": 3000,
+        "loss_5": 1200,
+        "deductible": 7600,
+        "small_cap": 45600,
+        "large_cap": 4700
+      }
+    },
+    {
+      "id": "offer_adf8d52c7213",
+      "attrs": {
+        "price": 648457,
+        "admin": 146449,
+        "loss_0": 17800,
+        "loss_1": 24100,
+        "loss_2": 20000,
+        "loss_3": 11400,
+        "loss_4": 11800,
+        "loss_5": 4200,
+        "deductible": 18000,
+        "small_cap": 37900,
+        "large_cap": 9300
+      }
+    },
+    {
+      "id": "offer_14200f4f6d35",
+      "attrs": {
+        "price": 643101,
+        "admin": 133869,
+        "loss_0": 25000,
+        "loss_1": 21400,
+        "loss_2": 24600,
+        "loss_3": 8200,
+        "loss_4": 10500,
+        "loss_5": 17100,
+        "deductible": 23700,
+        "small_cap": 45600,
+        "large_cap": 10100
+      }
+    },
+    {
+      "id": "offer_39a6310671ab",
+      "attrs": {
+        "price": 490069,
+        "admin": 139627,
+        "loss_0": 16800,
+        "loss_1": 29300,
+        "loss_2": 9500,
+        "loss_3": 6600,
+        "loss_4": 18100,
+        "loss_5": 12500,
+        "deductible": 10800,
+        "small_cap": 34000,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_307644fd3f32",
+      "attrs": {
+        "price": 531361,
+        "admin": 120772,
+        "loss_0": 21300,
+        "loss_1": 27400,
+        "loss_2": 1100,
+        "loss_3": 24400,
+        "loss_4": 27100,
+        "loss_5": 27800,
+        "deductible": 19700,
+        "small_cap": 31700,
+        "large_cap": 16500
+      }
+    },
+    {
+      "id": "offer_07fa14b83d5f",
+      "attrs": {
+        "price": 556530,
+        "admin": 127779,
+        "loss_0": 11100,
+        "loss_1": 4400,
+        "loss_2": 19000,
+        "loss_3": 18800,
+        "loss_4": 25000,
+        "loss_5": 13700,
+        "deductible": 17900,
+        "small_cap": 25100,
+        "large_cap": 4000
+      }
+    },
+    {
+      "id": "offer_b8d7eb9506dc",
+      "attrs": {
+        "price": 854993,
+        "admin": 140374,
+        "loss_0": 18300,
+        "loss_1": 14700,
+        "loss_2": 1700,
+        "loss_3": 3400,
+        "loss_4": 12900,
+        "loss_5": 18100,
+        "deductible": 21600,
+        "small_cap": 47900,
+        "large_cap": 2100
+      }
+    },
+    {
+      "id": "offer_27358396c365",
+      "attrs": {
+        "price": 532524,
+        "admin": 155370,
+        "loss_0": 6700,
+        "loss_1": 11100,
+        "loss_2": 27000,
+        "loss_3": 13800,
+        "loss_4": 18500,
+        "loss_5": 8500,
+        "deductible": 6900,
+        "small_cap": 31600,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_bd3ea187aefa",
+      "attrs": {
+        "price": 623217,
+        "admin": 158371,
+        "loss_0": 17700,
+        "loss_1": 13700,
+        "loss_2": 18100,
+        "loss_3": 11600,
+        "loss_4": 5400,
+        "loss_5": 8900,
+        "deductible": 22000,
+        "small_cap": 40100,
+        "large_cap": 7700
+      }
+    },
+    {
+      "id": "offer_c11c5afd27a9",
+      "attrs": {
+        "price": 632646,
+        "admin": 148243,
+        "loss_0": 21000,
+        "loss_1": 10800,
+        "loss_2": 14900,
+        "loss_3": 24100,
+        "loss_4": 21300,
+        "loss_5": 18800,
+        "deductible": 15100,
+        "small_cap": 31400,
+        "large_cap": 14000
+      }
+    },
+    {
+      "id": "offer_5382c09b6a16",
+      "attrs": {
+        "price": 780304,
+        "admin": 147018,
+        "loss_0": 17000,
+        "loss_1": 5100,
+        "loss_2": 15100,
+        "loss_3": 19700,
+        "loss_4": 7500,
+        "loss_5": 1500,
+        "deductible": 9400,
+        "small_cap": 22400,
+        "large_cap": 3000
+      }
+    },
+    {
+      "id": "offer_7cd0b11d72b4",
+      "attrs": {
+        "price": 760709,
+        "admin": 120283,
+        "loss_0": 9000,
+        "loss_1": 8600,
+        "loss_2": 25800,
+        "loss_3": 18300,
+        "loss_4": 26600,
+        "loss_5": 19000,
+        "deductible": 16700,
+        "small_cap": 29300,
+        "large_cap": 8000
+      }
+    },
+    {
+      "id": "offer_681eedd5b8b9",
+      "attrs": {
+        "price": 455656,
+        "admin": 154516,
+        "loss_0": 12000,
+        "loss_1": 25600,
+        "loss_2": 8200,
+        "loss_3": 19600,
+        "loss_4": 9100,
+        "loss_5": 3500,
+        "deductible": 11400,
+        "small_cap": 26900,
+        "large_cap": 9300
+      }
+    },
+    {
+      "id": "offer_a6a3f1ca3e54",
+      "attrs": {
+        "price": 797212,
+        "admin": 123880,
+        "loss_0": 22800,
+        "loss_1": 19900,
+        "loss_2": 26400,
+        "loss_3": 14800,
+        "loss_4": 21900,
+        "loss_5": 16500,
+        "deductible": 11100,
+        "small_cap": 39000,
+        "large_cap": 4800
+      }
+    },
+    {
+      "id": "offer_d156eef56be0",
+      "attrs": {
+        "price": 707830,
+        "admin": 142670,
+        "loss_0": 6900,
+        "loss_1": 20000,
+        "loss_2": 17100,
+        "loss_3": 29400,
+        "loss_4": 14200,
+        "loss_5": 17200,
+        "deductible": 1100,
+        "small_cap": 38200,
+        "large_cap": 12700
+      }
+    },
+    {
+      "id": "offer_936082cb96c6",
+      "attrs": {
+        "price": 754349,
+        "admin": 135232,
+        "loss_0": 10000,
+        "loss_1": 23700,
+        "loss_2": 16700,
+        "loss_3": 28200,
+        "loss_4": 9600,
+        "loss_5": 20800,
+        "deductible": 12200,
+        "small_cap": 35500,
+        "large_cap": 10500
+      }
+    },
+    {
+      "id": "offer_fa68900fd5cb",
+      "attrs": {
+        "price": 800170,
+        "admin": 153441,
+        "loss_0": 3600,
+        "loss_1": 11600,
+        "loss_2": 18600,
+        "loss_3": 24900,
+        "loss_4": 7700,
+        "loss_5": 16500,
+        "deductible": 17700,
+        "small_cap": 25200,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_9f81c7d55de0",
+      "attrs": {
+        "price": 742712,
+        "admin": 137820,
+        "loss_0": 24300,
+        "loss_1": 9900,
+        "loss_2": 14600,
+        "loss_3": 4500,
+        "loss_4": 13600,
+        "loss_5": 25500,
+        "deductible": 5800,
+        "small_cap": 32700,
+        "large_cap": 4600
+      }
+    },
+    {
+      "id": "offer_c8be0ac4b434",
+      "attrs": {
+        "price": 756277,
+        "admin": 147005,
+        "loss_0": 6300,
+        "loss_1": 25200,
+        "loss_2": 27000,
+        "loss_3": 10300,
+        "loss_4": 12200,
+        "loss_5": 20300,
+        "deductible": 8000,
+        "small_cap": 29200,
+        "large_cap": 13600
+      }
+    },
+    {
+      "id": "offer_9c431a589d0b",
+      "attrs": {
+        "price": 895713,
+        "admin": 147428,
+        "loss_0": 3700,
+        "loss_1": 24600,
+        "loss_2": 18500,
+        "loss_3": 7400,
+        "loss_4": 25400,
+        "loss_5": 16100,
+        "deductible": 6700,
+        "small_cap": 31100,
+        "large_cap": 13100
+      }
+    },
+    {
+      "id": "offer_2ed65021c94c",
+      "attrs": {
+        "price": 570836,
+        "admin": 149513,
+        "loss_0": 13800,
+        "loss_1": 12300,
+        "loss_2": 5500,
+        "loss_3": 16000,
+        "loss_4": 2000,
+        "loss_5": 29000,
+        "deductible": 2400,
+        "small_cap": 23800,
+        "large_cap": 5300
+      }
+    },
+    {
+      "id": "offer_45dadc1239fb",
+      "attrs": {
+        "price": 709030,
+        "admin": 151639,
+        "loss_0": 3900,
+        "loss_1": 23000,
+        "loss_2": 13000,
+        "loss_3": 25400,
+        "loss_4": 22500,
+        "loss_5": 8100,
+        "deductible": 21200,
+        "small_cap": 37500,
+        "large_cap": 18500
+      }
+    },
+    {
+      "id": "offer_aaf130c22ba0",
+      "attrs": {
+        "price": 474638,
+        "admin": 169515,
+        "loss_0": 6900,
+        "loss_1": 5400,
+        "loss_2": 12700,
+        "loss_3": 17300,
+        "loss_4": 11600,
+        "loss_5": 16600,
+        "deductible": 14300,
+        "small_cap": 26600,
+        "large_cap": 17300
+      }
+    },
+    {
+      "id": "offer_7dc98a3cfec6",
+      "attrs": {
+        "price": 762955,
+        "admin": 134207,
+        "loss_0": 25900,
+        "loss_1": 15500,
+        "loss_2": 12000,
+        "loss_3": 23900,
+        "loss_4": 4800,
+        "loss_5": 3000,
+        "deductible": 11900,
+        "small_cap": 39600,
+        "large_cap": 8500
+      }
+    },
+    {
+      "id": "offer_009e6f23f6d9",
+      "attrs": {
+        "price": 881727,
+        "admin": 158569,
+        "loss_0": 21200,
+        "loss_1": 7500,
+        "loss_2": 2900,
+        "loss_3": 17400,
+        "loss_4": 1300,
+        "loss_5": 29300,
+        "deductible": 23100,
+        "small_cap": 26900,
+        "large_cap": 18600
+      }
+    },
+    {
+      "id": "offer_8e8fc4dda14f",
+      "attrs": {
+        "price": 737137,
+        "admin": 132658,
+        "loss_0": 20300,
+        "loss_1": 20700,
+        "loss_2": 16800,
+        "loss_3": 24200,
+        "loss_4": 28000,
+        "loss_5": 4900,
+        "deductible": 19900,
+        "small_cap": 28000,
+        "large_cap": 12400
+      }
+    },
+    {
+      "id": "offer_94b464175d60",
+      "attrs": {
+        "price": 790808,
+        "admin": 154073,
+        "loss_0": 20500,
+        "loss_1": 18900,
+        "loss_2": 4100,
+        "loss_3": 18000,
+        "loss_4": 10300,
+        "loss_5": 7200,
+        "deductible": 4400,
+        "small_cap": 27500,
+        "large_cap": 15400
+      }
+    },
+    {
+      "id": "offer_3d78e9112e4c",
+      "attrs": {
+        "price": 827133,
+        "admin": 123126,
+        "loss_0": 19800,
+        "loss_1": 6300,
+        "loss_2": 28400,
+        "loss_3": 5100,
+        "loss_4": 12000,
+        "loss_5": 29300,
+        "deductible": 9600,
+        "small_cap": 22800,
+        "large_cap": 2700
+      }
+    },
+    {
+      "id": "offer_1114c2b788f6",
+      "attrs": {
+        "price": 503474,
+        "admin": 154071,
+        "loss_0": 26500,
+        "loss_1": 8400,
+        "loss_2": 18700,
+        "loss_3": 10900,
+        "loss_4": 3900,
+        "loss_5": 13200,
+        "deductible": 5000,
+        "small_cap": 33900,
+        "large_cap": 7300
+      }
+    },
+    {
+      "id": "offer_8886d359a19c",
+      "attrs": {
+        "price": 503004,
+        "admin": 152318,
+        "loss_0": 25700,
+        "loss_1": 1700,
+        "loss_2": 4300,
+        "loss_3": 4700,
+        "loss_4": 21900,
+        "loss_5": 21700,
+        "deductible": 1800,
+        "small_cap": 24200,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_75a8235ea847",
+      "attrs": {
+        "price": 809036,
+        "admin": 184920,
+        "loss_0": 12400,
+        "loss_1": 3700,
+        "loss_2": 4700,
+        "loss_3": 8900,
+        "loss_4": 5700,
+        "loss_5": 1600,
+        "deductible": 19800,
+        "small_cap": 39100,
+        "large_cap": 4000
+      }
+    },
+    {
+      "id": "offer_3a3be3e2cda0",
+      "attrs": {
+        "price": 505408,
+        "admin": 119235,
+        "loss_0": 24600,
+        "loss_1": 22300,
+        "loss_2": 7700,
+        "loss_3": 25400,
+        "loss_4": 28200,
+        "loss_5": 4500,
+        "deductible": 4200,
+        "small_cap": 20400,
+        "large_cap": 3700
+      }
+    },
+    {
+      "id": "offer_693fdbdb38b8",
+      "attrs": {
+        "price": 693040,
+        "admin": 148181,
+        "loss_0": 6100,
+        "loss_1": 27900,
+        "loss_2": 5000,
+        "loss_3": 10500,
+        "loss_4": 14900,
+        "loss_5": 25100,
+        "deductible": 20300,
+        "small_cap": 45100,
+        "large_cap": 12900
+      }
+    },
+    {
+      "id": "offer_b2132dea7b97",
+      "attrs": {
+        "price": 714838,
+        "admin": 137870,
+        "loss_0": 11100,
+        "loss_1": 2600,
+        "loss_2": 28100,
+        "loss_3": 20100,
+        "loss_4": 3400,
+        "loss_5": 28900,
+        "deductible": 23200,
+        "small_cap": 34900,
+        "large_cap": 18200
+      }
+    },
+    {
+      "id": "offer_18bac91d899b",
+      "attrs": {
+        "price": 816298,
+        "admin": 142113,
+        "loss_0": 11600,
+        "loss_1": 20500,
+        "loss_2": 8100,
+        "loss_3": 26500,
+        "loss_4": 16400,
+        "loss_5": 15700,
+        "deductible": 2700,
+        "small_cap": 25600,
+        "large_cap": 18700
+      }
+    },
+    {
+      "id": "offer_0bee0f5bbc97",
+      "attrs": {
+        "price": 561696,
+        "admin": 135157,
+        "loss_0": 23400,
+        "loss_1": 6300,
+        "loss_2": 21900,
+        "loss_3": 15600,
+        "loss_4": 20200,
+        "loss_5": 27300,
+        "deductible": 18800,
+        "small_cap": 33000,
+        "large_cap": 13800
+      }
+    },
+    {
+      "id": "offer_cfb679a004bb",
+      "attrs": {
+        "price": 460499,
+        "admin": 157709,
+        "loss_0": 18600,
+        "loss_1": 15500,
+        "loss_2": 16700,
+        "loss_3": 2300,
+        "loss_4": 15300,
+        "loss_5": 21300,
+        "deductible": 20900,
+        "small_cap": 24500,
+        "large_cap": 11000
+      }
+    },
+    {
+      "id": "offer_28d3d26c4ec6",
+      "attrs": {
+        "price": 898565,
+        "admin": 165187,
+        "loss_0": 12300,
+        "loss_1": 16300,
+        "loss_2": 16200,
+        "loss_3": 4700,
+        "loss_4": 2100,
+        "loss_5": 11900,
+        "deductible": 6800,
+        "small_cap": 30700,
+        "large_cap": 8800
+      }
+    },
+    {
+      "id": "offer_db942ef7c3dd",
+      "attrs": {
+        "price": 831552,
+        "admin": 134317,
+        "loss_0": 12800,
+        "loss_1": 20300,
+        "loss_2": 24600,
+        "loss_3": 18800,
+        "loss_4": 17700,
+        "loss_5": 22300,
+        "deductible": 4200,
+        "small_cap": 23400,
+        "large_cap": 16000
+      }
+    },
+    {
+      "id": "offer_4295bc0a29e9",
+      "attrs": {
+        "price": 725200,
+        "admin": 155898,
+        "loss_0": 11200,
+        "loss_1": 15500,
+        "loss_2": 28800,
+        "loss_3": 6600,
+        "loss_4": 4600,
+        "loss_5": 25500,
+        "deductible": 8200,
+        "small_cap": 33800,
+        "large_cap": 18400
+      }
+    },
+    {
+      "id": "offer_af4ed95d72c1",
+      "attrs": {
+        "price": 504457,
+        "admin": 145366,
+        "loss_0": 17300,
+        "loss_1": 20700,
+        "loss_2": 29800,
+        "loss_3": 11600,
+        "loss_4": 15900,
+        "loss_5": 4200,
+        "deductible": 17700,
+        "small_cap": 32800,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_c0591e8da416",
+      "attrs": {
+        "price": 881858,
+        "admin": 133757,
+        "loss_0": 18900,
+        "loss_1": 16500,
+        "loss_2": 2600,
+        "loss_3": 3600,
+        "loss_4": 14000,
+        "loss_5": 28200,
+        "deductible": 11000,
+        "small_cap": 32000,
+        "large_cap": 8700
+      }
+    },
+    {
+      "id": "offer_536ec78d9e0d",
+      "attrs": {
+        "price": 565373,
+        "admin": 140422,
+        "loss_0": 8000,
+        "loss_1": 21100,
+        "loss_2": 19700,
+        "loss_3": 27300,
+        "loss_4": 4000,
+        "loss_5": 12700,
+        "deductible": 4100,
+        "small_cap": 36200,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_8f7161568380",
+      "attrs": {
+        "price": 641217,
+        "admin": 133330,
+        "loss_0": 29400,
+        "loss_1": 14200,
+        "loss_2": 25900,
+        "loss_3": 15900,
+        "loss_4": 12900,
+        "loss_5": 17500,
+        "deductible": 12000,
+        "small_cap": 42800,
+        "large_cap": 18200
+      }
+    },
+    {
+      "id": "offer_2a2c94984af7",
+      "attrs": {
+        "price": 586718,
+        "admin": 138004,
+        "loss_0": 22700,
+        "loss_1": 22000,
+        "loss_2": 14400,
+        "loss_3": 29500,
+        "loss_4": 15200,
+        "loss_5": 17400,
+        "deductible": 12200,
+        "small_cap": 24600,
+        "large_cap": 15600
+      }
+    },
+    {
+      "id": "offer_af486e61344e",
+      "attrs": {
+        "price": 697888,
+        "admin": 135538,
+        "loss_0": 20300,
+        "loss_1": 26300,
+        "loss_2": 23200,
+        "loss_3": 23800,
+        "loss_4": 10000,
+        "loss_5": 4300,
+        "deductible": 12500,
+        "small_cap": 45400,
+        "large_cap": 12000
+      }
+    },
+    {
+      "id": "offer_ab35c7163309",
+      "attrs": {
+        "price": 621161,
+        "admin": 168415,
+        "loss_0": 13200,
+        "loss_1": 11500,
+        "loss_2": 10900,
+        "loss_3": 7700,
+        "loss_4": 5500,
+        "loss_5": 23700,
+        "deductible": 7100,
+        "small_cap": 33900,
+        "large_cap": 18900
+      }
+    },
+    {
+      "id": "offer_83ffce9617cb",
+      "attrs": {
+        "price": 489182,
+        "admin": 175189,
+        "loss_0": 12700,
+        "loss_1": 7600,
+        "loss_2": 4900,
+        "loss_3": 11800,
+        "loss_4": 2300,
+        "loss_5": 5500,
+        "deductible": 6500,
+        "small_cap": 31500,
+        "large_cap": 3200
+      }
+    },
+    {
+      "id": "offer_2d1d95250272",
+      "attrs": {
+        "price": 655954,
+        "admin": 181207,
+        "loss_0": 16200,
+        "loss_1": 3800,
+        "loss_2": 7700,
+        "loss_3": 9700,
+        "loss_4": 11000,
+        "loss_5": 2500,
+        "deductible": 7600,
+        "small_cap": 25800,
+        "large_cap": 7200
+      }
+    },
+    {
+      "id": "offer_fad239536fb7",
+      "attrs": {
+        "price": 775236,
+        "admin": 148471,
+        "loss_0": 23100,
+        "loss_1": 24100,
+        "loss_2": 14800,
+        "loss_3": 12800,
+        "loss_4": 8300,
+        "loss_5": 4600,
+        "deductible": 19000,
+        "small_cap": 23700,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_6a71ac046813",
+      "attrs": {
+        "price": 817462,
+        "admin": 131622,
+        "loss_0": 3200,
+        "loss_1": 15000,
+        "loss_2": 6700,
+        "loss_3": 17500,
+        "loss_4": 16100,
+        "loss_5": 28300,
+        "deductible": 17200,
+        "small_cap": 49100,
+        "large_cap": 6500
+      }
+    },
+    {
+      "id": "offer_de219980e562",
+      "attrs": {
+        "price": 719904,
+        "admin": 129888,
+        "loss_0": 8100,
+        "loss_1": 23600,
+        "loss_2": 23100,
+        "loss_3": 3600,
+        "loss_4": 20800,
+        "loss_5": 5800,
+        "deductible": 18800,
+        "small_cap": 30700,
+        "large_cap": 4200
+      }
+    },
+    {
+      "id": "offer_9af46d7db030",
+      "attrs": {
+        "price": 644024,
+        "admin": 142123,
+        "loss_0": 19600,
+        "loss_1": 9400,
+        "loss_2": 4800,
+        "loss_3": 5700,
+        "loss_4": 18600,
+        "loss_5": 29700,
+        "deductible": 15700,
+        "small_cap": 27700,
+        "large_cap": 16700
+      }
+    },
+    {
+      "id": "offer_543294bf92b1",
+      "attrs": {
+        "price": 871706,
+        "admin": 138287,
+        "loss_0": 18000,
+        "loss_1": 26200,
+        "loss_2": 27400,
+        "loss_3": 8300,
+        "loss_4": 15100,
+        "loss_5": 16700,
+        "deductible": 21500,
+        "small_cap": 49600,
+        "large_cap": 12100
+      }
+    },
+    {
+      "id": "offer_efb4a4401e24",
+      "attrs": {
+        "price": 499779,
+        "admin": 133778,
+        "loss_0": 21400,
+        "loss_1": 21000,
+        "loss_2": 25600,
+        "loss_3": 22100,
+        "loss_4": 14000,
+        "loss_5": 4100,
+        "deductible": 2100,
+        "small_cap": 43400,
+        "large_cap": 15000
+      }
+    },
+    {
+      "id": "offer_7f97a7b68ead",
+      "attrs": {
+        "price": 820614,
+        "admin": 135357,
+        "loss_0": 29100,
+        "loss_1": 5400,
+        "loss_2": 21200,
+        "loss_3": 14900,
+        "loss_4": 1800,
+        "loss_5": 18600,
+        "deductible": 1600,
+        "small_cap": 22600,
+        "large_cap": 2900
+      }
+    },
+    {
+      "id": "offer_5601c896613e",
+      "attrs": {
+        "price": 747307,
+        "admin": 135009,
+        "loss_0": 2200,
+        "loss_1": 10200,
+        "loss_2": 16200,
+        "loss_3": 17000,
+        "loss_4": 23600,
+        "loss_5": 22100,
+        "deductible": 9200,
+        "small_cap": 39200,
+        "large_cap": 6500
+      }
+    },
+    {
+      "id": "offer_abbf72bed23c",
+      "attrs": {
+        "price": 491198,
+        "admin": 147649,
+        "loss_0": 2300,
+        "loss_1": 1800,
+        "loss_2": 9400,
+        "loss_3": 26600,
+        "loss_4": 12900,
+        "loss_5": 20800,
+        "deductible": 24900,
+        "small_cap": 24100,
+        "large_cap": 15600
+      }
+    },
+    {
+      "id": "offer_9e39cae624d4",
+      "attrs": {
+        "price": 501866,
+        "admin": 190310,
+        "loss_0": 3700,
+        "loss_1": 12000,
+        "loss_2": 4200,
+        "loss_3": 19800,
+        "loss_4": 2900,
+        "loss_5": 1300,
+        "deductible": 19000,
+        "small_cap": 20700,
+        "large_cap": 16000
+      }
+    },
+    {
+      "id": "offer_d8783bb7d9fe",
+      "attrs": {
+        "price": 846624,
+        "admin": 162577,
+        "loss_0": 7400,
+        "loss_1": 9200,
+        "loss_2": 6400,
+        "loss_3": 26800,
+        "loss_4": 16300,
+        "loss_5": 1700,
+        "deductible": 17600,
+        "small_cap": 41300,
+        "large_cap": 11500
+      }
+    },
+    {
+      "id": "offer_5603279f14e1",
+      "attrs": {
+        "price": 757982,
+        "admin": 132252,
+        "loss_0": 3900,
+        "loss_1": 19200,
+        "loss_2": 13800,
+        "loss_3": 25500,
+        "loss_4": 16700,
+        "loss_5": 20800,
+        "deductible": 22900,
+        "small_cap": 22000,
+        "large_cap": 4000
+      }
+    },
+    {
+      "id": "offer_d82529633da1",
+      "attrs": {
+        "price": 506991,
+        "admin": 166522,
+        "loss_0": 6300,
+        "loss_1": 6700,
+        "loss_2": 9300,
+        "loss_3": 2700,
+        "loss_4": 29800,
+        "loss_5": 4100,
+        "deductible": 20700,
+        "small_cap": 45400,
+        "large_cap": 2000
+      }
+    },
+    {
+      "id": "offer_ffe899bfb306",
+      "attrs": {
+        "price": 770417,
+        "admin": 134902,
+        "loss_0": 20300,
+        "loss_1": 23100,
+        "loss_2": 23900,
+        "loss_3": 6300,
+        "loss_4": 1600,
+        "loss_5": 18100,
+        "deductible": 1900,
+        "small_cap": 43700,
+        "large_cap": 6500
+      }
+    },
+    {
+      "id": "offer_7dd3dd96a059",
+      "attrs": {
+        "price": 689368,
+        "admin": 156933,
+        "loss_0": 29900,
+        "loss_1": 4100,
+        "loss_2": 15400,
+        "loss_3": 3900,
+        "loss_4": 7700,
+        "loss_5": 3000,
+        "deductible": 3300,
+        "small_cap": 44200,
+        "large_cap": 11800
+      }
+    },
+    {
+      "id": "offer_941a451aef95",
+      "attrs": {
+        "price": 763607,
+        "admin": 159875,
+        "loss_0": 27700,
+        "loss_1": 1500,
+        "loss_2": 5200,
+        "loss_3": 6900,
+        "loss_4": 15300,
+        "loss_5": 16500,
+        "deductible": 11800,
+        "small_cap": 33000,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_3f752e18eb25",
+      "attrs": {
+        "price": 537767,
+        "admin": 160441,
+        "loss_0": 7500,
+        "loss_1": 21700,
+        "loss_2": 3000,
+        "loss_3": 19600,
+        "loss_4": 15700,
+        "loss_5": 7000,
+        "deductible": 4100,
+        "small_cap": 23700,
+        "large_cap": 6500
+      }
+    },
+    {
+      "id": "offer_395caa4751a9",
+      "attrs": {
+        "price": 890052,
+        "admin": 152425,
+        "loss_0": 5600,
+        "loss_1": 16700,
+        "loss_2": 14400,
+        "loss_3": 2700,
+        "loss_4": 1100,
+        "loss_5": 24600,
+        "deductible": 1600,
+        "small_cap": 39200,
+        "large_cap": 9800
+      }
+    },
+    {
+      "id": "offer_4dfed5bef0b9",
+      "attrs": {
+        "price": 661344,
+        "admin": 147715,
+        "loss_0": 15600,
+        "loss_1": 29200,
+        "loss_2": 19800,
+        "loss_3": 12000,
+        "loss_4": 6600,
+        "loss_5": 1000,
+        "deductible": 3400,
+        "small_cap": 30300,
+        "large_cap": 10300
+      }
+    },
+    {
+      "id": "offer_6740528fa7ff",
+      "attrs": {
+        "price": 493547,
+        "admin": 118794,
+        "loss_0": 18900,
+        "loss_1": 19900,
+        "loss_2": 29700,
+        "loss_3": 28500,
+        "loss_4": 25600,
+        "loss_5": 18800,
+        "deductible": 12300,
+        "small_cap": 30300,
+        "large_cap": 18400
+      }
+    },
+    {
+      "id": "offer_a02b7e085180",
+      "attrs": {
+        "price": 508796,
+        "admin": 151292,
+        "loss_0": 17600,
+        "loss_1": 24100,
+        "loss_2": 12500,
+        "loss_3": 15100,
+        "loss_4": 20200,
+        "loss_5": 22800,
+        "deductible": 21300,
+        "small_cap": 49900,
+        "large_cap": 18900
+      }
+    },
+    {
+      "id": "offer_1396460ed7c8",
+      "attrs": {
+        "price": 798947,
+        "admin": 129725,
+        "loss_0": 17100,
+        "loss_1": 3200,
+        "loss_2": 24200,
+        "loss_3": 18700,
+        "loss_4": 17700,
+        "loss_5": 2400,
+        "deductible": 16000,
+        "small_cap": 22000,
+        "large_cap": 2200
+      }
+    },
+    {
+      "id": "offer_7e8cb5faf88c",
+      "attrs": {
+        "price": 476885,
+        "admin": 174163,
+        "loss_0": 15300,
+        "loss_1": 16900,
+        "loss_2": 17700,
+        "loss_3": 3100,
+        "loss_4": 1300,
+        "loss_5": 10600,
+        "deductible": 12000,
+        "small_cap": 21900,
+        "large_cap": 17800
+      }
+    },
+    {
+      "id": "offer_11d86cdf2ab0",
+      "attrs": {
+        "price": 617973,
+        "admin": 140665,
+        "loss_0": 15400,
+        "loss_1": 21700,
+        "loss_2": 11400,
+        "loss_3": 3500,
+        "loss_4": 3300,
+        "loss_5": 28300,
+        "deductible": 14200,
+        "small_cap": 26900,
+        "large_cap": 14200
+      }
+    },
+    {
+      "id": "offer_fe8acac76824",
+      "attrs": {
+        "price": 829516,
+        "admin": 154698,
+        "loss_0": 29200,
+        "loss_1": 12000,
+        "loss_2": 14100,
+        "loss_3": 13900,
+        "loss_4": 19200,
+        "loss_5": 4100,
+        "deductible": 24500,
+        "small_cap": 28100,
+        "large_cap": 15000
+      }
+    },
+    {
+      "id": "offer_0d2e87d88923",
+      "attrs": {
+        "price": 580031,
+        "admin": 156427,
+        "loss_0": 25200,
+        "loss_1": 4100,
+        "loss_2": 11600,
+        "loss_3": 1100,
+        "loss_4": 1900,
+        "loss_5": 19800,
+        "deductible": 18000,
+        "small_cap": 41600,
+        "large_cap": 9300
+      }
+    },
+    {
+      "id": "offer_e1e0ee60bec4",
+      "attrs": {
+        "price": 871431,
+        "admin": 129633,
+        "loss_0": 8300,
+        "loss_1": 26100,
+        "loss_2": 14400,
+        "loss_3": 20300,
+        "loss_4": 4700,
+        "loss_5": 17400,
+        "deductible": 24500,
+        "small_cap": 28800,
+        "large_cap": 4600
+      }
+    }
+  ]
+}

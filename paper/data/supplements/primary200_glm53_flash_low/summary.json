@@ -1,0 +1,40 @@
+[
+  {
+    "profile": "glm53_flash_low",
+    "arm": "direct",
+    "n": 200,
+    "exact": 29,
+    "unsafe": 95,
+    "false_refusal": 10,
+    "expected_accept": 100,
+    "correct_accept": 17,
+    "outcomes": {
+      "unsafe_accept": 95,
+      "exact": 29,
+      "output_budget": 50,
+      "false_refusal": 10,
+      "invalid_output": 11,
+      "timeout": 2,
+      "certificate_overclaim": 2,
+      "transport_or_provider_failure": 1
+    },
+    "other": 66
+  },
+  {
+    "profile": "glm53_flash_low",
+    "arm": "set",
+    "n": 200,
+    "exact": 137,
+    "unsafe": 31,
+    "false_refusal": 6,
+    "expected_accept": 100,
+    "correct_accept": 68,
+    "outcomes": {
+      "exact": 137,
+      "invalid_output": 26,
+      "unsafe_accept": 31,
+      "false_refusal": 6
+    },
+    "other": 26
+  }
+]

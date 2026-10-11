@@ -1,0 +1,515 @@
+{
+  "metric": "Exact decisions (%)",
+  "y_axis_limits": [
+    0,
+    100
+  ],
+  "effort_source": "data/derived/grid_summary.json",
+  "language_sources": [
+    "data/derived/language_all_methods_matched.json"
+  ],
+  "effort_order": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max",
+    "ultra"
+  ],
+  "setting_labels": [
+    "Off",
+    "L",
+    "M",
+    "H",
+    "XH",
+    "Max",
+    "U"
+  ],
+  "effort": [
+    {
+      "family": "gpt56_sol",
+      "label": "Sol",
+      "profile": "gpt56_sol_none",
+      "setting": "none",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 0,
+        "percent": 0.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 49,
+        "percent": 81.66666666666667
+      }
+    },
+    {
+      "family": "gpt56_sol",
+      "label": "Sol",
+      "profile": "gpt56_sol_low",
+      "setting": "low",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 30,
+        "percent": 50.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 58,
+        "percent": 96.66666666666667
+      }
+    },
+    {
+      "family": "gpt56_sol",
+      "label": "Sol",
+      "profile": "gpt56_sol_medium",
+      "setting": "medium",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 41,
+        "percent": 68.33333333333333
+      },
+      "set": {
+        "n": 60,
+        "exact": 60,
+        "percent": 100.0
+      }
+    },
+    {
+      "family": "gpt56_sol",
+      "label": "Sol",
+      "profile": "gpt56_sol_high",
+      "setting": "high",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 43,
+        "percent": 71.66666666666667
+      },
+      "set": {
+        "n": 60,
+        "exact": 60,
+        "percent": 100.0
+      }
+    },
+    {
+      "family": "gpt56_sol",
+      "label": "Sol",
+      "profile": "gpt56_sol_xhigh",
+      "setting": "xhigh",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 46,
+        "percent": 76.66666666666667
+      },
+      "set": {
+        "n": 60,
+        "exact": 59,
+        "percent": 98.33333333333333
+      }
+    },
+    {
+      "family": "gpt56_sol",
+      "label": "Sol",
+      "profile": "gpt56_sol_max",
+      "setting": "max",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 45,
+        "percent": 75.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 60,
+        "percent": 100.0
+      }
+    },
+    {
+      "family": "gpt56_sol",
+      "label": "Sol",
+      "profile": "gpt56_sol_ultra",
+      "setting": "ultra",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 28,
+        "percent": 46.666666666666664
+      },
+      "set": {
+        "n": 60,
+        "exact": 37,
+        "percent": 61.666666666666664
+      }
+    },
+    {
+      "family": "gpt56_terra",
+      "label": "Terra",
+      "profile": "gpt56_terra_none",
+      "setting": "none",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 0,
+        "percent": 0.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 27,
+        "percent": 45.0
+      }
+    },
+    {
+      "family": "gpt56_terra",
+      "label": "Terra",
+      "profile": "gpt56_terra_low",
+      "setting": "low",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 24,
+        "percent": 40.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 53,
+        "percent": 88.33333333333333
+      }
+    },
+    {
+      "family": "gpt56_terra",
+      "label": "Terra",
+      "profile": "gpt56_terra_medium",
+      "setting": "medium",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 26,
+        "percent": 43.333333333333336
+      },
+      "set": {
+        "n": 60,
+        "exact": 52,
+        "percent": 86.66666666666667
+      }
+    },
+    {
+      "family": "gpt56_terra",
+      "label": "Terra",
+      "profile": "gpt56_terra_high",
+      "setting": "high",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 33,
+        "percent": 55.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 52,
+        "percent": 86.66666666666667
+      }
+    },
+    {
+      "family": "gpt56_terra",
+      "label": "Terra",
+      "profile": "gpt56_terra_xhigh",
+      "setting": "xhigh",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 37,
+        "percent": 61.666666666666664
+      },
+      "set": {
+        "n": 60,
+        "exact": 59,
+        "percent": 98.33333333333333
+      }
+    },
+    {
+      "family": "gpt56_terra",
+      "label": "Terra",
+      "profile": "gpt56_terra_max",
+      "setting": "max",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 33,
+        "percent": 55.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 59,
+        "percent": 98.33333333333333
+      }
+    },
+    {
+      "family": "gpt56_luna",
+      "label": "Luna",
+      "profile": "gpt56_luna_none",
+      "setting": "none",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 25,
+        "percent": 41.666666666666664
+      },
+      "set": {
+        "n": 60,
+        "exact": 14,
+        "percent": 23.333333333333332
+      }
+    },
+    {
+      "family": "gpt56_luna",
+      "label": "Luna",
+      "profile": "gpt56_luna_low",
+      "setting": "low",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 6,
+        "percent": 10.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 19,
+        "percent": 31.666666666666668
+      }
+    },
+    {
+      "family": "gpt56_luna",
+      "label": "Luna",
+      "profile": "gpt56_luna_medium",
+      "setting": "medium",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 13,
+        "percent": 21.666666666666668
+      },
+      "set": {
+        "n": 60,
+        "exact": 32,
+        "percent": 53.333333333333336
+      }
+    },
+    {
+      "family": "gpt56_luna",
+      "label": "Luna",
+      "profile": "gpt56_luna_high",
+      "setting": "high",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 24,
+        "percent": 40.0
+      },
+      "set": {
+        "n": 60,
+        "exact": 48,
+        "percent": 80.0
+      }
+    },
+    {
+      "family": "gpt56_luna",
+      "label": "Luna",
+      "profile": "gpt56_luna_xhigh",
+      "setting": "xhigh",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 35,
+        "percent": 58.333333333333336
+      },
+      "set": {
+        "n": 60,
+        "exact": 53,
+        "percent": 88.33333333333333
+      }
+    },
+    {
+      "family": "gpt56_luna",
+      "label": "Luna",
+      "profile": "gpt56_luna_max",
+      "setting": "max",
+      "plotted": true,
+      "status": "complete",
+      "direct": {
+        "n": 60,
+        "exact": 41,
+        "percent": 68.33333333333333
+      },
+      "set": {
+        "n": 60,
+        "exact": 58,
+        "percent": 96.66666666666667
+      }
+    }
+  ],
+  "language": [
+    {
+      "profile": "ds_flash_low",
+      "arm": "direct",
+      "language": "zh",
+      "n": 60,
+      "exact": 36,
+      "percent": 60.0,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_low",
+      "arm": "set",
+      "language": "zh",
+      "n": 60,
+      "exact": 59,
+      "percent": 98.33333333333333,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_low",
+      "arm": "direct",
+      "language": "en",
+      "n": 60,
+      "exact": 34,
+      "percent": 56.666666666666664,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_low",
+      "arm": "set",
+      "language": "en",
+      "n": 60,
+      "exact": 58,
+      "percent": 96.66666666666667,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_high",
+      "arm": "direct",
+      "language": "zh",
+      "n": 60,
+      "exact": 34,
+      "percent": 56.666666666666664,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_high",
+      "arm": "set",
+      "language": "zh",
+      "n": 60,
+      "exact": 55,
+      "percent": 91.66666666666667,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_high",
+      "arm": "direct",
+      "language": "en",
+      "n": 60,
+      "exact": 33,
+      "percent": 55.0,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_high",
+      "arm": "set",
+      "language": "en",
+      "n": 60,
+      "exact": 58,
+      "percent": 96.66666666666667,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_max",
+      "arm": "direct",
+      "language": "zh",
+      "n": 60,
+      "exact": 35,
+      "percent": 58.333333333333336,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_max",
+      "arm": "set",
+      "language": "zh",
+      "n": 60,
+      "exact": 57,
+      "percent": 95.0,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_max",
+      "arm": "direct",
+      "language": "en",
+      "n": 60,
+      "exact": 34,
+      "percent": 56.666666666666664,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_max",
+      "arm": "set",
+      "language": "en",
+      "n": 60,
+      "exact": 58,
+      "percent": 96.66666666666667,
+      "author_reported": false
+    }
+  ],
+  "interpolation": "None; straight segments only between adjacent complete requested settings",
+  "point_or_bar_value_labels": false,
+  "cohorts_pooled": false,
+  "new_model_calls": 0,
+  "family_setting_order": {
+    "gpt56_sol": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max",
+      "ultra"
+    ],
+    "gpt56_terra": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "gpt56_luna": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  "complete_effort_configurations": 19
+}

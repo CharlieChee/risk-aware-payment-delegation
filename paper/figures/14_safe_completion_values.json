@@ -1,0 +1,720 @@
+{
+  "primary": [
+    {
+      "id": 1,
+      "profile": "ds_flash_low",
+      "author_reported": false,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 117,
+      "set_exact": 185
+    },
+    {
+      "id": 2,
+      "profile": "ds_flash_high",
+      "author_reported": false,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 131,
+      "set_exact": 185
+    },
+    {
+      "id": 3,
+      "profile": "qwen_flash_low",
+      "author_reported": false,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 66,
+      "set_exact": 194
+    },
+    {
+      "id": 4,
+      "profile": "qwen_max_low",
+      "author_reported": false,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 59,
+      "set_exact": 87
+    },
+    {
+      "id": 5,
+      "profile": "glm53_flash_low",
+      "author_reported": false,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 29,
+      "set_exact": 137
+    },
+    {
+      "id": 6,
+      "profile": "glm53_high",
+      "author_reported": true,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 64,
+      "set_exact": 188
+    },
+    {
+      "id": 7,
+      "profile": "gpt56_luna_medium",
+      "author_reported": false,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 41,
+      "set_exact": 91
+    },
+    {
+      "id": 8,
+      "profile": "gpt56_terra_medium",
+      "author_reported": false,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 81,
+      "set_exact": 158
+    },
+    {
+      "id": 9,
+      "profile": "gpt56_sol_medium",
+      "author_reported": true,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 137,
+      "set_exact": 196
+    },
+    {
+      "id": 10,
+      "profile": "astra_max",
+      "author_reported": true,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 180,
+      "set_exact": 196
+    },
+    {
+      "id": 11,
+      "profile": "opus55_medium",
+      "author_reported": true,
+      "author_reviewed": false,
+      "partial": false,
+      "n": 200,
+      "direct_exact": 142,
+      "set_exact": 194
+    }
+  ],
+  "joint": [
+    {
+      "id": 1,
+      "profile": "ds_flash_low",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 48,
+        "correct_accept": 45
+      },
+      "set": {
+        "unsafe": 3,
+        "correct_accept": 94
+      }
+    },
+    {
+      "id": 2,
+      "profile": "ds_flash_high",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 31,
+        "correct_accept": 55
+      },
+      "set": {
+        "unsafe": 6,
+        "correct_accept": 92
+      }
+    },
+    {
+      "id": 3,
+      "profile": "qwen_flash_low",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 52,
+        "correct_accept": 20
+      },
+      "set": {
+        "unsafe": 1,
+        "correct_accept": 99
+      }
+    },
+    {
+      "id": 4,
+      "profile": "qwen_max_low",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 49,
+        "correct_accept": 0
+      },
+      "set": {
+        "unsafe": 46,
+        "correct_accept": 26
+      }
+    },
+    {
+      "id": 5,
+      "profile": "glm53_flash_low",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 95,
+        "correct_accept": 17
+      },
+      "set": {
+        "unsafe": 31,
+        "correct_accept": 68
+      }
+    },
+    {
+      "id": 6,
+      "profile": "glm53_high",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 20,
+        "correct_accept": 34
+      },
+      "set": {
+        "unsafe": 5,
+        "correct_accept": 94
+      }
+    },
+    {
+      "id": 7,
+      "profile": "gpt56_luna_medium",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 129,
+        "correct_accept": 13
+      },
+      "set": {
+        "unsafe": 75,
+        "correct_accept": 39
+      }
+    },
+    {
+      "id": 8,
+      "profile": "gpt56_terra_medium",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 78,
+        "correct_accept": 24
+      },
+      "set": {
+        "unsafe": 24,
+        "correct_accept": 75
+      }
+    },
+    {
+      "id": 9,
+      "profile": "gpt56_sol_medium",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 21,
+        "correct_accept": 49
+      },
+      "set": {
+        "unsafe": 2,
+        "correct_accept": 97
+      }
+    },
+    {
+      "id": 10,
+      "profile": "astra_max",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 6,
+        "correct_accept": 87
+      },
+      "set": {
+        "unsafe": 2,
+        "correct_accept": 97
+      }
+    },
+    {
+      "id": 11,
+      "profile": "opus55_medium",
+      "n": 200,
+      "feasible_n": 100,
+      "direct": {
+        "unsafe": 8,
+        "correct_accept": 76
+      },
+      "set": {
+        "unsafe": 1,
+        "correct_accept": 98
+      }
+    }
+  ],
+  "templates": [
+    {
+      "profile": "ds_flash_low",
+      "template": "a1",
+      "n": 10,
+      "direct": 6,
+      "set": 10,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "a1",
+      "n": 10,
+      "direct": 8,
+      "set": 9,
+      "gain": 1
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "a2",
+      "n": 10,
+      "direct": 8,
+      "set": 10,
+      "gain": 2
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "a2",
+      "n": 10,
+      "direct": 6,
+      "set": 10,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "a3",
+      "n": 10,
+      "direct": 6,
+      "set": 10,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "a3",
+      "n": 10,
+      "direct": 7,
+      "set": 10,
+      "gain": 3
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "a4",
+      "n": 10,
+      "direct": 5,
+      "set": 10,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "a4",
+      "n": 10,
+      "direct": 7,
+      "set": 10,
+      "gain": 3
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "a5",
+      "n": 10,
+      "direct": 8,
+      "set": 8,
+      "gain": 0
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "a5",
+      "n": 10,
+      "direct": 7,
+      "set": 10,
+      "gain": 3
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "b1",
+      "n": 10,
+      "direct": 7,
+      "set": 10,
+      "gain": 3
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "b1",
+      "n": 10,
+      "direct": 9,
+      "set": 10,
+      "gain": 1
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "b2",
+      "n": 10,
+      "direct": 8,
+      "set": 10,
+      "gain": 2
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "b2",
+      "n": 10,
+      "direct": 7,
+      "set": 9,
+      "gain": 2
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "b3",
+      "n": 10,
+      "direct": 7,
+      "set": 9,
+      "gain": 2
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "b3",
+      "n": 10,
+      "direct": 9,
+      "set": 10,
+      "gain": 1
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "b4",
+      "n": 10,
+      "direct": 6,
+      "set": 10,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "b4",
+      "n": 10,
+      "direct": 7,
+      "set": 7,
+      "gain": 0
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "b5",
+      "n": 10,
+      "direct": 7,
+      "set": 9,
+      "gain": 2
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "b5",
+      "n": 10,
+      "direct": 5,
+      "set": 9,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "c1",
+      "n": 10,
+      "direct": 6,
+      "set": 10,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "c1",
+      "n": 10,
+      "direct": 5,
+      "set": 10,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "c2",
+      "n": 10,
+      "direct": 4,
+      "set": 9,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "c2",
+      "n": 10,
+      "direct": 7,
+      "set": 10,
+      "gain": 3
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "c3",
+      "n": 10,
+      "direct": 4,
+      "set": 9,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "c3",
+      "n": 10,
+      "direct": 7,
+      "set": 9,
+      "gain": 2
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "c4",
+      "n": 10,
+      "direct": 7,
+      "set": 10,
+      "gain": 3
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "c4",
+      "n": 10,
+      "direct": 6,
+      "set": 10,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "c5",
+      "n": 10,
+      "direct": 8,
+      "set": 9,
+      "gain": 1
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "c5",
+      "n": 10,
+      "direct": 5,
+      "set": 10,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "d1",
+      "n": 10,
+      "direct": 3,
+      "set": 9,
+      "gain": 6
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "d1",
+      "n": 10,
+      "direct": 4,
+      "set": 9,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "d2",
+      "n": 10,
+      "direct": 3,
+      "set": 8,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "d2",
+      "n": 10,
+      "direct": 7,
+      "set": 8,
+      "gain": 1
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "d3",
+      "n": 10,
+      "direct": 9,
+      "set": 6,
+      "gain": -3
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "d3",
+      "n": 10,
+      "direct": 8,
+      "set": 7,
+      "gain": -1
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "d4",
+      "n": 10,
+      "direct": 5,
+      "set": 10,
+      "gain": 5
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "d4",
+      "n": 10,
+      "direct": 6,
+      "set": 10,
+      "gain": 4
+    },
+    {
+      "profile": "ds_flash_low",
+      "template": "d5",
+      "n": 10,
+      "direct": 0,
+      "set": 9,
+      "gain": 9
+    },
+    {
+      "profile": "ds_flash_high",
+      "template": "d5",
+      "n": 10,
+      "direct": 4,
+      "set": 8,
+      "gain": 4
+    }
+  ],
+  "joint_inclusion": "All 200-task configurations with reported safe completion and unsafe acceptance. No imputation.",
+  "complete_configurations": 11,
+  "partial_configurations": 0,
+  "template_cohort": "Original DeepSeek low/high, all 20 templates, 10 tasks per template and method.",
+  "primary_sources": [
+    "data/derived/main_summary.json",
+    "data/supplements/qwen_primary200/summary.json",
+    "data/supplements/primary200_glm53_flash_low/summary.json",
+    "data/supplements/primary200_gpt56_luna_medium/summary.json",
+    "data/supplements/primary200_gpt56_sol_medium/summary.json",
+    "data/supplements/primary200_gpt56_terra_medium/summary.json",
+    "data/supplements/partial_primary_glm53_high/summary.json",
+    "data/supplements/partial_primary_opus55_medium/summary.json",
+    "data/author_reports/20261011_confirmed_aggregates.json",
+    "data/author_reports/20261011_primary200_completion.json"
+  ],
+  "template_source": "data/derived/template_summary.json",
+  "pooled_deepseek": {
+    "direct": {
+      "n": 400,
+      "distinct_tasks": 200,
+      "profiles": 2,
+      "exact": 248,
+      "unsafe": 79,
+      "false_refusal": 53,
+      "feasible_trials": 200,
+      "safe_exact_completion": 100,
+      "other_failures": 20
+    },
+    "set": {
+      "n": 400,
+      "distinct_tasks": 200,
+      "profiles": 2,
+      "exact": 370,
+      "unsafe": 9,
+      "false_refusal": 1,
+      "feasible_trials": 200,
+      "safe_exact_completion": 186,
+      "other_failures": 20
+    }
+  },
+  "joint_pooled": {
+    "profiles": [
+      "ds_flash_low",
+      "ds_flash_high",
+      "qwen_flash_low",
+      "qwen_max_low",
+      "glm53_flash_low",
+      "glm53_high",
+      "gpt56_luna_medium",
+      "gpt56_terra_medium",
+      "gpt56_sol_medium",
+      "astra_max",
+      "opus55_medium"
+    ],
+    "n_per_method": 2200,
+    "feasible_per_method": 1100,
+    "direct": {
+      "unsafe": 537,
+      "correct_accept": 420
+    },
+    "set": {
+      "unsafe": 196,
+      "correct_accept": 879
+    }
+  },
+  "family_pooled": [
+    {
+      "family": "a",
+      "label": "Coupon",
+      "n_per_method": 100,
+      "direct_exact": 68,
+      "set_exact": 97
+    },
+    {
+      "family": "b",
+      "label": "Insurance",
+      "n_per_method": 100,
+      "direct_exact": 72,
+      "set_exact": 93
+    },
+    {
+      "family": "c",
+      "label": "Returns",
+      "n_per_method": 100,
+      "direct_exact": 59,
+      "set_exact": 96
+    },
+    {
+      "family": "d",
+      "label": "Service",
+      "n_per_method": 100,
+      "direct_exact": 49,
+      "set_exact": 84
+    }
+  ],
+  "visualization": {
+    "design": "Conventional grouped bars: model accuracy, pooled classified outcomes, contract-family accuracy",
+    "joint_display": "Unsafe acceptance and safe completion pooled over 11 fully classified configurations",
+    "joint_denominators": {
+      "unsafe_acceptance": 2200,
+      "safe_completion": 1100
+    },
+    "rate_axis_ticks": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "jitter": false,
+    "imputation": false,
+    "bar_value_labels": true,
+    "reported_percentage_decimal_places": 1,
+    "value_label_decimal_overrides": {
+      "opus55_medium": 0
+    },
+    "sample_sizes_in_caption_and_appendix": false,
+    "sample_size_locations": [
+      "Appendix B",
+      "Appendix C"
+    ],
+    "family_denominator": 100,
+    "all_template_counts_retained": true,
+    "publication_workflow_annotations": false,
+    "all_preexisting_data_preserved": true,
+    "new_model_calls": 0
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "status": "author_confirmed_aggregates_pending_raw_import",
+  "source": "Author-reported aggregate results from another computer; confirmed in conversation",
+  "confirmed_at": "2026-10-10T20:41:50.572160+00:00",
+  "raw_records_received": false,
+  "interpretation": {
+    "rates_are_percentages": true,
+    "primary_n_per_arm": 200,
+    "astra_language_n_per_arm_per_language": 200,
+    "astra_direct_add_five_each_to_original_unsafe_and_refusal": true
+  },
+  "primary": [
+    {
+      "profile": "glm53_high",
+      "arm": "direct",
+      "n": 200,
+      "exact": 64,
+      "unsafe": null,
+      "false_refusal": null,
+      "outcomes": {
+        "exact": 64,
+        "unclassified_failure": 136
+      },
+      "correct_accept": null,
+      "expected_accept": 100,
+      "error_partition_reported": false,
+      "author_reported": true,
+      "raw_records_received": false
+    },
+    {
+      "profile": "glm53_high",
+      "arm": "set",
+      "n": 200,
+      "exact": 188,
+      "unsafe": null,
+      "false_refusal": null,
+      "outcomes": {
+        "exact": 188,
+        "unclassified_failure": 12
+      },
+      "correct_accept": null,
+      "expected_accept": 100,
+      "error_partition_reported": false,
+      "author_reported": true,
+      "raw_records_received": false
+    },
+    {
+      "profile": "astra_max",
+      "arm": "direct",
+      "n": 200,
+      "exact": 180,
+      "unsafe": 6,
+      "false_refusal": 6,
+      "outcomes": {
+        "exact": 180,
+        "unsafe_accept": 6,
+        "false_refusal": 6,
+        "timeout": 8
+      },
+      "correct_accept": null,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false
+    },
+    {
+      "profile": "astra_max",
+      "arm": "set",
+      "n": 200,
+      "exact": 196,
+      "unsafe": 2,
+      "false_refusal": 2,
+      "outcomes": {
+        "exact": 196,
+        "unsafe_accept": 2,
+        "false_refusal": 2,
+        "timeout": 0
+      },
+      "correct_accept": null,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "arm": "set",
+      "n": 200,
+      "exact": 196,
+      "unsafe": 2,
+      "false_refusal": 2,
+      "outcomes": {
+        "exact": 196,
+        "unsafe_accept": 2,
+        "false_refusal": 2,
+        "timeout": 0
+      },
+      "correct_accept": null,
+      "expected_accept": 100,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false
+    }
+  ],
+  "language": [
+    {
+      "profile": "astra_max",
+      "arm": "direct",
+      "n": 200,
+      "exact": 180,
+      "unsafe": 6,
+      "false_refusal": 6,
+      "outcomes": {
+        "exact": 180,
+        "unsafe_accept": 6,
+        "false_refusal": 6,
+        "timeout": 8
+      },
+      "correct_accept": null,
+      "expected_accept": null,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "language": "zh"
+    },
+    {
+      "profile": "astra_max",
+      "arm": "set",
+      "n": 200,
+      "exact": 196,
+      "unsafe": 2,
+      "false_refusal": 2,
+      "outcomes": {
+        "exact": 196,
+        "unsafe_accept": 2,
+        "false_refusal": 2,
+        "timeout": 0
+      },
+      "correct_accept": null,
+      "expected_accept": null,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "language": "zh"
+    },
+    {
+      "profile": "astra_max",
+      "arm": "direct",
+      "n": 200,
+      "exact": 180,
+      "unsafe": 6,
+      "false_refusal": 6,
+      "outcomes": {
+        "exact": 180,
+        "unsafe_accept": 6,
+        "false_refusal": 6,
+        "timeout": 8
+      },
+      "correct_accept": null,
+      "expected_accept": null,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "language": "en"
+    },
+    {
+      "profile": "astra_max",
+      "arm": "set",
+      "n": 200,
+      "exact": 196,
+      "unsafe": 2,
+      "false_refusal": 2,
+      "outcomes": {
+        "exact": 196,
+        "unsafe_accept": 2,
+        "false_refusal": 2,
+        "timeout": 0
+      },
+      "correct_accept": null,
+      "expected_accept": null,
+      "error_partition_reported": true,
+      "author_reported": true,
+      "raw_records_received": false,
+      "language": "en"
+    }
+  ],
+  "scope": "Replacement aggregate reporting only. Original per-trial records, matched execution controls, effort, reuse, and diagnostics are preserved as separate archived cohorts.",
+  "unavailable": [
+    "GLM high error partition",
+    "Updated case-level identifiers and outputs",
+    "Updated domain/family/template breakdowns",
+    "Updated timing and token usage",
+    "Matched 200-case language Python controls"
+  ],
+  "reconciliation": "Import original records before claiming per-trial reproducibility or recomputing paired statistics; no synthetic records or missing error counts are created."
+}

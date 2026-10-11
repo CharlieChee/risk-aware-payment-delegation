@@ -1,0 +1,46 @@
+{
+  "unique_requests": 1,
+  "profiles": 6,
+  "repeats_per_condition": 2,
+  "model_calls": 36,
+  "conditions": {
+    "no_catalog": {
+      "n": 12,
+      "exact": 6,
+      "unsafe": 0,
+      "false_refusal": 0,
+      "valid": 12,
+      "overpermissive": 5,
+      "categories": {
+        "success": 6,
+        "safe_suboptimal": 6
+      }
+    },
+    "oracle_interpretations": {
+      "n": 12,
+      "exact": 11,
+      "unsafe": 0,
+      "false_refusal": 0,
+      "valid": 11,
+      "overpermissive": 0,
+      "categories": {
+        "success": 11,
+        "timeout": 1
+      }
+    },
+    "original": {
+      "n": 12,
+      "exact": 5,
+      "unsafe": 0,
+      "false_refusal": 0,
+      "valid": 11,
+      "overpermissive": 6,
+      "categories": {
+        "success": 5,
+        "safe_suboptimal": 6,
+        "timeout": 1
+      }
+    }
+  },
+  "intervention": "Researcher-provided reference interpretations, not user clarification."
+}

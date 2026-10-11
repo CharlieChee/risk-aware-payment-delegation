@@ -1,0 +1,37 @@
+[
+  {
+    "profile": "gpt56_terra_medium",
+    "arm": "direct",
+    "n": 200,
+    "exact": 81,
+    "unsafe": 78,
+    "false_refusal": 40,
+    "expected_accept": 100,
+    "correct_accept": 24,
+    "outcomes": {
+      "unsafe_accept": 78,
+      "exact": 81,
+      "false_refusal": 40,
+      "certificate_overclaim": 1
+    },
+    "other": 1
+  },
+  {
+    "profile": "gpt56_terra_medium",
+    "arm": "set",
+    "n": 200,
+    "exact": 158,
+    "unsafe": 24,
+    "false_refusal": 3,
+    "expected_accept": 100,
+    "correct_accept": 75,
+    "outcomes": {
+      "exact": 158,
+      "unsafe_accept": 24,
+      "false_refusal": 3,
+      "certificate_overclaim": 6,
+      "invalid_output": 9
+    },
+    "other": 15
+  }
+]

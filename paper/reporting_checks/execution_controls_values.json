@@ -1,0 +1,544 @@
+{
+  "direction": "Procedural -> State-wise",
+  "decisions": [
+    {
+      "group": "Primary decisions",
+      "label": "DS low",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 200,
+        "exact": 189,
+        "unsafe": 6,
+        "false_refusal": 0,
+        "expected_accept": 100,
+        "correct_accept": 93,
+        "other": 5
+      },
+      "state_wise": {
+        "n": 200,
+        "exact": 185,
+        "unsafe": 3,
+        "false_refusal": 1,
+        "expected_accept": 100,
+        "correct_accept": 94,
+        "other": 11
+      }
+    },
+    {
+      "group": "Primary decisions",
+      "label": "DS high",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 200,
+        "exact": 187,
+        "unsafe": 12,
+        "false_refusal": 0,
+        "expected_accept": 100,
+        "correct_accept": 93,
+        "other": 1
+      },
+      "state_wise": {
+        "n": 200,
+        "exact": 185,
+        "unsafe": 6,
+        "false_refusal": 0,
+        "expected_accept": 100,
+        "correct_accept": 92,
+        "other": 9
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Astra (6 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 360,
+        "exact": 360,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 180,
+        "other": 0
+      },
+      "state_wise": {
+        "n": 360,
+        "exact": 360,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 180,
+        "other": 0
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Sol (7 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 420,
+        "exact": 382,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 210,
+        "correct_accept": 190,
+        "other": 38
+      },
+      "state_wise": {
+        "n": 420,
+        "exact": 383,
+        "unsafe": 11,
+        "false_refusal": 1,
+        "expected_accept": 210,
+        "correct_accept": 186,
+        "other": 25
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Terra (6 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 360,
+        "exact": 342,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 172,
+        "other": 18
+      },
+      "state_wise": {
+        "n": 360,
+        "exact": 302,
+        "unsafe": 26,
+        "false_refusal": 3,
+        "expected_accept": 180,
+        "correct_accept": 149,
+        "other": 29
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Luna (6 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 360,
+        "exact": 358,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 178,
+        "other": 2
+      },
+      "state_wise": {
+        "n": 360,
+        "exact": 224,
+        "unsafe": 87,
+        "false_refusal": 20,
+        "expected_accept": 180,
+        "correct_accept": 92,
+        "other": 29
+      }
+    },
+    {
+      "group": "Task language",
+      "label": "DS (3 profiles; ZH/EN)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 360,
+        "exact": 356,
+        "unsafe": 1,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 178,
+        "other": 3
+      },
+      "state_wise": {
+        "n": 360,
+        "exact": 345,
+        "unsafe": 2,
+        "false_refusal": 1,
+        "expected_accept": 180,
+        "correct_accept": 171,
+        "other": 12
+      }
+    },
+    {
+      "group": "Task language",
+      "label": "Astra (ZH/EN)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 120,
+        "exact": 120,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 60,
+        "correct_accept": 60,
+        "other": 0
+      },
+      "state_wise": {
+        "n": 120,
+        "exact": 120,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 60,
+        "correct_accept": 60,
+        "other": 0
+      }
+    },
+    {
+      "group": "Matched catalogue input",
+      "label": "DS (3 settings)",
+      "control": "python_cached",
+      "procedural": {
+        "n": 216,
+        "exact": 207,
+        "unsafe": 7,
+        "false_refusal": 1,
+        "expected_accept": 108,
+        "correct_accept": 102,
+        "other": 1
+      },
+      "state_wise": {
+        "n": 216,
+        "exact": 201,
+        "unsafe": 7,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 101,
+        "other": 8
+      }
+    },
+    {
+      "group": "Matched catalogue input",
+      "label": "Astra (3 settings)",
+      "control": "python_cached",
+      "procedural": {
+        "n": 216,
+        "exact": 216,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 108,
+        "other": 0
+      },
+      "state_wise": {
+        "n": 216,
+        "exact": 215,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 107,
+        "other": 1
+      }
+    },
+    {
+      "group": "Visible catalogue input",
+      "label": "DS (3 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 216,
+        "exact": 203,
+        "unsafe": 9,
+        "false_refusal": 1,
+        "expected_accept": 108,
+        "correct_accept": 101,
+        "other": 3
+      },
+      "state_wise": {
+        "n": 216,
+        "exact": 201,
+        "unsafe": 7,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 101,
+        "other": 8
+      }
+    },
+    {
+      "group": "Visible catalogue input",
+      "label": "Astra (3 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 216,
+        "exact": 216,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 108,
+        "other": 0
+      },
+      "state_wise": {
+        "n": 216,
+        "exact": 215,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 107,
+        "other": 1
+      }
+    }
+  ],
+  "resources": [
+    {
+      "profile": "ds_flash_low",
+      "label": "DS low",
+      "token_reduction_percent": 75.91531997124983,
+      "procedural": {
+        "n": 200,
+        "mean_tokens": 91589.01000000001,
+        "median_request_seconds": 28.22155454219319
+      },
+      "state_wise": {
+        "n": 200,
+        "mean_tokens": 22058.92,
+        "median_request_seconds": 61.84151589567773
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "label": "DS high",
+      "token_reduction_percent": 72.90099351847519,
+      "procedural": {
+        "n": 200,
+        "mean_tokens": 100212.53,
+        "median_request_seconds": 41.57588997925632
+      },
+      "state_wise": {
+        "n": 200,
+        "mean_tokens": 27156.6,
+        "median_request_seconds": 79.70485183340497
+      }
+    },
+    {
+      "profile": "astra_max",
+      "label": "Astra max",
+      "token_reduction_percent": 82.54035352393286,
+      "procedural": {
+        "n": 200,
+        "mean_tokens": 89882.175,
+        "median_request_seconds": 57.143666146090254
+      },
+      "state_wise": {
+        "n": 200,
+        "mean_tokens": 15693.11,
+        "median_request_seconds": 149.69349831249565
+      }
+    }
+  ],
+  "manuscript_decisions": [
+    {
+      "group": "Primary decisions",
+      "label": "DS low",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 200,
+        "exact": 189,
+        "unsafe": 6,
+        "false_refusal": 0,
+        "expected_accept": 100,
+        "correct_accept": 93,
+        "other": 5
+      },
+      "state_wise": {
+        "n": 200,
+        "exact": 185,
+        "unsafe": 3,
+        "false_refusal": 1,
+        "expected_accept": 100,
+        "correct_accept": 94,
+        "other": 11
+      }
+    },
+    {
+      "group": "Primary decisions",
+      "label": "DS high",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 200,
+        "exact": 187,
+        "unsafe": 12,
+        "false_refusal": 0,
+        "expected_accept": 100,
+        "correct_accept": 93,
+        "other": 1
+      },
+      "state_wise": {
+        "n": 200,
+        "exact": 185,
+        "unsafe": 6,
+        "false_refusal": 0,
+        "expected_accept": 100,
+        "correct_accept": 92,
+        "other": 9
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Astra (6 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 360,
+        "exact": 360,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 180,
+        "other": 0
+      },
+      "state_wise": {
+        "n": 360,
+        "exact": 360,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 180,
+        "other": 0
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Sol (7 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 420,
+        "exact": 382,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 210,
+        "correct_accept": 190,
+        "other": 38
+      },
+      "state_wise": {
+        "n": 420,
+        "exact": 383,
+        "unsafe": 11,
+        "false_refusal": 1,
+        "expected_accept": 210,
+        "correct_accept": 186,
+        "other": 25
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Terra (6 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 360,
+        "exact": 342,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 172,
+        "other": 18
+      },
+      "state_wise": {
+        "n": 360,
+        "exact": 302,
+        "unsafe": 26,
+        "false_refusal": 3,
+        "expected_accept": 180,
+        "correct_accept": 149,
+        "other": 29
+      }
+    },
+    {
+      "group": "Requested effort",
+      "label": "Luna (6 settings)",
+      "control": "python_fresh",
+      "procedural": {
+        "n": 360,
+        "exact": 358,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 180,
+        "correct_accept": 178,
+        "other": 2
+      },
+      "state_wise": {
+        "n": 360,
+        "exact": 224,
+        "unsafe": 87,
+        "false_refusal": 20,
+        "expected_accept": 180,
+        "correct_accept": 92,
+        "other": 29
+      }
+    },
+    {
+      "group": "Matched catalogue input",
+      "label": "DS (3 settings)",
+      "control": "python_cached",
+      "procedural": {
+        "n": 216,
+        "exact": 207,
+        "unsafe": 7,
+        "false_refusal": 1,
+        "expected_accept": 108,
+        "correct_accept": 102,
+        "other": 1
+      },
+      "state_wise": {
+        "n": 216,
+        "exact": 201,
+        "unsafe": 7,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 101,
+        "other": 8
+      }
+    },
+    {
+      "group": "Matched catalogue input",
+      "label": "Astra (3 settings)",
+      "control": "python_cached",
+      "procedural": {
+        "n": 216,
+        "exact": 216,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 108,
+        "other": 0
+      },
+      "state_wise": {
+        "n": 216,
+        "exact": 215,
+        "unsafe": 0,
+        "false_refusal": 0,
+        "expected_accept": 108,
+        "correct_accept": 107,
+        "other": 1
+      }
+    }
+  ],
+  "manuscript_resource_comparison": false,
+  "bootstrap_intervals": [
+    {
+      "profile": "deepseek_pooled",
+      "baseline": "python_fresh",
+      "metric": "exact",
+      "delta_percentage_points": -1.4999999999999996,
+      "cluster_bootstrap_95_interval_pp": [
+        -5.499999999999998,
+        2.750000000000001
+      ],
+      "clusters": 20,
+      "bootstrap_draws": 20000
+    },
+    {
+      "profile": "deepseek_pooled",
+      "baseline": "python_fresh",
+      "metric": "unsafe_accept",
+      "delta_percentage_points": -2.25,
+      "cluster_bootstrap_95_interval_pp": [
+        -6.749999999999999,
+        0.7500000000000001
+      ],
+      "clusters": 20,
+      "bootstrap_draws": 20000
+    }
+  ],
+  "cohorts_pooled": false,
+  "observations_changed": false,
+  "resource_cohort": "Original measured calls; no decision outcomes inferred from resource measurements"
+}

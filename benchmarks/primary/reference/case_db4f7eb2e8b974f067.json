@@ -1,0 +1,5513 @@
+{
+  "metadata": {
+    "id": "case_db4f7eb2e8b974f067",
+    "pair_id": "a1_i3",
+    "template": "a1",
+    "title": "Overlapping discount-group clawbacks",
+    "family": "coupon_cancellation",
+    "seed": 39071009,
+    "stratum": {
+      "index": 2,
+      "size": 512,
+      "max_affected": 4,
+      "margin": 10000
+    },
+    "expected": "reject",
+    "designated_id": "offer_ef81ce25f4c9",
+    "designated_position": 316
+  },
+  "reference": {
+    "decision": "reject",
+    "allowed_ids": [],
+    "guaranteed_utility": null,
+    "reason_code": "infeasible_complete_catalog",
+    "matrix": [
+      {
+        "id": "offer_d4bd0c61585d",
+        "safe": false,
+        "psi": "1106942",
+        "worst_loss": 213879,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dae108315c56",
+        "safe": false,
+        "psi": "1155110",
+        "worst_loss": 209536,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ddaa7a33959a",
+        "safe": false,
+        "psi": "1137574",
+        "worst_loss": 212367,
+        "worst_masks": [
+          53
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_76ee02b40f67",
+        "safe": false,
+        "psi": "925872",
+        "worst_loss": 210642,
+        "worst_masks": [
+          27,
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_237fcf9ce810",
+        "safe": false,
+        "psi": "1068031",
+        "worst_loss": 211256,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dbbe085eb432",
+        "safe": false,
+        "psi": "1027366",
+        "worst_loss": 218081,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_98f50e6d0ad1",
+        "safe": false,
+        "psi": "993503",
+        "worst_loss": 216955,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_de517071ad90",
+        "safe": false,
+        "psi": "1229764",
+        "worst_loss": 208812,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0fcbf6050e80",
+        "safe": false,
+        "psi": "1000811",
+        "worst_loss": 209011,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_61df90906424",
+        "safe": false,
+        "psi": "1077620",
+        "worst_loss": 200196,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4f40b4fe13ba",
+        "safe": false,
+        "psi": "963121",
+        "worst_loss": 206980,
+        "worst_masks": [
+          39
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fb57ed870d38",
+        "safe": false,
+        "psi": "1216193",
+        "worst_loss": 201283,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f71f26937043",
+        "safe": false,
+        "psi": "1264350",
+        "worst_loss": 217884,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4b9c8a03455c",
+        "safe": false,
+        "psi": "1302591",
+        "worst_loss": 210959,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c0991463cf49",
+        "safe": false,
+        "psi": "1030555",
+        "worst_loss": 208733,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_56735838a6e5",
+        "safe": false,
+        "psi": "1087383",
+        "worst_loss": 218996,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4be116067250",
+        "safe": false,
+        "psi": "1315684",
+        "worst_loss": 202485,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_023dacfbf899",
+        "safe": false,
+        "psi": "1258702",
+        "worst_loss": 209247,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c6a3158a5ff2",
+        "safe": false,
+        "psi": "1004113",
+        "worst_loss": 209237,
+        "worst_masks": [
+          45,
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c5aea86b7b64",
+        "safe": false,
+        "psi": "1233020",
+        "worst_loss": 212254,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1035edeeafa0",
+        "safe": false,
+        "psi": "947074",
+        "worst_loss": 212012,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_50c2ce3f2ccd",
+        "safe": false,
+        "psi": "1264618",
+        "worst_loss": 211275,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7d4f5f6ab906",
+        "safe": false,
+        "psi": "908068",
+        "worst_loss": 210530,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c114d16884c9",
+        "safe": false,
+        "psi": "1148131",
+        "worst_loss": 216673,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bd42de153376",
+        "safe": false,
+        "psi": "934347",
+        "worst_loss": 208851,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1ab0877c947a",
+        "safe": false,
+        "psi": "1305899",
+        "worst_loss": 217471,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1f13bbee45c9",
+        "safe": false,
+        "psi": "1317236",
+        "worst_loss": 210560,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_999e28301166",
+        "safe": false,
+        "psi": "1298662",
+        "worst_loss": 209317,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d8185249e60d",
+        "safe": false,
+        "psi": "1237603",
+        "worst_loss": 214009,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_efcff01bdb28",
+        "safe": false,
+        "psi": "1183931",
+        "worst_loss": 207724,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e7aa59b8ba2f",
+        "safe": false,
+        "psi": "890837",
+        "worst_loss": 210909,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2ae86839e6af",
+        "safe": false,
+        "psi": "1279811",
+        "worst_loss": 212842,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1a18f63d8772",
+        "safe": false,
+        "psi": "1089420",
+        "worst_loss": 219866,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_00016e673127",
+        "safe": false,
+        "psi": "1030141",
+        "worst_loss": 206998,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c9205ba570a0",
+        "safe": false,
+        "psi": "1121357",
+        "worst_loss": 207339,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_25eea4ef5b69",
+        "safe": false,
+        "psi": "950657",
+        "worst_loss": 206682,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6b3003dea85a",
+        "safe": false,
+        "psi": "1305190",
+        "worst_loss": 201900,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2a689d2cc68f",
+        "safe": false,
+        "psi": "1335453",
+        "worst_loss": 202507,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_35f98b66724d",
+        "safe": false,
+        "psi": "1256117",
+        "worst_loss": 211183,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8b99743a7b8a",
+        "safe": false,
+        "psi": "1021044",
+        "worst_loss": 217322,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c571e5e027a7",
+        "safe": false,
+        "psi": "925535",
+        "worst_loss": 211209,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fa9e2a651abd",
+        "safe": false,
+        "psi": "1081605",
+        "worst_loss": 212225,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3fe44c43b30b",
+        "safe": false,
+        "psi": "1064409",
+        "worst_loss": 211423,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c7fd21e83007",
+        "safe": false,
+        "psi": "1336564",
+        "worst_loss": 208984,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1c79a3b8729d",
+        "safe": false,
+        "psi": "1117463",
+        "worst_loss": 214275,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7064cb024421",
+        "safe": false,
+        "psi": "1180623",
+        "worst_loss": 213733,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ecef48af47cf",
+        "safe": false,
+        "psi": "1117824",
+        "worst_loss": 206191,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fe344f65d3b9",
+        "safe": false,
+        "psi": "1160931",
+        "worst_loss": 210638,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9cc616c7ee92",
+        "safe": false,
+        "psi": "934412",
+        "worst_loss": 219243,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d571a2ac4918",
+        "safe": false,
+        "psi": "963533",
+        "worst_loss": 213598,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a201bf4edc1a",
+        "safe": false,
+        "psi": "930886",
+        "worst_loss": 218657,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9e75f65ee301",
+        "safe": false,
+        "psi": "897577",
+        "worst_loss": 208948,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4c02b4f03373",
+        "safe": false,
+        "psi": "1090924",
+        "worst_loss": 211276,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_17b86c6023b7",
+        "safe": false,
+        "psi": "1151727",
+        "worst_loss": 219565,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2dee0832f6fc",
+        "safe": false,
+        "psi": "1273798",
+        "worst_loss": 219328,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f0f0d6cad755",
+        "safe": false,
+        "psi": "1323448",
+        "worst_loss": 210076,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8527bc3b1ef5",
+        "safe": false,
+        "psi": "1119498",
+        "worst_loss": 208588,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f0ea9f010e65",
+        "safe": false,
+        "psi": "1329574",
+        "worst_loss": 216275,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b60e233f9ea3",
+        "safe": false,
+        "psi": "1289066",
+        "worst_loss": 219409,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3ad16895a17c",
+        "safe": false,
+        "psi": "1121176",
+        "worst_loss": 219556,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b6cc9cbf56d0",
+        "safe": false,
+        "psi": "1082105",
+        "worst_loss": 210492,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8b7bd99e7283",
+        "safe": false,
+        "psi": "1135525",
+        "worst_loss": 218451,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_df58502510d1",
+        "safe": false,
+        "psi": "1058157",
+        "worst_loss": 213977,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8c1466467dd4",
+        "safe": false,
+        "psi": "1313556",
+        "worst_loss": 219626,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3a381887f48e",
+        "safe": false,
+        "psi": "1172286",
+        "worst_loss": 209399,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f640b62a3409",
+        "safe": false,
+        "psi": "1074936",
+        "worst_loss": 211360,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5a019e7431f9",
+        "safe": false,
+        "psi": "981608",
+        "worst_loss": 208511,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ff55d67da7cb",
+        "safe": false,
+        "psi": "1137463",
+        "worst_loss": 219647,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0ac068ca0a79",
+        "safe": false,
+        "psi": "1002729",
+        "worst_loss": 205165,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1af670a7147a",
+        "safe": false,
+        "psi": "935074",
+        "worst_loss": 203614,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_97a4bb4e4b96",
+        "safe": false,
+        "psi": "1188729",
+        "worst_loss": 212230,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fffd3d071abf",
+        "safe": false,
+        "psi": "1029717",
+        "worst_loss": 211849,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_81c7f523514c",
+        "safe": false,
+        "psi": "1003808",
+        "worst_loss": 214326,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0368ec19d47c",
+        "safe": false,
+        "psi": "1158675",
+        "worst_loss": 200060,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a085c579e34c",
+        "safe": false,
+        "psi": "949214",
+        "worst_loss": 205221,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6a3d55116dcc",
+        "safe": false,
+        "psi": "1096200",
+        "worst_loss": 201125,
+        "worst_masks": [
+          51,
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c1ddb05796d8",
+        "safe": false,
+        "psi": "1184464",
+        "worst_loss": 210050,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_26ef0c506ab8",
+        "safe": false,
+        "psi": "1303688",
+        "worst_loss": 202869,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8fbeb14f7c02",
+        "safe": false,
+        "psi": "1030586",
+        "worst_loss": 216082,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c772f2a8cda2",
+        "safe": false,
+        "psi": "1040738",
+        "worst_loss": 205230,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_60321bb0e718",
+        "safe": false,
+        "psi": "1017228",
+        "worst_loss": 216982,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_52f2e181e21e",
+        "safe": false,
+        "psi": "1175295",
+        "worst_loss": 210369,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1a2df6173152",
+        "safe": false,
+        "psi": "1303797",
+        "worst_loss": 203243,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_370dbc3ddc8c",
+        "safe": false,
+        "psi": "1165137",
+        "worst_loss": 203472,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9be71c211b23",
+        "safe": false,
+        "psi": "964663",
+        "worst_loss": 216744,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_352a6a3941a6",
+        "safe": false,
+        "psi": "1337222",
+        "worst_loss": 211659,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e7f7e6264dc8",
+        "safe": false,
+        "psi": "1000272",
+        "worst_loss": 209939,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_87bbb951648c",
+        "safe": false,
+        "psi": "923304",
+        "worst_loss": 217589,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_57fbb205d821",
+        "safe": false,
+        "psi": "1057775",
+        "worst_loss": 219055,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5f44d99272a7",
+        "safe": false,
+        "psi": "1276282",
+        "worst_loss": 211344,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bdb070ae3421",
+        "safe": false,
+        "psi": "1137773",
+        "worst_loss": 215900,
+        "worst_masks": [
+          15
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2712e07a3715",
+        "safe": false,
+        "psi": "965240",
+        "worst_loss": 217344,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_91e4c065fe89",
+        "safe": false,
+        "psi": "958473",
+        "worst_loss": 219392,
+        "worst_masks": [
+          39
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_36ab3ba58a3f",
+        "safe": false,
+        "psi": "1222954",
+        "worst_loss": 210215,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_393383c147fc",
+        "safe": false,
+        "psi": "887542",
+        "worst_loss": 214378,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_906f26d552df",
+        "safe": false,
+        "psi": "1185434",
+        "worst_loss": 205835,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e49d451460f0",
+        "safe": false,
+        "psi": "1161284",
+        "worst_loss": 213753,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_45d2ea617e97",
+        "safe": false,
+        "psi": "1262241",
+        "worst_loss": 209790,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_25913305dbad",
+        "safe": false,
+        "psi": "1065940",
+        "worst_loss": 214562,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_df9665996ea5",
+        "safe": false,
+        "psi": "952735",
+        "worst_loss": 209641,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b41495814e04",
+        "safe": false,
+        "psi": "932010",
+        "worst_loss": 200774,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_db247d0aded6",
+        "safe": false,
+        "psi": "1288311",
+        "worst_loss": 203146,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_45162c8f0924",
+        "safe": false,
+        "psi": "1331599",
+        "worst_loss": 216057,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0bf40c7179e2",
+        "safe": false,
+        "psi": "984327",
+        "worst_loss": 206609,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a4ee96832088",
+        "safe": false,
+        "psi": "1014618",
+        "worst_loss": 215782,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d4f92f69038e",
+        "safe": false,
+        "psi": "1269406",
+        "worst_loss": 218842,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1d96c050f64c",
+        "safe": false,
+        "psi": "1145309",
+        "worst_loss": 202054,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_608b91ced67a",
+        "safe": false,
+        "psi": "1219850",
+        "worst_loss": 201304,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f6d0b5e15cdb",
+        "safe": false,
+        "psi": "1059054",
+        "worst_loss": 211523,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_393adb01dbc8",
+        "safe": false,
+        "psi": "1073585",
+        "worst_loss": 202076,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b0867a44f42a",
+        "safe": false,
+        "psi": "1113913",
+        "worst_loss": 209870,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c68ddbd45272",
+        "safe": false,
+        "psi": "1242052",
+        "worst_loss": 215560,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_545c38e6c893",
+        "safe": false,
+        "psi": "1071024",
+        "worst_loss": 203254,
+        "worst_masks": [
+          53
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_de291c4cbcc3",
+        "safe": false,
+        "psi": "1038719",
+        "worst_loss": 202800,
+        "worst_masks": [
+          46,
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_acaf4ceed206",
+        "safe": false,
+        "psi": "1075166",
+        "worst_loss": 215730,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ce41682edde1",
+        "safe": false,
+        "psi": "1261057",
+        "worst_loss": 203650,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8505a1a4ac1f",
+        "safe": false,
+        "psi": "922818",
+        "worst_loss": 205806,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f02e33ec675f",
+        "safe": false,
+        "psi": "1310637",
+        "worst_loss": 218944,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5d3719cef15b",
+        "safe": false,
+        "psi": "1041134",
+        "worst_loss": 216672,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_73b12a07c001",
+        "safe": false,
+        "psi": "1053973",
+        "worst_loss": 201598,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_22006306b619",
+        "safe": false,
+        "psi": "914810",
+        "worst_loss": 217414,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_06ea4955b03d",
+        "safe": false,
+        "psi": "1007325",
+        "worst_loss": 215798,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3552de46437c",
+        "safe": false,
+        "psi": "1085372",
+        "worst_loss": 211439,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_62cd2749fa08",
+        "safe": false,
+        "psi": "998110",
+        "worst_loss": 206852,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f19d1a91c0c7",
+        "safe": false,
+        "psi": "1170252",
+        "worst_loss": 200827,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_20a8ef5115ad",
+        "safe": false,
+        "psi": "1133493",
+        "worst_loss": 213535,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_68dc30e17460",
+        "safe": false,
+        "psi": "1112548",
+        "worst_loss": 204107,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_94775ad9980b",
+        "safe": false,
+        "psi": "1223626",
+        "worst_loss": 201560,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0365ceac4617",
+        "safe": false,
+        "psi": "1102145",
+        "worst_loss": 215400,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_82f46ea303cb",
+        "safe": false,
+        "psi": "1246558",
+        "worst_loss": 212783,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_59f166cfab47",
+        "safe": false,
+        "psi": "1330364",
+        "worst_loss": 202112,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7c57c24ea189",
+        "safe": false,
+        "psi": "989762",
+        "worst_loss": 211414,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_954e43543549",
+        "safe": false,
+        "psi": "1100253",
+        "worst_loss": 202112,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_67c332795447",
+        "safe": false,
+        "psi": "1153640",
+        "worst_loss": 218932,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8396bc6761ff",
+        "safe": false,
+        "psi": "1076427",
+        "worst_loss": 206528,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6d5b9c4c3406",
+        "safe": false,
+        "psi": "1263910",
+        "worst_loss": 217915,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_07e3ee456b9d",
+        "safe": false,
+        "psi": "1086995",
+        "worst_loss": 213921,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_421a5c477ff1",
+        "safe": false,
+        "psi": "1272996",
+        "worst_loss": 206511,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7ae346dc81e2",
+        "safe": false,
+        "psi": "1311892",
+        "worst_loss": 215738,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ef749c0b9f36",
+        "safe": false,
+        "psi": "1025202",
+        "worst_loss": 200625,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a96130dfb3d9",
+        "safe": false,
+        "psi": "940109",
+        "worst_loss": 213955,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9f540a123d9e",
+        "safe": false,
+        "psi": "970016",
+        "worst_loss": 215713,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f03f8df86609",
+        "safe": false,
+        "psi": "1270909",
+        "worst_loss": 202536,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6b1e45a81ae7",
+        "safe": false,
+        "psi": "1194550",
+        "worst_loss": 210126,
+        "worst_masks": [
+          57
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f548695462b0",
+        "safe": false,
+        "psi": "1297345",
+        "worst_loss": 213016,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_05e37167fb9d",
+        "safe": false,
+        "psi": "917271",
+        "worst_loss": 213709,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bf5eca3a63c8",
+        "safe": false,
+        "psi": "1266650",
+        "worst_loss": 213800,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_eba4796c3d79",
+        "safe": false,
+        "psi": "943480",
+        "worst_loss": 208773,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a1492edd8023",
+        "safe": false,
+        "psi": "1301640",
+        "worst_loss": 214599,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_99e9985ef5d3",
+        "safe": false,
+        "psi": "1297232",
+        "worst_loss": 215858,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fc4b3cbb1f84",
+        "safe": false,
+        "psi": "1219817",
+        "worst_loss": 210829,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a33eaddd770e",
+        "safe": false,
+        "psi": "1159724",
+        "worst_loss": 212208,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c9c4258aa7c1",
+        "safe": false,
+        "psi": "1256211",
+        "worst_loss": 200750,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f3c3c55381d1",
+        "safe": false,
+        "psi": "908580",
+        "worst_loss": 213553,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bc5a57cd1ba3",
+        "safe": false,
+        "psi": "1115857",
+        "worst_loss": 205170,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_835b7c2f1bf8",
+        "safe": false,
+        "psi": "1237136",
+        "worst_loss": 213345,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2fdfd4c87adb",
+        "safe": false,
+        "psi": "1278736",
+        "worst_loss": 206573,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4d1d91c4c7b4",
+        "safe": false,
+        "psi": "1209232",
+        "worst_loss": 210545,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b1e61f5db3fb",
+        "safe": false,
+        "psi": "944993",
+        "worst_loss": 212425,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3d1158e748d8",
+        "safe": false,
+        "psi": "1137522",
+        "worst_loss": 214687,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_838146f634de",
+        "safe": false,
+        "psi": "1247175",
+        "worst_loss": 204333,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_11fd6d032a55",
+        "safe": false,
+        "psi": "1080862",
+        "worst_loss": 210093,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2c238a5a274e",
+        "safe": false,
+        "psi": "953563",
+        "worst_loss": 219955,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7785be0bd674",
+        "safe": false,
+        "psi": "1169321",
+        "worst_loss": 212795,
+        "worst_masks": [
+          54,
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ec41a49fba74",
+        "safe": false,
+        "psi": "1162627",
+        "worst_loss": 216520,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_131b2be01439",
+        "safe": false,
+        "psi": "1220958",
+        "worst_loss": 205049,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ba0e5a9c798a",
+        "safe": false,
+        "psi": "1116429",
+        "worst_loss": 207892,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9f993dee1209",
+        "safe": false,
+        "psi": "1268980",
+        "worst_loss": 212740,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2362c4e4b175",
+        "safe": false,
+        "psi": "1213276",
+        "worst_loss": 206876,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4e31ab9756a9",
+        "safe": false,
+        "psi": "929440",
+        "worst_loss": 213337,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bd5ed0b8a4f6",
+        "safe": false,
+        "psi": "1270149",
+        "worst_loss": 207634,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6bd7b32ddaeb",
+        "safe": false,
+        "psi": "1175509",
+        "worst_loss": 205982,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2d55ee72e4b4",
+        "safe": false,
+        "psi": "1325155",
+        "worst_loss": 202316,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a9c06f2b651e",
+        "safe": false,
+        "psi": "1326439",
+        "worst_loss": 215776,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2216065dc11d",
+        "safe": false,
+        "psi": "1172363",
+        "worst_loss": 214611,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0824a4f824e1",
+        "safe": false,
+        "psi": "1158930",
+        "worst_loss": 206724,
+        "worst_masks": [
+          51
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_60c9fb44d991",
+        "safe": false,
+        "psi": "1151568",
+        "worst_loss": 206706,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e310c200638f",
+        "safe": false,
+        "psi": "1246313",
+        "worst_loss": 200670,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a470d6aee778",
+        "safe": false,
+        "psi": "920227",
+        "worst_loss": 206699,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_10fe382bebd1",
+        "safe": false,
+        "psi": "908076",
+        "worst_loss": 214573,
+        "worst_masks": [
+          27,
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_017204bd5406",
+        "safe": false,
+        "psi": "1094419",
+        "worst_loss": 201380,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b0b87a27cf95",
+        "safe": false,
+        "psi": "932748",
+        "worst_loss": 206425,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_edfa1fc721ec",
+        "safe": false,
+        "psi": "1247433",
+        "worst_loss": 212917,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ba39ea697ba8",
+        "safe": false,
+        "psi": "1196058",
+        "worst_loss": 213915,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0e8c580c8b50",
+        "safe": false,
+        "psi": "925517",
+        "worst_loss": 206548,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_20505eadfe11",
+        "safe": false,
+        "psi": "943079",
+        "worst_loss": 202934,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b9acb4ac4128",
+        "safe": false,
+        "psi": "1126915",
+        "worst_loss": 204329,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_93055119f3d1",
+        "safe": false,
+        "psi": "1273725",
+        "worst_loss": 217109,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_55ed55c35f8c",
+        "safe": false,
+        "psi": "1081513",
+        "worst_loss": 212577,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b6c953cf44a8",
+        "safe": false,
+        "psi": "1319586",
+        "worst_loss": 217006,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3c031a6991d9",
+        "safe": false,
+        "psi": "906059",
+        "worst_loss": 202389,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_820cf519b96d",
+        "safe": false,
+        "psi": "1277315",
+        "worst_loss": 216993,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b4864fbdd42a",
+        "safe": false,
+        "psi": "1341185",
+        "worst_loss": 204602,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7404fa1a678d",
+        "safe": false,
+        "psi": "1221731",
+        "worst_loss": 207466,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e546b28fbd75",
+        "safe": false,
+        "psi": "1225102",
+        "worst_loss": 200941,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_337b11e2e6c5",
+        "safe": false,
+        "psi": "926076",
+        "worst_loss": 212114,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_15642af18cc5",
+        "safe": false,
+        "psi": "1234101",
+        "worst_loss": 201642,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2e8881d0495f",
+        "safe": false,
+        "psi": "1200003",
+        "worst_loss": 206172,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_39610ab9c398",
+        "safe": false,
+        "psi": "1046261",
+        "worst_loss": 217772,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4c194aae5c4a",
+        "safe": false,
+        "psi": "959270",
+        "worst_loss": 217870,
+        "worst_masks": [
+          60
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_55d4845e5721",
+        "safe": false,
+        "psi": "1115645",
+        "worst_loss": 211906,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_624746c42389",
+        "safe": false,
+        "psi": "1040719",
+        "worst_loss": 202139,
+        "worst_masks": [
+          15
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1b78b9d4f553",
+        "safe": false,
+        "psi": "974259",
+        "worst_loss": 200199,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4855da0544dc",
+        "safe": false,
+        "psi": "1114971",
+        "worst_loss": 205508,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6775a1999721",
+        "safe": false,
+        "psi": "1081470",
+        "worst_loss": 217520,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d614f15ebe34",
+        "safe": false,
+        "psi": "958962",
+        "worst_loss": 213535,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4380f90ed806",
+        "safe": false,
+        "psi": "1205310",
+        "worst_loss": 210673,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_682e8230674e",
+        "safe": false,
+        "psi": "971810",
+        "worst_loss": 213930,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_681427d1e8df",
+        "safe": false,
+        "psi": "958485",
+        "worst_loss": 207179,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e2f3f93b8b8a",
+        "safe": false,
+        "psi": "1085929",
+        "worst_loss": 200744,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_19d37f5712f6",
+        "safe": false,
+        "psi": "1149202",
+        "worst_loss": 203901,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2843a45757cf",
+        "safe": false,
+        "psi": "1210246",
+        "worst_loss": 217857,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_effd8933b411",
+        "safe": false,
+        "psi": "932335",
+        "worst_loss": 216205,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_96f01fcfd411",
+        "safe": false,
+        "psi": "1093503",
+        "worst_loss": 204166,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7cb49f578224",
+        "safe": false,
+        "psi": "1187462",
+        "worst_loss": 205499,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7326d77d51c6",
+        "safe": false,
+        "psi": "1104963",
+        "worst_loss": 216619,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d00adb196bfa",
+        "safe": false,
+        "psi": "896968",
+        "worst_loss": 215100,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f0c5a5954776",
+        "safe": false,
+        "psi": "1103529",
+        "worst_loss": 209922,
+        "worst_masks": [
+          15
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d6c99f017b9b",
+        "safe": false,
+        "psi": "949890",
+        "worst_loss": 203106,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d18dfa25b5b5",
+        "safe": false,
+        "psi": "1252782",
+        "worst_loss": 219616,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fe448c345c2c",
+        "safe": false,
+        "psi": "1024262",
+        "worst_loss": 201978,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bd7ce073733f",
+        "safe": false,
+        "psi": "1046682",
+        "worst_loss": 216338,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dd5ba820d768",
+        "safe": false,
+        "psi": "1095938",
+        "worst_loss": 201613,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_52194cb8ccfe",
+        "safe": false,
+        "psi": "974390",
+        "worst_loss": 217462,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9e357d1f12f9",
+        "safe": false,
+        "psi": "1235186",
+        "worst_loss": 209566,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_52783bb73c4e",
+        "safe": false,
+        "psi": "984251",
+        "worst_loss": 209530,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d94d3198c239",
+        "safe": false,
+        "psi": "925643",
+        "worst_loss": 217191,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_df657dccdee6",
+        "safe": false,
+        "psi": "1053418",
+        "worst_loss": 204259,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ea2fbd960663",
+        "safe": false,
+        "psi": "1168120",
+        "worst_loss": 203063,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6c12663d75e3",
+        "safe": false,
+        "psi": "1152889",
+        "worst_loss": 214913,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a4a8a6e09bb8",
+        "safe": false,
+        "psi": "1178767",
+        "worst_loss": 206394,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_40fc96699072",
+        "safe": false,
+        "psi": "1154635",
+        "worst_loss": 200333,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b79bd3cc3081",
+        "safe": false,
+        "psi": "969312",
+        "worst_loss": 205269,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bd50d3c67926",
+        "safe": false,
+        "psi": "1029687",
+        "worst_loss": 213354,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f60c5343976d",
+        "safe": false,
+        "psi": "1109255",
+        "worst_loss": 217414,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a6250e2f48b6",
+        "safe": false,
+        "psi": "1264904",
+        "worst_loss": 213881,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fe5768abf49b",
+        "safe": false,
+        "psi": "908029",
+        "worst_loss": 218355,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_cde26d473914",
+        "safe": false,
+        "psi": "1011076",
+        "worst_loss": 205438,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a8afa1c49952",
+        "safe": false,
+        "psi": "945251",
+        "worst_loss": 214771,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8f1361651e96",
+        "safe": false,
+        "psi": "1322693",
+        "worst_loss": 208532,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_94cb8143a5c1",
+        "safe": false,
+        "psi": "896898",
+        "worst_loss": 215444,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d9a68e94e329",
+        "safe": false,
+        "psi": "1078409",
+        "worst_loss": 206863,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_aa4aee2449c7",
+        "safe": false,
+        "psi": "918867",
+        "worst_loss": 207562,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_00cf3dc61b6e",
+        "safe": false,
+        "psi": "1244998",
+        "worst_loss": 210867,
+        "worst_masks": [
+          43,
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_20715f0f66fc",
+        "safe": false,
+        "psi": "1037897",
+        "worst_loss": 219554,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_cadf3286fc84",
+        "safe": false,
+        "psi": "905786",
+        "worst_loss": 218926,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_518cca3d8ad8",
+        "safe": false,
+        "psi": "1333813",
+        "worst_loss": 209737,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_770be27dffc1",
+        "safe": false,
+        "psi": "1308961",
+        "worst_loss": 201970,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_490a726c60f3",
+        "safe": false,
+        "psi": "1150307",
+        "worst_loss": 209520,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8b80b4c5bfe2",
+        "safe": false,
+        "psi": "1222044",
+        "worst_loss": 206698,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_721ebdeb36f8",
+        "safe": false,
+        "psi": "941946",
+        "worst_loss": 205908,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1f8e9f7b87ca",
+        "safe": false,
+        "psi": "1020862",
+        "worst_loss": 208797,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4d3bea68333d",
+        "safe": false,
+        "psi": "1193178",
+        "worst_loss": 203132,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_eb48a777617d",
+        "safe": false,
+        "psi": "1109201",
+        "worst_loss": 204037,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b8217d0a1ce9",
+        "safe": false,
+        "psi": "912113",
+        "worst_loss": 209028,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8f5538a29a62",
+        "safe": false,
+        "psi": "1186285",
+        "worst_loss": 201234,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3700d771de1c",
+        "safe": false,
+        "psi": "1175211",
+        "worst_loss": 202091,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3c0d5cf82d17",
+        "safe": false,
+        "psi": "998808",
+        "worst_loss": 219386,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5985efc7fba2",
+        "safe": false,
+        "psi": "1108745",
+        "worst_loss": 210434,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3cf49014196c",
+        "safe": false,
+        "psi": "962397",
+        "worst_loss": 206381,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7bdefbe1236c",
+        "safe": false,
+        "psi": "1265030",
+        "worst_loss": 216652,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_cf59961d3ac2",
+        "safe": false,
+        "psi": "1161594",
+        "worst_loss": 218895,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2ccc84d929b5",
+        "safe": false,
+        "psi": "1179506",
+        "worst_loss": 209517,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5ac8b3dcc9de",
+        "safe": false,
+        "psi": "959248",
+        "worst_loss": 202557,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7c81f840a2a0",
+        "safe": false,
+        "psi": "1207495",
+        "worst_loss": 213311,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_896b3c108623",
+        "safe": false,
+        "psi": "1309835",
+        "worst_loss": 204433,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_004d588c4425",
+        "safe": false,
+        "psi": "1116344",
+        "worst_loss": 207002,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_81fe667b4807",
+        "safe": false,
+        "psi": "924405",
+        "worst_loss": 218597,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_879722e0d607",
+        "safe": false,
+        "psi": "1013045",
+        "worst_loss": 207822,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ecbef27a806b",
+        "safe": false,
+        "psi": "1028114",
+        "worst_loss": 206010,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b87410411610",
+        "safe": false,
+        "psi": "1328356",
+        "worst_loss": 205744,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_248b246fbe70",
+        "safe": false,
+        "psi": "1317892",
+        "worst_loss": 219317,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3d40596738d6",
+        "safe": false,
+        "psi": "1294469",
+        "worst_loss": 209065,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_259e34799ac3",
+        "safe": false,
+        "psi": "1013189",
+        "worst_loss": 208106,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0cd9e880b67f",
+        "safe": false,
+        "psi": "1327094",
+        "worst_loss": 218926,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_52a3567de609",
+        "safe": false,
+        "psi": "1237486",
+        "worst_loss": 203049,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e8a426e40ff6",
+        "safe": false,
+        "psi": "1117335",
+        "worst_loss": 217925,
+        "worst_masks": [
+          60
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a392f98b0bfa",
+        "safe": false,
+        "psi": "1019541",
+        "worst_loss": 204891,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_10358e12eded",
+        "safe": false,
+        "psi": "1240420",
+        "worst_loss": 212601,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5a96e3f22364",
+        "safe": false,
+        "psi": "939807",
+        "worst_loss": 219578,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_42ac8a1b25e2",
+        "safe": false,
+        "psi": "1146427",
+        "worst_loss": 212580,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c3938c41340a",
+        "safe": false,
+        "psi": "1104973",
+        "worst_loss": 207943,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_024f323d2ff0",
+        "safe": false,
+        "psi": "963773",
+        "worst_loss": 206370,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_893c43c4839c",
+        "safe": false,
+        "psi": "1111874",
+        "worst_loss": 212332,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2d414bd030fc",
+        "safe": false,
+        "psi": "1112193",
+        "worst_loss": 210060,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e57d51419cdf",
+        "safe": false,
+        "psi": "1041047",
+        "worst_loss": 211339,
+        "worst_masks": [
+          29
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_361de80cf2f5",
+        "safe": false,
+        "psi": "1322575",
+        "worst_loss": 201201,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_61531961e7e9",
+        "safe": false,
+        "psi": "917752",
+        "worst_loss": 203553,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fce7c6ef9de0",
+        "safe": false,
+        "psi": "1153685",
+        "worst_loss": 211723,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2216b8ef02d4",
+        "safe": false,
+        "psi": "1032533",
+        "worst_loss": 204152,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_12e721caa7d2",
+        "safe": false,
+        "psi": "1108513",
+        "worst_loss": 204894,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_cd051565a532",
+        "safe": false,
+        "psi": "1219324",
+        "worst_loss": 203045,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a9fd3eba05f4",
+        "safe": false,
+        "psi": "939974",
+        "worst_loss": 219551,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e3438c266c6a",
+        "safe": false,
+        "psi": "996035",
+        "worst_loss": 213613,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3fe7bf099e9a",
+        "safe": false,
+        "psi": "1247665",
+        "worst_loss": 209920,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9b2ce34070f3",
+        "safe": false,
+        "psi": "914551",
+        "worst_loss": 205311,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d95c22519cfc",
+        "safe": false,
+        "psi": "1169106",
+        "worst_loss": 209459,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7417e3437cbc",
+        "safe": false,
+        "psi": "1110881",
+        "worst_loss": 206320,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_df6de6681a67",
+        "safe": false,
+        "psi": "1145942",
+        "worst_loss": 211825,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c356e99d3a35",
+        "safe": false,
+        "psi": "1179384",
+        "worst_loss": 210567,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1a27fe3607be",
+        "safe": false,
+        "psi": "1136494",
+        "worst_loss": 211768,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_464b245f8540",
+        "safe": false,
+        "psi": "1255978",
+        "worst_loss": 205293,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_61ef3510c712",
+        "safe": false,
+        "psi": "1155608",
+        "worst_loss": 216047,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8547ba405dea",
+        "safe": false,
+        "psi": "1092957",
+        "worst_loss": 219767,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7478d10e16dc",
+        "safe": false,
+        "psi": "1298975",
+        "worst_loss": 208536,
+        "worst_masks": [
+          51
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dce6f7cd6afe",
+        "safe": false,
+        "psi": "1330369",
+        "worst_loss": 203291,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_271b7ed8e84b",
+        "safe": false,
+        "psi": "1198738",
+        "worst_loss": 206264,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bb14b321b68c",
+        "safe": false,
+        "psi": "1266666",
+        "worst_loss": 215861,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4127adaa1f99",
+        "safe": false,
+        "psi": "1093081",
+        "worst_loss": 204996,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a16fec1ded0d",
+        "safe": false,
+        "psi": "1042686",
+        "worst_loss": 218565,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_46801c9a0aff",
+        "safe": false,
+        "psi": "914120",
+        "worst_loss": 209487,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7994ce1ba716",
+        "safe": false,
+        "psi": "1152771",
+        "worst_loss": 209353,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_40c323396844",
+        "safe": false,
+        "psi": "1219536",
+        "worst_loss": 218056,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f845fd7afa70",
+        "safe": false,
+        "psi": "1223781",
+        "worst_loss": 217200,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7646dcbd7ce0",
+        "safe": false,
+        "psi": "1279948",
+        "worst_loss": 214050,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fdcb53576973",
+        "safe": false,
+        "psi": "909446",
+        "worst_loss": 211630,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ef81ce25f4c9",
+        "safe": false,
+        "psi": "1102252",
+        "worst_loss": 200001,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d59f13bd64bc",
+        "safe": false,
+        "psi": "1148586",
+        "worst_loss": 207066,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c861e14164b9",
+        "safe": false,
+        "psi": "1215900",
+        "worst_loss": 203356,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a65f74a45a61",
+        "safe": false,
+        "psi": "1053144",
+        "worst_loss": 213979,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_056074b3ac17",
+        "safe": false,
+        "psi": "1214604",
+        "worst_loss": 212404,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c79def2e3867",
+        "safe": false,
+        "psi": "1087001",
+        "worst_loss": 202684,
+        "worst_masks": [
+          53
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b1991d069b79",
+        "safe": false,
+        "psi": "1265137",
+        "worst_loss": 211199,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c15401f1f6dd",
+        "safe": false,
+        "psi": "967026",
+        "worst_loss": 204081,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3c9cbb37a840",
+        "safe": false,
+        "psi": "1269857",
+        "worst_loss": 202397,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_948c0e6777f7",
+        "safe": false,
+        "psi": "1013184",
+        "worst_loss": 205442,
+        "worst_masks": [
+          53
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1a4ddfb2c480",
+        "safe": false,
+        "psi": "1214338",
+        "worst_loss": 203860,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a4e2a4793d0f",
+        "safe": false,
+        "psi": "1062816",
+        "worst_loss": 203717,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bfb54148c180",
+        "safe": false,
+        "psi": "1141214",
+        "worst_loss": 209094,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9b7d5127c13f",
+        "safe": false,
+        "psi": "1273210",
+        "worst_loss": 214256,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d6370779c946",
+        "safe": false,
+        "psi": "913475",
+        "worst_loss": 213212,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a2e6889428c6",
+        "safe": false,
+        "psi": "1265643",
+        "worst_loss": 204676,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_453b80621291",
+        "safe": false,
+        "psi": "954010",
+        "worst_loss": 207551,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a9c3d43fc5b9",
+        "safe": false,
+        "psi": "971658",
+        "worst_loss": 209228,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9a543fa7244c",
+        "safe": false,
+        "psi": "1024387",
+        "worst_loss": 212420,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_75994e0babcb",
+        "safe": false,
+        "psi": "1032105",
+        "worst_loss": 210018,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_99c5fcfec59b",
+        "safe": false,
+        "psi": "1255442",
+        "worst_loss": 202953,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4a357268d9a3",
+        "safe": false,
+        "psi": "930658",
+        "worst_loss": 200151,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dad69e2d3e94",
+        "safe": false,
+        "psi": "1280293",
+        "worst_loss": 206311,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5b9dd6317ed3",
+        "safe": false,
+        "psi": "1293283",
+        "worst_loss": 215475,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_cb075a839d76",
+        "safe": false,
+        "psi": "1018561",
+        "worst_loss": 203693,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4788e2257ae3",
+        "safe": false,
+        "psi": "1074956",
+        "worst_loss": 217409,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_116511ce5323",
+        "safe": false,
+        "psi": "1156974",
+        "worst_loss": 217825,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_47025aaa33fe",
+        "safe": false,
+        "psi": "1104565",
+        "worst_loss": 215167,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4c53d0564df0",
+        "safe": false,
+        "psi": "990312",
+        "worst_loss": 200631,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e4bc362361c2",
+        "safe": false,
+        "psi": "1031166",
+        "worst_loss": 217842,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2d45ceac3d35",
+        "safe": false,
+        "psi": "1073102",
+        "worst_loss": 218926,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7a29ed547175",
+        "safe": false,
+        "psi": "1136295",
+        "worst_loss": 216700,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3b54bf7261ea",
+        "safe": false,
+        "psi": "1226034",
+        "worst_loss": 212167,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fd96fbb3a1c6",
+        "safe": false,
+        "psi": "1028568",
+        "worst_loss": 206431,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c1b26a71a14f",
+        "safe": false,
+        "psi": "1185570",
+        "worst_loss": 212252,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c0ddbe58a2a4",
+        "safe": false,
+        "psi": "908449",
+        "worst_loss": 217095,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bd298f467046",
+        "safe": false,
+        "psi": "1288645",
+        "worst_loss": 200358,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_47f4c32eaca5",
+        "safe": false,
+        "psi": "986566",
+        "worst_loss": 200440,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3490fd33497c",
+        "safe": false,
+        "psi": "1146084",
+        "worst_loss": 205336,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_eb2901af878b",
+        "safe": false,
+        "psi": "1324567",
+        "worst_loss": 201830,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f267692f9f94",
+        "safe": false,
+        "psi": "1110234",
+        "worst_loss": 210782,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_773c7292d7d1",
+        "safe": false,
+        "psi": "984695",
+        "worst_loss": 206056,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f3ddbdcb7dd1",
+        "safe": false,
+        "psi": "1316553",
+        "worst_loss": 219766,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1449de592d6d",
+        "safe": false,
+        "psi": "1101153",
+        "worst_loss": 215246,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_50a670bd3981",
+        "safe": false,
+        "psi": "942610",
+        "worst_loss": 218528,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b60c08513337",
+        "safe": false,
+        "psi": "951703",
+        "worst_loss": 201970,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3d3eab26498d",
+        "safe": false,
+        "psi": "1203287",
+        "worst_loss": 214614,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_68aea72dad36",
+        "safe": false,
+        "psi": "1000675",
+        "worst_loss": 211872,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_33c51bb30229",
+        "safe": false,
+        "psi": "1035866",
+        "worst_loss": 207275,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_73085ec38828",
+        "safe": false,
+        "psi": "1019536",
+        "worst_loss": 200341,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ab3969289e1e",
+        "safe": false,
+        "psi": "1164804",
+        "worst_loss": 210757,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d957c729bda5",
+        "safe": false,
+        "psi": "997434",
+        "worst_loss": 205160,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d54c71631fcd",
+        "safe": false,
+        "psi": "1239465",
+        "worst_loss": 209858,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_45619877017d",
+        "safe": false,
+        "psi": "1158910",
+        "worst_loss": 206588,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f3ff0daa13b0",
+        "safe": false,
+        "psi": "1175608",
+        "worst_loss": 219070,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6d042937b9c4",
+        "safe": false,
+        "psi": "888964",
+        "worst_loss": 216371,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2f82b577635c",
+        "safe": false,
+        "psi": "924300",
+        "worst_loss": 204116,
+        "worst_masks": [
+          51
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bf624e62924b",
+        "safe": false,
+        "psi": "1224466",
+        "worst_loss": 219682,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7872755d94cf",
+        "safe": false,
+        "psi": "1304140",
+        "worst_loss": 202713,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d66ceb351f9b",
+        "safe": false,
+        "psi": "1236810",
+        "worst_loss": 218994,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1c34ed5d22ad",
+        "safe": false,
+        "psi": "1206477",
+        "worst_loss": 212192,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_251cb2574270",
+        "safe": false,
+        "psi": "916170",
+        "worst_loss": 219156,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4e3a3903b871",
+        "safe": false,
+        "psi": "1219659",
+        "worst_loss": 209634,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_942a8317c24e",
+        "safe": false,
+        "psi": "1164200",
+        "worst_loss": 203220,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e395cb39922c",
+        "safe": false,
+        "psi": "1088082",
+        "worst_loss": 211792,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_464fcbb4553f",
+        "safe": false,
+        "psi": "1281972",
+        "worst_loss": 210660,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_83f2c2ce9824",
+        "safe": false,
+        "psi": "1160062",
+        "worst_loss": 212846,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ec2b154a4b98",
+        "safe": false,
+        "psi": "1016949",
+        "worst_loss": 219752,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5b88708d2305",
+        "safe": false,
+        "psi": "1041650",
+        "worst_loss": 219801,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7f8900bfd215",
+        "safe": false,
+        "psi": "1184019",
+        "worst_loss": 206041,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_caa70a049bcf",
+        "safe": false,
+        "psi": "1232455",
+        "worst_loss": 213003,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7dd09674a731",
+        "safe": false,
+        "psi": "1276788",
+        "worst_loss": 213917,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_af3d011580c3",
+        "safe": false,
+        "psi": "1158312",
+        "worst_loss": 210249,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4b59f47516af",
+        "safe": false,
+        "psi": "968398",
+        "worst_loss": 216398,
+        "worst_masks": [
+          51
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2801e8955037",
+        "safe": false,
+        "psi": "1024005",
+        "worst_loss": 218910,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b20ca9bd6210",
+        "safe": false,
+        "psi": "1126030",
+        "worst_loss": 207618,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a417d9b79c00",
+        "safe": false,
+        "psi": "1077271",
+        "worst_loss": 207810,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0d10a3d489c8",
+        "safe": false,
+        "psi": "1146156",
+        "worst_loss": 204923,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_aab43aa89086",
+        "safe": false,
+        "psi": "1243553",
+        "worst_loss": 208317,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6e8742076d57",
+        "safe": false,
+        "psi": "1262705",
+        "worst_loss": 204474,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e087626da55f",
+        "safe": false,
+        "psi": "911957",
+        "worst_loss": 217186,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ab6c643e76e5",
+        "safe": false,
+        "psi": "1204062",
+        "worst_loss": 203576,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_56fc96525bd4",
+        "safe": false,
+        "psi": "935639",
+        "worst_loss": 218093,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_580e3df33002",
+        "safe": false,
+        "psi": "1022606",
+        "worst_loss": 211991,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4df99fbaf2c4",
+        "safe": false,
+        "psi": "886856",
+        "worst_loss": 216760,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_24d4be5732e8",
+        "safe": false,
+        "psi": "1332360",
+        "worst_loss": 213220,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f70bad6b4336",
+        "safe": false,
+        "psi": "997644",
+        "worst_loss": 217047,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6eae6e991ee7",
+        "safe": false,
+        "psi": "1225606",
+        "worst_loss": 214733,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1fd97610735f",
+        "safe": false,
+        "psi": "905760",
+        "worst_loss": 200409,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ce5c1bc8c0a8",
+        "safe": false,
+        "psi": "1091740",
+        "worst_loss": 200751,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_18324b94ced3",
+        "safe": false,
+        "psi": "1053002",
+        "worst_loss": 203039,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e9d0eaa4ec68",
+        "safe": false,
+        "psi": "1129289",
+        "worst_loss": 214875,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f478f520fd22",
+        "safe": false,
+        "psi": "1010887",
+        "worst_loss": 205870,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1a8f922aa833",
+        "safe": false,
+        "psi": "1095569",
+        "worst_loss": 211015,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a756b269aee4",
+        "safe": false,
+        "psi": "1331391",
+        "worst_loss": 207072,
+        "worst_masks": [
+          23
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_457bc05df072",
+        "safe": false,
+        "psi": "960421",
+        "worst_loss": 201475,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3dc5ab09b015",
+        "safe": false,
+        "psi": "1155675",
+        "worst_loss": 214727,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d7ea8df8de52",
+        "safe": false,
+        "psi": "1073546",
+        "worst_loss": 211194,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e7d3ffba22fd",
+        "safe": false,
+        "psi": "998200",
+        "worst_loss": 215518,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_27c3bbaf5b8f",
+        "safe": false,
+        "psi": "1109006",
+        "worst_loss": 202534,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7d154807af45",
+        "safe": false,
+        "psi": "937283",
+        "worst_loss": 217754,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_02a70e456610",
+        "safe": false,
+        "psi": "1015729",
+        "worst_loss": 204618,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2066620dbb62",
+        "safe": false,
+        "psi": "1210013",
+        "worst_loss": 200986,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_94027ded658e",
+        "safe": false,
+        "psi": "1279516",
+        "worst_loss": 216090,
+        "worst_masks": [
+          15
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_297bf60bd46b",
+        "safe": false,
+        "psi": "1176008",
+        "worst_loss": 203756,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3987eb2a0cf9",
+        "safe": false,
+        "psi": "935445",
+        "worst_loss": 202362,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fdfbbf9fab17",
+        "safe": false,
+        "psi": "1121896",
+        "worst_loss": 209343,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_738067b730d8",
+        "safe": false,
+        "psi": "1187085",
+        "worst_loss": 207611,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9bd65e9cfae4",
+        "safe": false,
+        "psi": "911610",
+        "worst_loss": 206086,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a58c3302f61a",
+        "safe": false,
+        "psi": "1158095",
+        "worst_loss": 215976,
+        "worst_masks": [
+          30
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c0e7d4cb4f4c",
+        "safe": false,
+        "psi": "1148187",
+        "worst_loss": 205939,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_083d3e1512e0",
+        "safe": false,
+        "psi": "1080646",
+        "worst_loss": 218889,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ed5b059821c7",
+        "safe": false,
+        "psi": "1256899",
+        "worst_loss": 206348,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_75cb7ec52eff",
+        "safe": false,
+        "psi": "1226591",
+        "worst_loss": 210407,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2d0d949d0d68",
+        "safe": false,
+        "psi": "999065",
+        "worst_loss": 219441,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_31ad4ceb236d",
+        "safe": false,
+        "psi": "910160",
+        "worst_loss": 211771,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c7a09139d0d2",
+        "safe": false,
+        "psi": "1060513",
+        "worst_loss": 216501,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3ff1bf801bbf",
+        "safe": false,
+        "psi": "999967",
+        "worst_loss": 212002,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_840c936cb3a7",
+        "safe": false,
+        "psi": "896906",
+        "worst_loss": 212621,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c6c2a2b46661",
+        "safe": false,
+        "psi": "1078314",
+        "worst_loss": 209731,
+        "worst_masks": [
+          15
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f66427db425f",
+        "safe": false,
+        "psi": "1320991",
+        "worst_loss": 200132,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2e350163f713",
+        "safe": false,
+        "psi": "1085494",
+        "worst_loss": 219761,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_7b4f05fd178e",
+        "safe": false,
+        "psi": "1204400",
+        "worst_loss": 213445,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_db5b8fcdfb4d",
+        "safe": false,
+        "psi": "937261",
+        "worst_loss": 200015,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_25914c55ad40",
+        "safe": false,
+        "psi": "1045189",
+        "worst_loss": 210477,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ac41a2391b30",
+        "safe": false,
+        "psi": "1333047",
+        "worst_loss": 214572,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e41b14ff8915",
+        "safe": false,
+        "psi": "1261755",
+        "worst_loss": 205342,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e7584f1aacc8",
+        "safe": false,
+        "psi": "1135076",
+        "worst_loss": 214980,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_43bfb4ca372f",
+        "safe": false,
+        "psi": "1217586",
+        "worst_loss": 218427,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1320ecaafb04",
+        "safe": false,
+        "psi": "1251497",
+        "worst_loss": 216000,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2c279e8bf260",
+        "safe": false,
+        "psi": "1153423",
+        "worst_loss": 212909,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8ceb5edb0148",
+        "safe": false,
+        "psi": "1220904",
+        "worst_loss": 206719,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_526bf9fd3f9d",
+        "safe": false,
+        "psi": "1000930",
+        "worst_loss": 219022,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_84e3fd5bd7fe",
+        "safe": false,
+        "psi": "1122104",
+        "worst_loss": 218401,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5f78429855de",
+        "safe": false,
+        "psi": "1228519",
+        "worst_loss": 219278,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dc8d248cd050",
+        "safe": false,
+        "psi": "1047753",
+        "worst_loss": 214962,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_403e04da71ed",
+        "safe": false,
+        "psi": "903376",
+        "worst_loss": 212305,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_37b084d2a11d",
+        "safe": false,
+        "psi": "1190229",
+        "worst_loss": 214323,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dd3b55bfadbd",
+        "safe": false,
+        "psi": "945568",
+        "worst_loss": 215764,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_4cfb3c563fe9",
+        "safe": false,
+        "psi": "1223128",
+        "worst_loss": 209411,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dbf357c60ce1",
+        "safe": false,
+        "psi": "923984",
+        "worst_loss": 200374,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9612b2824e47",
+        "safe": false,
+        "psi": "1161888",
+        "worst_loss": 211844,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fb402fe23f35",
+        "safe": false,
+        "psi": "1049259",
+        "worst_loss": 201899,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f9fa702423b6",
+        "safe": false,
+        "psi": "1321749",
+        "worst_loss": 200305,
+        "worst_masks": [
+          29
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_08c018683ebf",
+        "safe": false,
+        "psi": "941703",
+        "worst_loss": 218287,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d23414659140",
+        "safe": false,
+        "psi": "1335647",
+        "worst_loss": 205763,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e8f81e4f067a",
+        "safe": false,
+        "psi": "1317111",
+        "worst_loss": 205484,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6861dace4abb",
+        "safe": false,
+        "psi": "1060325",
+        "worst_loss": 215006,
+        "worst_masks": [
+          53
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5ff5696800f9",
+        "safe": false,
+        "psi": "1133555",
+        "worst_loss": 212620,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1a28cde01d7d",
+        "safe": false,
+        "psi": "1206667",
+        "worst_loss": 201081,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_de3550edc0ac",
+        "safe": false,
+        "psi": "1092639",
+        "worst_loss": 214151,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1992e8dc370d",
+        "safe": false,
+        "psi": "1217453",
+        "worst_loss": 207269,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_9a12fbbf74fa",
+        "safe": false,
+        "psi": "1215645",
+        "worst_loss": 212424,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bc50497ff151",
+        "safe": false,
+        "psi": "1299324",
+        "worst_loss": 208702,
+        "worst_masks": [
+          15
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ada90d32be04",
+        "safe": false,
+        "psi": "1288101",
+        "worst_loss": 208859,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c5246b173f43",
+        "safe": false,
+        "psi": "1210251",
+        "worst_loss": 200336,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bc7a0544693b",
+        "safe": false,
+        "psi": "938508",
+        "worst_loss": 207564,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_932b1e9c2f42",
+        "safe": false,
+        "psi": "1137156",
+        "worst_loss": 208782,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_0c991d56744e",
+        "safe": false,
+        "psi": "1325230",
+        "worst_loss": 214343,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ef99efb83fe6",
+        "safe": false,
+        "psi": "1272394",
+        "worst_loss": 206141,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6028662972d0",
+        "safe": false,
+        "psi": "1052560",
+        "worst_loss": 212361,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5160991a6d7e",
+        "safe": false,
+        "psi": "1114796",
+        "worst_loss": 209297,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_aca249ab0ff5",
+        "safe": false,
+        "psi": "959999",
+        "worst_loss": 219204,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a288809d216b",
+        "safe": false,
+        "psi": "1015023",
+        "worst_loss": 205640,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fb9b9728d430",
+        "safe": false,
+        "psi": "1080453",
+        "worst_loss": 206889,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_adc00b83c6ff",
+        "safe": false,
+        "psi": "1226301",
+        "worst_loss": 212276,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3c91c2f35f31",
+        "safe": false,
+        "psi": "989747",
+        "worst_loss": 210129,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_b4891914c04d",
+        "safe": false,
+        "psi": "1025128",
+        "worst_loss": 213684,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ac1e85acf16f",
+        "safe": false,
+        "psi": "1140843",
+        "worst_loss": 206750,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_dee97ca57032",
+        "safe": false,
+        "psi": "952488",
+        "worst_loss": 219219,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_c047490ca67e",
+        "safe": false,
+        "psi": "1317296",
+        "worst_loss": 206040,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_fd4635a7889c",
+        "safe": false,
+        "psi": "1100725",
+        "worst_loss": 206054,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_59aaa2c48847",
+        "safe": false,
+        "psi": "1039936",
+        "worst_loss": 204820,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8fc8ed7ffb63",
+        "safe": false,
+        "psi": "1261652",
+        "worst_loss": 200426,
+        "worst_masks": [
+          51
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_311c9c9ada50",
+        "safe": false,
+        "psi": "1195598",
+        "worst_loss": 201006,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3862b1556dbe",
+        "safe": false,
+        "psi": "1016254",
+        "worst_loss": 206648,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a44fcbc8bd2a",
+        "safe": false,
+        "psi": "1249817",
+        "worst_loss": 217354,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_a5a51b990eb5",
+        "safe": false,
+        "psi": "1194848",
+        "worst_loss": 207338,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d2de1e72e174",
+        "safe": false,
+        "psi": "923040",
+        "worst_loss": 218802,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_37f3929a3fab",
+        "safe": false,
+        "psi": "978397",
+        "worst_loss": 202269,
+        "worst_masks": [
+          21
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f75394190645",
+        "safe": false,
+        "psi": "1325616",
+        "worst_loss": 210459,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_bd21463bd677",
+        "safe": false,
+        "psi": "1203875",
+        "worst_loss": 212907,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_3a47b2291cb4",
+        "safe": false,
+        "psi": "1023338",
+        "worst_loss": 204024,
+        "worst_masks": [
+          58
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_5908c00abefa",
+        "safe": false,
+        "psi": "949697",
+        "worst_loss": 219758,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ba1a7e0897e9",
+        "safe": false,
+        "psi": "926152",
+        "worst_loss": 207744,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_8984806431de",
+        "safe": false,
+        "psi": "964414",
+        "worst_loss": 208842,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_ff3938e6d681",
+        "safe": false,
+        "psi": "927923",
+        "worst_loss": 204315,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_f2da3810e2d3",
+        "safe": false,
+        "psi": "1343630",
+        "worst_loss": 202810,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_2a2ccc35bca5",
+        "safe": false,
+        "psi": "1313220",
+        "worst_loss": 215645,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_07dd47e7bc1e",
+        "safe": false,
+        "psi": "1266739",
+        "worst_loss": 215832,
+        "worst_masks": [
+          43
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_cfa948f5698c",
+        "safe": false,
+        "psi": "1040435",
+        "worst_loss": 210428,
+        "worst_masks": [
+          46
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_1bea013b8507",
+        "safe": false,
+        "psi": "1124695",
+        "worst_loss": 219774,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_e800fc27b2d7",
+        "safe": false,
+        "psi": "1103062",
+        "worst_loss": 219672,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_6bc25fd97b6e",
+        "safe": false,
+        "psi": "1023151",
+        "worst_loss": 202343,
+        "worst_masks": [
+          45
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_d860d012ec8f",
+        "safe": false,
+        "psi": "1072859",
+        "worst_loss": 210493,
+        "worst_masks": [
+          27
+        ],
+        "event_count": 57
+      },
+      {
+        "id": "offer_426bb67b8250",
+        "safe": false,
+        "psi": "1106223",
+        "worst_loss": 213213,
+        "worst_masks": [
+          54
+        ],
+        "event_count": 57
+      }
+    ]
+  },
+  "gold_spec": {
+    "states": [
+      {
+        "label": "event_none",
+        "hard": "price <= 1200000",
+        "risk": "0<=200000",
+        "utility": "2000000-price-0"
+      },
+      {
+        "label": "event_0",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_1",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1)+(claw_0))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1)+(claw_0))+admin)"
+      },
+      {
+        "label": "event_2",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_3)+(claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_3)+(claw_1))+admin)"
+      },
+      {
+        "label": "event_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_4)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_4)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_5)+(claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_5)+(claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_2",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_2)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_2)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_3)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_3)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_5)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_5)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_2",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_2)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_2)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_1_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_3)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_3)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_1_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_5)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_5)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_2_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2+loss_3)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2+loss_3)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_2_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_2_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_3_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_3+loss_4)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_3+loss_4)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_3_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_3+loss_5)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_3+loss_5)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_4+loss_5)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_4+loss_5)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_2",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_2)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_2)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_3)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_3)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_5)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_5)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_2_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_2+loss_3)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_2+loss_3)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_2_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_2+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_2+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_2_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_2+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_2+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_3_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_3+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_3+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_3_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_4+loss_5)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_4+loss_5)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_1_2_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_2+loss_3)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_2+loss_3)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_1_2_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_2+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_2+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_2_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_2+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_2+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_3_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_3+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_3+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_3_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_2_3_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2+loss_3+loss_4)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2+loss_3+loss_4)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_2_3_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_2_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_3_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_3+loss_4+loss_5)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_3+loss_4+loss_5)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_2_3",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_2+loss_3)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_2+loss_3)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_2_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_2+loss_4)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_2+loss_4)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_2_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_2+loss_5)+(claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_2+loss_5)+(claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_3_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_3+loss_4)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_3+loss_4)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_3_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_1_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_1+loss_4+loss_5)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_1+loss_4+loss_5)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_0_2_3_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_2+loss_3+loss_4)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_2+loss_3+loss_4)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_2_3_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_2+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_2+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_0_2_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_2+loss_4+loss_5)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_2+loss_4+loss_5)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_0_3_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_0+loss_3+loss_4+loss_5)+(claw_0+claw_1))+admin)<=200000",
+        "utility": "2000000-price-(((loss_0+loss_3+loss_4+loss_5)+(claw_0+claw_1))+admin)"
+      },
+      {
+        "label": "event_1_2_3_4",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_2+loss_3+loss_4)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_2+loss_3+loss_4)+(claw_0+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_2_3_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_2+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_2+loss_3+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_2_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_2+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_2+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_1_3_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_1+loss_3+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_1+loss_3+loss_4+loss_5)+(claw_0+claw_1+claw_2))+admin)"
+      },
+      {
+        "label": "event_2_3_4_5",
+        "hard": "price <= 1200000",
+        "risk": "(((loss_2+loss_3+loss_4+loss_5)+(claw_0+claw_2))+admin)<=200000",
+        "utility": "2000000-price-(((loss_2+loss_3+loss_4+loss_5)+(claw_0+claw_2))+admin)"
+      }
+    ],
+    "reject_utility": "0",
+    "catalog_complete": true,
+    "source_ids": [
+      "U-task",
+      "U-events",
+      "U-contract",
+      "U-budget",
+      "U-utility"
+    ]
+  },
+  "verification": {
+    "independent_bitmask_ledger": true,
+    "expression_engine_agrees_on_all_rows": true
+  }
+}

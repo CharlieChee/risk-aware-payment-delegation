@@ -1,0 +1,347 @@
+[
+  {
+    "n": 200,
+    "exact": 190,
+    "unsafe": 1,
+    "false_refusal": 1,
+    "expected_accept": 100,
+    "correct_accept": 95,
+    "outcomes": {
+      "exact": 190,
+      "timeout": 8,
+      "unsafe_accept": 1,
+      "false_refusal": 1
+    },
+    "domain_evaluated": 0,
+    "domain_exact": 0,
+    "domain_has_violation": 0,
+    "latent_domain_violation": 0,
+    "profile": "astra_max",
+    "arm": "direct",
+    "input_tokens": {
+      "sum": 16709364,
+      "median": 69037.0,
+      "mean": 87027.9375,
+      "missing": 8
+    },
+    "output_tokens": {
+      "sum": 3981673,
+      "median": 18691.0,
+      "mean": 20737.880208333332,
+      "missing": 8
+    },
+    "seconds": {
+      "sum": 132101.290010673,
+      "median": 552.6356108335312,
+      "mean": 660.5064500533649,
+      "missing": 0
+    },
+    "non_unsafe_failure": 9
+  },
+  {
+    "n": 200,
+    "exact": 200,
+    "unsafe": 0,
+    "false_refusal": 0,
+    "expected_accept": 100,
+    "correct_accept": 100,
+    "outcomes": {
+      "exact": 200
+    },
+    "domain_evaluated": 200,
+    "domain_exact": 200,
+    "domain_has_violation": 0,
+    "latent_domain_violation": 0,
+    "profile": "astra_max",
+    "arm": "python_fresh",
+    "input_tokens": {
+      "sum": 17591126,
+      "median": 74823.0,
+      "mean": 87955.63,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 385309,
+      "median": 1666.0,
+      "mean": 1926.545,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 13219.904928538017,
+      "median": 57.143666146090254,
+      "mean": 66.09952464269008,
+      "missing": 0
+    },
+    "non_unsafe_failure": 0
+  },
+  {
+    "n": 200,
+    "exact": 200,
+    "unsafe": 0,
+    "false_refusal": 0,
+    "expected_accept": 100,
+    "correct_accept": 100,
+    "outcomes": {
+      "exact": 200
+    },
+    "domain_evaluated": 200,
+    "domain_exact": 200,
+    "domain_has_violation": 0,
+    "latent_domain_violation": 0,
+    "profile": "astra_max",
+    "arm": "set",
+    "input_tokens": {
+      "sum": 1889727,
+      "median": 9504.0,
+      "mean": 9448.635,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 1248895,
+      "median": 5218.0,
+      "mean": 6244.475,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 33822.57977482118,
+      "median": 149.69349831249565,
+      "mean": 169.1128988741059,
+      "missing": 0
+    },
+    "non_unsafe_failure": 0
+  },
+  {
+    "n": 200,
+    "exact": 131,
+    "unsafe": 31,
+    "false_refusal": 29,
+    "expected_accept": 100,
+    "correct_accept": 55,
+    "outcomes": {
+      "false_refusal": 29,
+      "unsafe_accept": 31,
+      "exact": 131,
+      "output_budget": 7,
+      "invalid_output": 2
+    },
+    "domain_evaluated": 0,
+    "domain_exact": 0,
+    "domain_has_violation": 0,
+    "latent_domain_violation": 0,
+    "profile": "ds_flash_high",
+    "arm": "direct",
+    "input_tokens": {
+      "sum": 16757220,
+      "median": 74845.0,
+      "mean": 83786.1,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 21805560,
+      "median": 107411.5,
+      "mean": 109027.8,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 72760.9379910347,
+      "median": 353.92532372893766,
+      "mean": 363.8046899551735,
+      "missing": 0
+    },
+    "non_unsafe_failure": 38
+  },
+  {
+    "n": 200,
+    "exact": 187,
+    "unsafe": 12,
+    "false_refusal": 0,
+    "expected_accept": 100,
+    "correct_accept": 93,
+    "outcomes": {
+      "unsafe_accept": 12,
+      "exact": 187,
+      "output_budget": 1
+    },
+    "domain_evaluated": 199,
+    "domain_exact": 187,
+    "domain_has_violation": 12,
+    "latent_domain_violation": 0,
+    "profile": "ds_flash_high",
+    "arm": "python_fresh",
+    "input_tokens": {
+      "sum": 16775020,
+      "median": 74934.0,
+      "mean": 83875.1,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 3267486,
+      "median": 9470.5,
+      "mean": 16337.43,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 12529.106631583069,
+      "median": 41.57588997925632,
+      "mean": 62.645533157915345,
+      "missing": 0
+    },
+    "non_unsafe_failure": 1
+  },
+  {
+    "n": 200,
+    "exact": 185,
+    "unsafe": 6,
+    "false_refusal": 0,
+    "expected_accept": 100,
+    "correct_accept": 92,
+    "outcomes": {
+      "exact": 185,
+      "unsafe_accept": 6,
+      "invalid_output": 9
+    },
+    "domain_evaluated": 191,
+    "domain_exact": 185,
+    "domain_has_violation": 6,
+    "latent_domain_violation": 0,
+    "profile": "ds_flash_high",
+    "arm": "set",
+    "input_tokens": {
+      "sum": 464310,
+      "median": 2348.0,
+      "mean": 2321.55,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 4967010,
+      "median": 23969.0,
+      "mean": 24835.05,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 16094.615955126006,
+      "median": 79.70485183340497,
+      "mean": 80.47307977563003,
+      "missing": 0
+    },
+    "non_unsafe_failure": 9
+  },
+  {
+    "n": 200,
+    "exact": 117,
+    "unsafe": 48,
+    "false_refusal": 24,
+    "expected_accept": 100,
+    "correct_accept": 45,
+    "outcomes": {
+      "exact": 117,
+      "unsafe_accept": 48,
+      "invalid_output": 9,
+      "false_refusal": 24,
+      "certificate_overclaim": 1,
+      "output_budget": 1
+    },
+    "domain_evaluated": 0,
+    "domain_exact": 0,
+    "domain_has_violation": 0,
+    "latent_domain_violation": 0,
+    "profile": "ds_flash_low",
+    "arm": "direct",
+    "input_tokens": {
+      "sum": 16757220,
+      "median": 74845.0,
+      "mean": 83786.1,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 14231948,
+      "median": 67644.0,
+      "mean": 71159.74,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 51006.25325841503,
+      "median": 248.76938520837575,
+      "mean": 255.03126629207517,
+      "missing": 0
+    },
+    "non_unsafe_failure": 35
+  },
+  {
+    "n": 200,
+    "exact": 189,
+    "unsafe": 6,
+    "false_refusal": 0,
+    "expected_accept": 100,
+    "correct_accept": 93,
+    "outcomes": {
+      "exact": 189,
+      "unsafe_accept": 6,
+      "invalid_output": 5
+    },
+    "domain_evaluated": 195,
+    "domain_exact": 189,
+    "domain_has_violation": 6,
+    "latent_domain_violation": 0,
+    "profile": "ds_flash_low",
+    "arm": "python_fresh",
+    "input_tokens": {
+      "sum": 16775020,
+      "median": 74934.0,
+      "mean": 83875.1,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 1542782,
+      "median": 6182.0,
+      "mean": 7713.91,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 6733.288934959564,
+      "median": 28.22155454219319,
+      "mean": 33.66644467479782,
+      "missing": 0
+    },
+    "non_unsafe_failure": 5
+  },
+  {
+    "n": 200,
+    "exact": 185,
+    "unsafe": 3,
+    "false_refusal": 1,
+    "expected_accept": 100,
+    "correct_accept": 94,
+    "outcomes": {
+      "exact": 185,
+      "invalid_output": 11,
+      "unsafe_accept": 3,
+      "false_refusal": 1
+    },
+    "domain_evaluated": 189,
+    "domain_exact": 185,
+    "domain_has_violation": 3,
+    "latent_domain_violation": 0,
+    "profile": "ds_flash_low",
+    "arm": "set",
+    "input_tokens": {
+      "sum": 464310,
+      "median": 2348.0,
+      "mean": 2321.55,
+      "missing": 0
+    },
+    "output_tokens": {
+      "sum": 3947474,
+      "median": 18742.0,
+      "mean": 19737.37,
+      "missing": 0
+    },
+    "seconds": {
+      "sum": 12891.514096121304,
+      "median": 61.84151589567773,
+      "mean": 64.45757048060652,
+      "missing": 0
+    },
+    "non_unsafe_failure": 12
+  }
+]

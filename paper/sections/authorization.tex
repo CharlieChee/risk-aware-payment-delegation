@@ -1,0 +1,72 @@
+\section{Targeted Semantic Diagnostics}
+\label{app:permissionaudit}
+\subsection{Frozen-rule replay}
+This diagnostic uses 648 frozen DeepSeek artifacts: 72 tasks, low/high/max settings, and three realizations (Set, matched-input Python, and catalogue-visible Python). The tasks cross six templates, three authorization conditions, two catalogue sizes, and feasible/infeasible pairs. All realizations use the same selector without private reference information. The artifacts are executed on two new catalogues: 1,296 local replays, with no further model calls. Legal candidate attributes are retained, administrative cost is set to zero, and only the first component's replacement/loss attribute changes. The mixed catalogue targets the following reference worst losses in integer subunits:
+\begin{quote}\small
+100000, 199999, 200000, 200001, 210000, 225000, 250000, 300000, 350000, 399999, 400000, 400001, 500000, 600000.
+\end{quote}
+The second catalogue contains only the 400,000-subunit offer, above the 200,000 limit. Other hard constraints remain satisfied. Numerical and symbolic references agree on 53,460 candidate--state checks. These directed perturbations test the generated consequence functions, not a randomly sampled purchasing population.
+
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{5pt}
+\input{tables/appendix_replay}
+\caption{DeepSeek frozen-rule replay counts for low, high, and max settings: 72 artifacts per row and two catalogues per artifact. Unsafe domains and choices are counted separately; invalid executions are not credited as safe. The primary DeepSeek plot pools the three realizations within each configuration.}
+\label{tab:replay}
+\end{table*}
+
+Valid mixed-catalogue replays make no unsafe selections, while 23 artifacts admit an unsafe candidate. Unsafe-only replays yield eight unsafe selections; each condition has 12 invalid executions. Table~\ref{tab:replay} gives the DeepSeek counts. The visible-input realization additionally tests transfer from its compilation catalogue; matched-input realizations exclude catalogue attributes during compilation.
+
+\begin{table*}[t]
+\centering
+\begin{minipage}[t]{.48\textwidth}
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+Intervention & Exact & Unsafe & Unsafe set\\
+\midrule
+Original & 0 & 0 & 16\\
+Duplicate label only & 0 & 0 & 16\\
+Ref. admissibility & 0 & 0 & 0\\
+Ref. utility & 0 & 16 & 16\\
+Both components & 16 & 0 & 0\\
+Restore missing state & 16 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\caption{All counts are out of 16 selected faulty specifications. Domain error here means admitting a reference-unsafe candidate. Correct selection, correct value, and correct permission set are separate targets.}
+\label{tab:oracle}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\textwidth}
+\centering\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Input & Exact/12 & Valid/12 & Overbroad\\
+\midrule
+Original & 5 & 11 & 6\\
+Catalogue withheld & 6 & 12 & 5\\
+Reference interpretations & 11 & 11 & 0\\
+\bottomrule
+\end{tabular}
+\caption{One ambiguous request; six configurations and two samples per condition. Unsafe domains are counted among valid executable outputs (11, 12, and 11 respectively). All outcomes remain in the exactness denominators.}
+\label{tab:intent-input}
+\end{minipage}
+\end{table*}
+
+\subsection{Omitted-interpretation and component interventions}
+\label{app:oracle}
+The source pool contains 56 Qwen/GLM Set generations for one ambiguous ticket request and two catalogues (128 and 512 offers). Sixteen outputs admit a reference-unsafe candidate and are selected for diagnosis. Each omits the reading in which ``his'' refers to Li, retaining only Zhang's fee-free-refund conditions and delay-weighted utility. These are 16 faulty outputs, not 16 independent requests. Restoring Li's state restores its conditions and utility; duplicating Zhang's label cannot do so.
+
+
+
+The original rules select safe purchases but have incorrect values and admitted domains. Reference admissibility alone repairs the domain; reference utility alone makes the unsafe offer win. Both components, or the correctly restored state, recover exact decisions in all 16 selected outputs (Table~\ref{tab:oracle}). These offline interventions diagnose semantic content and are not an inference-time discovery or repair algorithm.
+
+\subsection{Input intervention on the same request}
+\label{app:intent-input}
+Using the 512-offer request, six configurations, three input conditions, and two samples produces 36 calls, with 12 generations per condition. Configurations are Qwen Max off/medium, Qwen Flash low, GLM Flash low, GLM low, and Astra max. The reference-interpretation condition explicitly preserves both possible referents and the corresponding utility binding, without giving a selected offer or reference formula. It is researcher-supplied input, not an additional user response.
+
+
+
+Catalogue withholding alone does not remove the errors. Supplied interpretations yield 11/12 exact decisions and one Other failure; no condition selects an unsafe offer on the original catalogue. This local intervention identifies a representation dependency rather than a population-level success rate.
+
+\subsection{Two primary decision examples}
+\label{app:witnesses}
+Reference evaluation checks all 57 events. In one Astra Direct return-cost case, the reported loss of 1,954.33~MU understates the contractual loss of 2,054.33~MU against a 2,000~MU limit; no offer is feasible. In a coupon-cancellation case, Direct rejects all 1,024 offers although one has positive value and loss of 1,999.99~MU. These primary examples illustrate unsafe acceptance and false refusal at the same authorization boundary.

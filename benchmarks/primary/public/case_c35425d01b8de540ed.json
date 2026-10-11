@@ -1,0 +1,4727 @@
+{
+  "records": [
+    {
+      "id": "U-task",
+      "author": "user",
+      "status": "current",
+      "text": "Buy one indivisible bundled-ticket package for six travelers numbered 0 through 5; some travelers may cancel. Only one catalog row can be selected and fixed today; the package cannot be changed afterward according to the adverse event. The products, dates, suppliers, and availability have been checked accurately."
+    },
+    {
+      "id": "U-events",
+      "author": "user",
+      "status": "current",
+      "text": "There may be no adverse event, or any set of at most 4 travelers may cancel; every specific subset satisfying the count limit may occur. There are no additional correlation restrictions, and no probabilities are provided."
+    },
+    {
+      "id": "U-contract",
+      "author": "user",
+      "status": "current",
+      "text": "Individual loss is the sum of loss for the travelers who actually cancel. The three discount groups are {0,1}, {2,3}, and {4,5}; charge a group's claw when exactly one person cancels, otherwise that group's charge is 0. First sum the group clawbacks; the total collected is at most group_cap. There is also a whole-order discount: when at least 2 people cancel and person 0 does not cancel, also charge global_claw; at other times this charge is 0. global_claw is not included in group_cap. Net loss is the sum of individual loss, actual group settlement charges, and other applicable clawbacks or surcharges, minus the offsets explicitly allowed in this clause, with one admin charge added last. The assessed loss for the empty event is 0, with no admin or other charges. Unaffected items incur no adverse-event loss; there are no other unstated terms."
+    },
+    {
+      "id": "U-budget",
+      "author": "user",
+      "status": "current",
+      "text": "The attributes are complete and accurate, and are all nonnegative integers; monetary amounts are in fen of RMB, and weight is in grams. The original payment price must not exceed 1200000 fen of RMB, and the original payment and discount conditions stated in the contract must be satisfied. In each permitted event, the assessment amount described above must not exceed 200000 fen of RMB; equality with the limit is acceptable, and the limit must not be relaxed. This catalog is complete, with no hidden options."
+    },
+    {
+      "id": "U-utility",
+      "author": "user",
+      "status": "current",
+      "text": "Utility in each event is 2000000 minus price, then minus the assessment amount for that event. For candidates that satisfy the hard conditions and risk limits for all events simultaneously, take the lowest utility over all events, then choose the candidate with the greatest lowest utility; accept only if that value is strictly greater than 0, otherwise refuse. Do not ask the user questions."
+    }
+  ],
+  "attributes": {
+    "price": "Original amount actually paid for the whole order, in integer fen of RMB",
+    "admin": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+    "loss_0": "Fixed individual loss when person 0 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+    "loss_1": "Fixed individual loss when person 1 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+    "loss_2": "Fixed individual loss when person 2 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+    "loss_3": "Fixed individual loss when person 3 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+    "loss_4": "Fixed individual loss when person 4 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+    "loss_5": "Fixed individual loss when person 5 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+    "claw_0": "Group clawback upon partial cancellation of discount group [0, 1], in integer fen of RMB",
+    "claw_1": "Group clawback upon partial cancellation of discount group [2, 3], in integer fen of RMB",
+    "claw_2": "Group clawback upon partial cancellation of discount group [4, 5], in integer fen of RMB",
+    "group_cap": "Limit on the total group clawbacks collected, in integer fen of RMB",
+    "global_claw": "Whole-order discount clawed back separately when the condition is met, in integer fen of RMB"
+  },
+  "attribute_schema": {
+    "price": {
+      "description": "Original amount actually paid for the whole order, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "admin": {
+      "description": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_0": {
+      "description": "Fixed individual loss when person 0 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_1": {
+      "description": "Fixed individual loss when person 1 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_2": {
+      "description": "Fixed individual loss when person 2 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_3": {
+      "description": "Fixed individual loss when person 3 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_4": {
+      "description": "Fixed individual loss when person 4 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_5": {
+      "description": "Fixed individual loss when person 5 cancels, excluding discount clawbacks and the whole-order processing charge, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "claw_0": {
+      "description": "Group clawback upon partial cancellation of discount group [0, 1], in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "claw_1": {
+      "description": "Group clawback upon partial cancellation of discount group [2, 3], in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "claw_2": {
+      "description": "Group clawback upon partial cancellation of discount group [4, 5], in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "group_cap": {
+      "description": "Limit on the total group clawbacks collected, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "global_claw": {
+      "description": "Whole-order discount clawed back separately when the condition is met, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    }
+  },
+  "catalog_complete": true,
+  "candidates": [
+    {
+      "id": "offer_6ed0e35d7256",
+      "attrs": {
+        "price": 493276,
+        "admin": 122397,
+        "loss_0": 11400,
+        "loss_1": 5600,
+        "loss_2": 11100,
+        "loss_3": 14700,
+        "loss_4": 4600,
+        "loss_5": 12400,
+        "claw_0": 10800,
+        "claw_1": 14200,
+        "claw_2": 14500,
+        "group_cap": 27900,
+        "global_claw": 12200
+      }
+    },
+    {
+      "id": "offer_cc4a4c63afb7",
+      "attrs": {
+        "price": 509380,
+        "admin": 143079,
+        "loss_0": 12000,
+        "loss_1": 900,
+        "loss_2": 14400,
+        "loss_3": 7700,
+        "loss_4": 5100,
+        "loss_5": 1400,
+        "claw_0": 11000,
+        "claw_1": 23100,
+        "claw_2": 14500,
+        "group_cap": 27900,
+        "global_claw": 6100
+      }
+    },
+    {
+      "id": "offer_33d11c5f1af3",
+      "attrs": {
+        "price": 697113,
+        "admin": 150354,
+        "loss_0": 2800,
+        "loss_1": 12600,
+        "loss_2": 9300,
+        "loss_3": 9900,
+        "loss_4": 7700,
+        "loss_5": 1300,
+        "claw_0": 11800,
+        "claw_1": 17500,
+        "claw_2": 18100,
+        "group_cap": 11300,
+        "global_claw": 13300
+      }
+    },
+    {
+      "id": "offer_38758b0e581a",
+      "attrs": {
+        "price": 823874,
+        "admin": 163365,
+        "loss_0": 10900,
+        "loss_1": 1400,
+        "loss_2": 5800,
+        "loss_3": 4900,
+        "loss_4": 3400,
+        "loss_5": 8700,
+        "claw_0": 4500,
+        "claw_1": 10300,
+        "claw_2": 3800,
+        "group_cap": 26600,
+        "global_claw": 17000
+      }
+    },
+    {
+      "id": "offer_ce210dc16739",
+      "attrs": {
+        "price": 646659,
+        "admin": 168352,
+        "loss_0": 1800,
+        "loss_1": 7400,
+        "loss_2": 4700,
+        "loss_3": 11200,
+        "loss_4": 800,
+        "loss_5": 6000,
+        "claw_0": 12800,
+        "claw_1": 19700,
+        "claw_2": 7500,
+        "group_cap": 8100,
+        "global_claw": 4600
+      }
+    },
+    {
+      "id": "offer_49af6d36468b",
+      "attrs": {
+        "price": 801885,
+        "admin": 132268,
+        "loss_0": 8200,
+        "loss_1": 2900,
+        "loss_2": 9400,
+        "loss_3": 14300,
+        "loss_4": 6500,
+        "loss_5": 4100,
+        "claw_0": 18800,
+        "claw_1": 7200,
+        "claw_2": 13100,
+        "group_cap": 31800,
+        "global_claw": 13000
+      }
+    },
+    {
+      "id": "offer_203975140e0d",
+      "attrs": {
+        "price": 689971,
+        "admin": 146596,
+        "loss_0": 5600,
+        "loss_1": 14600,
+        "loss_2": 13600,
+        "loss_3": 11400,
+        "loss_4": 1500,
+        "loss_5": 4300,
+        "claw_0": 10400,
+        "claw_1": 3600,
+        "claw_2": 8500,
+        "group_cap": 30800,
+        "global_claw": 10600
+      }
+    },
+    {
+      "id": "offer_0a3826e82416",
+      "attrs": {
+        "price": 606679,
+        "admin": 124717,
+        "loss_0": 8400,
+        "loss_1": 5100,
+        "loss_2": 9800,
+        "loss_3": 2100,
+        "loss_4": 12500,
+        "loss_5": 8900,
+        "claw_0": 15200,
+        "claw_1": 20800,
+        "claw_2": 20800,
+        "group_cap": 27500,
+        "global_claw": 15400
+      }
+    },
+    {
+      "id": "offer_94524bad8997",
+      "attrs": {
+        "price": 626523,
+        "admin": 129319,
+        "loss_0": 10600,
+        "loss_1": 13400,
+        "loss_2": 14500,
+        "loss_3": 2500,
+        "loss_4": 2900,
+        "loss_5": 13100,
+        "claw_0": 6300,
+        "claw_1": 17800,
+        "claw_2": 22100,
+        "group_cap": 29800,
+        "global_claw": 13700
+      }
+    },
+    {
+      "id": "offer_752bb9efdd3a",
+      "attrs": {
+        "price": 454012,
+        "admin": 151633,
+        "loss_0": 7600,
+        "loss_1": 7300,
+        "loss_2": 7800,
+        "loss_3": 13900,
+        "loss_4": 12500,
+        "loss_5": 14300,
+        "claw_0": 15100,
+        "claw_1": 8800,
+        "claw_2": 15200,
+        "group_cap": 10100,
+        "global_claw": 4900
+      }
+    },
+    {
+      "id": "offer_e74538dc15b0",
+      "attrs": {
+        "price": 730058,
+        "admin": 140922,
+        "loss_0": 12300,
+        "loss_1": 800,
+        "loss_2": 9600,
+        "loss_3": 15000,
+        "loss_4": 10700,
+        "loss_5": 7100,
+        "claw_0": 4900,
+        "claw_1": 13400,
+        "claw_2": 7500,
+        "group_cap": 29800,
+        "global_claw": 6100
+      }
+    },
+    {
+      "id": "offer_de2aa609c65e",
+      "attrs": {
+        "price": 836202,
+        "admin": 126279,
+        "loss_0": 8900,
+        "loss_1": 6500,
+        "loss_2": 3300,
+        "loss_3": 12000,
+        "loss_4": 8000,
+        "loss_5": 9100,
+        "claw_0": 15900,
+        "claw_1": 16800,
+        "claw_2": 13200,
+        "group_cap": 30800,
+        "global_claw": 8300
+      }
+    },
+    {
+      "id": "offer_5a75e89f036c",
+      "attrs": {
+        "price": 738600,
+        "admin": 135360,
+        "loss_0": 7600,
+        "loss_1": 10600,
+        "loss_2": 7200,
+        "loss_3": 4700,
+        "loss_4": 3700,
+        "loss_5": 8700,
+        "claw_0": 12500,
+        "claw_1": 19000,
+        "claw_2": 9400,
+        "group_cap": 32100,
+        "global_claw": 7300
+      }
+    },
+    {
+      "id": "offer_74702e46fb6e",
+      "attrs": {
+        "price": 550832,
+        "admin": 146431,
+        "loss_0": 4000,
+        "loss_1": 11500,
+        "loss_2": 6700,
+        "loss_3": 10200,
+        "loss_4": 4400,
+        "loss_5": 7900,
+        "claw_0": 14600,
+        "claw_1": 11700,
+        "claw_2": 13900,
+        "group_cap": 21500,
+        "global_claw": 6100
+      }
+    },
+    {
+      "id": "offer_3964a909757e",
+      "attrs": {
+        "price": 876414,
+        "admin": 138043,
+        "loss_0": 6200,
+        "loss_1": 13100,
+        "loss_2": 11200,
+        "loss_3": 2100,
+        "loss_4": 4300,
+        "loss_5": 7600,
+        "claw_0": 3600,
+        "claw_1": 12000,
+        "claw_2": 18800,
+        "group_cap": 23600,
+        "global_claw": 10100
+      }
+    },
+    {
+      "id": "offer_84e73d7c3a6b",
+      "attrs": {
+        "price": 714570,
+        "admin": 156708,
+        "loss_0": 7800,
+        "loss_1": 8600,
+        "loss_2": 11200,
+        "loss_3": 13200,
+        "loss_4": 7300,
+        "loss_5": 10900,
+        "claw_0": 12200,
+        "claw_1": 15600,
+        "claw_2": 16200,
+        "group_cap": 11900,
+        "global_claw": 6300
+      }
+    },
+    {
+      "id": "offer_d708f36dc1a5",
+      "attrs": {
+        "price": 609790,
+        "admin": 144710,
+        "loss_0": 11400,
+        "loss_1": 8600,
+        "loss_2": 900,
+        "loss_3": 13300,
+        "loss_4": 900,
+        "loss_5": 8200,
+        "claw_0": 3700,
+        "claw_1": 15600,
+        "claw_2": 22700,
+        "group_cap": 25100,
+        "global_claw": 9100
+      }
+    },
+    {
+      "id": "offer_732428df33dd",
+      "attrs": {
+        "price": 593775,
+        "admin": 157436,
+        "loss_0": 13700,
+        "loss_1": 4200,
+        "loss_2": 13500,
+        "loss_3": 10200,
+        "loss_4": 8000,
+        "loss_5": 4900,
+        "claw_0": 11600,
+        "claw_1": 4100,
+        "claw_2": 9800,
+        "group_cap": 8400,
+        "global_claw": 16800
+      }
+    },
+    {
+      "id": "offer_d16f89d01f1b",
+      "attrs": {
+        "price": 566407,
+        "admin": 148312,
+        "loss_0": 9700,
+        "loss_1": 5200,
+        "loss_2": 3600,
+        "loss_3": 6100,
+        "loss_4": 13300,
+        "loss_5": 10500,
+        "claw_0": 9200,
+        "claw_1": 5000,
+        "claw_2": 4900,
+        "group_cap": 25900,
+        "global_claw": 12600
+      }
+    },
+    {
+      "id": "offer_ef6b468a9542",
+      "attrs": {
+        "price": 656875,
+        "admin": 147192,
+        "loss_0": 9000,
+        "loss_1": 12200,
+        "loss_2": 9100,
+        "loss_3": 3700,
+        "loss_4": 8900,
+        "loss_5": 8300,
+        "claw_0": 9300,
+        "claw_1": 14300,
+        "claw_2": 14600,
+        "group_cap": 18000,
+        "global_claw": 12400
+      }
+    },
+    {
+      "id": "offer_0761e475a33b",
+      "attrs": {
+        "price": 871999,
+        "admin": 153119,
+        "loss_0": 10100,
+        "loss_1": 4300,
+        "loss_2": 2400,
+        "loss_3": 3500,
+        "loss_4": 9700,
+        "loss_5": 5000,
+        "claw_0": 21400,
+        "claw_1": 12600,
+        "claw_2": 14100,
+        "group_cap": 20300,
+        "global_claw": 6400
+      }
+    },
+    {
+      "id": "offer_7d92ac700085",
+      "attrs": {
+        "price": 458128,
+        "admin": 127600,
+        "loss_0": 500,
+        "loss_1": 11700,
+        "loss_2": 12400,
+        "loss_3": 10900,
+        "loss_4": 7700,
+        "loss_5": 7300,
+        "claw_0": 7500,
+        "claw_1": 8600,
+        "claw_2": 5800,
+        "group_cap": 15100,
+        "global_claw": 16300
+      }
+    },
+    {
+      "id": "offer_1ffe97704a89",
+      "attrs": {
+        "price": 846184,
+        "admin": 147264,
+        "loss_0": 2800,
+        "loss_1": 6700,
+        "loss_2": 1500,
+        "loss_3": 12800,
+        "loss_4": 12300,
+        "loss_5": 1500,
+        "claw_0": 11900,
+        "claw_1": 11000,
+        "claw_2": 17400,
+        "group_cap": 23100,
+        "global_claw": 13500
+      }
+    },
+    {
+      "id": "offer_f7822bf64362",
+      "attrs": {
+        "price": 848502,
+        "admin": 141757,
+        "loss_0": 15000,
+        "loss_1": 6000,
+        "loss_2": 3000,
+        "loss_3": 14700,
+        "loss_4": 9700,
+        "loss_5": 14800,
+        "claw_0": 23100,
+        "claw_1": 11900,
+        "claw_2": 21400,
+        "group_cap": 11000,
+        "global_claw": 13400
+      }
+    },
+    {
+      "id": "offer_6afcc34f6391",
+      "attrs": {
+        "price": 818037,
+        "admin": 149504,
+        "loss_0": 10500,
+        "loss_1": 13800,
+        "loss_2": 10300,
+        "loss_3": 9600,
+        "loss_4": 2000,
+        "loss_5": 9200,
+        "claw_0": 7600,
+        "claw_1": 22500,
+        "claw_2": 11000,
+        "group_cap": 25000,
+        "global_claw": 4100
+      }
+    },
+    {
+      "id": "offer_eea2e7f6e8cd",
+      "attrs": {
+        "price": 506666,
+        "admin": 155073,
+        "loss_0": 15000,
+        "loss_1": 4300,
+        "loss_2": 4800,
+        "loss_3": 3600,
+        "loss_4": 9200,
+        "loss_5": 5200,
+        "claw_0": 10000,
+        "claw_1": 8700,
+        "claw_2": 23600,
+        "group_cap": 12400,
+        "global_claw": 10300
+      }
+    },
+    {
+      "id": "offer_e0b6f5410685",
+      "attrs": {
+        "price": 590399,
+        "admin": 159748,
+        "loss_0": 12900,
+        "loss_1": 13500,
+        "loss_2": 2400,
+        "loss_3": 3300,
+        "loss_4": 8300,
+        "loss_5": 6000,
+        "claw_0": 7200,
+        "claw_1": 21100,
+        "claw_2": 9500,
+        "group_cap": 11900,
+        "global_claw": 12900
+      }
+    },
+    {
+      "id": "offer_29747a1f649e",
+      "attrs": {
+        "price": 895638,
+        "admin": 148857,
+        "loss_0": 6900,
+        "loss_1": 9800,
+        "loss_2": 11900,
+        "loss_3": 7500,
+        "loss_4": 3400,
+        "loss_5": 3700,
+        "claw_0": 14200,
+        "claw_1": 2300,
+        "claw_2": 13200,
+        "group_cap": 16300,
+        "global_claw": 6600
+      }
+    },
+    {
+      "id": "offer_72a676928f0a",
+      "attrs": {
+        "price": 592078,
+        "admin": 129580,
+        "loss_0": 12200,
+        "loss_1": 13700,
+        "loss_2": 1500,
+        "loss_3": 9700,
+        "loss_4": 7200,
+        "loss_5": 1800,
+        "claw_0": 14600,
+        "claw_1": 7300,
+        "claw_2": 24200,
+        "group_cap": 28400,
+        "global_claw": 4800
+      }
+    },
+    {
+      "id": "offer_6ce4909170dc",
+      "attrs": {
+        "price": 746409,
+        "admin": 132758,
+        "loss_0": 11500,
+        "loss_1": 3400,
+        "loss_2": 14600,
+        "loss_3": 14000,
+        "loss_4": 9400,
+        "loss_5": 1400,
+        "claw_0": 13200,
+        "claw_1": 7400,
+        "claw_2": 6700,
+        "group_cap": 34600,
+        "global_claw": 12400
+      }
+    },
+    {
+      "id": "offer_13f0b7509767",
+      "attrs": {
+        "price": 810520,
+        "admin": 140415,
+        "loss_0": 14300,
+        "loss_1": 10900,
+        "loss_2": 5400,
+        "loss_3": 11500,
+        "loss_4": 6600,
+        "loss_5": 500,
+        "claw_0": 3700,
+        "claw_1": 16500,
+        "claw_2": 20200,
+        "group_cap": 29700,
+        "global_claw": 5900
+      }
+    },
+    {
+      "id": "offer_15adb200c90e",
+      "attrs": {
+        "price": 487871,
+        "admin": 163966,
+        "loss_0": 3600,
+        "loss_1": 4600,
+        "loss_2": 10100,
+        "loss_3": 8100,
+        "loss_4": 7700,
+        "loss_5": 6100,
+        "claw_0": 3000,
+        "claw_1": 10000,
+        "claw_2": 19500,
+        "group_cap": 13100,
+        "global_claw": 8400
+      }
+    },
+    {
+      "id": "offer_094ff256eee2",
+      "attrs": {
+        "price": 602336,
+        "admin": 151700,
+        "loss_0": 15000,
+        "loss_1": 3600,
+        "loss_2": 10500,
+        "loss_3": 11100,
+        "loss_4": 13600,
+        "loss_5": 14200,
+        "claw_0": 9500,
+        "claw_1": 19800,
+        "claw_2": 5400,
+        "group_cap": 13800,
+        "global_claw": 11300
+      }
+    },
+    {
+      "id": "offer_19683ae73871",
+      "attrs": {
+        "price": 705609,
+        "admin": 138119,
+        "loss_0": 1900,
+        "loss_1": 11600,
+        "loss_2": 11300,
+        "loss_3": 11800,
+        "loss_4": 3200,
+        "loss_5": 2500,
+        "claw_0": 7300,
+        "claw_1": 24000,
+        "claw_2": 24900,
+        "group_cap": 17000,
+        "global_claw": 12900
+      }
+    },
+    {
+      "id": "offer_db8499d79178",
+      "attrs": {
+        "price": 655130,
+        "admin": 143490,
+        "loss_0": 5300,
+        "loss_1": 2900,
+        "loss_2": 11900,
+        "loss_3": 5900,
+        "loss_4": 9000,
+        "loss_5": 11400,
+        "claw_0": 22100,
+        "claw_1": 6500,
+        "claw_2": 12600,
+        "group_cap": 32300,
+        "global_claw": 3100
+      }
+    },
+    {
+      "id": "offer_e7405b050cd5",
+      "attrs": {
+        "price": 682430,
+        "admin": 126649,
+        "loss_0": 12700,
+        "loss_1": 2900,
+        "loss_2": 13500,
+        "loss_3": 13200,
+        "loss_4": 2800,
+        "loss_5": 14700,
+        "claw_0": 5400,
+        "claw_1": 10600,
+        "claw_2": 20900,
+        "group_cap": 27300,
+        "global_claw": 5100
+      }
+    },
+    {
+      "id": "offer_b399eb0115e2",
+      "attrs": {
+        "price": 630909,
+        "admin": 143798,
+        "loss_0": 12300,
+        "loss_1": 11900,
+        "loss_2": 3100,
+        "loss_3": 9600,
+        "loss_4": 14300,
+        "loss_5": 1500,
+        "claw_0": 17000,
+        "claw_1": 18200,
+        "claw_2": 3700,
+        "group_cap": 9200,
+        "global_claw": 8700
+      }
+    },
+    {
+      "id": "offer_10fe7073c80c",
+      "attrs": {
+        "price": 691552,
+        "admin": 146968,
+        "loss_0": 1500,
+        "loss_1": 6000,
+        "loss_2": 10100,
+        "loss_3": 10000,
+        "loss_4": 1400,
+        "loss_5": 3200,
+        "claw_0": 15500,
+        "claw_1": 19200,
+        "claw_2": 12500,
+        "group_cap": 29000,
+        "global_claw": 10300
+      }
+    },
+    {
+      "id": "offer_7e8eadeeac19",
+      "attrs": {
+        "price": 472861,
+        "admin": 145202,
+        "loss_0": 13200,
+        "loss_1": 7800,
+        "loss_2": 2900,
+        "loss_3": 10800,
+        "loss_4": 6600,
+        "loss_5": 11100,
+        "claw_0": 4400,
+        "claw_1": 14800,
+        "claw_2": 19600,
+        "group_cap": 31000,
+        "global_claw": 11600
+      }
+    },
+    {
+      "id": "offer_8e1abf1bb88c",
+      "attrs": {
+        "price": 666088,
+        "admin": 144081,
+        "loss_0": 5900,
+        "loss_1": 10700,
+        "loss_2": 9000,
+        "loss_3": 13700,
+        "loss_4": 10200,
+        "loss_5": 12400,
+        "claw_0": 5400,
+        "claw_1": 7900,
+        "claw_2": 3500,
+        "group_cap": 14000,
+        "global_claw": 13500
+      }
+    },
+    {
+      "id": "offer_59d8305b4e46",
+      "attrs": {
+        "price": 611812,
+        "admin": 139755,
+        "loss_0": 6600,
+        "loss_1": 5500,
+        "loss_2": 8200,
+        "loss_3": 8500,
+        "loss_4": 9600,
+        "loss_5": 7700,
+        "claw_0": 10600,
+        "claw_1": 11000,
+        "claw_2": 15900,
+        "group_cap": 26600,
+        "global_claw": 4300
+      }
+    },
+    {
+      "id": "offer_869bfbf35ed1",
+      "attrs": {
+        "price": 597491,
+        "admin": 148783,
+        "loss_0": 2400,
+        "loss_1": 2100,
+        "loss_2": 8300,
+        "loss_3": 8900,
+        "loss_4": 8100,
+        "loss_5": 5600,
+        "claw_0": 15600,
+        "claw_1": 2700,
+        "claw_2": 9500,
+        "group_cap": 14100,
+        "global_claw": 17400
+      }
+    },
+    {
+      "id": "offer_dfdc963a4ee9",
+      "attrs": {
+        "price": 850800,
+        "admin": 131940,
+        "loss_0": 7000,
+        "loss_1": 3300,
+        "loss_2": 13400,
+        "loss_3": 1700,
+        "loss_4": 6600,
+        "loss_5": 15000,
+        "claw_0": 19800,
+        "claw_1": 13000,
+        "claw_2": 23700,
+        "group_cap": 29600,
+        "global_claw": 13200
+      }
+    },
+    {
+      "id": "offer_05f62abe27d2",
+      "attrs": {
+        "price": 763585,
+        "admin": 152771,
+        "loss_0": 1200,
+        "loss_1": 5400,
+        "loss_2": 10900,
+        "loss_3": 6700,
+        "loss_4": 12100,
+        "loss_5": 8800,
+        "claw_0": 11200,
+        "claw_1": 5600,
+        "claw_2": 22000,
+        "group_cap": 12800,
+        "global_claw": 5000
+      }
+    },
+    {
+      "id": "offer_64b326b1c569",
+      "attrs": {
+        "price": 485022,
+        "admin": 147208,
+        "loss_0": 5800,
+        "loss_1": 5400,
+        "loss_2": 1900,
+        "loss_3": 8300,
+        "loss_4": 10600,
+        "loss_5": 11800,
+        "claw_0": 23400,
+        "claw_1": 22900,
+        "claw_2": 8900,
+        "group_cap": 28900,
+        "global_claw": 3900
+      }
+    },
+    {
+      "id": "offer_cfee30f4eb71",
+      "attrs": {
+        "price": 798225,
+        "admin": 141399,
+        "loss_0": 8000,
+        "loss_1": 8300,
+        "loss_2": 2300,
+        "loss_3": 6700,
+        "loss_4": 14000,
+        "loss_5": 3800,
+        "claw_0": 14300,
+        "claw_1": 8000,
+        "claw_2": 4300,
+        "group_cap": 18100,
+        "global_claw": 14900
+      }
+    },
+    {
+      "id": "offer_5150368b532c",
+      "attrs": {
+        "price": 808709,
+        "admin": 148707,
+        "loss_0": 7100,
+        "loss_1": 2200,
+        "loss_2": 8600,
+        "loss_3": 11700,
+        "loss_4": 12000,
+        "loss_5": 9700,
+        "claw_0": 23200,
+        "claw_1": 8200,
+        "claw_2": 24800,
+        "group_cap": 18800,
+        "global_claw": 11500
+      }
+    },
+    {
+      "id": "offer_fdb49726c897",
+      "attrs": {
+        "price": 696896,
+        "admin": 155353,
+        "loss_0": 9300,
+        "loss_1": 7200,
+        "loss_2": 800,
+        "loss_3": 8000,
+        "loss_4": 4100,
+        "loss_5": 14800,
+        "claw_0": 15900,
+        "claw_1": 10700,
+        "claw_2": 17800,
+        "group_cap": 15200,
+        "global_claw": 10100
+      }
+    },
+    {
+      "id": "offer_49a821424944",
+      "attrs": {
+        "price": 707873,
+        "admin": 140049,
+        "loss_0": 4800,
+        "loss_1": 12800,
+        "loss_2": 4500,
+        "loss_3": 3500,
+        "loss_4": 7100,
+        "loss_5": 14700,
+        "claw_0": 10400,
+        "claw_1": 7200,
+        "claw_2": 16000,
+        "group_cap": 24200,
+        "global_claw": 5600
+      }
+    },
+    {
+      "id": "offer_a02ec860f179",
+      "attrs": {
+        "price": 760249,
+        "admin": 157161,
+        "loss_0": 14100,
+        "loss_1": 9500,
+        "loss_2": 8500,
+        "loss_3": 11400,
+        "loss_4": 8500,
+        "loss_5": 4500,
+        "claw_0": 8800,
+        "claw_1": 15800,
+        "claw_2": 19400,
+        "group_cap": 17200,
+        "global_claw": 5900
+      }
+    },
+    {
+      "id": "offer_4e24ac1825aa",
+      "attrs": {
+        "price": 553597,
+        "admin": 150096,
+        "loss_0": 12800,
+        "loss_1": 9400,
+        "loss_2": 5600,
+        "loss_3": 6700,
+        "loss_4": 4800,
+        "loss_5": 4400,
+        "claw_0": 10100,
+        "claw_1": 17300,
+        "claw_2": 19900,
+        "group_cap": 20700,
+        "global_claw": 10200
+      }
+    },
+    {
+      "id": "offer_4a508e547f3f",
+      "attrs": {
+        "price": 791210,
+        "admin": 129217,
+        "loss_0": 7800,
+        "loss_1": 8200,
+        "loss_2": 14200,
+        "loss_3": 800,
+        "loss_4": 12200,
+        "loss_5": 10200,
+        "claw_0": 23400,
+        "claw_1": 9000,
+        "claw_2": 4100,
+        "group_cap": 16500,
+        "global_claw": 9600
+      }
+    },
+    {
+      "id": "offer_f08c808e8947",
+      "attrs": {
+        "price": 536106,
+        "admin": 157213,
+        "loss_0": 11700,
+        "loss_1": 500,
+        "loss_2": 500,
+        "loss_3": 2300,
+        "loss_4": 12900,
+        "loss_5": 6300,
+        "claw_0": 6600,
+        "claw_1": 11500,
+        "claw_2": 6700,
+        "group_cap": 30900,
+        "global_claw": 17600
+      }
+    },
+    {
+      "id": "offer_1b075baba1f9",
+      "attrs": {
+        "price": 849144,
+        "admin": 160446,
+        "loss_0": 13200,
+        "loss_1": 3600,
+        "loss_2": 10700,
+        "loss_3": 11800,
+        "loss_4": 4300,
+        "loss_5": 2000,
+        "claw_0": 7100,
+        "claw_1": 5500,
+        "claw_2": 6000,
+        "group_cap": 27300,
+        "global_claw": 3700
+      }
+    },
+    {
+      "id": "offer_af1b67bd21b1",
+      "attrs": {
+        "price": 868921,
+        "admin": 156210,
+        "loss_0": 11900,
+        "loss_1": 2300,
+        "loss_2": 1300,
+        "loss_3": 12600,
+        "loss_4": 500,
+        "loss_5": 13200,
+        "claw_0": 3500,
+        "claw_1": 10800,
+        "claw_2": 19900,
+        "group_cap": 20000,
+        "global_claw": 12100
+      }
+    },
+    {
+      "id": "offer_91fd3ac9e8c5",
+      "attrs": {
+        "price": 523892,
+        "admin": 171400,
+        "loss_0": 5900,
+        "loss_1": 3300,
+        "loss_2": 5800,
+        "loss_3": 8300,
+        "loss_4": 9800,
+        "loss_5": 11100,
+        "claw_0": 23100,
+        "claw_1": 5900,
+        "claw_2": 3200,
+        "group_cap": 11300,
+        "global_claw": 3100
+      }
+    },
+    {
+      "id": "offer_9bad48eec4b1",
+      "attrs": {
+        "price": 752402,
+        "admin": 128947,
+        "loss_0": 5600,
+        "loss_1": 9100,
+        "loss_2": 12300,
+        "loss_3": 4300,
+        "loss_4": 13800,
+        "loss_5": 11600,
+        "claw_0": 20100,
+        "claw_1": 3600,
+        "claw_2": 14400,
+        "group_cap": 32800,
+        "global_claw": 12500
+      }
+    },
+    {
+      "id": "offer_c8b582c43b0e",
+      "attrs": {
+        "price": 605187,
+        "admin": 133916,
+        "loss_0": 13700,
+        "loss_1": 14600,
+        "loss_2": 7100,
+        "loss_3": 3000,
+        "loss_4": 11800,
+        "loss_5": 9800,
+        "claw_0": 23900,
+        "claw_1": 3500,
+        "claw_2": 13400,
+        "group_cap": 33500,
+        "global_claw": 11500
+      }
+    },
+    {
+      "id": "offer_31909ca76b00",
+      "attrs": {
+        "price": 867809,
+        "admin": 155021,
+        "loss_0": 11200,
+        "loss_1": 1300,
+        "loss_2": 9100,
+        "loss_3": 8500,
+        "loss_4": 10800,
+        "loss_5": 3100,
+        "claw_0": 11600,
+        "claw_1": 9800,
+        "claw_2": 23100,
+        "group_cap": 16700,
+        "global_claw": 9200
+      }
+    },
+    {
+      "id": "offer_e7c9567525b1",
+      "attrs": {
+        "price": 531349,
+        "admin": 161613,
+        "loss_0": 8300,
+        "loss_1": 9500,
+        "loss_2": 3700,
+        "loss_3": 4300,
+        "loss_4": 9700,
+        "loss_5": 4700,
+        "claw_0": 15800,
+        "claw_1": 4800,
+        "claw_2": 17500,
+        "group_cap": 10500,
+        "global_claw": 6100
+      }
+    },
+    {
+      "id": "offer_1f6289b23c27",
+      "attrs": {
+        "price": 470118,
+        "admin": 154347,
+        "loss_0": 5000,
+        "loss_1": 3100,
+        "loss_2": 3100,
+        "loss_3": 4800,
+        "loss_4": 12500,
+        "loss_5": 1700,
+        "claw_0": 9500,
+        "claw_1": 12000,
+        "claw_2": 7800,
+        "group_cap": 23500,
+        "global_claw": 7200
+      }
+    },
+    {
+      "id": "offer_c72fa73d50a3",
+      "attrs": {
+        "price": 870285,
+        "admin": 139771,
+        "loss_0": 2100,
+        "loss_1": 11100,
+        "loss_2": 4700,
+        "loss_3": 10200,
+        "loss_4": 11600,
+        "loss_5": 8600,
+        "claw_0": 5200,
+        "claw_1": 12200,
+        "claw_2": 18300,
+        "group_cap": 12300,
+        "global_claw": 17700
+      }
+    },
+    {
+      "id": "offer_9c74715ca78e",
+      "attrs": {
+        "price": 895987,
+        "admin": 141391,
+        "loss_0": 7600,
+        "loss_1": 8300,
+        "loss_2": 900,
+        "loss_3": 3600,
+        "loss_4": 10200,
+        "loss_5": 1500,
+        "claw_0": 23000,
+        "claw_1": 8400,
+        "claw_2": 13300,
+        "group_cap": 29900,
+        "global_claw": 11300
+      }
+    },
+    {
+      "id": "offer_fd401d491ccc",
+      "attrs": {
+        "price": 897987,
+        "admin": 145898,
+        "loss_0": 5700,
+        "loss_1": 11500,
+        "loss_2": 11100,
+        "loss_3": 10900,
+        "loss_4": 5400,
+        "loss_5": 13800,
+        "claw_0": 14600,
+        "claw_1": 11800,
+        "claw_2": 16900,
+        "group_cap": 20400,
+        "global_claw": 3100
+      }
+    },
+    {
+      "id": "offer_18413c6f317c",
+      "attrs": {
+        "price": 735532,
+        "admin": 155553,
+        "loss_0": 10500,
+        "loss_1": 2300,
+        "loss_2": 6900,
+        "loss_3": 13800,
+        "loss_4": 2700,
+        "loss_5": 1100,
+        "claw_0": 16200,
+        "claw_1": 22500,
+        "claw_2": 9100,
+        "group_cap": 8000,
+        "global_claw": 11000
+      }
+    },
+    {
+      "id": "offer_d7916eb003d6",
+      "attrs": {
+        "price": 883775,
+        "admin": 121827,
+        "loss_0": 4200,
+        "loss_1": 11800,
+        "loss_2": 10000,
+        "loss_3": 6900,
+        "loss_4": 10300,
+        "loss_5": 900,
+        "claw_0": 17100,
+        "claw_1": 6600,
+        "claw_2": 22500,
+        "group_cap": 31900,
+        "global_claw": 13200
+      }
+    },
+    {
+      "id": "offer_d3ea807b9cc3",
+      "attrs": {
+        "price": 879987,
+        "admin": 140358,
+        "loss_0": 2000,
+        "loss_1": 3300,
+        "loss_2": 11400,
+        "loss_3": 11000,
+        "loss_4": 8700,
+        "loss_5": 1900,
+        "claw_0": 23900,
+        "claw_1": 4400,
+        "claw_2": 11300,
+        "group_cap": 22400,
+        "global_claw": 7900
+      }
+    },
+    {
+      "id": "offer_f715ec88d61a",
+      "attrs": {
+        "price": 706406,
+        "admin": 131721,
+        "loss_0": 7900,
+        "loss_1": 14600,
+        "loss_2": 9300,
+        "loss_3": 9300,
+        "loss_4": 6500,
+        "loss_5": 1700,
+        "claw_0": 4100,
+        "claw_1": 21800,
+        "claw_2": 13400,
+        "group_cap": 32400,
+        "global_claw": 7600
+      }
+    },
+    {
+      "id": "offer_7b9ed703911e",
+      "attrs": {
+        "price": 452487,
+        "admin": 134963,
+        "loss_0": 3400,
+        "loss_1": 1400,
+        "loss_2": 12600,
+        "loss_3": 10600,
+        "loss_4": 7300,
+        "loss_5": 9900,
+        "claw_0": 12500,
+        "claw_1": 4300,
+        "claw_2": 14700,
+        "group_cap": 17100,
+        "global_claw": 16400
+      }
+    },
+    {
+      "id": "offer_08c4ae44d6b3",
+      "attrs": {
+        "price": 886519,
+        "admin": 145682,
+        "loss_0": 14200,
+        "loss_1": 7800,
+        "loss_2": 14000,
+        "loss_3": 12300,
+        "loss_4": 13500,
+        "loss_5": 8600,
+        "claw_0": 9400,
+        "claw_1": 3300,
+        "claw_2": 17100,
+        "group_cap": 8300,
+        "global_claw": 17700
+      }
+    },
+    {
+      "id": "offer_452b4b108454",
+      "attrs": {
+        "price": 724455,
+        "admin": 158682,
+        "loss_0": 5700,
+        "loss_1": 5200,
+        "loss_2": 8600,
+        "loss_3": 4500,
+        "loss_4": 1100,
+        "loss_5": 8100,
+        "claw_0": 21100,
+        "claw_1": 7700,
+        "claw_2": 18800,
+        "group_cap": 13800,
+        "global_claw": 4900
+      }
+    },
+    {
+      "id": "offer_87e27079aacc",
+      "attrs": {
+        "price": 845690,
+        "admin": 127467,
+        "loss_0": 1200,
+        "loss_1": 13600,
+        "loss_2": 11600,
+        "loss_3": 4500,
+        "loss_4": 12800,
+        "loss_5": 2500,
+        "claw_0": 6600,
+        "claw_1": 5200,
+        "claw_2": 13000,
+        "group_cap": 30200,
+        "global_claw": 15400
+      }
+    },
+    {
+      "id": "offer_2ff2c7a96d73",
+      "attrs": {
+        "price": 805365,
+        "admin": 148715,
+        "loss_0": 14700,
+        "loss_1": 9000,
+        "loss_2": 1100,
+        "loss_3": 6000,
+        "loss_4": 8900,
+        "loss_5": 7800,
+        "claw_0": 9100,
+        "claw_1": 5500,
+        "claw_2": 18900,
+        "group_cap": 13800,
+        "global_claw": 17800
+      }
+    },
+    {
+      "id": "offer_34fdcb985cc6",
+      "attrs": {
+        "price": 576824,
+        "admin": 149378,
+        "loss_0": 13600,
+        "loss_1": 12000,
+        "loss_2": 10400,
+        "loss_3": 1900,
+        "loss_4": 14900,
+        "loss_5": 13100,
+        "claw_0": 5600,
+        "claw_1": 23300,
+        "claw_2": 4500,
+        "group_cap": 8400,
+        "global_claw": 9500
+      }
+    },
+    {
+      "id": "offer_359eb4fc1797",
+      "attrs": {
+        "price": 730393,
+        "admin": 134777,
+        "loss_0": 3000,
+        "loss_1": 9000,
+        "loss_2": 8300,
+        "loss_3": 8700,
+        "loss_4": 9800,
+        "loss_5": 12300,
+        "claw_0": 11000,
+        "claw_1": 13300,
+        "claw_2": 25000,
+        "group_cap": 19800,
+        "global_claw": 14800
+      }
+    },
+    {
+      "id": "offer_bfc013b9599e",
+      "attrs": {
+        "price": 616605,
+        "admin": 132605,
+        "loss_0": 3800,
+        "loss_1": 14000,
+        "loss_2": 8000,
+        "loss_3": 10800,
+        "loss_4": 14300,
+        "loss_5": 600,
+        "claw_0": 8300,
+        "claw_1": 5700,
+        "claw_2": 22600,
+        "group_cap": 28600,
+        "global_claw": 8800
+      }
+    },
+    {
+      "id": "offer_7c62a2332d9f",
+      "attrs": {
+        "price": 878326,
+        "admin": 118903,
+        "loss_0": 1700,
+        "loss_1": 8300,
+        "loss_2": 11500,
+        "loss_3": 12600,
+        "loss_4": 13500,
+        "loss_5": 6900,
+        "claw_0": 15300,
+        "claw_1": 11100,
+        "claw_2": 13300,
+        "group_cap": 22000,
+        "global_claw": 13900
+      }
+    },
+    {
+      "id": "offer_7242850ff229",
+      "attrs": {
+        "price": 796573,
+        "admin": 146065,
+        "loss_0": 14500,
+        "loss_1": 4500,
+        "loss_2": 3600,
+        "loss_3": 10000,
+        "loss_4": 14900,
+        "loss_5": 6500,
+        "claw_0": 6500,
+        "claw_1": 22800,
+        "claw_2": 21700,
+        "group_cap": 23800,
+        "global_claw": 12700
+      }
+    },
+    {
+      "id": "offer_2e3770ecb452",
+      "attrs": {
+        "price": 571352,
+        "admin": 150934,
+        "loss_0": 3900,
+        "loss_1": 10400,
+        "loss_2": 7200,
+        "loss_3": 3100,
+        "loss_4": 3200,
+        "loss_5": 9700,
+        "claw_0": 7700,
+        "claw_1": 6500,
+        "claw_2": 3600,
+        "group_cap": 32600,
+        "global_claw": 4500
+      }
+    },
+    {
+      "id": "offer_755ae9f1d20c",
+      "attrs": {
+        "price": 860182,
+        "admin": 145340,
+        "loss_0": 3100,
+        "loss_1": 2400,
+        "loss_2": 2900,
+        "loss_3": 7600,
+        "loss_4": 7700,
+        "loss_5": 12300,
+        "claw_0": 9900,
+        "claw_1": 16600,
+        "claw_2": 23800,
+        "group_cap": 15100,
+        "global_claw": 12800
+      }
+    },
+    {
+      "id": "offer_6754ed958faa",
+      "attrs": {
+        "price": 490927,
+        "admin": 138554,
+        "loss_0": 14900,
+        "loss_1": 14600,
+        "loss_2": 7600,
+        "loss_3": 13900,
+        "loss_4": 7200,
+        "loss_5": 3200,
+        "claw_0": 7500,
+        "claw_1": 22300,
+        "claw_2": 11100,
+        "group_cap": 29300,
+        "global_claw": 11700
+      }
+    },
+    {
+      "id": "offer_e38d358986a5",
+      "attrs": {
+        "price": 607105,
+        "admin": 155871,
+        "loss_0": 6300,
+        "loss_1": 6900,
+        "loss_2": 10200,
+        "loss_3": 4500,
+        "loss_4": 1800,
+        "loss_5": 5900,
+        "claw_0": 23300,
+        "claw_1": 3900,
+        "claw_2": 24900,
+        "group_cap": 18500,
+        "global_claw": 6200
+      }
+    },
+    {
+      "id": "offer_78d936f0a5b4",
+      "attrs": {
+        "price": 453475,
+        "admin": 142518,
+        "loss_0": 10700,
+        "loss_1": 3200,
+        "loss_2": 12400,
+        "loss_3": 4700,
+        "loss_4": 1700,
+        "loss_5": 10400,
+        "claw_0": 14300,
+        "claw_1": 12600,
+        "claw_2": 4900,
+        "group_cap": 24300,
+        "global_claw": 10900
+      }
+    },
+    {
+      "id": "offer_8fafdc087032",
+      "attrs": {
+        "price": 457712,
+        "admin": 145388,
+        "loss_0": 11800,
+        "loss_1": 11800,
+        "loss_2": 7400,
+        "loss_3": 4000,
+        "loss_4": 8000,
+        "loss_5": 6100,
+        "claw_0": 11200,
+        "claw_1": 21100,
+        "claw_2": 21100,
+        "group_cap": 14300,
+        "global_claw": 12000
+      }
+    },
+    {
+      "id": "offer_80c3569313eb",
+      "attrs": {
+        "price": 544784,
+        "admin": 146410,
+        "loss_0": 12900,
+        "loss_1": 10300,
+        "loss_2": 800,
+        "loss_3": 14600,
+        "loss_4": 11500,
+        "loss_5": 4300,
+        "claw_0": 17100,
+        "claw_1": 17300,
+        "claw_2": 7500,
+        "group_cap": 17300,
+        "global_claw": 7900
+      }
+    },
+    {
+      "id": "offer_08cda814e85b",
+      "attrs": {
+        "price": 461459,
+        "admin": 118925,
+        "loss_0": 11900,
+        "loss_1": 8600,
+        "loss_2": 14400,
+        "loss_3": 14800,
+        "loss_4": 11400,
+        "loss_5": 6900,
+        "claw_0": 2100,
+        "claw_1": 16300,
+        "claw_2": 11200,
+        "group_cap": 30900,
+        "global_claw": 17400
+      }
+    },
+    {
+      "id": "offer_dedd0b56cca1",
+      "attrs": {
+        "price": 673479,
+        "admin": 148671,
+        "loss_0": 500,
+        "loss_1": 7700,
+        "loss_2": 14800,
+        "loss_3": 14600,
+        "loss_4": 6700,
+        "loss_5": 5800,
+        "claw_0": 8600,
+        "claw_1": 11900,
+        "claw_2": 3400,
+        "group_cap": 25100,
+        "global_claw": 13400
+      }
+    },
+    {
+      "id": "offer_f42f0b906dd5",
+      "attrs": {
+        "price": 786597,
+        "admin": 150990,
+        "loss_0": 13900,
+        "loss_1": 1800,
+        "loss_2": 9500,
+        "loss_3": 5600,
+        "loss_4": 5100,
+        "loss_5": 7000,
+        "claw_0": 20300,
+        "claw_1": 20200,
+        "claw_2": 8900,
+        "group_cap": 17600,
+        "global_claw": 3000
+      }
+    },
+    {
+      "id": "offer_12d718d4627a",
+      "attrs": {
+        "price": 716041,
+        "admin": 151216,
+        "loss_0": 13700,
+        "loss_1": 4400,
+        "loss_2": 6600,
+        "loss_3": 12100,
+        "loss_4": 2500,
+        "loss_5": 4800,
+        "claw_0": 2600,
+        "claw_1": 12400,
+        "claw_2": 21200,
+        "group_cap": 10500,
+        "global_claw": 17000
+      }
+    },
+    {
+      "id": "offer_e5fb28470b40",
+      "attrs": {
+        "price": 565103,
+        "admin": 129898,
+        "loss_0": 9600,
+        "loss_1": 13400,
+        "loss_2": 2200,
+        "loss_3": 10400,
+        "loss_4": 3800,
+        "loss_5": 13600,
+        "claw_0": 11900,
+        "claw_1": 22300,
+        "claw_2": 18300,
+        "group_cap": 25400,
+        "global_claw": 12000
+      }
+    },
+    {
+      "id": "offer_589f8c346cbc",
+      "attrs": {
+        "price": 573049,
+        "admin": 139056,
+        "loss_0": 6600,
+        "loss_1": 8000,
+        "loss_2": 8000,
+        "loss_3": 7800,
+        "loss_4": 1200,
+        "loss_5": 14800,
+        "claw_0": 24800,
+        "claw_1": 12000,
+        "claw_2": 21700,
+        "group_cap": 11100,
+        "global_claw": 17400
+      }
+    },
+    {
+      "id": "offer_6e3ab91447ed",
+      "attrs": {
+        "price": 839541,
+        "admin": 124194,
+        "loss_0": 13400,
+        "loss_1": 2700,
+        "loss_2": 13300,
+        "loss_3": 15000,
+        "loss_4": 6500,
+        "loss_5": 13000,
+        "claw_0": 24600,
+        "claw_1": 21700,
+        "claw_2": 7600,
+        "group_cap": 24100,
+        "global_claw": 11300
+      }
+    },
+    {
+      "id": "offer_20a85fed268d",
+      "attrs": {
+        "price": 705832,
+        "admin": 141328,
+        "loss_0": 11600,
+        "loss_1": 9600,
+        "loss_2": 700,
+        "loss_3": 3900,
+        "loss_4": 3000,
+        "loss_5": 12900,
+        "claw_0": 18100,
+        "claw_1": 20600,
+        "claw_2": 19300,
+        "group_cap": 14700,
+        "global_claw": 18000
+      }
+    },
+    {
+      "id": "offer_cc072ffa6fd6",
+      "attrs": {
+        "price": 872186,
+        "admin": 158631,
+        "loss_0": 8500,
+        "loss_1": 10500,
+        "loss_2": 3700,
+        "loss_3": 4300,
+        "loss_4": 600,
+        "loss_5": 4800,
+        "claw_0": 5000,
+        "claw_1": 5700,
+        "claw_2": 24800,
+        "group_cap": 16500,
+        "global_claw": 17800
+      }
+    },
+    {
+      "id": "offer_d64f2711251b",
+      "attrs": {
+        "price": 574347,
+        "admin": 166564,
+        "loss_0": 1400,
+        "loss_1": 7500,
+        "loss_2": 5200,
+        "loss_3": 1800,
+        "loss_4": 6100,
+        "loss_5": 9700,
+        "claw_0": 24000,
+        "claw_1": 22400,
+        "claw_2": 17200,
+        "group_cap": 11900,
+        "global_claw": 10000
+      }
+    },
+    {
+      "id": "offer_983f64beed63",
+      "attrs": {
+        "price": 512639,
+        "admin": 151715,
+        "loss_0": 700,
+        "loss_1": 11000,
+        "loss_2": 9700,
+        "loss_3": 3300,
+        "loss_4": 9400,
+        "loss_5": 13600,
+        "claw_0": 2800,
+        "claw_1": 7000,
+        "claw_2": 3200,
+        "group_cap": 9100,
+        "global_claw": 13300
+      }
+    },
+    {
+      "id": "offer_38203d2686c5",
+      "attrs": {
+        "price": 794630,
+        "admin": 146309,
+        "loss_0": 14200,
+        "loss_1": 9700,
+        "loss_2": 800,
+        "loss_3": 2600,
+        "loss_4": 8700,
+        "loss_5": 7400,
+        "claw_0": 6200,
+        "claw_1": 18800,
+        "claw_2": 11800,
+        "group_cap": 17400,
+        "global_claw": 10600
+      }
+    },
+    {
+      "id": "offer_469219c92da4",
+      "attrs": {
+        "price": 752068,
+        "admin": 130116,
+        "loss_0": 4500,
+        "loss_1": 1700,
+        "loss_2": 10600,
+        "loss_3": 6900,
+        "loss_4": 9300,
+        "loss_5": 8100,
+        "claw_0": 11900,
+        "claw_1": 19000,
+        "claw_2": 15300,
+        "group_cap": 29300,
+        "global_claw": 11200
+      }
+    },
+    {
+      "id": "offer_dafb3a435b03",
+      "attrs": {
+        "price": 750496,
+        "admin": 145577,
+        "loss_0": 13300,
+        "loss_1": 900,
+        "loss_2": 12300,
+        "loss_3": 7200,
+        "loss_4": 3900,
+        "loss_5": 8600,
+        "claw_0": 13600,
+        "claw_1": 8900,
+        "claw_2": 20600,
+        "group_cap": 22400,
+        "global_claw": 7300
+      }
+    },
+    {
+      "id": "offer_dae8957499bc",
+      "attrs": {
+        "price": 833557,
+        "admin": 146319,
+        "loss_0": 7700,
+        "loss_1": 13200,
+        "loss_2": 5400,
+        "loss_3": 9600,
+        "loss_4": 9300,
+        "loss_5": 7900,
+        "claw_0": 2200,
+        "claw_1": 10200,
+        "claw_2": 6400,
+        "group_cap": 21400,
+        "global_claw": 14800
+      }
+    },
+    {
+      "id": "offer_10a8014ab023",
+      "attrs": {
+        "price": 736674,
+        "admin": 150565,
+        "loss_0": 5800,
+        "loss_1": 9700,
+        "loss_2": 3600,
+        "loss_3": 10400,
+        "loss_4": 4400,
+        "loss_5": 4400,
+        "claw_0": 2400,
+        "claw_1": 20500,
+        "claw_2": 10500,
+        "group_cap": 21800,
+        "global_claw": 4000
+      }
+    },
+    {
+      "id": "offer_dfad3424adee",
+      "attrs": {
+        "price": 473903,
+        "admin": 144435,
+        "loss_0": 10200,
+        "loss_1": 3400,
+        "loss_2": 1800,
+        "loss_3": 12700,
+        "loss_4": 13500,
+        "loss_5": 14600,
+        "claw_0": 7300,
+        "claw_1": 3500,
+        "claw_2": 15100,
+        "group_cap": 32100,
+        "global_claw": 6500
+      }
+    },
+    {
+      "id": "offer_6839fa3d3de7",
+      "attrs": {
+        "price": 699217,
+        "admin": 149631,
+        "loss_0": 3200,
+        "loss_1": 2800,
+        "loss_2": 2800,
+        "loss_3": 8500,
+        "loss_4": 10900,
+        "loss_5": 3200,
+        "claw_0": 19000,
+        "claw_1": 7300,
+        "claw_2": 11100,
+        "group_cap": 18800,
+        "global_claw": 6900
+      }
+    },
+    {
+      "id": "offer_6281689e5f8e",
+      "attrs": {
+        "price": 554226,
+        "admin": 142239,
+        "loss_0": 8500,
+        "loss_1": 10200,
+        "loss_2": 8500,
+        "loss_3": 1800,
+        "loss_4": 9800,
+        "loss_5": 10100,
+        "claw_0": 16900,
+        "claw_1": 21900,
+        "claw_2": 11900,
+        "group_cap": 22500,
+        "global_claw": 10800
+      }
+    },
+    {
+      "id": "offer_1114d114ae88",
+      "attrs": {
+        "price": 819798,
+        "admin": 141176,
+        "loss_0": 700,
+        "loss_1": 5100,
+        "loss_2": 11100,
+        "loss_3": 3500,
+        "loss_4": 6600,
+        "loss_5": 1700,
+        "claw_0": 14700,
+        "claw_1": 15800,
+        "claw_2": 22200,
+        "group_cap": 33300,
+        "global_claw": 4000
+      }
+    },
+    {
+      "id": "offer_7f0c4a64e4d2",
+      "attrs": {
+        "price": 520922,
+        "admin": 140117,
+        "loss_0": 6600,
+        "loss_1": 14500,
+        "loss_2": 6300,
+        "loss_3": 2100,
+        "loss_4": 7400,
+        "loss_5": 10600,
+        "claw_0": 7200,
+        "claw_1": 14600,
+        "claw_2": 20100,
+        "group_cap": 21000,
+        "global_claw": 8100
+      }
+    },
+    {
+      "id": "offer_54c848f13b5c",
+      "attrs": {
+        "price": 622513,
+        "admin": 148798,
+        "loss_0": 9300,
+        "loss_1": 11900,
+        "loss_2": 14200,
+        "loss_3": 14400,
+        "loss_4": 5200,
+        "loss_5": 4400,
+        "claw_0": 2200,
+        "claw_1": 13100,
+        "claw_2": 15300,
+        "group_cap": 25200,
+        "global_claw": 7100
+      }
+    },
+    {
+      "id": "offer_31b4f7378886",
+      "attrs": {
+        "price": 493521,
+        "admin": 143222,
+        "loss_0": 4700,
+        "loss_1": 14600,
+        "loss_2": 13000,
+        "loss_3": 6200,
+        "loss_4": 500,
+        "loss_5": 3800,
+        "claw_0": 14300,
+        "claw_1": 5100,
+        "claw_2": 16200,
+        "group_cap": 17500,
+        "global_claw": 11900
+      }
+    },
+    {
+      "id": "offer_0eb9221a8cd5",
+      "attrs": {
+        "price": 655504,
+        "admin": 151207,
+        "loss_0": 4700,
+        "loss_1": 3400,
+        "loss_2": 5900,
+        "loss_3": 7800,
+        "loss_4": 14600,
+        "loss_5": 4900,
+        "claw_0": 16700,
+        "claw_1": 7400,
+        "claw_2": 15100,
+        "group_cap": 21100,
+        "global_claw": 5800
+      }
+    },
+    {
+      "id": "offer_eb739858d8ab",
+      "attrs": {
+        "price": 589586,
+        "admin": 140963,
+        "loss_0": 13100,
+        "loss_1": 13900,
+        "loss_2": 4900,
+        "loss_3": 2700,
+        "loss_4": 6100,
+        "loss_5": 4700,
+        "claw_0": 16000,
+        "claw_1": 7700,
+        "claw_2": 14700,
+        "group_cap": 17100,
+        "global_claw": 17500
+      }
+    },
+    {
+      "id": "offer_a08c245c41e7",
+      "attrs": {
+        "price": 744411,
+        "admin": 146272,
+        "loss_0": 4800,
+        "loss_1": 10000,
+        "loss_2": 5900,
+        "loss_3": 10300,
+        "loss_4": 4100,
+        "loss_5": 11300,
+        "claw_0": 14900,
+        "claw_1": 19200,
+        "claw_2": 13600,
+        "group_cap": 18500,
+        "global_claw": 5300
+      }
+    },
+    {
+      "id": "offer_1a01008fd307",
+      "attrs": {
+        "price": 456922,
+        "admin": 152138,
+        "loss_0": 3700,
+        "loss_1": 4200,
+        "loss_2": 15000,
+        "loss_3": 9800,
+        "loss_4": 4000,
+        "loss_5": 11200,
+        "claw_0": 19800,
+        "claw_1": 18400,
+        "claw_2": 15500,
+        "group_cap": 17600,
+        "global_claw": 9100
+      }
+    },
+    {
+      "id": "offer_a26537b04a7b",
+      "attrs": {
+        "price": 742699,
+        "admin": 150915,
+        "loss_0": 5100,
+        "loss_1": 1900,
+        "loss_2": 2200,
+        "loss_3": 12800,
+        "loss_4": 4300,
+        "loss_5": 2500,
+        "claw_0": 16000,
+        "claw_1": 18200,
+        "claw_2": 2800,
+        "group_cap": 22300,
+        "global_claw": 8600
+      }
+    },
+    {
+      "id": "offer_b6925073ee68",
+      "attrs": {
+        "price": 651626,
+        "admin": 132297,
+        "loss_0": 8400,
+        "loss_1": 8800,
+        "loss_2": 7500,
+        "loss_3": 2600,
+        "loss_4": 14600,
+        "loss_5": 14900,
+        "claw_0": 3400,
+        "claw_1": 19700,
+        "claw_2": 24200,
+        "group_cap": 26900,
+        "global_claw": 6100
+      }
+    },
+    {
+      "id": "offer_05ac71e482a4",
+      "attrs": {
+        "price": 689752,
+        "admin": 161526,
+        "loss_0": 2500,
+        "loss_1": 6600,
+        "loss_2": 3100,
+        "loss_3": 9500,
+        "loss_4": 7600,
+        "loss_5": 7500,
+        "claw_0": 3900,
+        "claw_1": 7500,
+        "claw_2": 8200,
+        "group_cap": 12500,
+        "global_claw": 5500
+      }
+    },
+    {
+      "id": "offer_729f410d4fb0",
+      "attrs": {
+        "price": 681901,
+        "admin": 125264,
+        "loss_0": 9100,
+        "loss_1": 11600,
+        "loss_2": 8500,
+        "loss_3": 4800,
+        "loss_4": 14200,
+        "loss_5": 4900,
+        "claw_0": 7900,
+        "claw_1": 14500,
+        "claw_2": 15200,
+        "group_cap": 32900,
+        "global_claw": 9800
+      }
+    },
+    {
+      "id": "offer_b7bcad296d62",
+      "attrs": {
+        "price": 562710,
+        "admin": 145902,
+        "loss_0": 14100,
+        "loss_1": 12100,
+        "loss_2": 6600,
+        "loss_3": 11900,
+        "loss_4": 9500,
+        "loss_5": 3900,
+        "claw_0": 12200,
+        "claw_1": 9100,
+        "claw_2": 7800,
+        "group_cap": 25400,
+        "global_claw": 11300
+      }
+    },
+    {
+      "id": "offer_0d05436925d5",
+      "attrs": {
+        "price": 633405,
+        "admin": 143634,
+        "loss_0": 8100,
+        "loss_1": 13700,
+        "loss_2": 12500,
+        "loss_3": 6500,
+        "loss_4": 6600,
+        "loss_5": 4900,
+        "claw_0": 16300,
+        "claw_1": 3300,
+        "claw_2": 12900,
+        "group_cap": 9200,
+        "global_claw": 11800
+      }
+    },
+    {
+      "id": "offer_3e8dd2580abf",
+      "attrs": {
+        "price": 454543,
+        "admin": 136253,
+        "loss_0": 1400,
+        "loss_1": 6700,
+        "loss_2": 7600,
+        "loss_3": 12700,
+        "loss_4": 2700,
+        "loss_5": 14500,
+        "claw_0": 8400,
+        "claw_1": 5300,
+        "claw_2": 18800,
+        "group_cap": 11400,
+        "global_claw": 11200
+      }
+    },
+    {
+      "id": "offer_2b99e1f79640",
+      "attrs": {
+        "price": 459986,
+        "admin": 133180,
+        "loss_0": 14400,
+        "loss_1": 7800,
+        "loss_2": 1500,
+        "loss_3": 13500,
+        "loss_4": 2800,
+        "loss_5": 11600,
+        "claw_0": 13700,
+        "claw_1": 24600,
+        "claw_2": 10000,
+        "group_cap": 33900,
+        "global_claw": 16600
+      }
+    },
+    {
+      "id": "offer_bddc65899b3b",
+      "attrs": {
+        "price": 464041,
+        "admin": 147114,
+        "loss_0": 3400,
+        "loss_1": 8400,
+        "loss_2": 3400,
+        "loss_3": 7300,
+        "loss_4": 2400,
+        "loss_5": 7100,
+        "claw_0": 21800,
+        "claw_1": 19300,
+        "claw_2": 20900,
+        "group_cap": 31100,
+        "global_claw": 10600
+      }
+    },
+    {
+      "id": "offer_98bfba0f5e35",
+      "attrs": {
+        "price": 862431,
+        "admin": 162148,
+        "loss_0": 8900,
+        "loss_1": 1400,
+        "loss_2": 3900,
+        "loss_3": 6700,
+        "loss_4": 6500,
+        "loss_5": 1800,
+        "claw_0": 10700,
+        "claw_1": 23500,
+        "claw_2": 14700,
+        "group_cap": 11100,
+        "global_claw": 11100
+      }
+    },
+    {
+      "id": "offer_a925047f6414",
+      "attrs": {
+        "price": 805913,
+        "admin": 150626,
+        "loss_0": 12300,
+        "loss_1": 1700,
+        "loss_2": 13400,
+        "loss_3": 5300,
+        "loss_4": 3400,
+        "loss_5": 13000,
+        "claw_0": 17800,
+        "claw_1": 19900,
+        "claw_2": 4400,
+        "group_cap": 8700,
+        "global_claw": 3200
+      }
+    },
+    {
+      "id": "offer_9de6eeae44fd",
+      "attrs": {
+        "price": 824072,
+        "admin": 143885,
+        "loss_0": 9400,
+        "loss_1": 8000,
+        "loss_2": 7100,
+        "loss_3": 6300,
+        "loss_4": 2800,
+        "loss_5": 10700,
+        "claw_0": 3100,
+        "claw_1": 10400,
+        "claw_2": 5000,
+        "group_cap": 26900,
+        "global_claw": 13700
+      }
+    },
+    {
+      "id": "offer_3a4b35fabef7",
+      "attrs": {
+        "price": 779627,
+        "admin": 153598,
+        "loss_0": 14400,
+        "loss_1": 7400,
+        "loss_2": 2600,
+        "loss_3": 13900,
+        "loss_4": 14300,
+        "loss_5": 4200,
+        "claw_0": 5000,
+        "claw_1": 22800,
+        "claw_2": 20800,
+        "group_cap": 10000,
+        "global_claw": 14900
+      }
+    },
+    {
+      "id": "offer_a9cfd69f484f",
+      "attrs": {
+        "price": 526673,
+        "admin": 117763,
+        "loss_0": 10200,
+        "loss_1": 14000,
+        "loss_2": 12900,
+        "loss_3": 8100,
+        "loss_4": 8300,
+        "loss_5": 4100,
+        "claw_0": 22700,
+        "claw_1": 17800,
+        "claw_2": 18000,
+        "group_cap": 32500,
+        "global_claw": 12300
+      }
+    },
+    {
+      "id": "offer_b5f6a56c00c5",
+      "attrs": {
+        "price": 822364,
+        "admin": 149764,
+        "loss_0": 12400,
+        "loss_1": 7500,
+        "loss_2": 11300,
+        "loss_3": 1100,
+        "loss_4": 13500,
+        "loss_5": 11900,
+        "claw_0": 9800,
+        "claw_1": 3500,
+        "claw_2": 6700,
+        "group_cap": 24600,
+        "global_claw": 6700
+      }
+    },
+    {
+      "id": "offer_ac31fc70d85b",
+      "attrs": {
+        "price": 458857,
+        "admin": 148244,
+        "loss_0": 2700,
+        "loss_1": 8200,
+        "loss_2": 9000,
+        "loss_3": 8300,
+        "loss_4": 11300,
+        "loss_5": 6600,
+        "claw_0": 19300,
+        "claw_1": 8200,
+        "claw_2": 16800,
+        "group_cap": 24000,
+        "global_claw": 4800
+      }
+    },
+    {
+      "id": "offer_331e3b14aeba",
+      "attrs": {
+        "price": 455017,
+        "admin": 130770,
+        "loss_0": 7800,
+        "loss_1": 13100,
+        "loss_2": 14500,
+        "loss_3": 5100,
+        "loss_4": 11400,
+        "loss_5": 12600,
+        "claw_0": 14400,
+        "claw_1": 5700,
+        "claw_2": 5500,
+        "group_cap": 25800,
+        "global_claw": 4600
+      }
+    },
+    {
+      "id": "offer_efa95e50fb02",
+      "attrs": {
+        "price": 711914,
+        "admin": 151522,
+        "loss_0": 12600,
+        "loss_1": 3500,
+        "loss_2": 5700,
+        "loss_3": 14300,
+        "loss_4": 4600,
+        "loss_5": 1200,
+        "claw_0": 9600,
+        "claw_1": 16100,
+        "claw_2": 11700,
+        "group_cap": 25200,
+        "global_claw": 14400
+      }
+    },
+    {
+      "id": "offer_df52f78c3614",
+      "attrs": {
+        "price": 741823,
+        "admin": 135590,
+        "loss_0": 3200,
+        "loss_1": 11100,
+        "loss_2": 12900,
+        "loss_3": 1500,
+        "loss_4": 8200,
+        "loss_5": 6200,
+        "claw_0": 21400,
+        "claw_1": 10600,
+        "claw_2": 2600,
+        "group_cap": 25300,
+        "global_claw": 9300
+      }
+    },
+    {
+      "id": "offer_e874d9bcb134",
+      "attrs": {
+        "price": 830795,
+        "admin": 147015,
+        "loss_0": 13000,
+        "loss_1": 9200,
+        "loss_2": 1800,
+        "loss_3": 11400,
+        "loss_4": 3000,
+        "loss_5": 5000,
+        "claw_0": 12000,
+        "claw_1": 20300,
+        "claw_2": 17400,
+        "group_cap": 27800,
+        "global_claw": 16000
+      }
+    },
+    {
+      "id": "offer_95ae9ee929f0",
+      "attrs": {
+        "price": 485572,
+        "admin": 138063,
+        "loss_0": 500,
+        "loss_1": 9000,
+        "loss_2": 14900,
+        "loss_3": 7400,
+        "loss_4": 9200,
+        "loss_5": 10400,
+        "claw_0": 5800,
+        "claw_1": 20900,
+        "claw_2": 6400,
+        "group_cap": 26300,
+        "global_claw": 7900
+      }
+    },
+    {
+      "id": "offer_f883d341945c",
+      "attrs": {
+        "price": 533305,
+        "admin": 151280,
+        "loss_0": 600,
+        "loss_1": 14800,
+        "loss_2": 14800,
+        "loss_3": 5000,
+        "loss_4": 2500,
+        "loss_5": 11600,
+        "claw_0": 18700,
+        "claw_1": 6100,
+        "claw_2": 18600,
+        "group_cap": 15900,
+        "global_claw": 5300
+      }
+    },
+    {
+      "id": "offer_a450d3eb49ce",
+      "attrs": {
+        "price": 712992,
+        "admin": 162572,
+        "loss_0": 13400,
+        "loss_1": 600,
+        "loss_2": 7400,
+        "loss_3": 5400,
+        "loss_4": 12500,
+        "loss_5": 1600,
+        "claw_0": 5200,
+        "claw_1": 22900,
+        "claw_2": 23500,
+        "group_cap": 10600,
+        "global_claw": 14400
+      }
+    },
+    {
+      "id": "offer_22d19eec1560",
+      "attrs": {
+        "price": 540518,
+        "admin": 150069,
+        "loss_0": 2000,
+        "loss_1": 12900,
+        "loss_2": 8900,
+        "loss_3": 9100,
+        "loss_4": 5300,
+        "loss_5": 5600,
+        "claw_0": 4300,
+        "claw_1": 9800,
+        "claw_2": 14600,
+        "group_cap": 16500,
+        "global_claw": 15200
+      }
+    },
+    {
+      "id": "offer_aa81c593507f",
+      "attrs": {
+        "price": 898966,
+        "admin": 173477,
+        "loss_0": 11600,
+        "loss_1": 900,
+        "loss_2": 4100,
+        "loss_3": 700,
+        "loss_4": 8100,
+        "loss_5": 2600,
+        "claw_0": 15200,
+        "claw_1": 13000,
+        "claw_2": 17300,
+        "group_cap": 16600,
+        "global_claw": 6500
+      }
+    },
+    {
+      "id": "offer_1d23969604f8",
+      "attrs": {
+        "price": 730846,
+        "admin": 152059,
+        "loss_0": 4200,
+        "loss_1": 9600,
+        "loss_2": 9100,
+        "loss_3": 14000,
+        "loss_4": 2500,
+        "loss_5": 13200,
+        "claw_0": 19700,
+        "claw_1": 2900,
+        "claw_2": 7100,
+        "group_cap": 17300,
+        "global_claw": 3300
+      }
+    },
+    {
+      "id": "offer_929922edb511",
+      "attrs": {
+        "price": 465868,
+        "admin": 164236,
+        "loss_0": 1800,
+        "loss_1": 3500,
+        "loss_2": 14400,
+        "loss_3": 14900,
+        "loss_4": 2100,
+        "loss_5": 1800,
+        "claw_0": 9000,
+        "claw_1": 10300,
+        "claw_2": 8300,
+        "group_cap": 13100,
+        "global_claw": 7700
+      }
+    },
+    {
+      "id": "offer_9f1994a1f42c",
+      "attrs": {
+        "price": 510024,
+        "admin": 126581,
+        "loss_0": 5000,
+        "loss_1": 12600,
+        "loss_2": 14900,
+        "loss_3": 1900,
+        "loss_4": 12000,
+        "loss_5": 7300,
+        "claw_0": 13900,
+        "claw_1": 20900,
+        "claw_2": 9800,
+        "group_cap": 27700,
+        "global_claw": 11200
+      }
+    },
+    {
+      "id": "offer_b7092fb31016",
+      "attrs": {
+        "price": 839187,
+        "admin": 142638,
+        "loss_0": 8300,
+        "loss_1": 11800,
+        "loss_2": 3200,
+        "loss_3": 14200,
+        "loss_4": 3100,
+        "loss_5": 2000,
+        "claw_0": 22300,
+        "claw_1": 13200,
+        "claw_2": 22900,
+        "group_cap": 24500,
+        "global_claw": 7000
+      }
+    },
+    {
+      "id": "offer_fe375971d760",
+      "attrs": {
+        "price": 746781,
+        "admin": 159283,
+        "loss_0": 5000,
+        "loss_1": 1100,
+        "loss_2": 2200,
+        "loss_3": 14600,
+        "loss_4": 9900,
+        "loss_5": 2100,
+        "claw_0": 24100,
+        "claw_1": 13300,
+        "claw_2": 21100,
+        "group_cap": 25700,
+        "global_claw": 3100
+      }
+    },
+    {
+      "id": "offer_7dba2c4cdd87",
+      "attrs": {
+        "price": 487428,
+        "admin": 146480,
+        "loss_0": 12600,
+        "loss_1": 2100,
+        "loss_2": 9600,
+        "loss_3": 14700,
+        "loss_4": 11700,
+        "loss_5": 5900,
+        "claw_0": 6400,
+        "claw_1": 13800,
+        "claw_2": 9200,
+        "group_cap": 11200,
+        "global_claw": 16500
+      }
+    },
+    {
+      "id": "offer_7a7159b0e582",
+      "attrs": {
+        "price": 610388,
+        "admin": 168558,
+        "loss_0": 9700,
+        "loss_1": 2200,
+        "loss_2": 10500,
+        "loss_3": 5600,
+        "loss_4": 2800,
+        "loss_5": 6200,
+        "claw_0": 13300,
+        "claw_1": 3100,
+        "claw_2": 24000,
+        "group_cap": 15900,
+        "global_claw": 6200
+      }
+    },
+    {
+      "id": "offer_4cf5b8144302",
+      "attrs": {
+        "price": 666969,
+        "admin": 146694,
+        "loss_0": 12300,
+        "loss_1": 4100,
+        "loss_2": 12700,
+        "loss_3": 10900,
+        "loss_4": 12000,
+        "loss_5": 1900,
+        "claw_0": 8200,
+        "claw_1": 14600,
+        "claw_2": 18000,
+        "group_cap": 12200,
+        "global_claw": 13200
+      }
+    },
+    {
+      "id": "offer_f5e9ff3a99c9",
+      "attrs": {
+        "price": 691145,
+        "admin": 135318,
+        "loss_0": 10800,
+        "loss_1": 9300,
+        "loss_2": 3100,
+        "loss_3": 2800,
+        "loss_4": 13300,
+        "loss_5": 1600,
+        "claw_0": 20500,
+        "claw_1": 6400,
+        "claw_2": 21500,
+        "group_cap": 28100,
+        "global_claw": 12700
+      }
+    },
+    {
+      "id": "offer_7b97a7336aa2",
+      "attrs": {
+        "price": 485136,
+        "admin": 152140,
+        "loss_0": 6700,
+        "loss_1": 12500,
+        "loss_2": 1300,
+        "loss_3": 5700,
+        "loss_4": 4600,
+        "loss_5": 14900,
+        "claw_0": 19600,
+        "claw_1": 22100,
+        "claw_2": 12100,
+        "group_cap": 10200,
+        "global_claw": 12800
+      }
+    },
+    {
+      "id": "offer_27ebf6049f6c",
+      "attrs": {
+        "price": 773683,
+        "admin": 137116,
+        "loss_0": 10800,
+        "loss_1": 14500,
+        "loss_2": 8100,
+        "loss_3": 1700,
+        "loss_4": 3600,
+        "loss_5": 7700,
+        "claw_0": 24000,
+        "claw_1": 21500,
+        "claw_2": 17600,
+        "group_cap": 30600,
+        "global_claw": 9000
+      }
+    },
+    {
+      "id": "offer_7bc0407d641c",
+      "attrs": {
+        "price": 627489,
+        "admin": 139010,
+        "loss_0": 600,
+        "loss_1": 11000,
+        "loss_2": 1600,
+        "loss_3": 12600,
+        "loss_4": 13800,
+        "loss_5": 5900,
+        "claw_0": 9700,
+        "claw_1": 7900,
+        "claw_2": 24400,
+        "group_cap": 25900,
+        "global_claw": 14400
+      }
+    },
+    {
+      "id": "offer_180e0de75984",
+      "attrs": {
+        "price": 543339,
+        "admin": 145352,
+        "loss_0": 1300,
+        "loss_1": 12300,
+        "loss_2": 11000,
+        "loss_3": 9300,
+        "loss_4": 12600,
+        "loss_5": 8700,
+        "claw_0": 12500,
+        "claw_1": 17300,
+        "claw_2": 3600,
+        "group_cap": 9200,
+        "global_claw": 3800
+      }
+    },
+    {
+      "id": "offer_fcfc1552f56e",
+      "attrs": {
+        "price": 569652,
+        "admin": 162500,
+        "loss_0": 3700,
+        "loss_1": 1200,
+        "loss_2": 7600,
+        "loss_3": 3100,
+        "loss_4": 5800,
+        "loss_5": 5600,
+        "claw_0": 6500,
+        "claw_1": 7200,
+        "claw_2": 19400,
+        "group_cap": 18800,
+        "global_claw": 4800
+      }
+    },
+    {
+      "id": "offer_dace7caf1778",
+      "attrs": {
+        "price": 634437,
+        "admin": 150682,
+        "loss_0": 11100,
+        "loss_1": 13100,
+        "loss_2": 3100,
+        "loss_3": 8700,
+        "loss_4": 800,
+        "loss_5": 11800,
+        "claw_0": 6500,
+        "claw_1": 2600,
+        "claw_2": 6800,
+        "group_cap": 11000,
+        "global_claw": 14600
+      }
+    },
+    {
+      "id": "offer_bc2d7fc9421e",
+      "attrs": {
+        "price": 453428,
+        "admin": 163680,
+        "loss_0": 9400,
+        "loss_1": 9200,
+        "loss_2": 2100,
+        "loss_3": 7900,
+        "loss_4": 4200,
+        "loss_5": 11500,
+        "claw_0": 15500,
+        "claw_1": 6000,
+        "claw_2": 8600,
+        "group_cap": 9000,
+        "global_claw": 12500
+      }
+    },
+    {
+      "id": "offer_87ce07bf09ab",
+      "attrs": {
+        "price": 776686,
+        "admin": 133713,
+        "loss_0": 1400,
+        "loss_1": 12900,
+        "loss_2": 14200,
+        "loss_3": 4400,
+        "loss_4": 3100,
+        "loss_5": 4600,
+        "claw_0": 16700,
+        "claw_1": 21000,
+        "claw_2": 16900,
+        "group_cap": 30400,
+        "global_claw": 14600
+      }
+    },
+    {
+      "id": "offer_582a6827fbda",
+      "attrs": {
+        "price": 613064,
+        "admin": 136352,
+        "loss_0": 7500,
+        "loss_1": 13800,
+        "loss_2": 10300,
+        "loss_3": 3800,
+        "loss_4": 12900,
+        "loss_5": 7600,
+        "claw_0": 18900,
+        "claw_1": 15300,
+        "claw_2": 19800,
+        "group_cap": 16700,
+        "global_claw": 4200
+      }
+    },
+    {
+      "id": "offer_4a58237c4bf1",
+      "attrs": {
+        "price": 453613,
+        "admin": 155637,
+        "loss_0": 3700,
+        "loss_1": 7800,
+        "loss_2": 4800,
+        "loss_3": 6900,
+        "loss_4": 6900,
+        "loss_5": 3400,
+        "claw_0": 13700,
+        "claw_1": 6600,
+        "claw_2": 11200,
+        "group_cap": 15600,
+        "global_claw": 15500
+      }
+    },
+    {
+      "id": "offer_02267562b79a",
+      "attrs": {
+        "price": 885743,
+        "admin": 149772,
+        "loss_0": 10900,
+        "loss_1": 6400,
+        "loss_2": 7900,
+        "loss_3": 10700,
+        "loss_4": 12400,
+        "loss_5": 6100,
+        "claw_0": 20700,
+        "claw_1": 8300,
+        "claw_2": 15400,
+        "group_cap": 19800,
+        "global_claw": 10100
+      }
+    },
+    {
+      "id": "offer_bb7496bb8aaa",
+      "attrs": {
+        "price": 876295,
+        "admin": 153464,
+        "loss_0": 3500,
+        "loss_1": 11000,
+        "loss_2": 3600,
+        "loss_3": 4300,
+        "loss_4": 8400,
+        "loss_5": 8800,
+        "claw_0": 4900,
+        "claw_1": 14000,
+        "claw_2": 14800,
+        "group_cap": 17000,
+        "global_claw": 8600
+      }
+    },
+    {
+      "id": "offer_d0c6a8e4a5bc",
+      "attrs": {
+        "price": 732192,
+        "admin": 139251,
+        "loss_0": 8200,
+        "loss_1": 14600,
+        "loss_2": 6200,
+        "loss_3": 14500,
+        "loss_4": 2600,
+        "loss_5": 14800,
+        "claw_0": 9800,
+        "claw_1": 10400,
+        "claw_2": 2800,
+        "group_cap": 19300,
+        "global_claw": 5200
+      }
+    },
+    {
+      "id": "offer_e7dbd98039ff",
+      "attrs": {
+        "price": 673030,
+        "admin": 143552,
+        "loss_0": 600,
+        "loss_1": 12600,
+        "loss_2": 6700,
+        "loss_3": 5800,
+        "loss_4": 12400,
+        "loss_5": 5000,
+        "claw_0": 14700,
+        "claw_1": 6200,
+        "claw_2": 9500,
+        "group_cap": 30000,
+        "global_claw": 8500
+      }
+    },
+    {
+      "id": "offer_fc15651c4102",
+      "attrs": {
+        "price": 854245,
+        "admin": 139742,
+        "loss_0": 11500,
+        "loss_1": 9000,
+        "loss_2": 7000,
+        "loss_3": 9800,
+        "loss_4": 10100,
+        "loss_5": 2600,
+        "claw_0": 10800,
+        "claw_1": 7900,
+        "claw_2": 11800,
+        "group_cap": 23500,
+        "global_claw": 7800
+      }
+    },
+    {
+      "id": "offer_8fc99beaaac6",
+      "attrs": {
+        "price": 771250,
+        "admin": 143259,
+        "loss_0": 2500,
+        "loss_1": 4800,
+        "loss_2": 8700,
+        "loss_3": 7100,
+        "loss_4": 8800,
+        "loss_5": 11700,
+        "claw_0": 13600,
+        "claw_1": 3700,
+        "claw_2": 16200,
+        "group_cap": 21800,
+        "global_claw": 17800
+      }
+    },
+    {
+      "id": "offer_ca2837d2df5a",
+      "attrs": {
+        "price": 710402,
+        "admin": 130402,
+        "loss_0": 4000,
+        "loss_1": 13900,
+        "loss_2": 13600,
+        "loss_3": 5500,
+        "loss_4": 12800,
+        "loss_5": 1100,
+        "claw_0": 17000,
+        "claw_1": 15900,
+        "claw_2": 2200,
+        "group_cap": 28700,
+        "global_claw": 4100
+      }
+    },
+    {
+      "id": "offer_b9e53bc9867f",
+      "attrs": {
+        "price": 855526,
+        "admin": 152542,
+        "loss_0": 13800,
+        "loss_1": 10700,
+        "loss_2": 2400,
+        "loss_3": 7300,
+        "loss_4": 5100,
+        "loss_5": 11200,
+        "claw_0": 22600,
+        "claw_1": 15300,
+        "claw_2": 17100,
+        "group_cap": 20800,
+        "global_claw": 5600
+      }
+    },
+    {
+      "id": "offer_30da6267bcc0",
+      "attrs": {
+        "price": 591798,
+        "admin": 166443,
+        "loss_0": 9000,
+        "loss_1": 1600,
+        "loss_2": 7600,
+        "loss_3": 2900,
+        "loss_4": 2700,
+        "loss_5": 10200,
+        "claw_0": 19600,
+        "claw_1": 5100,
+        "claw_2": 18900,
+        "group_cap": 18900,
+        "global_claw": 8000
+      }
+    },
+    {
+      "id": "offer_d5979d7bfe7a",
+      "attrs": {
+        "price": 645799,
+        "admin": 153572,
+        "loss_0": 12900,
+        "loss_1": 13900,
+        "loss_2": 9300,
+        "loss_3": 9800,
+        "loss_4": 4500,
+        "loss_5": 4600,
+        "claw_0": 8000,
+        "claw_1": 8200,
+        "claw_2": 8000,
+        "group_cap": 25500,
+        "global_claw": 8300
+      }
+    },
+    {
+      "id": "offer_aba69cd7df5e",
+      "attrs": {
+        "price": 537745,
+        "admin": 146074,
+        "loss_0": 6800,
+        "loss_1": 9200,
+        "loss_2": 6700,
+        "loss_3": 1200,
+        "loss_4": 8300,
+        "loss_5": 10500,
+        "claw_0": 4600,
+        "claw_1": 23400,
+        "claw_2": 20700,
+        "group_cap": 13500,
+        "global_claw": 8000
+      }
+    },
+    {
+      "id": "offer_f20132810064",
+      "attrs": {
+        "price": 781586,
+        "admin": 154606,
+        "loss_0": 10500,
+        "loss_1": 10400,
+        "loss_2": 4300,
+        "loss_3": 10000,
+        "loss_4": 12300,
+        "loss_5": 10600,
+        "claw_0": 12300,
+        "claw_1": 15100,
+        "claw_2": 16400,
+        "group_cap": 15100,
+        "global_claw": 4500
+      }
+    },
+    {
+      "id": "offer_c4167aef5ec1",
+      "attrs": {
+        "price": 632634,
+        "admin": 135632,
+        "loss_0": 4100,
+        "loss_1": 11100,
+        "loss_2": 7200,
+        "loss_3": 1600,
+        "loss_4": 10400,
+        "loss_5": 11500,
+        "claw_0": 3700,
+        "claw_1": 22900,
+        "claw_2": 2600,
+        "group_cap": 35000,
+        "global_claw": 16800
+      }
+    },
+    {
+      "id": "offer_f2f9beb1362d",
+      "attrs": {
+        "price": 654833,
+        "admin": 134901,
+        "loss_0": 2600,
+        "loss_1": 10000,
+        "loss_2": 2700,
+        "loss_3": 8700,
+        "loss_4": 8100,
+        "loss_5": 14600,
+        "claw_0": 10200,
+        "claw_1": 24100,
+        "claw_2": 2400,
+        "group_cap": 12500,
+        "global_claw": 13600
+      }
+    },
+    {
+      "id": "offer_decdd94bb79c",
+      "attrs": {
+        "price": 570966,
+        "admin": 167821,
+        "loss_0": 1000,
+        "loss_1": 6300,
+        "loss_2": 1100,
+        "loss_3": 7600,
+        "loss_4": 1700,
+        "loss_5": 9900,
+        "claw_0": 6700,
+        "claw_1": 8800,
+        "claw_2": 7200,
+        "group_cap": 15100,
+        "global_claw": 5900
+      }
+    },
+    {
+      "id": "offer_e91a5be06a11",
+      "attrs": {
+        "price": 847255,
+        "admin": 140202,
+        "loss_0": 11700,
+        "loss_1": 1300,
+        "loss_2": 11400,
+        "loss_3": 7500,
+        "loss_4": 1200,
+        "loss_5": 12300,
+        "claw_0": 24100,
+        "claw_1": 17000,
+        "claw_2": 18900,
+        "group_cap": 18200,
+        "global_claw": 11400
+      }
+    },
+    {
+      "id": "offer_5e3cb63daa44",
+      "attrs": {
+        "price": 614110,
+        "admin": 146773,
+        "loss_0": 5700,
+        "loss_1": 1400,
+        "loss_2": 3200,
+        "loss_3": 14400,
+        "loss_4": 4400,
+        "loss_5": 5100,
+        "claw_0": 3000,
+        "claw_1": 24800,
+        "claw_2": 3400,
+        "group_cap": 27800,
+        "global_claw": 10900
+      }
+    },
+    {
+      "id": "offer_0ced59409121",
+      "attrs": {
+        "price": 671846,
+        "admin": 137965,
+        "loss_0": 5000,
+        "loss_1": 14400,
+        "loss_2": 9000,
+        "loss_3": 12500,
+        "loss_4": 13800,
+        "loss_5": 2400,
+        "claw_0": 11400,
+        "claw_1": 6500,
+        "claw_2": 3500,
+        "group_cap": 13900,
+        "global_claw": 6700
+      }
+    },
+    {
+      "id": "offer_7d02b77af94f",
+      "attrs": {
+        "price": 532594,
+        "admin": 125307,
+        "loss_0": 4500,
+        "loss_1": 11000,
+        "loss_2": 5100,
+        "loss_3": 14500,
+        "loss_4": 6300,
+        "loss_5": 14300,
+        "claw_0": 19300,
+        "claw_1": 3300,
+        "claw_2": 13900,
+        "group_cap": 28000,
+        "global_claw": 10100
+      }
+    },
+    {
+      "id": "offer_7037ebdbbe3d",
+      "attrs": {
+        "price": 785437,
+        "admin": 129162,
+        "loss_0": 14700,
+        "loss_1": 5300,
+        "loss_2": 12800,
+        "loss_3": 13200,
+        "loss_4": 6200,
+        "loss_5": 13600,
+        "claw_0": 21200,
+        "claw_1": 21200,
+        "claw_2": 21800,
+        "group_cap": 19200,
+        "global_claw": 8600
+      }
+    },
+    {
+      "id": "offer_797a32afcd04",
+      "attrs": {
+        "price": 651182,
+        "admin": 142986,
+        "loss_0": 11200,
+        "loss_1": 3000,
+        "loss_2": 13800,
+        "loss_3": 1600,
+        "loss_4": 8900,
+        "loss_5": 9000,
+        "claw_0": 17700,
+        "claw_1": 4500,
+        "claw_2": 3000,
+        "group_cap": 23700,
+        "global_claw": 13500
+      }
+    },
+    {
+      "id": "offer_efc952f9d41c",
+      "attrs": {
+        "price": 515369,
+        "admin": 130796,
+        "loss_0": 1600,
+        "loss_1": 5900,
+        "loss_2": 14400,
+        "loss_3": 2200,
+        "loss_4": 14900,
+        "loss_5": 6800,
+        "claw_0": 24900,
+        "claw_1": 6300,
+        "claw_2": 2000,
+        "group_cap": 22400,
+        "global_claw": 5400
+      }
+    },
+    {
+      "id": "offer_31179266143a",
+      "attrs": {
+        "price": 797909,
+        "admin": 140708,
+        "loss_0": 11200,
+        "loss_1": 700,
+        "loss_2": 11200,
+        "loss_3": 14200,
+        "loss_4": 9500,
+        "loss_5": 5600,
+        "claw_0": 10100,
+        "claw_1": 24000,
+        "claw_2": 8500,
+        "group_cap": 32900,
+        "global_claw": 12400
+      }
+    },
+    {
+      "id": "offer_b3940cd3a398",
+      "attrs": {
+        "price": 887174,
+        "admin": 127132,
+        "loss_0": 700,
+        "loss_1": 11900,
+        "loss_2": 9200,
+        "loss_3": 3600,
+        "loss_4": 10900,
+        "loss_5": 14500,
+        "claw_0": 9300,
+        "claw_1": 10900,
+        "claw_2": 17300,
+        "group_cap": 27200,
+        "global_claw": 6600
+      }
+    },
+    {
+      "id": "offer_56b47dbbe21d",
+      "attrs": {
+        "price": 838270,
+        "admin": 135828,
+        "loss_0": 5900,
+        "loss_1": 14900,
+        "loss_2": 7500,
+        "loss_3": 11100,
+        "loss_4": 7700,
+        "loss_5": 900,
+        "claw_0": 4300,
+        "claw_1": 20700,
+        "claw_2": 16800,
+        "group_cap": 31100,
+        "global_claw": 15000
+      }
+    },
+    {
+      "id": "offer_1951bc9e096d",
+      "attrs": {
+        "price": 805019,
+        "admin": 156924,
+        "loss_0": 3300,
+        "loss_1": 6400,
+        "loss_2": 2600,
+        "loss_3": 14300,
+        "loss_4": 9200,
+        "loss_5": 5100,
+        "claw_0": 9700,
+        "claw_1": 8800,
+        "claw_2": 5700,
+        "group_cap": 26000,
+        "global_claw": 3600
+      }
+    },
+    {
+      "id": "offer_d56ee44d5d8f",
+      "attrs": {
+        "price": 603127,
+        "admin": 131706,
+        "loss_0": 7800,
+        "loss_1": 9800,
+        "loss_2": 3900,
+        "loss_3": 9600,
+        "loss_4": 12700,
+        "loss_5": 11900,
+        "claw_0": 15300,
+        "claw_1": 14600,
+        "claw_2": 20300,
+        "group_cap": 15200,
+        "global_claw": 15200
+      }
+    },
+    {
+      "id": "offer_69d309a04924",
+      "attrs": {
+        "price": 738682,
+        "admin": 140955,
+        "loss_0": 10100,
+        "loss_1": 6300,
+        "loss_2": 10200,
+        "loss_3": 1700,
+        "loss_4": 8800,
+        "loss_5": 13800,
+        "claw_0": 6600,
+        "claw_1": 20100,
+        "claw_2": 18000,
+        "group_cap": 28200,
+        "global_claw": 3400
+      }
+    },
+    {
+      "id": "offer_b93c2b2f5fb2",
+      "attrs": {
+        "price": 849203,
+        "admin": 139446,
+        "loss_0": 11800,
+        "loss_1": 3700,
+        "loss_2": 10600,
+        "loss_3": 5500,
+        "loss_4": 10500,
+        "loss_5": 10900,
+        "claw_0": 3900,
+        "claw_1": 23500,
+        "claw_2": 12700,
+        "group_cap": 23300,
+        "global_claw": 12900
+      }
+    },
+    {
+      "id": "offer_548cb93b0a14",
+      "attrs": {
+        "price": 687173,
+        "admin": 128428,
+        "loss_0": 8800,
+        "loss_1": 11600,
+        "loss_2": 1600,
+        "loss_3": 1900,
+        "loss_4": 14000,
+        "loss_5": 11000,
+        "claw_0": 24900,
+        "claw_1": 11600,
+        "claw_2": 2400,
+        "group_cap": 27700,
+        "global_claw": 14900
+      }
+    },
+    {
+      "id": "offer_e02756ef9186",
+      "attrs": {
+        "price": 523486,
+        "admin": 125048,
+        "loss_0": 6700,
+        "loss_1": 8700,
+        "loss_2": 14300,
+        "loss_3": 2500,
+        "loss_4": 2800,
+        "loss_5": 13300,
+        "claw_0": 21500,
+        "claw_1": 6500,
+        "claw_2": 16900,
+        "group_cap": 34100,
+        "global_claw": 10900
+      }
+    },
+    {
+      "id": "offer_ec512ca3176a",
+      "attrs": {
+        "price": 610054,
+        "admin": 163326,
+        "loss_0": 11200,
+        "loss_1": 700,
+        "loss_2": 8400,
+        "loss_3": 6300,
+        "loss_4": 5800,
+        "loss_5": 4000,
+        "claw_0": 8500,
+        "claw_1": 15700,
+        "claw_2": 14300,
+        "group_cap": 10300,
+        "global_claw": 13100
+      }
+    },
+    {
+      "id": "offer_41bb99adecfa",
+      "attrs": {
+        "price": 715149,
+        "admin": 139217,
+        "loss_0": 8300,
+        "loss_1": 3600,
+        "loss_2": 7400,
+        "loss_3": 12800,
+        "loss_4": 12100,
+        "loss_5": 5300,
+        "claw_0": 3300,
+        "claw_1": 18000,
+        "claw_2": 11400,
+        "group_cap": 10600,
+        "global_claw": 15800
+      }
+    },
+    {
+      "id": "offer_853848c8453f",
+      "attrs": {
+        "price": 822883,
+        "admin": 125659,
+        "loss_0": 13700,
+        "loss_1": 15000,
+        "loss_2": 11400,
+        "loss_3": 12600,
+        "loss_4": 14300,
+        "loss_5": 4900,
+        "claw_0": 7000,
+        "claw_1": 20500,
+        "claw_2": 20200,
+        "group_cap": 15000,
+        "global_claw": 8200
+      }
+    },
+    {
+      "id": "offer_ccca002cf767",
+      "attrs": {
+        "price": 647153,
+        "admin": 155828,
+        "loss_0": 11300,
+        "loss_1": 14000,
+        "loss_2": 2800,
+        "loss_3": 4500,
+        "loss_4": 3800,
+        "loss_5": 500,
+        "claw_0": 12700,
+        "claw_1": 15500,
+        "claw_2": 19000,
+        "group_cap": 13100,
+        "global_claw": 13300
+      }
+    },
+    {
+      "id": "offer_e29bc0de1bd4",
+      "attrs": {
+        "price": 793624,
+        "admin": 144889,
+        "loss_0": 1100,
+        "loss_1": 10600,
+        "loss_2": 5600,
+        "loss_3": 1800,
+        "loss_4": 8900,
+        "loss_5": 6400,
+        "claw_0": 14200,
+        "claw_1": 4500,
+        "claw_2": 6600,
+        "group_cap": 26700,
+        "global_claw": 9200
+      }
+    },
+    {
+      "id": "offer_5cda8321ce32",
+      "attrs": {
+        "price": 527109,
+        "admin": 162614,
+        "loss_0": 10600,
+        "loss_1": 8100,
+        "loss_2": 9100,
+        "loss_3": 4900,
+        "loss_4": 4400,
+        "loss_5": 2700,
+        "claw_0": 5200,
+        "claw_1": 17800,
+        "claw_2": 14800,
+        "group_cap": 14300,
+        "global_claw": 6300
+      }
+    },
+    {
+      "id": "offer_5b834f1e0a10",
+      "attrs": {
+        "price": 895434,
+        "admin": 143611,
+        "loss_0": 14900,
+        "loss_1": 12800,
+        "loss_2": 600,
+        "loss_3": 12800,
+        "loss_4": 10500,
+        "loss_5": 3500,
+        "claw_0": 16300,
+        "claw_1": 3000,
+        "claw_2": 4600,
+        "group_cap": 15600,
+        "global_claw": 13200
+      }
+    },
+    {
+      "id": "offer_4f138326a149",
+      "attrs": {
+        "price": 459602,
+        "admin": 139386,
+        "loss_0": 13600,
+        "loss_1": 7700,
+        "loss_2": 9500,
+        "loss_3": 6600,
+        "loss_4": 2400,
+        "loss_5": 10200,
+        "claw_0": 4500,
+        "claw_1": 9400,
+        "claw_2": 22200,
+        "group_cap": 19800,
+        "global_claw": 12200
+      }
+    },
+    {
+      "id": "offer_8a692fc8d9d9",
+      "attrs": {
+        "price": 845108,
+        "admin": 150679,
+        "loss_0": 9000,
+        "loss_1": 3600,
+        "loss_2": 8200,
+        "loss_3": 11500,
+        "loss_4": 1000,
+        "loss_5": 8900,
+        "claw_0": 11600,
+        "claw_1": 8500,
+        "claw_2": 23900,
+        "group_cap": 26800,
+        "global_claw": 3400
+      }
+    },
+    {
+      "id": "offer_eca6a4b65299",
+      "attrs": {
+        "price": 841521,
+        "admin": 143327,
+        "loss_0": 10900,
+        "loss_1": 6100,
+        "loss_2": 6100,
+        "loss_3": 13700,
+        "loss_4": 5100,
+        "loss_5": 5900,
+        "claw_0": 14100,
+        "claw_1": 7200,
+        "claw_2": 17300,
+        "group_cap": 17300,
+        "global_claw": 18000
+      }
+    },
+    {
+      "id": "offer_d793145f4aa2",
+      "attrs": {
+        "price": 682737,
+        "admin": 143645,
+        "loss_0": 9600,
+        "loss_1": 9600,
+        "loss_2": 10900,
+        "loss_3": 800,
+        "loss_4": 3100,
+        "loss_5": 5300,
+        "claw_0": 10500,
+        "claw_1": 25000,
+        "claw_2": 4300,
+        "group_cap": 30500,
+        "global_claw": 6800
+      }
+    },
+    {
+      "id": "offer_9da9ca874096",
+      "attrs": {
+        "price": 507525,
+        "admin": 139072,
+        "loss_0": 13800,
+        "loss_1": 5400,
+        "loss_2": 8100,
+        "loss_3": 3600,
+        "loss_4": 11400,
+        "loss_5": 15000,
+        "claw_0": 19100,
+        "claw_1": 11200,
+        "claw_2": 22700,
+        "group_cap": 20100,
+        "global_claw": 16900
+      }
+    },
+    {
+      "id": "offer_924550a9ad52",
+      "attrs": {
+        "price": 554049,
+        "admin": 157155,
+        "loss_0": 6700,
+        "loss_1": 10800,
+        "loss_2": 1600,
+        "loss_3": 600,
+        "loss_4": 3100,
+        "loss_5": 12300,
+        "claw_0": 2000,
+        "claw_1": 11100,
+        "claw_2": 14100,
+        "group_cap": 9800,
+        "global_claw": 6100
+      }
+    },
+    {
+      "id": "offer_d226f7e683a7",
+      "attrs": {
+        "price": 850664,
+        "admin": 128086,
+        "loss_0": 10600,
+        "loss_1": 6000,
+        "loss_2": 13400,
+        "loss_3": 8600,
+        "loss_4": 500,
+        "loss_5": 11300,
+        "claw_0": 15600,
+        "claw_1": 6500,
+        "claw_2": 22400,
+        "group_cap": 34800,
+        "global_claw": 12800
+      }
+    },
+    {
+      "id": "offer_82df97cf680c",
+      "attrs": {
+        "price": 556047,
+        "admin": 135780,
+        "loss_0": 5100,
+        "loss_1": 2600,
+        "loss_2": 9100,
+        "loss_3": 9700,
+        "loss_4": 10200,
+        "loss_5": 3900,
+        "claw_0": 14300,
+        "claw_1": 22800,
+        "claw_2": 20200,
+        "group_cap": 17000,
+        "global_claw": 17200
+      }
+    },
+    {
+      "id": "offer_aa844b4d137e",
+      "attrs": {
+        "price": 670805,
+        "admin": 154831,
+        "loss_0": 10600,
+        "loss_1": 13600,
+        "loss_2": 9300,
+        "loss_3": 7700,
+        "loss_4": 1800,
+        "loss_5": 2100,
+        "claw_0": 3300,
+        "claw_1": 22900,
+        "claw_2": 17900,
+        "group_cap": 9300,
+        "global_claw": 4600
+      }
+    },
+    {
+      "id": "offer_8598aa5b5e5f",
+      "attrs": {
+        "price": 684110,
+        "admin": 160331,
+        "loss_0": 13300,
+        "loss_1": 1400,
+        "loss_2": 14700,
+        "loss_3": 3100,
+        "loss_4": 13000,
+        "loss_5": 2700,
+        "claw_0": 4400,
+        "claw_1": 5700,
+        "claw_2": 6900,
+        "group_cap": 12200,
+        "global_claw": 6700
+      }
+    },
+    {
+      "id": "offer_dedc83276f69",
+      "attrs": {
+        "price": 516881,
+        "admin": 141719,
+        "loss_0": 13600,
+        "loss_1": 14800,
+        "loss_2": 10600,
+        "loss_3": 11500,
+        "loss_4": 5100,
+        "loss_5": 7800,
+        "claw_0": 18800,
+        "claw_1": 15400,
+        "claw_2": 17100,
+        "group_cap": 12700,
+        "global_claw": 5800
+      }
+    },
+    {
+      "id": "offer_ed131c3f75e4",
+      "attrs": {
+        "price": 466177,
+        "admin": 159344,
+        "loss_0": 11500,
+        "loss_1": 6100,
+        "loss_2": 1300,
+        "loss_3": 12300,
+        "loss_4": 5900,
+        "loss_5": 7300,
+        "claw_0": 11600,
+        "claw_1": 17600,
+        "claw_2": 6700,
+        "group_cap": 14800,
+        "global_claw": 4500
+      }
+    },
+    {
+      "id": "offer_5c287450b562",
+      "attrs": {
+        "price": 687368,
+        "admin": 151722,
+        "loss_0": 3400,
+        "loss_1": 7200,
+        "loss_2": 700,
+        "loss_3": 13100,
+        "loss_4": 4100,
+        "loss_5": 11300,
+        "claw_0": 10600,
+        "claw_1": 24000,
+        "claw_2": 5700,
+        "group_cap": 16000,
+        "global_claw": 13900
+      }
+    },
+    {
+      "id": "offer_c1af15a00d10",
+      "attrs": {
+        "price": 698236,
+        "admin": 157487,
+        "loss_0": 7100,
+        "loss_1": 2400,
+        "loss_2": 2300,
+        "loss_3": 10500,
+        "loss_4": 13900,
+        "loss_5": 9500,
+        "claw_0": 5900,
+        "claw_1": 11500,
+        "claw_2": 3200,
+        "group_cap": 17200,
+        "global_claw": 8300
+      }
+    },
+    {
+      "id": "offer_4f80a9468e41",
+      "attrs": {
+        "price": 784934,
+        "admin": 120162,
+        "loss_0": 14100,
+        "loss_1": 9600,
+        "loss_2": 14400,
+        "loss_3": 5700,
+        "loss_4": 10800,
+        "loss_5": 6700,
+        "claw_0": 16200,
+        "claw_1": 24100,
+        "claw_2": 24100,
+        "group_cap": 34000,
+        "global_claw": 8300
+      }
+    },
+    {
+      "id": "offer_7fd615839bf8",
+      "attrs": {
+        "price": 628779,
+        "admin": 119117,
+        "loss_0": 14100,
+        "loss_1": 12200,
+        "loss_2": 14200,
+        "loss_3": 11200,
+        "loss_4": 13300,
+        "loss_5": 11000,
+        "claw_0": 11200,
+        "claw_1": 23000,
+        "claw_2": 18500,
+        "group_cap": 30700,
+        "global_claw": 10600
+      }
+    },
+    {
+      "id": "offer_2fa909d1560d",
+      "attrs": {
+        "price": 774223,
+        "admin": 131827,
+        "loss_0": 8800,
+        "loss_1": 7700,
+        "loss_2": 4900,
+        "loss_3": 14600,
+        "loss_4": 3400,
+        "loss_5": 9300,
+        "claw_0": 2900,
+        "claw_1": 10900,
+        "claw_2": 22100,
+        "group_cap": 34900,
+        "global_claw": 4500
+      }
+    },
+    {
+      "id": "offer_c04f3261218c",
+      "attrs": {
+        "price": 737337,
+        "admin": 142289,
+        "loss_0": 8100,
+        "loss_1": 2400,
+        "loss_2": 8400,
+        "loss_3": 5700,
+        "loss_4": 1400,
+        "loss_5": 13200,
+        "claw_0": 16200,
+        "claw_1": 10500,
+        "claw_2": 16900,
+        "group_cap": 26400,
+        "global_claw": 10200
+      }
+    },
+    {
+      "id": "offer_5092e13fdbac",
+      "attrs": {
+        "price": 750845,
+        "admin": 147109,
+        "loss_0": 7300,
+        "loss_1": 3200,
+        "loss_2": 10900,
+        "loss_3": 9000,
+        "loss_4": 9100,
+        "loss_5": 1300,
+        "claw_0": 20500,
+        "claw_1": 9100,
+        "claw_2": 4400,
+        "group_cap": 25900,
+        "global_claw": 7300
+      }
+    },
+    {
+      "id": "offer_57696241aed1",
+      "attrs": {
+        "price": 769965,
+        "admin": 150295,
+        "loss_0": 4800,
+        "loss_1": 7300,
+        "loss_2": 12400,
+        "loss_3": 9700,
+        "loss_4": 3900,
+        "loss_5": 8100,
+        "claw_0": 11500,
+        "claw_1": 14400,
+        "claw_2": 23800,
+        "group_cap": 11000,
+        "global_claw": 15200
+      }
+    },
+    {
+      "id": "offer_4a45f5a91052",
+      "attrs": {
+        "price": 621381,
+        "admin": 149300,
+        "loss_0": 10800,
+        "loss_1": 9200,
+        "loss_2": 9800,
+        "loss_3": 2300,
+        "loss_4": 3500,
+        "loss_5": 3400,
+        "claw_0": 18500,
+        "claw_1": 20700,
+        "claw_2": 24800,
+        "group_cap": 19700,
+        "global_claw": 4600
+      }
+    },
+    {
+      "id": "offer_b810ee9c6cc2",
+      "attrs": {
+        "price": 810676,
+        "admin": 122834,
+        "loss_0": 8800,
+        "loss_1": 6600,
+        "loss_2": 6100,
+        "loss_3": 10300,
+        "loss_4": 5600,
+        "loss_5": 14500,
+        "claw_0": 9400,
+        "claw_1": 22700,
+        "claw_2": 4500,
+        "group_cap": 31300,
+        "global_claw": 11100
+      }
+    },
+    {
+      "id": "offer_64c55fcd2ec3",
+      "attrs": {
+        "price": 776496,
+        "admin": 137718,
+        "loss_0": 15000,
+        "loss_1": 14300,
+        "loss_2": 12500,
+        "loss_3": 6600,
+        "loss_4": 7700,
+        "loss_5": 4300,
+        "claw_0": 2700,
+        "claw_1": 25000,
+        "claw_2": 17200,
+        "group_cap": 23500,
+        "global_claw": 9700
+      }
+    },
+    {
+      "id": "offer_3489d6c4e9df",
+      "attrs": {
+        "price": 854030,
+        "admin": 167172,
+        "loss_0": 11200,
+        "loss_1": 8300,
+        "loss_2": 1900,
+        "loss_3": 4800,
+        "loss_4": 11400,
+        "loss_5": 1800,
+        "claw_0": 5600,
+        "claw_1": 3200,
+        "claw_2": 10600,
+        "group_cap": 23100,
+        "global_claw": 8400
+      }
+    },
+    {
+      "id": "offer_4f3111fbe8eb",
+      "attrs": {
+        "price": 815197,
+        "admin": 126673,
+        "loss_0": 6100,
+        "loss_1": 6400,
+        "loss_2": 13100,
+        "loss_3": 11100,
+        "loss_4": 1000,
+        "loss_5": 6400,
+        "claw_0": 9400,
+        "claw_1": 9900,
+        "claw_2": 18700,
+        "group_cap": 29300,
+        "global_claw": 15700
+      }
+    },
+    {
+      "id": "offer_a2ed79623f84",
+      "attrs": {
+        "price": 865728,
+        "admin": 142632,
+        "loss_0": 9900,
+        "loss_1": 3500,
+        "loss_2": 5400,
+        "loss_3": 8700,
+        "loss_4": 8300,
+        "loss_5": 12200,
+        "claw_0": 9800,
+        "claw_1": 7300,
+        "claw_2": 5700,
+        "group_cap": 30100,
+        "global_claw": 13300
+      }
+    },
+    {
+      "id": "offer_85865dafb7b2",
+      "attrs": {
+        "price": 586794,
+        "admin": 142977,
+        "loss_0": 6800,
+        "loss_1": 11100,
+        "loss_2": 4900,
+        "loss_3": 4300,
+        "loss_4": 6100,
+        "loss_5": 600,
+        "claw_0": 8400,
+        "claw_1": 8000,
+        "claw_2": 9400,
+        "group_cap": 18400,
+        "global_claw": 16100
+      }
+    },
+    {
+      "id": "offer_c13d3ae528ad",
+      "attrs": {
+        "price": 781362,
+        "admin": 148461,
+        "loss_0": 5300,
+        "loss_1": 9200,
+        "loss_2": 8600,
+        "loss_3": 3000,
+        "loss_4": 3500,
+        "loss_5": 2000,
+        "claw_0": 8100,
+        "claw_1": 13700,
+        "claw_2": 24000,
+        "group_cap": 22700,
+        "global_claw": 14300
+      }
+    },
+    {
+      "id": "offer_e82f0f386c64",
+      "attrs": {
+        "price": 704309,
+        "admin": 123420,
+        "loss_0": 13000,
+        "loss_1": 2800,
+        "loss_2": 13800,
+        "loss_3": 13300,
+        "loss_4": 11900,
+        "loss_5": 3900,
+        "claw_0": 9300,
+        "claw_1": 21300,
+        "claw_2": 18600,
+        "group_cap": 27200,
+        "global_claw": 4500
+      }
+    },
+    {
+      "id": "offer_0727ce35efcc",
+      "attrs": {
+        "price": 532218,
+        "admin": 121986,
+        "loss_0": 7300,
+        "loss_1": 10800,
+        "loss_2": 6900,
+        "loss_3": 12500,
+        "loss_4": 13500,
+        "loss_5": 14300,
+        "claw_0": 12600,
+        "claw_1": 18900,
+        "claw_2": 18800,
+        "group_cap": 30400,
+        "global_claw": 16000
+      }
+    },
+    {
+      "id": "offer_91f572f0b658",
+      "attrs": {
+        "price": 845185,
+        "admin": 146778,
+        "loss_0": 6600,
+        "loss_1": 11100,
+        "loss_2": 4600,
+        "loss_3": 2400,
+        "loss_4": 7200,
+        "loss_5": 5100,
+        "claw_0": 7900,
+        "claw_1": 15600,
+        "claw_2": 22300,
+        "group_cap": 29700,
+        "global_claw": 4000
+      }
+    },
+    {
+      "id": "offer_e3ddbd7e3a31",
+      "attrs": {
+        "price": 461444,
+        "admin": 141006,
+        "loss_0": 12200,
+        "loss_1": 14900,
+        "loss_2": 3100,
+        "loss_3": 1200,
+        "loss_4": 11200,
+        "loss_5": 13300,
+        "claw_0": 12300,
+        "claw_1": 23700,
+        "claw_2": 7100,
+        "group_cap": 23200,
+        "global_claw": 3400
+      }
+    },
+    {
+      "id": "offer_6b6d3b21421a",
+      "attrs": {
+        "price": 491786,
+        "admin": 167797,
+        "loss_0": 6300,
+        "loss_1": 10400,
+        "loss_2": 4900,
+        "loss_3": 10300,
+        "loss_4": 9800,
+        "loss_5": 4400,
+        "claw_0": 3600,
+        "claw_1": 2200,
+        "claw_2": 22100,
+        "group_cap": 11400,
+        "global_claw": 5200
+      }
+    },
+    {
+      "id": "offer_4e34e4ad6333",
+      "attrs": {
+        "price": 533240,
+        "admin": 143466,
+        "loss_0": 5600,
+        "loss_1": 6400,
+        "loss_2": 500,
+        "loss_3": 5500,
+        "loss_4": 8400,
+        "loss_5": 14800,
+        "claw_0": 13400,
+        "claw_1": 18300,
+        "claw_2": 5900,
+        "group_cap": 30500,
+        "global_claw": 5700
+      }
+    },
+    {
+      "id": "offer_22481796580f",
+      "attrs": {
+        "price": 530741,
+        "admin": 157374,
+        "loss_0": 5200,
+        "loss_1": 6000,
+        "loss_2": 5000,
+        "loss_3": 4600,
+        "loss_4": 4600,
+        "loss_5": 9200,
+        "claw_0": 6900,
+        "claw_1": 16100,
+        "claw_2": 17800,
+        "group_cap": 21400,
+        "global_claw": 14100
+      }
+    },
+    {
+      "id": "offer_f8939016aa2e",
+      "attrs": {
+        "price": 765955,
+        "admin": 121563,
+        "loss_0": 600,
+        "loss_1": 5700,
+        "loss_2": 14400,
+        "loss_3": 9800,
+        "loss_4": 11800,
+        "loss_5": 3900,
+        "claw_0": 22900,
+        "claw_1": 19700,
+        "claw_2": 4700,
+        "group_cap": 24000,
+        "global_claw": 15600
+      }
+    },
+    {
+      "id": "offer_da37b9b4943b",
+      "attrs": {
+        "price": 625549,
+        "admin": 147050,
+        "loss_0": 10000,
+        "loss_1": 5500,
+        "loss_2": 10900,
+        "loss_3": 8200,
+        "loss_4": 2100,
+        "loss_5": 6100,
+        "claw_0": 17200,
+        "claw_1": 23000,
+        "claw_2": 11100,
+        "group_cap": 16900,
+        "global_claw": 5800
+      }
+    },
+    {
+      "id": "offer_f329a2bdfe51",
+      "attrs": {
+        "price": 627754,
+        "admin": 151903,
+        "loss_0": 14200,
+        "loss_1": 10600,
+        "loss_2": 3700,
+        "loss_3": 6100,
+        "loss_4": 5100,
+        "loss_5": 3100,
+        "claw_0": 9500,
+        "claw_1": 2300,
+        "claw_2": 11100,
+        "group_cap": 15400,
+        "global_claw": 9400
+      }
+    },
+    {
+      "id": "offer_c0ef13782481",
+      "attrs": {
+        "price": 616873,
+        "admin": 168746,
+        "loss_0": 11700,
+        "loss_1": 3900,
+        "loss_2": 8000,
+        "loss_3": 12400,
+        "loss_4": 4000,
+        "loss_5": 8700,
+        "claw_0": 19300,
+        "claw_1": 10100,
+        "claw_2": 10200,
+        "group_cap": 9700,
+        "global_claw": 4600
+      }
+    },
+    {
+      "id": "offer_66f5885f4214",
+      "attrs": {
+        "price": 863564,
+        "admin": 143844,
+        "loss_0": 10900,
+        "loss_1": 11400,
+        "loss_2": 10800,
+        "loss_3": 9900,
+        "loss_4": 7400,
+        "loss_5": 7700,
+        "claw_0": 22300,
+        "claw_1": 20900,
+        "claw_2": 18700,
+        "group_cap": 15400,
+        "global_claw": 9500
+      }
+    },
+    {
+      "id": "offer_5e582de4c9ac",
+      "attrs": {
+        "price": 450416,
+        "admin": 160132,
+        "loss_0": 2100,
+        "loss_1": 12900,
+        "loss_2": 5300,
+        "loss_3": 1300,
+        "loss_4": 3600,
+        "loss_5": 14200,
+        "claw_0": 21600,
+        "claw_1": 14900,
+        "claw_2": 11900,
+        "group_cap": 9300,
+        "global_claw": 13900
+      }
+    },
+    {
+      "id": "offer_ff37e100a46a",
+      "attrs": {
+        "price": 506128,
+        "admin": 143541,
+        "loss_0": 9300,
+        "loss_1": 7400,
+        "loss_2": 12900,
+        "loss_3": 9200,
+        "loss_4": 1200,
+        "loss_5": 2900,
+        "claw_0": 16000,
+        "claw_1": 16000,
+        "claw_2": 2400,
+        "group_cap": 30300,
+        "global_claw": 4200
+      }
+    },
+    {
+      "id": "offer_1a8ba94512e0",
+      "attrs": {
+        "price": 620663,
+        "admin": 146812,
+        "loss_0": 11500,
+        "loss_1": 2400,
+        "loss_2": 5900,
+        "loss_3": 7100,
+        "loss_4": 10700,
+        "loss_5": 12600,
+        "claw_0": 24600,
+        "claw_1": 13300,
+        "claw_2": 14300,
+        "group_cap": 15600,
+        "global_claw": 6200
+      }
+    },
+    {
+      "id": "offer_17913ed508dc",
+      "attrs": {
+        "price": 694819,
+        "admin": 132968,
+        "loss_0": 14400,
+        "loss_1": 5600,
+        "loss_2": 8800,
+        "loss_3": 6100,
+        "loss_4": 5200,
+        "loss_5": 3200,
+        "claw_0": 24000,
+        "claw_1": 23700,
+        "claw_2": 22700,
+        "group_cap": 34900,
+        "global_claw": 18000
+      }
+    },
+    {
+      "id": "offer_9710040585a8",
+      "attrs": {
+        "price": 822671,
+        "admin": 136744,
+        "loss_0": 500,
+        "loss_1": 13100,
+        "loss_2": 12900,
+        "loss_3": 7800,
+        "loss_4": 10700,
+        "loss_5": 3400,
+        "claw_0": 8000,
+        "claw_1": 13200,
+        "claw_2": 23500,
+        "group_cap": 9000,
+        "global_claw": 15000
+      }
+    },
+    {
+      "id": "offer_63a40d3e6b07",
+      "attrs": {
+        "price": 540607,
+        "admin": 132690,
+        "loss_0": 2500,
+        "loss_1": 11200,
+        "loss_2": 5700,
+        "loss_3": 13900,
+        "loss_4": 10900,
+        "loss_5": 13200,
+        "claw_0": 9400,
+        "claw_1": 18000,
+        "claw_2": 8800,
+        "group_cap": 12100,
+        "global_claw": 9800
+      }
+    },
+    {
+      "id": "offer_1398807462a2",
+      "attrs": {
+        "price": 472187,
+        "admin": 127632,
+        "loss_0": 8100,
+        "loss_1": 13600,
+        "loss_2": 2200,
+        "loss_3": 11000,
+        "loss_4": 12200,
+        "loss_5": 13100,
+        "claw_0": 2400,
+        "claw_1": 6400,
+        "claw_2": 8600,
+        "group_cap": 23200,
+        "global_claw": 14000
+      }
+    },
+    {
+      "id": "offer_8afdb4d0d978",
+      "attrs": {
+        "price": 883100,
+        "admin": 124083,
+        "loss_0": 11200,
+        "loss_1": 10700,
+        "loss_2": 9300,
+        "loss_3": 12800,
+        "loss_4": 2200,
+        "loss_5": 3700,
+        "claw_0": 8600,
+        "claw_1": 13100,
+        "claw_2": 18000,
+        "group_cap": 31600,
+        "global_claw": 14400
+      }
+    },
+    {
+      "id": "offer_bc78d2730de8",
+      "attrs": {
+        "price": 657588,
+        "admin": 140904,
+        "loss_0": 1700,
+        "loss_1": 5700,
+        "loss_2": 5200,
+        "loss_3": 5100,
+        "loss_4": 10000,
+        "loss_5": 9700,
+        "claw_0": 5500,
+        "claw_1": 16000,
+        "claw_2": 24600,
+        "group_cap": 20200,
+        "global_claw": 14700
+      }
+    },
+    {
+      "id": "offer_5860f8551f6b",
+      "attrs": {
+        "price": 482109,
+        "admin": 150501,
+        "loss_0": 14500,
+        "loss_1": 6600,
+        "loss_2": 5000,
+        "loss_3": 6400,
+        "loss_4": 9700,
+        "loss_5": 4600,
+        "claw_0": 24600,
+        "claw_1": 9800,
+        "claw_2": 13000,
+        "group_cap": 29900,
+        "global_claw": 7700
+      }
+    },
+    {
+      "id": "offer_40bc69e9e2c0",
+      "attrs": {
+        "price": 589757,
+        "admin": 142219,
+        "loss_0": 9600,
+        "loss_1": 5300,
+        "loss_2": 12400,
+        "loss_3": 11800,
+        "loss_4": 1600,
+        "loss_5": 3000,
+        "claw_0": 6500,
+        "claw_1": 3000,
+        "claw_2": 16400,
+        "group_cap": 18000,
+        "global_claw": 9100
+      }
+    },
+    {
+      "id": "offer_3481426e933c",
+      "attrs": {
+        "price": 603201,
+        "admin": 123669,
+        "loss_0": 10300,
+        "loss_1": 13300,
+        "loss_2": 12300,
+        "loss_3": 10500,
+        "loss_4": 11600,
+        "loss_5": 12800,
+        "claw_0": 8300,
+        "claw_1": 19000,
+        "claw_2": 6100,
+        "group_cap": 22800,
+        "global_claw": 14700
+      }
+    },
+    {
+      "id": "offer_22b16c44561d",
+      "attrs": {
+        "price": 544994,
+        "admin": 139835,
+        "loss_0": 4500,
+        "loss_1": 11700,
+        "loss_2": 1900,
+        "loss_3": 9900,
+        "loss_4": 3200,
+        "loss_5": 12800,
+        "claw_0": 12700,
+        "claw_1": 4500,
+        "claw_2": 5700,
+        "group_cap": 21600,
+        "global_claw": 13000
+      }
+    },
+    {
+      "id": "offer_1e063ae3fbce",
+      "attrs": {
+        "price": 451321,
+        "admin": 159680,
+        "loss_0": 10000,
+        "loss_1": 3700,
+        "loss_2": 8600,
+        "loss_3": 6200,
+        "loss_4": 3200,
+        "loss_5": 1600,
+        "claw_0": 6300,
+        "claw_1": 4200,
+        "claw_2": 9900,
+        "group_cap": 27900,
+        "global_claw": 5000
+      }
+    },
+    {
+      "id": "offer_b418e23f2e42",
+      "attrs": {
+        "price": 666192,
+        "admin": 131224,
+        "loss_0": 11000,
+        "loss_1": 2600,
+        "loss_2": 14200,
+        "loss_3": 13700,
+        "loss_4": 7800,
+        "loss_5": 4500,
+        "claw_0": 11800,
+        "claw_1": 18400,
+        "claw_2": 4900,
+        "group_cap": 19800,
+        "global_claw": 16700
+      }
+    },
+    {
+      "id": "offer_25a4e77f0ed7",
+      "attrs": {
+        "price": 841051,
+        "admin": 137098,
+        "loss_0": 14500,
+        "loss_1": 7100,
+        "loss_2": 2700,
+        "loss_3": 4100,
+        "loss_4": 4400,
+        "loss_5": 12100,
+        "claw_0": 11300,
+        "claw_1": 24800,
+        "claw_2": 7100,
+        "group_cap": 34100,
+        "global_claw": 3600
+      }
+    },
+    {
+      "id": "offer_006fb05fb65a",
+      "attrs": {
+        "price": 586395,
+        "admin": 142621,
+        "loss_0": 2500,
+        "loss_1": 2100,
+        "loss_2": 12000,
+        "loss_3": 8600,
+        "loss_4": 13400,
+        "loss_5": 13700,
+        "claw_0": 7300,
+        "claw_1": 23000,
+        "claw_2": 12300,
+        "group_cap": 14100,
+        "global_claw": 6000
+      }
+    },
+    {
+      "id": "offer_dd2b9e682a9a",
+      "attrs": {
+        "price": 588850,
+        "admin": 142310,
+        "loss_0": 13400,
+        "loss_1": 10600,
+        "loss_2": 5900,
+        "loss_3": 2100,
+        "loss_4": 12400,
+        "loss_5": 10400,
+        "claw_0": 10200,
+        "claw_1": 9500,
+        "claw_2": 4500,
+        "group_cap": 30200,
+        "global_claw": 14700
+      }
+    },
+    {
+      "id": "offer_1627e2780e02",
+      "attrs": {
+        "price": 887855,
+        "admin": 147751,
+        "loss_0": 1500,
+        "loss_1": 15000,
+        "loss_2": 11400,
+        "loss_3": 9900,
+        "loss_4": 2900,
+        "loss_5": 6400,
+        "claw_0": 16300,
+        "claw_1": 13900,
+        "claw_2": 18800,
+        "group_cap": 8200,
+        "global_claw": 12200
+      }
+    },
+    {
+      "id": "offer_9667912d6924",
+      "attrs": {
+        "price": 843203,
+        "admin": 131776,
+        "loss_0": 12900,
+        "loss_1": 6000,
+        "loss_2": 12700,
+        "loss_3": 2700,
+        "loss_4": 11400,
+        "loss_5": 11700,
+        "claw_0": 20100,
+        "claw_1": 11100,
+        "claw_2": 9200,
+        "group_cap": 30600,
+        "global_claw": 6900
+      }
+    },
+    {
+      "id": "offer_7610f5f70b01",
+      "attrs": {
+        "price": 698000,
+        "admin": 141479,
+        "loss_0": 3900,
+        "loss_1": 6500,
+        "loss_2": 14500,
+        "loss_3": 4600,
+        "loss_4": 7200,
+        "loss_5": 4900,
+        "claw_0": 11400,
+        "claw_1": 21600,
+        "claw_2": 15400,
+        "group_cap": 25400,
+        "global_claw": 13800
+      }
+    },
+    {
+      "id": "offer_b806b943a507",
+      "attrs": {
+        "price": 701276,
+        "admin": 138522,
+        "loss_0": 8900,
+        "loss_1": 3200,
+        "loss_2": 8300,
+        "loss_3": 600,
+        "loss_4": 4600,
+        "loss_5": 13300,
+        "claw_0": 19800,
+        "claw_1": 3800,
+        "claw_2": 11600,
+        "group_cap": 22000,
+        "global_claw": 14800
+      }
+    }
+  ]
+}

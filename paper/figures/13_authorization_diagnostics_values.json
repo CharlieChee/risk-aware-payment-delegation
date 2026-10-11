@@ -1,0 +1,43 @@
+{
+  "source": "data/diagnostics/stress_chart_data.json",
+  "scope": "All three DeepSeek settings; pooled over three executable realizations",
+  "unit": "Frozen rule artifacts, not independent natural-language requests",
+  "base_tasks": 72,
+  "artifacts": 648,
+  "catalogue_replays": 1296,
+  "profiles": [
+    {
+      "profile": "ds_flash_low",
+      "label": "Low",
+      "n": 216,
+      "grid_unsafe_domain": 5,
+      "grid_unsafe_selection": 0,
+      "single_unsafe_selection": 2,
+      "grid_invalid": 7,
+      "single_invalid": 7
+    },
+    {
+      "profile": "ds_flash_high",
+      "label": "High",
+      "n": 216,
+      "grid_unsafe_domain": 8,
+      "grid_unsafe_selection": 0,
+      "single_unsafe_selection": 1,
+      "grid_invalid": 1,
+      "single_invalid": 1
+    },
+    {
+      "profile": "ds_flash_max",
+      "label": "Max",
+      "n": 216,
+      "grid_unsafe_domain": 10,
+      "grid_unsafe_selection": 0,
+      "single_unsafe_selection": 5,
+      "grid_invalid": 4,
+      "single_invalid": 4
+    }
+  ],
+  "invalid_per_catalogue": 12,
+  "original_responses_modified": false,
+  "new_model_calls": 0
+}

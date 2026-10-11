@@ -1,0 +1,36 @@
+[
+  {
+    "profile": "opus55_medium",
+    "arm": "direct",
+    "n": 53,
+    "exact": 16,
+    "unsafe": 2,
+    "false_refusal": 4,
+    "other": 31,
+    "expected_accept": 31,
+    "correct_accept": 10,
+    "outcomes": {
+      "exact": 16,
+      "timeout": 11,
+      "false_refusal": 4,
+      "unsafe_accept": 2,
+      "invalid_output": 20
+    }
+  },
+  {
+    "profile": "opus55_medium",
+    "arm": "set",
+    "n": 68,
+    "exact": 60,
+    "unsafe": 0,
+    "false_refusal": 0,
+    "other": 8,
+    "expected_accept": 29,
+    "correct_accept": 26,
+    "outcomes": {
+      "exact": 60,
+      "invalid_output": 7,
+      "transport_or_provider_failure": 1
+    }
+  }
+]

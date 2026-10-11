@@ -1,0 +1,154 @@
+{
+  "scope": "Read-only audit of locally indexed historical primary Set evaluations; external aggregates are not per-trial records.",
+  "profiles": {
+    "ds_flash_high": {
+      "records": 200,
+      "valid": 191,
+      "accept": 98,
+      "invalid": 9
+    },
+    "astra_max": {
+      "records": 200,
+      "valid": 200,
+      "accept": 100
+    },
+    "ds_flash_low": {
+      "records": 200,
+      "valid": 189,
+      "accept": 97,
+      "any_unknown": 1,
+      "decision_relevant_unknown": 1,
+      "invalid": 11
+    },
+    "glm53_flash_low": {
+      "records": 200,
+      "valid": 174,
+      "accept": 99,
+      "invalid": 26,
+      "any_unknown": 2,
+      "decision_relevant_unknown": 2
+    },
+    "gpt56_luna_medium": {
+      "records": 200,
+      "valid": 178,
+      "accept": 119,
+      "invalid": 22,
+      "any_unknown": 1,
+      "decision_relevant_unknown": 1
+    },
+    "gpt56_sol_medium": {
+      "records": 200,
+      "valid": 200,
+      "accept": 100
+    },
+    "gpt56_terra_medium": {
+      "records": 200,
+      "valid": 191,
+      "accept": 105,
+      "invalid": 9
+    },
+    "qwen_flash_low": {
+      "records": 200,
+      "valid": 195,
+      "accept": 100,
+      "invalid": 5
+    },
+    "qwen_max_low": {
+      "records": 200,
+      "valid": 178,
+      "accept": 76,
+      "invalid": 22
+    }
+  },
+  "missing_paths": [],
+  "affected": [
+    {
+      "profile": "ds_flash_low",
+      "evaluation": "archive/rac_model_lab/campaigns/20261007_template_confirmation_v39/evaluations/ds_flash_low/ds_flash_low__case_4a749b95d2ad23421c__set/case_4a749b95d2ad23421c.json",
+      "decision": "reject",
+      "exact": true,
+      "n_unresolved_candidates": 512,
+      "reason": "no_certified_observed_candidate"
+    },
+    {
+      "profile": "glm53_flash_low",
+      "evaluation": "archive/rac_model_lab/campaigns/20261010_glm_flash_low_128k_v47/evaluations/glm53_flash_low/glm53_flash_low__case_a6535f32d56f14ab72__set/case_a6535f32d56f14ab72.json",
+      "decision": "reject",
+      "exact": true,
+      "n_unresolved_candidates": 256,
+      "reason": "no_certified_observed_candidate"
+    },
+    {
+      "profile": "glm53_flash_low",
+      "evaluation": "archive/rac_model_lab/campaigns/20261010_glm_flash_low_128k_v47/evaluations/glm53_flash_low/glm53_flash_low__case_19a4e4fdd606bfeea0__set/case_19a4e4fdd606bfeea0.json",
+      "decision": "reject",
+      "exact": false,
+      "n_unresolved_candidates": 1024,
+      "reason": "no_certified_observed_candidate"
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "evaluation": "archive/rac_model_lab/campaigns/20261010_figure2_gpt56medium_glmhigh_v48/evaluations/gpt56_luna_medium/gpt56_luna_medium__case_7ad9050d09c1271405__set/case_7ad9050d09c1271405.json",
+      "decision": "reject",
+      "exact": false,
+      "n_unresolved_candidates": 2,
+      "reason": "no_certified_observed_candidate"
+    }
+  ],
+  "counterexample": {
+    "decision": "accept",
+    "allowed_ids": [
+      "A"
+    ],
+    "guaranteed_utility": "10",
+    "reason_code": "optimal_certified",
+    "matrix": [
+      {
+        "id": "A",
+        "states": [
+          {
+            "label": "one",
+            "hard": true,
+            "risk": true,
+            "utility": "10"
+          }
+        ],
+        "safe": true,
+        "psi": "10",
+        "proven_unsafe": false,
+        "evidence_code": "certified_eligible",
+        "missing_attributes": []
+      },
+      {
+        "id": "B",
+        "states": [
+          {
+            "label": "one",
+            "hard": true,
+            "risk": true,
+            "utility": null
+          }
+        ],
+        "safe": true,
+        "psi": null,
+        "proven_unsafe": false,
+        "evidence_code": "utility_unknown",
+        "missing_attributes": [
+          "value"
+        ]
+      }
+    ],
+    "no_orders_executed": true,
+    "optimization_scope": "certified_observed_candidates",
+    "mode": "full",
+    "catalog_complete": true,
+    "reject_utility": "0",
+    "utility_floor": null,
+    "retained_states": [
+      "one"
+    ],
+    "optimization_applied": true,
+    "detail": "all_maximin_ties_among_certified_observed_candidates"
+  },
+  "model_calls": 0
+}

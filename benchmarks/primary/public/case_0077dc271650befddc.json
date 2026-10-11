@@ -1,0 +1,3941 @@
+{
+  "records": [
+    {
+      "id": "U-task",
+      "author": "user",
+      "status": "current",
+      "text": "Buy an indivisible package consisting of six prepaid itinerary services numbered 0 through 5 and insurance, with the premium already included in price. Only one catalog row can be selected and fixed today; the package cannot be changed afterward according to the adverse event. The products, dates, suppliers, and availability have been checked accurately."
+    },
+    {
+      "id": "U-events",
+      "author": "user",
+      "status": "current",
+      "text": "There may be no adverse event, or any set of at most 4 services may be cancelled; every specific subset satisfying the count limit may occur. There are no additional correlation restrictions, and no probabilities are provided."
+    },
+    {
+      "id": "U-contract",
+      "author": "user",
+      "status": "current",
+      "text": "The sum of loss for the services actually cancelled is the gross loss. When the gross loss strictly exceeds franchise, payment begins with the first fen of gross loss, but is capped at coverage; when the gross loss is less than or equal to franchise, not a single fen is paid. franchise is the threshold for payment to begin, not a deductible that must still be subtracted after the threshold is exceeded. Net loss equals gross loss minus the actual insurance payout, plus one admin charge; admin is not covered by any insurance. The assessed loss for the empty event is 0, with no admin or other charges. Unaffected items incur no adverse-event loss; there are no other unstated terms."
+    },
+    {
+      "id": "U-budget",
+      "author": "user",
+      "status": "current",
+      "text": "The attributes are complete and accurate, and are all nonnegative integers; monetary amounts are in fen of RMB, and weight is in grams. The original payment price must not exceed 1200000 fen of RMB, and the original payment and discount conditions stated in the contract must be satisfied. In each permitted event, the assessment amount described above must not exceed 200000 fen of RMB; equality with the limit is acceptable, and the limit must not be relaxed. This catalog is complete, with no hidden options."
+    },
+    {
+      "id": "U-utility",
+      "author": "user",
+      "status": "current",
+      "text": "Utility in each event is 2000000 minus price, then minus the assessment amount for that event. For candidates that satisfy the hard conditions and risk limits for all events simultaneously, take the lowest utility over all events, then choose the candidate with the greatest lowest utility; accept only if that value is strictly greater than 0, otherwise refuse. Do not ask the user questions."
+    }
+  ],
+  "attributes": {
+    "price": "Original amount actually paid for the whole order, in integer fen of RMB",
+    "admin": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+    "loss_0": "Gross loss not refunded by the supplier when service 0 is cancelled, in integer fen of RMB",
+    "loss_1": "Gross loss not refunded by the supplier when service 1 is cancelled, in integer fen of RMB",
+    "loss_2": "Gross loss not refunded by the supplier when service 2 is cancelled, in integer fen of RMB",
+    "loss_3": "Gross loss not refunded by the supplier when service 3 is cancelled, in integer fen of RMB",
+    "loss_4": "Gross loss not refunded by the supplier when service 4 is cancelled, in integer fen of RMB",
+    "loss_5": "Gross loss not refunded by the supplier when service 5 is cancelled, in integer fen of RMB",
+    "franchise": "Threshold for payment to begin, in integer fen of RMB",
+    "coverage": "Insurance payout limit, in integer fen of RMB"
+  },
+  "attribute_schema": {
+    "price": {
+      "description": "Original amount actually paid for the whole order, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "admin": {
+      "description": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_0": {
+      "description": "Gross loss not refunded by the supplier when service 0 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_1": {
+      "description": "Gross loss not refunded by the supplier when service 1 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_2": {
+      "description": "Gross loss not refunded by the supplier when service 2 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_3": {
+      "description": "Gross loss not refunded by the supplier when service 3 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_4": {
+      "description": "Gross loss not refunded by the supplier when service 4 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_5": {
+      "description": "Gross loss not refunded by the supplier when service 5 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "franchise": {
+      "description": "Threshold for payment to begin, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "coverage": {
+      "description": "Insurance payout limit, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    }
+  },
+  "catalog_complete": true,
+  "candidates": [
+    {
+      "id": "offer_ccdcce20f377",
+      "attrs": {
+        "price": 557972,
+        "admin": 144114,
+        "loss_0": 3000,
+        "loss_1": 5700,
+        "loss_2": 23900,
+        "loss_3": 10100,
+        "loss_4": 27500,
+        "loss_5": 26800,
+        "franchise": 32200,
+        "coverage": 30500
+      }
+    },
+    {
+      "id": "offer_c8b2582114d0",
+      "attrs": {
+        "price": 686028,
+        "admin": 153525,
+        "loss_0": 4800,
+        "loss_1": 2700,
+        "loss_2": 5700,
+        "loss_3": 6800,
+        "loss_4": 21800,
+        "loss_5": 28200,
+        "franchise": 55300,
+        "coverage": 16800
+      }
+    },
+    {
+      "id": "offer_a3d50844806a",
+      "attrs": {
+        "price": 477332,
+        "admin": 180108,
+        "loss_0": 11500,
+        "loss_1": 4500,
+        "loss_2": 12800,
+        "loss_3": 15000,
+        "loss_4": 12200,
+        "loss_5": 29500,
+        "franchise": 35100,
+        "coverage": 58100
+      }
+    },
+    {
+      "id": "offer_0136e7fe1ca4",
+      "attrs": {
+        "price": 878812,
+        "admin": 177057,
+        "loss_0": 19900,
+        "loss_1": 10400,
+        "loss_2": 19300,
+        "loss_3": 6400,
+        "loss_4": 17600,
+        "loss_5": 2700,
+        "franchise": 22400,
+        "coverage": 29100
+      }
+    },
+    {
+      "id": "offer_52ba36c95688",
+      "attrs": {
+        "price": 701999,
+        "admin": 179086,
+        "loss_0": 19800,
+        "loss_1": 8700,
+        "loss_2": 28500,
+        "loss_3": 24300,
+        "loss_4": 24900,
+        "loss_5": 19300,
+        "franchise": 15100,
+        "coverage": 58400
+      }
+    },
+    {
+      "id": "offer_ceab1bacc58c",
+      "attrs": {
+        "price": 571872,
+        "admin": 168801,
+        "loss_0": 16800,
+        "loss_1": 6900,
+        "loss_2": 19200,
+        "loss_3": 16000,
+        "loss_4": 21600,
+        "loss_5": 29600,
+        "franchise": 17000,
+        "coverage": 42100
+      }
+    },
+    {
+      "id": "offer_5fef30236836",
+      "attrs": {
+        "price": 829588,
+        "admin": 170892,
+        "loss_0": 6000,
+        "loss_1": 2300,
+        "loss_2": 14200,
+        "loss_3": 18300,
+        "loss_4": 16700,
+        "loss_5": 9200,
+        "franchise": 33700,
+        "coverage": 58200
+      }
+    },
+    {
+      "id": "offer_e48ec9e6cb79",
+      "attrs": {
+        "price": 829168,
+        "admin": 151579,
+        "loss_0": 17600,
+        "loss_1": 7700,
+        "loss_2": 15700,
+        "loss_3": 18200,
+        "loss_4": 15600,
+        "loss_5": 16700,
+        "franchise": 17100,
+        "coverage": 15100
+      }
+    },
+    {
+      "id": "offer_f29e6ce01f4b",
+      "attrs": {
+        "price": 639907,
+        "admin": 165908,
+        "loss_0": 24400,
+        "loss_1": 10700,
+        "loss_2": 16700,
+        "loss_3": 29500,
+        "loss_4": 10000,
+        "loss_5": 6500,
+        "franchise": 27200,
+        "coverage": 41200
+      }
+    },
+    {
+      "id": "offer_7021ab45a8b3",
+      "attrs": {
+        "price": 718843,
+        "admin": 163198,
+        "loss_0": 14900,
+        "loss_1": 1800,
+        "loss_2": 15900,
+        "loss_3": 11800,
+        "loss_4": 20500,
+        "loss_5": 23600,
+        "franchise": 51800,
+        "coverage": 26300
+      }
+    },
+    {
+      "id": "offer_b4908201cdd3",
+      "attrs": {
+        "price": 665306,
+        "admin": 150411,
+        "loss_0": 4300,
+        "loss_1": 6500,
+        "loss_2": 4800,
+        "loss_3": 27900,
+        "loss_4": 6900,
+        "loss_5": 18400,
+        "franchise": 59800,
+        "coverage": 29600
+      }
+    },
+    {
+      "id": "offer_a83b563528f2",
+      "attrs": {
+        "price": 556799,
+        "admin": 159287,
+        "loss_0": 2900,
+        "loss_1": 8900,
+        "loss_2": 27800,
+        "loss_3": 8200,
+        "loss_4": 7200,
+        "loss_5": 19400,
+        "franchise": 27200,
+        "coverage": 15800
+      }
+    },
+    {
+      "id": "offer_869289914932",
+      "attrs": {
+        "price": 861940,
+        "admin": 146666,
+        "loss_0": 16700,
+        "loss_1": 27400,
+        "loss_2": 22400,
+        "loss_3": 13500,
+        "loss_4": 1800,
+        "loss_5": 17200,
+        "franchise": 25800,
+        "coverage": 23800
+      }
+    },
+    {
+      "id": "offer_7ee755284149",
+      "attrs": {
+        "price": 696820,
+        "admin": 164776,
+        "loss_0": 5900,
+        "loss_1": 22900,
+        "loss_2": 6700,
+        "loss_3": 15500,
+        "loss_4": 8300,
+        "loss_5": 10600,
+        "franchise": 51300,
+        "coverage": 45400
+      }
+    },
+    {
+      "id": "offer_0941fe822620",
+      "attrs": {
+        "price": 693329,
+        "admin": 163083,
+        "loss_0": 29700,
+        "loss_1": 19600,
+        "loss_2": 23700,
+        "loss_3": 8500,
+        "loss_4": 16100,
+        "loss_5": 18400,
+        "franchise": 17700,
+        "coverage": 36700
+      }
+    },
+    {
+      "id": "offer_4a9a37d0bb31",
+      "attrs": {
+        "price": 558614,
+        "admin": 149001,
+        "loss_0": 23500,
+        "loss_1": 14800,
+        "loss_2": 18800,
+        "loss_3": 18700,
+        "loss_4": 4000,
+        "loss_5": 4200,
+        "franchise": 28700,
+        "coverage": 23000
+      }
+    },
+    {
+      "id": "offer_617ebc30e7db",
+      "attrs": {
+        "price": 611678,
+        "admin": 169600,
+        "loss_0": 14000,
+        "loss_1": 30000,
+        "loss_2": 9100,
+        "loss_3": 12500,
+        "loss_4": 2300,
+        "loss_5": 8000,
+        "franchise": 42800,
+        "coverage": 54700
+      }
+    },
+    {
+      "id": "offer_d280dcb4ad5f",
+      "attrs": {
+        "price": 645268,
+        "admin": 155096,
+        "loss_0": 7500,
+        "loss_1": 24200,
+        "loss_2": 8300,
+        "loss_3": 2400,
+        "loss_4": 16300,
+        "loss_5": 23700,
+        "franchise": 17900,
+        "coverage": 24800
+      }
+    },
+    {
+      "id": "offer_e261527d4de4",
+      "attrs": {
+        "price": 558295,
+        "admin": 170966,
+        "loss_0": 29000,
+        "loss_1": 14400,
+        "loss_2": 18900,
+        "loss_3": 21700,
+        "loss_4": 14100,
+        "loss_5": 1200,
+        "franchise": 42400,
+        "coverage": 63800
+      }
+    },
+    {
+      "id": "offer_22945c9c37aa",
+      "attrs": {
+        "price": 532464,
+        "admin": 166023,
+        "loss_0": 8900,
+        "loss_1": 16100,
+        "loss_2": 5500,
+        "loss_3": 27400,
+        "loss_4": 17900,
+        "loss_5": 4900,
+        "franchise": 31500,
+        "coverage": 24100
+      }
+    },
+    {
+      "id": "offer_3d5382dacaf2",
+      "attrs": {
+        "price": 806603,
+        "admin": 165864,
+        "loss_0": 2100,
+        "loss_1": 15800,
+        "loss_2": 2400,
+        "loss_3": 29600,
+        "loss_4": 29800,
+        "loss_5": 5400,
+        "franchise": 42600,
+        "coverage": 31100
+      }
+    },
+    {
+      "id": "offer_357035ffe67f",
+      "attrs": {
+        "price": 637980,
+        "admin": 170688,
+        "loss_0": 26000,
+        "loss_1": 17500,
+        "loss_2": 21000,
+        "loss_3": 25500,
+        "loss_4": 19500,
+        "loss_5": 14900,
+        "franchise": 44200,
+        "coverage": 53100
+      }
+    },
+    {
+      "id": "offer_667a43cab974",
+      "attrs": {
+        "price": 795864,
+        "admin": 159082,
+        "loss_0": 20700,
+        "loss_1": 7200,
+        "loss_2": 15700,
+        "loss_3": 1000,
+        "loss_4": 19800,
+        "loss_5": 6700,
+        "franchise": 17500,
+        "coverage": 15500
+      }
+    },
+    {
+      "id": "offer_855eb4bdc349",
+      "attrs": {
+        "price": 602866,
+        "admin": 157370,
+        "loss_0": 7100,
+        "loss_1": 29900,
+        "loss_2": 14600,
+        "loss_3": 16300,
+        "loss_4": 18000,
+        "loss_5": 17900,
+        "franchise": 47400,
+        "coverage": 45600
+      }
+    },
+    {
+      "id": "offer_b36f5575f1c4",
+      "attrs": {
+        "price": 616565,
+        "admin": 158883,
+        "loss_0": 28500,
+        "loss_1": 16100,
+        "loss_2": 24900,
+        "loss_3": 21600,
+        "loss_4": 5900,
+        "loss_5": 25300,
+        "franchise": 24300,
+        "coverage": 48600
+      }
+    },
+    {
+      "id": "offer_a973ce2da623",
+      "attrs": {
+        "price": 734882,
+        "admin": 150785,
+        "loss_0": 4800,
+        "loss_1": 21200,
+        "loss_2": 12400,
+        "loss_3": 16600,
+        "loss_4": 22200,
+        "loss_5": 12500,
+        "franchise": 36700,
+        "coverage": 16400
+      }
+    },
+    {
+      "id": "offer_b65eb8b5cf95",
+      "attrs": {
+        "price": 666081,
+        "admin": 165560,
+        "loss_0": 5900,
+        "loss_1": 29600,
+        "loss_2": 27000,
+        "loss_3": 17200,
+        "loss_4": 21200,
+        "loss_5": 5400,
+        "franchise": 27800,
+        "coverage": 44400
+      }
+    },
+    {
+      "id": "offer_a00877b01008",
+      "attrs": {
+        "price": 520915,
+        "admin": 181254,
+        "loss_0": 6600,
+        "loss_1": 8300,
+        "loss_2": 27200,
+        "loss_3": 20200,
+        "loss_4": 1700,
+        "loss_5": 10900,
+        "franchise": 21500,
+        "coverage": 62000
+      }
+    },
+    {
+      "id": "offer_5fafbc9e218e",
+      "attrs": {
+        "price": 593414,
+        "admin": 135917,
+        "loss_0": 7500,
+        "loss_1": 29200,
+        "loss_2": 17600,
+        "loss_3": 27700,
+        "loss_4": 2200,
+        "loss_5": 20500,
+        "franchise": 38200,
+        "coverage": 25400
+      }
+    },
+    {
+      "id": "offer_a9963db816a4",
+      "attrs": {
+        "price": 624331,
+        "admin": 149400,
+        "loss_0": 28500,
+        "loss_1": 27600,
+        "loss_2": 21000,
+        "loss_3": 18400,
+        "loss_4": 12500,
+        "loss_5": 24100,
+        "franchise": 19400,
+        "coverage": 37100
+      }
+    },
+    {
+      "id": "offer_32332bd01539",
+      "attrs": {
+        "price": 696770,
+        "admin": 152663,
+        "loss_0": 14700,
+        "loss_1": 26800,
+        "loss_2": 23900,
+        "loss_3": 13400,
+        "loss_4": 17700,
+        "loss_5": 16200,
+        "franchise": 59000,
+        "coverage": 25600
+      }
+    },
+    {
+      "id": "offer_f84e14690389",
+      "attrs": {
+        "price": 797459,
+        "admin": 184653,
+        "loss_0": 1800,
+        "loss_1": 21900,
+        "loss_2": 26900,
+        "loss_3": 21500,
+        "loss_4": 13200,
+        "loss_5": 14900,
+        "franchise": 33700,
+        "coverage": 64200
+      }
+    },
+    {
+      "id": "offer_a0b33381d018",
+      "attrs": {
+        "price": 751677,
+        "admin": 187538,
+        "loss_0": 18800,
+        "loss_1": 17400,
+        "loss_2": 29800,
+        "loss_3": 17500,
+        "loss_4": 10400,
+        "loss_5": 23200,
+        "franchise": 18100,
+        "coverage": 64300
+      }
+    },
+    {
+      "id": "offer_1ad3b47482e2",
+      "attrs": {
+        "price": 664062,
+        "admin": 193973,
+        "loss_0": 15400,
+        "loss_1": 23600,
+        "loss_2": 15900,
+        "loss_3": 1700,
+        "loss_4": 3200,
+        "loss_5": 6500,
+        "franchise": 19900,
+        "coverage": 44300
+      }
+    },
+    {
+      "id": "offer_d74290ed8036",
+      "attrs": {
+        "price": 536716,
+        "admin": 143922,
+        "loss_0": 5100,
+        "loss_1": 20800,
+        "loss_2": 6800,
+        "loss_3": 29800,
+        "loss_4": 3300,
+        "loss_5": 15500,
+        "franchise": 58600,
+        "coverage": 32500
+      }
+    },
+    {
+      "id": "offer_7117ae94b3b9",
+      "attrs": {
+        "price": 845160,
+        "admin": 154891,
+        "loss_0": 8600,
+        "loss_1": 29200,
+        "loss_2": 9200,
+        "loss_3": 24300,
+        "loss_4": 11700,
+        "loss_5": 16300,
+        "franchise": 25900,
+        "coverage": 23000
+      }
+    },
+    {
+      "id": "offer_5e0d7f877887",
+      "attrs": {
+        "price": 656787,
+        "admin": 184315,
+        "loss_0": 6200,
+        "loss_1": 15600,
+        "loss_2": 15800,
+        "loss_3": 19800,
+        "loss_4": 15500,
+        "loss_5": 27700,
+        "franchise": 36400,
+        "coverage": 59300
+      }
+    },
+    {
+      "id": "offer_2a2774afb71c",
+      "attrs": {
+        "price": 822102,
+        "admin": 181450,
+        "loss_0": 21400,
+        "loss_1": 6500,
+        "loss_2": 15300,
+        "loss_3": 16200,
+        "loss_4": 4500,
+        "loss_5": 5700,
+        "franchise": 36200,
+        "coverage": 43000
+      }
+    },
+    {
+      "id": "offer_9803a3c5bdde",
+      "attrs": {
+        "price": 756487,
+        "admin": 159817,
+        "loss_0": 19500,
+        "loss_1": 8000,
+        "loss_2": 21700,
+        "loss_3": 23200,
+        "loss_4": 21400,
+        "loss_5": 21800,
+        "franchise": 55900,
+        "coverage": 53700
+      }
+    },
+    {
+      "id": "offer_dfb2e4caaf4c",
+      "attrs": {
+        "price": 556117,
+        "admin": 130515,
+        "loss_0": 11000,
+        "loss_1": 9000,
+        "loss_2": 27600,
+        "loss_3": 27800,
+        "loss_4": 23700,
+        "loss_5": 23300,
+        "franchise": 33000,
+        "coverage": 26800
+      }
+    },
+    {
+      "id": "offer_367fa8c2f9a4",
+      "attrs": {
+        "price": 571297,
+        "admin": 158121,
+        "loss_0": 23800,
+        "loss_1": 25400,
+        "loss_2": 16200,
+        "loss_3": 27800,
+        "loss_4": 11300,
+        "loss_5": 24500,
+        "franchise": 33600,
+        "coverage": 55800
+      }
+    },
+    {
+      "id": "offer_c9833dcd412d",
+      "attrs": {
+        "price": 621189,
+        "admin": 159895,
+        "loss_0": 27000,
+        "loss_1": 9800,
+        "loss_2": 22300,
+        "loss_3": 26700,
+        "loss_4": 24100,
+        "loss_5": 3300,
+        "franchise": 40500,
+        "coverage": 44400
+      }
+    },
+    {
+      "id": "offer_2dad268224f0",
+      "attrs": {
+        "price": 837800,
+        "admin": 141534,
+        "loss_0": 26200,
+        "loss_1": 5100,
+        "loss_2": 26700,
+        "loss_3": 15200,
+        "loss_4": 16400,
+        "loss_5": 6000,
+        "franchise": 45000,
+        "coverage": 23500
+      }
+    },
+    {
+      "id": "offer_969e72909c4e",
+      "attrs": {
+        "price": 807021,
+        "admin": 144456,
+        "loss_0": 23400,
+        "loss_1": 13800,
+        "loss_2": 2200,
+        "loss_3": 10600,
+        "loss_4": 19500,
+        "loss_5": 11900,
+        "franchise": 58200,
+        "coverage": 34300
+      }
+    },
+    {
+      "id": "offer_93d0a45b9eb3",
+      "attrs": {
+        "price": 567699,
+        "admin": 179153,
+        "loss_0": 10600,
+        "loss_1": 2100,
+        "loss_2": 4100,
+        "loss_3": 20700,
+        "loss_4": 6300,
+        "loss_5": 16500,
+        "franchise": 20600,
+        "coverage": 32800
+      }
+    },
+    {
+      "id": "offer_18d31deba9b1",
+      "attrs": {
+        "price": 639843,
+        "admin": 179737,
+        "loss_0": 26900,
+        "loss_1": 27000,
+        "loss_2": 17300,
+        "loss_3": 19700,
+        "loss_4": 5000,
+        "loss_5": 22100,
+        "franchise": 15500,
+        "coverage": 55700
+      }
+    },
+    {
+      "id": "offer_a41c6c7a24fb",
+      "attrs": {
+        "price": 739299,
+        "admin": 175839,
+        "loss_0": 10300,
+        "loss_1": 19500,
+        "loss_2": 10800,
+        "loss_3": 9500,
+        "loss_4": 1700,
+        "loss_5": 2900,
+        "franchise": 35100,
+        "coverage": 31400
+      }
+    },
+    {
+      "id": "offer_0dfa22ac9ee8",
+      "attrs": {
+        "price": 514705,
+        "admin": 163450,
+        "loss_0": 24800,
+        "loss_1": 24000,
+        "loss_2": 19000,
+        "loss_3": 3700,
+        "loss_4": 22800,
+        "loss_5": 5500,
+        "franchise": 53700,
+        "coverage": 63700
+      }
+    },
+    {
+      "id": "offer_87798799c387",
+      "attrs": {
+        "price": 774386,
+        "admin": 147595,
+        "loss_0": 13700,
+        "loss_1": 27000,
+        "loss_2": 7700,
+        "loss_3": 22800,
+        "loss_4": 17300,
+        "loss_5": 23000,
+        "franchise": 58000,
+        "coverage": 57600
+      }
+    },
+    {
+      "id": "offer_cdd383ab7735",
+      "attrs": {
+        "price": 571911,
+        "admin": 175481,
+        "loss_0": 24500,
+        "loss_1": 17900,
+        "loss_2": 3200,
+        "loss_3": 17500,
+        "loss_4": 1800,
+        "loss_5": 14100,
+        "franchise": 44600,
+        "coverage": 58100
+      }
+    },
+    {
+      "id": "offer_0b063f462201",
+      "attrs": {
+        "price": 885529,
+        "admin": 159626,
+        "loss_0": 28800,
+        "loss_1": 12400,
+        "loss_2": 14200,
+        "loss_3": 24300,
+        "loss_4": 27100,
+        "loss_5": 4700,
+        "franchise": 48600,
+        "coverage": 37000
+      }
+    },
+    {
+      "id": "offer_6053e3aa0da3",
+      "attrs": {
+        "price": 883396,
+        "admin": 177919,
+        "loss_0": 26900,
+        "loss_1": 24500,
+        "loss_2": 12400,
+        "loss_3": 8200,
+        "loss_4": 16400,
+        "loss_5": 20100,
+        "franchise": 38900,
+        "coverage": 51800
+      }
+    },
+    {
+      "id": "offer_06060fbd37a5",
+      "attrs": {
+        "price": 456630,
+        "admin": 155069,
+        "loss_0": 21600,
+        "loss_1": 14800,
+        "loss_2": 12500,
+        "loss_3": 29300,
+        "loss_4": 25600,
+        "loss_5": 16100,
+        "franchise": 41400,
+        "coverage": 32300
+      }
+    },
+    {
+      "id": "offer_a02ad8895cca",
+      "attrs": {
+        "price": 675407,
+        "admin": 160313,
+        "loss_0": 17600,
+        "loss_1": 18800,
+        "loss_2": 5700,
+        "loss_3": 21600,
+        "loss_4": 3400,
+        "loss_5": 11000,
+        "franchise": 40500,
+        "coverage": 53500
+      }
+    },
+    {
+      "id": "offer_bcd6bb9b813c",
+      "attrs": {
+        "price": 757994,
+        "admin": 175479,
+        "loss_0": 4800,
+        "loss_1": 28300,
+        "loss_2": 5900,
+        "loss_3": 5600,
+        "loss_4": 13800,
+        "loss_5": 13600,
+        "franchise": 20300,
+        "coverage": 27200
+      }
+    },
+    {
+      "id": "offer_8b7525c8800d",
+      "attrs": {
+        "price": 593623,
+        "admin": 159635,
+        "loss_0": 1100,
+        "loss_1": 18600,
+        "loss_2": 11300,
+        "loss_3": 27100,
+        "loss_4": 11900,
+        "loss_5": 4800,
+        "franchise": 46900,
+        "coverage": 38200
+      }
+    },
+    {
+      "id": "offer_049f35eb24f1",
+      "attrs": {
+        "price": 726429,
+        "admin": 171612,
+        "loss_0": 22700,
+        "loss_1": 14800,
+        "loss_2": 24100,
+        "loss_3": 2700,
+        "loss_4": 9500,
+        "loss_5": 7900,
+        "franchise": 15500,
+        "coverage": 36300
+      }
+    },
+    {
+      "id": "offer_f8bebe8c5c0e",
+      "attrs": {
+        "price": 478834,
+        "admin": 165802,
+        "loss_0": 12300,
+        "loss_1": 22400,
+        "loss_2": 6100,
+        "loss_3": 27500,
+        "loss_4": 29300,
+        "loss_5": 23500,
+        "franchise": 47600,
+        "coverage": 57800
+      }
+    },
+    {
+      "id": "offer_ef65e38df415",
+      "attrs": {
+        "price": 726351,
+        "admin": 150537,
+        "loss_0": 9500,
+        "loss_1": 28500,
+        "loss_2": 3100,
+        "loss_3": 3200,
+        "loss_4": 14800,
+        "loss_5": 13100,
+        "franchise": 59500,
+        "coverage": 39900
+      }
+    },
+    {
+      "id": "offer_ea2bb4a7135c",
+      "attrs": {
+        "price": 600595,
+        "admin": 142483,
+        "loss_0": 20200,
+        "loss_1": 22700,
+        "loss_2": 14100,
+        "loss_3": 26100,
+        "loss_4": 27700,
+        "loss_5": 20800,
+        "franchise": 44300,
+        "coverage": 32100
+      }
+    },
+    {
+      "id": "offer_3580c038bf79",
+      "attrs": {
+        "price": 526328,
+        "admin": 149313,
+        "loss_0": 8200,
+        "loss_1": 19000,
+        "loss_2": 12200,
+        "loss_3": 9800,
+        "loss_4": 11200,
+        "loss_5": 29700,
+        "franchise": 51400,
+        "coverage": 39100
+      }
+    },
+    {
+      "id": "offer_84a0441ca25b",
+      "attrs": {
+        "price": 593503,
+        "admin": 169532,
+        "loss_0": 21200,
+        "loss_1": 23400,
+        "loss_2": 20200,
+        "loss_3": 12500,
+        "loss_4": 11500,
+        "loss_5": 5400,
+        "franchise": 49100,
+        "coverage": 60900
+      }
+    },
+    {
+      "id": "offer_cf58bea88d26",
+      "attrs": {
+        "price": 587438,
+        "admin": 169137,
+        "loss_0": 10200,
+        "loss_1": 22900,
+        "loss_2": 20500,
+        "loss_3": 16300,
+        "loss_4": 15400,
+        "loss_5": 9800,
+        "franchise": 44800,
+        "coverage": 33600
+      }
+    },
+    {
+      "id": "offer_e7f8115d9b77",
+      "attrs": {
+        "price": 780379,
+        "admin": 147795,
+        "loss_0": 8800,
+        "loss_1": 5100,
+        "loss_2": 15700,
+        "loss_3": 10900,
+        "loss_4": 7900,
+        "loss_5": 17400,
+        "franchise": 55900,
+        "coverage": 24500
+      }
+    },
+    {
+      "id": "offer_5e6e78b3ce6b",
+      "attrs": {
+        "price": 558864,
+        "admin": 154170,
+        "loss_0": 27000,
+        "loss_1": 27300,
+        "loss_2": 13800,
+        "loss_3": 2400,
+        "loss_4": 10700,
+        "loss_5": 13600,
+        "franchise": 48500,
+        "coverage": 29200
+      }
+    },
+    {
+      "id": "offer_c1e718917d5f",
+      "attrs": {
+        "price": 642616,
+        "admin": 165866,
+        "loss_0": 10900,
+        "loss_1": 23700,
+        "loss_2": 21500,
+        "loss_3": 19600,
+        "loss_4": 29600,
+        "loss_5": 10700,
+        "franchise": 20300,
+        "coverage": 50100
+      }
+    },
+    {
+      "id": "offer_6a8305905b54",
+      "attrs": {
+        "price": 460907,
+        "admin": 166897,
+        "loss_0": 26200,
+        "loss_1": 14800,
+        "loss_2": 14700,
+        "loss_3": 28400,
+        "loss_4": 13500,
+        "loss_5": 11100,
+        "franchise": 40900,
+        "coverage": 54900
+      }
+    },
+    {
+      "id": "offer_c27fd75e24f1",
+      "attrs": {
+        "price": 818968,
+        "admin": 194643,
+        "loss_0": 4900,
+        "loss_1": 7000,
+        "loss_2": 21900,
+        "loss_3": 8900,
+        "loss_4": 12400,
+        "loss_5": 13200,
+        "franchise": 17800,
+        "coverage": 47900
+      }
+    },
+    {
+      "id": "offer_104bd014100b",
+      "attrs": {
+        "price": 689452,
+        "admin": 162179,
+        "loss_0": 19700,
+        "loss_1": 28900,
+        "loss_2": 11000,
+        "loss_3": 11100,
+        "loss_4": 26500,
+        "loss_5": 6300,
+        "franchise": 18700,
+        "coverage": 28800
+      }
+    },
+    {
+      "id": "offer_9f3fcb58a573",
+      "attrs": {
+        "price": 805466,
+        "admin": 156330,
+        "loss_0": 9100,
+        "loss_1": 10100,
+        "loss_2": 14500,
+        "loss_3": 1700,
+        "loss_4": 5000,
+        "loss_5": 21000,
+        "franchise": 48300,
+        "coverage": 56400
+      }
+    },
+    {
+      "id": "offer_82039ae714c8",
+      "attrs": {
+        "price": 547999,
+        "admin": 139002,
+        "loss_0": 22900,
+        "loss_1": 17900,
+        "loss_2": 10900,
+        "loss_3": 12000,
+        "loss_4": 26800,
+        "loss_5": 26100,
+        "franchise": 41700,
+        "coverage": 15000
+      }
+    },
+    {
+      "id": "offer_35d07eabe700",
+      "attrs": {
+        "price": 510572,
+        "admin": 143882,
+        "loss_0": 15700,
+        "loss_1": 27700,
+        "loss_2": 15300,
+        "loss_3": 16200,
+        "loss_4": 6600,
+        "loss_5": 22000,
+        "franchise": 27000,
+        "coverage": 20300
+      }
+    },
+    {
+      "id": "offer_d96587e11a15",
+      "attrs": {
+        "price": 757310,
+        "admin": 149069,
+        "loss_0": 1700,
+        "loss_1": 6900,
+        "loss_2": 1400,
+        "loss_3": 21400,
+        "loss_4": 24300,
+        "loss_5": 17600,
+        "franchise": 56100,
+        "coverage": 54800
+      }
+    },
+    {
+      "id": "offer_20236fda9200",
+      "attrs": {
+        "price": 722876,
+        "admin": 162498,
+        "loss_0": 23000,
+        "loss_1": 19600,
+        "loss_2": 29600,
+        "loss_3": 19600,
+        "loss_4": 8800,
+        "loss_5": 6400,
+        "franchise": 40300,
+        "coverage": 51900
+      }
+    },
+    {
+      "id": "offer_bacbcc5360e6",
+      "attrs": {
+        "price": 564866,
+        "admin": 180747,
+        "loss_0": 5800,
+        "loss_1": 27400,
+        "loss_2": 6600,
+        "loss_3": 9800,
+        "loss_4": 5900,
+        "loss_5": 19800,
+        "franchise": 19700,
+        "coverage": 32900
+      }
+    },
+    {
+      "id": "offer_680b4116eafe",
+      "attrs": {
+        "price": 745145,
+        "admin": 141662,
+        "loss_0": 10900,
+        "loss_1": 23700,
+        "loss_2": 11800,
+        "loss_3": 25700,
+        "loss_4": 23900,
+        "loss_5": 23500,
+        "franchise": 16000,
+        "coverage": 30200
+      }
+    },
+    {
+      "id": "offer_692795c76343",
+      "attrs": {
+        "price": 816246,
+        "admin": 162564,
+        "loss_0": 8800,
+        "loss_1": 26200,
+        "loss_2": 26500,
+        "loss_3": 21000,
+        "loss_4": 11100,
+        "loss_5": 26100,
+        "franchise": 56600,
+        "coverage": 54400
+      }
+    },
+    {
+      "id": "offer_09221d37ce38",
+      "attrs": {
+        "price": 526293,
+        "admin": 147846,
+        "loss_0": 28900,
+        "loss_1": 24800,
+        "loss_2": 13100,
+        "loss_3": 22300,
+        "loss_4": 1300,
+        "loss_5": 19900,
+        "franchise": 38600,
+        "coverage": 41100
+      }
+    },
+    {
+      "id": "offer_8efdf502c871",
+      "attrs": {
+        "price": 533263,
+        "admin": 173622,
+        "loss_0": 3700,
+        "loss_1": 13700,
+        "loss_2": 26700,
+        "loss_3": 2400,
+        "loss_4": 22300,
+        "loss_5": 16300,
+        "franchise": 18400,
+        "coverage": 43900
+      }
+    },
+    {
+      "id": "offer_967d39facd60",
+      "attrs": {
+        "price": 555077,
+        "admin": 165307,
+        "loss_0": 22800,
+        "loss_1": 7800,
+        "loss_2": 17100,
+        "loss_3": 21800,
+        "loss_4": 13500,
+        "loss_5": 21900,
+        "franchise": 47400,
+        "coverage": 43000
+      }
+    },
+    {
+      "id": "offer_1c363c787151",
+      "attrs": {
+        "price": 613935,
+        "admin": 167873,
+        "loss_0": 25300,
+        "loss_1": 9800,
+        "loss_2": 11900,
+        "loss_3": 16500,
+        "loss_4": 9300,
+        "loss_5": 29600,
+        "franchise": 26900,
+        "coverage": 46900
+      }
+    },
+    {
+      "id": "offer_4c810a793609",
+      "attrs": {
+        "price": 507417,
+        "admin": 165192,
+        "loss_0": 8800,
+        "loss_1": 6800,
+        "loss_2": 25200,
+        "loss_3": 24800,
+        "loss_4": 22100,
+        "loss_5": 13400,
+        "franchise": 36000,
+        "coverage": 56400
+      }
+    },
+    {
+      "id": "offer_34196ca70f9f",
+      "attrs": {
+        "price": 580189,
+        "admin": 156483,
+        "loss_0": 17100,
+        "loss_1": 24500,
+        "loss_2": 26900,
+        "loss_3": 13100,
+        "loss_4": 14500,
+        "loss_5": 18800,
+        "franchise": 17100,
+        "coverage": 27000
+      }
+    },
+    {
+      "id": "offer_e2a3a8d2a2e2",
+      "attrs": {
+        "price": 742403,
+        "admin": 157233,
+        "loss_0": 13200,
+        "loss_1": 1000,
+        "loss_2": 25000,
+        "loss_3": 14300,
+        "loss_4": 16200,
+        "loss_5": 14700,
+        "franchise": 28500,
+        "coverage": 27000
+      }
+    },
+    {
+      "id": "offer_2d5c2a9f7b3d",
+      "attrs": {
+        "price": 846752,
+        "admin": 159044,
+        "loss_0": 10600,
+        "loss_1": 23300,
+        "loss_2": 20100,
+        "loss_3": 21100,
+        "loss_4": 28300,
+        "loss_5": 19200,
+        "franchise": 39800,
+        "coverage": 48200
+      }
+    },
+    {
+      "id": "offer_23ed74e00a58",
+      "attrs": {
+        "price": 560896,
+        "admin": 151231,
+        "loss_0": 22300,
+        "loss_1": 6400,
+        "loss_2": 10300,
+        "loss_3": 22900,
+        "loss_4": 13000,
+        "loss_5": 8100,
+        "franchise": 54100,
+        "coverage": 47800
+      }
+    },
+    {
+      "id": "offer_c78ad50630fa",
+      "attrs": {
+        "price": 651299,
+        "admin": 163112,
+        "loss_0": 20100,
+        "loss_1": 15800,
+        "loss_2": 9200,
+        "loss_3": 13100,
+        "loss_4": 21200,
+        "loss_5": 4900,
+        "franchise": 46700,
+        "coverage": 21500
+      }
+    },
+    {
+      "id": "offer_e98ebf178ba6",
+      "attrs": {
+        "price": 614692,
+        "admin": 154821,
+        "loss_0": 24000,
+        "loss_1": 23300,
+        "loss_2": 9600,
+        "loss_3": 13800,
+        "loss_4": 22200,
+        "loss_5": 26700,
+        "franchise": 47100,
+        "coverage": 49700
+      }
+    },
+    {
+      "id": "offer_082e9477293c",
+      "attrs": {
+        "price": 804640,
+        "admin": 173738,
+        "loss_0": 29300,
+        "loss_1": 11500,
+        "loss_2": 18400,
+        "loss_3": 17200,
+        "loss_4": 24900,
+        "loss_5": 25800,
+        "franchise": 22100,
+        "coverage": 53900
+      }
+    },
+    {
+      "id": "offer_f82b96371c75",
+      "attrs": {
+        "price": 822501,
+        "admin": 143242,
+        "loss_0": 2100,
+        "loss_1": 17800,
+        "loss_2": 18300,
+        "loss_3": 25600,
+        "loss_4": 18400,
+        "loss_5": 8800,
+        "franchise": 57000,
+        "coverage": 19900
+      }
+    },
+    {
+      "id": "offer_e97df9613ba8",
+      "attrs": {
+        "price": 486842,
+        "admin": 158131,
+        "loss_0": 18500,
+        "loss_1": 21900,
+        "loss_2": 26400,
+        "loss_3": 13800,
+        "loss_4": 24000,
+        "loss_5": 12900,
+        "franchise": 18500,
+        "coverage": 42000
+      }
+    },
+    {
+      "id": "offer_e16b4b26c243",
+      "attrs": {
+        "price": 767532,
+        "admin": 149258,
+        "loss_0": 12200,
+        "loss_1": 23800,
+        "loss_2": 20400,
+        "loss_3": 3800,
+        "loss_4": 19300,
+        "loss_5": 1500,
+        "franchise": 43100,
+        "coverage": 19700
+      }
+    },
+    {
+      "id": "offer_62b8e3146d7a",
+      "attrs": {
+        "price": 535504,
+        "admin": 156278,
+        "loss_0": 16400,
+        "loss_1": 1300,
+        "loss_2": 18300,
+        "loss_3": 16100,
+        "loss_4": 27300,
+        "loss_5": 15800,
+        "franchise": 58500,
+        "coverage": 35700
+      }
+    },
+    {
+      "id": "offer_80c3db4fb2ad",
+      "attrs": {
+        "price": 530200,
+        "admin": 176779,
+        "loss_0": 15200,
+        "loss_1": 16300,
+        "loss_2": 23500,
+        "loss_3": 22600,
+        "loss_4": 19200,
+        "loss_5": 14000,
+        "franchise": 26200,
+        "coverage": 39700
+      }
+    },
+    {
+      "id": "offer_f098eee85f0e",
+      "attrs": {
+        "price": 527579,
+        "admin": 171784,
+        "loss_0": 8600,
+        "loss_1": 2700,
+        "loss_2": 9800,
+        "loss_3": 5200,
+        "loss_4": 17400,
+        "loss_5": 28300,
+        "franchise": 31700,
+        "coverage": 23000
+      }
+    },
+    {
+      "id": "offer_7e14d1bc9a4d",
+      "attrs": {
+        "price": 769916,
+        "admin": 139669,
+        "loss_0": 24500,
+        "loss_1": 28800,
+        "loss_2": 10500,
+        "loss_3": 10400,
+        "loss_4": 14200,
+        "loss_5": 16400,
+        "franchise": 29200,
+        "coverage": 22900
+      }
+    },
+    {
+      "id": "offer_ab260a7550c8",
+      "attrs": {
+        "price": 734322,
+        "admin": 183963,
+        "loss_0": 27700,
+        "loss_1": 6100,
+        "loss_2": 23700,
+        "loss_3": 3700,
+        "loss_4": 14600,
+        "loss_5": 8200,
+        "franchise": 19200,
+        "coverage": 61300
+      }
+    },
+    {
+      "id": "offer_a9b3107e36a0",
+      "attrs": {
+        "price": 520429,
+        "admin": 149904,
+        "loss_0": 5500,
+        "loss_1": 10500,
+        "loss_2": 17300,
+        "loss_3": 24200,
+        "loss_4": 16500,
+        "loss_5": 12700,
+        "franchise": 53800,
+        "coverage": 57900
+      }
+    },
+    {
+      "id": "offer_8f62e6e98ec5",
+      "attrs": {
+        "price": 585169,
+        "admin": 182272,
+        "loss_0": 21700,
+        "loss_1": 26400,
+        "loss_2": 8700,
+        "loss_3": 10800,
+        "loss_4": 26000,
+        "loss_5": 3200,
+        "franchise": 36400,
+        "coverage": 49700
+      }
+    },
+    {
+      "id": "offer_d54641b31251",
+      "attrs": {
+        "price": 459847,
+        "admin": 164510,
+        "loss_0": 17100,
+        "loss_1": 14800,
+        "loss_2": 9300,
+        "loss_3": 10000,
+        "loss_4": 29500,
+        "loss_5": 12800,
+        "franchise": 55700,
+        "coverage": 35900
+      }
+    },
+    {
+      "id": "offer_93d0a6c39d80",
+      "attrs": {
+        "price": 666724,
+        "admin": 162958,
+        "loss_0": 16800,
+        "loss_1": 27800,
+        "loss_2": 3800,
+        "loss_3": 9700,
+        "loss_4": 23300,
+        "loss_5": 1100,
+        "franchise": 17000,
+        "coverage": 38100
+      }
+    },
+    {
+      "id": "offer_b90ce622b0b7",
+      "attrs": {
+        "price": 468826,
+        "admin": 162318,
+        "loss_0": 22000,
+        "loss_1": 5700,
+        "loss_2": 10000,
+        "loss_3": 3300,
+        "loss_4": 17400,
+        "loss_5": 25500,
+        "franchise": 47100,
+        "coverage": 43900
+      }
+    },
+    {
+      "id": "offer_23e0ee14cf25",
+      "attrs": {
+        "price": 743668,
+        "admin": 164696,
+        "loss_0": 4700,
+        "loss_1": 30000,
+        "loss_2": 9600,
+        "loss_3": 25500,
+        "loss_4": 27500,
+        "loss_5": 7500,
+        "franchise": 25900,
+        "coverage": 40200
+      }
+    },
+    {
+      "id": "offer_3cc86d3acdfd",
+      "attrs": {
+        "price": 728007,
+        "admin": 173748,
+        "loss_0": 8100,
+        "loss_1": 13300,
+        "loss_2": 17800,
+        "loss_3": 3000,
+        "loss_4": 17600,
+        "loss_5": 17400,
+        "franchise": 33300,
+        "coverage": 37500
+      }
+    },
+    {
+      "id": "offer_a401afa2db21",
+      "attrs": {
+        "price": 595388,
+        "admin": 159673,
+        "loss_0": 12000,
+        "loss_1": 2700,
+        "loss_2": 25900,
+        "loss_3": 24400,
+        "loss_4": 10100,
+        "loss_5": 13600,
+        "franchise": 56800,
+        "coverage": 47100
+      }
+    },
+    {
+      "id": "offer_7d4d78a64053",
+      "attrs": {
+        "price": 659534,
+        "admin": 167124,
+        "loss_0": 11500,
+        "loss_1": 3100,
+        "loss_2": 4100,
+        "loss_3": 1900,
+        "loss_4": 28900,
+        "loss_5": 20400,
+        "franchise": 46900,
+        "coverage": 29100
+      }
+    },
+    {
+      "id": "offer_a1045e16d23e",
+      "attrs": {
+        "price": 540107,
+        "admin": 198739,
+        "loss_0": 1600,
+        "loss_1": 18800,
+        "loss_2": 26300,
+        "loss_3": 11100,
+        "loss_4": 26100,
+        "loss_5": 7500,
+        "franchise": 22800,
+        "coverage": 62400
+      }
+    },
+    {
+      "id": "offer_59190753ffb6",
+      "attrs": {
+        "price": 747079,
+        "admin": 162818,
+        "loss_0": 10400,
+        "loss_1": 15500,
+        "loss_2": 15200,
+        "loss_3": 7300,
+        "loss_4": 18200,
+        "loss_5": 1500,
+        "franchise": 57800,
+        "coverage": 64300
+      }
+    },
+    {
+      "id": "offer_c8dab48c94eb",
+      "attrs": {
+        "price": 468181,
+        "admin": 155431,
+        "loss_0": 8300,
+        "loss_1": 17000,
+        "loss_2": 1900,
+        "loss_3": 8200,
+        "loss_4": 21100,
+        "loss_5": 1300,
+        "franchise": 58900,
+        "coverage": 33900
+      }
+    },
+    {
+      "id": "offer_81d07e350d70",
+      "attrs": {
+        "price": 456656,
+        "admin": 161666,
+        "loss_0": 13700,
+        "loss_1": 19800,
+        "loss_2": 29200,
+        "loss_3": 20300,
+        "loss_4": 5700,
+        "loss_5": 20200,
+        "franchise": 46200,
+        "coverage": 64000
+      }
+    },
+    {
+      "id": "offer_80f44a7be787",
+      "attrs": {
+        "price": 566895,
+        "admin": 140602,
+        "loss_0": 28300,
+        "loss_1": 18500,
+        "loss_2": 22200,
+        "loss_3": 19100,
+        "loss_4": 19500,
+        "loss_5": 1300,
+        "franchise": 16800,
+        "coverage": 19200
+      }
+    },
+    {
+      "id": "offer_4fa773c051b3",
+      "attrs": {
+        "price": 827381,
+        "admin": 154455,
+        "loss_0": 24000,
+        "loss_1": 2100,
+        "loss_2": 29700,
+        "loss_3": 13300,
+        "loss_4": 1300,
+        "loss_5": 22900,
+        "franchise": 52900,
+        "coverage": 38700
+      }
+    },
+    {
+      "id": "offer_610518da0ac2",
+      "attrs": {
+        "price": 805964,
+        "admin": 151076,
+        "loss_0": 15300,
+        "loss_1": 6900,
+        "loss_2": 16000,
+        "loss_3": 11600,
+        "loss_4": 28000,
+        "loss_5": 17500,
+        "franchise": 55600,
+        "coverage": 22500
+      }
+    },
+    {
+      "id": "offer_04f17405089a",
+      "attrs": {
+        "price": 485263,
+        "admin": 188382,
+        "loss_0": 1300,
+        "loss_1": 4200,
+        "loss_2": 14000,
+        "loss_3": 22400,
+        "loss_4": 6900,
+        "loss_5": 7100,
+        "franchise": 26700,
+        "coverage": 48000
+      }
+    },
+    {
+      "id": "offer_7d7e29b8d171",
+      "attrs": {
+        "price": 606623,
+        "admin": 160219,
+        "loss_0": 12300,
+        "loss_1": 22900,
+        "loss_2": 17400,
+        "loss_3": 29900,
+        "loss_4": 18600,
+        "loss_5": 14900,
+        "franchise": 21700,
+        "coverage": 46200
+      }
+    },
+    {
+      "id": "offer_38d705a25461",
+      "attrs": {
+        "price": 813976,
+        "admin": 181231,
+        "loss_0": 14400,
+        "loss_1": 1800,
+        "loss_2": 17300,
+        "loss_3": 14800,
+        "loss_4": 12300,
+        "loss_5": 28300,
+        "franchise": 31200,
+        "coverage": 52800
+      }
+    },
+    {
+      "id": "offer_a890cf71305e",
+      "attrs": {
+        "price": 709991,
+        "admin": 166315,
+        "loss_0": 27200,
+        "loss_1": 17000,
+        "loss_2": 15100,
+        "loss_3": 28800,
+        "loss_4": 1300,
+        "loss_5": 6400,
+        "franchise": 42600,
+        "coverage": 39200
+      }
+    },
+    {
+      "id": "offer_7ea776875d89",
+      "attrs": {
+        "price": 755806,
+        "admin": 172730,
+        "loss_0": 8100,
+        "loss_1": 22100,
+        "loss_2": 11900,
+        "loss_3": 8900,
+        "loss_4": 22700,
+        "loss_5": 12600,
+        "franchise": 47600,
+        "coverage": 50700
+      }
+    },
+    {
+      "id": "offer_4cae41035c66",
+      "attrs": {
+        "price": 847337,
+        "admin": 178602,
+        "loss_0": 16700,
+        "loss_1": 3400,
+        "loss_2": 17900,
+        "loss_3": 11500,
+        "loss_4": 8100,
+        "loss_5": 8700,
+        "franchise": 41000,
+        "coverage": 32100
+      }
+    },
+    {
+      "id": "offer_6f3d49ed8b8a",
+      "attrs": {
+        "price": 869439,
+        "admin": 137414,
+        "loss_0": 20600,
+        "loss_1": 14300,
+        "loss_2": 23500,
+        "loss_3": 26300,
+        "loss_4": 18300,
+        "loss_5": 6700,
+        "franchise": 41500,
+        "coverage": 15700
+      }
+    },
+    {
+      "id": "offer_f472ffe264d0",
+      "attrs": {
+        "price": 883611,
+        "admin": 167657,
+        "loss_0": 19000,
+        "loss_1": 18300,
+        "loss_2": 15000,
+        "loss_3": 21600,
+        "loss_4": 23900,
+        "loss_5": 2700,
+        "franchise": 15700,
+        "coverage": 36400
+      }
+    },
+    {
+      "id": "offer_0da401e8756a",
+      "attrs": {
+        "price": 473665,
+        "admin": 170473,
+        "loss_0": 18500,
+        "loss_1": 17600,
+        "loss_2": 13100,
+        "loss_3": 7600,
+        "loss_4": 8100,
+        "loss_5": 1600,
+        "franchise": 34700,
+        "coverage": 46000
+      }
+    },
+    {
+      "id": "offer_043745725dfb",
+      "attrs": {
+        "price": 794841,
+        "admin": 181343,
+        "loss_0": 4000,
+        "loss_1": 8200,
+        "loss_2": 13100,
+        "loss_3": 26900,
+        "loss_4": 11100,
+        "loss_5": 10600,
+        "franchise": 30300,
+        "coverage": 53200
+      }
+    },
+    {
+      "id": "offer_60397629e8cd",
+      "attrs": {
+        "price": 882742,
+        "admin": 121962,
+        "loss_0": 23500,
+        "loss_1": 3100,
+        "loss_2": 4300,
+        "loss_3": 21300,
+        "loss_4": 25400,
+        "loss_5": 27100,
+        "franchise": 35400,
+        "coverage": 17600
+      }
+    },
+    {
+      "id": "offer_bffad1e5069a",
+      "attrs": {
+        "price": 586970,
+        "admin": 165143,
+        "loss_0": 23500,
+        "loss_1": 17000,
+        "loss_2": 27400,
+        "loss_3": 24600,
+        "loss_4": 16500,
+        "loss_5": 22600,
+        "franchise": 33600,
+        "coverage": 51800
+      }
+    },
+    {
+      "id": "offer_4bafc47e8fbf",
+      "attrs": {
+        "price": 781520,
+        "admin": 158210,
+        "loss_0": 27300,
+        "loss_1": 22200,
+        "loss_2": 16400,
+        "loss_3": 22900,
+        "loss_4": 6800,
+        "loss_5": 23800,
+        "franchise": 44900,
+        "coverage": 60400
+      }
+    },
+    {
+      "id": "offer_4ba95e7d3cc6",
+      "attrs": {
+        "price": 585144,
+        "admin": 169719,
+        "loss_0": 8900,
+        "loss_1": 9100,
+        "loss_2": 18100,
+        "loss_3": 6800,
+        "loss_4": 19800,
+        "loss_5": 10600,
+        "franchise": 40300,
+        "coverage": 55900
+      }
+    },
+    {
+      "id": "offer_92d6d4939125",
+      "attrs": {
+        "price": 762573,
+        "admin": 154519,
+        "loss_0": 1400,
+        "loss_1": 28000,
+        "loss_2": 21000,
+        "loss_3": 8600,
+        "loss_4": 8400,
+        "loss_5": 27200,
+        "franchise": 52700,
+        "coverage": 56400
+      }
+    },
+    {
+      "id": "offer_a2ad7f1c372e",
+      "attrs": {
+        "price": 714105,
+        "admin": 188079,
+        "loss_0": 25300,
+        "loss_1": 14000,
+        "loss_2": 16100,
+        "loss_3": 9000,
+        "loss_4": 9400,
+        "loss_5": 2300,
+        "franchise": 19000,
+        "coverage": 60900
+      }
+    },
+    {
+      "id": "offer_8be1b4c31a86",
+      "attrs": {
+        "price": 741896,
+        "admin": 161649,
+        "loss_0": 5000,
+        "loss_1": 16900,
+        "loss_2": 26200,
+        "loss_3": 19600,
+        "loss_4": 22000,
+        "loss_5": 15500,
+        "franchise": 56800,
+        "coverage": 28700
+      }
+    },
+    {
+      "id": "offer_fc82a7de1c50",
+      "attrs": {
+        "price": 580342,
+        "admin": 133010,
+        "loss_0": 2700,
+        "loss_1": 27500,
+        "loss_2": 3500,
+        "loss_3": 29600,
+        "loss_4": 19900,
+        "loss_5": 23400,
+        "franchise": 36100,
+        "coverage": 30000
+      }
+    },
+    {
+      "id": "offer_9ba46fe36b43",
+      "attrs": {
+        "price": 841999,
+        "admin": 184769,
+        "loss_0": 28000,
+        "loss_1": 12000,
+        "loss_2": 23600,
+        "loss_3": 7300,
+        "loss_4": 6000,
+        "loss_5": 18700,
+        "franchise": 32800,
+        "coverage": 63100
+      }
+    },
+    {
+      "id": "offer_0947d32cd004",
+      "attrs": {
+        "price": 458264,
+        "admin": 142377,
+        "loss_0": 27800,
+        "loss_1": 29200,
+        "loss_2": 2900,
+        "loss_3": 23800,
+        "loss_4": 7900,
+        "loss_5": 26700,
+        "franchise": 30500,
+        "coverage": 49000
+      }
+    },
+    {
+      "id": "offer_307bebd7fbaa",
+      "attrs": {
+        "price": 868773,
+        "admin": 160510,
+        "loss_0": 2500,
+        "loss_1": 3400,
+        "loss_2": 13500,
+        "loss_3": 25100,
+        "loss_4": 13900,
+        "loss_5": 19200,
+        "franchise": 49700,
+        "coverage": 34500
+      }
+    },
+    {
+      "id": "offer_4dfc17f5dd42",
+      "attrs": {
+        "price": 709826,
+        "admin": 154807,
+        "loss_0": 20700,
+        "loss_1": 28400,
+        "loss_2": 21900,
+        "loss_3": 8700,
+        "loss_4": 23600,
+        "loss_5": 8000,
+        "franchise": 30600,
+        "coverage": 42900
+      }
+    },
+    {
+      "id": "offer_96d997f27096",
+      "attrs": {
+        "price": 590910,
+        "admin": 150890,
+        "loss_0": 26400,
+        "loss_1": 21200,
+        "loss_2": 17000,
+        "loss_3": 10600,
+        "loss_4": 21200,
+        "loss_5": 26700,
+        "franchise": 40300,
+        "coverage": 30200
+      }
+    },
+    {
+      "id": "offer_e9ac749783c8",
+      "attrs": {
+        "price": 584423,
+        "admin": 125890,
+        "loss_0": 12200,
+        "loss_1": 28800,
+        "loss_2": 28000,
+        "loss_3": 22900,
+        "loss_4": 29500,
+        "loss_5": 14400,
+        "franchise": 47800,
+        "coverage": 25500
+      }
+    },
+    {
+      "id": "offer_2d270288d0b1",
+      "attrs": {
+        "price": 731941,
+        "admin": 153818,
+        "loss_0": 24800,
+        "loss_1": 9800,
+        "loss_2": 3400,
+        "loss_3": 4600,
+        "loss_4": 28800,
+        "loss_5": 19300,
+        "franchise": 46200,
+        "coverage": 35900
+      }
+    },
+    {
+      "id": "offer_30ee2ab4c091",
+      "attrs": {
+        "price": 580798,
+        "admin": 175480,
+        "loss_0": 6400,
+        "loss_1": 11300,
+        "loss_2": 20900,
+        "loss_3": 3900,
+        "loss_4": 2800,
+        "loss_5": 9100,
+        "franchise": 27100,
+        "coverage": 16700
+      }
+    },
+    {
+      "id": "offer_49caa7062021",
+      "attrs": {
+        "price": 781137,
+        "admin": 146689,
+        "loss_0": 10600,
+        "loss_1": 13700,
+        "loss_2": 26600,
+        "loss_3": 11200,
+        "loss_4": 21800,
+        "loss_5": 18800,
+        "franchise": 42400,
+        "coverage": 23100
+      }
+    },
+    {
+      "id": "offer_c8529bd56010",
+      "attrs": {
+        "price": 872068,
+        "admin": 170010,
+        "loss_0": 22700,
+        "loss_1": 19800,
+        "loss_2": 22400,
+        "loss_3": 13100,
+        "loss_4": 17000,
+        "loss_5": 25300,
+        "franchise": 19200,
+        "coverage": 46900
+      }
+    },
+    {
+      "id": "offer_4bdb0ed993e4",
+      "attrs": {
+        "price": 896081,
+        "admin": 165140,
+        "loss_0": 13500,
+        "loss_1": 25300,
+        "loss_2": 3900,
+        "loss_3": 21600,
+        "loss_4": 29500,
+        "loss_5": 5600,
+        "franchise": 18200,
+        "coverage": 54300
+      }
+    },
+    {
+      "id": "offer_69acd6923311",
+      "attrs": {
+        "price": 497238,
+        "admin": 159257,
+        "loss_0": 4100,
+        "loss_1": 7300,
+        "loss_2": 8400,
+        "loss_3": 10100,
+        "loss_4": 19100,
+        "loss_5": 8300,
+        "franchise": 45300,
+        "coverage": 47100
+      }
+    },
+    {
+      "id": "offer_0f21e31d03a0",
+      "attrs": {
+        "price": 480097,
+        "admin": 147342,
+        "loss_0": 13500,
+        "loss_1": 20000,
+        "loss_2": 15200,
+        "loss_3": 28600,
+        "loss_4": 24900,
+        "loss_5": 19500,
+        "franchise": 50900,
+        "coverage": 27400
+      }
+    },
+    {
+      "id": "offer_461191b5907a",
+      "attrs": {
+        "price": 879245,
+        "admin": 171585,
+        "loss_0": 23400,
+        "loss_1": 7400,
+        "loss_2": 17600,
+        "loss_3": 2000,
+        "loss_4": 17500,
+        "loss_5": 8700,
+        "franchise": 48200,
+        "coverage": 37700
+      }
+    },
+    {
+      "id": "offer_e354c088bc40",
+      "attrs": {
+        "price": 507462,
+        "admin": 132410,
+        "loss_0": 25900,
+        "loss_1": 24200,
+        "loss_2": 2000,
+        "loss_3": 7200,
+        "loss_4": 23000,
+        "loss_5": 20500,
+        "franchise": 23000,
+        "coverage": 16900
+      }
+    },
+    {
+      "id": "offer_b7d637eda10a",
+      "attrs": {
+        "price": 818546,
+        "admin": 172801,
+        "loss_0": 29300,
+        "loss_1": 3500,
+        "loss_2": 12100,
+        "loss_3": 26000,
+        "loss_4": 6900,
+        "loss_5": 17400,
+        "franchise": 40300,
+        "coverage": 45500
+      }
+    },
+    {
+      "id": "offer_91fd14389975",
+      "attrs": {
+        "price": 719746,
+        "admin": 154278,
+        "loss_0": 22200,
+        "loss_1": 15000,
+        "loss_2": 16900,
+        "loss_3": 12500,
+        "loss_4": 2000,
+        "loss_5": 1600,
+        "franchise": 45900,
+        "coverage": 15200
+      }
+    },
+    {
+      "id": "offer_f7f5a5fed51d",
+      "attrs": {
+        "price": 489021,
+        "admin": 185823,
+        "loss_0": 11700,
+        "loss_1": 1700,
+        "loss_2": 6100,
+        "loss_3": 17100,
+        "loss_4": 1500,
+        "loss_5": 13600,
+        "franchise": 18100,
+        "coverage": 60500
+      }
+    },
+    {
+      "id": "offer_0d873cfa6e56",
+      "attrs": {
+        "price": 802410,
+        "admin": 137855,
+        "loss_0": 22000,
+        "loss_1": 22900,
+        "loss_2": 29800,
+        "loss_3": 24900,
+        "loss_4": 29500,
+        "loss_5": 28300,
+        "franchise": 48300,
+        "coverage": 32000
+      }
+    },
+    {
+      "id": "offer_cb80e4e233d3",
+      "attrs": {
+        "price": 742833,
+        "admin": 184252,
+        "loss_0": 5700,
+        "loss_1": 27600,
+        "loss_2": 8800,
+        "loss_3": 4000,
+        "loss_4": 9400,
+        "loss_5": 28200,
+        "franchise": 20800,
+        "coverage": 41000
+      }
+    },
+    {
+      "id": "offer_f7f21b933da5",
+      "attrs": {
+        "price": 781806,
+        "admin": 151452,
+        "loss_0": 7500,
+        "loss_1": 27700,
+        "loss_2": 25800,
+        "loss_3": 18800,
+        "loss_4": 12200,
+        "loss_5": 28600,
+        "franchise": 23700,
+        "coverage": 33600
+      }
+    },
+    {
+      "id": "offer_9748ff8ee109",
+      "attrs": {
+        "price": 543167,
+        "admin": 188757,
+        "loss_0": 17000,
+        "loss_1": 6200,
+        "loss_2": 11800,
+        "loss_3": 19000,
+        "loss_4": 12500,
+        "loss_5": 11600,
+        "franchise": 15000,
+        "coverage": 43200
+      }
+    },
+    {
+      "id": "offer_5c337d5f746a",
+      "attrs": {
+        "price": 544984,
+        "admin": 143726,
+        "loss_0": 9900,
+        "loss_1": 19800,
+        "loss_2": 3300,
+        "loss_3": 21700,
+        "loss_4": 2300,
+        "loss_5": 13000,
+        "franchise": 59500,
+        "coverage": 16600
+      }
+    },
+    {
+      "id": "offer_9013f3fc11ea",
+      "attrs": {
+        "price": 824654,
+        "admin": 164024,
+        "loss_0": 8200,
+        "loss_1": 23100,
+        "loss_2": 22100,
+        "loss_3": 18600,
+        "loss_4": 26400,
+        "loss_5": 16500,
+        "franchise": 45500,
+        "coverage": 53600
+      }
+    },
+    {
+      "id": "offer_386209200251",
+      "attrs": {
+        "price": 735396,
+        "admin": 165051,
+        "loss_0": 6000,
+        "loss_1": 26800,
+        "loss_2": 24500,
+        "loss_3": 14800,
+        "loss_4": 16200,
+        "loss_5": 15300,
+        "franchise": 40400,
+        "coverage": 41700
+      }
+    },
+    {
+      "id": "offer_8715a17e797e",
+      "attrs": {
+        "price": 826601,
+        "admin": 154595,
+        "loss_0": 23800,
+        "loss_1": 25100,
+        "loss_2": 11000,
+        "loss_3": 2700,
+        "loss_4": 10000,
+        "loss_5": 29800,
+        "franchise": 17300,
+        "coverage": 43900
+      }
+    },
+    {
+      "id": "offer_dfad49074330",
+      "attrs": {
+        "price": 455902,
+        "admin": 171233,
+        "loss_0": 9200,
+        "loss_1": 22500,
+        "loss_2": 16100,
+        "loss_3": 6000,
+        "loss_4": 4800,
+        "loss_5": 27900,
+        "franchise": 42100,
+        "coverage": 45900
+      }
+    },
+    {
+      "id": "offer_b48a1c725396",
+      "attrs": {
+        "price": 669595,
+        "admin": 176800,
+        "loss_0": 27600,
+        "loss_1": 5100,
+        "loss_2": 8400,
+        "loss_3": 16400,
+        "loss_4": 13100,
+        "loss_5": 11600,
+        "franchise": 22100,
+        "coverage": 31300
+      }
+    },
+    {
+      "id": "offer_3485e883a4c9",
+      "attrs": {
+        "price": 834986,
+        "admin": 171699,
+        "loss_0": 20800,
+        "loss_1": 13200,
+        "loss_2": 13800,
+        "loss_3": 5800,
+        "loss_4": 23900,
+        "loss_5": 22200,
+        "franchise": 37300,
+        "coverage": 35200
+      }
+    },
+    {
+      "id": "offer_53b687db6d13",
+      "attrs": {
+        "price": 735732,
+        "admin": 150696,
+        "loss_0": 10300,
+        "loss_1": 23900,
+        "loss_2": 6700,
+        "loss_3": 21700,
+        "loss_4": 29500,
+        "loss_5": 8100,
+        "franchise": 15800,
+        "coverage": 21900
+      }
+    },
+    {
+      "id": "offer_ae35b95c6e1b",
+      "attrs": {
+        "price": 769438,
+        "admin": 190707,
+        "loss_0": 14100,
+        "loss_1": 1100,
+        "loss_2": 8900,
+        "loss_3": 23500,
+        "loss_4": 13700,
+        "loss_5": 10700,
+        "franchise": 23800,
+        "coverage": 36200
+      }
+    },
+    {
+      "id": "offer_92ee63530b38",
+      "attrs": {
+        "price": 560277,
+        "admin": 155298,
+        "loss_0": 12900,
+        "loss_1": 6700,
+        "loss_2": 10600,
+        "loss_3": 19000,
+        "loss_4": 21600,
+        "loss_5": 6800,
+        "franchise": 30400,
+        "coverage": 19100
+      }
+    },
+    {
+      "id": "offer_79dfd184165a",
+      "attrs": {
+        "price": 599514,
+        "admin": 164107,
+        "loss_0": 11500,
+        "loss_1": 14500,
+        "loss_2": 27100,
+        "loss_3": 8000,
+        "loss_4": 8900,
+        "loss_5": 26100,
+        "franchise": 33400,
+        "coverage": 40000
+      }
+    },
+    {
+      "id": "offer_2fbab7ef378a",
+      "attrs": {
+        "price": 659921,
+        "admin": 138256,
+        "loss_0": 2900,
+        "loss_1": 6800,
+        "loss_2": 29200,
+        "loss_3": 30000,
+        "loss_4": 21900,
+        "loss_5": 6700,
+        "franchise": 18700,
+        "coverage": 21700
+      }
+    },
+    {
+      "id": "offer_033838b09a2e",
+      "attrs": {
+        "price": 859990,
+        "admin": 155981,
+        "loss_0": 8800,
+        "loss_1": 16700,
+        "loss_2": 12500,
+        "loss_3": 14900,
+        "loss_4": 13500,
+        "loss_5": 9500,
+        "franchise": 59000,
+        "coverage": 60100
+      }
+    },
+    {
+      "id": "offer_86c489ed447c",
+      "attrs": {
+        "price": 747765,
+        "admin": 164761,
+        "loss_0": 6400,
+        "loss_1": 5500,
+        "loss_2": 12400,
+        "loss_3": 26400,
+        "loss_4": 26100,
+        "loss_5": 3600,
+        "franchise": 48800,
+        "coverage": 62800
+      }
+    },
+    {
+      "id": "offer_b62c20712358",
+      "attrs": {
+        "price": 869100,
+        "admin": 156055,
+        "loss_0": 8200,
+        "loss_1": 21800,
+        "loss_2": 14300,
+        "loss_3": 4100,
+        "loss_4": 2400,
+        "loss_5": 6400,
+        "franchise": 46300,
+        "coverage": 43900
+      }
+    },
+    {
+      "id": "offer_c6cc2e437221",
+      "attrs": {
+        "price": 822930,
+        "admin": 154275,
+        "loss_0": 3100,
+        "loss_1": 17300,
+        "loss_2": 12800,
+        "loss_3": 19400,
+        "loss_4": 26100,
+        "loss_5": 16200,
+        "franchise": 35600,
+        "coverage": 27200
+      }
+    },
+    {
+      "id": "offer_1468e213e592",
+      "attrs": {
+        "price": 792359,
+        "admin": 157340,
+        "loss_0": 27400,
+        "loss_1": 30000,
+        "loss_2": 15400,
+        "loss_3": 7600,
+        "loss_4": 16400,
+        "loss_5": 26200,
+        "franchise": 36000,
+        "coverage": 52700
+      }
+    },
+    {
+      "id": "offer_ca27212eef87",
+      "attrs": {
+        "price": 680891,
+        "admin": 167195,
+        "loss_0": 18600,
+        "loss_1": 4700,
+        "loss_2": 23900,
+        "loss_3": 28400,
+        "loss_4": 28000,
+        "loss_5": 18300,
+        "franchise": 37000,
+        "coverage": 53900
+      }
+    },
+    {
+      "id": "offer_3b20d14e0faa",
+      "attrs": {
+        "price": 480578,
+        "admin": 169949,
+        "loss_0": 24200,
+        "loss_1": 21900,
+        "loss_2": 24100,
+        "loss_3": 9600,
+        "loss_4": 28700,
+        "loss_5": 14600,
+        "franchise": 17800,
+        "coverage": 56100
+      }
+    },
+    {
+      "id": "offer_04e974fb697e",
+      "attrs": {
+        "price": 696637,
+        "admin": 176060,
+        "loss_0": 7200,
+        "loss_1": 5600,
+        "loss_2": 16800,
+        "loss_3": 22200,
+        "loss_4": 12600,
+        "loss_5": 14800,
+        "franchise": 36700,
+        "coverage": 58800
+      }
+    },
+    {
+      "id": "offer_4526b51e72b5",
+      "attrs": {
+        "price": 787842,
+        "admin": 139918,
+        "loss_0": 23800,
+        "loss_1": 15100,
+        "loss_2": 5600,
+        "loss_3": 20300,
+        "loss_4": 3400,
+        "loss_5": 28800,
+        "franchise": 52000,
+        "coverage": 22200
+      }
+    },
+    {
+      "id": "offer_30f5a1d093c4",
+      "attrs": {
+        "price": 825402,
+        "admin": 158970,
+        "loss_0": 8700,
+        "loss_1": 12200,
+        "loss_2": 29000,
+        "loss_3": 4800,
+        "loss_4": 22100,
+        "loss_5": 7900,
+        "franchise": 50800,
+        "coverage": 29300
+      }
+    },
+    {
+      "id": "offer_9fcfe10947f0",
+      "attrs": {
+        "price": 500714,
+        "admin": 162325,
+        "loss_0": 15100,
+        "loss_1": 23200,
+        "loss_2": 14500,
+        "loss_3": 14000,
+        "loss_4": 10800,
+        "loss_5": 3000,
+        "franchise": 37900,
+        "coverage": 25600
+      }
+    },
+    {
+      "id": "offer_8ad2ad7f5781",
+      "attrs": {
+        "price": 511819,
+        "admin": 165204,
+        "loss_0": 8500,
+        "loss_1": 8000,
+        "loss_2": 15100,
+        "loss_3": 21900,
+        "loss_4": 18500,
+        "loss_5": 10100,
+        "franchise": 40400,
+        "coverage": 50900
+      }
+    },
+    {
+      "id": "offer_46a021d9dfef",
+      "attrs": {
+        "price": 874661,
+        "admin": 167058,
+        "loss_0": 7000,
+        "loss_1": 20300,
+        "loss_2": 6700,
+        "loss_3": 15100,
+        "loss_4": 26600,
+        "loss_5": 3800,
+        "franchise": 42300,
+        "coverage": 49900
+      }
+    },
+    {
+      "id": "offer_be83bfd4e9dc",
+      "attrs": {
+        "price": 758977,
+        "admin": 178863,
+        "loss_0": 19400,
+        "loss_1": 17900,
+        "loss_2": 15500,
+        "loss_3": 25200,
+        "loss_4": 5100,
+        "loss_5": 7600,
+        "franchise": 30700,
+        "coverage": 40800
+      }
+    },
+    {
+      "id": "offer_aadb42ae769c",
+      "attrs": {
+        "price": 750985,
+        "admin": 170597,
+        "loss_0": 5400,
+        "loss_1": 22700,
+        "loss_2": 15600,
+        "loss_3": 14900,
+        "loss_4": 4400,
+        "loss_5": 13100,
+        "franchise": 46600,
+        "coverage": 63500
+      }
+    },
+    {
+      "id": "offer_649c8cad65c0",
+      "attrs": {
+        "price": 792064,
+        "admin": 160743,
+        "loss_0": 27600,
+        "loss_1": 27900,
+        "loss_2": 22400,
+        "loss_3": 29000,
+        "loss_4": 2300,
+        "loss_5": 26400,
+        "franchise": 48200,
+        "coverage": 62100
+      }
+    },
+    {
+      "id": "offer_810aac19c4a1",
+      "attrs": {
+        "price": 862937,
+        "admin": 173837,
+        "loss_0": 14000,
+        "loss_1": 11900,
+        "loss_2": 20900,
+        "loss_3": 12900,
+        "loss_4": 2300,
+        "loss_5": 28100,
+        "franchise": 31700,
+        "coverage": 55900
+      }
+    },
+    {
+      "id": "offer_c6c3161fe220",
+      "attrs": {
+        "price": 708938,
+        "admin": 138290,
+        "loss_0": 29200,
+        "loss_1": 21800,
+        "loss_2": 10100,
+        "loss_3": 19200,
+        "loss_4": 28400,
+        "loss_5": 26400,
+        "franchise": 32700,
+        "coverage": 29800
+      }
+    },
+    {
+      "id": "offer_6390b5a874b3",
+      "attrs": {
+        "price": 463139,
+        "admin": 163734,
+        "loss_0": 23500,
+        "loss_1": 23500,
+        "loss_2": 6800,
+        "loss_3": 14400,
+        "loss_4": 5900,
+        "loss_5": 21100,
+        "franchise": 45900,
+        "coverage": 54300
+      }
+    },
+    {
+      "id": "offer_827c09ab978a",
+      "attrs": {
+        "price": 596492,
+        "admin": 178499,
+        "loss_0": 14600,
+        "loss_1": 1200,
+        "loss_2": 14800,
+        "loss_3": 13000,
+        "loss_4": 11500,
+        "loss_5": 24800,
+        "franchise": 24000,
+        "coverage": 37600
+      }
+    },
+    {
+      "id": "offer_311f2077c4ff",
+      "attrs": {
+        "price": 672908,
+        "admin": 149307,
+        "loss_0": 13500,
+        "loss_1": 9600,
+        "loss_2": 12500,
+        "loss_3": 11800,
+        "loss_4": 14000,
+        "loss_5": 5800,
+        "franchise": 55000,
+        "coverage": 50000
+      }
+    },
+    {
+      "id": "offer_2a8947c29020",
+      "attrs": {
+        "price": 631860,
+        "admin": 175632,
+        "loss_0": 28700,
+        "loss_1": 17800,
+        "loss_2": 2900,
+        "loss_3": 22100,
+        "loss_4": 9600,
+        "loss_5": 10200,
+        "franchise": 35600,
+        "coverage": 62700
+      }
+    },
+    {
+      "id": "offer_cb660703160d",
+      "attrs": {
+        "price": 509673,
+        "admin": 178475,
+        "loss_0": 15900,
+        "loss_1": 7700,
+        "loss_2": 21200,
+        "loss_3": 3600,
+        "loss_4": 14700,
+        "loss_5": 24800,
+        "franchise": 25500,
+        "coverage": 36400
+      }
+    },
+    {
+      "id": "offer_6a680fec28bd",
+      "attrs": {
+        "price": 499546,
+        "admin": 145102,
+        "loss_0": 28700,
+        "loss_1": 25800,
+        "loss_2": 30000,
+        "loss_3": 5200,
+        "loss_4": 6200,
+        "loss_5": 4700,
+        "franchise": 34600,
+        "coverage": 27000
+      }
+    },
+    {
+      "id": "offer_296c8a94845b",
+      "attrs": {
+        "price": 668769,
+        "admin": 149647,
+        "loss_0": 16700,
+        "loss_1": 16100,
+        "loss_2": 27900,
+        "loss_3": 27800,
+        "loss_4": 21400,
+        "loss_5": 24600,
+        "franchise": 24500,
+        "coverage": 35600
+      }
+    },
+    {
+      "id": "offer_b38610d76c90",
+      "attrs": {
+        "price": 562189,
+        "admin": 170977,
+        "loss_0": 26600,
+        "loss_1": 29700,
+        "loss_2": 15400,
+        "loss_3": 11700,
+        "loss_4": 20300,
+        "loss_5": 16500,
+        "franchise": 20000,
+        "coverage": 63100
+      }
+    },
+    {
+      "id": "offer_c36e54a7e893",
+      "attrs": {
+        "price": 695200,
+        "admin": 151841,
+        "loss_0": 28300,
+        "loss_1": 1800,
+        "loss_2": 4100,
+        "loss_3": 27500,
+        "loss_4": 7600,
+        "loss_5": 16400,
+        "franchise": 49500,
+        "coverage": 63900
+      }
+    },
+    {
+      "id": "offer_e998df112944",
+      "attrs": {
+        "price": 735581,
+        "admin": 180744,
+        "loss_0": 23900,
+        "loss_1": 5600,
+        "loss_2": 13300,
+        "loss_3": 16500,
+        "loss_4": 21000,
+        "loss_5": 18100,
+        "franchise": 36000,
+        "coverage": 43300
+      }
+    },
+    {
+      "id": "offer_9df03f0537ff",
+      "attrs": {
+        "price": 804430,
+        "admin": 172967,
+        "loss_0": 15000,
+        "loss_1": 21400,
+        "loss_2": 6300,
+        "loss_3": 1100,
+        "loss_4": 6900,
+        "loss_5": 19100,
+        "franchise": 40400,
+        "coverage": 39800
+      }
+    },
+    {
+      "id": "offer_7607b4c45230",
+      "attrs": {
+        "price": 767814,
+        "admin": 160683,
+        "loss_0": 19400,
+        "loss_1": 29000,
+        "loss_2": 7100,
+        "loss_3": 21300,
+        "loss_4": 11900,
+        "loss_5": 20800,
+        "franchise": 36700,
+        "coverage": 48300
+      }
+    },
+    {
+      "id": "offer_e20141cc6b49",
+      "attrs": {
+        "price": 674998,
+        "admin": 167931,
+        "loss_0": 14500,
+        "loss_1": 3600,
+        "loss_2": 10400,
+        "loss_3": 5900,
+        "loss_4": 19300,
+        "loss_5": 28000,
+        "franchise": 46200,
+        "coverage": 57400
+      }
+    },
+    {
+      "id": "offer_27bfef8540ff",
+      "attrs": {
+        "price": 478805,
+        "admin": 153501,
+        "loss_0": 16500,
+        "loss_1": 24600,
+        "loss_2": 11200,
+        "loss_3": 12700,
+        "loss_4": 18300,
+        "loss_5": 2300,
+        "franchise": 19700,
+        "coverage": 25600
+      }
+    },
+    {
+      "id": "offer_ec039b2e5716",
+      "attrs": {
+        "price": 656694,
+        "admin": 177891,
+        "loss_0": 14600,
+        "loss_1": 21700,
+        "loss_2": 8100,
+        "loss_3": 10600,
+        "loss_4": 3000,
+        "loss_5": 26000,
+        "franchise": 31700,
+        "coverage": 52800
+      }
+    },
+    {
+      "id": "offer_d930294bc5cf",
+      "attrs": {
+        "price": 782956,
+        "admin": 189838,
+        "loss_0": 9000,
+        "loss_1": 8400,
+        "loss_2": 4700,
+        "loss_3": 5900,
+        "loss_4": 14500,
+        "loss_5": 6200,
+        "franchise": 15400,
+        "coverage": 16900
+      }
+    },
+    {
+      "id": "offer_c9e5f9f9e05d",
+      "attrs": {
+        "price": 869473,
+        "admin": 153027,
+        "loss_0": 2400,
+        "loss_1": 18600,
+        "loss_2": 15200,
+        "loss_3": 22900,
+        "loss_4": 4700,
+        "loss_5": 27600,
+        "franchise": 18900,
+        "coverage": 19200
+      }
+    },
+    {
+      "id": "offer_65cc55eeb405",
+      "attrs": {
+        "price": 710490,
+        "admin": 166520,
+        "loss_0": 26900,
+        "loss_1": 29400,
+        "loss_2": 16600,
+        "loss_3": 10500,
+        "loss_4": 2200,
+        "loss_5": 24200,
+        "franchise": 24500,
+        "coverage": 61600
+      }
+    },
+    {
+      "id": "offer_a00b97128b24",
+      "attrs": {
+        "price": 858752,
+        "admin": 152448,
+        "loss_0": 1500,
+        "loss_1": 8500,
+        "loss_2": 17400,
+        "loss_3": 5000,
+        "loss_4": 20100,
+        "loss_5": 21200,
+        "franchise": 57600,
+        "coverage": 47200
+      }
+    },
+    {
+      "id": "offer_3607bfbeac7e",
+      "attrs": {
+        "price": 830880,
+        "admin": 163513,
+        "loss_0": 23300,
+        "loss_1": 4400,
+        "loss_2": 15800,
+        "loss_3": 25000,
+        "loss_4": 4200,
+        "loss_5": 12600,
+        "franchise": 27900,
+        "coverage": 26000
+      }
+    },
+    {
+      "id": "offer_057149e1ce4b",
+      "attrs": {
+        "price": 883694,
+        "admin": 177799,
+        "loss_0": 15500,
+        "loss_1": 21900,
+        "loss_2": 23200,
+        "loss_3": 15500,
+        "loss_4": 12400,
+        "loss_5": 19500,
+        "franchise": 20900,
+        "coverage": 47600
+      }
+    },
+    {
+      "id": "offer_548d11eead52",
+      "attrs": {
+        "price": 651867,
+        "admin": 146487,
+        "loss_0": 4700,
+        "loss_1": 7000,
+        "loss_2": 29600,
+        "loss_3": 27600,
+        "loss_4": 20800,
+        "loss_5": 26100,
+        "franchise": 50200,
+        "coverage": 36100
+      }
+    },
+    {
+      "id": "offer_58e0f1c85c69",
+      "attrs": {
+        "price": 834355,
+        "admin": 163952,
+        "loss_0": 8100,
+        "loss_1": 6400,
+        "loss_2": 1900,
+        "loss_3": 14900,
+        "loss_4": 12100,
+        "loss_5": 18800,
+        "franchise": 52300,
+        "coverage": 23700
+      }
+    },
+    {
+      "id": "offer_d57a3fbb9f17",
+      "attrs": {
+        "price": 611330,
+        "admin": 165961,
+        "loss_0": 2800,
+        "loss_1": 30000,
+        "loss_2": 18900,
+        "loss_3": 28300,
+        "loss_4": 8500,
+        "loss_5": 14900,
+        "franchise": 40600,
+        "coverage": 53000
+      }
+    },
+    {
+      "id": "offer_335720f3b78e",
+      "attrs": {
+        "price": 875644,
+        "admin": 191899,
+        "loss_0": 18300,
+        "loss_1": 10700,
+        "loss_2": 22500,
+        "loss_3": 7800,
+        "loss_4": 20600,
+        "loss_5": 5400,
+        "franchise": 21200,
+        "coverage": 51500
+      }
+    },
+    {
+      "id": "offer_d149d480feec",
+      "attrs": {
+        "price": 584112,
+        "admin": 172626,
+        "loss_0": 29500,
+        "loss_1": 27700,
+        "loss_2": 26000,
+        "loss_3": 21000,
+        "loss_4": 18200,
+        "loss_5": 7600,
+        "franchise": 26700,
+        "coverage": 58800
+      }
+    },
+    {
+      "id": "offer_dbad2f919c16",
+      "attrs": {
+        "price": 786959,
+        "admin": 182764,
+        "loss_0": 4600,
+        "loss_1": 9000,
+        "loss_2": 24500,
+        "loss_3": 3800,
+        "loss_4": 24500,
+        "loss_5": 4700,
+        "franchise": 26300,
+        "coverage": 63100
+      }
+    },
+    {
+      "id": "offer_7e79192eb3aa",
+      "attrs": {
+        "price": 556756,
+        "admin": 187643,
+        "loss_0": 1000,
+        "loss_1": 5100,
+        "loss_2": 14700,
+        "loss_3": 18000,
+        "loss_4": 20900,
+        "loss_5": 1000,
+        "franchise": 21500,
+        "coverage": 52000
+      }
+    },
+    {
+      "id": "offer_1408e4664ac6",
+      "attrs": {
+        "price": 851610,
+        "admin": 194845,
+        "loss_0": 25100,
+        "loss_1": 9400,
+        "loss_2": 8200,
+        "loss_3": 12700,
+        "loss_4": 2900,
+        "loss_5": 14100,
+        "franchise": 19800,
+        "coverage": 60600
+      }
+    },
+    {
+      "id": "offer_5a168bad9946",
+      "attrs": {
+        "price": 684743,
+        "admin": 184226,
+        "loss_0": 7700,
+        "loss_1": 2400,
+        "loss_2": 5900,
+        "loss_3": 22300,
+        "loss_4": 11600,
+        "loss_5": 16700,
+        "franchise": 27200,
+        "coverage": 25800
+      }
+    },
+    {
+      "id": "offer_b6be6f537329",
+      "attrs": {
+        "price": 819315,
+        "admin": 166592,
+        "loss_0": 16000,
+        "loss_1": 7900,
+        "loss_2": 3200,
+        "loss_3": 12500,
+        "loss_4": 29700,
+        "loss_5": 8900,
+        "franchise": 32200,
+        "coverage": 16800
+      }
+    },
+    {
+      "id": "offer_be7febb3f13b",
+      "attrs": {
+        "price": 793777,
+        "admin": 154757,
+        "loss_0": 20600,
+        "loss_1": 5300,
+        "loss_2": 23400,
+        "loss_3": 26100,
+        "loss_4": 21500,
+        "loss_5": 18700,
+        "franchise": 54600,
+        "coverage": 48200
+      }
+    },
+    {
+      "id": "offer_27ccd35eb392",
+      "attrs": {
+        "price": 702373,
+        "admin": 148487,
+        "loss_0": 11500,
+        "loss_1": 22700,
+        "loss_2": 17400,
+        "loss_3": 26700,
+        "loss_4": 25700,
+        "loss_5": 15700,
+        "franchise": 51000,
+        "coverage": 38400
+      }
+    },
+    {
+      "id": "offer_4475e771725c",
+      "attrs": {
+        "price": 663221,
+        "admin": 144048,
+        "loss_0": 21700,
+        "loss_1": 6500,
+        "loss_2": 7900,
+        "loss_3": 29200,
+        "loss_4": 21800,
+        "loss_5": 27600,
+        "franchise": 28800,
+        "coverage": 29400
+      }
+    },
+    {
+      "id": "offer_873cc9512bb9",
+      "attrs": {
+        "price": 833270,
+        "admin": 160144,
+        "loss_0": 29800,
+        "loss_1": 4100,
+        "loss_2": 17700,
+        "loss_3": 1400,
+        "loss_4": 17600,
+        "loss_5": 15700,
+        "franchise": 44500,
+        "coverage": 47200
+      }
+    },
+    {
+      "id": "offer_4a7e62bf5b8b",
+      "attrs": {
+        "price": 672800,
+        "admin": 158045,
+        "loss_0": 10800,
+        "loss_1": 26900,
+        "loss_2": 6200,
+        "loss_3": 1800,
+        "loss_4": 22400,
+        "loss_5": 21100,
+        "franchise": 51200,
+        "coverage": 32800
+      }
+    },
+    {
+      "id": "offer_ec84989d3fe4",
+      "attrs": {
+        "price": 525667,
+        "admin": 191188,
+        "loss_0": 12300,
+        "loss_1": 26500,
+        "loss_2": 3000,
+        "loss_3": 13900,
+        "loss_4": 9400,
+        "loss_5": 14300,
+        "franchise": 19900,
+        "coverage": 64900
+      }
+    },
+    {
+      "id": "offer_c11851d02160",
+      "attrs": {
+        "price": 650575,
+        "admin": 149364,
+        "loss_0": 18300,
+        "loss_1": 6400,
+        "loss_2": 7200,
+        "loss_3": 18700,
+        "loss_4": 26300,
+        "loss_5": 15800,
+        "franchise": 58600,
+        "coverage": 48600
+      }
+    },
+    {
+      "id": "offer_1bda925f6a4c",
+      "attrs": {
+        "price": 778046,
+        "admin": 165628,
+        "loss_0": 5000,
+        "loss_1": 11200,
+        "loss_2": 17400,
+        "loss_3": 5000,
+        "loss_4": 20700,
+        "loss_5": 5500,
+        "franchise": 37900,
+        "coverage": 15700
+      }
+    },
+    {
+      "id": "offer_1ae0561112e3",
+      "attrs": {
+        "price": 728695,
+        "admin": 174750,
+        "loss_0": 16000,
+        "loss_1": 3700,
+        "loss_2": 6800,
+        "loss_3": 9200,
+        "loss_4": 10800,
+        "loss_5": 10300,
+        "franchise": 31300,
+        "coverage": 59500
+      }
+    },
+    {
+      "id": "offer_802d615a03bc",
+      "attrs": {
+        "price": 744519,
+        "admin": 172024,
+        "loss_0": 28600,
+        "loss_1": 28700,
+        "loss_2": 10900,
+        "loss_3": 16600,
+        "loss_4": 14900,
+        "loss_5": 15300,
+        "franchise": 34600,
+        "coverage": 54700
+      }
+    },
+    {
+      "id": "offer_fde3cfae7098",
+      "attrs": {
+        "price": 741007,
+        "admin": 164645,
+        "loss_0": 6300,
+        "loss_1": 22900,
+        "loss_2": 11900,
+        "loss_3": 19800,
+        "loss_4": 5100,
+        "loss_5": 21000,
+        "franchise": 38900,
+        "coverage": 56600
+      }
+    },
+    {
+      "id": "offer_2fcc262073f3",
+      "attrs": {
+        "price": 734556,
+        "admin": 172300,
+        "loss_0": 20900,
+        "loss_1": 9500,
+        "loss_2": 5200,
+        "loss_3": 13900,
+        "loss_4": 20600,
+        "loss_5": 1700,
+        "franchise": 19700,
+        "coverage": 18500
+      }
+    },
+    {
+      "id": "offer_802510789077",
+      "attrs": {
+        "price": 461508,
+        "admin": 173035,
+        "loss_0": 22000,
+        "loss_1": 28400,
+        "loss_2": 19400,
+        "loss_3": 24700,
+        "loss_4": 23200,
+        "loss_5": 3600,
+        "franchise": 47500,
+        "coverage": 56700
+      }
+    },
+    {
+      "id": "offer_3084200f6578",
+      "attrs": {
+        "price": 636382,
+        "admin": 153467,
+        "loss_0": 3800,
+        "loss_1": 6900,
+        "loss_2": 10500,
+        "loss_3": 23000,
+        "loss_4": 26000,
+        "loss_5": 13300,
+        "franchise": 59800,
+        "coverage": 41100
+      }
+    },
+    {
+      "id": "offer_5fe782160fc1",
+      "attrs": {
+        "price": 786620,
+        "admin": 139431,
+        "loss_0": 26800,
+        "loss_1": 23600,
+        "loss_2": 18800,
+        "loss_3": 24900,
+        "loss_4": 2900,
+        "loss_5": 20900,
+        "franchise": 34200,
+        "coverage": 24400
+      }
+    },
+    {
+      "id": "offer_fce7061f7fc7",
+      "attrs": {
+        "price": 767772,
+        "admin": 172069,
+        "loss_0": 21200,
+        "loss_1": 13700,
+        "loss_2": 16400,
+        "loss_3": 5500,
+        "loss_4": 18900,
+        "loss_5": 21500,
+        "franchise": 34800,
+        "coverage": 54400
+      }
+    },
+    {
+      "id": "offer_d2526fb63936",
+      "attrs": {
+        "price": 795869,
+        "admin": 176957,
+        "loss_0": 9700,
+        "loss_1": 26200,
+        "loss_2": 18500,
+        "loss_3": 22500,
+        "loss_4": 7400,
+        "loss_5": 16800,
+        "franchise": 31800,
+        "coverage": 60700
+      }
+    },
+    {
+      "id": "offer_efd57cbceea1",
+      "attrs": {
+        "price": 680799,
+        "admin": 160516,
+        "loss_0": 9500,
+        "loss_1": 26700,
+        "loss_2": 14400,
+        "loss_3": 2400,
+        "loss_4": 4100,
+        "loss_5": 22900,
+        "franchise": 40100,
+        "coverage": 31200
+      }
+    },
+    {
+      "id": "offer_918d9cf9cd1c",
+      "attrs": {
+        "price": 526509,
+        "admin": 176195,
+        "loss_0": 3500,
+        "loss_1": 24600,
+        "loss_2": 6900,
+        "loss_3": 1000,
+        "loss_4": 17500,
+        "loss_5": 4300,
+        "franchise": 42200,
+        "coverage": 47500
+      }
+    },
+    {
+      "id": "offer_fa2a633f8a04",
+      "attrs": {
+        "price": 555283,
+        "admin": 176565,
+        "loss_0": 19300,
+        "loss_1": 26200,
+        "loss_2": 25800,
+        "loss_3": 15300,
+        "loss_4": 13000,
+        "loss_5": 22600,
+        "franchise": 42400,
+        "coverage": 61100
+      }
+    },
+    {
+      "id": "offer_fdc8756eb326",
+      "attrs": {
+        "price": 635613,
+        "admin": 166679,
+        "loss_0": 23800,
+        "loss_1": 9000,
+        "loss_2": 10900,
+        "loss_3": 4500,
+        "loss_4": 26400,
+        "loss_5": 22700,
+        "franchise": 34500,
+        "coverage": 40200
+      }
+    },
+    {
+      "id": "offer_abbcf432553e",
+      "attrs": {
+        "price": 523263,
+        "admin": 139197,
+        "loss_0": 18800,
+        "loss_1": 7600,
+        "loss_2": 19500,
+        "loss_3": 28200,
+        "loss_4": 20500,
+        "loss_5": 3100,
+        "franchise": 21000,
+        "coverage": 18700
+      }
+    },
+    {
+      "id": "offer_b9791fc68585",
+      "attrs": {
+        "price": 679875,
+        "admin": 136810,
+        "loss_0": 19900,
+        "loss_1": 24600,
+        "loss_2": 26500,
+        "loss_3": 25900,
+        "loss_4": 24100,
+        "loss_5": 2900,
+        "franchise": 45400,
+        "coverage": 35900
+      }
+    },
+    {
+      "id": "offer_05c34dd1290b",
+      "attrs": {
+        "price": 561991,
+        "admin": 153186,
+        "loss_0": 6100,
+        "loss_1": 15400,
+        "loss_2": 19300,
+        "loss_3": 10000,
+        "loss_4": 7000,
+        "loss_5": 4700,
+        "franchise": 55400,
+        "coverage": 31400
+      }
+    },
+    {
+      "id": "offer_c1f9b1878797",
+      "attrs": {
+        "price": 804552,
+        "admin": 153968,
+        "loss_0": 21400,
+        "loss_1": 21000,
+        "loss_2": 28400,
+        "loss_3": 28400,
+        "loss_4": 21800,
+        "loss_5": 8000,
+        "franchise": 51700,
+        "coverage": 45300
+      }
+    },
+    {
+      "id": "offer_fd438469fbb2",
+      "attrs": {
+        "price": 480071,
+        "admin": 166482,
+        "loss_0": 24900,
+        "loss_1": 15800,
+        "loss_2": 21100,
+        "loss_3": 22900,
+        "loss_4": 2200,
+        "loss_5": 18200,
+        "franchise": 32700,
+        "coverage": 42000
+      }
+    },
+    {
+      "id": "offer_c782c8e80fde",
+      "attrs": {
+        "price": 748072,
+        "admin": 170853,
+        "loss_0": 12300,
+        "loss_1": 13800,
+        "loss_2": 10600,
+        "loss_3": 3000,
+        "loss_4": 29900,
+        "loss_5": 13800,
+        "franchise": 47900,
+        "coverage": 26100
+      }
+    },
+    {
+      "id": "offer_65d8df922c84",
+      "attrs": {
+        "price": 499592,
+        "admin": 175067,
+        "loss_0": 4700,
+        "loss_1": 2300,
+        "loss_2": 8600,
+        "loss_3": 13000,
+        "loss_4": 13900,
+        "loss_5": 23900,
+        "franchise": 35300,
+        "coverage": 38400
+      }
+    },
+    {
+      "id": "offer_26ee46462455",
+      "attrs": {
+        "price": 687017,
+        "admin": 166534,
+        "loss_0": 16100,
+        "loss_1": 10600,
+        "loss_2": 18300,
+        "loss_3": 5200,
+        "loss_4": 24300,
+        "loss_5": 29500,
+        "franchise": 51900,
+        "coverage": 55200
+      }
+    },
+    {
+      "id": "offer_e2d99a603b67",
+      "attrs": {
+        "price": 530094,
+        "admin": 186654,
+        "loss_0": 10000,
+        "loss_1": 16100,
+        "loss_2": 14700,
+        "loss_3": 12800,
+        "loss_4": 2400,
+        "loss_5": 11700,
+        "franchise": 32900,
+        "coverage": 57600
+      }
+    },
+    {
+      "id": "offer_411cce314764",
+      "attrs": {
+        "price": 890832,
+        "admin": 160458,
+        "loss_0": 20400,
+        "loss_1": 19300,
+        "loss_2": 17400,
+        "loss_3": 7000,
+        "loss_4": 17400,
+        "loss_5": 3900,
+        "franchise": 57300,
+        "coverage": 54900
+      }
+    },
+    {
+      "id": "offer_407143140a12",
+      "attrs": {
+        "price": 556282,
+        "admin": 149126,
+        "loss_0": 3300,
+        "loss_1": 3600,
+        "loss_2": 1000,
+        "loss_3": 25300,
+        "loss_4": 22800,
+        "loss_5": 16900,
+        "franchise": 47600,
+        "coverage": 15500
+      }
+    },
+    {
+      "id": "offer_933054dcd296",
+      "attrs": {
+        "price": 661188,
+        "admin": 133053,
+        "loss_0": 16600,
+        "loss_1": 24300,
+        "loss_2": 29300,
+        "loss_3": 12800,
+        "loss_4": 10600,
+        "loss_5": 29900,
+        "franchise": 38000,
+        "coverage": 21100
+      }
+    },
+    {
+      "id": "offer_da669603acd2",
+      "attrs": {
+        "price": 753828,
+        "admin": 183836,
+        "loss_0": 5200,
+        "loss_1": 5300,
+        "loss_2": 24500,
+        "loss_3": 24700,
+        "loss_4": 6200,
+        "loss_5": 7300,
+        "franchise": 31800,
+        "coverage": 40000
+      }
+    },
+    {
+      "id": "offer_806d1c4a9d45",
+      "attrs": {
+        "price": 856462,
+        "admin": 149482,
+        "loss_0": 12400,
+        "loss_1": 18100,
+        "loss_2": 21800,
+        "loss_3": 11800,
+        "loss_4": 4600,
+        "loss_5": 27700,
+        "franchise": 54500,
+        "coverage": 50600
+      }
+    },
+    {
+      "id": "offer_8dedd5743986",
+      "attrs": {
+        "price": 547506,
+        "admin": 183004,
+        "loss_0": 26300,
+        "loss_1": 16500,
+        "loss_2": 8200,
+        "loss_3": 16100,
+        "loss_4": 7100,
+        "loss_5": 20500,
+        "franchise": 29500,
+        "coverage": 61600
+      }
+    },
+    {
+      "id": "offer_1ae625dc613f",
+      "attrs": {
+        "price": 886584,
+        "admin": 177465,
+        "loss_0": 17900,
+        "loss_1": 14600,
+        "loss_2": 14000,
+        "loss_3": 22900,
+        "loss_4": 20000,
+        "loss_5": 3200,
+        "franchise": 34100,
+        "coverage": 53700
+      }
+    },
+    {
+      "id": "offer_b0836a3dbfe9",
+      "attrs": {
+        "price": 664171,
+        "admin": 155735,
+        "loss_0": 4300,
+        "loss_1": 13400,
+        "loss_2": 25100,
+        "loss_3": 4000,
+        "loss_4": 14300,
+        "loss_5": 21500,
+        "franchise": 56500,
+        "coverage": 52300
+      }
+    },
+    {
+      "id": "offer_d0d519e7d4ad",
+      "attrs": {
+        "price": 684090,
+        "admin": 159768,
+        "loss_0": 9700,
+        "loss_1": 3400,
+        "loss_2": 6700,
+        "loss_3": 15400,
+        "loss_4": 18500,
+        "loss_5": 29200,
+        "franchise": 43700,
+        "coverage": 46500
+      }
+    },
+    {
+      "id": "offer_2d3c1c43f976",
+      "attrs": {
+        "price": 861246,
+        "admin": 148095,
+        "loss_0": 24800,
+        "loss_1": 7200,
+        "loss_2": 1700,
+        "loss_3": 22000,
+        "loss_4": 22700,
+        "loss_5": 16300,
+        "franchise": 54300,
+        "coverage": 32200
+      }
+    },
+    {
+      "id": "offer_96a2450ea2aa",
+      "attrs": {
+        "price": 607063,
+        "admin": 138455,
+        "loss_0": 19600,
+        "loss_1": 1900,
+        "loss_2": 30000,
+        "loss_3": 4800,
+        "loss_4": 25000,
+        "loss_5": 5400,
+        "franchise": 28400,
+        "coverage": 17400
+      }
+    },
+    {
+      "id": "offer_439ae5546404",
+      "attrs": {
+        "price": 719573,
+        "admin": 148212,
+        "loss_0": 4600,
+        "loss_1": 19900,
+        "loss_2": 16600,
+        "loss_3": 1200,
+        "loss_4": 28200,
+        "loss_5": 9900,
+        "franchise": 57600,
+        "coverage": 58500
+      }
+    }
+  ]
+}

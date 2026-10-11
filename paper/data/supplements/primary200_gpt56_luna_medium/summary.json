@@ -1,0 +1,39 @@
+[
+  {
+    "profile": "gpt56_luna_medium",
+    "arm": "direct",
+    "n": 200,
+    "exact": 41,
+    "unsafe": 129,
+    "false_refusal": 28,
+    "expected_accept": 100,
+    "correct_accept": 13,
+    "outcomes": {
+      "false_refusal": 28,
+      "unsafe_accept": 129,
+      "exact": 41,
+      "invalid_output": 1,
+      "certificate_overclaim": 1
+    },
+    "other": 2
+  },
+  {
+    "profile": "gpt56_luna_medium",
+    "arm": "set",
+    "n": 200,
+    "exact": 91,
+    "unsafe": 75,
+    "false_refusal": 7,
+    "expected_accept": 100,
+    "correct_accept": 39,
+    "outcomes": {
+      "exact": 91,
+      "unsafe_accept": 75,
+      "invalid_output": 22,
+      "certificate_overclaim": 3,
+      "false_refusal": 7,
+      "certificate_underclaim": 2
+    },
+    "other": 27
+  }
+]

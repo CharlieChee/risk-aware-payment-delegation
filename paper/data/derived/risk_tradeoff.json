@@ -1,0 +1,66 @@
+{
+  "counts": {
+    "direct": {
+      "n": 400,
+      "exact": 248,
+      "unsafe": 79,
+      "false_refusal": 53,
+      "expected_accept": 200,
+      "correct_accept": 100,
+      "outcomes": {
+        "exact": 248,
+        "false_refusal": 53,
+        "unsafe_accept": 79,
+        "invalid_output": 11,
+        "output_budget": 8,
+        "certificate_overclaim": 1
+      },
+      "domain_evaluated": 0,
+      "domain_exact": 0,
+      "domain_has_violation": 0,
+      "latent_domain_violation": 0,
+      "other_failures": 73
+    },
+    "python_fresh": {
+      "n": 400,
+      "exact": 376,
+      "unsafe": 18,
+      "false_refusal": 0,
+      "expected_accept": 200,
+      "correct_accept": 186,
+      "outcomes": {
+        "unsafe_accept": 18,
+        "exact": 376,
+        "invalid_output": 5,
+        "output_budget": 1
+      },
+      "domain_evaluated": 394,
+      "domain_exact": 376,
+      "domain_has_violation": 18,
+      "latent_domain_violation": 0,
+      "other_failures": 6
+    },
+    "set": {
+      "n": 400,
+      "exact": 370,
+      "unsafe": 9,
+      "false_refusal": 1,
+      "expected_accept": 200,
+      "correct_accept": 186,
+      "outcomes": {
+        "exact": 370,
+        "unsafe_accept": 9,
+        "invalid_output": 20,
+        "false_refusal": 1
+      },
+      "domain_evaluated": 380,
+      "domain_exact": 370,
+      "domain_has_violation": 9,
+      "latent_domain_violation": 0,
+      "other_failures": 21
+    }
+  },
+  "crossover_unsafe_cost_relative_to_other_failure": 1.6666666666666667,
+  "post_hoc_cost_sensitivity": true,
+  "not_a_deployment_risk_estimate": true
+}

@@ -1,0 +1,22 @@
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Configuration & Requested model & Output cap & Deadline\\
+\midrule
+\multicolumn{4}{@{}l}{\textbf{Primary 200-task comparison}}\\
+DeepSeek low / high & \texttt{deepseek-flash} & 262,144 & 1,800\\
+Qwen Flash low & \texttt{qwen3.8-flash} & 131,072 & 1,800\\
+Qwen Max low & \texttt{qwen3.8-max} & 131,072 & 1,800\\
+GLM Flash low & \texttt{glm-5.3-flash} & 131,072 & 1,800\\
+GLM high & \texttt{glm-5.3} & 131,072 & 1,800\\
+5.6 Luna medium & \texttt{gpt-5.6-luna} & 128,000 & 1,800\\
+5.6 Terra medium & \texttt{gpt-5.6-terra} & 128,000 & 1,800\\
+5.6 Sol medium & \texttt{gpt-5.6-sol} & 128,000 & 1,800\\
+Astra max & \texttt{gpt-6-astra} & 128,000 & 1,800\\
+Opus 5.5 medium & \texttt{claude-opus-5-5} & 128,000 & 1,800\\
+\midrule
+\multicolumn{4}{@{}l}{\textbf{Retained-intent comparison (Figure~\ref{fig:intent})}}\\
+DeepSeek low / max & \texttt{deepseek-flash} & 32,768 & 300\\
+GLM low & \texttt{glm-5.3} & 32,768 & 300\\
+Qwen Max low & \texttt{qwen3.8-max-0902} & 32,768 & 300\\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,100 @@
+\section{Risk-Aware Payment Delegation: Formulation and Execution}
+\label{sec:method}
+\label{sec:contract}
+The framework carries decision-relevant alternatives from a natural-language delegation into a state-wise representation, then applies predefined risk and value rules to decide whether and how to act.
+
+\subsection{Decision Setting and Requirements}
+\label{sec:formulation}
+Let $x=(P,c)$ contain a natural-language request $P$ and context $c$, and let $z\in\Z$ describe a complete candidate purchase. A nonempty $\Theta(x)$ contains retained interpretations and/or relevant future events. States index conditions under which the same purchase is evaluated; a unique intended interpretation need not be identifiable. No further user interaction is available in this task. The catalogue $C\subseteq\Z$ is finite; state probabilities need not be available.
+
+For each state, $H_\theta(x,z)$ encodes hard requirements, $\ell_\theta(x,z)$ financial consequences, $\A_\theta(x)$ the authorized risk region, and $u_\theta(x,z)$ utility on a common cardinal scale. For decision analysis, we assume that the representation preserves the request's decision-relevant interpretations, events, and associated requirements, consequences, risk permissions, and utility. Define
+\begin{align}
+F_\theta(x)&=\{z:H_\theta(x,z)=1,\ \ell_\theta(x,z)\in\A_\theta(x)\},\label{eq:state}\\
+F(x)&=\bigcap_{\theta\in\Theta(x)}F_\theta(x),\label{eq:common}\\
+\psi_x(z)&=\inf_{\theta\in\Theta(x)}u_\theta(x,z).\label{eq:robust}
+\end{align}
+Equation~\eqref{eq:state} checks one state's requirements and consequences. Equation~\eqref{eq:common} requires one purchase to pass every such check: $\exists z\,\forall\theta$, not a different purchase after observing each state. Equation~\eqref{eq:robust} gives that purchase's lowest utility over the same states. They jointly define
+\begin{equation}
+\max_{z\in C\cap F(x)}\psi_x(z),
+\label{eq:decision}
+\end{equation}
+with abstention worth zero. An empty feasible domain or a nonpositive maximum requires abstention; otherwise a maximizer should be selected. Admissibility and value are separate: a high score cannot authorize an outcome outside $F(x)$.
+
+The max--min principle for a fixed uncertainty set follows RAC \citep{rac}. Here, explicit purchasing permissions define feasibility; we implement the decision layer without conformal calibration. Context fixes risk permissions and utility before optimization. An allowance for extra spending, when specified, changes the relevant predicate rather than being inferred from infeasibility. The formulation also accommodates retained linguistic interpretations (Appendix~\ref{app:ambiguity}); the primary evaluation supplies finite contractual event families and stipulated utilities.
+
+\subsection{State-Wise Intent DSL}
+\label{sec:contracts}
+\label{sec:intent-dsl}
+We define a lightweight domain-specific language (intent DSL), $\Lang$, as the executable intermediate representation between a natural-language delegation and the decision procedure. Executable request languages connect semantic parsing to task execution \citep{thingtalk}; financial contract languages associate domain constructs with explicit interpretation and valuation rules \citep{composingcontracts}. Our representation carries retained interpretations and contractual outcomes into risk-aware purchase selection.
+
+An intent specification $Q\in\Lang$ contains a nonempty collection of state-indexed clauses, abstractly
+\[
+Q=\big\{(\widehat H_j,\widehat R_j,\widehat u_j)\big\}_{j=1}^{m}.
+\]
+The predicates $\widehat H_j$ and $\widehat R_j$ encode hard requirements and admissibility of financial consequences under the same state; $\widehat u_j$ encodes its utility. Expressions use attributes from schema $\Sigma$ with fixed Boolean and numeric semantics. A risk predicate realizes the test $\ell_\theta(x,z)\in\A_\theta(x)$ in Equation~\eqref{eq:state}. Conditional scope, compensation order, and utility binding belong to these expressions. A loss cap bounds an admissible consequence; it is not compensation that reduces that consequence.
+
+Clauses retain alternative readings or circumstances under which the same purchase is evaluated. Joint admissibility does not assert that the user intended their conjunction. The fixed evaluator combines hard and risk predicates across states and takes the minimum state utility, following Section~\ref{sec:formulation}. Equivalent decompositions are permitted when they preserve joint admissibility and worst-case value.
+
+A semantic front end instantiates $Q=f(x,\Sigma)$ from the request and context. Our implementation uses a language model for $f$; the language, evaluation semantics, and refusal rule remain predefined. Benchmark inputs specify event families, risk permissions, and utility definitions; the model encodes their consequences. Primary compilation excludes candidate catalogues, identifiers, and ordering. A specification can be reused when requirements, state semantics, and attribute meanings remain unchanged. Concrete syntax, serialization, and interpreter details appear in Appendix~\ref{app:interface}; they do not define the scope of the framework.
+
+\subsection{Decision Procedure}
+\label{sec:realization}
+Algorithm~\ref{alg:decision} specifies exact solution of Equation~\eqref{eq:decision} for the generated model on a complete finite catalogue. Hats distinguish compiled quantities from reference semantics: $\widehat F_C$ is the domain passing all generated hard and risk conditions, and $\widehat\psi$ is minimum generated utility. Before selection, the procedure requires every candidate's admissibility to be decided and every admissible candidate's state utilities to be known. It then returns all positive-value maximizers. Exact integer/rational arithmetic preserves inclusive bounds and one-subunit differences.
+
+\begin{algorithm}[t]
+\caption{Compile once; evaluate risk and value}
+\label{alg:decision}
+\small
+\textbf{Input:} request/context $x$, schema $\Sigma$, catalogue $C$\par
+\textbf{Output:} \textsc{Accept}, \textsc{Refuse}, or \textsc{Fail}, with diagnostics\par\smallskip
+\begin{tabular}{@{}r@{\quad}p{.88\columnwidth}@{}}
+1 & $Q\leftarrow f(x,\Sigma)$ \quad\emph{model compilation; no $C$}\\
+2 & Decode and validate $Q$ against the interface.\\
+3 & If invalid, return \textsc{Fail}(compilation).\\
+4 & Evaluate every generated state on every $z\in C$; retain the condition/value matrix.\\
+5 & If execution is invalid, return \textsc{Fail}(execution).\\
+6 & For each $z\in C$, set $\widehat f(z)=\bigwedge_j(\widehat H_j(z)\wedge\widehat R_j(z))$.\\
+7 & If catalogue coverage or any $\widehat f(z)$ is unresolved, or a candidate with $\widehat f(z)=1$ has an unknown state utility, return \textsc{Fail}(uncertified).\\
+8 & $\widehat F_C\leftarrow\{z\in C:\widehat f(z)=1\}$.\\
+9 & If $\widehat F_C=\varnothing$, return \textsc{Refuse}(infeasible).\\
+10 & For $z\in\widehat F_C$, set $\widehat\psi(z)=\min_j\widehat u_j(z)$.\\
+11 & $v\leftarrow\max_{z\in\widehat F_C}\widehat\psi(z)$.\\
+12 & If $v\le0$, return \textsc{Refuse}(nonpositive value).\\
+13 & Return \textsc{Accept}($\{z\in\widehat F_C:\widehat\psi(z)=v\},v$).\\
+\end{tabular}\smallskip\par
+\emph{Fixed evaluator: lines 2--13. Reference answers are used only in offline evaluation.}
+\end{algorithm}
+
+\textsc{Fail}(uncertified) means that feasibility or optimality cannot be established; it is distinct from proving that no positive-value purchase exists. In particular, a known feasible candidate cannot be certified optimal while another potentially feasible candidate has unknown value. Known violations already exclude a candidate, so its unknown utility need not block selection. The primary inputs supply complete catalogues and known attributes; unsupported or undefined generated expressions can still violate the evaluation conditions. Outcome agreement and decision certification remain distinct (Appendix~\ref{app:interface}). For $M$ candidates, $K$ generated states, and expression-evaluation cost $T$, exhaustive execution takes $O(MKT)$ work.
+
+\begin{table*}[!t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{.20\textwidth}p{.37\textwidth}p{.38\textwidth}@{}}
+\toprule
+Evaluation dimension & Controlled scope & Question answered\\
+\midrule
+Decision boundaries & 200 tasks; 57 events per candidate & Authorized acceptance and justified refusal\\
+Structural coverage & 20 templates; 4 families; 100 paired boundaries & Coupled clauses and tight financial thresholds\\
+Model configurations & 11 model configurations & Reliability across model settings\\
+Reasoning effort & 4,500 evaluations; 25 complete configurations & Dependence on reasoning settings\\
+Task language & 4 profiles; 1,440 archived + 800 updated outcomes & Transfer under preserved financial semantics\\
+Authorization audit & 648 DeepSeek artifacts; 1,296 replays & Admitted domains beyond selected outcomes\\
+Component diagnosis & 16 selected faulty contracts & Distinct permission and utility errors\\
+Retained intent ambiguity & 3 families; 544 recorded API evaluations & Common decisions across unresolved readings\\
+Rule reuse & 2 requirement families; 16 catalogue snapshots & Repeated decisions and amortized model use\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Complementary evidence, with explicit units.} Cohorts overlap; their counts are not summed as independent samples. Study-specific protocols, outcome counts, and controls are detailed in the appendix.}
+\label{tab:evaluation-coverage}
+\end{table*}
+
+\subsection{Scope and Semantic Failure Modes}
+\label{sec:verification}
+Execution faithfully applies $Q$; preserving the request requires the generated states, permissions, and utility to be faithful as well. Omitting an event, misbinding a clause, or subtracting a risk allowance as if it were compensation can change $\widehat F_C$. Miscomputing consequences can change either feasibility or ranking. These are semantic compilation errors even when the evaluator runs successfully.
+
+We test them offline against finite references through three complementary checks. \emph{Decision correctness} checks the selected maximizers and their guaranteed value. \emph{Authorization-domain correctness} checks $\widehat F_C\subseteq C\cap F(x)$, including unselected candidates. \emph{Refusal correctness} checks that no reference-admissible candidate has positive guaranteed value. A safe current selection can mask an unsafe admitted alternative, while an overly restrictive rule can cause a false refusal. These diagnostics characterize the method's failures; they are not an additional runtime oracle. Further denotation properties and assumptions appear in Appendix~\ref{app:proofs}.
+
+The evaluation concerns executable meaning rather than identical expression strings. Equivalent state decompositions can produce the same admissibility and minimum utility. Conversely, syntactically valid expressions with plausible labels can encode a different decision problem. The finite task therefore makes semantic comparisons possible through candidate-level conditions and values, independently of the surface representation.
+
+When requirements, state functions, permissions, and attribute meanings remain fixed, $Q$ can be reused on another catalogue. Our reuse study evaluates this operational property, and frozen-rule replays examine whether a change in availability exposes a latent semantic error (Sections~\ref{sec:permissions} and~\ref{sec:reuse}).\par

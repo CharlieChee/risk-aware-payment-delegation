@@ -1,0 +1,78 @@
+{
+  "headline": "CNY 2000 allowed risk; CNY 4000 approved by the saved Python program.",
+  "scope": "One fully executed paired motivating example, not a population rate.",
+  "example": {
+    "profile": "ds_flash_high",
+    "case": "credit_9503b1f9713809c8ac",
+    "python": {
+      "decision": "accept",
+      "allowed_ids": [
+        "risk_400000_fen"
+      ],
+      "guaranteed_utility": "959814",
+      "reason_code": "accepted"
+    },
+    "set": {
+      "decision": "reject",
+      "allowed_ids": [],
+      "guaranteed_utility": null,
+      "reason_code": "infeasible_complete_catalog"
+    },
+    "true_worst_loss_fen": 400000,
+    "limit_fen": 200000,
+    "source_code": "from itertools import combinations\nimport json\n\ndef assess(attrs):\n    required = ['price', 'admin', 'small_cap', 'large_cap'] + [f'replacement_{i}' for i in range(6)] + [f'refund_{i}' for i in range(6)]\n    for k in required:\n        if k not in attrs or attrs[k] is None:\n            return {\"feasible\": False, \"utility\": None}\n        if not isinstance(attrs[k], int) or attrs[k] < 0:\n            return {\"feasible\": False, \"utility\": None}\n    \n    price = attrs['price']\n    admin = attrs['admin']\n    small_cap = attrs['small_cap']\n    large_cap = attrs['large_cap']\n    replacements = [attrs[f'replacement_{i}'] for i in range(6)]\n    refunds = [attrs[f'refund_{i}'] for i in range(6)]\n    \n    if price > 1200000:\n        return {\"feasible\": False, \"utility\": None}\n    \n    max_assessment = 0\n    for n in range(0, 4):\n        for S in combinations(range(6), n):\n            if n == 0:\n                assessment = 0\n            else:\n                rep_sum = sum(replacements[i] for i in S)\n                ref_sum = sum(refunds[i] for i in S)\n                if n <= 2:\n                    cap = small_cap\n                else:\n                    cap = large_cap\n                comp = min(ref_sum, cap)\n                net = max(0, rep_sum - comp - 200000) + admin\n                assessment = net\n            if assessment > 200000:\n                return {\"feasible\": False, \"utility\": None}\n            if assessment > max_assessment:\n                max_assessment = assessment\n    \n    utility = 2000000 - price - max_assessment\n    return {\"feasible\": True, \"utility\": str(utility)}\n",
+    "grid_max_allowed_risk_yuan": {
+      "python": 4000.0,
+      "set": 2000.0
+    }
+  },
+  "all_methods": [
+    {
+      "arm": "set",
+      "n": 432,
+      "grid_unsafe_selected": 0,
+      "grid_unsafe_domains": 7,
+      "single_4000_unsafe": 4,
+      "invalid": 9
+    },
+    {
+      "arm": "python_cached",
+      "n": 432,
+      "grid_unsafe_selected": 0,
+      "grid_unsafe_domains": 7,
+      "single_4000_unsafe": 3,
+      "invalid": 1
+    },
+    {
+      "arm": "python_fresh",
+      "n": 432,
+      "grid_unsafe_selected": 0,
+      "grid_unsafe_domains": 9,
+      "single_4000_unsafe": 1,
+      "invalid": 3
+    }
+  ],
+  "d3_original_deepseek": {
+    "set": {
+      "n": 12,
+      "unsafe": 0,
+      "invalid": 0
+    },
+    "python_cached": {
+      "n": 12,
+      "unsafe": 2,
+      "invalid": 0
+    },
+    "python_fresh": {
+      "n": 12,
+      "unsafe": 0,
+      "invalid": 1
+    }
+  },
+  "new_model_calls": 0,
+  "original_programs": 1296,
+  "replays": 2592,
+  "reference_state_candidate_checks": 53460,
+  "mathematical_observation": "With nonnegative true loss L, B>0 and admin=0, max(0,L-B)<=B iff L<=2B.",
+  "limitation": "Both set and Python have affected outputs. This study establishes a semantic failure mechanism, not overall set superiority."
+}

@@ -1,0 +1,2289 @@
+{
+  "records": [
+    {
+      "id": "U-task",
+      "author": "user",
+      "status": "current",
+      "text": "Buy an indivisible package consisting of six prepaid itinerary services numbered 0 through 5 and insurance, with the premium already included in price. Only one catalog row can be selected and fixed today; the package cannot be changed afterward according to the adverse event. The products, dates, suppliers, and availability have been checked accurately."
+    },
+    {
+      "id": "U-events",
+      "author": "user",
+      "status": "current",
+      "text": "There may be no adverse event, or any set of at most 4 services may be cancelled; every specific subset satisfying the count limit may occur. There are no additional correlation restrictions, and no probabilities are provided."
+    },
+    {
+      "id": "U-contract",
+      "author": "user",
+      "status": "current",
+      "text": "The sum of loss for the services actually cancelled is the gross loss. The primary insurance pays only the portion of the gross loss exceeding primary_ded, up to primary_cap; if it is not exceeded, the payout is 0. After subtracting the actual primary insurance payout from the gross loss, the secondary insurance pays only the portion of the remaining loss exceeding secondary_ded, up to secondary_cap; if it is not exceeded, the payout is 0. The two actual payouts are added together. Net loss equals gross loss minus the actual insurance payout, plus one admin charge; admin is not covered by any insurance. The assessed loss for the empty event is 0, with no admin or other charges. Unaffected items incur no adverse-event loss; there are no other unstated terms."
+    },
+    {
+      "id": "U-budget",
+      "author": "user",
+      "status": "current",
+      "text": "The attributes are complete and accurate, and are all nonnegative integers; monetary amounts are in fen of RMB, and weight is in grams. The original payment price must not exceed 1200000 fen of RMB, and the original payment and discount conditions stated in the contract must be satisfied. In each permitted event, the assessment amount described above must not exceed 200000 fen of RMB; equality with the limit is acceptable, and the limit must not be relaxed. This catalog is complete, with no hidden options."
+    },
+    {
+      "id": "U-utility",
+      "author": "user",
+      "status": "current",
+      "text": "Utility in each event is 2000000 minus price, then minus the assessment amount for that event. For candidates that satisfy the hard conditions and risk limits for all events simultaneously, take the lowest utility over all events, then choose the candidate with the greatest lowest utility; accept only if that value is strictly greater than 0, otherwise refuse. Do not ask the user questions."
+    }
+  ],
+  "attributes": {
+    "price": "Original amount actually paid for the whole order, in integer fen of RMB",
+    "admin": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+    "loss_0": "Gross loss not refunded by the supplier when service 0 is cancelled, in integer fen of RMB",
+    "loss_1": "Gross loss not refunded by the supplier when service 1 is cancelled, in integer fen of RMB",
+    "loss_2": "Gross loss not refunded by the supplier when service 2 is cancelled, in integer fen of RMB",
+    "loss_3": "Gross loss not refunded by the supplier when service 3 is cancelled, in integer fen of RMB",
+    "loss_4": "Gross loss not refunded by the supplier when service 4 is cancelled, in integer fen of RMB",
+    "loss_5": "Gross loss not refunded by the supplier when service 5 is cancelled, in integer fen of RMB",
+    "primary_ded": "Primary insurance deductible, in integer fen of RMB",
+    "primary_cap": "Primary insurance payout limit, in integer fen of RMB",
+    "secondary_ded": "Secondary deductible for the loss remaining after the primary insurance, in integer fen of RMB",
+    "secondary_cap": "Secondary insurance payout limit, in integer fen of RMB"
+  },
+  "attribute_schema": {
+    "price": {
+      "description": "Original amount actually paid for the whole order, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "admin": {
+      "description": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_0": {
+      "description": "Gross loss not refunded by the supplier when service 0 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_1": {
+      "description": "Gross loss not refunded by the supplier when service 1 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_2": {
+      "description": "Gross loss not refunded by the supplier when service 2 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_3": {
+      "description": "Gross loss not refunded by the supplier when service 3 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_4": {
+      "description": "Gross loss not refunded by the supplier when service 4 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "loss_5": {
+      "description": "Gross loss not refunded by the supplier when service 5 is cancelled, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "primary_ded": {
+      "description": "Primary insurance deductible, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "primary_cap": {
+      "description": "Primary insurance payout limit, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "secondary_ded": {
+      "description": "Secondary deductible for the loss remaining after the primary insurance, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "secondary_cap": {
+      "description": "Secondary insurance payout limit, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    }
+  },
+  "catalog_complete": true,
+  "candidates": [
+    {
+      "id": "offer_fec11a82c06e",
+      "attrs": {
+        "price": 647895,
+        "admin": 174072,
+        "loss_0": 1700,
+        "loss_1": 3400,
+        "loss_2": 23800,
+        "loss_3": 18500,
+        "loss_4": 25900,
+        "loss_5": 26900,
+        "primary_ded": 9800,
+        "primary_cap": 18100,
+        "secondary_ded": 15000,
+        "secondary_cap": 31700
+      }
+    },
+    {
+      "id": "offer_ade182dc0ef1",
+      "attrs": {
+        "price": 474569,
+        "admin": 151156,
+        "loss_0": 2500,
+        "loss_1": 28500,
+        "loss_2": 16000,
+        "loss_3": 2400,
+        "loss_4": 8300,
+        "loss_5": 25100,
+        "primary_ded": 5700,
+        "primary_cap": 10500,
+        "secondary_ded": 16600,
+        "secondary_cap": 9400
+      }
+    },
+    {
+      "id": "offer_79836b106bb8",
+      "attrs": {
+        "price": 742229,
+        "admin": 165877,
+        "loss_0": 13300,
+        "loss_1": 19700,
+        "loss_2": 10100,
+        "loss_3": 9100,
+        "loss_4": 20700,
+        "loss_5": 13300,
+        "primary_ded": 14900,
+        "primary_cap": 10100,
+        "secondary_ded": 18200,
+        "secondary_cap": 7200
+      }
+    },
+    {
+      "id": "offer_8727c7c24034",
+      "attrs": {
+        "price": 678002,
+        "admin": 180935,
+        "loss_0": 13300,
+        "loss_1": 15300,
+        "loss_2": 21100,
+        "loss_3": 14200,
+        "loss_4": 8200,
+        "loss_5": 20700,
+        "primary_ded": 9000,
+        "primary_cap": 24000,
+        "secondary_ded": 19000,
+        "secondary_cap": 8800
+      }
+    },
+    {
+      "id": "offer_075bdcdfd343",
+      "attrs": {
+        "price": 804298,
+        "admin": 169175,
+        "loss_0": 19600,
+        "loss_1": 1600,
+        "loss_2": 22000,
+        "loss_3": 20900,
+        "loss_4": 17500,
+        "loss_5": 24600,
+        "primary_ded": 12100,
+        "primary_cap": 16800,
+        "secondary_ded": 11700,
+        "secondary_cap": 29000
+      }
+    },
+    {
+      "id": "offer_548dbe430ed9",
+      "attrs": {
+        "price": 797290,
+        "admin": 137652,
+        "loss_0": 25800,
+        "loss_1": 8100,
+        "loss_2": 29600,
+        "loss_3": 29300,
+        "loss_4": 28900,
+        "loss_5": 4400,
+        "primary_ded": 21200,
+        "primary_cap": 23600,
+        "secondary_ded": 0,
+        "secondary_cap": 24500
+      }
+    },
+    {
+      "id": "offer_5e99c2174cd7",
+      "attrs": {
+        "price": 674205,
+        "admin": 191048,
+        "loss_0": 5100,
+        "loss_1": 6300,
+        "loss_2": 4400,
+        "loss_3": 10900,
+        "loss_4": 11800,
+        "loss_5": 21400,
+        "primary_ded": 15100,
+        "primary_cap": 16600,
+        "secondary_ded": 19900,
+        "secondary_cap": 24900
+      }
+    },
+    {
+      "id": "offer_c730c12ab5c6",
+      "attrs": {
+        "price": 777953,
+        "admin": 143945,
+        "loss_0": 9200,
+        "loss_1": 4800,
+        "loss_2": 26300,
+        "loss_3": 27900,
+        "loss_4": 25700,
+        "loss_5": 6600,
+        "primary_ded": 4200,
+        "primary_cap": 10500,
+        "secondary_ded": 3100,
+        "secondary_cap": 17600
+      }
+    },
+    {
+      "id": "offer_87cfd72f3047",
+      "attrs": {
+        "price": 639900,
+        "admin": 180930,
+        "loss_0": 22800,
+        "loss_1": 5700,
+        "loss_2": 28800,
+        "loss_3": 2800,
+        "loss_4": 10500,
+        "loss_5": 11900,
+        "primary_ded": 23400,
+        "primary_cap": 23300,
+        "secondary_ded": 12300,
+        "secondary_cap": 13900
+      }
+    },
+    {
+      "id": "offer_aeedb2735712",
+      "attrs": {
+        "price": 876625,
+        "admin": 199074,
+        "loss_0": 22500,
+        "loss_1": 23200,
+        "loss_2": 12800,
+        "loss_3": 8200,
+        "loss_4": 3700,
+        "loss_5": 3100,
+        "primary_ded": 14300,
+        "primary_cap": 17400,
+        "secondary_ded": 18200,
+        "secondary_cap": 33700
+      }
+    },
+    {
+      "id": "offer_d7c90c14d434",
+      "attrs": {
+        "price": 790636,
+        "admin": 166716,
+        "loss_0": 7900,
+        "loss_1": 13300,
+        "loss_2": 16700,
+        "loss_3": 27200,
+        "loss_4": 21700,
+        "loss_5": 8500,
+        "primary_ded": 3300,
+        "primary_cap": 13300,
+        "secondary_ded": 6800,
+        "secondary_cap": 31900
+      }
+    },
+    {
+      "id": "offer_475529ff10d3",
+      "attrs": {
+        "price": 652068,
+        "admin": 193997,
+        "loss_0": 4900,
+        "loss_1": 4400,
+        "loss_2": 5100,
+        "loss_3": 1400,
+        "loss_4": 26000,
+        "loss_5": 10000,
+        "primary_ded": 22000,
+        "primary_cap": 12100,
+        "secondary_ded": 14500,
+        "secondary_cap": 11400
+      }
+    },
+    {
+      "id": "offer_9442c47c1f6e",
+      "attrs": {
+        "price": 859234,
+        "admin": 143911,
+        "loss_0": 3900,
+        "loss_1": 29000,
+        "loss_2": 5000,
+        "loss_3": 29400,
+        "loss_4": 29100,
+        "loss_5": 5100,
+        "primary_ded": 17600,
+        "primary_cap": 20200,
+        "secondary_ded": 19100,
+        "secondary_cap": 9800
+      }
+    },
+    {
+      "id": "offer_6cd367eb0fcf",
+      "attrs": {
+        "price": 817552,
+        "admin": 165840,
+        "loss_0": 22400,
+        "loss_1": 22800,
+        "loss_2": 21300,
+        "loss_3": 20100,
+        "loss_4": 14500,
+        "loss_5": 25800,
+        "primary_ded": 9800,
+        "primary_cap": 19000,
+        "secondary_ded": 10500,
+        "secondary_cap": 24300
+      }
+    },
+    {
+      "id": "offer_f53d31d644db",
+      "attrs": {
+        "price": 870814,
+        "admin": 156046,
+        "loss_0": 8300,
+        "loss_1": 21800,
+        "loss_2": 5900,
+        "loss_3": 12900,
+        "loss_4": 23100,
+        "loss_5": 24300,
+        "primary_ded": 21300,
+        "primary_cap": 8900,
+        "secondary_ded": 16100,
+        "secondary_cap": 21700
+      }
+    },
+    {
+      "id": "offer_1720594c90ae",
+      "attrs": {
+        "price": 766033,
+        "admin": 121081,
+        "loss_0": 18400,
+        "loss_1": 6300,
+        "loss_2": 23900,
+        "loss_3": 29500,
+        "loss_4": 27100,
+        "loss_5": 3000,
+        "primary_ded": 12100,
+        "primary_cap": 9400,
+        "secondary_ded": 9200,
+        "secondary_cap": 8800
+      }
+    },
+    {
+      "id": "offer_395b5634d4b5",
+      "attrs": {
+        "price": 496819,
+        "admin": 173216,
+        "loss_0": 28100,
+        "loss_1": 11600,
+        "loss_2": 3700,
+        "loss_3": 23600,
+        "loss_4": 17100,
+        "loss_5": 9800,
+        "primary_ded": 11700,
+        "primary_cap": 21200,
+        "secondary_ded": 8800,
+        "secondary_cap": 21000
+      }
+    },
+    {
+      "id": "offer_a4eb7c3c3349",
+      "attrs": {
+        "price": 502297,
+        "admin": 159640,
+        "loss_0": 29100,
+        "loss_1": 15900,
+        "loss_2": 17200,
+        "loss_3": 5000,
+        "loss_4": 16800,
+        "loss_5": 8100,
+        "primary_ded": 19900,
+        "primary_cap": 17400,
+        "secondary_ded": 7900,
+        "secondary_cap": 14600
+      }
+    },
+    {
+      "id": "offer_923bc9727464",
+      "attrs": {
+        "price": 689325,
+        "admin": 144631,
+        "loss_0": 23700,
+        "loss_1": 22500,
+        "loss_2": 21000,
+        "loss_3": 18700,
+        "loss_4": 14400,
+        "loss_5": 26700,
+        "primary_ded": 18200,
+        "primary_cap": 13700,
+        "secondary_ded": 6200,
+        "secondary_cap": 8600
+      }
+    },
+    {
+      "id": "offer_ccaf0728eacf",
+      "attrs": {
+        "price": 595031,
+        "admin": 160844,
+        "loss_0": 28100,
+        "loss_1": 4900,
+        "loss_2": 15600,
+        "loss_3": 27000,
+        "loss_4": 9400,
+        "loss_5": 1000,
+        "primary_ded": 5700,
+        "primary_cap": 7300,
+        "secondary_ded": 12000,
+        "secondary_cap": 32200
+      }
+    },
+    {
+      "id": "offer_bd99c9c1102f",
+      "attrs": {
+        "price": 662262,
+        "admin": 180574,
+        "loss_0": 9300,
+        "loss_1": 17400,
+        "loss_2": 27100,
+        "loss_3": 20200,
+        "loss_4": 7300,
+        "loss_5": 16900,
+        "primary_ded": 24600,
+        "primary_cap": 22300,
+        "secondary_ded": 13200,
+        "secondary_cap": 27900
+      }
+    },
+    {
+      "id": "offer_13516760c4c3",
+      "attrs": {
+        "price": 718097,
+        "admin": 168299,
+        "loss_0": 26900,
+        "loss_1": 13100,
+        "loss_2": 24900,
+        "loss_3": 13700,
+        "loss_4": 7100,
+        "loss_5": 18700,
+        "primary_ded": 14400,
+        "primary_cap": 21800,
+        "secondary_ded": 4500,
+        "secondary_cap": 20200
+      }
+    },
+    {
+      "id": "offer_8742fbbc76ba",
+      "attrs": {
+        "price": 895476,
+        "admin": 162619,
+        "loss_0": 12700,
+        "loss_1": 7300,
+        "loss_2": 2400,
+        "loss_3": 22700,
+        "loss_4": 27000,
+        "loss_5": 22500,
+        "primary_ded": 9000,
+        "primary_cap": 13700,
+        "secondary_ded": 17100,
+        "secondary_cap": 22500
+      }
+    },
+    {
+      "id": "offer_c23f25bdbd8c",
+      "attrs": {
+        "price": 878008,
+        "admin": 146945,
+        "loss_0": 11400,
+        "loss_1": 17100,
+        "loss_2": 28700,
+        "loss_3": 22400,
+        "loss_4": 17400,
+        "loss_5": 20100,
+        "primary_ded": 13500,
+        "primary_cap": 12600,
+        "secondary_ded": 12400,
+        "secondary_cap": 22300
+      }
+    },
+    {
+      "id": "offer_ff8b8d81e47b",
+      "attrs": {
+        "price": 762925,
+        "admin": 197945,
+        "loss_0": 22600,
+        "loss_1": 10600,
+        "loss_2": 10000,
+        "loss_3": 1200,
+        "loss_4": 3800,
+        "loss_5": 13400,
+        "primary_ded": 7700,
+        "primary_cap": 7200,
+        "secondary_ded": 9800,
+        "secondary_cap": 28000
+      }
+    },
+    {
+      "id": "offer_a81e63b4b5f0",
+      "attrs": {
+        "price": 726342,
+        "admin": 154772,
+        "loss_0": 29600,
+        "loss_1": 24600,
+        "loss_2": 9300,
+        "loss_3": 27400,
+        "loss_4": 22900,
+        "loss_5": 5300,
+        "primary_ded": 13400,
+        "primary_cap": 22700,
+        "secondary_ded": 9300,
+        "secondary_cap": 32900
+      }
+    },
+    {
+      "id": "offer_7613fd9e7c12",
+      "attrs": {
+        "price": 494906,
+        "admin": 173958,
+        "loss_0": 8400,
+        "loss_1": 8200,
+        "loss_2": 29100,
+        "loss_3": 23900,
+        "loss_4": 29400,
+        "loss_5": 12000,
+        "primary_ded": 9000,
+        "primary_cap": 23500,
+        "secondary_ded": 17000,
+        "secondary_cap": 33800
+      }
+    },
+    {
+      "id": "offer_cdcdbf3a92a8",
+      "attrs": {
+        "price": 616264,
+        "admin": 182955,
+        "loss_0": 8600,
+        "loss_1": 13100,
+        "loss_2": 14100,
+        "loss_3": 7600,
+        "loss_4": 8300,
+        "loss_5": 18000,
+        "primary_ded": 15500,
+        "primary_cap": 21500,
+        "secondary_ded": 3100,
+        "secondary_cap": 12000
+      }
+    },
+    {
+      "id": "offer_4a0890db4116",
+      "attrs": {
+        "price": 612030,
+        "admin": 166326,
+        "loss_0": 29600,
+        "loss_1": 12800,
+        "loss_2": 4400,
+        "loss_3": 20600,
+        "loss_4": 16700,
+        "loss_5": 12300,
+        "primary_ded": 13800,
+        "primary_cap": 14900,
+        "secondary_ded": 15500,
+        "secondary_cap": 30900
+      }
+    },
+    {
+      "id": "offer_db75464f720e",
+      "attrs": {
+        "price": 705001,
+        "admin": 137669,
+        "loss_0": 24700,
+        "loss_1": 23500,
+        "loss_2": 25300,
+        "loss_3": 19200,
+        "loss_4": 26800,
+        "loss_5": 16800,
+        "primary_ded": 8200,
+        "primary_cap": 14400,
+        "secondary_ded": 200,
+        "secondary_cap": 7300
+      }
+    },
+    {
+      "id": "offer_fe6150c09812",
+      "attrs": {
+        "price": 512655,
+        "admin": 153218,
+        "loss_0": 19400,
+        "loss_1": 20000,
+        "loss_2": 2500,
+        "loss_3": 17400,
+        "loss_4": 4400,
+        "loss_5": 23500,
+        "primary_ded": 20900,
+        "primary_cap": 5300,
+        "secondary_ded": 5900,
+        "secondary_cap": 20000
+      }
+    },
+    {
+      "id": "offer_e4a5b771caf8",
+      "attrs": {
+        "price": 650927,
+        "admin": 134029,
+        "loss_0": 28600,
+        "loss_1": 25100,
+        "loss_2": 16800,
+        "loss_3": 12700,
+        "loss_4": 23600,
+        "loss_5": 18000,
+        "primary_ded": 11700,
+        "primary_cap": 11900,
+        "secondary_ded": 4400,
+        "secondary_cap": 7700
+      }
+    },
+    {
+      "id": "offer_99d7a4081d48",
+      "attrs": {
+        "price": 783706,
+        "admin": 178431,
+        "loss_0": 6900,
+        "loss_1": 21300,
+        "loss_2": 14000,
+        "loss_3": 11700,
+        "loss_4": 1200,
+        "loss_5": 29200,
+        "primary_ded": 14400,
+        "primary_cap": 22200,
+        "secondary_ded": 8600,
+        "secondary_cap": 13100
+      }
+    },
+    {
+      "id": "offer_572b2471384a",
+      "attrs": {
+        "price": 687166,
+        "admin": 153400,
+        "loss_0": 8700,
+        "loss_1": 17300,
+        "loss_2": 28400,
+        "loss_3": 29300,
+        "loss_4": 25400,
+        "loss_5": 18900,
+        "primary_ded": 3400,
+        "primary_cap": 23200,
+        "secondary_ded": 5800,
+        "secondary_cap": 26600
+      }
+    },
+    {
+      "id": "offer_de003c03665f",
+      "attrs": {
+        "price": 741595,
+        "admin": 190917,
+        "loss_0": 5800,
+        "loss_1": 13700,
+        "loss_2": 1200,
+        "loss_3": 28600,
+        "loss_4": 3500,
+        "loss_5": 4300,
+        "primary_ded": 6100,
+        "primary_cap": 21200,
+        "secondary_ded": 18500,
+        "secondary_cap": 26200
+      }
+    },
+    {
+      "id": "offer_c792d3600870",
+      "attrs": {
+        "price": 813296,
+        "admin": 161512,
+        "loss_0": 5800,
+        "loss_1": 20700,
+        "loss_2": 12800,
+        "loss_3": 21600,
+        "loss_4": 22200,
+        "loss_5": 3500,
+        "primary_ded": 20900,
+        "primary_cap": 7600,
+        "secondary_ded": 17100,
+        "secondary_cap": 28400
+      }
+    },
+    {
+      "id": "offer_cf856a5caee0",
+      "attrs": {
+        "price": 856356,
+        "admin": 149262,
+        "loss_0": 19200,
+        "loss_1": 18100,
+        "loss_2": 25700,
+        "loss_3": 25000,
+        "loss_4": 6600,
+        "loss_5": 2000,
+        "primary_ded": 12700,
+        "primary_cap": 15100,
+        "secondary_ded": 1400,
+        "secondary_cap": 16000
+      }
+    },
+    {
+      "id": "offer_2d9cde10648b",
+      "attrs": {
+        "price": 480143,
+        "admin": 199935,
+        "loss_0": 20500,
+        "loss_1": 12900,
+        "loss_2": 17300,
+        "loss_3": 5200,
+        "loss_4": 11200,
+        "loss_5": 12400,
+        "primary_ded": 2300,
+        "primary_cap": 21200,
+        "secondary_ded": 3700,
+        "secondary_cap": 27500
+      }
+    },
+    {
+      "id": "offer_aaa4812fb975",
+      "attrs": {
+        "price": 830043,
+        "admin": 167482,
+        "loss_0": 7800,
+        "loss_1": 22400,
+        "loss_2": 11700,
+        "loss_3": 23400,
+        "loss_4": 5500,
+        "loss_5": 11700,
+        "primary_ded": 23300,
+        "primary_cap": 24600,
+        "secondary_ded": 14100,
+        "secondary_cap": 7900
+      }
+    },
+    {
+      "id": "offer_ee27cf8a65e3",
+      "attrs": {
+        "price": 866311,
+        "admin": 140425,
+        "loss_0": 20200,
+        "loss_1": 25800,
+        "loss_2": 1800,
+        "loss_3": 4400,
+        "loss_4": 17400,
+        "loss_5": 29400,
+        "primary_ded": 1700,
+        "primary_cap": 5500,
+        "secondary_ded": 900,
+        "secondary_cap": 24300
+      }
+    },
+    {
+      "id": "offer_ac81e043cff3",
+      "attrs": {
+        "price": 870350,
+        "admin": 149823,
+        "loss_0": 12700,
+        "loss_1": 7900,
+        "loss_2": 13300,
+        "loss_3": 29800,
+        "loss_4": 23200,
+        "loss_5": 25300,
+        "primary_ded": 6100,
+        "primary_cap": 8000,
+        "secondary_ded": 14100,
+        "secondary_cap": 30100
+      }
+    },
+    {
+      "id": "offer_e96b582db316",
+      "attrs": {
+        "price": 674502,
+        "admin": 149611,
+        "loss_0": 29000,
+        "loss_1": 4100,
+        "loss_2": 28600,
+        "loss_3": 29000,
+        "loss_4": 15200,
+        "loss_5": 22200,
+        "primary_ded": 11800,
+        "primary_cap": 14700,
+        "secondary_ded": 6000,
+        "secondary_cap": 29000
+      }
+    },
+    {
+      "id": "offer_3f107d988c4e",
+      "attrs": {
+        "price": 865096,
+        "admin": 172784,
+        "loss_0": 6000,
+        "loss_1": 22600,
+        "loss_2": 22900,
+        "loss_3": 5400,
+        "loss_4": 26000,
+        "loss_5": 1900,
+        "primary_ded": 23000,
+        "primary_cap": 11300,
+        "secondary_ded": 5200,
+        "secondary_cap": 29500
+      }
+    },
+    {
+      "id": "offer_db5b2505b810",
+      "attrs": {
+        "price": 519988,
+        "admin": 181085,
+        "loss_0": 2200,
+        "loss_1": 13100,
+        "loss_2": 20100,
+        "loss_3": 2300,
+        "loss_4": 15900,
+        "loss_5": 13300,
+        "primary_ded": 8400,
+        "primary_cap": 24000,
+        "secondary_ded": 6400,
+        "secondary_cap": 5400
+      }
+    },
+    {
+      "id": "offer_37f7dc271b1a",
+      "attrs": {
+        "price": 670880,
+        "admin": 149552,
+        "loss_0": 27200,
+        "loss_1": 25500,
+        "loss_2": 29600,
+        "loss_3": 29500,
+        "loss_4": 9300,
+        "loss_5": 14300,
+        "primary_ded": 1000,
+        "primary_cap": 24000,
+        "secondary_ded": 13300,
+        "secondary_cap": 22700
+      }
+    },
+    {
+      "id": "offer_f687f321c3ec",
+      "attrs": {
+        "price": 602705,
+        "admin": 157880,
+        "loss_0": 16700,
+        "loss_1": 21100,
+        "loss_2": 1300,
+        "loss_3": 28200,
+        "loss_4": 13900,
+        "loss_5": 9800,
+        "primary_ded": 15400,
+        "primary_cap": 15400,
+        "secondary_ded": 18900,
+        "secondary_cap": 18900
+      }
+    },
+    {
+      "id": "offer_2fbc1fc60193",
+      "attrs": {
+        "price": 666899,
+        "admin": 144797,
+        "loss_0": 12200,
+        "loss_1": 1600,
+        "loss_2": 22500,
+        "loss_3": 23200,
+        "loss_4": 8000,
+        "loss_5": 21600,
+        "primary_ded": 22900,
+        "primary_cap": 8900,
+        "secondary_ded": 13600,
+        "secondary_cap": 7300
+      }
+    },
+    {
+      "id": "offer_7ec225902064",
+      "attrs": {
+        "price": 616173,
+        "admin": 161335,
+        "loss_0": 18600,
+        "loss_1": 4700,
+        "loss_2": 10100,
+        "loss_3": 21500,
+        "loss_4": 25100,
+        "loss_5": 20900,
+        "primary_ded": 17500,
+        "primary_cap": 10600,
+        "secondary_ded": 12600,
+        "secondary_cap": 34900
+      }
+    },
+    {
+      "id": "offer_80dccfae2c23",
+      "attrs": {
+        "price": 713608,
+        "admin": 164937,
+        "loss_0": 7700,
+        "loss_1": 6900,
+        "loss_2": 2400,
+        "loss_3": 29500,
+        "loss_4": 5500,
+        "loss_5": 29300,
+        "primary_ded": 16900,
+        "primary_cap": 12000,
+        "secondary_ded": 4100,
+        "secondary_cap": 7600
+      }
+    },
+    {
+      "id": "offer_fa60ff1699ff",
+      "attrs": {
+        "price": 623979,
+        "admin": 189366,
+        "loss_0": 7000,
+        "loss_1": 8600,
+        "loss_2": 21200,
+        "loss_3": 18900,
+        "loss_4": 12000,
+        "loss_5": 16500,
+        "primary_ded": 23100,
+        "primary_cap": 17000,
+        "secondary_ded": 1900,
+        "secondary_cap": 27300
+      }
+    },
+    {
+      "id": "offer_9e4514ccfee2",
+      "attrs": {
+        "price": 690810,
+        "admin": 134014,
+        "loss_0": 29800,
+        "loss_1": 14400,
+        "loss_2": 6800,
+        "loss_3": 16500,
+        "loss_4": 20900,
+        "loss_5": 27800,
+        "primary_ded": 4200,
+        "primary_cap": 12000,
+        "secondary_ded": 7200,
+        "secondary_cap": 11800
+      }
+    },
+    {
+      "id": "offer_04cc2748fc45",
+      "attrs": {
+        "price": 595826,
+        "admin": 152899,
+        "loss_0": 28700,
+        "loss_1": 29100,
+        "loss_2": 10500,
+        "loss_3": 20700,
+        "loss_4": 28100,
+        "loss_5": 5800,
+        "primary_ded": 13900,
+        "primary_cap": 16700,
+        "secondary_ded": 4500,
+        "secondary_cap": 34300
+      }
+    },
+    {
+      "id": "offer_317a869a21f0",
+      "attrs": {
+        "price": 772291,
+        "admin": 191001,
+        "loss_0": 1800,
+        "loss_1": 18700,
+        "loss_2": 14100,
+        "loss_3": 11600,
+        "loss_4": 28400,
+        "loss_5": 14200,
+        "primary_ded": 15100,
+        "primary_cap": 23600,
+        "secondary_ded": 16300,
+        "secondary_cap": 29700
+      }
+    },
+    {
+      "id": "offer_b8997208f96b",
+      "attrs": {
+        "price": 621032,
+        "admin": 189380,
+        "loss_0": 25200,
+        "loss_1": 11900,
+        "loss_2": 2800,
+        "loss_3": 10700,
+        "loss_4": 1700,
+        "loss_5": 15500,
+        "primary_ded": 19200,
+        "primary_cap": 10900,
+        "secondary_ded": 13400,
+        "secondary_cap": 26400
+      }
+    },
+    {
+      "id": "offer_22dbec52da24",
+      "attrs": {
+        "price": 694510,
+        "admin": 171325,
+        "loss_0": 21000,
+        "loss_1": 9400,
+        "loss_2": 7800,
+        "loss_3": 29200,
+        "loss_4": 16500,
+        "loss_5": 2200,
+        "primary_ded": 1700,
+        "primary_cap": 22100,
+        "secondary_ded": 3100,
+        "secondary_cap": 8400
+      }
+    },
+    {
+      "id": "offer_50fb87b592eb",
+      "attrs": {
+        "price": 640410,
+        "admin": 202556,
+        "loss_0": 13500,
+        "loss_1": 15100,
+        "loss_2": 1200,
+        "loss_3": 7200,
+        "loss_4": 2200,
+        "loss_5": 2900,
+        "primary_ded": 21600,
+        "primary_cap": 19500,
+        "secondary_ded": 17400,
+        "secondary_cap": 15000
+      }
+    },
+    {
+      "id": "offer_1426ae2b8b95",
+      "attrs": {
+        "price": 472997,
+        "admin": 158130,
+        "loss_0": 3600,
+        "loss_1": 3400,
+        "loss_2": 29100,
+        "loss_3": 26600,
+        "loss_4": 15200,
+        "loss_5": 11000,
+        "primary_ded": 23600,
+        "primary_cap": 15700,
+        "secondary_ded": 5300,
+        "secondary_cap": 6200
+      }
+    },
+    {
+      "id": "offer_a82ee5c0491e",
+      "attrs": {
+        "price": 679745,
+        "admin": 158910,
+        "loss_0": 29400,
+        "loss_1": 18500,
+        "loss_2": 19700,
+        "loss_3": 19000,
+        "loss_4": 3600,
+        "loss_5": 16600,
+        "primary_ded": 13900,
+        "primary_cap": 24600,
+        "secondary_ded": 1200,
+        "secondary_cap": 5800
+      }
+    },
+    {
+      "id": "offer_5be6054eca10",
+      "attrs": {
+        "price": 636644,
+        "admin": 161704,
+        "loss_0": 19500,
+        "loss_1": 22000,
+        "loss_2": 23200,
+        "loss_3": 6500,
+        "loss_4": 2000,
+        "loss_5": 10400,
+        "primary_ded": 22900,
+        "primary_cap": 25000,
+        "secondary_ded": 10300,
+        "secondary_cap": 11300
+      }
+    },
+    {
+      "id": "offer_8e70b1afa58c",
+      "attrs": {
+        "price": 587424,
+        "admin": 194664,
+        "loss_0": 7100,
+        "loss_1": 3600,
+        "loss_2": 4900,
+        "loss_3": 22300,
+        "loss_4": 22700,
+        "loss_5": 9300,
+        "primary_ded": 20500,
+        "primary_cap": 15700,
+        "secondary_ded": 600,
+        "secondary_cap": 26500
+      }
+    },
+    {
+      "id": "offer_dedd78e57094",
+      "attrs": {
+        "price": 635585,
+        "admin": 132979,
+        "loss_0": 29800,
+        "loss_1": 26300,
+        "loss_2": 26500,
+        "loss_3": 13000,
+        "loss_4": 19800,
+        "loss_5": 14500,
+        "primary_ded": 11300,
+        "primary_cap": 16300,
+        "secondary_ded": 6400,
+        "secondary_cap": 8000
+      }
+    },
+    {
+      "id": "offer_69942870e750",
+      "attrs": {
+        "price": 633547,
+        "admin": 135377,
+        "loss_0": 28100,
+        "loss_1": 26000,
+        "loss_2": 5000,
+        "loss_3": 21700,
+        "loss_4": 28400,
+        "loss_5": 9000,
+        "primary_ded": 6500,
+        "primary_cap": 9100,
+        "secondary_ded": 17500,
+        "secondary_cap": 27600
+      }
+    },
+    {
+      "id": "offer_5a0665d655cc",
+      "attrs": {
+        "price": 731932,
+        "admin": 169681,
+        "loss_0": 5500,
+        "loss_1": 15300,
+        "loss_2": 12200,
+        "loss_3": 28800,
+        "loss_4": 12000,
+        "loss_5": 20300,
+        "primary_ded": 5100,
+        "primary_cap": 12600,
+        "secondary_ded": 17700,
+        "secondary_cap": 24600
+      }
+    },
+    {
+      "id": "offer_74079f848090",
+      "attrs": {
+        "price": 484865,
+        "admin": 193544,
+        "loss_0": 13600,
+        "loss_1": 3700,
+        "loss_2": 9700,
+        "loss_3": 13700,
+        "loss_4": 9400,
+        "loss_5": 7700,
+        "primary_ded": 24900,
+        "primary_cap": 12900,
+        "secondary_ded": 2300,
+        "secondary_cap": 15000
+      }
+    },
+    {
+      "id": "offer_159a521bc364",
+      "attrs": {
+        "price": 530468,
+        "admin": 172088,
+        "loss_0": 19800,
+        "loss_1": 20900,
+        "loss_2": 8900,
+        "loss_3": 4200,
+        "loss_4": 13900,
+        "loss_5": 4900,
+        "primary_ded": 17200,
+        "primary_cap": 22500,
+        "secondary_ded": 19700,
+        "secondary_cap": 6600
+      }
+    },
+    {
+      "id": "offer_6d5ec65e88ef",
+      "attrs": {
+        "price": 538079,
+        "admin": 156067,
+        "loss_0": 2700,
+        "loss_1": 15700,
+        "loss_2": 23800,
+        "loss_3": 10000,
+        "loss_4": 17500,
+        "loss_5": 12700,
+        "primary_ded": 14500,
+        "primary_cap": 12200,
+        "secondary_ded": 9800,
+        "secondary_cap": 6000
+      }
+    },
+    {
+      "id": "offer_f9794e31dfa3",
+      "attrs": {
+        "price": 687865,
+        "admin": 164520,
+        "loss_0": 23400,
+        "loss_1": 16200,
+        "loss_2": 21600,
+        "loss_3": 25100,
+        "loss_4": 11700,
+        "loss_5": 23900,
+        "primary_ded": 19800,
+        "primary_cap": 14900,
+        "secondary_ded": 13900,
+        "secondary_cap": 32700
+      }
+    },
+    {
+      "id": "offer_3f4fcb2ec368",
+      "attrs": {
+        "price": 692445,
+        "admin": 158677,
+        "loss_0": 12300,
+        "loss_1": 29000,
+        "loss_2": 10700,
+        "loss_3": 14200,
+        "loss_4": 7900,
+        "loss_5": 18300,
+        "primary_ded": 1800,
+        "primary_cap": 8900,
+        "secondary_ded": 12400,
+        "secondary_cap": 22700
+      }
+    },
+    {
+      "id": "offer_d093c12b4cf3",
+      "attrs": {
+        "price": 518291,
+        "admin": 159231,
+        "loss_0": 1100,
+        "loss_1": 25200,
+        "loss_2": 19000,
+        "loss_3": 16800,
+        "loss_4": 22300,
+        "loss_5": 18800,
+        "primary_ded": 23800,
+        "primary_cap": 11200,
+        "secondary_ded": 2200,
+        "secondary_cap": 27000
+      }
+    },
+    {
+      "id": "offer_057123da8d1b",
+      "attrs": {
+        "price": 725346,
+        "admin": 178577,
+        "loss_0": 28800,
+        "loss_1": 15500,
+        "loss_2": 16200,
+        "loss_3": 11000,
+        "loss_4": 10200,
+        "loss_5": 23100,
+        "primary_ded": 16600,
+        "primary_cap": 24200,
+        "secondary_ded": 6800,
+        "secondary_cap": 18600
+      }
+    },
+    {
+      "id": "offer_6f827f0f57a6",
+      "attrs": {
+        "price": 703601,
+        "admin": 166266,
+        "loss_0": 19400,
+        "loss_1": 4200,
+        "loss_2": 23200,
+        "loss_3": 17600,
+        "loss_4": 10000,
+        "loss_5": 22800,
+        "primary_ded": 17700,
+        "primary_cap": 11900,
+        "secondary_ded": 11100,
+        "secondary_cap": 28700
+      }
+    },
+    {
+      "id": "offer_954c32b50074",
+      "attrs": {
+        "price": 755839,
+        "admin": 166673,
+        "loss_0": 14900,
+        "loss_1": 18300,
+        "loss_2": 28600,
+        "loss_3": 10900,
+        "loss_4": 14600,
+        "loss_5": 28800,
+        "primary_ded": 16800,
+        "primary_cap": 13500,
+        "secondary_ded": 4600,
+        "secondary_cap": 31700
+      }
+    },
+    {
+      "id": "offer_2bb172821b44",
+      "attrs": {
+        "price": 519967,
+        "admin": 173306,
+        "loss_0": 5700,
+        "loss_1": 3000,
+        "loss_2": 25500,
+        "loss_3": 13200,
+        "loss_4": 26000,
+        "loss_5": 16800,
+        "primary_ded": 23100,
+        "primary_cap": 21100,
+        "secondary_ded": 19000,
+        "secondary_cap": 29200
+      }
+    },
+    {
+      "id": "offer_1de14527888d",
+      "attrs": {
+        "price": 604808,
+        "admin": 180911,
+        "loss_0": 20100,
+        "loss_1": 16400,
+        "loss_2": 4600,
+        "loss_3": 2600,
+        "loss_4": 9700,
+        "loss_5": 24700,
+        "primary_ded": 15700,
+        "primary_cap": 20900,
+        "secondary_ded": 4100,
+        "secondary_cap": 19100
+      }
+    },
+    {
+      "id": "offer_b2e52c0acb87",
+      "attrs": {
+        "price": 543743,
+        "admin": 194978,
+        "loss_0": 2700,
+        "loss_1": 10700,
+        "loss_2": 25300,
+        "loss_3": 20000,
+        "loss_4": 10600,
+        "loss_5": 6100,
+        "primary_ded": 23100,
+        "primary_cap": 13500,
+        "secondary_ded": 10900,
+        "secondary_cap": 35000
+      }
+    },
+    {
+      "id": "offer_ff9c2ac2d83d",
+      "attrs": {
+        "price": 707128,
+        "admin": 191366,
+        "loss_0": 6700,
+        "loss_1": 7100,
+        "loss_2": 4300,
+        "loss_3": 2000,
+        "loss_4": 16900,
+        "loss_5": 22800,
+        "primary_ded": 4000,
+        "primary_cap": 21400,
+        "secondary_ded": 9700,
+        "secondary_cap": 16300
+      }
+    },
+    {
+      "id": "offer_848ce9f78e8d",
+      "attrs": {
+        "price": 672614,
+        "admin": 169219,
+        "loss_0": 6400,
+        "loss_1": 26500,
+        "loss_2": 18000,
+        "loss_3": 16100,
+        "loss_4": 23300,
+        "loss_5": 19000,
+        "primary_ded": 16400,
+        "primary_cap": 20700,
+        "secondary_ded": 12100,
+        "secondary_cap": 17000
+      }
+    },
+    {
+      "id": "offer_6c05f34f1f66",
+      "attrs": {
+        "price": 713211,
+        "admin": 183794,
+        "loss_0": 7400,
+        "loss_1": 6900,
+        "loss_2": 3700,
+        "loss_3": 21400,
+        "loss_4": 22500,
+        "loss_5": 24900,
+        "primary_ded": 3800,
+        "primary_cap": 12300,
+        "secondary_ded": 11300,
+        "secondary_cap": 28000
+      }
+    },
+    {
+      "id": "offer_d5db82559834",
+      "attrs": {
+        "price": 707398,
+        "admin": 203146,
+        "loss_0": 11800,
+        "loss_1": 3800,
+        "loss_2": 10000,
+        "loss_3": 5100,
+        "loss_4": 5600,
+        "loss_5": 2400,
+        "primary_ded": 21000,
+        "primary_cap": 9600,
+        "secondary_ded": 7300,
+        "secondary_cap": 18200
+      }
+    },
+    {
+      "id": "offer_3ce920a9dc8f",
+      "attrs": {
+        "price": 661253,
+        "admin": 170116,
+        "loss_0": 19500,
+        "loss_1": 16000,
+        "loss_2": 25000,
+        "loss_3": 4600,
+        "loss_4": 17100,
+        "loss_5": 5100,
+        "primary_ded": 19500,
+        "primary_cap": 24500,
+        "secondary_ded": 13800,
+        "secondary_cap": 10400
+      }
+    },
+    {
+      "id": "offer_9d4b22524094",
+      "attrs": {
+        "price": 569578,
+        "admin": 177359,
+        "loss_0": 7100,
+        "loss_1": 7000,
+        "loss_2": 16800,
+        "loss_3": 1600,
+        "loss_4": 19900,
+        "loss_5": 9100,
+        "primary_ded": 15200,
+        "primary_cap": 7200,
+        "secondary_ded": 17500,
+        "secondary_cap": 15400
+      }
+    },
+    {
+      "id": "offer_543f12a9662d",
+      "attrs": {
+        "price": 629027,
+        "admin": 136110,
+        "loss_0": 28700,
+        "loss_1": 16900,
+        "loss_2": 24800,
+        "loss_3": 22700,
+        "loss_4": 26800,
+        "loss_5": 9400,
+        "primary_ded": 10100,
+        "primary_cap": 14500,
+        "secondary_ded": 6400,
+        "secondary_cap": 14800
+      }
+    },
+    {
+      "id": "offer_936366b8ca72",
+      "attrs": {
+        "price": 697142,
+        "admin": 174370,
+        "loss_0": 4200,
+        "loss_1": 20400,
+        "loss_2": 2600,
+        "loss_3": 28500,
+        "loss_4": 11600,
+        "loss_5": 2000,
+        "primary_ded": 7500,
+        "primary_cap": 20800,
+        "secondary_ded": 18000,
+        "secondary_cap": 10300
+      }
+    },
+    {
+      "id": "offer_4d5fc8cd4ce4",
+      "attrs": {
+        "price": 557524,
+        "admin": 188054,
+        "loss_0": 26200,
+        "loss_1": 4900,
+        "loss_2": 12500,
+        "loss_3": 3600,
+        "loss_4": 11200,
+        "loss_5": 1000,
+        "primary_ded": 13500,
+        "primary_cap": 10700,
+        "secondary_ded": 900,
+        "secondary_cap": 18400
+      }
+    },
+    {
+      "id": "offer_95dbd346b5ce",
+      "attrs": {
+        "price": 590247,
+        "admin": 174466,
+        "loss_0": 20900,
+        "loss_1": 6600,
+        "loss_2": 29800,
+        "loss_3": 12700,
+        "loss_4": 2300,
+        "loss_5": 2400,
+        "primary_ded": 12500,
+        "primary_cap": 13700,
+        "secondary_ded": 17600,
+        "secondary_cap": 16900
+      }
+    },
+    {
+      "id": "offer_e17700083df0",
+      "attrs": {
+        "price": 739805,
+        "admin": 147463,
+        "loss_0": 12200,
+        "loss_1": 3900,
+        "loss_2": 23500,
+        "loss_3": 25500,
+        "loss_4": 15900,
+        "loss_5": 16400,
+        "primary_ded": 5000,
+        "primary_cap": 7800,
+        "secondary_ded": 10600,
+        "secondary_cap": 11700
+      }
+    },
+    {
+      "id": "offer_e2105cbd5f48",
+      "attrs": {
+        "price": 708877,
+        "admin": 141645,
+        "loss_0": 27600,
+        "loss_1": 3400,
+        "loss_2": 23500,
+        "loss_3": 20600,
+        "loss_4": 19400,
+        "loss_5": 17100,
+        "primary_ded": 4900,
+        "primary_cap": 7900,
+        "secondary_ded": 1600,
+        "secondary_cap": 15700
+      }
+    },
+    {
+      "id": "offer_8d5cb8e1cec4",
+      "attrs": {
+        "price": 466471,
+        "admin": 160794,
+        "loss_0": 22700,
+        "loss_1": 18600,
+        "loss_2": 11700,
+        "loss_3": 14500,
+        "loss_4": 21900,
+        "loss_5": 11600,
+        "primary_ded": 6500,
+        "primary_cap": 11400,
+        "secondary_ded": 5700,
+        "secondary_cap": 8000
+      }
+    },
+    {
+      "id": "offer_f1aab394de23",
+      "attrs": {
+        "price": 746511,
+        "admin": 146095,
+        "loss_0": 7800,
+        "loss_1": 19800,
+        "loss_2": 10500,
+        "loss_3": 25700,
+        "loss_4": 29900,
+        "loss_5": 17200,
+        "primary_ded": 15000,
+        "primary_cap": 9200,
+        "secondary_ded": 3000,
+        "secondary_cap": 15300
+      }
+    },
+    {
+      "id": "offer_144d064dd3f2",
+      "attrs": {
+        "price": 702317,
+        "admin": 141173,
+        "loss_0": 17800,
+        "loss_1": 23800,
+        "loss_2": 29400,
+        "loss_3": 22200,
+        "loss_4": 9400,
+        "loss_5": 1200,
+        "primary_ded": 15800,
+        "primary_cap": 10500,
+        "secondary_ded": 8900,
+        "secondary_cap": 17700
+      }
+    },
+    {
+      "id": "offer_889667295143",
+      "attrs": {
+        "price": 682550,
+        "admin": 165494,
+        "loss_0": 14300,
+        "loss_1": 10600,
+        "loss_2": 18900,
+        "loss_3": 20400,
+        "loss_4": 14700,
+        "loss_5": 26400,
+        "primary_ded": 16000,
+        "primary_cap": 8900,
+        "secondary_ded": 19000,
+        "secondary_cap": 33900
+      }
+    },
+    {
+      "id": "offer_bda474e34460",
+      "attrs": {
+        "price": 487897,
+        "admin": 150783,
+        "loss_0": 25800,
+        "loss_1": 17000,
+        "loss_2": 1700,
+        "loss_3": 23300,
+        "loss_4": 28100,
+        "loss_5": 25700,
+        "primary_ded": 15300,
+        "primary_cap": 13700,
+        "secondary_ded": 17500,
+        "secondary_cap": 32100
+      }
+    },
+    {
+      "id": "offer_4137e2fa2fb3",
+      "attrs": {
+        "price": 465046,
+        "admin": 148288,
+        "loss_0": 22900,
+        "loss_1": 5900,
+        "loss_2": 22500,
+        "loss_3": 9800,
+        "loss_4": 17200,
+        "loss_5": 30000,
+        "primary_ded": 23200,
+        "primary_cap": 12700,
+        "secondary_ded": 15000,
+        "secondary_cap": 19700
+      }
+    },
+    {
+      "id": "offer_bbac09c7dcf7",
+      "attrs": {
+        "price": 858777,
+        "admin": 168440,
+        "loss_0": 12400,
+        "loss_1": 21100,
+        "loss_2": 13600,
+        "loss_3": 12800,
+        "loss_4": 26600,
+        "loss_5": 22200,
+        "primary_ded": 10900,
+        "primary_cap": 6300,
+        "secondary_ded": 19600,
+        "secondary_cap": 29300
+      }
+    },
+    {
+      "id": "offer_97b4b3a1371a",
+      "attrs": {
+        "price": 630540,
+        "admin": 174901,
+        "loss_0": 12100,
+        "loss_1": 18000,
+        "loss_2": 2900,
+        "loss_3": 24400,
+        "loss_4": 28600,
+        "loss_5": 14100,
+        "primary_ded": 24800,
+        "primary_cap": 20500,
+        "secondary_ded": 4700,
+        "secondary_cap": 27100
+      }
+    },
+    {
+      "id": "offer_b5fcb1f1873e",
+      "attrs": {
+        "price": 557163,
+        "admin": 167916,
+        "loss_0": 10200,
+        "loss_1": 2300,
+        "loss_2": 19700,
+        "loss_3": 23800,
+        "loss_4": 15500,
+        "loss_5": 14900,
+        "primary_ded": 1000,
+        "primary_cap": 13400,
+        "secondary_ded": 8400,
+        "secondary_cap": 24800
+      }
+    },
+    {
+      "id": "offer_bb9c1478f256",
+      "attrs": {
+        "price": 899502,
+        "admin": 165788,
+        "loss_0": 16800,
+        "loss_1": 11600,
+        "loss_2": 7400,
+        "loss_3": 11700,
+        "loss_4": 5100,
+        "loss_5": 21900,
+        "primary_ded": 9600,
+        "primary_cap": 5000,
+        "secondary_ded": 12100,
+        "secondary_cap": 7200
+      }
+    },
+    {
+      "id": "offer_bb36598af96a",
+      "attrs": {
+        "price": 735174,
+        "admin": 155755,
+        "loss_0": 29300,
+        "loss_1": 12100,
+        "loss_2": 2600,
+        "loss_3": 8800,
+        "loss_4": 18300,
+        "loss_5": 22400,
+        "primary_ded": 13300,
+        "primary_cap": 22600,
+        "secondary_ded": 9600,
+        "secondary_cap": 9700
+      }
+    },
+    {
+      "id": "offer_0e208520f728",
+      "attrs": {
+        "price": 729552,
+        "admin": 161729,
+        "loss_0": 18600,
+        "loss_1": 1900,
+        "loss_2": 1800,
+        "loss_3": 28600,
+        "loss_4": 9200,
+        "loss_5": 11500,
+        "primary_ded": 23300,
+        "primary_cap": 7400,
+        "secondary_ded": 3000,
+        "secondary_cap": 6600
+      }
+    },
+    {
+      "id": "offer_f298e07b3ffc",
+      "attrs": {
+        "price": 892157,
+        "admin": 186211,
+        "loss_0": 19500,
+        "loss_1": 17500,
+        "loss_2": 17200,
+        "loss_3": 9200,
+        "loss_4": 26700,
+        "loss_5": 18700,
+        "primary_ded": 21100,
+        "primary_cap": 22500,
+        "secondary_ded": 14300,
+        "secondary_cap": 28900
+      }
+    },
+    {
+      "id": "offer_b48a150de254",
+      "attrs": {
+        "price": 735099,
+        "admin": 150372,
+        "loss_0": 11300,
+        "loss_1": 11100,
+        "loss_2": 29500,
+        "loss_3": 6100,
+        "loss_4": 17700,
+        "loss_5": 24300,
+        "primary_ded": 17200,
+        "primary_cap": 21700,
+        "secondary_ded": 8700,
+        "secondary_cap": 5000
+      }
+    },
+    {
+      "id": "offer_0add819aa01f",
+      "attrs": {
+        "price": 487996,
+        "admin": 172643,
+        "loss_0": 3500,
+        "loss_1": 17500,
+        "loss_2": 9900,
+        "loss_3": 8200,
+        "loss_4": 15600,
+        "loss_5": 27200,
+        "primary_ded": 18900,
+        "primary_cap": 17200,
+        "secondary_ded": 12300,
+        "secondary_cap": 9700
+      }
+    },
+    {
+      "id": "offer_9cf0b8c53dc0",
+      "attrs": {
+        "price": 678684,
+        "admin": 131719,
+        "loss_0": 24800,
+        "loss_1": 16900,
+        "loss_2": 17800,
+        "loss_3": 28000,
+        "loss_4": 21400,
+        "loss_5": 22900,
+        "primary_ded": 19200,
+        "primary_cap": 7000,
+        "secondary_ded": 8400,
+        "secondary_cap": 13000
+      }
+    },
+    {
+      "id": "offer_3bbf504623c0",
+      "attrs": {
+        "price": 504377,
+        "admin": 124951,
+        "loss_0": 24600,
+        "loss_1": 23300,
+        "loss_2": 25800,
+        "loss_3": 6600,
+        "loss_4": 11300,
+        "loss_5": 21500,
+        "primary_ded": 18400,
+        "primary_cap": 7900,
+        "secondary_ded": 7300,
+        "secondary_cap": 8200
+      }
+    },
+    {
+      "id": "offer_f57c590ead72",
+      "attrs": {
+        "price": 646704,
+        "admin": 155101,
+        "loss_0": 11800,
+        "loss_1": 7700,
+        "loss_2": 27500,
+        "loss_3": 10300,
+        "loss_4": 27000,
+        "loss_5": 14900,
+        "primary_ded": 1800,
+        "primary_cap": 16300,
+        "secondary_ded": 4500,
+        "secondary_cap": 20000
+      }
+    },
+    {
+      "id": "offer_812f569e946f",
+      "attrs": {
+        "price": 626043,
+        "admin": 191829,
+        "loss_0": 7500,
+        "loss_1": 13100,
+        "loss_2": 2500,
+        "loss_3": 9200,
+        "loss_4": 19400,
+        "loss_5": 2700,
+        "primary_ded": 1400,
+        "primary_cap": 22900,
+        "secondary_ded": 19600,
+        "secondary_cap": 5200
+      }
+    },
+    {
+      "id": "offer_586d8329c5eb",
+      "attrs": {
+        "price": 595106,
+        "admin": 166415,
+        "loss_0": 4700,
+        "loss_1": 8000,
+        "loss_2": 11600,
+        "loss_3": 23500,
+        "loss_4": 21200,
+        "loss_5": 12900,
+        "primary_ded": 10000,
+        "primary_cap": 6500,
+        "secondary_ded": 9800,
+        "secondary_cap": 10800
+      }
+    },
+    {
+      "id": "offer_ea06af2baec2",
+      "attrs": {
+        "price": 683309,
+        "admin": 152060,
+        "loss_0": 29100,
+        "loss_1": 17000,
+        "loss_2": 15500,
+        "loss_3": 22900,
+        "loss_4": 11300,
+        "loss_5": 7100,
+        "primary_ded": 15100,
+        "primary_cap": 11800,
+        "secondary_ded": 13300,
+        "secondary_cap": 7700
+      }
+    },
+    {
+      "id": "offer_7c74d9c1aee6",
+      "attrs": {
+        "price": 635770,
+        "admin": 158044,
+        "loss_0": 21000,
+        "loss_1": 10900,
+        "loss_2": 5200,
+        "loss_3": 19900,
+        "loss_4": 20400,
+        "loss_5": 26500,
+        "primary_ded": 20600,
+        "primary_cap": 11800,
+        "secondary_ded": 10200,
+        "secondary_cap": 26800
+      }
+    },
+    {
+      "id": "offer_ab214007894c",
+      "attrs": {
+        "price": 880517,
+        "admin": 140333,
+        "loss_0": 16300,
+        "loss_1": 24100,
+        "loss_2": 29200,
+        "loss_3": 22600,
+        "loss_4": 12700,
+        "loss_5": 12900,
+        "primary_ded": 8800,
+        "primary_cap": 22400,
+        "secondary_ded": 10800,
+        "secondary_cap": 6700
+      }
+    },
+    {
+      "id": "offer_a850aaee4167",
+      "attrs": {
+        "price": 570745,
+        "admin": 162447,
+        "loss_0": 15600,
+        "loss_1": 15400,
+        "loss_2": 27600,
+        "loss_3": 21200,
+        "loss_4": 20900,
+        "loss_5": 11900,
+        "primary_ded": 14600,
+        "primary_cap": 20400,
+        "secondary_ded": 3700,
+        "secondary_cap": 9200
+      }
+    },
+    {
+      "id": "offer_40f712b810d9",
+      "attrs": {
+        "price": 739562,
+        "admin": 121411,
+        "loss_0": 20600,
+        "loss_1": 23800,
+        "loss_2": 19800,
+        "loss_3": 25600,
+        "loss_4": 9800,
+        "loss_5": 28400,
+        "primary_ded": 23000,
+        "primary_cap": 9600,
+        "secondary_ded": 13400,
+        "secondary_cap": 7800
+      }
+    },
+    {
+      "id": "offer_537c23b153f5",
+      "attrs": {
+        "price": 483179,
+        "admin": 154346,
+        "loss_0": 24200,
+        "loss_1": 15500,
+        "loss_2": 15400,
+        "loss_3": 17600,
+        "loss_4": 27800,
+        "loss_5": 14800,
+        "primary_ded": 11500,
+        "primary_cap": 13800,
+        "secondary_ded": 1500,
+        "secondary_cap": 7200
+      }
+    },
+    {
+      "id": "offer_c26a229005c2",
+      "attrs": {
+        "price": 769566,
+        "admin": 185770,
+        "loss_0": 14400,
+        "loss_1": 2600,
+        "loss_2": 6500,
+        "loss_3": 12700,
+        "loss_4": 14300,
+        "loss_5": 15100,
+        "primary_ded": 4900,
+        "primary_cap": 8600,
+        "secondary_ded": 6100,
+        "secondary_cap": 16300
+      }
+    },
+    {
+      "id": "offer_0a8b506b3373",
+      "attrs": {
+        "price": 607995,
+        "admin": 182291,
+        "loss_0": 16600,
+        "loss_1": 14300,
+        "loss_2": 1400,
+        "loss_3": 6600,
+        "loss_4": 23800,
+        "loss_5": 26900,
+        "primary_ded": 12900,
+        "primary_cap": 17200,
+        "secondary_ded": 8600,
+        "secondary_cap": 27200
+      }
+    },
+    {
+      "id": "offer_ea5e893bb8f6",
+      "attrs": {
+        "price": 716855,
+        "admin": 166154,
+        "loss_0": 2600,
+        "loss_1": 8400,
+        "loss_2": 27500,
+        "loss_3": 21800,
+        "loss_4": 24600,
+        "loss_5": 4300,
+        "primary_ded": 20000,
+        "primary_cap": 22600,
+        "secondary_ded": 900,
+        "secondary_cap": 21400
+      }
+    },
+    {
+      "id": "offer_ac7d36e9c468",
+      "attrs": {
+        "price": 674928,
+        "admin": 175280,
+        "loss_0": 9600,
+        "loss_1": 5000,
+        "loss_2": 14400,
+        "loss_3": 20900,
+        "loss_4": 13900,
+        "loss_5": 23900,
+        "primary_ded": 3300,
+        "primary_cap": 19700,
+        "secondary_ded": 15500,
+        "secondary_cap": 26800
+      }
+    },
+    {
+      "id": "offer_2751d4e919f4",
+      "attrs": {
+        "price": 618972,
+        "admin": 159971,
+        "loss_0": 5100,
+        "loss_1": 18500,
+        "loss_2": 16300,
+        "loss_3": 18600,
+        "loss_4": 12000,
+        "loss_5": 9200,
+        "primary_ded": 22500,
+        "primary_cap": 5900,
+        "secondary_ded": 8300,
+        "secondary_cap": 12400
+      }
+    },
+    {
+      "id": "offer_0366e0cf39f3",
+      "attrs": {
+        "price": 740785,
+        "admin": 143555,
+        "loss_0": 26700,
+        "loss_1": 29700,
+        "loss_2": 17000,
+        "loss_3": 29600,
+        "loss_4": 15600,
+        "loss_5": 27600,
+        "primary_ded": 3000,
+        "primary_cap": 6200,
+        "secondary_ded": 14600,
+        "secondary_cap": 32000
+      }
+    },
+    {
+      "id": "offer_bd32d3956e9d",
+      "attrs": {
+        "price": 653912,
+        "admin": 174493,
+        "loss_0": 6100,
+        "loss_1": 8200,
+        "loss_2": 16100,
+        "loss_3": 18300,
+        "loss_4": 7600,
+        "loss_5": 3000,
+        "primary_ded": 6500,
+        "primary_cap": 7900,
+        "secondary_ded": 16400,
+        "secondary_cap": 14900
+      }
+    },
+    {
+      "id": "offer_23947d1df43c",
+      "attrs": {
+        "price": 789929,
+        "admin": 176121,
+        "loss_0": 10500,
+        "loss_1": 21400,
+        "loss_2": 21100,
+        "loss_3": 11700,
+        "loss_4": 13400,
+        "loss_5": 15000,
+        "primary_ded": 9200,
+        "primary_cap": 22300,
+        "secondary_ded": 15800,
+        "secondary_cap": 23800
+      }
+    },
+    {
+      "id": "offer_503ca5cb0ccb",
+      "attrs": {
+        "price": 644987,
+        "admin": 145066,
+        "loss_0": 18100,
+        "loss_1": 13600,
+        "loss_2": 9900,
+        "loss_3": 28400,
+        "loss_4": 16400,
+        "loss_5": 13300,
+        "primary_ded": 9300,
+        "primary_cap": 11800,
+        "secondary_ded": 13800,
+        "secondary_cap": 5300
+      }
+    },
+    {
+      "id": "offer_ec447fad2f37",
+      "attrs": {
+        "price": 708893,
+        "admin": 119938,
+        "loss_0": 29100,
+        "loss_1": 27000,
+        "loss_2": 20000,
+        "loss_3": 28800,
+        "loss_4": 7100,
+        "loss_5": 21800,
+        "primary_ded": 18200,
+        "primary_cap": 5400,
+        "secondary_ded": 1900,
+        "secondary_cap": 16800
+      }
+    },
+    {
+      "id": "offer_656b8f723bdd",
+      "attrs": {
+        "price": 630052,
+        "admin": 159166,
+        "loss_0": 21000,
+        "loss_1": 11200,
+        "loss_2": 23500,
+        "loss_3": 4400,
+        "loss_4": 20700,
+        "loss_5": 21300,
+        "primary_ded": 18800,
+        "primary_cap": 11800,
+        "secondary_ded": 10400,
+        "secondary_cap": 24000
+      }
+    },
+    {
+      "id": "offer_73161380efb6",
+      "attrs": {
+        "price": 698751,
+        "admin": 155953,
+        "loss_0": 2400,
+        "loss_1": 20900,
+        "loss_2": 22300,
+        "loss_3": 26000,
+        "loss_4": 2900,
+        "loss_5": 9200,
+        "primary_ded": 1600,
+        "primary_cap": 11100,
+        "secondary_ded": 15600,
+        "secondary_cap": 20400
+      }
+    },
+    {
+      "id": "offer_a53b2b5d33f2",
+      "attrs": {
+        "price": 809604,
+        "admin": 149144,
+        "loss_0": 20100,
+        "loss_1": 26100,
+        "loss_2": 16000,
+        "loss_3": 22200,
+        "loss_4": 5400,
+        "loss_5": 27800,
+        "primary_ded": 4600,
+        "primary_cap": 11200,
+        "secondary_ded": 400,
+        "secondary_cap": 25700
+      }
+    },
+    {
+      "id": "offer_6295b27242f3",
+      "attrs": {
+        "price": 705169,
+        "admin": 148183,
+        "loss_0": 21800,
+        "loss_1": 18100,
+        "loss_2": 7000,
+        "loss_3": 23300,
+        "loss_4": 21100,
+        "loss_5": 29300,
+        "primary_ded": 15800,
+        "primary_cap": 6600,
+        "secondary_ded": 11500,
+        "secondary_cap": 24200
+      }
+    },
+    {
+      "id": "offer_8ad17eb4d845",
+      "attrs": {
+        "price": 612050,
+        "admin": 186208,
+        "loss_0": 12300,
+        "loss_1": 2300,
+        "loss_2": 29900,
+        "loss_3": 14000,
+        "loss_4": 28900,
+        "loss_5": 7000,
+        "primary_ded": 16900,
+        "primary_cap": 24300,
+        "secondary_ded": 8300,
+        "secondary_cap": 30200
+      }
+    }
+  ]
+}

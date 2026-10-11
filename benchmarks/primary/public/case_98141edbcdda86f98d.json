@@ -1,0 +1,2825 @@
+{
+  "records": [
+    {
+      "id": "U-task",
+      "author": "user",
+      "status": "current",
+      "text": "Buy one indivisible package for a residence, consisting of six prepaid maintenance services numbered 0 through 5 and performance protection. Only one catalog row can be selected and fixed today; the package cannot be changed afterward according to the adverse event. The products, dates, suppliers, and availability have been checked accurately."
+    },
+    {
+      "id": "U-events",
+      "author": "user",
+      "status": "current",
+      "text": "There may be no adverse event, or any set of at most 4 services may be in breach of contract; every specific subset satisfying the count limit may occur. There are no additional correlation restrictions, and no probabilities are provided."
+    },
+    {
+      "id": "U-contract",
+      "author": "user",
+      "status": "current",
+      "text": "Replacement expenditure is the sum of replacement for all services in breach of contract. Nominal cash compensation is the sum of refund for all services in breach of contract; when 1 or 2 services are in breach of contract, the total actual payout is at most small_cap, and when at least 3 services are in breach of contract, this changes to large_cap. The two tiers' limits are not added together. Compensation and explicitly authorized credit can be shared across replacement expenditures within the same event. Net additional expenditure is total replacement expenditure minus compensation actually received and explicitly authorized credit offsets; if the result is negative, record 0, then add one admin charge. admin cannot be offset by the compensation described above. The original payment price cannot be used to relax the limit on additional expenditure. The assessed loss for the empty event is 0, with no admin or other charges. Unaffected items incur no adverse-event loss; there are no other unstated terms."
+    },
+    {
+      "id": "U-budget",
+      "author": "user",
+      "status": "current",
+      "text": "The attributes are complete and accurate, and are all nonnegative integers; monetary amounts are in fen of RMB, and weight is in grams. The original payment price must not exceed 1200000 fen of RMB, and the original payment and discount conditions stated in the contract must be satisfied. In each permitted event, the assessment amount described above must not exceed 200000 fen of RMB; equality with the limit is acceptable, and the limit must not be relaxed. This catalog is complete, with no hidden options."
+    },
+    {
+      "id": "U-utility",
+      "author": "user",
+      "status": "current",
+      "text": "Utility in each event is 2000000 minus price, then minus the assessment amount for that event. For candidates that satisfy the hard conditions and risk limits for all events simultaneously, take the lowest utility over all events, then choose the candidate with the greatest lowest utility; accept only if that value is strictly greater than 0, otherwise refuse. Do not ask the user questions."
+    }
+  ],
+  "attributes": {
+    "price": "Original amount actually paid for the whole order, in integer fen of RMB",
+    "admin": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+    "replacement_0": "Expenditure on the replacement service that must be purchased after a breach of contract for service 0, in integer fen of RMB",
+    "replacement_1": "Expenditure on the replacement service that must be purchased after a breach of contract for service 1, in integer fen of RMB",
+    "replacement_2": "Expenditure on the replacement service that must be purchased after a breach of contract for service 2, in integer fen of RMB",
+    "replacement_3": "Expenditure on the replacement service that must be purchased after a breach of contract for service 3, in integer fen of RMB",
+    "replacement_4": "Expenditure on the replacement service that must be purchased after a breach of contract for service 4, in integer fen of RMB",
+    "replacement_5": "Expenditure on the replacement service that must be purchased after a breach of contract for service 5, in integer fen of RMB",
+    "refund_0": "Nominal cash compensation from the original merchant upon a breach of contract for service 0, in integer fen of RMB",
+    "refund_1": "Nominal cash compensation from the original merchant upon a breach of contract for service 1, in integer fen of RMB",
+    "refund_2": "Nominal cash compensation from the original merchant upon a breach of contract for service 2, in integer fen of RMB",
+    "refund_3": "Nominal cash compensation from the original merchant upon a breach of contract for service 3, in integer fen of RMB",
+    "refund_4": "Nominal cash compensation from the original merchant upon a breach of contract for service 4, in integer fen of RMB",
+    "refund_5": "Nominal cash compensation from the original merchant upon a breach of contract for service 5, in integer fen of RMB",
+    "small_cap": "Whole-order cash compensation limit when 1 or 2 services are in breach of contract, in integer fen of RMB",
+    "large_cap": "Whole-order cash compensation limit when at least 3 services are in breach of contract, in integer fen of RMB"
+  },
+  "attribute_schema": {
+    "price": {
+      "description": "Original amount actually paid for the whole order, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "admin": {
+      "description": "Whole-order processing charge for a single nonempty adverse event; it cannot be offset by compensation or insurance, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "replacement_0": {
+      "description": "Expenditure on the replacement service that must be purchased after a breach of contract for service 0, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "replacement_1": {
+      "description": "Expenditure on the replacement service that must be purchased after a breach of contract for service 1, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "replacement_2": {
+      "description": "Expenditure on the replacement service that must be purchased after a breach of contract for service 2, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "replacement_3": {
+      "description": "Expenditure on the replacement service that must be purchased after a breach of contract for service 3, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "replacement_4": {
+      "description": "Expenditure on the replacement service that must be purchased after a breach of contract for service 4, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "replacement_5": {
+      "description": "Expenditure on the replacement service that must be purchased after a breach of contract for service 5, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "refund_0": {
+      "description": "Nominal cash compensation from the original merchant upon a breach of contract for service 0, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "refund_1": {
+      "description": "Nominal cash compensation from the original merchant upon a breach of contract for service 1, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "refund_2": {
+      "description": "Nominal cash compensation from the original merchant upon a breach of contract for service 2, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "refund_3": {
+      "description": "Nominal cash compensation from the original merchant upon a breach of contract for service 3, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "refund_4": {
+      "description": "Nominal cash compensation from the original merchant upon a breach of contract for service 4, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "refund_5": {
+      "description": "Nominal cash compensation from the original merchant upon a breach of contract for service 5, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "small_cap": {
+      "description": "Whole-order cash compensation limit when 1 or 2 services are in breach of contract, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    },
+    "large_cap": {
+      "description": "Whole-order cash compensation limit when at least 3 services are in breach of contract, in integer fen of RMB",
+      "type": "nonnegative_integer",
+      "nullable": false
+    }
+  },
+  "catalog_complete": true,
+  "candidates": [
+    {
+      "id": "offer_e2505f80e9de",
+      "attrs": {
+        "price": 824996,
+        "admin": 143233,
+        "replacement_0": 25400,
+        "replacement_1": 7900,
+        "replacement_2": 12300,
+        "replacement_3": 23000,
+        "replacement_4": 20200,
+        "replacement_5": 22900,
+        "refund_0": 11100,
+        "refund_1": 21200,
+        "refund_2": 3800,
+        "refund_3": 10500,
+        "refund_4": 17800,
+        "refund_5": 18200,
+        "small_cap": 43700,
+        "large_cap": 14900
+      }
+    },
+    {
+      "id": "offer_8f4aa7bac3ef",
+      "attrs": {
+        "price": 761243,
+        "admin": 184230,
+        "replacement_0": 2300,
+        "replacement_1": 5000,
+        "replacement_2": 8900,
+        "replacement_3": 5600,
+        "replacement_4": 23800,
+        "replacement_5": 7800,
+        "refund_0": 2900,
+        "refund_1": 23600,
+        "refund_2": 28300,
+        "refund_3": 24300,
+        "refund_4": 32200,
+        "refund_5": 12400,
+        "small_cap": 51600,
+        "large_cap": 12200
+      }
+    },
+    {
+      "id": "offer_8624b0ea843b",
+      "attrs": {
+        "price": 680746,
+        "admin": 159191,
+        "replacement_0": 6000,
+        "replacement_1": 18000,
+        "replacement_2": 4400,
+        "replacement_3": 5100,
+        "replacement_4": 13400,
+        "replacement_5": 25300,
+        "refund_0": 28600,
+        "refund_1": 30200,
+        "refund_2": 20600,
+        "refund_3": 11600,
+        "refund_4": 4100,
+        "refund_5": 5200,
+        "small_cap": 31600,
+        "large_cap": 12500
+      }
+    },
+    {
+      "id": "offer_16d6ce004760",
+      "attrs": {
+        "price": 676545,
+        "admin": 152819,
+        "replacement_0": 6800,
+        "replacement_1": 12200,
+        "replacement_2": 2700,
+        "replacement_3": 24700,
+        "replacement_4": 14700,
+        "replacement_5": 16100,
+        "refund_0": 14500,
+        "refund_1": 30900,
+        "refund_2": 13500,
+        "refund_3": 14100,
+        "refund_4": 32400,
+        "refund_5": 24800,
+        "small_cap": 42200,
+        "large_cap": 3600
+      }
+    },
+    {
+      "id": "offer_624ebafb7c86",
+      "attrs": {
+        "price": 818544,
+        "admin": 135063,
+        "replacement_0": 27100,
+        "replacement_1": 9600,
+        "replacement_2": 10700,
+        "replacement_3": 19000,
+        "replacement_4": 18200,
+        "replacement_5": 12000,
+        "refund_0": 14400,
+        "refund_1": 4100,
+        "refund_2": 5700,
+        "refund_3": 17800,
+        "refund_4": 10400,
+        "refund_5": 25200,
+        "small_cap": 46300,
+        "large_cap": 3700
+      }
+    },
+    {
+      "id": "offer_44b22229ca33",
+      "attrs": {
+        "price": 529696,
+        "admin": 138707,
+        "replacement_0": 13000,
+        "replacement_1": 21600,
+        "replacement_2": 7800,
+        "replacement_3": 12000,
+        "replacement_4": 15900,
+        "replacement_5": 25600,
+        "refund_0": 8900,
+        "refund_1": 25100,
+        "refund_2": 23900,
+        "refund_3": 5100,
+        "refund_4": 26700,
+        "refund_5": 7100,
+        "small_cap": 22800,
+        "large_cap": 9800
+      }
+    },
+    {
+      "id": "offer_d4ccc57e17ff",
+      "attrs": {
+        "price": 626658,
+        "admin": 149857,
+        "replacement_0": 2900,
+        "replacement_1": 18200,
+        "replacement_2": 5200,
+        "replacement_3": 5600,
+        "replacement_4": 26200,
+        "replacement_5": 21600,
+        "refund_0": 10100,
+        "refund_1": 12600,
+        "refund_2": 1900,
+        "refund_3": 5400,
+        "refund_4": 19600,
+        "refund_5": 24000,
+        "small_cap": 39700,
+        "large_cap": 18500
+      }
+    },
+    {
+      "id": "offer_9e0ca4486177",
+      "attrs": {
+        "price": 731748,
+        "admin": 150962,
+        "replacement_0": 13000,
+        "replacement_1": 15600,
+        "replacement_2": 20200,
+        "replacement_3": 10500,
+        "replacement_4": 11300,
+        "replacement_5": 29800,
+        "refund_0": 32000,
+        "refund_1": 15300,
+        "refund_2": 17400,
+        "refund_3": 8700,
+        "refund_4": 9000,
+        "refund_5": 4600,
+        "small_cap": 55600,
+        "large_cap": 13600
+      }
+    },
+    {
+      "id": "offer_82975d4b33f1",
+      "attrs": {
+        "price": 656024,
+        "admin": 129581,
+        "replacement_0": 7700,
+        "replacement_1": 21400,
+        "replacement_2": 7800,
+        "replacement_3": 17600,
+        "replacement_4": 24000,
+        "replacement_5": 26100,
+        "refund_0": 6800,
+        "refund_1": 22800,
+        "refund_2": 28600,
+        "refund_3": 17800,
+        "refund_4": 16900,
+        "refund_5": 16400,
+        "small_cap": 56300,
+        "large_cap": 5500
+      }
+    },
+    {
+      "id": "offer_54fa1b46f098",
+      "attrs": {
+        "price": 751312,
+        "admin": 119554,
+        "replacement_0": 25100,
+        "replacement_1": 24400,
+        "replacement_2": 29000,
+        "replacement_3": 23400,
+        "replacement_4": 12800,
+        "replacement_5": 23000,
+        "refund_0": 6900,
+        "refund_1": 24400,
+        "refund_2": 31000,
+        "refund_3": 28700,
+        "refund_4": 28200,
+        "refund_5": 30400,
+        "small_cap": 23300,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_8f34ce75f4cd",
+      "attrs": {
+        "price": 715411,
+        "admin": 143069,
+        "replacement_0": 9700,
+        "replacement_1": 23500,
+        "replacement_2": 17300,
+        "replacement_3": 8500,
+        "replacement_4": 18800,
+        "replacement_5": 25700,
+        "refund_0": 7500,
+        "refund_1": 27500,
+        "refund_2": 18500,
+        "refund_3": 25900,
+        "refund_4": 16300,
+        "refund_5": 24500,
+        "small_cap": 46300,
+        "large_cap": 12700
+      }
+    },
+    {
+      "id": "offer_3685492cedad",
+      "attrs": {
+        "price": 808326,
+        "admin": 142498,
+        "replacement_0": 4700,
+        "replacement_1": 7700,
+        "replacement_2": 26100,
+        "replacement_3": 7000,
+        "replacement_4": 16100,
+        "replacement_5": 14100,
+        "refund_0": 1800,
+        "refund_1": 24400,
+        "refund_2": 8200,
+        "refund_3": 31400,
+        "refund_4": 18600,
+        "refund_5": 34800,
+        "small_cap": 33300,
+        "large_cap": 4100
+      }
+    },
+    {
+      "id": "offer_98fcda9043cc",
+      "attrs": {
+        "price": 717155,
+        "admin": 179814,
+        "replacement_0": 6600,
+        "replacement_1": 20200,
+        "replacement_2": 10100,
+        "replacement_3": 10000,
+        "replacement_4": 9600,
+        "replacement_5": 5700,
+        "refund_0": 15300,
+        "refund_1": 20400,
+        "refund_2": 21000,
+        "refund_3": 19300,
+        "refund_4": 26500,
+        "refund_5": 16700,
+        "small_cap": 32400,
+        "large_cap": 17600
+      }
+    },
+    {
+      "id": "offer_ca537d41f510",
+      "attrs": {
+        "price": 506781,
+        "admin": 163988,
+        "replacement_0": 2800,
+        "replacement_1": 11700,
+        "replacement_2": 11600,
+        "replacement_3": 3400,
+        "replacement_4": 18100,
+        "replacement_5": 19600,
+        "refund_0": 23700,
+        "refund_1": 11000,
+        "refund_2": 33600,
+        "refund_3": 19800,
+        "refund_4": 15200,
+        "refund_5": 23000,
+        "small_cap": 29500,
+        "large_cap": 13400
+      }
+    },
+    {
+      "id": "offer_95e19e0e97f5",
+      "attrs": {
+        "price": 886938,
+        "admin": 145132,
+        "replacement_0": 11600,
+        "replacement_1": 12600,
+        "replacement_2": 2100,
+        "replacement_3": 12300,
+        "replacement_4": 8500,
+        "replacement_5": 28500,
+        "refund_0": 2200,
+        "refund_1": 6500,
+        "refund_2": 29800,
+        "refund_3": 12700,
+        "refund_4": 13600,
+        "refund_5": 8600,
+        "small_cap": 46900,
+        "large_cap": 2400
+      }
+    },
+    {
+      "id": "offer_51a90057826f",
+      "attrs": {
+        "price": 837218,
+        "admin": 140695,
+        "replacement_0": 6500,
+        "replacement_1": 21600,
+        "replacement_2": 3000,
+        "replacement_3": 12000,
+        "replacement_4": 26100,
+        "replacement_5": 27200,
+        "refund_0": 32400,
+        "refund_1": 24000,
+        "refund_2": 22700,
+        "refund_3": 32100,
+        "refund_4": 24600,
+        "refund_5": 7500,
+        "small_cap": 54500,
+        "large_cap": 12800
+      }
+    },
+    {
+      "id": "offer_db564e38c2d9",
+      "attrs": {
+        "price": 495565,
+        "admin": 196036,
+        "replacement_0": 9200,
+        "replacement_1": 8800,
+        "replacement_2": 1000,
+        "replacement_3": 1800,
+        "replacement_4": 5900,
+        "replacement_5": 5100,
+        "refund_0": 21600,
+        "refund_1": 2700,
+        "refund_2": 4000,
+        "refund_3": 23700,
+        "refund_4": 2900,
+        "refund_5": 23300,
+        "small_cap": 31000,
+        "large_cap": 8100
+      }
+    },
+    {
+      "id": "offer_6f75e5d1fd31",
+      "attrs": {
+        "price": 655013,
+        "admin": 114050,
+        "replacement_0": 11500,
+        "replacement_1": 29900,
+        "replacement_2": 4400,
+        "replacement_3": 22400,
+        "replacement_4": 20400,
+        "replacement_5": 19300,
+        "refund_0": 11300,
+        "refund_1": 13000,
+        "refund_2": 3700,
+        "refund_3": 23100,
+        "refund_4": 20900,
+        "refund_5": 24400,
+        "small_cap": 46500,
+        "large_cap": 2000
+      }
+    },
+    {
+      "id": "offer_069dec1fb650",
+      "attrs": {
+        "price": 475311,
+        "admin": 134636,
+        "replacement_0": 11200,
+        "replacement_1": 22000,
+        "replacement_2": 14800,
+        "replacement_3": 14100,
+        "replacement_4": 28800,
+        "replacement_5": 28800,
+        "refund_0": 17100,
+        "refund_1": 10600,
+        "refund_2": 33300,
+        "refund_3": 22100,
+        "refund_4": 5900,
+        "refund_5": 10400,
+        "small_cap": 38900,
+        "large_cap": 13800
+      }
+    },
+    {
+      "id": "offer_3a3ebcd78f2b",
+      "attrs": {
+        "price": 579444,
+        "admin": 141584,
+        "replacement_0": 11800,
+        "replacement_1": 6000,
+        "replacement_2": 30000,
+        "replacement_3": 9500,
+        "replacement_4": 14200,
+        "replacement_5": 25400,
+        "refund_0": 21700,
+        "refund_1": 18000,
+        "refund_2": 5500,
+        "refund_3": 32200,
+        "refund_4": 5000,
+        "refund_5": 12200,
+        "small_cap": 26400,
+        "large_cap": 12700
+      }
+    },
+    {
+      "id": "offer_070a07f5067c",
+      "attrs": {
+        "price": 559144,
+        "admin": 103197,
+        "replacement_0": 21100,
+        "replacement_1": 27800,
+        "replacement_2": 25400,
+        "replacement_3": 29200,
+        "replacement_4": 20600,
+        "replacement_5": 18500,
+        "refund_0": 16100,
+        "refund_1": 30900,
+        "refund_2": 28600,
+        "refund_3": 11200,
+        "refund_4": 3300,
+        "refund_5": 21600,
+        "small_cap": 39500,
+        "large_cap": 5700
+      }
+    },
+    {
+      "id": "offer_5668dce481d1",
+      "attrs": {
+        "price": 544178,
+        "admin": 140447,
+        "replacement_0": 17900,
+        "replacement_1": 23900,
+        "replacement_2": 25100,
+        "replacement_3": 15500,
+        "replacement_4": 19600,
+        "replacement_5": 11700,
+        "refund_0": 5600,
+        "refund_1": 25200,
+        "refund_2": 3200,
+        "refund_3": 30900,
+        "refund_4": 35000,
+        "refund_5": 22900,
+        "small_cap": 53200,
+        "large_cap": 10100
+      }
+    },
+    {
+      "id": "offer_2a96b324f62a",
+      "attrs": {
+        "price": 884130,
+        "admin": 133843,
+        "replacement_0": 16000,
+        "replacement_1": 23500,
+        "replacement_2": 18600,
+        "replacement_3": 26200,
+        "replacement_4": 19900,
+        "replacement_5": 17500,
+        "refund_0": 10500,
+        "refund_1": 14300,
+        "refund_2": 19800,
+        "refund_3": 33600,
+        "refund_4": 26400,
+        "refund_5": 31200,
+        "small_cap": 26300,
+        "large_cap": 2400
+      }
+    },
+    {
+      "id": "offer_876351c454df",
+      "attrs": {
+        "price": 844952,
+        "admin": 120161,
+        "replacement_0": 2400,
+        "replacement_1": 5800,
+        "replacement_2": 26500,
+        "replacement_3": 21100,
+        "replacement_4": 17400,
+        "replacement_5": 24600,
+        "refund_0": 15800,
+        "refund_1": 3300,
+        "refund_2": 11300,
+        "refund_3": 22500,
+        "refund_4": 15800,
+        "refund_5": 31900,
+        "small_cap": 28500,
+        "large_cap": 7200
+      }
+    },
+    {
+      "id": "offer_0d2f6bf0e1e9",
+      "attrs": {
+        "price": 557687,
+        "admin": 168150,
+        "replacement_0": 4500,
+        "replacement_1": 7900,
+        "replacement_2": 25800,
+        "replacement_3": 5200,
+        "replacement_4": 9500,
+        "replacement_5": 15800,
+        "refund_0": 27900,
+        "refund_1": 29100,
+        "refund_2": 15300,
+        "refund_3": 14100,
+        "refund_4": 15600,
+        "refund_5": 17400,
+        "small_cap": 43000,
+        "large_cap": 12600
+      }
+    },
+    {
+      "id": "offer_77b339904782",
+      "attrs": {
+        "price": 759921,
+        "admin": 113794,
+        "replacement_0": 22900,
+        "replacement_1": 30000,
+        "replacement_2": 27000,
+        "replacement_3": 5600,
+        "replacement_4": 29500,
+        "replacement_5": 5500,
+        "refund_0": 32200,
+        "refund_1": 4200,
+        "refund_2": 24900,
+        "refund_3": 25100,
+        "refund_4": 31000,
+        "refund_5": 18100,
+        "small_cap": 56300,
+        "large_cap": 7200
+      }
+    },
+    {
+      "id": "offer_40a8f25f9a26",
+      "attrs": {
+        "price": 741383,
+        "admin": 153452,
+        "replacement_0": 5500,
+        "replacement_1": 24600,
+        "replacement_2": 19300,
+        "replacement_3": 18200,
+        "replacement_4": 5500,
+        "replacement_5": 11700,
+        "refund_0": 15200,
+        "refund_1": 15400,
+        "refund_2": 8300,
+        "refund_3": 8400,
+        "refund_4": 19400,
+        "refund_5": 5100,
+        "small_cap": 40500,
+        "large_cap": 10300
+      }
+    },
+    {
+      "id": "offer_ef26577a347f",
+      "attrs": {
+        "price": 630113,
+        "admin": 151862,
+        "replacement_0": 24900,
+        "replacement_1": 6200,
+        "replacement_2": 2700,
+        "replacement_3": 24100,
+        "replacement_4": 7200,
+        "replacement_5": 11600,
+        "refund_0": 17600,
+        "refund_1": 17400,
+        "refund_2": 1500,
+        "refund_3": 16300,
+        "refund_4": 15800,
+        "refund_5": 15100,
+        "small_cap": 56900,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_a1ad970b1b4f",
+      "attrs": {
+        "price": 616132,
+        "admin": 136842,
+        "replacement_0": 8500,
+        "replacement_1": 29600,
+        "replacement_2": 17600,
+        "replacement_3": 5500,
+        "replacement_4": 22700,
+        "replacement_5": 5300,
+        "refund_0": 16600,
+        "refund_1": 17600,
+        "refund_2": 19300,
+        "refund_3": 32900,
+        "refund_4": 24300,
+        "refund_5": 12000,
+        "small_cap": 49300,
+        "large_cap": 5600
+      }
+    },
+    {
+      "id": "offer_2dc084e622a8",
+      "attrs": {
+        "price": 845748,
+        "admin": 150079,
+        "replacement_0": 16500,
+        "replacement_1": 22000,
+        "replacement_2": 20500,
+        "replacement_3": 21200,
+        "replacement_4": 11100,
+        "replacement_5": 14600,
+        "refund_0": 28400,
+        "refund_1": 2600,
+        "refund_2": 30700,
+        "refund_3": 30200,
+        "refund_4": 16500,
+        "refund_5": 20200,
+        "small_cap": 47400,
+        "large_cap": 16100
+      }
+    },
+    {
+      "id": "offer_398274d5f52b",
+      "attrs": {
+        "price": 656854,
+        "admin": 165661,
+        "replacement_0": 5800,
+        "replacement_1": 1900,
+        "replacement_2": 18500,
+        "replacement_3": 7400,
+        "replacement_4": 16400,
+        "replacement_5": 11100,
+        "refund_0": 13800,
+        "refund_1": 33900,
+        "refund_2": 34000,
+        "refund_3": 21400,
+        "refund_4": 11300,
+        "refund_5": 20700,
+        "small_cap": 51300,
+        "large_cap": 5100
+      }
+    },
+    {
+      "id": "offer_3578c7ba0c8c",
+      "attrs": {
+        "price": 825710,
+        "admin": 145476,
+        "replacement_0": 17600,
+        "replacement_1": 19100,
+        "replacement_2": 8500,
+        "replacement_3": 20300,
+        "replacement_4": 15200,
+        "replacement_5": 2700,
+        "refund_0": 3200,
+        "refund_1": 27400,
+        "refund_2": 21300,
+        "refund_3": 17100,
+        "refund_4": 26400,
+        "refund_5": 1600,
+        "small_cap": 45500,
+        "large_cap": 15200
+      }
+    },
+    {
+      "id": "offer_62768d52b762",
+      "attrs": {
+        "price": 500217,
+        "admin": 125062,
+        "replacement_0": 13400,
+        "replacement_1": 24300,
+        "replacement_2": 11900,
+        "replacement_3": 28100,
+        "replacement_4": 5900,
+        "replacement_5": 23700,
+        "refund_0": 24700,
+        "refund_1": 22300,
+        "refund_2": 25900,
+        "refund_3": 4500,
+        "refund_4": 17200,
+        "refund_5": 17600,
+        "small_cap": 25500,
+        "large_cap": 6700
+      }
+    },
+    {
+      "id": "offer_27f8cf165277",
+      "attrs": {
+        "price": 774128,
+        "admin": 164213,
+        "replacement_0": 7200,
+        "replacement_1": 25700,
+        "replacement_2": 11300,
+        "replacement_3": 11800,
+        "replacement_4": 7900,
+        "replacement_5": 4800,
+        "refund_0": 6600,
+        "refund_1": 18100,
+        "refund_2": 21800,
+        "refund_3": 5900,
+        "refund_4": 28100,
+        "refund_5": 21100,
+        "small_cap": 49100,
+        "large_cap": 3600
+      }
+    },
+    {
+      "id": "offer_8001870800b8",
+      "attrs": {
+        "price": 825515,
+        "admin": 138967,
+        "replacement_0": 11200,
+        "replacement_1": 26800,
+        "replacement_2": 2600,
+        "replacement_3": 20200,
+        "replacement_4": 17600,
+        "replacement_5": 1600,
+        "refund_0": 4800,
+        "refund_1": 29700,
+        "refund_2": 17700,
+        "refund_3": 33300,
+        "refund_4": 14200,
+        "refund_5": 12800,
+        "small_cap": 51300,
+        "large_cap": 11100
+      }
+    },
+    {
+      "id": "offer_93ac62a869d7",
+      "attrs": {
+        "price": 899673,
+        "admin": 161810,
+        "replacement_0": 22600,
+        "replacement_1": 6300,
+        "replacement_2": 16100,
+        "replacement_3": 4100,
+        "replacement_4": 7900,
+        "replacement_5": 1100,
+        "refund_0": 34800,
+        "refund_1": 24200,
+        "refund_2": 10700,
+        "refund_3": 4800,
+        "refund_4": 10700,
+        "refund_5": 1000,
+        "small_cap": 27000,
+        "large_cap": 14600
+      }
+    },
+    {
+      "id": "offer_847345009258",
+      "attrs": {
+        "price": 545823,
+        "admin": 145430,
+        "replacement_0": 18100,
+        "replacement_1": 1800,
+        "replacement_2": 14500,
+        "replacement_3": 19700,
+        "replacement_4": 10700,
+        "replacement_5": 12000,
+        "refund_0": 22000,
+        "refund_1": 14400,
+        "refund_2": 33400,
+        "refund_3": 9600,
+        "refund_4": 20500,
+        "refund_5": 17400,
+        "small_cap": 51200,
+        "large_cap": 8500
+      }
+    },
+    {
+      "id": "offer_49a0fe4bc7e6",
+      "attrs": {
+        "price": 574327,
+        "admin": 140587,
+        "replacement_0": 24200,
+        "replacement_1": 23200,
+        "replacement_2": 5000,
+        "replacement_3": 8500,
+        "replacement_4": 18700,
+        "replacement_5": 25600,
+        "refund_0": 5200,
+        "refund_1": 9100,
+        "refund_2": 2900,
+        "refund_3": 28000,
+        "refund_4": 24700,
+        "refund_5": 27700,
+        "small_cap": 26400,
+        "large_cap": 15800
+      }
+    },
+    {
+      "id": "offer_643e9966e733",
+      "attrs": {
+        "price": 641275,
+        "admin": 148037,
+        "replacement_0": 3700,
+        "replacement_1": 26600,
+        "replacement_2": 13300,
+        "replacement_3": 1400,
+        "replacement_4": 18000,
+        "replacement_5": 16100,
+        "refund_0": 11900,
+        "refund_1": 14100,
+        "refund_2": 24600,
+        "refund_3": 20700,
+        "refund_4": 20900,
+        "refund_5": 27000,
+        "small_cap": 21700,
+        "large_cap": 15700
+      }
+    },
+    {
+      "id": "offer_7c4e12db44d4",
+      "attrs": {
+        "price": 821812,
+        "admin": 133065,
+        "replacement_0": 5400,
+        "replacement_1": 10800,
+        "replacement_2": 10600,
+        "replacement_3": 26700,
+        "replacement_4": 28900,
+        "replacement_5": 4700,
+        "refund_0": 30900,
+        "refund_1": 12300,
+        "refund_2": 1600,
+        "refund_3": 20600,
+        "refund_4": 27500,
+        "refund_5": 21000,
+        "small_cap": 25400,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_9d3cde0c78dc",
+      "attrs": {
+        "price": 685198,
+        "admin": 163594,
+        "replacement_0": 12300,
+        "replacement_1": 17900,
+        "replacement_2": 22000,
+        "replacement_3": 1400,
+        "replacement_4": 2900,
+        "replacement_5": 8000,
+        "refund_0": 10600,
+        "refund_1": 31400,
+        "refund_2": 23600,
+        "refund_3": 2700,
+        "refund_4": 22800,
+        "refund_5": 9900,
+        "small_cap": 55900,
+        "large_cap": 17800
+      }
+    },
+    {
+      "id": "offer_4271e703bc57",
+      "attrs": {
+        "price": 702375,
+        "admin": 125942,
+        "replacement_0": 25400,
+        "replacement_1": 27200,
+        "replacement_2": 13100,
+        "replacement_3": 23700,
+        "replacement_4": 22100,
+        "replacement_5": 2000,
+        "refund_0": 6300,
+        "refund_1": 18200,
+        "refund_2": 26900,
+        "refund_3": 22400,
+        "refund_4": 21400,
+        "refund_5": 25900,
+        "small_cap": 22700,
+        "large_cap": 18500
+      }
+    },
+    {
+      "id": "offer_c1e2197d17f8",
+      "attrs": {
+        "price": 453890,
+        "admin": 148578,
+        "replacement_0": 24400,
+        "replacement_1": 14300,
+        "replacement_2": 14900,
+        "replacement_3": 4600,
+        "replacement_4": 16800,
+        "replacement_5": 21900,
+        "refund_0": 34200,
+        "refund_1": 14200,
+        "refund_2": 32300,
+        "refund_3": 7700,
+        "refund_4": 28500,
+        "refund_5": 32700,
+        "small_cap": 27900,
+        "large_cap": 12200
+      }
+    },
+    {
+      "id": "offer_a67ae9d5a0bb",
+      "attrs": {
+        "price": 475914,
+        "admin": 129347,
+        "replacement_0": 3600,
+        "replacement_1": 26300,
+        "replacement_2": 18100,
+        "replacement_3": 24700,
+        "replacement_4": 19600,
+        "replacement_5": 22700,
+        "refund_0": 3200,
+        "refund_1": 2400,
+        "refund_2": 9000,
+        "refund_3": 3100,
+        "refund_4": 14300,
+        "refund_5": 8000,
+        "small_cap": 38300,
+        "large_cap": 7400
+      }
+    },
+    {
+      "id": "offer_b0f90c0634c3",
+      "attrs": {
+        "price": 781221,
+        "admin": 117962,
+        "replacement_0": 29900,
+        "replacement_1": 29500,
+        "replacement_2": 15300,
+        "replacement_3": 24200,
+        "replacement_4": 29300,
+        "replacement_5": 23800,
+        "refund_0": 32300,
+        "refund_1": 19100,
+        "refund_2": 1800,
+        "refund_3": 5800,
+        "refund_4": 11600,
+        "refund_5": 15300,
+        "small_cap": 44600,
+        "large_cap": 14900
+      }
+    },
+    {
+      "id": "offer_05cdb31ed829",
+      "attrs": {
+        "price": 747577,
+        "admin": 122196,
+        "replacement_0": 19200,
+        "replacement_1": 22600,
+        "replacement_2": 26200,
+        "replacement_3": 11500,
+        "replacement_4": 19600,
+        "replacement_5": 25400,
+        "refund_0": 5900,
+        "refund_1": 24700,
+        "refund_2": 17300,
+        "refund_3": 1400,
+        "refund_4": 2100,
+        "refund_5": 15400,
+        "small_cap": 36500,
+        "large_cap": 15900
+      }
+    },
+    {
+      "id": "offer_3242a88e1129",
+      "attrs": {
+        "price": 530787,
+        "admin": 146255,
+        "replacement_0": 12200,
+        "replacement_1": 13900,
+        "replacement_2": 25400,
+        "replacement_3": 13500,
+        "replacement_4": 6300,
+        "replacement_5": 28700,
+        "refund_0": 15200,
+        "refund_1": 20600,
+        "refund_2": 28400,
+        "refund_3": 6200,
+        "refund_4": 22700,
+        "refund_5": 29700,
+        "small_cap": 34600,
+        "large_cap": 18000
+      }
+    },
+    {
+      "id": "offer_587d4c4105d7",
+      "attrs": {
+        "price": 743808,
+        "admin": 124709,
+        "replacement_0": 1800,
+        "replacement_1": 27200,
+        "replacement_2": 10900,
+        "replacement_3": 24900,
+        "replacement_4": 23000,
+        "replacement_5": 17200,
+        "refund_0": 9000,
+        "refund_1": 8800,
+        "refund_2": 13600,
+        "refund_3": 18300,
+        "refund_4": 5700,
+        "refund_5": 27500,
+        "small_cap": 46200,
+        "large_cap": 16700
+      }
+    },
+    {
+      "id": "offer_0f30656ad8c7",
+      "attrs": {
+        "price": 850474,
+        "admin": 181107,
+        "replacement_0": 14000,
+        "replacement_1": 13900,
+        "replacement_2": 4500,
+        "replacement_3": 5200,
+        "replacement_4": 13700,
+        "replacement_5": 6000,
+        "refund_0": 35000,
+        "refund_1": 4300,
+        "refund_2": 3300,
+        "refund_3": 5900,
+        "refund_4": 4600,
+        "refund_5": 11400,
+        "small_cap": 27400,
+        "large_cap": 9600
+      }
+    },
+    {
+      "id": "offer_9888fffaecc4",
+      "attrs": {
+        "price": 744129,
+        "admin": 139717,
+        "replacement_0": 12300,
+        "replacement_1": 29900,
+        "replacement_2": 27500,
+        "replacement_3": 13500,
+        "replacement_4": 14200,
+        "replacement_5": 7600,
+        "refund_0": 31700,
+        "refund_1": 18400,
+        "refund_2": 19600,
+        "refund_3": 21900,
+        "refund_4": 14700,
+        "refund_5": 9200,
+        "small_cap": 34200,
+        "large_cap": 12800
+      }
+    },
+    {
+      "id": "offer_11da209d911b",
+      "attrs": {
+        "price": 735736,
+        "admin": 146923,
+        "replacement_0": 6100,
+        "replacement_1": 17600,
+        "replacement_2": 20300,
+        "replacement_3": 22500,
+        "replacement_4": 8600,
+        "replacement_5": 21800,
+        "refund_0": 27600,
+        "refund_1": 16500,
+        "refund_2": 31200,
+        "refund_3": 32700,
+        "refund_4": 6200,
+        "refund_5": 28200,
+        "small_cap": 37500,
+        "large_cap": 15300
+      }
+    },
+    {
+      "id": "offer_60996967fe0f",
+      "attrs": {
+        "price": 463296,
+        "admin": 117825,
+        "replacement_0": 4300,
+        "replacement_1": 26300,
+        "replacement_2": 28400,
+        "replacement_3": 26600,
+        "replacement_4": 23900,
+        "replacement_5": 19900,
+        "refund_0": 28400,
+        "refund_1": 25700,
+        "refund_2": 23400,
+        "refund_3": 13700,
+        "refund_4": 18800,
+        "refund_5": 6000,
+        "small_cap": 58300,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_3c738a60017b",
+      "attrs": {
+        "price": 784075,
+        "admin": 172612,
+        "replacement_0": 15600,
+        "replacement_1": 11000,
+        "replacement_2": 2900,
+        "replacement_3": 10400,
+        "replacement_4": 4900,
+        "replacement_5": 23100,
+        "refund_0": 16000,
+        "refund_1": 8600,
+        "refund_2": 12700,
+        "refund_3": 9900,
+        "refund_4": 28600,
+        "refund_5": 19500,
+        "small_cap": 51500,
+        "large_cap": 17100
+      }
+    },
+    {
+      "id": "offer_1e74bae2112f",
+      "attrs": {
+        "price": 808369,
+        "admin": 110371,
+        "replacement_0": 24100,
+        "replacement_1": 23500,
+        "replacement_2": 13400,
+        "replacement_3": 22100,
+        "replacement_4": 27200,
+        "replacement_5": 13000,
+        "refund_0": 1600,
+        "refund_1": 3500,
+        "refund_2": 18000,
+        "refund_3": 8400,
+        "refund_4": 29400,
+        "refund_5": 4300,
+        "small_cap": 51500,
+        "large_cap": 5400
+      }
+    },
+    {
+      "id": "offer_6f24d6e05e84",
+      "attrs": {
+        "price": 658163,
+        "admin": 156454,
+        "replacement_0": 13000,
+        "replacement_1": 2900,
+        "replacement_2": 14800,
+        "replacement_3": 29200,
+        "replacement_4": 8200,
+        "replacement_5": 3300,
+        "refund_0": 26700,
+        "refund_1": 9100,
+        "refund_2": 10300,
+        "refund_3": 25100,
+        "refund_4": 31800,
+        "refund_5": 11100,
+        "small_cap": 29000,
+        "large_cap": 11400
+      }
+    },
+    {
+      "id": "offer_28b4d5e9de66",
+      "attrs": {
+        "price": 671612,
+        "admin": 115715,
+        "replacement_0": 22400,
+        "replacement_1": 21300,
+        "replacement_2": 22000,
+        "replacement_3": 7200,
+        "replacement_4": 25700,
+        "replacement_5": 14900,
+        "refund_0": 15500,
+        "refund_1": 13900,
+        "refund_2": 14400,
+        "refund_3": 2800,
+        "refund_4": 30500,
+        "refund_5": 34800,
+        "small_cap": 28500,
+        "large_cap": 6000
+      }
+    },
+    {
+      "id": "offer_dd4a4b44f28b",
+      "attrs": {
+        "price": 719628,
+        "admin": 152330,
+        "replacement_0": 9000,
+        "replacement_1": 10300,
+        "replacement_2": 22400,
+        "replacement_3": 20700,
+        "replacement_4": 13200,
+        "replacement_5": 11400,
+        "refund_0": 6700,
+        "refund_1": 1700,
+        "refund_2": 27200,
+        "refund_3": 17100,
+        "refund_4": 5300,
+        "refund_5": 17200,
+        "small_cap": 54300,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_669acdc38f3b",
+      "attrs": {
+        "price": 883729,
+        "admin": 144330,
+        "replacement_0": 14600,
+        "replacement_1": 4200,
+        "replacement_2": 14200,
+        "replacement_3": 23800,
+        "replacement_4": 23700,
+        "replacement_5": 24800,
+        "refund_0": 10400,
+        "refund_1": 13300,
+        "refund_2": 32100,
+        "refund_3": 10300,
+        "refund_4": 24300,
+        "refund_5": 12100,
+        "small_cap": 24600,
+        "large_cap": 18300
+      }
+    },
+    {
+      "id": "offer_1dc1cfa8c87c",
+      "attrs": {
+        "price": 546699,
+        "admin": 109451,
+        "replacement_0": 29000,
+        "replacement_1": 9000,
+        "replacement_2": 25900,
+        "replacement_3": 12900,
+        "replacement_4": 29500,
+        "replacement_5": 21500,
+        "refund_0": 23700,
+        "refund_1": 18900,
+        "refund_2": 30500,
+        "refund_3": 27300,
+        "refund_4": 12600,
+        "refund_5": 4000,
+        "small_cap": 20300,
+        "large_cap": 12100
+      }
+    },
+    {
+      "id": "offer_d9df6ab309d3",
+      "attrs": {
+        "price": 568575,
+        "admin": 111751,
+        "replacement_0": 15300,
+        "replacement_1": 29600,
+        "replacement_2": 17000,
+        "replacement_3": 21000,
+        "replacement_4": 27400,
+        "replacement_5": 26600,
+        "refund_0": 9900,
+        "refund_1": 7000,
+        "refund_2": 8600,
+        "refund_3": 11800,
+        "refund_4": 19600,
+        "refund_5": 30800,
+        "small_cap": 25100,
+        "large_cap": 11600
+      }
+    },
+    {
+      "id": "offer_ab6db17255d1",
+      "attrs": {
+        "price": 713400,
+        "admin": 139412,
+        "replacement_0": 26300,
+        "replacement_1": 8800,
+        "replacement_2": 7100,
+        "replacement_3": 22700,
+        "replacement_4": 4500,
+        "replacement_5": 25400,
+        "refund_0": 3000,
+        "refund_1": 28100,
+        "refund_2": 17500,
+        "refund_3": 29500,
+        "refund_4": 10900,
+        "refund_5": 14200,
+        "small_cap": 22800,
+        "large_cap": 11900
+      }
+    },
+    {
+      "id": "offer_7939ebaea8cc",
+      "attrs": {
+        "price": 526470,
+        "admin": 119166,
+        "replacement_0": 15100,
+        "replacement_1": 25000,
+        "replacement_2": 14200,
+        "replacement_3": 21800,
+        "replacement_4": 29100,
+        "replacement_5": 7200,
+        "refund_0": 29500,
+        "refund_1": 2000,
+        "refund_2": 20400,
+        "refund_3": 5300,
+        "refund_4": 16200,
+        "refund_5": 13800,
+        "small_cap": 35800,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_42ef45c25daa",
+      "attrs": {
+        "price": 568600,
+        "admin": 158306,
+        "replacement_0": 6500,
+        "replacement_1": 17800,
+        "replacement_2": 15900,
+        "replacement_3": 14600,
+        "replacement_4": 22900,
+        "replacement_5": 4400,
+        "refund_0": 28800,
+        "refund_1": 16000,
+        "refund_2": 22200,
+        "refund_3": 18300,
+        "refund_4": 34600,
+        "refund_5": 7700,
+        "small_cap": 57600,
+        "large_cap": 18800
+      }
+    },
+    {
+      "id": "offer_a2a8d76d7a5c",
+      "attrs": {
+        "price": 616525,
+        "admin": 154184,
+        "replacement_0": 7000,
+        "replacement_1": 11500,
+        "replacement_2": 13100,
+        "replacement_3": 15700,
+        "replacement_4": 27700,
+        "replacement_5": 16400,
+        "refund_0": 19500,
+        "refund_1": 15100,
+        "refund_2": 34200,
+        "refund_3": 26700,
+        "refund_4": 19600,
+        "refund_5": 16300,
+        "small_cap": 50300,
+        "large_cap": 7800
+      }
+    },
+    {
+      "id": "offer_f6ec3990a45f",
+      "attrs": {
+        "price": 878520,
+        "admin": 161607,
+        "replacement_0": 27600,
+        "replacement_1": 14000,
+        "replacement_2": 8400,
+        "replacement_3": 15300,
+        "replacement_4": 11700,
+        "replacement_5": 7100,
+        "refund_0": 14300,
+        "refund_1": 17400,
+        "refund_2": 27200,
+        "refund_3": 3900,
+        "refund_4": 19500,
+        "refund_5": 31800,
+        "small_cap": 59400,
+        "large_cap": 13100
+      }
+    },
+    {
+      "id": "offer_426bc4958b4c",
+      "attrs": {
+        "price": 663539,
+        "admin": 120009,
+        "replacement_0": 25600,
+        "replacement_1": 20100,
+        "replacement_2": 1100,
+        "replacement_3": 27100,
+        "replacement_4": 27500,
+        "replacement_5": 19200,
+        "refund_0": 4700,
+        "refund_1": 6100,
+        "refund_2": 29700,
+        "refund_3": 5200,
+        "refund_4": 25100,
+        "refund_5": 16100,
+        "small_cap": 48100,
+        "large_cap": 6000
+      }
+    },
+    {
+      "id": "offer_429a69a16564",
+      "attrs": {
+        "price": 463051,
+        "admin": 125342,
+        "replacement_0": 4700,
+        "replacement_1": 23700,
+        "replacement_2": 23500,
+        "replacement_3": 23200,
+        "replacement_4": 2500,
+        "replacement_5": 20500,
+        "refund_0": 26100,
+        "refund_1": 27800,
+        "refund_2": 34100,
+        "refund_3": 4400,
+        "refund_4": 13400,
+        "refund_5": 12100,
+        "small_cap": 37900,
+        "large_cap": 8300
+      }
+    },
+    {
+      "id": "offer_6eb28cba9da9",
+      "attrs": {
+        "price": 628914,
+        "admin": 130547,
+        "replacement_0": 9600,
+        "replacement_1": 16200,
+        "replacement_2": 20000,
+        "replacement_3": 1700,
+        "replacement_4": 29000,
+        "replacement_5": 27100,
+        "refund_0": 16900,
+        "refund_1": 12500,
+        "refund_2": 4700,
+        "refund_3": 23300,
+        "refund_4": 33400,
+        "refund_5": 24400,
+        "small_cap": 49900,
+        "large_cap": 5500
+      }
+    },
+    {
+      "id": "offer_c129711d3c6a",
+      "attrs": {
+        "price": 654012,
+        "admin": 135947,
+        "replacement_0": 28500,
+        "replacement_1": 11500,
+        "replacement_2": 12300,
+        "replacement_3": 26000,
+        "replacement_4": 3100,
+        "replacement_5": 13000,
+        "refund_0": 21800,
+        "refund_1": 19100,
+        "refund_2": 14100,
+        "refund_3": 25300,
+        "refund_4": 29200,
+        "refund_5": 32500,
+        "small_cap": 20800,
+        "large_cap": 15300
+      }
+    },
+    {
+      "id": "offer_76ff648ddd17",
+      "attrs": {
+        "price": 719132,
+        "admin": 141171,
+        "replacement_0": 27000,
+        "replacement_1": 17200,
+        "replacement_2": 14500,
+        "replacement_3": 10000,
+        "replacement_4": 16200,
+        "replacement_5": 18600,
+        "refund_0": 18000,
+        "refund_1": 18100,
+        "refund_2": 7600,
+        "refund_3": 1800,
+        "refund_4": 22200,
+        "refund_5": 5800,
+        "small_cap": 57100,
+        "large_cap": 6900
+      }
+    },
+    {
+      "id": "offer_a17f86881446",
+      "attrs": {
+        "price": 560265,
+        "admin": 141321,
+        "replacement_0": 28200,
+        "replacement_1": 24000,
+        "replacement_2": 17100,
+        "replacement_3": 9800,
+        "replacement_4": 4800,
+        "replacement_5": 10300,
+        "refund_0": 11900,
+        "refund_1": 25700,
+        "refund_2": 23500,
+        "refund_3": 16500,
+        "refund_4": 2900,
+        "refund_5": 10700,
+        "small_cap": 25900,
+        "large_cap": 16700
+      }
+    },
+    {
+      "id": "offer_8751c3025ceb",
+      "attrs": {
+        "price": 599640,
+        "admin": 152164,
+        "replacement_0": 5600,
+        "replacement_1": 24400,
+        "replacement_2": 6600,
+        "replacement_3": 28500,
+        "replacement_4": 10900,
+        "replacement_5": 9100,
+        "refund_0": 1900,
+        "refund_1": 23100,
+        "refund_2": 5300,
+        "refund_3": 11400,
+        "refund_4": 17400,
+        "refund_5": 3800,
+        "small_cap": 55100,
+        "large_cap": 16200
+      }
+    },
+    {
+      "id": "offer_5cc3c8447765",
+      "attrs": {
+        "price": 708559,
+        "admin": 133626,
+        "replacement_0": 14700,
+        "replacement_1": 26000,
+        "replacement_2": 21500,
+        "replacement_3": 13300,
+        "replacement_4": 1500,
+        "replacement_5": 22800,
+        "refund_0": 33000,
+        "refund_1": 13500,
+        "refund_2": 23100,
+        "refund_3": 14800,
+        "refund_4": 25900,
+        "refund_5": 31100,
+        "small_cap": 54600,
+        "large_cap": 16300
+      }
+    },
+    {
+      "id": "offer_6686ee457589",
+      "attrs": {
+        "price": 569251,
+        "admin": 137310,
+        "replacement_0": 18400,
+        "replacement_1": 3200,
+        "replacement_2": 22600,
+        "replacement_3": 15400,
+        "replacement_4": 5500,
+        "replacement_5": 14800,
+        "refund_0": 30900,
+        "refund_1": 25200,
+        "refund_2": 8500,
+        "refund_3": 1200,
+        "refund_4": 15500,
+        "refund_5": 31100,
+        "small_cap": 54100,
+        "large_cap": 6600
+      }
+    },
+    {
+      "id": "offer_0772ad393c42",
+      "attrs": {
+        "price": 879005,
+        "admin": 138665,
+        "replacement_0": 6200,
+        "replacement_1": 26200,
+        "replacement_2": 2800,
+        "replacement_3": 19200,
+        "replacement_4": 2600,
+        "replacement_5": 23200,
+        "refund_0": 22400,
+        "refund_1": 18900,
+        "refund_2": 30300,
+        "refund_3": 13400,
+        "refund_4": 7800,
+        "refund_5": 24700,
+        "small_cap": 54500,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_2c825705843c",
+      "attrs": {
+        "price": 479167,
+        "admin": 143545,
+        "replacement_0": 28100,
+        "replacement_1": 8900,
+        "replacement_2": 14200,
+        "replacement_3": 14000,
+        "replacement_4": 9500,
+        "replacement_5": 7900,
+        "refund_0": 25800,
+        "refund_1": 15100,
+        "refund_2": 17100,
+        "refund_3": 1800,
+        "refund_4": 25300,
+        "refund_5": 14400,
+        "small_cap": 56600,
+        "large_cap": 7100
+      }
+    },
+    {
+      "id": "offer_3076fa92a4fa",
+      "attrs": {
+        "price": 547316,
+        "admin": 147925,
+        "replacement_0": 12200,
+        "replacement_1": 23100,
+        "replacement_2": 18700,
+        "replacement_3": 10200,
+        "replacement_4": 5800,
+        "replacement_5": 21600,
+        "refund_0": 25000,
+        "refund_1": 5500,
+        "refund_2": 3600,
+        "refund_3": 31100,
+        "refund_4": 34300,
+        "refund_5": 1200,
+        "small_cap": 31700,
+        "large_cap": 13200
+      }
+    },
+    {
+      "id": "offer_efc111deea10",
+      "attrs": {
+        "price": 853430,
+        "admin": 149505,
+        "replacement_0": 16200,
+        "replacement_1": 3600,
+        "replacement_2": 10900,
+        "replacement_3": 21400,
+        "replacement_4": 16800,
+        "replacement_5": 12400,
+        "refund_0": 4500,
+        "refund_1": 30500,
+        "refund_2": 14600,
+        "refund_3": 15800,
+        "refund_4": 4500,
+        "refund_5": 19400,
+        "small_cap": 30900,
+        "large_cap": 3900
+      }
+    },
+    {
+      "id": "offer_7f4d33a2abee",
+      "attrs": {
+        "price": 475927,
+        "admin": 151006,
+        "replacement_0": 9400,
+        "replacement_1": 10200,
+        "replacement_2": 11800,
+        "replacement_3": 20000,
+        "replacement_4": 19400,
+        "replacement_5": 4400,
+        "refund_0": 25700,
+        "refund_1": 32000,
+        "refund_2": 18400,
+        "refund_3": 19100,
+        "refund_4": 26500,
+        "refund_5": 30800,
+        "small_cap": 45400,
+        "large_cap": 5700
+      }
+    },
+    {
+      "id": "offer_e87b6e4d6987",
+      "attrs": {
+        "price": 732800,
+        "admin": 154346,
+        "replacement_0": 8100,
+        "replacement_1": 29700,
+        "replacement_2": 1400,
+        "replacement_3": 5000,
+        "replacement_4": 12600,
+        "replacement_5": 5200,
+        "refund_0": 21700,
+        "refund_1": 14300,
+        "refund_2": 16900,
+        "refund_3": 17200,
+        "refund_4": 12300,
+        "refund_5": 28300,
+        "small_cap": 24500,
+        "large_cap": 9500
+      }
+    },
+    {
+      "id": "offer_438df95b4983",
+      "attrs": {
+        "price": 616384,
+        "admin": 175114,
+        "replacement_0": 9000,
+        "replacement_1": 4100,
+        "replacement_2": 21300,
+        "replacement_3": 7900,
+        "replacement_4": 9200,
+        "replacement_5": 11400,
+        "refund_0": 11600,
+        "refund_1": 29100,
+        "refund_2": 34600,
+        "refund_3": 19800,
+        "refund_4": 31700,
+        "refund_5": 3900,
+        "small_cap": 26300,
+        "large_cap": 10000
+      }
+    },
+    {
+      "id": "offer_c4ba8c4e755e",
+      "attrs": {
+        "price": 764593,
+        "admin": 159973,
+        "replacement_0": 13200,
+        "replacement_1": 28600,
+        "replacement_2": 6900,
+        "replacement_3": 2800,
+        "replacement_4": 14800,
+        "replacement_5": 7400,
+        "refund_0": 34200,
+        "refund_1": 31000,
+        "refund_2": 31000,
+        "refund_3": 24500,
+        "refund_4": 19400,
+        "refund_5": 10200,
+        "small_cap": 37900,
+        "large_cap": 5900
+      }
+    },
+    {
+      "id": "offer_083a4ca00782",
+      "attrs": {
+        "price": 754348,
+        "admin": 154752,
+        "replacement_0": 13600,
+        "replacement_1": 7500,
+        "replacement_2": 5800,
+        "replacement_3": 21700,
+        "replacement_4": 4600,
+        "replacement_5": 23000,
+        "refund_0": 25200,
+        "refund_1": 23300,
+        "refund_2": 11000,
+        "refund_3": 16200,
+        "refund_4": 13900,
+        "refund_5": 20500,
+        "small_cap": 24200,
+        "large_cap": 16600
+      }
+    },
+    {
+      "id": "offer_f32362df7e9b",
+      "attrs": {
+        "price": 479212,
+        "admin": 157638,
+        "replacement_0": 23900,
+        "replacement_1": 4800,
+        "replacement_2": 13100,
+        "replacement_3": 3400,
+        "replacement_4": 12000,
+        "replacement_5": 16200,
+        "refund_0": 34900,
+        "refund_1": 9900,
+        "refund_2": 4900,
+        "refund_3": 12400,
+        "refund_4": 30900,
+        "refund_5": 4900,
+        "small_cap": 35600,
+        "large_cap": 14000
+      }
+    },
+    {
+      "id": "offer_d662b723a275",
+      "attrs": {
+        "price": 734944,
+        "admin": 116490,
+        "replacement_0": 12400,
+        "replacement_1": 25400,
+        "replacement_2": 21100,
+        "replacement_3": 26400,
+        "replacement_4": 1900,
+        "replacement_5": 25600,
+        "refund_0": 28500,
+        "refund_1": 13700,
+        "refund_2": 3900,
+        "refund_3": 24500,
+        "refund_4": 23200,
+        "refund_5": 29400,
+        "small_cap": 22200,
+        "large_cap": 5500
+      }
+    },
+    {
+      "id": "offer_7b6de2104d5f",
+      "attrs": {
+        "price": 686366,
+        "admin": 133333,
+        "replacement_0": 28600,
+        "replacement_1": 27900,
+        "replacement_2": 2800,
+        "replacement_3": 26500,
+        "replacement_4": 12300,
+        "replacement_5": 4600,
+        "refund_0": 13700,
+        "refund_1": 20600,
+        "refund_2": 17900,
+        "refund_3": 2800,
+        "refund_4": 17600,
+        "refund_5": 1800,
+        "small_cap": 31100,
+        "large_cap": 13400
+      }
+    },
+    {
+      "id": "offer_536656ae4e7c",
+      "attrs": {
+        "price": 689582,
+        "admin": 128739,
+        "replacement_0": 25700,
+        "replacement_1": 28400,
+        "replacement_2": 16800,
+        "replacement_3": 7500,
+        "replacement_4": 6300,
+        "replacement_5": 20300,
+        "refund_0": 33400,
+        "refund_1": 12600,
+        "refund_2": 24300,
+        "refund_3": 12300,
+        "refund_4": 4400,
+        "refund_5": 20200,
+        "small_cap": 53100,
+        "large_cap": 6100
+      }
+    },
+    {
+      "id": "offer_d0781ae90bd4",
+      "attrs": {
+        "price": 676556,
+        "admin": 110119,
+        "replacement_0": 28400,
+        "replacement_1": 18600,
+        "replacement_2": 27600,
+        "replacement_3": 5300,
+        "replacement_4": 28600,
+        "replacement_5": 20900,
+        "refund_0": 24800,
+        "refund_1": 7000,
+        "refund_2": 33300,
+        "refund_3": 7800,
+        "refund_4": 22800,
+        "refund_5": 21300,
+        "small_cap": 39800,
+        "large_cap": 5400
+      }
+    },
+    {
+      "id": "offer_1038d999126e",
+      "attrs": {
+        "price": 543863,
+        "admin": 169476,
+        "replacement_0": 13700,
+        "replacement_1": 24700,
+        "replacement_2": 18400,
+        "replacement_3": 8500,
+        "replacement_4": 6800,
+        "replacement_5": 9500,
+        "refund_0": 7400,
+        "refund_1": 32100,
+        "refund_2": 18200,
+        "refund_3": 16900,
+        "refund_4": 7400,
+        "refund_5": 21000,
+        "small_cap": 57500,
+        "large_cap": 18700
+      }
+    },
+    {
+      "id": "offer_46707fb95067",
+      "attrs": {
+        "price": 718146,
+        "admin": 145733,
+        "replacement_0": 5100,
+        "replacement_1": 18300,
+        "replacement_2": 7700,
+        "replacement_3": 3700,
+        "replacement_4": 27900,
+        "replacement_5": 11400,
+        "refund_0": 23400,
+        "refund_1": 18000,
+        "refund_2": 31600,
+        "refund_3": 21100,
+        "refund_4": 16000,
+        "refund_5": 20300,
+        "small_cap": 30200,
+        "large_cap": 10600
+      }
+    },
+    {
+      "id": "offer_2df63f7e27a2",
+      "attrs": {
+        "price": 882333,
+        "admin": 129420,
+        "replacement_0": 20900,
+        "replacement_1": 15600,
+        "replacement_2": 26000,
+        "replacement_3": 19600,
+        "replacement_4": 4800,
+        "replacement_5": 27500,
+        "refund_0": 1400,
+        "refund_1": 20200,
+        "refund_2": 23400,
+        "refund_3": 34400,
+        "refund_4": 15700,
+        "refund_5": 6600,
+        "small_cap": 50400,
+        "large_cap": 18000
+      }
+    },
+    {
+      "id": "offer_091ca9d75dc5",
+      "attrs": {
+        "price": 680576,
+        "admin": 152750,
+        "replacement_0": 19700,
+        "replacement_1": 26100,
+        "replacement_2": 14000,
+        "replacement_3": 6500,
+        "replacement_4": 3200,
+        "replacement_5": 4500,
+        "refund_0": 8800,
+        "refund_1": 20300,
+        "refund_2": 10800,
+        "refund_3": 30100,
+        "refund_4": 34100,
+        "refund_5": 11600,
+        "small_cap": 42600,
+        "large_cap": 16800
+      }
+    },
+    {
+      "id": "offer_04f3edc1d3d2",
+      "attrs": {
+        "price": 660731,
+        "admin": 158712,
+        "replacement_0": 15000,
+        "replacement_1": 17200,
+        "replacement_2": 12500,
+        "replacement_3": 2500,
+        "replacement_4": 23500,
+        "replacement_5": 12800,
+        "refund_0": 13500,
+        "refund_1": 25300,
+        "refund_2": 3500,
+        "refund_3": 22600,
+        "refund_4": 13500,
+        "refund_5": 22000,
+        "small_cap": 30200,
+        "large_cap": 8200
+      }
+    },
+    {
+      "id": "offer_333a9df98878",
+      "attrs": {
+        "price": 645214,
+        "admin": 167064,
+        "replacement_0": 14600,
+        "replacement_1": 2200,
+        "replacement_2": 7400,
+        "replacement_3": 13300,
+        "replacement_4": 17100,
+        "replacement_5": 7700,
+        "refund_0": 34900,
+        "refund_1": 32100,
+        "refund_2": 27600,
+        "refund_3": 11400,
+        "refund_4": 11100,
+        "refund_5": 19000,
+        "small_cap": 22600,
+        "large_cap": 10700
+      }
+    },
+    {
+      "id": "offer_44a89b028091",
+      "attrs": {
+        "price": 688698,
+        "admin": 130667,
+        "replacement_0": 19900,
+        "replacement_1": 26300,
+        "replacement_2": 17200,
+        "replacement_3": 7700,
+        "replacement_4": 16700,
+        "replacement_5": 19000,
+        "refund_0": 30800,
+        "refund_1": 7200,
+        "refund_2": 18400,
+        "refund_3": 29800,
+        "refund_4": 13800,
+        "refund_5": 30000,
+        "small_cap": 24700,
+        "large_cap": 3300
+      }
+    },
+    {
+      "id": "offer_87ad78c19a51",
+      "attrs": {
+        "price": 729630,
+        "admin": 141744,
+        "replacement_0": 6500,
+        "replacement_1": 24600,
+        "replacement_2": 3000,
+        "replacement_3": 5900,
+        "replacement_4": 21600,
+        "replacement_5": 29800,
+        "refund_0": 5600,
+        "refund_1": 26300,
+        "refund_2": 9100,
+        "refund_3": 13700,
+        "refund_4": 26300,
+        "refund_5": 19200,
+        "small_cap": 28200,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_8d987e6be893",
+      "attrs": {
+        "price": 790962,
+        "admin": 133989,
+        "replacement_0": 22800,
+        "replacement_1": 25600,
+        "replacement_2": 1600,
+        "replacement_3": 15800,
+        "replacement_4": 4200,
+        "replacement_5": 15600,
+        "refund_0": 30000,
+        "refund_1": 20100,
+        "refund_2": 25800,
+        "refund_3": 7900,
+        "refund_4": 33400,
+        "refund_5": 6800,
+        "small_cap": 56600,
+        "large_cap": 8100
+      }
+    },
+    {
+      "id": "offer_824d38351575",
+      "attrs": {
+        "price": 685501,
+        "admin": 182618,
+        "replacement_0": 3000,
+        "replacement_1": 4800,
+        "replacement_2": 27900,
+        "replacement_3": 7800,
+        "replacement_4": 6200,
+        "replacement_5": 11700,
+        "refund_0": 30600,
+        "refund_1": 13000,
+        "refund_2": 31300,
+        "refund_3": 2800,
+        "refund_4": 23900,
+        "refund_5": 23000,
+        "small_cap": 44900,
+        "large_cap": 16700
+      }
+    },
+    {
+      "id": "offer_58ce610226dc",
+      "attrs": {
+        "price": 676704,
+        "admin": 135531,
+        "replacement_0": 2700,
+        "replacement_1": 19600,
+        "replacement_2": 20400,
+        "replacement_3": 24000,
+        "replacement_4": 18700,
+        "replacement_5": 26700,
+        "refund_0": 33400,
+        "refund_1": 22700,
+        "refund_2": 21900,
+        "refund_3": 19800,
+        "refund_4": 32200,
+        "refund_5": 16000,
+        "small_cap": 20700,
+        "large_cap": 15000
+      }
+    },
+    {
+      "id": "offer_d4885ffed3f6",
+      "attrs": {
+        "price": 589172,
+        "admin": 146378,
+        "replacement_0": 16500,
+        "replacement_1": 6900,
+        "replacement_2": 29200,
+        "replacement_3": 15800,
+        "replacement_4": 1100,
+        "replacement_5": 9000,
+        "refund_0": 31100,
+        "refund_1": 28500,
+        "refund_2": 20100,
+        "refund_3": 16500,
+        "refund_4": 21300,
+        "refund_5": 11000,
+        "small_cap": 48600,
+        "large_cap": 15600
+      }
+    },
+    {
+      "id": "offer_25ee1a154a93",
+      "attrs": {
+        "price": 467879,
+        "admin": 160443,
+        "replacement_0": 11600,
+        "replacement_1": 25000,
+        "replacement_2": 13700,
+        "replacement_3": 9500,
+        "replacement_4": 1600,
+        "replacement_5": 14200,
+        "refund_0": 16000,
+        "refund_1": 4900,
+        "refund_2": 24100,
+        "refund_3": 9200,
+        "refund_4": 33800,
+        "refund_5": 20000,
+        "small_cap": 30500,
+        "large_cap": 8600
+      }
+    },
+    {
+      "id": "offer_1f5fa0b4de2b",
+      "attrs": {
+        "price": 580511,
+        "admin": 132119,
+        "replacement_0": 24100,
+        "replacement_1": 1000,
+        "replacement_2": 19000,
+        "replacement_3": 4100,
+        "replacement_4": 13900,
+        "replacement_5": 20800,
+        "refund_0": 11600,
+        "refund_1": 5900,
+        "refund_2": 34000,
+        "refund_3": 18300,
+        "refund_4": 10100,
+        "refund_5": 34500,
+        "small_cap": 57700,
+        "large_cap": 8600
+      }
+    },
+    {
+      "id": "offer_d11485a19b1d",
+      "attrs": {
+        "price": 628968,
+        "admin": 180043,
+        "replacement_0": 24800,
+        "replacement_1": 5000,
+        "replacement_2": 12700,
+        "replacement_3": 2800,
+        "replacement_4": 4400,
+        "replacement_5": 6300,
+        "refund_0": 5600,
+        "refund_1": 19900,
+        "refund_2": 28500,
+        "refund_3": 6000,
+        "refund_4": 20000,
+        "refund_5": 26700,
+        "small_cap": 27900,
+        "large_cap": 18100
+      }
+    },
+    {
+      "id": "offer_1eb6a7b96ae4",
+      "attrs": {
+        "price": 695319,
+        "admin": 153657,
+        "replacement_0": 19800,
+        "replacement_1": 19100,
+        "replacement_2": 13800,
+        "replacement_3": 12000,
+        "replacement_4": 16600,
+        "replacement_5": 9800,
+        "refund_0": 14600,
+        "refund_1": 8600,
+        "refund_2": 2400,
+        "refund_3": 26200,
+        "refund_4": 20700,
+        "refund_5": 11800,
+        "small_cap": 30400,
+        "large_cap": 7300
+      }
+    },
+    {
+      "id": "offer_23b41198f17c",
+      "attrs": {
+        "price": 856185,
+        "admin": 144383,
+        "replacement_0": 28200,
+        "replacement_1": 18000,
+        "replacement_2": 13100,
+        "replacement_3": 2700,
+        "replacement_4": 20200,
+        "replacement_5": 9200,
+        "refund_0": 12900,
+        "refund_1": 23000,
+        "refund_2": 13900,
+        "refund_3": 27800,
+        "refund_4": 29500,
+        "refund_5": 14400,
+        "small_cap": 22900,
+        "large_cap": 6100
+      }
+    },
+    {
+      "id": "offer_9a8f162ffd33",
+      "attrs": {
+        "price": 620578,
+        "admin": 153515,
+        "replacement_0": 24300,
+        "replacement_1": 2800,
+        "replacement_2": 22500,
+        "replacement_3": 8300,
+        "replacement_4": 12000,
+        "replacement_5": 22900,
+        "refund_0": 32100,
+        "refund_1": 23600,
+        "refund_2": 30000,
+        "refund_3": 8900,
+        "refund_4": 17000,
+        "refund_5": 12100,
+        "small_cap": 52200,
+        "large_cap": 16000
+      }
+    },
+    {
+      "id": "offer_4e8c3354e955",
+      "attrs": {
+        "price": 529340,
+        "admin": 153310,
+        "replacement_0": 28000,
+        "replacement_1": 21700,
+        "replacement_2": 9000,
+        "replacement_3": 4400,
+        "replacement_4": 20300,
+        "replacement_5": 5000,
+        "refund_0": 24700,
+        "refund_1": 10200,
+        "refund_2": 1100,
+        "refund_3": 15700,
+        "refund_4": 8000,
+        "refund_5": 31200,
+        "small_cap": 49400,
+        "large_cap": 14700
+      }
+    },
+    {
+      "id": "offer_0ce8205adccf",
+      "attrs": {
+        "price": 675505,
+        "admin": 149148,
+        "replacement_0": 4200,
+        "replacement_1": 25300,
+        "replacement_2": 10500,
+        "replacement_3": 13400,
+        "replacement_4": 27500,
+        "replacement_5": 14600,
+        "refund_0": 5300,
+        "refund_1": 13600,
+        "refund_2": 4900,
+        "refund_3": 7400,
+        "refund_4": 34800,
+        "refund_5": 23700,
+        "small_cap": 42500,
+        "large_cap": 11600
+      }
+    },
+    {
+      "id": "offer_a9661b068d55",
+      "attrs": {
+        "price": 563146,
+        "admin": 134599,
+        "replacement_0": 18300,
+        "replacement_1": 19400,
+        "replacement_2": 3000,
+        "replacement_3": 24800,
+        "replacement_4": 8400,
+        "replacement_5": 3900,
+        "refund_0": 19500,
+        "refund_1": 26800,
+        "refund_2": 3800,
+        "refund_3": 16900,
+        "refund_4": 33000,
+        "refund_5": 18500,
+        "small_cap": 44300,
+        "large_cap": 5500
+      }
+    },
+    {
+      "id": "offer_178cfeb289c3",
+      "attrs": {
+        "price": 852122,
+        "admin": 154783,
+        "replacement_0": 11200,
+        "replacement_1": 13400,
+        "replacement_2": 17500,
+        "replacement_3": 12100,
+        "replacement_4": 24800,
+        "replacement_5": 10900,
+        "refund_0": 33300,
+        "refund_1": 3700,
+        "refund_2": 6100,
+        "refund_3": 23700,
+        "refund_4": 21300,
+        "refund_5": 30800,
+        "small_cap": 45400,
+        "large_cap": 15100
+      }
+    },
+    {
+      "id": "offer_7f5ff4bd665a",
+      "attrs": {
+        "price": 588346,
+        "admin": 149559,
+        "replacement_0": 12700,
+        "replacement_1": 14400,
+        "replacement_2": 7000,
+        "replacement_3": 9400,
+        "replacement_4": 14200,
+        "replacement_5": 17300,
+        "refund_0": 21800,
+        "refund_1": 16900,
+        "refund_2": 33700,
+        "refund_3": 17300,
+        "refund_4": 21500,
+        "refund_5": 15400,
+        "small_cap": 53200,
+        "large_cap": 7500
+      }
+    },
+    {
+      "id": "offer_7120524f2115",
+      "attrs": {
+        "price": 662003,
+        "admin": 149682,
+        "replacement_0": 23500,
+        "replacement_1": 1100,
+        "replacement_2": 10800,
+        "replacement_3": 18300,
+        "replacement_4": 25900,
+        "replacement_5": 4300,
+        "refund_0": 3700,
+        "refund_1": 3600,
+        "refund_2": 22400,
+        "refund_3": 11900,
+        "refund_4": 33200,
+        "refund_5": 15200,
+        "small_cap": 56400,
+        "large_cap": 11400
+      }
+    },
+    {
+      "id": "offer_eeb87d556013",
+      "attrs": {
+        "price": 745620,
+        "admin": 142853,
+        "replacement_0": 5100,
+        "replacement_1": 22900,
+        "replacement_2": 7300,
+        "replacement_3": 13600,
+        "replacement_4": 28900,
+        "replacement_5": 7700,
+        "refund_0": 17800,
+        "refund_1": 26900,
+        "refund_2": 12100,
+        "refund_3": 15400,
+        "refund_4": 6400,
+        "refund_5": 24700,
+        "small_cap": 30300,
+        "large_cap": 14300
+      }
+    },
+    {
+      "id": "offer_c97bb743ade1",
+      "attrs": {
+        "price": 894030,
+        "admin": 154456,
+        "replacement_0": 10800,
+        "replacement_1": 2900,
+        "replacement_2": 13200,
+        "replacement_3": 16300,
+        "replacement_4": 16000,
+        "replacement_5": 15400,
+        "refund_0": 7800,
+        "refund_1": 25200,
+        "refund_2": 4600,
+        "refund_3": 33700,
+        "refund_4": 6200,
+        "refund_5": 21400,
+        "small_cap": 58800,
+        "large_cap": 12400
+      }
+    },
+    {
+      "id": "offer_6096a6cf7adf",
+      "attrs": {
+        "price": 567528,
+        "admin": 123392,
+        "replacement_0": 20400,
+        "replacement_1": 5600,
+        "replacement_2": 24400,
+        "replacement_3": 20800,
+        "replacement_4": 20700,
+        "replacement_5": 25300,
+        "refund_0": 34600,
+        "refund_1": 18000,
+        "refund_2": 9700,
+        "refund_3": 17900,
+        "refund_4": 13800,
+        "refund_5": 1600,
+        "small_cap": 23000,
+        "large_cap": 4400
+      }
+    },
+    {
+      "id": "offer_2245df6124d0",
+      "attrs": {
+        "price": 665157,
+        "admin": 123601,
+        "replacement_0": 21400,
+        "replacement_1": 24200,
+        "replacement_2": 16200,
+        "replacement_3": 16300,
+        "replacement_4": 16200,
+        "replacement_5": 24000,
+        "refund_0": 6600,
+        "refund_1": 17900,
+        "refund_2": 12800,
+        "refund_3": 32100,
+        "refund_4": 18600,
+        "refund_5": 34400,
+        "small_cap": 20300,
+        "large_cap": 8300
+      }
+    },
+    {
+      "id": "offer_fd33a5c12d0f",
+      "attrs": {
+        "price": 650749,
+        "admin": 133117,
+        "replacement_0": 23100,
+        "replacement_1": 19600,
+        "replacement_2": 27900,
+        "replacement_3": 14000,
+        "replacement_4": 3700,
+        "replacement_5": 3200,
+        "refund_0": 28600,
+        "refund_1": 29300,
+        "refund_2": 9400,
+        "refund_3": 27100,
+        "refund_4": 18700,
+        "refund_5": 19000,
+        "small_cap": 36500,
+        "large_cap": 9900
+      }
+    },
+    {
+      "id": "offer_2ee392d2c123",
+      "attrs": {
+        "price": 743784,
+        "admin": 170998,
+        "replacement_0": 2100,
+        "replacement_1": 24300,
+        "replacement_2": 9400,
+        "replacement_3": 13500,
+        "replacement_4": 12200,
+        "replacement_5": 7700,
+        "refund_0": 10700,
+        "refund_1": 17500,
+        "refund_2": 16800,
+        "refund_3": 2400,
+        "refund_4": 24900,
+        "refund_5": 8600,
+        "small_cap": 32600,
+        "large_cap": 11900
+      }
+    },
+    {
+      "id": "offer_5ee516c935fb",
+      "attrs": {
+        "price": 822639,
+        "admin": 121386,
+        "replacement_0": 17300,
+        "replacement_1": 25600,
+        "replacement_2": 29600,
+        "replacement_3": 15400,
+        "replacement_4": 23300,
+        "replacement_5": 22500,
+        "refund_0": 19000,
+        "refund_1": 10700,
+        "refund_2": 26600,
+        "refund_3": 7800,
+        "refund_4": 11900,
+        "refund_5": 23900,
+        "small_cap": 23700,
+        "large_cap": 13500
+      }
+    },
+    {
+      "id": "offer_0841bd24b7aa",
+      "attrs": {
+        "price": 691725,
+        "admin": 157141,
+        "replacement_0": 17000,
+        "replacement_1": 2500,
+        "replacement_2": 13000,
+        "replacement_3": 1900,
+        "replacement_4": 3300,
+        "replacement_5": 17400,
+        "refund_0": 13900,
+        "refund_1": 27800,
+        "refund_2": 12600,
+        "refund_3": 23300,
+        "refund_4": 31900,
+        "refund_5": 20500,
+        "small_cap": 54100,
+        "large_cap": 3300
+      }
+    },
+    {
+      "id": "offer_ae754541a755",
+      "attrs": {
+        "price": 780981,
+        "admin": 152826,
+        "replacement_0": 15300,
+        "replacement_1": 8100,
+        "replacement_2": 3500,
+        "replacement_3": 26600,
+        "replacement_4": 16200,
+        "replacement_5": 13400,
+        "refund_0": 11900,
+        "refund_1": 33100,
+        "refund_2": 17700,
+        "refund_3": 12600,
+        "refund_4": 30600,
+        "refund_5": 14900,
+        "small_cap": 58000,
+        "large_cap": 5200
+      }
+    },
+    {
+      "id": "offer_277c312b5082",
+      "attrs": {
+        "price": 853019,
+        "admin": 152332,
+        "replacement_0": 5000,
+        "replacement_1": 6300,
+        "replacement_2": 23500,
+        "replacement_3": 13500,
+        "replacement_4": 20300,
+        "replacement_5": 1700,
+        "refund_0": 2000,
+        "refund_1": 2400,
+        "refund_2": 2400,
+        "refund_3": 20800,
+        "refund_4": 22700,
+        "refund_5": 25700,
+        "small_cap": 29200,
+        "large_cap": 5400
+      }
+    },
+    {
+      "id": "offer_917d0fb38734",
+      "attrs": {
+        "price": 660785,
+        "admin": 172402,
+        "replacement_0": 5800,
+        "replacement_1": 6200,
+        "replacement_2": 2100,
+        "replacement_3": 22000,
+        "replacement_4": 3000,
+        "replacement_5": 13300,
+        "refund_0": 13900,
+        "refund_1": 26000,
+        "refund_2": 32700,
+        "refund_3": 16700,
+        "refund_4": 6900,
+        "refund_5": 7900,
+        "small_cap": 23400,
+        "large_cap": 14800
+      }
+    },
+    {
+      "id": "offer_2b6b466b917c",
+      "attrs": {
+        "price": 585481,
+        "admin": 119458,
+        "replacement_0": 12000,
+        "replacement_1": 26500,
+        "replacement_2": 14100,
+        "replacement_3": 25000,
+        "replacement_4": 27100,
+        "replacement_5": 26600,
+        "refund_0": 4000,
+        "refund_1": 12700,
+        "refund_2": 27400,
+        "refund_3": 11500,
+        "refund_4": 22600,
+        "refund_5": 21700,
+        "small_cap": 22600,
+        "large_cap": 13100
+      }
+    },
+    {
+      "id": "offer_c8d5f149caf3",
+      "attrs": {
+        "price": 852241,
+        "admin": 137492,
+        "replacement_0": 11500,
+        "replacement_1": 28800,
+        "replacement_2": 24400,
+        "replacement_3": 25400,
+        "replacement_4": 4200,
+        "replacement_5": 5100,
+        "refund_0": 24000,
+        "refund_1": 17600,
+        "refund_2": 20700,
+        "refund_3": 19000,
+        "refund_4": 33800,
+        "refund_5": 30000,
+        "small_cap": 53600,
+        "large_cap": 18000
+      }
+    },
+    {
+      "id": "offer_fd78867cacfe",
+      "attrs": {
+        "price": 458701,
+        "admin": 152228,
+        "replacement_0": 19500,
+        "replacement_1": 8800,
+        "replacement_2": 7000,
+        "replacement_3": 21400,
+        "replacement_4": 3200,
+        "replacement_5": 16100,
+        "refund_0": 10100,
+        "refund_1": 13300,
+        "refund_2": 14500,
+        "refund_3": 17100,
+        "refund_4": 33800,
+        "refund_5": 17800,
+        "small_cap": 27300,
+        "large_cap": 10400
+      }
+    },
+    {
+      "id": "offer_d896552ad672",
+      "attrs": {
+        "price": 799984,
+        "admin": 142363,
+        "replacement_0": 6800,
+        "replacement_1": 2800,
+        "replacement_2": 27700,
+        "replacement_3": 16600,
+        "replacement_4": 12400,
+        "replacement_5": 26500,
+        "refund_0": 2000,
+        "refund_1": 27000,
+        "refund_2": 2300,
+        "refund_3": 16000,
+        "refund_4": 18700,
+        "refund_5": 10100,
+        "small_cap": 40800,
+        "large_cap": 10100
+      }
+    },
+    {
+      "id": "offer_948d6c6b7575",
+      "attrs": {
+        "price": 478603,
+        "admin": 125170,
+        "replacement_0": 17000,
+        "replacement_1": 18600,
+        "replacement_2": 24800,
+        "replacement_3": 9000,
+        "replacement_4": 25200,
+        "replacement_5": 24100,
+        "refund_0": 2700,
+        "refund_1": 12800,
+        "refund_2": 12800,
+        "refund_3": 16800,
+        "refund_4": 6800,
+        "refund_5": 1400,
+        "small_cap": 41600,
+        "large_cap": 14400
+      }
+    }
+  ]
+}
