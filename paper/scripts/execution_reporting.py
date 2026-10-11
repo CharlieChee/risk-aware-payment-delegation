@@ -61,7 +61,7 @@ def build(root, table_dir=None):
         resource_cohort='Original measured calls; no decision outcomes inferred from resource measurements')
     (root / 'output/execution_controls_values.json').write_text(json.dumps(result, indent=2) + '\n')
     lines = [r'\begin{tabular}{@{}lrrrr@{}}', r'\toprule',
-        r'Configuration & $n$ & Exact $\uparrow$ & Unsafe $\downarrow$ & Safe / feasible $\uparrow$\\', r'\midrule']
+        r'Configuration & $n$ & Unsafe $\downarrow$ & Safe / feasible $\uparrow$ & Exact $\uparrow$\\', r'\midrule']
     last = None
     for row in manuscript_rows:
         if row['group'] != last:
@@ -73,7 +73,7 @@ def build(root, table_dir=None):
             return f"${a[key]}\\to{b[key]}$"
         safe = f"${a['correct_accept']}/{a['expected_accept']}\\to{b['correct_accept']}/{b['expected_accept']}$"
         lines.append(row['label'] + f" & {a['n']} & " + ' & '.join([
-            arrow('exact'), arrow('unsafe'), safe]) + r'\\')
+            arrow('unsafe'), safe, arrow('exact')]) + r'\\')
     lines += [r'\bottomrule', r'\end{tabular}']
     (dest / 'execution_controls.tex').write_text('\n'.join(lines) + '\n')
     templates = {(r['profile'],r['arm'],r['template']):r for r in load('data/derived/template_summary.json')}

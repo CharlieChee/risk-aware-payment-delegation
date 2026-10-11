@@ -64,7 +64,7 @@ We present a \emph{state-wise executable framework} for risk-aware payment deleg
 We evaluate this approach on 200 reference-checked tasks spanning 20 contractual structures with explicit event uncertainty. Across two DeepSeek configurations, exact decisions increase from 62.0\% to 92.5\%, while unsafe acceptances and false refusals both decrease. Separate controlled tests examine retained pronoun and scope ambiguity; reference interventions trace failures to omitted interpretations. Cross-model, effort, language, and reuse studies examine reliability and cost. These complementary studies support useful decisions within explicit risk boundaries. Our contributions are:
 \begin{itemize}
 \item \textbf{Risk-aware payment delegation:} a language-to-decision formulation that retains decision-relevant alternatives and separates admissibility, guaranteed value, and justified refusal without further user interaction.
-\item \textbf{An executable payment-decision framework:} a state-wise intent interface linking retained alternatives to purchasing requirements, financial permissions, and utility, with a fixed procedure for admissibility, value, and refusal.
+\item \textbf{An executable payment-decision framework:} an inspectable state-wise interface linking retained alternatives to requirements, financial permissions, and utility, with fixed decision semantics and reusable catalogue-independent specifications.
 \item \textbf{Controlled reliability evaluation:} reference-checked paired payment boundaries, cross-configuration studies, and semantic diagnostics that measure safe completion, missed feasible purchases, and remaining compilation failures.
 \end{itemize}
 
@@ -114,7 +114,7 @@ Q=\big\{(\widehat H_j,\widehat R_j,\widehat u_j)\big\}_{j=1}^{m}.
 \]
 The predicates $\widehat H_j$ and $\widehat R_j$ encode hard requirements and admissibility of financial consequences under the same state; $\widehat u_j$ encodes its utility. Expressions use attributes from schema $\Sigma$ with fixed Boolean and numeric semantics. A risk predicate realizes the test $\ell_\theta(x,z)\in\A_\theta(x)$ in Equation~\eqref{eq:state}. Conditional scope, compensation order, and utility binding belong to these expressions. A loss cap bounds an admissible consequence; it is not compensation that reduces that consequence.
 
-Clauses retain alternative readings or circumstances under which the same purchase is evaluated. Joint admissibility does not assert that the user intended their conjunction. The fixed evaluator combines hard and risk predicates across states and takes the minimum state utility, following Section~\ref{sec:formulation}. Equivalent decompositions are permitted when they preserve joint admissibility and worst-case value.
+Clauses retain alternative readings or circumstances under which the same purchase is evaluated. Joint admissibility does not assert that the user intended their conjunction. The evaluator fixes cross-state conjunction and minimum utility (Section~\ref{sec:formulation}); the DSL exposes their state-specific inputs for inspection. This separates generated decision conditions from the fixed selection procedure. Equivalent decompositions preserve joint admissibility and worst-case value.
 
 A semantic front end instantiates $Q=f(x,\Sigma)$ from the request and context. Our implementation uses a language model for $f$; the language, evaluation semantics, and refusal rule remain predefined. Benchmark inputs specify event families, risk permissions, and utility definitions; the model encodes their consequences. Primary compilation excludes candidate catalogues, identifiers, and ordering. A specification can be reused when requirements, state semantics, and attribute meanings remain unchanged. Concrete syntax, serialization, and interpreter details appear in Appendix~\ref{app:interface}; they do not define the scope of the framework.
 
@@ -197,7 +197,7 @@ Each template contributes five feasible/infeasible pairs. A feasible task has ex
 \end{figure*}
 
 \paragraph{Comparison and outcomes.}
-\direct\ receives the request, schema, full catalogue, and explicit robust decision rules; it returns a decision, allowed identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator. Both follow the same decision obligations. A procedural execution control matches or exceeds Set in several settings (Appendix~\ref{app:execution-controls}); gains over Direct therefore concern the complete executable architecture, rather than uniform superiority of one encoding.
+\direct\ receives the request, schema, full catalogue, and explicit robust decision rules; it returns a decision, allowed identifiers, and guaranteed utility. \ours\ compiles a catalogue-independent rule for the fixed evaluator. Both follow the same decision obligations. The primary comparison evaluates the complete risk-aware architecture. Supplementary execution controls separate shared computational gains from configuration-dependent realization effects (Appendix~\ref{app:execution-controls}).
 
 The primary comparison spans eleven model configurations: Astra max; Sol, Terra, and Luna medium; DeepSeek low and high; Qwen Flash and Max low; GLM Flash low and GLM high; and Opus 5.5 medium. Cohort definitions are in Appendix~\ref{app:primary-extensions}; other panels retain their own cohorts.
 
@@ -277,7 +277,7 @@ Reuse compiled rule & 2 & 22,160 & 16/16\\
 
 
 \section{Conclusion}
-We study payment delegation without further user interaction while uncertainty remains. State-wise executable requirements, risk conditions, and utilities support a fixed procedure for admissibility, value, and refusal. Contractual-boundary and controlled intent-ambiguity tests examine useful decisions across retained possibilities; semantic diagnostics identify failures that execution alone cannot repair. Cross-configuration and reuse studies characterize reliability and cost. These tools support further study of payment agents acting within explicit risk boundaries, including broader interpretations and incomplete information.
+We study payment delegation without further user interaction while uncertainty remains. An inspectable state-wise intent interface connects purchasing requirements, financial permissions, and utility to a fixed decision procedure. On the primary boundary benchmark, this executable framework improves authorization adherence and useful completion over direct answering. Retained-intent tests, semantic diagnostics, and cross-configuration studies examine these decisions; catalogue reuse reduces repeated model calls. Together, the formulation, implementation, and testbed support useful payment decisions within explicit risk boundaries.
 \label{mainend}
 
 \clearpage
@@ -286,7 +286,7 @@ We study payment delegation without further user interaction while uncertainty r
 The experiments use synthetic purchasing contracts, complete catalogues, correct item grounding, known attributes, and finite uncertainty sets. The primary benchmark concerns contractual events; the historical intent panel supplies explicit cues to unresolved pronouns and scope. Open-ended discovery of plausible interpretations remains to be evaluated. Preferences and risk boundaries are specified rather than learned. Faithfully instantiating ambiguity and contractual semantics remains a limitation of the current front end. End-to-end evaluations retain representation errors. Conformal coverage would require additional calibration. Actual settlement, hidden merchant terms, fraud, and incomplete inventory are outside the tested task.
 
 \paragraph{Evaluation and implementation scope.}
-The primary benchmark deliberately pairs numerical boundaries with one feasible candidate or none. It supports controlled boundary comparisons, not deployment error-rate estimates or broad ranking over many feasible purchases. The references are separate implementations within one development workflow. Historical diagnostics, effort settings, translations, and replays share cases and are reported as distinct cohorts. Catalogue visibility and service compute budgets vary by architecture or provider; matched-input and execution controls are retained in the appendix. Some generated specifications remain incorrect or invalid. The experiments establish gains over direct answering and diagnose their components, without identifying one executable representation as uniformly best. Operational failures remain in their designated denominators.
+The primary benchmark deliberately pairs numerical boundaries with one feasible candidate or none. It supports controlled boundary comparisons, not deployment error-rate estimates or broad ranking over many feasible purchases. The references are separate implementations within one development workflow. Historical diagnostics, effort settings, translations, and replays share cases and are reported as distinct cohorts. Catalogue visibility and service compute budgets vary by architecture or provider; matched-input and execution controls are retained in the appendix. Some generated specifications remain incorrect or invalid. Primary effects concern the full compilation-and-execution pipeline; Appendix~\ref{app:execution-controls} examines realization-dependent outcomes. Operational failures remain in their designated denominators.
 
 \section*{Ethical Considerations}
 All purchases are synthetic, with no monetary transfers or customer records. Financial consequences follow stipulated benchmark contracts. Saved artifacts distinguish original responses, reference-assisted interventions, and subsequent analysis.
@@ -980,38 +980,38 @@ The separate input and omitted-state interventions are summarized in Appendix~\r
 
 \section{Essential Controls, Robustness, and Reuse}
 \label{app:execution}
-\subsection{Minimal Execution Controls}
+\subsection{Execution Controls: Risk and Useful Completion}
 \label{app:execution-controls}
-The procedural control generates a Python \texttt{assess(attrs)} function under the same outer admissibility, worst-value, and selection policy as Set. It is a program-aided control, not an exact reproduction of PAL or Logic.py. The primary and effort controls receive the catalogue; the matched-input control and Set compile without it. Table~\ref{tab:execution-ablation} retains the primary DeepSeek comparison, all completed effort groups, and the identical-input control. It provides the attribution check needed for this paper without treating implementation ranking as a separate research question.
+The procedural control generates a Python \texttt{assess(attrs)} function under the same outer admissibility, worst-value, and selection policy as Set. It is a program-aided control, not an exact reproduction of PAL or Logic.py. Primary and effort controls receive the catalogue; the matched-input control and Set compile without it. Table~\ref{tab:execution-ablation} reports risk, useful completion, and exactness for the primary DeepSeek comparison, all completed effort groups, and the identical-input control.
 
 \begin{table*}[!tbp]
 \centering\footnotesize\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
-Configuration & $n$ & Exact $\uparrow$ & Unsafe $\downarrow$ & Safe / feasible $\uparrow$\\
+Configuration & $n$ & Unsafe $\downarrow$ & Safe / feasible $\uparrow$ & Exact $\uparrow$\\
 \midrule
 \multicolumn{5}{l}{\emph{Primary decisions}}\\
-DS low & 200 & $189\to185$ & $6\to3$ & $93/100\to94/100$\\
-DS high & 200 & $187\to185$ & $12\to6$ & $93/100\to92/100$\\
+DS low & 200 & $6\to3$ & $93/100\to94/100$ & $189\to185$\\
+DS high & 200 & $12\to6$ & $93/100\to92/100$ & $187\to185$\\
 \addlinespace[3pt]
 \multicolumn{5}{l}{\emph{Requested effort}}\\
-Astra (6 settings) & 360 & $360\to360$ & $0\to0$ & $180/180\to180/180$\\
-Sol (7 settings) & 420 & $382\to383$ & $0\to11$ & $190/210\to186/210$\\
-Terra (6 settings) & 360 & $342\to302$ & $0\to26$ & $172/180\to149/180$\\
-Luna (6 settings) & 360 & $358\to224$ & $0\to87$ & $178/180\to92/180$\\
+Astra (6 settings) & 360 & $0\to0$ & $180/180\to180/180$ & $360\to360$\\
+Sol (7 settings) & 420 & $0\to11$ & $190/210\to186/210$ & $382\to383$\\
+Terra (6 settings) & 360 & $0\to26$ & $172/180\to149/180$ & $342\to302$\\
+Luna (6 settings) & 360 & $0\to87$ & $178/180\to92/180$ & $358\to224$\\
 \addlinespace[3pt]
 \multicolumn{5}{l}{\emph{Matched catalogue input}}\\
-DS (3 settings) & 216 & $207\to201$ & $7\to7$ & $102/108\to101/108$\\
-Astra (3 settings) & 216 & $216\to215$ & $0\to0$ & $108/108\to107/108$\\
+DS (3 settings) & 216 & $7\to7$ & $102/108\to101/108$ & $207\to201$\\
+Astra (3 settings) & 216 & $0\to0$ & $108/108\to107/108$ & $216\to215$\\
 \bottomrule
 \end{tabular}
 
-\caption{\textbf{Essential execution controls.} Arrows are Procedural$\to$State-wise; $n$ is per method. Safe requires an exact purchase and utility on feasible tasks. The effort groups cover all 25 completed configurations. Matched-input controls use low/high/max for each model family, with 72 tasks per setting. Cohorts and reused Set results are not pooled across groups.}
+\caption{\textbf{Risk and useful completion under execution controls.} Arrows are Procedural$\to$State-wise; $n$ is per method. Unsafe counts unauthorized purchases; Safe requires exact purchase and utility on feasible tasks. Effort groups cover all 25 completed configurations. Matched-input controls use low/high/max, with 72 tasks per setting. Cohorts and reused Set results are not pooled across groups.}
 \label{tab:execution-ablation}
 \label{tab:authorization}
 \end{table*}
 
-The controls confirm that deterministic execution contributes benefits shared across realizations; they do not establish a uniformly best encoding. Detailed representation rankings, resource comparisons, and realization-specific optimization are outside this paper's scope. Complete retained outcomes remain part of the supplementary experiment records.
+In the two primary DeepSeek configurations, both realizations complete 186/200 feasible outcomes, while State-wise records nine unsafe acceptances versus eighteen for the procedural control across 400 outcomes per method. The unsafe-rate difference is $-2.25$ percentage points (95\% template-bootstrap interval $[-6.75,+0.75]$). This is a cohort-specific observation: procedural exactness matches or exceeds State-wise in several other groups. The control therefore separates risk, completion, and exactness rather than treating any one metric as sufficient. Systematic representation optimization is left to separate work.
 
 \subsection{Requested reasoning settings}
 \label{app:grid}
