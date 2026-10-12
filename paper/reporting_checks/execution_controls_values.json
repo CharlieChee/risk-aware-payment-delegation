@@ -1,5 +1,5 @@
 {
-  "direction": "Procedural -> State-wise",
+  "direction": "Set-Py -> Set (DSL)",
   "decisions": [
     {
       "group": "Primary decisions",
@@ -16,12 +16,12 @@
       },
       "state_wise": {
         "n": 200,
-        "exact": 185,
+        "exact": 184,
         "unsafe": 3,
         "false_refusal": 1,
         "expected_accept": 100,
         "correct_accept": 94,
-        "other": 11
+        "other": 12
       }
     },
     {
@@ -49,48 +49,48 @@
     },
     {
       "group": "Requested effort",
-      "label": "Astra (6 settings)",
+      "label": "Astra (5 settings)",
       "control": "python_fresh",
       "procedural": {
-        "n": 360,
-        "exact": 360,
+        "n": 300,
+        "exact": 300,
         "unsafe": 0,
         "false_refusal": 0,
-        "expected_accept": 180,
-        "correct_accept": 180,
+        "expected_accept": 150,
+        "correct_accept": 150,
         "other": 0
       },
       "state_wise": {
-        "n": 360,
-        "exact": 360,
+        "n": 300,
+        "exact": 300,
         "unsafe": 0,
         "false_refusal": 0,
-        "expected_accept": 180,
-        "correct_accept": 180,
+        "expected_accept": 150,
+        "correct_accept": 150,
         "other": 0
       }
     },
     {
       "group": "Requested effort",
-      "label": "Sol (7 settings)",
+      "label": "Sol (6 settings)",
       "control": "python_fresh",
       "procedural": {
-        "n": 420,
-        "exact": 382,
+        "n": 360,
+        "exact": 360,
         "unsafe": 0,
         "false_refusal": 0,
-        "expected_accept": 210,
-        "correct_accept": 190,
-        "other": 38
+        "expected_accept": 180,
+        "correct_accept": 180,
+        "other": 0
       },
       "state_wise": {
-        "n": 420,
-        "exact": 383,
-        "unsafe": 11,
+        "n": 360,
+        "exact": 346,
+        "unsafe": 10,
         "false_refusal": 1,
-        "expected_accept": 210,
-        "correct_accept": 186,
-        "other": 25
+        "expected_accept": 180,
+        "correct_accept": 170,
+        "other": 3
       }
     },
     {
@@ -341,12 +341,12 @@
       },
       "state_wise": {
         "n": 200,
-        "exact": 185,
+        "exact": 184,
         "unsafe": 3,
         "false_refusal": 1,
         "expected_accept": 100,
         "correct_accept": 94,
-        "other": 11
+        "other": 12
       }
     },
     {
@@ -374,48 +374,48 @@
     },
     {
       "group": "Requested effort",
-      "label": "Astra (6 settings)",
+      "label": "Astra (5 settings)",
       "control": "python_fresh",
       "procedural": {
-        "n": 360,
-        "exact": 360,
+        "n": 300,
+        "exact": 300,
         "unsafe": 0,
         "false_refusal": 0,
-        "expected_accept": 180,
-        "correct_accept": 180,
+        "expected_accept": 150,
+        "correct_accept": 150,
         "other": 0
       },
       "state_wise": {
-        "n": 360,
-        "exact": 360,
+        "n": 300,
+        "exact": 300,
         "unsafe": 0,
         "false_refusal": 0,
-        "expected_accept": 180,
-        "correct_accept": 180,
+        "expected_accept": 150,
+        "correct_accept": 150,
         "other": 0
       }
     },
     {
       "group": "Requested effort",
-      "label": "Sol (7 settings)",
+      "label": "Sol (6 settings)",
       "control": "python_fresh",
       "procedural": {
-        "n": 420,
-        "exact": 382,
+        "n": 360,
+        "exact": 360,
         "unsafe": 0,
         "false_refusal": 0,
-        "expected_accept": 210,
-        "correct_accept": 190,
-        "other": 38
+        "expected_accept": 180,
+        "correct_accept": 180,
+        "other": 0
       },
       "state_wise": {
-        "n": 420,
-        "exact": 383,
-        "unsafe": 11,
+        "n": 360,
+        "exact": 346,
+        "unsafe": 10,
         "false_refusal": 1,
-        "expected_accept": 210,
-        "correct_accept": 186,
-        "other": 25
+        "expected_accept": 180,
+        "correct_accept": 170,
+        "other": 3
       }
     },
     {
@@ -517,10 +517,10 @@
       "profile": "deepseek_pooled",
       "baseline": "python_fresh",
       "metric": "exact",
-      "delta_percentage_points": -1.4999999999999996,
+      "delta_percentage_points": -1.7499999999999998,
       "cluster_bootstrap_95_interval_pp": [
-        -5.499999999999998,
-        2.750000000000001
+        -5.500000000000002,
+        2.5000000000000004
       ],
       "clusters": 20,
       "bootstrap_draws": 20000

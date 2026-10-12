@@ -1,0 +1,37 @@
+\section{Why Safe Choices Can Hide Authorization Errors}
+\label{sec:analysis}
+\label{sec:verification}
+Authorization determines which purchases enter the choice set; utility determines which of them is selected. An error in either quantity can change the decision, but errors can also conceal one another.
+
+\subsection{Selected Actions and Admitted Domains}
+Write $F_C=C\cap F(x)$ for the reference-authorized domain. A selected purchase $z^\star$ is safe when $z^\star\in F_C$. Soundness of the generated authorization domain is stronger:
+\begin{equation}
+\widehat F_C\subseteq F_C.
+\label{eq:domain-soundness}
+\end{equation}
+The difference $\widehat F_C\setminus F_C$ contains unauthorized offers the rule admits, including those never selected. Checking one safe action cannot establish that this difference is empty. Moreover, safety alone does not establish an exact decision: the purchase must maximize reference worst-case utility and report its value correctly.
+
+The reverse difference, $F_C\setminus\widehat F_C$, contains authorized offers the rule excludes. Such exclusions can cause false refusal or remove the best purchase. A rule admitting nothing is sound by Equation~\eqref{eq:domain-soundness}, yet may fail to complete an authorized task. Refusal is correct only when no reference-authorized purchase has positive guaranteed value. Our evaluation therefore checks useful completion and refusal alongside unsafe acceptance and admitted domains.
+
+\subsection{Omitted States Affect Permission and Value}
+For fixed $x$, consider a nonempty retained subset $\Theta'\subseteq\Theta$, with all remaining state functions unchanged. Equations~\eqref{eq:common} and~\eqref{eq:robust} imply
+\begin{equation}
+F_\Theta\subseteq F_{\Theta'},\qquad
+\psi_{\Theta'}(z)\ge\psi_\Theta(z).
+\label{eq:omission}
+\end{equation}
+Removing conjuncts cannot shrink the admissible set, and removing terms cannot lower the worst-case value. A single omission can thus weaken authorization and inflate the value used for selection. Both inequalities can be equalities: a redundant state changes neither quantity. The relevant issue is whether its conditions affect the aggregate, not the number of labels emitted. Equivalent merged conditions preserve the decision semantics.
+
+An interpretation can bind several quantities at once. In the hotel tasks, ``his room'' links the same guest to an arrival-dependent cancellation deadline, the fee checked against the authorized cap, and the utility penalty. Omitting that reading can remove both a permission check and a source of low value. Binding those quantities to different guests is another error; Equation~\eqref{eq:omission} applies specifically to deletion with the other state functions held fixed. Appendix~\ref{app:intent} gives the task semantics.
+
+\subsection{Availability and Ranking Can Mask Permission Errors}
+Suppose a fixed rule admits two offers, a reference-safe $a$ and an unauthorized $b$, with
+\begin{equation}
+\widehat\psi(a)>\widehat\psi(b)>0.
+\label{eq:masking}
+\end{equation}
+If these are the only admitted offers, the rule selects $a$. Its safe choice leaves the permission for $b$ untested. Removing $a$ makes $b$ the positive-value maximizer without changing either offer's conditions. More generally, a singleton catalogue exposes any unauthorized offer that the frozen rule admits with positive estimated value. An admitted offer with nonpositive value need not be selected, even when it is the only option. Domain errors and unsafe purchases therefore need separate measurements.
+
+The same separation explains component interventions. Replacing utility by a function $v$ for which $v(b)>\max\{0,v(a)\}$ changes the choice to $b$ while leaving permission unchanged. Even a correct utility function cannot repair an overbroad authorization domain: an unauthorized purchase can have high task value. Conversely, correcting permission can prevent an unsafe choice while leaving incorrect values or rankings among the remaining offers.
+
+These observations motivate two checks in Section~\ref{sec:permissions}. Catalogue replays hold generated rules and the selector fixed while changing available offers. Component interventions substitute reference permission or utility separately. They test whether availability and ranking conceal an existing permission error; their selected cases establish a mechanism rather than its prevalence in deployment.

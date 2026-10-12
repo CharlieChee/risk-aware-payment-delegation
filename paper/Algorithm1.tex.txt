@@ -1,13 +1,12 @@
-% Preamble: \usepackage{float}; \floatstyle{ruled}; \newfloat{algorithm}{tbp}{loa}; \floatname{algorithm}{Algorithm}
 \begin{algorithm}[t]
-\caption{Compile once; evaluate risk and value}
+\caption{Risk-aware purchase selection}
 \label{alg:decision}
 \small
 \textbf{Input:} request/context $x$, schema $\Sigma$, catalogue $C$\par
 \textbf{Output:} \textsc{Accept}, \textsc{Refuse}, or \textsc{Fail}, with diagnostics\par\smallskip
 \begin{tabular}{@{}r@{\quad}p{.88\columnwidth}@{}}
-1 & $Q\leftarrow f(x,\Sigma)$ \quad\emph{model compilation; no $C$}\\
-2 & Decode and validate $Q$ against the interface.\\
+1 & $Q\leftarrow f(x,\Sigma)$ \quad\emph{derive conditions; no $C$}\\
+2 & Validate the generated conditions and their types.\\
 3 & If invalid, return \textsc{Fail}(compilation).\\
 4 & Evaluate every generated state on every $z\in C$; retain the condition/value matrix.\\
 5 & If execution is invalid, return \textsc{Fail}(execution).\\

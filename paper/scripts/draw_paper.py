@@ -2,6 +2,8 @@
 from pathlib import Path
 import json
 import sys
+import re
+from matplotlib.text import Text
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -19,10 +21,53 @@ def data(n):return json.loads((R/'data/derived'/f'{n}.json').read_text())
 def diag(n):return json.loads((R/'data/diagnostics'/f'{n}.json').read_text())
 INK='#1F2937';MUTED='#5E6C7B';LINE='#DCE2E7';DIRECT='#53677F';SET='#007F82';PALE='#E8F4F3';RED='#B34438';GREY='#8A96A5'
 plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial','DejaVu Sans'],'font.size':9,'axes.labelsize':9,'axes.titlesize':10,'xtick.labelsize':8.5,'ytick.labelsize':8.5,'legend.fontsize':8.5,'text.color':INK,'axes.labelcolor':INK,'xtick.color':MUTED,'ytick.color':MUTED,'axes.edgecolor':'#B7C1CB','axes.linewidth':.6,'axes.spines.top':False,'axes.spines.right':False,'axes.spines.left':False,'axes.spines.bottom':False,'xtick.major.size':0,'ytick.major.size':0,'pdf.fonttype':42,'ps.fonttype':42,'savefig.facecolor':'white','legend.frameon':False,'lines.solid_capstyle':'round','axes.unicode_minus':False,'mathtext.fontset':'dejavusans'})
+plt.rcParams.update({'hatch.color':'black', 'hatch.linewidth':.7})
 manifest=[]
 selected_figures=set(sys.argv[2:]) if len(sys.argv)>1 and sys.argv[1]=='--only' else set()
+PAPER_FIGURES={
+ '14_safe_completion', '16_retained_intent',
+ '13_authorization_diagnostics', '15_configuration_robustness',
+}
+def publication_style(fig):
+ """Readable, bold black typography and framed axes at the final paper size."""
+ for ax in fig.axes:
+  for spine in ax.spines.values():
+   spine.set_visible(True)
+   spine.set_edgecolor('black')
+   spine.set_linewidth(1.25)
+  ax.tick_params(axis='both', which='major', colors='black',
+                 width=1.15, length=3, direction='out')
+  for label in (ax.xaxis.label, ax.yaxis.label):
+   label.set_fontsize(max(10, label.get_fontsize()*1.15))
+  for container in ax.containers:
+   if hasattr(container, 'patches'):
+    for patch in container.patches:
+     patch.set_edgecolor('black')
+     patch.set_linewidth(.75)
+ # Apply this once, after the plot has created its tick and legend labels.
+ for artist in fig.findobj(Text):
+  artist.set_color('black')
+  artist.set_fontweight('bold')
+  if artist not in [label for ax in fig.axes for label in (ax.xaxis.label, ax.yaxis.label)]:
+   artist.set_fontsize(max(9, artist.get_fontsize()*1.15))
+ legends=list(fig.legends)+[ax.get_legend() for ax in fig.axes if ax.get_legend()]
+ for legend in legends:
+  legend.set_frame_on(True)
+  frame=legend.get_frame()
+  frame.set_facecolor('white')
+  frame.set_edgecolor('black')
+  frame.set_linewidth(1.25)
+  frame.set_alpha(1)
+  frame.set_boxstyle('square', pad=.25)
+  for label in legend.get_texts():
+   label.set_fontsize(max(10, label.get_fontsize()))
+
 def save(fig,n,sources,role):
  if not selected_figures or n in selected_figures:
+  for artist in fig.findobj(Text):
+   old = artist.get_text().replace('Set-DSL', 'Set').replace('Set (DSL)', 'Set').replace('Set contract', 'Set')
+   artist.set_text(old)
+  if n in PAPER_FIGURES:publication_style(fig)
   for ext in ['pdf','svg','png']:fig.savefig(F/f'{n}.{ext}',dpi=400,bbox_inches='tight',pad_inches=.065)
  manifest.append(dict(figure=n,sources=sources,placement=role,dpi=400));plt.close(fig)
 def panel(ax,l,t):ax.set_title(f'({l})  {t}',loc='left',fontweight='bold',pad=13)
@@ -203,7 +248,7 @@ save(draw_completion(R),'14_safe_completion',primary['sources']+[
  'data/derived/template_summary.json',
  'data/supplements/evaluation_redesign_20261010/verified_claims.json'], 'main')
 save(draw_robustness(R),'15_configuration_robustness',[
- 'data/derived/grid_summary.json','data/derived/language_all_methods_matched.json',REPORT], 'appendix')
+ 'data/derived/grid_summary.json','data/derived/language_all_methods_matched.json',REPORT], 'main')
 save(draw_intent(R),'16_retained_intent',[
  'data/supplements/intent_ambiguity_20261011/parameter_summary.json',
  'data/supplements/intent_ambiguity_20261011/parameter_rows.json'], 'main')

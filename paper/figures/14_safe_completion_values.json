@@ -8,7 +8,7 @@
       "partial": false,
       "n": 200,
       "direct_exact": 117,
-      "set_exact": 185
+      "set_exact": 184
     },
     {
       "id": 2,
@@ -433,8 +433,8 @@
       "template": "c1",
       "n": 10,
       "direct": 6,
-      "set": 10,
-      "gain": 4
+      "set": 9,
+      "gain": 3
     },
     {
       "profile": "ds_flash_high",
@@ -592,10 +592,11 @@
   "joint_inclusion": "All 200-task configurations with reported safe completion and unsafe acceptance. No imputation.",
   "complete_configurations": 11,
   "partial_configurations": 0,
-  "template_cohort": "Original DeepSeek low/high, all 20 templates, 10 tasks per template and method.",
+  "template_cohort": "DeepSeek low/high, all 20 templates, 10 tasks per template and method; Algorithm 1 decisions.",
   "primary_sources": [
     "data/derived/main_summary.json",
     "data/supplements/qwen_primary200/summary.json",
+    "data/supplements/primary_certification_20261011/replay.json",
     "data/supplements/primary200_glm53_flash_low/summary.json",
     "data/supplements/primary200_gpt56_luna_medium/summary.json",
     "data/supplements/primary200_gpt56_sol_medium/summary.json",
@@ -605,7 +606,7 @@
     "data/author_reports/20261011_confirmed_aggregates.json",
     "data/author_reports/20261011_primary200_completion.json"
   ],
-  "template_source": "data/derived/template_summary.json",
+  "template_source": "data/supplements/primary_certification_20261011/replay.json",
   "pooled_deepseek": {
     "direct": {
       "n": 400,
@@ -622,12 +623,12 @@
       "n": 400,
       "distinct_tasks": 200,
       "profiles": 2,
-      "exact": 370,
+      "exact": 369,
       "unsafe": 9,
       "false_refusal": 1,
       "feasible_trials": 200,
       "safe_exact_completion": 186,
-      "other_failures": 20
+      "other_failures": 21
     }
   },
   "joint_pooled": {
@@ -675,7 +676,7 @@
       "label": "Returns",
       "n_per_method": 100,
       "direct_exact": 59,
-      "set_exact": 96
+      "set_exact": 95
     },
     {
       "family": "d",
@@ -702,12 +703,16 @@
     "jitter": false,
     "imputation": false,
     "bar_value_labels": true,
+    "bar_width_points": 13.2,
+    "bar_gap_points": 4.8,
+    "equal_physical_bar_widths": true,
     "reported_percentage_decimal_places": 1,
     "value_label_decimal_overrides": {
       "opus55_medium": 0
     },
-    "sample_sizes_in_caption_and_appendix": false,
+    "sample_sizes_in_caption_and_appendix": true,
     "sample_size_locations": [
+      "Figure caption",
       "Appendix B",
       "Appendix C"
     ],

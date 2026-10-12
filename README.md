@@ -111,3 +111,8 @@ formatting files retain their own notices; see [NOTICE](NOTICE).
 
 The [result-to-evidence map](docs/evidence_map.md) links the manuscript's claims,
 cohorts, retained responses, and offline verification commands.
+
+Implementation controls and their original provenance are indexed in
+[the code supplement](docs/implementation_archive/README.md). The manuscript
+reports the original primary Set cohort and groups the complete frozen-rule
+diagnostic collection by effort setting.

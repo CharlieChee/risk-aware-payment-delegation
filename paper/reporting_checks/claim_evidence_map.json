@@ -6,32 +6,32 @@
     "scope": "Target decision semantics are defined from the request; compiled semantics may differ and are evaluated end to end. No unique interpretation, new max-min theorem, or conformal calibration is assumed."
   },
   {
-    "claim": "Provide an ambiguity-preserving state-wise representation and fixed executable risk/value decision framework",
-    "object": "Predefined language/interface and aggregation; model-generated per-request hard/risk/utility; fixed evaluator in Algorithm 1",
-    "evidence": "vendor/engine.py; runtime.py; algorithm_code_alignment.json; algorithm_contract_check.json (10 local checks)",
-    "scope": "Exact optimization requires complete catalogue coverage, decided admissibility for every candidate, and known utilities for every admissible candidate. Algorithm 1 returns Fail(uncertified) before selection otherwise. Historical outcome accuracy is separate from optimality or infeasibility certification."
+    "claim": "Execute purchase, refusal, or failure under the fixed authorization and value policy",
+    "object": "Generated state-dependent conditions evaluated on a complete finite catalogue",
+    "evidence": "Section 3.2; Algorithm 1; risk_payment/decision.py; algorithm_contract_check.json (10 deterministic checks)",
+    "scope": "Exact optimization requires complete catalogue coverage, decided admissibility for every candidate, and known utilities for every admissible candidate. Algorithm 1 returns Fail(uncertified) before selection otherwise."
   },
   {
     "claim": "Improve safe completion on controlled financial boundaries",
     "object": "200 tasks, 20 templates, 100 feasibility pairs, 57 events",
-    "evidence": "DeepSeek exact 248/400 to 370/400; unsafe 79 to 9; false refusal 53 to 1; complete primary configurations and all failures retained",
+    "evidence": "DeepSeek exact 248/400 (62.0%) to 369/400 (92.25%); unsafe 79 to 9; false refusal 53 to 1; complete primary configurations and all failures retained. The pooled exactness gain is 30.25 percentage points, with a 95% template-bootstrap interval of [22.75, 37.25].",
     "scope": "Architectural Direct/Set comparison; not a representation-only causal effect or deployment incidence estimate",
     "main_location": "Figure 1: 11 configurations with n=200 per method; pooled safety/completion over 2200 outcomes and 1100 feasible tasks per method; four contract-family rates for DeepSeek low/high. The appendix gives all 20 DeepSeek template counts."
   },
   {
     "claim": "Characterize scope across model, effort, language and reuse",
     "object": "Separate fixed cohorts with explicit denominators",
-    "evidence": "11 reported primary configurations; 25 complete effort profiles; 4 original language profiles; reuse 175429 to 22160 tokens.",
-    "scope": "24/25 effort improvements, including one decline; updated Astra language n=200, original DS language n=60; no extrapolation or pooling",
-    "main_location": "Table 2 research questions; Figure 1 primary model coverage; Figure 4 in Appendix E for effort and language; Table 4 reuse.",
-    "effort_language_reporting": "Figure 4 omits Astra in both panels. All 19 complete GPT-5.6 settings are in Table 21, including Sol ultra; 18 improve and one declines. DeepSeek language cells each contain 60 tasks."
+    "evidence": "11 primary configurations; 18 reported Sol/Terra/Luna reasoning settings; six DeepSeek setting-language comparisons; reuse 175429 to 22160 tokens.",
+    "scope": "17/18 displayed reasoning settings improve, with one decline; reported panels retain their own denominators.",
+    "main_location": "Section 5.5 and Figure 4; full robustness and resource tables in Appendix E.",
+    "effort_language_reporting": "Figure 4 and Table 18 cover six settings per GPT-5.6 family, off through max. DeepSeek language cells contain 60 tasks."
   },
   {
-    "claim": "Explain remaining semantic failures",
+    "claim": "Test how candidate availability and utility ranking conceal or expose permission errors",
     "object": "Frozen-rule replays and offline component interventions",
     "evidence": "648 frozen DeepSeek artifacts, 1296 replays, 23 unsafe domains, 8 unsafe-only selections, and 12 invalid executions per condition. Six reference-assisted interventions on 16 selected faulty outputs.",
     "scope": "Diagnostic evidence, not runtime repair or proof of universal semantic fidelity",
-    "main_location": "Section 5.3, Figure 3, and Table 3. Appendix F retains sampling, full replay counts, and input interventions."
+    "main_location": "Section 4 analysis; Section 5.4, Figure 3, and Table 2; full protocols and counts in Appendix F."
   },
   {
     "claim": "Incorporate author-confirmed results from another computer",
@@ -44,12 +44,12 @@
     "evidence": "data/supplements/intent_ambiguity_20261011/parameter_summary.json",
     "scope": "Three explicitly signalled semantic families; 66 variants, 616 recorded trials; retrospective, separate cohorts; not open-ended discovery.",
     "diagnostics": "One request / 36 input interventions; 16 selected rules omit the Li interpretation.",
-    "main_location": "Figure 2 and Table 16 give the four complete intent cohorts. The component intervention is in Table 3 and the input intervention in Appendix F.",
+    "main_location": "Section 5.3, Figure 2, and Table 13 give the four complete intent cohorts. Component interventions are in Table 2 and input interventions in Appendix F.",
     "reporting_units": "544 recorded API outcomes comprise 294 complete paired Direct/Set outcomes, 178 merged-expression controls, and 72 other Direct/Set outcomes. The displayed panel has 147 matched task-configuration units; Appendix D states the relationship."
   },
   {
     "claim": "Summarize the evaluation evidence actually reported in the paper",
-    "evidence": "Table 2 and the result-to-artifact map in Appendix B.6",
+    "evidence": "Table 1 and the result-to-artifact map in Appendix B.5",
     "scope": "Four research questions connect task construction, safe completion, retained intent, semantic diagnostics, and operational checks. Cohorts retain separate denominators."
   },
   {
@@ -59,19 +59,19 @@
     "scope": "Author-confirmed n=200 per method: exact 142 to 194, unsafe 8 to 1, refusal 14 to 1, other 36 to 4, safe completion 76 to 98 of 100 feasible. Earlier pilot and review records remain separate."
   },
   {
-    "claim": "Use an intent DSL as the executable intermediate representation",
-    "object": "Predefined language L; request-specific Q=f(x,Sigma); fixed state-wise predicates and value semantics",
-    "evidence": "Section 3.2 and Appendix A; unchanged interface/evaluator code; ThingTalk and financial-contract language precedents",
-    "scope": "JSON is the current serialization, not the framework definition; no additional semantic soundness or syntax-independence accuracy guarantee"
+    "claim": "Analyze how omitted states affect authorization and guaranteed value",
+    "object": "Reference domains and worst-case values under a nonempty retained subset of states",
+    "evidence": "Section 4.2, Equation (6); direct consequences of intersection and infimum monotonicity",
+    "scope": "All remaining state functions are held fixed. The inequalities need not be strict, and equivalent aggregate representations preserve semantics."
   },
   {
     "claim": "Explain the method with an observed request-to-decision trace",
-    "evidence": "Table 1; Appendix A.4; bilingual/observed_trace/F02a.json and F02b.json; scripts/verify_observed_trace.py",
-    "scope": "Clean-context Astra max, first archived Set sample for two capability cases. Translation and notation shortening preserve the generated expressions; no new model call or condition repair."
+    "evidence": "Appendix A.3, Table 3; data/supplements/primary_trace_20261011/trace.json; scripts/verify_primary_trace.py",
+    "scope": "Recorded DeepSeek high primary compilation with no catalogue. Equivalent top-four loss notation is checked against the actual generated expression and the reference ledger for 256 candidates and 57 events (14,592 checks); current full-domain execution reproduces its purchase and utility. The earlier observed ticket trace is preserved in Appendix A.4."
   },
   {
-    "claim": "Distinguish archived action agreement from complete-domain certification",
-    "evidence": "Appendix A.2 and semantic_revision_audit.json",
-    "scope": "Read-only audit of primary, complete-effort, and language execution matrices identifies eight unresolved no-action records across overlapping cohorts, five with matching outcomes. Outcomes and source data are unchanged; incomplete certification is not asserted to be exact solving."
+    "claim": "Report the primary DeepSeek decisions under Algorithm 1",
+    "evidence": "Appendix A.2; data/supplements/primary_certification_20261011/replay.json; output/final_primary_results.json; scripts/certified_primary.py",
+    "scope": "All 400 retained DeepSeek specifications use the complete-domain evaluator: low 184/200, high 185/200, pooled 369/400. Unsafe=9, false refusal=1, safe completion=186/200, Other=21. All related summaries, template results, figures and intervals use these decisions. Other cohorts retain their stated execution and scoring protocols."
   }
 ]

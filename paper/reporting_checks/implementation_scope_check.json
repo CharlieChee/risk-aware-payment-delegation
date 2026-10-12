@@ -1,0 +1,146 @@
+{
+  "unchanged_data_files": 374,
+  "unchanged_reporting_tables": [
+    "main",
+    "primary_templates",
+    "intervals",
+    "appendix_grid",
+    "appendix_language"
+  ],
+  "contributions_definitions_and_analysis_unchanged": true,
+  "unchanged_figure_assets": 32,
+  "no_new_model_calls": true,
+  "diagnostic_aggregation": {
+    "source": "data/diagnostics/stress_summary.json",
+    "base_tasks": 72,
+    "artifacts": 648,
+    "replays": 1296,
+    "aggregation": "Pool all recorded source groups within each effort setting.",
+    "source_groups": [
+      {
+        "profile": "ds_flash_low",
+        "arm": "python_cached",
+        "n": 72,
+        "unsafe_domain": 2,
+        "mixed_unsafe": 0,
+        "unsafe_only": 1,
+        "mixed_invalid": 1,
+        "only_invalid": 1
+      },
+      {
+        "profile": "ds_flash_low",
+        "arm": "python_fresh",
+        "n": 72,
+        "unsafe_domain": 2,
+        "mixed_unsafe": 0,
+        "unsafe_only": 0,
+        "mixed_invalid": 3,
+        "only_invalid": 3
+      },
+      {
+        "profile": "ds_flash_low",
+        "arm": "set",
+        "n": 72,
+        "unsafe_domain": 1,
+        "mixed_unsafe": 0,
+        "unsafe_only": 1,
+        "mixed_invalid": 3,
+        "only_invalid": 3
+      },
+      {
+        "profile": "ds_flash_high",
+        "arm": "python_cached",
+        "n": 72,
+        "unsafe_domain": 1,
+        "mixed_unsafe": 0,
+        "unsafe_only": 1,
+        "mixed_invalid": 0,
+        "only_invalid": 0
+      },
+      {
+        "profile": "ds_flash_high",
+        "arm": "python_fresh",
+        "n": 72,
+        "unsafe_domain": 5,
+        "mixed_unsafe": 0,
+        "unsafe_only": 0,
+        "mixed_invalid": 0,
+        "only_invalid": 0
+      },
+      {
+        "profile": "ds_flash_high",
+        "arm": "set",
+        "n": 72,
+        "unsafe_domain": 2,
+        "mixed_unsafe": 0,
+        "unsafe_only": 0,
+        "mixed_invalid": 1,
+        "only_invalid": 1
+      },
+      {
+        "profile": "ds_flash_max",
+        "arm": "python_cached",
+        "n": 72,
+        "unsafe_domain": 4,
+        "mixed_unsafe": 0,
+        "unsafe_only": 1,
+        "mixed_invalid": 0,
+        "only_invalid": 0
+      },
+      {
+        "profile": "ds_flash_max",
+        "arm": "python_fresh",
+        "n": 72,
+        "unsafe_domain": 2,
+        "mixed_unsafe": 0,
+        "unsafe_only": 1,
+        "mixed_invalid": 0,
+        "only_invalid": 0
+      },
+      {
+        "profile": "ds_flash_max",
+        "arm": "set",
+        "n": 72,
+        "unsafe_domain": 4,
+        "mixed_unsafe": 0,
+        "unsafe_only": 3,
+        "mixed_invalid": 4,
+        "only_invalid": 4
+      }
+    ],
+    "reported_rows": [
+      {
+        "profile": "ds_flash_low",
+        "label": "DS low",
+        "n": 216,
+        "unsafe_domain": 5,
+        "mixed_unsafe": 0,
+        "unsafe_only": 2,
+        "mixed_invalid": 7,
+        "only_invalid": 7
+      },
+      {
+        "profile": "ds_flash_high",
+        "label": "DS high",
+        "n": 216,
+        "unsafe_domain": 8,
+        "mixed_unsafe": 0,
+        "unsafe_only": 1,
+        "mixed_invalid": 1,
+        "only_invalid": 1
+      },
+      {
+        "profile": "ds_flash_max",
+        "label": "DS max",
+        "n": 216,
+        "unsafe_domain": 10,
+        "mixed_unsafe": 0,
+        "unsafe_only": 5,
+        "mixed_invalid": 4,
+        "only_invalid": 4
+      }
+    ],
+    "records_modified": false,
+    "new_model_calls": 0
+  }
+}

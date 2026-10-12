@@ -1,51 +1,33 @@
-\section{Targeted Semantic Diagnostics}
+\section{Authorization-Error Diagnostics}
 \label{app:permissionaudit}
 \subsection{Frozen-rule replay}
-This diagnostic uses 648 frozen DeepSeek artifacts: 72 tasks, low/high/max settings, and three configurations (Set, matched-input Set-Py, and catalogue-visible Set-Py). The tasks cross six templates, three authorization conditions, two catalogue sizes, and feasible/infeasible pairs. All realizations use the same selector without private reference information. The artifacts are executed on two new catalogues: 1,296 local replays, with no further model calls. Legal candidate attributes are retained, administrative cost is set to zero, and only the first component's replacement/loss attribute changes. The mixed catalogue targets the following reference worst losses in integer subunits:
+This study tests the availability mechanism in Section~\ref{sec:analysis}: a frozen rule may admit an unauthorized offer without selecting it when a safe alternative is available.
+We use a pooled collection of 648 saved decision specifications from our framework, covering 72 tasks under DeepSeek low, high, and max settings, with 216 outputs per setting. The tasks cross six templates, three authorization conditions, two catalogue sizes, and feasible/infeasible pairs. Each specification is evaluated on two new catalogues, giving 1,296 local replays without further model calls. Its decision conditions and selector remain fixed between replays, with no private reference information. Generation settings, catalogue visibility during preparation, and per-output provenance are indexed in the artifact. Legal candidate attributes are retained, administrative cost is set to zero, and only the first component's replacement/loss attribute changes. The mixed catalogue targets the following reference worst losses in integer subunits:
 \begin{quote}\small
 100000, 199999, 200000, 200001, 210000, 225000, 250000, 300000, 350000, 399999, 400000, 400001, 500000, 600000.
 \end{quote}
-The second catalogue contains only the 400,000-subunit offer, above the 200,000 limit. Other hard constraints remain satisfied. Numerical and symbolic references agree on 53,460 candidate--state checks. These directed perturbations test the generated consequence functions, not a randomly sampled purchasing population.
+The second catalogue contains only the 400,000-subunit offer, above the 200,000 limit. Other hard constraints remain satisfied. Numerical and symbolic references agree on 53,460 candidate--state checks. The catalogue changes are chosen to probe the generated consequence functions, so their outcomes do not estimate error rates in a randomly sampled purchasing population.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
 \input{tables/appendix_replay}
-\caption{DeepSeek frozen-rule replay counts for low, high, and max settings: 72 artifacts per row and two catalogues per artifact. Unsafe domains and choices are counted separately; invalid executions are not credited as safe. The primary DeepSeek plot pools the three realizations within each configuration.}
+\caption{Frozen-specification replay results, grouped by DeepSeek effort setting. Each row pools 216 saved outputs collected on 72 tasks. Unsafe domain counts specifications admitting an unauthorized offer; Unsafe selection counts unauthorized purchases. Invalid counts refer to the mixed and unsafe-only catalogues, respectively; invalid executions are not treated as safe.}
 \label{tab:replay}
 \end{table*}
 
-Valid mixed-catalogue replays make no unsafe selections, while 23 artifacts admit an unsafe candidate. Unsafe-only replays yield eight unsafe selections; each condition has 12 invalid executions. Table~\ref{tab:replay} gives the DeepSeek counts. The visible-input realization additionally tests transfer from its compilation catalogue; matched-input realizations exclude catalogue attributes during compilation.
-
-\begin{table}[t]
-\centering\small\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}lrrr@{}}
-\toprule
-Input & Exact/12 & Valid/12 & Overbroad\\
-\midrule
-Original & 5 & 11 & 6\\
-Catalogue withheld & 6 & 12 & 5\\
-Reference interpretations & 11 & 11 & 0\\
-\bottomrule
-\end{tabular}
-\caption{One ambiguous request; six configurations and two samples per condition. Unsafe domains are counted among valid executable outputs (11, 12, and 11 respectively). All outcomes remain in the exactness denominators.}
-\label{tab:intent-input}
-\end{table}
+The results are grouped by effort setting. Outputs share tasks and are not treated as independent task samples.
 
 \subsection{Omitted-interpretation and component interventions}
 \label{app:oracle}
-The source pool contains 56 Qwen/GLM Set generations for one ambiguous ticket request and two catalogues (128 and 512 offers). Sixteen outputs admit a reference-unsafe candidate and are selected for diagnosis. Each omits the reading in which ``his'' refers to Li, retaining only Zhang's fee-free-refund conditions and delay-weighted utility. These are 16 faulty outputs, not 16 independent requests. Restoring Li's state restores its conditions and utility; duplicating Zhang's label cannot do so.
+The source pool contains 56 Qwen/GLM Set generations for one ambiguous ticket request and two catalogues (128 and 512 offers). We select sixteen outputs that admit a reference-unsafe candidate. Each omits the reading in which ``his'' refers to Li and retains only Zhang's fee-free-refund conditions and delay-weighted utility. These are 16 faulty outputs, not 16 independent requests. Restoring Li's state adds its conditions and utility. Duplicating Zhang's label leaves the missing semantics unchanged.
 
-
-
-The original rules select safe purchases but have incorrect values and admitted domains. Reference admissibility alone repairs the domain; reference utility alone makes the unsafe offer win. Both components, or the correctly restored state, recover exact decisions in all 16 selected outputs (Table~\ref{tab:oracle}). These offline interventions diagnose semantic content and are not an inference-time discovery or repair algorithm.
+Table~\ref{tab:oracle} gives all six interventions and their outcomes, testing the distinction between permission and ranking in Section~\ref{sec:analysis}. Each replacement substitutes reference conditions or utilities while holding the remaining components fixed. State restoration supplies both for the omitted reading. All interventions are performed offline on the retained outputs.
 
 \subsection{Input intervention on the same request}
 \label{app:intent-input}
-Using the 512-offer request, six configurations, three input conditions, and two samples produces 36 calls, with 12 generations per condition. Configurations are Qwen Max off/medium, Qwen Flash low, GLM Flash low, GLM low, and Astra max. The reference-interpretation condition explicitly preserves both possible referents and the corresponding utility binding, without giving a selected offer or reference formula. It is researcher-supplied input, not an additional user response.
+For the 512-offer request, we use six configurations, three input conditions, and two samples, giving 36 calls and 12 generations per condition. Configurations are Qwen Max off/medium, Qwen Flash low, GLM Flash low, GLM low, and Astra max. In the reference-interpretation condition, researcher-supplied input states both possible referents and the corresponding utility binding. It supplies neither a selected offer nor a reference formula, and there is no additional user response.
 
-
-
-Catalogue withholding alone does not remove the errors. Supplied interpretations yield 11/12 exact decisions and one Other failure; no condition selects an unsafe offer on the original catalogue. This local intervention identifies a representation dependency rather than a population-level success rate.
+Table~\ref{tab:intent-input} reports the results. All 12 generations per condition enter the exactness denominator; the domain check uses the 11, 12, and 11 valid outputs, respectively. Invalid outputs count as Other. The original and supplied-readings conditions include the catalogue; only the catalogue-withheld condition excludes it during preparation. All conditions are evaluated on the same original catalogue.
 
 \subsection{Two primary decision examples}
 \label{app:witnesses}

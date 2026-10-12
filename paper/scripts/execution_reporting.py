@@ -1,6 +1,7 @@
 """Concentrated execution controls, derived without changing frozen outcomes."""
 from pathlib import Path
 import json
+from certified_primary import summary_rows, intervals as primary_intervals
 
 
 def build(root, table_dir=None):
@@ -18,9 +19,10 @@ def build(root, table_dir=None):
         out['other'] = out['n'] - out['exact'] - out['unsafe'] - out['false_refusal']
         assert out['other'] >= 0 and out['correct_accept'] <= out['expected_accept']
         return out
-    main = load('data/derived/main_summary.json')
+    main = summary_rows(root)
     grid = [r for r in load('data/derived/grid_summary.json')
-            if r['group'] == 'all' and r['profile_complete']]
+            if r['group'] == 'all' and r['profile_complete']
+            and not r['profile'].endswith('_ultra')]
     language = load('data/derived/language_all_methods_matched.json')
     auth = load('data/diagnostics/v43_evidence.json')['groups']
     rows = []
@@ -32,7 +34,7 @@ def build(root, table_dir=None):
         rows.append(dict(group=group, label=label, control=control, **sides))
     for profile, label in [('ds_flash_low', 'DS low'), ('ds_flash_high', 'DS high')]:
         add('Primary decisions', label, main, lambda r, p=profile: r['profile'] == p)
-    for prefix, label in [('astra_', 'Astra (6 settings)'), ('gpt56_sol_', 'Sol (7 settings)'),
+    for prefix, label in [('astra_', 'Astra (5 settings)'), ('gpt56_sol_', 'Sol (6 settings)'),
                           ('gpt56_terra_', 'Terra (6 settings)'), ('gpt56_luna_', 'Luna (6 settings)')]:
         add('Requested effort', label, grid, lambda r, p=prefix: r['profile'].startswith(p))
     for prefix, label in [('ds_', 'DS (3 profiles; ZH/EN)'), ('astra_', 'Astra (ZH/EN)')]:
@@ -51,7 +53,7 @@ def build(root, table_dir=None):
                             median_request_seconds=r['seconds']['median'])
         resources.append(dict(profile=profile, label=label, token_reduction_percent=
             100 * (1 - rr['state_wise']['mean_tokens'] / rr['procedural']['mean_tokens']), **rr))
-    intervals = [r for r in load('data/derived/paired_cluster_intervals.json')
+    intervals = [r for r in primary_intervals(root)
                  if r['profile'] == 'deepseek_pooled' and r['baseline'] == 'python_fresh']
     manuscript_rows = [r for r in rows if r['group'] in
                        ('Primary decisions', 'Requested effort', 'Matched catalogue input')]
@@ -76,7 +78,7 @@ def build(root, table_dir=None):
             arrow('unsafe'), safe, arrow('exact')]) + r'\\')
     lines += [r'\bottomrule', r'\end{tabular}']
     (dest / 'execution_controls.tex').write_text('\n'.join(lines) + '\n')
-    templates = {(r['profile'],r['arm'],r['template']):r for r in load('data/derived/template_summary.json')}
+    templates = {(r['profile'],r['arm'],r['template']):r for r in summary_rows(root, 'template')}
     lines = [r'\begin{tabular}{@{}lrr@{}}',r'\toprule',
         r'Template & DS low & DS high\\',r'\midrule']
     for family in 'abcd':

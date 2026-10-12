@@ -26,7 +26,7 @@ def authorization_replay_values(stress):
         assert row['grid_invalid'] == row['single_invalid']
         rows.append(row)
     return dict(source='data/diagnostics/stress_chart_data.json',
-        scope='All three DeepSeek settings; pooled over three executable realizations',
+        scope='Pooled diagnostic collection across three DeepSeek settings; preparation strata remain indexed in the artifact',
         unit='Frozen rule artifacts, not independent natural-language requests',
         base_tasks=72, artifacts=sum(r['n'] for r in rows),
         catalogue_replays=2*sum(r['n'] for r in rows), profiles=rows,
@@ -38,39 +38,28 @@ def draw_authorization(stress):
     """Compact grouped bars for a supplementary DeepSeek replay diagnostic."""
     values = authorization_replay_values(stress)
     rows = values['profiles']
-    fig, ax = plt.subplots(figsize=(3.45, 2.68))
-    fig.subplots_adjust(left=.145, right=.985, bottom=.23, top=.645)
-    fig.text(.02, .974, 'DeepSeek replay diagnostics', fontsize=10,
-             weight='bold', va='top')
-    fig.text(.02, .890,
-             f"{values['artifacts']:,} frozen artifacts  ·  {values['catalogue_replays']:,} replays",
-             fontsize=8.2, color=MUTED)
+    fig, ax = plt.subplots(figsize=(3.45, 2.95))
+    fig.subplots_adjust(left=.160, right=.965, bottom=.270, top=.645)
     x = np.arange(len(rows)); width = .28
-    series = [('grid_unsafe_domain', BLUE, -.17,
+    series = [('grid_unsafe_domain', '#FFFFFF', '', -.17,
                'Unsafe admission - mixed catalogue'),
-              ('single_unsafe_selection', RED, .17,
+              ('single_unsafe_selection', '#BFBFBF', '///', .17,
                'Unsafe selection - unsafe-only catalogue')]
-    for key, color, offset, label in series:
+    for key, color, hatch, offset, label in series:
         bars = ax.bar(x+offset, [r[key] for r in rows], width=width,
-                      color=color, label=label, zorder=3)
-        ax.bar_label(bars, padding=3, fontsize=9, weight='bold', color=color)
-    ax.set(xlim=(-.65, 2.65), ylim=(0, 12), yticks=[0, 4, 8, 12])
+                      color=color, edgecolor='black', hatch=hatch, label=label, zorder=3)
+        ax.bar_label(bars, padding=3, fontsize=9, weight='bold', color='black')
+    ax.set(xlim=(-.65, 2.65), ylim=(0, 13), yticks=[0, 4, 8, 12])
     ax.set_xticks(x, [r['label'] for r in rows])
     ax.tick_params(axis='x', labelsize=8.5, pad=5)
     ax.tick_params(axis='y', labelsize=8)
     ax.set_ylabel('Rules with errors', fontsize=8.5, labelpad=5)
-    ax.grid(axis='y', color=LINE, lw=.6); ax.set_axisbelow(True)
-    fig.legend(handles=[Rectangle((0, 0), 1, 1, facecolor=c, label=label)
-                        for _, c, _, label in series],
-               loc='upper left', bbox_to_anchor=(.13, .845),
+    ax.grid(axis='y', color='#D9D9D9', lw=.6); ax.set_axisbelow(True)
+    fig.legend(handles=[Rectangle((0, 0), 1, 1, facecolor=c, edgecolor='black', hatch=hatch, label=label)
+                        for _, c, hatch, _, label in series],
+               loc='upper left', bbox_to_anchor=(.035, .833),
                fontsize=7.8, handlelength=1.15, handletextpad=.55,
                labelspacing=.6, borderaxespad=0)
-    fig.text(.565, .133, '216 artifacts per configuration',
-             ha='center', fontsize=7.4, color=MUTED)
-    fig.text(.02, .068, 'Mixed-catalogue unsafe selections: 0 (valid replays)',
-             fontsize=7.6, color=INK)
-    fig.text(.02, .016, f"Invalid executions: {values['invalid_per_catalogue']} per catalogue condition.",
-             fontsize=7.1, color=MUTED)
     return fig
 
 

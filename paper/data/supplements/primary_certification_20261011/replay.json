@@ -1,0 +1,4049 @@
+{
+  "status": "completed",
+  "model_calls": 0,
+  "historical_records_modified": false,
+  "scope": "Same retained DeepSeek specifications and complete primary catalogues; current Algorithm 1 certification.",
+  "source_sha256": {
+    "bilingual/raw_records/ds_flash_low_set.jsonl.gz": "77590836879ce648f75e4da80369143de74c0b5db4b623b877713cee6ebbf485",
+    "bilingual/raw_records/ds_flash_high_set.jsonl.gz": "fda1ef7a783d32749435ede871352a8f7639cd48975ae4672c21532a0dd47570",
+    "risk_payment/engine.py": "1cbadcc911e33f94570f0f9ed6916f8cc823db75d63eb3d3c879fb7b879473b0",
+    "risk_payment/decision.py": "0d8ff8bccea2929dec82c6a5ddfd8650a09c21b42eed1989533c86064ebb5744"
+  },
+  "groups": [
+    {
+      "profile": "ds_flash_low",
+      "n": 200,
+      "archived_exact": 185,
+      "certified_exact": 184,
+      "outcomes": {
+        "exact": 184,
+        "other": 12,
+        "unsafe": 3,
+        "false_refusal": 1
+      },
+      "statuses": {
+        "accept": 97,
+        "refuse": 91,
+        "failure": 12
+      }
+    },
+    {
+      "profile": "ds_flash_high",
+      "n": 200,
+      "archived_exact": 185,
+      "certified_exact": 185,
+      "outcomes": {
+        "exact": 185,
+        "other": 9,
+        "unsafe": 6
+      },
+      "statuses": {
+        "accept": 98,
+        "refuse": 93,
+        "failure": 9
+      }
+    }
+  ],
+  "outcomes": [
+    {
+      "profile": "ds_flash_low",
+      "case": "case_003b789abae4128290",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0077dc271650befddc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_007c7bbd876653a05d",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_00f3bbfd6c328ccfa5",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_04c7ae549adc352f1f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_06759fe316b96a7ae0",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_06f21b67d81b9ef981",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_07c01e86c8fc87b6c4",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_07d11d3ab0914a36b0",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_09131dea16b9cbb352",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0913dc5e7bd25bfed6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_09c576fdf82851c73c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0a4bc83faf80517cc1",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0af3478323caabfc93",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0b52f1b45c4dc7376a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0d04be56e134cf90d6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0ddc9742ead55112df",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_0e93dfc0a4a6354468",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_126c7e7568287334a0",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_15c03a781fc093925e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_1876e3819d6304aae9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_19a4e4fdd606bfeea0",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_1e25075681fc2d710b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_1e28fc3461af715a52",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_20f1b9f05ae19362b8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_26c6f6717a7f239211",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_276b6430685b9f5e2e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_281b722bb94211e7df",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_28e721943d6b2e0591",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_2b69f3a8aff813cef5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_2c90ea66d752a5d712",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_302aab0e45213ae87b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_312d61f53337832db9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_31deea278ecac942ad",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_333280a232cba28c58",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_350c0fa42c203815b1",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_36c6f63a0e1857138d",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_37b6720ad833b1909e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_38882f29e006d90186",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_38de3622a94585ebe8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_38f96a0f723767b12f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_39db767f88a544c0d3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_3a7196dd4023b9b408",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_3aa9c1991115ce50b8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_3cc247421a355343cf",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_3d4dd173081e9cc06e",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_3e4a439c3b5281d662",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_3e7f1b19c91c45d160",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_3fead54bbf5a180066",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_41139b096470129072",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_42f101dd108aee1ed7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_439a496ac2377e36d5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_44cbe1d4916b45c036",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_44dff538289c741c0a",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_4524520b57c1f7717c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_4a51ced5fb5f6b3eed",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_4a749b95d2ad23421c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "unresolved_relevant_evidence"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_4b7d527ce1fcac91d6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_510bde91ee8cc6937c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_512b684d8f2689bce6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_524cf52cf787eea4e8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_54f6b03636de1f30f7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_57ff52bd4700a3d646",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_5979d93e2e50c05b10",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_5d68c462b48a8bc8e6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_5fa486829faf19003a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_6063d72dabf937c777",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_610ec43f2e3b4b9fbe",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_63563609afc42c000a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_653a7b7db0ba295652",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_676c33fe32de106742",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_67b13c9b8fb24049a5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_69966b3eaa38ac2ddc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_69a3ace22a54347a69",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_6ee16b2c507b383d8b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_700f0d67841869d21e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_71789c470262af1f93",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_7205487001bf109900",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_72407c4c8504f7689f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_7244ce94d3ae61d0da",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_729ad51ea0abab15d1",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_732e6cd92a5c649ff8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_73f52bf06a84de2947",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_740994f15560efdee8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_7425f336d3f8f2cdfa",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_74301ae51f25dcdf80",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_753833af0b83212c75",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_76368c25eb8fb9a185",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_778061fde0b0bb592a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_790234a4a97b28afc9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_7a9fc200009237cc47",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_7ad9050d09c1271405",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_7b65e2a0c0918626c5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_7d86c3beebde9bd598",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_805ba1bef210e88a2b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_845b115cde6a0e9feb",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_86afa5f8ca8118a146",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_877551eeee621fe86c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_878ef199625b651e59",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_87aaf148afe287308f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_887c7cb2a01ca62101",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_892c370a45751c37a2",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_89a30ae8854ea3bc0b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_8b2092751fe88f5f43",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_8e564c9fa415dd18f1",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_8e6adcf7006f3ed94a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_8f64922d7e429f4110",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_8ffaa649446f367c5c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_927493a9d100af2206",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_92b9cbfa25b100368b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_92ef35350578ae20e2",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_9313878cfe8878884e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_935529ebb518ee8601",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_944fbf19ad667117d7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_98141edbcdda86f98d",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_9a44a3193108c5d3d2",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_9afc4f241713a160d5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_9b7459ab8edac1880b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_9fc6261bf1d3f429b3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a1fc9b59ced10ff3cc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a22954935f0c6f29da",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a2b46acaf62ce3e982",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a2f9dc9691f8d20bdd",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a5611a78686f97c81a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a5f1e99677b7a05888",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a62e9a4478aee24dcf",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a6535f32d56f14ab72",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_a7040da88445613e57",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_aa478caecf0f30927c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_af8299ebe899a4fac8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_b1019bd814ad219bc9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_b105ecdd9b1a514ce0",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_b1617f67fa240a38a6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_b788c7d9abcc5c3180",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_b7ea208d89548c28a8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_b899a650c73523e8d7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_b9a3a2eb2ae27fc5a8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_bacf378cb185cce74b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_be229b581afde4b821",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_be2b8766af0d2c5bac",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_be380901cd9e72ca5e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c107164645414ea3e7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c11d08a2c1e36f4933",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c1424da751f0994671",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c2f8bddda73ad519c7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c35425d01b8de540ed",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c37b2213c36cf2930f",
+      "archived_outcome": "false_refusal",
+      "archived_exact": false,
+      "current_outcome": "false_refusal",
+      "current_exact": false,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c37cc613220827945e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c661b1dd611ab4075b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c79f8a1deb03b6f9b8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c9ad69cd87664e049e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_c9e6ae30a28e83b97b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_ce234ed987f3211aec",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_cf797f06185947e657",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_cf81136e588665063e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_d08d216b88a36ea6a4",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_d2a51597978bdc1bda",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_d32cce3e8133cd95dc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_d3fe82b269fdec869b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_d4d0e0e660c5ba06f9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_d73a0dfbb2d8513e59",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_da6ec3b498c40c230e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_db1e401759e423eaf5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_db4f7eb2e8b974f067",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_dbd5ef79c2a7e2940e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_dbf6480e464eb36eb3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_dc9e9dd6e1820600fb",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_ded19cad94450805c4",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_df435440ba3d751d5e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_dfeb48cbe8a6a08459",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_dff2b181df0d4d34fe",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e01dc3ece11a424d38",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e16dff15e117b1f956",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e1bebf174c3e821607",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e1f993fa351ae23fd3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e2f70debc13f3c4e03",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e312f94275136fd8de",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e355aba741732185e3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e5435edb3b3571b95d",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e7b822810ac9cb7874",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e7e2cf8c752963f722",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e8942fb961c2dd6ede",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_e9035ebc6a25474f8c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_ea8d38268c75c81f31",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_eb157401ce0e789373",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_eb93d4c7e0e66a04ac",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_ee3858397e4bcd427e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_ef036efa252605ebfb",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_efbac55ed4ede59b75",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f0ba32ca1178dad4bc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f0f767ad45cbabef32",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f1029214782381a362",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f281003637f006c231",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f3b3352e2bcda6510b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f48a69a88d9fb65085",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f4c5438602c92464a7",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f6b4fdd9ebbf42d50a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_f928011749ed249686",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_fbb486e34250bfc112",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_low",
+      "case": "case_fe9ca96ab20ba60310",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_003b789abae4128290",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0077dc271650befddc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_007c7bbd876653a05d",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_00f3bbfd6c328ccfa5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_04c7ae549adc352f1f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_06759fe316b96a7ae0",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_06f21b67d81b9ef981",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_07c01e86c8fc87b6c4",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_07d11d3ab0914a36b0",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_09131dea16b9cbb352",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0913dc5e7bd25bfed6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_09c576fdf82851c73c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0a4bc83faf80517cc1",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0af3478323caabfc93",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0b52f1b45c4dc7376a",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0d04be56e134cf90d6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0ddc9742ead55112df",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_0e93dfc0a4a6354468",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_126c7e7568287334a0",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_15c03a781fc093925e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_1876e3819d6304aae9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_19a4e4fdd606bfeea0",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_1e25075681fc2d710b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_1e28fc3461af715a52",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_20f1b9f05ae19362b8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_26c6f6717a7f239211",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_276b6430685b9f5e2e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_281b722bb94211e7df",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_28e721943d6b2e0591",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_2b69f3a8aff813cef5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_2c90ea66d752a5d712",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_302aab0e45213ae87b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_312d61f53337832db9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_31deea278ecac942ad",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_333280a232cba28c58",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_350c0fa42c203815b1",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_36c6f63a0e1857138d",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_37b6720ad833b1909e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_38882f29e006d90186",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_38de3622a94585ebe8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_38f96a0f723767b12f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_39db767f88a544c0d3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_3a7196dd4023b9b408",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_3aa9c1991115ce50b8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_3cc247421a355343cf",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_3d4dd173081e9cc06e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_3e4a439c3b5281d662",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_3e7f1b19c91c45d160",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_3fead54bbf5a180066",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_41139b096470129072",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_42f101dd108aee1ed7",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_439a496ac2377e36d5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_44cbe1d4916b45c036",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_44dff538289c741c0a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_4524520b57c1f7717c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_4a51ced5fb5f6b3eed",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_4a749b95d2ad23421c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_4b7d527ce1fcac91d6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_510bde91ee8cc6937c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_512b684d8f2689bce6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_524cf52cf787eea4e8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_54f6b03636de1f30f7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_57ff52bd4700a3d646",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_5979d93e2e50c05b10",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_5d68c462b48a8bc8e6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_5fa486829faf19003a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_6063d72dabf937c777",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_610ec43f2e3b4b9fbe",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_63563609afc42c000a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_653a7b7db0ba295652",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_676c33fe32de106742",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_67b13c9b8fb24049a5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_69966b3eaa38ac2ddc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_69a3ace22a54347a69",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_6ee16b2c507b383d8b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_700f0d67841869d21e",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_71789c470262af1f93",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_7205487001bf109900",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_72407c4c8504f7689f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_7244ce94d3ae61d0da",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_729ad51ea0abab15d1",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_732e6cd92a5c649ff8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_73f52bf06a84de2947",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_740994f15560efdee8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_7425f336d3f8f2cdfa",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_74301ae51f25dcdf80",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_753833af0b83212c75",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_76368c25eb8fb9a185",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_778061fde0b0bb592a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_790234a4a97b28afc9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_7a9fc200009237cc47",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_7ad9050d09c1271405",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_7b65e2a0c0918626c5",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_7d86c3beebde9bd598",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_805ba1bef210e88a2b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_845b115cde6a0e9feb",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_86afa5f8ca8118a146",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_877551eeee621fe86c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_878ef199625b651e59",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_87aaf148afe287308f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_887c7cb2a01ca62101",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_892c370a45751c37a2",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_89a30ae8854ea3bc0b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_8b2092751fe88f5f43",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_8e564c9fa415dd18f1",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_8e6adcf7006f3ed94a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_8f64922d7e429f4110",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_8ffaa649446f367c5c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_927493a9d100af2206",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_92b9cbfa25b100368b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_92ef35350578ae20e2",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_9313878cfe8878884e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_935529ebb518ee8601",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_944fbf19ad667117d7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_98141edbcdda86f98d",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_9a44a3193108c5d3d2",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_9afc4f241713a160d5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_9b7459ab8edac1880b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_9fc6261bf1d3f429b3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a1fc9b59ced10ff3cc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a22954935f0c6f29da",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a2b46acaf62ce3e982",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a2f9dc9691f8d20bdd",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a5611a78686f97c81a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a5f1e99677b7a05888",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a62e9a4478aee24dcf",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a6535f32d56f14ab72",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_a7040da88445613e57",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_aa478caecf0f30927c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_af8299ebe899a4fac8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_b1019bd814ad219bc9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_b105ecdd9b1a514ce0",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_b1617f67fa240a38a6",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_b788c7d9abcc5c3180",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_b7ea208d89548c28a8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_b899a650c73523e8d7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_b9a3a2eb2ae27fc5a8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_bacf378cb185cce74b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_be229b581afde4b821",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_be2b8766af0d2c5bac",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_be380901cd9e72ca5e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c107164645414ea3e7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c11d08a2c1e36f4933",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c1424da751f0994671",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c2f8bddda73ad519c7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c35425d01b8de540ed",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c37b2213c36cf2930f",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c37cc613220827945e",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c661b1dd611ab4075b",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c79f8a1deb03b6f9b8",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c9ad69cd87664e049e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_c9e6ae30a28e83b97b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_ce234ed987f3211aec",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_cf797f06185947e657",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_cf81136e588665063e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_d08d216b88a36ea6a4",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_d2a51597978bdc1bda",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_d32cce3e8133cd95dc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_d3fe82b269fdec869b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_d4d0e0e660c5ba06f9",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_d73a0dfbb2d8513e59",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_da6ec3b498c40c230e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_db1e401759e423eaf5",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_db4f7eb2e8b974f067",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_dbd5ef79c2a7e2940e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_dbf6480e464eb36eb3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_dc9e9dd6e1820600fb",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_ded19cad94450805c4",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_df435440ba3d751d5e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_dfeb48cbe8a6a08459",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_dff2b181df0d4d34fe",
+      "archived_outcome": "invalid_output",
+      "archived_exact": false,
+      "current_outcome": "other",
+      "current_exact": false,
+      "status": "failure",
+      "reason": "archived_invalid_output"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e01dc3ece11a424d38",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e16dff15e117b1f956",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e1bebf174c3e821607",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e1f993fa351ae23fd3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e2f70debc13f3c4e03",
+      "archived_outcome": "unsafe_accept",
+      "archived_exact": false,
+      "current_outcome": "unsafe",
+      "current_exact": false,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e312f94275136fd8de",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e355aba741732185e3",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e5435edb3b3571b95d",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e7b822810ac9cb7874",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e7e2cf8c752963f722",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e8942fb961c2dd6ede",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_e9035ebc6a25474f8c",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_ea8d38268c75c81f31",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_eb157401ce0e789373",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_eb93d4c7e0e66a04ac",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_ee3858397e4bcd427e",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_ef036efa252605ebfb",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_efbac55ed4ede59b75",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f0ba32ca1178dad4bc",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f0f767ad45cbabef32",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f1029214782381a362",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f281003637f006c231",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f3b3352e2bcda6510b",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f48a69a88d9fb65085",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f4c5438602c92464a7",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f6b4fdd9ebbf42d50a",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "refuse",
+      "reason": "infeasible"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_f928011749ed249686",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_fbb486e34250bfc112",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    },
+    {
+      "profile": "ds_flash_high",
+      "case": "case_fe9ca96ab20ba60310",
+      "archived_outcome": "exact",
+      "archived_exact": true,
+      "current_outcome": "exact",
+      "current_exact": true,
+      "status": "accept",
+      "reason": "optimal"
+    }
+  ]
+}

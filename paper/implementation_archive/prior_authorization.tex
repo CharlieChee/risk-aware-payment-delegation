@@ -1,0 +1,34 @@
+\section{Authorization-Error Diagnostics}
+\label{app:permissionaudit}
+\subsection{Frozen-rule replay}
+This study tests the availability mechanism in Section~\ref{sec:analysis}: a frozen rule may admit an unauthorized offer without selecting it when a safe alternative is available.
+This diagnostic uses 648 frozen DeepSeek artifacts: 72 tasks, low/high/max settings, and three configurations (Set, matched-input Set-Py, and catalogue-visible Set-Py). The tasks cross six templates, three authorization conditions, two catalogue sizes, and feasible/infeasible pairs. All realizations use the same selector without private reference information. The artifacts are executed on two new catalogues: 1,296 local replays, with no further model calls. Legal candidate attributes are retained, administrative cost is set to zero, and only the first component's replacement/loss attribute changes. The mixed catalogue targets the following reference worst losses in integer subunits:
+\begin{quote}\small
+100000, 199999, 200000, 200001, 210000, 225000, 250000, 300000, 350000, 399999, 400000, 400001, 500000, 600000.
+\end{quote}
+The second catalogue contains only the 400,000-subunit offer, above the 200,000 limit. Other hard constraints remain satisfied. Numerical and symbolic references agree on 53,460 candidate--state checks. The catalogue changes are chosen to probe the generated consequence functions, so their outcomes do not estimate error rates in a randomly sampled purchasing population.
+
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{5pt}
+\input{tables/appendix_replay}
+\caption{DeepSeek frozen-rule replay counts for low, high, and max settings: 72 artifacts per row and two catalogues per artifact. Unsafe domains and choices are counted separately; invalid executions are not credited as safe. The primary DeepSeek plot pools the three realizations within each configuration.}
+\label{tab:replay}
+\end{table*}
+
+The table separates the three realizations behind Figure~\ref{fig:ablations}. Visible-input replay also changes the catalogue seen during compilation; matched-input rules are compiled without catalogue attributes.
+
+\subsection{Omitted-interpretation and component interventions}
+\label{app:oracle}
+The source pool contains 56 Qwen/GLM Set generations for one ambiguous ticket request and two catalogues (128 and 512 offers). We select sixteen outputs that admit a reference-unsafe candidate. Each omits the reading in which ``his'' refers to Li and retains only Zhang's fee-free-refund conditions and delay-weighted utility. These are 16 faulty outputs, not 16 independent requests. Restoring Li's state adds its conditions and utility. Duplicating Zhang's label leaves the missing semantics unchanged.
+
+Table~\ref{tab:oracle} gives all six interventions and their outcomes, testing the distinction between permission and ranking in Section~\ref{sec:analysis}. Each replacement substitutes reference conditions or utilities while holding the remaining components fixed. State restoration supplies both for the omitted reading. All interventions are performed offline on the retained outputs.
+
+\subsection{Input intervention on the same request}
+\label{app:intent-input}
+For the 512-offer request, we use six configurations, three input conditions, and two samples, giving 36 calls and 12 generations per condition. Configurations are Qwen Max off/medium, Qwen Flash low, GLM Flash low, GLM low, and Astra max. In the reference-interpretation condition, researcher-supplied input states both possible referents and the corresponding utility binding. It supplies neither a selected offer nor a reference formula, and there is no additional user response.
+
+Table~\ref{tab:intent-input} reports the results. All 12 generations per condition enter the exactness denominator; the domain check uses the 11, 12, and 11 valid outputs, respectively. Invalid outputs count as Other. The original and supplied-readings conditions include the catalogue; only the catalogue-withheld condition excludes it during preparation. All conditions are evaluated on the same original catalogue.
+
+\subsection{Two primary decision examples}
+\label{app:witnesses}
+Reference evaluation checks all 57 events. In one Astra Direct return-cost case, the reported loss of 1,954.33~MU understates the contractual loss of 2,054.33~MU against a 2,000~MU limit; no offer is feasible. In a coupon-cancellation case, Direct rejects all 1,024 offers although one has positive value and loss of 1,999.99~MU. These primary examples illustrate unsafe acceptance and false refusal at the same authorization boundary.

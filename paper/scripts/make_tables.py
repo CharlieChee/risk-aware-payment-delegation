@@ -3,10 +3,12 @@ import json
 from primary_profiles import complete_primary, display_primary
 from reported_results import display_language
 from intent_ambiguity_reporting import build as build_intent_tables
+from certified_primary import summary_rows, intervals, build as build_final_primary
 R=Path(__file__).resolve().parents[1];D=R/'data/derived';T=R/'tables';T.mkdir(exist_ok=True)
 build_intent_tables(R)
+build_final_primary(R)
 def load(n):return json.loads((D/(n+'.json')).read_text())
-main=load('main_summary');by={(r['profile'],r['arm']):r for r in main}
+main=summary_rows(R);by={(r['profile'],r['arm']):r for r in main}
 profiles=['ds_flash_low','ds_flash_high','astra_max']; labels=['DeepSeek low','DeepSeek high','Astra max']
 grid=load('grid_summary');gb={(r['profile'],r['arm']):r for r in grid if r['group']=='all'}
 # Auto-generated LaTeX tables (Qwen supplements do not change old evidence).
@@ -151,7 +153,7 @@ for table_name,arms in [('execution_ablation',['direct','python_fresh','set'])]:
 lines=[r'\begin{tabular}{llrrr}',r'\toprule',r'Model & Effort & Direct & Set-Py & Set \\',r'\midrule']
 mods=['astra','gpt56_sol','gpt56_luna','gpt56_terra'];names={'astra':'Astra','gpt56_sol':'5.6 Sol','gpt56_luna':'5.6 Luna','gpt56_terra':'5.6 Terra'}
 for mod in mods:
- for e in ['none','low','medium','high','xhigh','max','ultra']:
+ for e in ['none','low','medium','high','xhigh','max']:
   p=mod+'_'+e
   if (p,'direct') not in gb or not gb[p,'direct']['profile_complete']:continue
   a=[gb[p,m] for m in ['direct','python_fresh','set']];marker=r'$^\dagger$' if not a[0]['profile_complete'] else ''
@@ -161,7 +163,7 @@ lines+=[r'\bottomrule',r'\end{tabular}'];put('grid', '\n'.join(lines))
 # Failure grid, useful for distinguishing service / output errors.
 lines=[r'\begin{tabular}{llrrrrrrrrr}',r'\toprule',r'&&\multicolumn{3}{c}{Direct} & \multicolumn{3}{c}{Set-Py} & \multicolumn{3}{c}{Set} \\',r'Model & Effort & U & R & O & U & R & O & U & R & O \\',r'\midrule']
 for mod in mods:
- for e in ['none','low','medium','high','xhigh','max','ultra']:
+ for e in ['none','low','medium','high','xhigh','max']:
   p=mod+'_'+e
   if (p,'direct') not in gb or not gb[p,'direct']['profile_complete']:continue
   rs=[gb[p,m] for m in ['direct','python_fresh','set']];mark=r'$^\dagger$' if not rs[0]['profile_complete'] else ''
@@ -198,7 +200,7 @@ for p,lab in zip(profiles,['DS low','DS high','Astra max']):
 lines+=[r'\bottomrule',r'\end{tabular}'];put('costs','\n'.join(lines))
 # Cluster intervals.
 lines=[r'\begin{tabular}{llrr}',r'\toprule',r'Control & Metric & Difference & 95\% interval \\',r'\midrule']
-for r in load('paired_cluster_intervals'):
+for r in intervals(R):
  if r['profile']!='deepseek_pooled' or r['baseline']!='direct':continue
  lo,hi=r['cluster_bootstrap_95_interval_pp'];lines.append(('Direct' if r['baseline']=='direct' else 'Set-Py')+' & '+('Exact' if r['metric']=='exact' else 'Unsafe')+f" & {r['delta_percentage_points']:+.2f} & [{lo:+.2f}, {hi:+.2f}] "+r'\\')
 lines+=[r'\bottomrule',r'\end{tabular}'];put('intervals','\n'.join(lines))
@@ -210,3 +212,9 @@ from prompt_control_reporting import build as build_prompt_controls
 build_execution_controls(R)
 build_compact_appendix(R, T)
 build_prompt_controls(R, T)
+
+# Stable display names; original arm identifiers in frozen records are unchanged.
+import re
+for table_path in T.glob("*.tex"):
+ text = table_path.read_text().replace("Set-DSL", "Set").replace("Set (DSL)", "Set").replace("Set contract", "Set")
+ table_path.write_text(text)

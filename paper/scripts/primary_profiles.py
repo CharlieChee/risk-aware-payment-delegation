@@ -1,6 +1,7 @@
 """Complete, frozen primary cohorts in a fixed model-family display order."""
 from pathlib import Path
 import json
+from certified_primary import summary_rows, REPLAY
 
 ORDER = [
     ('ds_flash_low', 'DeepSeek low'),
@@ -19,8 +20,8 @@ ORDER = [
 
 def complete_primary(root):
     root = Path(root)
-    base = json.loads((root / 'data/derived/main_summary.json').read_text())
-    sources = ['data/derived/main_summary.json', 'data/supplements/qwen_primary200/summary.json']
+    base = summary_rows(root)
+    sources = ['data/derived/main_summary.json', 'data/supplements/qwen_primary200/summary.json', REPLAY]
     rows = base + json.loads((root / sources[1]).read_text())
     extensions = []
     for folder in sorted((root / 'data/supplements').glob('primary200_*')):

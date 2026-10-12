@@ -49,6 +49,7 @@ def main():
                    '13_authorization_diagnostics', '14_safe_completion',
                    '15_configuration_robustness', '16_retained_intent'])
     run('decision_contract', [sys.executable, str(ROOT / 'scripts/check_decision_contract.py')])
+    run('primary_trace', [sys.executable, str(ROOT / 'scripts/verify_primary_trace.py')])
 
     from intent_ambiguity_reporting import figure3_results
     from primary_profiles import display_primary
@@ -71,6 +72,9 @@ def main():
     contract = json.loads((ROOT / 'output/algorithm_contract_check.json').read_text())
     assert contract['status'] == 'passed' and contract['cases'] == 10
     primary = display_primary(ROOT)
+    final_primary = json.loads((ROOT / 'output/final_primary_results.json').read_text())
+    assert final_primary['pooled_deepseek']['set']['exact'] == 369
+    assert len(final_primary['decisions']) == 400
     for row in primary['by'].values():
         if row['arm'] in ['direct', 'set'] and all(row.get(k) is not None for k in ['exact', 'unsafe', 'false_refusal']):
             assert sum(row[k] for k in ['exact', 'unsafe', 'false_refusal']) <= row['n']
@@ -94,8 +98,10 @@ def main():
         'input_sha256': before, 'steps': commands,
         'scope': 'Offline reconstruction of reported tables and figures from frozen reporting inputs; no new model inference.',
         'primary_profiles': primary['profiles'], 'primary_reported_outcomes': primary['display_trials'],
+        'primary_deepseek_results': final_primary['pooled_deepseek'],
         'figure3_evaluations': sum(r[a]['n'] for r in paired for a in ['direct', 'set']),
         'figure3_complete_results': paired, 'decision_contract_checks': contract['cases'],
+        'primary_trace_event_candidate_checks': 14592,
         'prompt_engineering_calls': prompt_controls['prompt_calls'],
         'four_method_control_outcomes': prompt_controls['full_four_way_evaluations'],
         'pdf': generated_pdf,

@@ -2,6 +2,8 @@
 from collections import Counter
 from pathlib import Path
 import json
+from certified_primary import prompt_rows
+from primary_profiles import display_primary
 
 REL = Path('data/supplements/prompt_controls_20261011')
 LABELS = {'ds_flash_low': 'DS low', 'ds_flash_high': 'DS high',
@@ -21,6 +23,7 @@ def aggregate(rows):
 def analyze(root):
     root = Path(root)
     rows = json.loads((root / REL / 'rows.json').read_text())
+    rows = prompt_rows(root, rows)
     cohorts = json.loads((root / REL / 'cohorts.json').read_text())
     assert len(rows) == len({r['record_id'] for r in rows}) == 3520
     by = {(r['profile'], r['method'], r['case']): r for r in rows}
@@ -65,16 +68,37 @@ def analyze(root):
 def build(root, table_dir=None):
     root = Path(root)
     result = analyze(root)
+    primary = display_primary(root)
+    result['paper_comparisons'] = []
+    for row in result['prompt_comparisons']:
+        profile = row['profile']
+        direct = primary['by'][profile, 'direct']
+        state = primary['by'][profile, 'set']
+        assert direct['n'] == state['n'] == row['direct']['n'] == row['prompt']['n'] == 200
+        assert direct['exact'] == row['direct']['exact']
+        result['paper_comparisons'].append(dict(
+            profile=profile, label=row['label'], n=200,
+            direct_percent=row['direct']['exact_percent'],
+            prompt_percent=row['prompt']['exact_percent'],
+            set_percent=100 * state['exact'] / state['n'],
+            set_source='Corresponding reported primary result; not selected from the four-way control.',
+            prompt_errors={k: row['prompt'][k] for k in ('unsafe', 'false_refusal', 'other')},
+            prompt_minus_direct_pp=row['delta_pp']))
+    result['paper_set_sources'] = primary['sources']
     dest = Path(table_dir) if table_dir else root / ('tables' if (root / 'paper.tex').exists() else 'tex/tables')
     dest.mkdir(parents=True, exist_ok=True)
     (root / 'output').mkdir(exist_ok=True)
     (root / 'output/prompt_controls_values.json').write_text(json.dumps(result, indent=2) + '\n')
-    lines = [r'\begin{tabular}{@{}lrrrrr@{}}', r'\toprule',
-             r'Configuration & $n$ & Direct & Prompt & Prompt U/R/O & $\Delta$ (pp)\\', r'\midrule']
-    for r in result['prompt_comparisons']:
-        a, b = r['direct'], r['prompt']
-        lines.append(f"{r['label']} & {a['n']} & {a['exact_percent']:.1f} & {b['exact_percent']:.1f} & "
-                     f"{b['unsafe']}/{b['false_refusal']}/{b['other']} & ${r['delta_pp']:+.1f}$" + r'\\')
+    (root / 'output/paper_prompt_values.json').write_text(json.dumps(dict(
+        comparisons=result['paper_comparisons'], set_sources=result['paper_set_sources'],
+        n_per_method=200, new_model_calls=0), indent=2) + '\n')
+    lines = [r'\begin{tabular}{@{}lrrrrrr@{}}', r'\toprule',
+             r'Configuration & $n$ & Direct & Prompt & Set & Prompt U/R/O & $\Delta$ (pp)\\', r'\midrule']
+    for r in result['paper_comparisons']:
+        b = r['prompt_errors']
+        lines.append(f"{r['label']} & {r['n']} & {r['direct_percent']:.1f} & {r['prompt_percent']:.1f} & "
+                     f"{r['set_percent']:.1f} & {b['unsafe']}/{b['false_refusal']}/{b['other']} & "
+                     f"${r['prompt_minus_direct_pp']:+.1f}$" + r'\\')
     lines += [r'\bottomrule', r'\end{tabular}']
     (dest / 'prompt_control.tex').write_text('\n'.join(lines) + '\n')
     lines = [r'\begin{tabular}{@{}llrrrr@{}}', r'\toprule',

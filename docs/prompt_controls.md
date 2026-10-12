@@ -64,8 +64,10 @@ checkpointed separately from decision scoring.
 
 ## Inspect and reproduce
 
-The manuscript presents the prompt engineering comparison and the four-method
-panel in Appendix E.1 (the prompt comparison and four-route control tables).
+The manuscript presents Direct, Prompt, and the primary Set results in Appendix E.1,
+using 200 tasks per configuration. The implementation comparison and the
+four-method panel are retained in this code supplement, indexed in
+`docs/implementation_archive/README.md`. They are not manuscript tables.
 
 `bilingual/prompt_controls/manifest.json` indexes compressed original requests,
 observations, provider responses or native event streams, and evaluations.
@@ -85,21 +87,25 @@ The first command checks archive hashes, preserves actual denominators,
 verifies all 1,000 prompt-only input changes, and independently rescores the
 3,520 captured final decisions against the released reference matrices. It
 does not regenerate model responses or execute archived Python programs.
-The second rebuilds both appendix tables and their summary JSON without
-calling a model. Both checks are also part of `python reproduce.py`.
+The second rebuilds the manuscript prompt table, archived four-method
+control table, and their summary JSON without calling a model. Both checks are also part of `python reproduce.py`.
 
 ## Observed results
 
 All rows use 200 tasks per method. The reported quantities are exact-decision
 percentages; the change is Prompt minus Direct in percentage points.
 
-| Configuration | Direct | Prompt engineering | Change |
-|---|---:|---:|---:|
-| DeepSeek low | 58.5 | 53.5 | -5.0 |
-| DeepSeek high | 65.5 | 59.0 | -6.5 |
-| Sol medium | 68.5 | 67.5 | -1.0 |
-| Luna medium | 20.5 | 19.0 | -1.5 |
-| Terra medium | 40.5 | 41.5 | +1.0 |
+| Configuration | Direct | Prompt engineering | Primary Set | Prompt change |
+|---|---:|---:|---:|---:|
+| DeepSeek low | 58.5 | 53.5 | 92.0 | -5.0 |
+| DeepSeek high | 65.5 | 59.0 | 92.5 | -6.5 |
+| Sol medium | 68.5 | 67.5 | 98.0 | -1.0 |
+| Luna medium | 20.5 | 19.0 | 45.5 | -1.5 |
+| Terra medium | 40.5 | 41.5 | 79.0 | +1.0 |
+
+The Primary Set column uses the same reporting sources as the main results,
+including separately recorded aggregate updates; it is not reconstructed by
+expanding the 40-task four-method subset.
 
 The comparison tests whether additional textual reasoning and verification
 guidance can substitute for executable decision processing. This particular

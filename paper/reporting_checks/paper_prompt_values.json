@@ -1,0 +1,94 @@
+{
+  "comparisons": [
+    {
+      "profile": "ds_flash_low",
+      "label": "DS low",
+      "n": 200,
+      "direct_percent": 58.5,
+      "prompt_percent": 53.5,
+      "set_percent": 92.0,
+      "set_source": "Corresponding reported primary result; not selected from the four-way control.",
+      "prompt_errors": {
+        "unsafe": 48,
+        "false_refusal": 27,
+        "other": 18
+      },
+      "prompt_minus_direct_pp": -5.0
+    },
+    {
+      "profile": "ds_flash_high",
+      "label": "DS high",
+      "n": 200,
+      "direct_percent": 65.5,
+      "prompt_percent": 59.0,
+      "set_percent": 92.5,
+      "set_source": "Corresponding reported primary result; not selected from the four-way control.",
+      "prompt_errors": {
+        "unsafe": 43,
+        "false_refusal": 27,
+        "other": 12
+      },
+      "prompt_minus_direct_pp": -6.5
+    },
+    {
+      "profile": "gpt56_sol_medium",
+      "label": "Sol medium",
+      "n": 200,
+      "direct_percent": 68.5,
+      "prompt_percent": 67.5,
+      "set_percent": 98.0,
+      "set_source": "Corresponding reported primary result; not selected from the four-way control.",
+      "prompt_errors": {
+        "unsafe": 23,
+        "false_refusal": 41,
+        "other": 1
+      },
+      "prompt_minus_direct_pp": -1.0
+    },
+    {
+      "profile": "gpt56_luna_medium",
+      "label": "Luna medium",
+      "n": 200,
+      "direct_percent": 20.5,
+      "prompt_percent": 19.0,
+      "set_percent": 45.5,
+      "set_source": "Corresponding reported primary result; not selected from the four-way control.",
+      "prompt_errors": {
+        "unsafe": 129,
+        "false_refusal": 30,
+        "other": 3
+      },
+      "prompt_minus_direct_pp": -1.5
+    },
+    {
+      "profile": "gpt56_terra_medium",
+      "label": "Terra medium",
+      "n": 200,
+      "direct_percent": 40.5,
+      "prompt_percent": 41.5,
+      "set_percent": 79.0,
+      "set_source": "Corresponding reported primary result; not selected from the four-way control.",
+      "prompt_errors": {
+        "unsafe": 74,
+        "false_refusal": 41,
+        "other": 2
+      },
+      "prompt_minus_direct_pp": 1.0
+    }
+  ],
+  "set_sources": [
+    "data/derived/main_summary.json",
+    "data/supplements/qwen_primary200/summary.json",
+    "data/supplements/primary_certification_20261011/replay.json",
+    "data/supplements/primary200_glm53_flash_low/summary.json",
+    "data/supplements/primary200_gpt56_luna_medium/summary.json",
+    "data/supplements/primary200_gpt56_sol_medium/summary.json",
+    "data/supplements/primary200_gpt56_terra_medium/summary.json",
+    "data/supplements/partial_primary_glm53_high/summary.json",
+    "data/supplements/partial_primary_opus55_medium/summary.json",
+    "data/author_reports/20261011_confirmed_aggregates.json",
+    "data/author_reports/20261011_primary200_completion.json"
+  ],
+  "n_per_method": 200,
+  "new_model_calls": 0
+}

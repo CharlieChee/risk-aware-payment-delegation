@@ -14,8 +14,7 @@
     "medium",
     "high",
     "xhigh",
-    "max",
-    "ultra"
+    "max"
   ],
   "setting_labels": [
     "Off",
@@ -23,8 +22,7 @@
     "M",
     "H",
     "XH",
-    "Max",
-    "U"
+    "Max"
   ],
   "effort": [
     {
@@ -133,24 +131,6 @@
         "n": 60,
         "exact": 60,
         "percent": 100.0
-      }
-    },
-    {
-      "family": "gpt56_sol",
-      "label": "Sol",
-      "profile": "gpt56_sol_ultra",
-      "setting": "ultra",
-      "plotted": true,
-      "status": "complete",
-      "direct": {
-        "n": 60,
-        "exact": 28,
-        "percent": 46.666666666666664
-      },
-      "set": {
-        "n": 60,
-        "exact": 37,
-        "percent": 61.666666666666664
       }
     },
     {
@@ -382,20 +362,20 @@
     },
     {
       "profile": "ds_flash_low",
-      "arm": "set",
-      "language": "zh",
-      "n": 60,
-      "exact": 59,
-      "percent": 98.33333333333333,
-      "author_reported": false
-    },
-    {
-      "profile": "ds_flash_low",
       "arm": "direct",
       "language": "en",
       "n": 60,
       "exact": 34,
       "percent": 56.666666666666664,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_low",
+      "arm": "set",
+      "language": "zh",
+      "n": 60,
+      "exact": 59,
+      "percent": 98.33333333333333,
       "author_reported": false
     },
     {
@@ -418,20 +398,20 @@
     },
     {
       "profile": "ds_flash_high",
-      "arm": "set",
-      "language": "zh",
-      "n": 60,
-      "exact": 55,
-      "percent": 91.66666666666667,
-      "author_reported": false
-    },
-    {
-      "profile": "ds_flash_high",
       "arm": "direct",
       "language": "en",
       "n": 60,
       "exact": 33,
       "percent": 55.0,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_high",
+      "arm": "set",
+      "language": "zh",
+      "n": 60,
+      "exact": 55,
+      "percent": 91.66666666666667,
       "author_reported": false
     },
     {
@@ -454,20 +434,20 @@
     },
     {
       "profile": "ds_flash_max",
-      "arm": "set",
-      "language": "zh",
-      "n": 60,
-      "exact": 57,
-      "percent": 95.0,
-      "author_reported": false
-    },
-    {
-      "profile": "ds_flash_max",
       "arm": "direct",
       "language": "en",
       "n": 60,
       "exact": 34,
       "percent": 56.666666666666664,
+      "author_reported": false
+    },
+    {
+      "profile": "ds_flash_max",
+      "arm": "set",
+      "language": "zh",
+      "n": 60,
+      "exact": 57,
+      "percent": 95.0,
       "author_reported": false
     },
     {
@@ -491,8 +471,7 @@
       "medium",
       "high",
       "xhigh",
-      "max",
-      "ultra"
+      "max"
     ],
     "gpt56_terra": [
       "none",
@@ -511,5 +490,31 @@
       "max"
     ]
   },
-  "complete_effort_configurations": 19
+  "complete_effort_configurations": 18,
+  "language_visual_encoding": {
+    "x_axis": "Method",
+    "groups": [
+      "ds_flash_low",
+      "ds_flash_high",
+      "ds_flash_max"
+    ],
+    "method_order": [
+      "direct",
+      "set"
+    ],
+    "language_order": [
+      "zh",
+      "en"
+    ],
+    "color": {
+      "zh": "#FFFFFF",
+      "en": "#BFBFBF"
+    },
+    "hatch": {
+      "zh": "",
+      "en": "///"
+    },
+    "palette": "grayscale",
+    "method_encoding": "x-axis labels and subgroup position"
+  }
 }

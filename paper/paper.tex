@@ -13,13 +13,14 @@
 \newfloat{algorithm}{tbp}{loa}
 \floatname{algorithm}{Algorithm}
 \graphicspath{{figures/}}
+\definecolor{aclhyperlink}{HTML}{000099}
+\hypersetup{colorlinks=true,allcolors=aclhyperlink,pdfborder={0 0 0},pdfborderstyle={}}
 \hypersetup{pdftitle={Risk-Aware Payment Delegation: From Intent to Executable Decisions},pdfauthor={Anonymous authors},pdfsubject={Research manuscript, October 2026 revision}}
 \newtheorem{proposition}{Proposition}
 \newcommand{\Z}{\mathcal Z}
 \newcommand{\Lang}{\mathcal L}
 \newcommand{\A}{\mathcal A}
 \newcommand{\ours}{\textsc{Set}}
-\newcommand{\py}{\textsc{Python}}
 \newcommand{\direct}{\textsc{Direct}}
 \input{tables/primary_stats}
 \input{tables/evaluation_inventory_stats}
@@ -27,39 +28,42 @@
 \title{Risk-Aware Payment Delegation:\\From Intent to Executable Decisions}
 \author{Anonymous authors}
 \date{}
-\setcounter{dbltopnumber}{1}
+\setcounter{dbltopnumber}{2}
 \renewcommand{\dbltopfraction}{0.85}
 \begin{document}
 \maketitle
 \begin{abstract}
-Payment delegation may require an agent to act while a request admits several readings or a contract has several possible outcomes. We study how to make one useful purchase without further user interaction while respecting authorization across retained possibilities. We formulate this language-to-decision problem and introduce a state-wise intent interface that binds requirements, financial permissions, and utility to the same retained state. A language-model front end instantiates the interface; a fixed evaluator checks joint admissibility, maximizes worst-case value, and distinguishes justified refusal from execution failure. Controlled contractual-boundary experiments show improvements in both safe completion and refusal accuracy over direct answering. Separate tests examine explicitly signaled intent ambiguity. Across executable realizations, frozen-rule diagnostics reveal that safe current choices can conceal unsafe authorization domains. Reference-assisted interventions further show that correcting utility alone can expose an existing permission error. These findings establish a concrete interface and evaluation approach for risk-aware delegation: reliable execution must be assessed together with the authorization and value semantics it executes.
+Delegated purchasing must respect the user's authorization even when a request admits several interpretations or contractual outcomes remain uncertain. We formulate risk-aware purchase or refusal by separating authorization across retained states from worst-case utility. Set implements this formulation, selecting a jointly admissible purchase with the highest positive worst-case value, or refusing when none qualifies. This permits useful decisions without further user interaction. We analyze why a safe selected action can coexist with an incorrect authorization domain: omitted states can weaken permissions and inflate guaranteed value, while ranking can conceal the resulting errors. On synthetic contractual-boundary tasks across multiple model families, Set improves exact decisions and useful completion while reducing unsafe acceptances and false refusals relative to direct decisions under the same stated policy. Controlled intent tests examine unresolved reference and scope. Frozen-rule replays and selected-output interventions show how changes in candidate availability or utility expose permissions that safe current purchases leave undetected.
 \end{abstract}
 
 \input{sections/introduction}
 \input{sections/related_work}
 \input{sections/method}
+\input{sections/analysis}
 
 \input{evaluation}
 
 \section{Conclusion}
-Risk-aware delegation need not wait for a unique interpretation: one purchase must satisfy the retained possibilities. Our intent interface makes their permissions and value executable. Controlled experiments support the workflow over direct answering. Diagnostics reveal a complementary finding: a safe choice can conceal unsafe authorization, and correcting utility alone can expose it. Decision, permission, and value checks serve distinct roles in evaluating language-based delegation.
+Risk-aware delegation requires a common authorized purchase, not necessarily a unique interpretation of the request. Set evaluates each candidate's authorization and worst-case value across retained interpretations and contractual events. Across controlled contractual boundaries, the method improves useful completion while reducing unsafe acceptance and false refusal. Our analysis and interventions show why a safe selected purchase does not establish authorization-domain soundness: omitted states can weaken permission and inflate value, while availability and ranking can conceal the permission error. Assessing both the chosen purchase and the alternatives a rule permits gives a more informative account of whether the delegation has been respected.
 \label{mainend}
 
-\clearpage
 \section*{Limitations}
-\paragraph{Semantic and decision scope.}
-The experiments use synthetic purchasing contracts, complete catalogues, correct item grounding, known attributes, and finite uncertainty sets. The primary benchmark concerns contractual events; the historical intent panel supplies explicit cues to unresolved pronouns and scope. Open-ended discovery of plausible interpretations remains to be evaluated. Preferences and risk boundaries are specified rather than learned. Faithfully instantiating ambiguity and contractual semantics remains a limitation of the current front end. End-to-end evaluations retain representation errors. Conformal coverage would require additional calibration. Actual settlement, hidden merchant terms, fraud, and incomplete inventory are outside the tested task.
+The evaluated contracts are synthetic, with complete catalogues, known attributes, correct item grounding, and finite state sets. Risk limits and utility are supplied as inputs. The main benchmark isolates authorization boundaries. Its unique feasible candidate provides limited evidence about ranking among several admissible purchases. Intent tests signal unresolved readings explicitly. The evaluation does not cover open-ended interpretation discovery, hidden merchant terms, incomplete inventory, fraud, or settlement.
 
-\paragraph{Evaluation and implementation scope.}
-The primary benchmark deliberately pairs numerical boundaries with one feasible candidate or none. It supports controlled boundary comparisons, not deployment error-rate estimates or broad ranking over many feasible purchases. The references are separate implementations within one development workflow. Historical diagnostics, effort settings, translations, and replays share cases and are reported as distinct cohorts. Catalogue visibility and service compute budgets vary by architecture or provider; matched-input and execution controls are retained in the appendix. Some generated specifications remain incorrect or invalid. Primary effects concern the full compilation-and-execution pipeline; Appendix~\ref{app:execution-controls} examines realization-dependent outcomes. Operational failures remain in their designated denominators.
+Decision conditions can omit a relevant requirement or bind it to the wrong state, even when the resulting specification executes successfully. Reference implementations check consistency with stipulated semantics and share a development workflow. Configuration, language, and diagnostic panels overlap and do not provide independent task samples. Catalogue visibility and provider compute differ across some controls. The appendix specifies each cohort's execution and scoring protocol, including reference-assisted interventions. The reported gains concern the complete workflow. The selected-output interventions establish specific error mechanisms, not their frequency across requests or deployed systems.
 
 \section*{Ethical Considerations}
-All purchases are synthetic, with no monetary transfers or customer records. Financial consequences follow stipulated benchmark contracts. Saved artifacts distinguish original responses, reference-assisted interventions, and subsequent analysis.
+All purchases are synthetic, with no monetary transfers or customer records. Financial consequences follow stipulated benchmark contracts. Saved artifacts distinguish original responses, reference-assisted interventions, and subsequent analysis. In deployment, erroneous acceptance could cause financial loss, while erroneous refusal could prevent access to a needed service. A deployed system would need explicit authorization and failure handling. Correct execution alone cannot establish that a compiled specification faithfully represents the user's request.
 
 \bibliography{references}
 \clearpage
 \appendix
 \setcounter{dbltopnumber}{2}
 \renewcommand{\dbltopfraction}{0.7}
+\makeatletter
+\setlength{\@dblfptop}{0pt}
+\setlength{\@dblfpsep}{18pt}
+\setlength{\@dblfpbot}{0pt plus 1fil}
+\makeatother
 \input{sections/appendix}
 \end{document}

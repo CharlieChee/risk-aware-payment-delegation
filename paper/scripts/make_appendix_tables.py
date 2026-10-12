@@ -45,6 +45,7 @@ def build(root, table_dir=None):
                 o = row['outcomes']
                 counts = [o.get(k, 0) for k in ('output_budget', 'timeout',
                     'transport_or_provider_failure', 'invalid_output')]
+                counts[3] += o.get('uncertified_execution', 0)
                 counts += [sum(o.get(k, 0) for k in ('certificate_underclaim',
                     'certificate_overclaim', 'suboptimal', 'other_error')), 0]
                 assert sum(counts) == row['n']-row['exact']-row['unsafe']-row['false_refusal'], (profile, arm)
@@ -71,7 +72,7 @@ def build(root, table_dir=None):
         r'Model & Setting & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O\\')
     for model, label in [('gpt56_sol', 'Sol'), ('gpt56_terra', 'Terra'), ('gpt56_luna', 'Luna')]:
         first = True
-        for effort in ('none', 'low', 'medium', 'high', 'xhigh', 'max', 'ultra'):
+        for effort in ('none', 'low', 'medium', 'high', 'xhigh', 'max'):
             profile = model + '_' + effort
             if (profile, 'direct') not in grid:
                 continue
@@ -123,17 +124,37 @@ def build(root, table_dir=None):
 
     rows = load('data/diagnostics/stress_summary.json')['groups']
     by = {(r['profile'],r['arm'],r['variant']):r for r in rows}
-    lines = table('@{}llrrrr@{}',
-        r'Configuration & Frozen realization & Unsafe domain & Unsafe selection & Unsafe selection & Invalid\\' + '\n' +
+    lines = table('@{}lrrrrr@{}',
+        r'Setting & Outputs & Unsafe domain & Unsafe selection & Unsafe selection & Invalid\\' + '\n' +
         r'&& Mixed & Mixed & Unsafe-only & Mixed / only\\')
+    pooled_rows = []
+    source_groups = []
     for profile, label in [('ds_flash_low','DS low'), ('ds_flash_high','DS high'), ('ds_flash_max','DS max')]:
-        for i, (arm, name) in enumerate([('python_cached','Set-Py matched'), ('python_fresh','Set-Py visible'), ('set','Set')]):
+        totals = Counter()
+        for arm in ('python_cached', 'python_fresh', 'set'):
             m = by[profile,arm,'risk_grid']; s = by[profile,arm,'single_4000_yuan']
             assert m['n'] == s['n'] == 72
-            lines.append((label if i == 0 else '') + ' & ' + name + ' & ' +
-                f"{m['full_domain_unsafe']} & {m['unsafe_accept']} & {s['unsafe_accept']} & {m['invalid']}/{s['invalid']}" + r'\\')
-        lines.append(r'\midrule')
-    finish('appendix_replay', lines[:-1])
+            group = dict(profile=profile, arm=arm, n=m['n'],
+                unsafe_domain=m['full_domain_unsafe'], mixed_unsafe=m['unsafe_accept'],
+                unsafe_only=s['unsafe_accept'], mixed_invalid=m['invalid'], only_invalid=s['invalid'])
+            source_groups.append(group)
+            totals.update({k: group[k] for k in ('n', 'unsafe_domain', 'mixed_unsafe',
+                                               'unsafe_only', 'mixed_invalid', 'only_invalid')})
+        assert totals['n'] == 216 and totals['mixed_unsafe'] == 0
+        pooled_rows.append(dict(profile=profile, label=label, **totals))
+        lines.append(label + ' & ' +
+            f"{totals['n']} & {totals['unsafe_domain']} & {totals['mixed_unsafe']} & "
+            f"{totals['unsafe_only']} & {totals['mixed_invalid']}/{totals['only_invalid']}" + r'\\')
+    assert [r['unsafe_domain'] for r in pooled_rows] == [5, 8, 10]
+    assert [r['unsafe_only'] for r in pooled_rows] == [2, 1, 5]
+    assert sum(r['mixed_invalid'] for r in pooled_rows) == sum(r['only_invalid'] for r in pooled_rows) == 12
+    finish('appendix_replay', lines)
+    (root / 'output').mkdir(exist_ok=True)
+    (root / 'output/frozen_diagnostics_scope.json').write_text(json.dumps(dict(
+        source='data/diagnostics/stress_summary.json', base_tasks=72,
+        artifacts=648, replays=1296, aggregation='Pool all recorded source groups within each effort setting.',
+        source_groups=source_groups, reported_rows=pooled_rows,
+        records_modified=False, new_model_calls=0), indent=2) + '\n')
 
 
 if __name__ == '__main__':

@@ -1,23 +1,23 @@
 \section{Controlled Decisions under Retained Intent Ambiguity}
 \label{app:intent}
 \subsection{Task semantics and controlled inputs}
-The frozen parameter-boundary campaign contains three families with unresolved user interpretations. We include all three, selecting by task semantics; five other families with conditional but unambiguous requirements are excluded. This retrospective study is separate from the contractual-event primary benchmark.
+The frozen parameter-boundary campaign contains three families with unresolved user interpretations. We include all three and exclude five families whose requirements are conditional but unambiguous. Selection is based on task semantics. This retrospective study is separate from the primary benchmark of contractual events.
 
 \paragraph{Ticket-holder reference.}
-Two male travellers need tickets; ``his'' ticket must be refundable with a fee below the authorized limit. Utility penalizes that same traveller's delay and refund fee. Both referents remain possible, linking each interpretation's hard requirement, risk bound, and value function.
+Two male travellers need tickets, and ``his'' ticket must be refundable with a fee below the authorized limit. Utility penalizes that same traveller's delay and refund fee. Both referents remain possible. Each reading binds the hard requirement, risk bound, and value function to the corresponding traveller.
 
 \paragraph{Hotel reference and conditional binding.}
 Two guests need correctly registered rooms. ``His room'' must permit cancellation at 18:00 if he arrives at or after 18:00, or 24 hours before his expected arrival otherwise. The cancellation fee and utility weights refer to the same guest, so the unresolved antecedent affects conditional requirements and value.
 
 \paragraph{Distributive versus collective scope.}
-Gifts must satisfy recipients' preferences and wrapping requirements. ``Buy one for each; the exchange top-up is at most $r$'' may bound each recipient or the batch. Stipulated utility uses the corresponding maximum individual or total top-up. With nonnegative charges the batch bound may dominate; the correct bound and score still need to be retained.
+Gifts must satisfy recipients' preferences and wrapping requirements. ``Buy one for each; the exchange top-up is at most $r$'' may bound each recipient or the batch. Stipulated utility uses the corresponding maximum individual or total top-up. With nonnegative charges, the batch bound may dominate the individual bounds. The representation must still preserve the bound and score for each reading.
 
-All requests explicitly signal unresolved reference or scope. Methods see identical user text, complete catalogue attributes, synthetic utility formulas, and the common decision policy. These historical compilation calls see the catalogue, unlike the primary Set protocol. No reference expressions, answer, or subsequent user clarification is supplied. The study tests decisions with retained meanings, not automatic discovery of unrestricted ambiguity.
+All requests explicitly signal unresolved reference or scope. Methods receive identical user text, complete catalogue attributes, synthetic utility formulas, and the common decision policy. Compilation in this historical panel is catalogue-visible; the primary Set protocol excludes the catalogue. Models receive no reference expressions, answers, or subsequent user clarification. The study evaluates decisions under the signaled ambiguity and does not test automatic discovery of unrestricted interpretations.
 
 \subsection{Parameter design and findings}
-Three families, seven settings, and two frozen seeds give 42 API variants. Within each parameter group the candidates and identifiers stay fixed. The authorized risk limit varies over 0, 500, and 1,000 subunits; the risk penalty over 1, 3, and 10; a value offset places the best common candidate at exactly zero or one. Each seed has 18 acceptance and three zero-value refusal variants. These refusals test the value boundary, not an empty feasible intersection. The second seed changes the instance within the same templates.
+Three families, seven settings, and two frozen seeds give 42 API variants. Within each parameter group the candidates and identifiers stay fixed. The authorized risk limit takes values of 0, 500, and 1,000 subunits, and the risk penalty takes values of 1, 3, and 10. A value offset places the best common candidate at exactly zero or one. Each seed has 18 acceptance and three zero-value refusal variants. The refusal cases have a nonempty feasible intersection and test the value boundary. The second seed changes the instance within the same templates.
 
-Figure~\ref{fig:intent} summarizes 294 Direct/Set outcomes on matched variants: DeepSeek low/max and GLM low each use 42 variants per method, and Qwen Max low uses 21 variants per method. Table~\ref{tab:intent-figure3} gives the four complete outcome partitions. State-wise execution improves exact decisions in each of these four configurations, covering unresolved reference, conditional binding, and collective scope under risk and value constraints. Exactness and safety remain distinct: Qwen has six unsafe Set acceptances versus five for Direct. Reference-arithmetic checks and response replay reproduce the recorded evaluations.
+Table~\ref{tab:intent-figure3} supplies all four paired configurations in Figure~\ref{fig:intent}: 42 variants per method for DeepSeek low/max and GLM low, and 21 for Qwen Max low. Reference-arithmetic checks and response replay reproduce these recorded evaluations.
 
 \begin{table*}[!tbp]
 \centering\small
@@ -28,7 +28,7 @@ Figure~\ref{fig:intent} summarizes 294 Direct/Set outcomes on matched variants: 
 \end{table*}
 
 \subsection{Common purchase, empty intersection, and value boundaries}
-Table~\ref{tab:intent-behaviors} adds five earlier base checks. Each is repeated under three context conditions with two samples per method. Direct, rule-reinforced Direct, Merged, and Set each obtain 30/30; reference-assisted Direct has a separate 10/10. These ceiling results verify tested behaviors, not an accuracy advantage. In particular, F02a tests the empty intersection missing from the parameter panel.
+Table~\ref{tab:intent-behaviors} reports five earlier base checks, each repeated under three context conditions with two samples per method. Direct and Set each obtain 30/30. These checks confirm the tested behaviors without distinguishing method accuracy. F02a covers the empty intersection absent from the parameter panel.
 
 \begin{table*}[!tbp]
 \centering\small\setlength{\tabcolsep}{4pt}
@@ -43,9 +43,8 @@ F04a & ``His experience'' may mean Zhang or Li; two feasible options have utilit
 F04b & Replace $(0.2,0.2)$ by $(0,0)$, keeping the other option unchanged. & Refuse: the best guarantee is zero.\\
 \bottomrule
 \end{tabular}
-\caption{Recorded capability checks, not new examples substituted for measured tasks. Monetary labels use the paper's MU convention; numerical values are unchanged. Six non-oracle generations per base/method are repeated measurements.}
+\caption{Recorded capability checks. Each base case has six generations per non-oracle method; these are repeated measurements of the same task. Monetary values follow the paper's MU convention.}
 \label{tab:intent-behaviors}
 \end{table*}
 
-\paragraph{Relationship to the larger recorded campaign.}
-The complete paired panel contains $2(42+42+42+21)=294$ method outcomes, or 147 matched task--configuration units. The broader API archive has 544 outcomes: these 294, 178 merged-expression controls, and 72 Direct/Set outcomes from configurations without a complete paired panel. Another 72 native-model stress outcomes bring the historical total to 616. These counts describe overlapping method evaluations, not independent requests; they never replace a plotted configuration's denominator. The separate 36-call input intervention and 16-output diagnosis have their own source pools (Appendix~\ref{app:oracle}).
+The reported panel contains 294 method outcomes from 147 matched task--configuration units. Each plotted configuration keeps its own denominator. The separate 36-call input intervention and 16-output diagnosis use different source pools (Appendix~\ref{app:oracle}); the artifact indexes their task membership and generation settings.
