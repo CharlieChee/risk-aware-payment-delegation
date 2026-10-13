@@ -100,14 +100,19 @@ A primary comparison trial allows one semantic attempt. Transport failures may b
 \label{app:model-configurations}
 \label{app:qwen}
 \label{app:primary-extensions}
-Table~\ref{tab:configurations} specifies the primary, intent, and prospective availability settings. The effort panel uses off, low, medium, high, xhigh, and max for each of Sol, Terra, and Luna; language tests use DeepSeek low/high/max and Astra max. Their requested identities follow the same table. Complete per-study settings, including archived explorations, remain in the artifact. Paired Direct/SET comparisons share requested generation settings. Primary command-line interface (CLI) calls use fresh contexts with tools and delegation disabled; application programming interface (API) outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
+Table~\ref{tab:configurations} combines settings for the primary, intent, and prospective availability studies with the retained inventory of 12 requested models and 49 model--effort combinations. The effort panel uses all six settings for Sol, Terra, and Luna; language tests use DeepSeek low/high/max and Astra max. The inventory also includes additional and archived runs; their exact per-study settings remain in the artifact. Paired Direct/SET comparisons share requested generation settings. Primary command-line interface (CLI) calls use fresh contexts with tools and delegation disabled; application programming interface (API) outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
 
 \begin{table*}[p]
-\centering\small
+\centering\fontsize{9}{10.5}\selectfont
 \setlength{\tabcolsep}{4pt}
+\textbf{A. Settings for the main evaluation cohorts}\par\smallskip
 \input{tables/model_configurations}
-\caption{Requested model configurations. Output caps are in tokens; primary and intent deadlines are in seconds. Each primary configuration uses 200 tasks per method. Intent counts appear in Table~\ref{tab:intent-figure3}; the availability protocol is in Appendix~\ref{app:availability}. Names refer to requested configurations, not independently attested backend versions.}
+\par\medskip
+\textbf{B. Model and effort inventory}\par\smallskip
+\input{tables/model_configurations_extended}
+\caption{Requested models and generation settings. Caps are in tokens and deadlines in seconds. Panel A gives cohort settings; each primary configuration uses 200 tasks per method, intent counts appear in Table~\ref{tab:intent-figure3}, and availability follows Appendix~\ref{app:availability}. Panel B lists the 49 model--effort combinations in the retained inventory; its caps and deadlines summarize primary, sensitivity, and archived runs, not all possible pairings. Names denote requested configurations, not independently attested backend versions.}
 \label{tab:configurations}
+\label{tab:configurations-extended}
 \end{table*}
 
 \subsection{Unified reproduction entry point}

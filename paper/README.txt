@@ -1,7 +1,7 @@
 Risk-Aware Payment Delegation: From Intent to Executable Decisions
 
 October 13, 2026 narrative-focused revision. Main text: 8 pages. Complete PDF:
-21 pages, with 45 cited references. The SET formulation and primary workflow
+22 pages, with 45 cited references. The SET formulation and primary workflow
 comparison remain unchanged. Figure 3 carries availability budgets and coverage;
 the former main-text component table is absent from the entire PDF, and no
 replacement family-summary table is introduced.
@@ -17,8 +17,9 @@ authorized alternatives. Eight exposed specifications begin with exact decisions
 Appendix F contains design, complete distributions and controls, and original-
 expression verification. Historical component, input, price, and catalogue
 studies are indexed in ../docs/diagnostic_archive/README.md, with all positive
-and negative outcomes retained separately. The old configuration inventory is
-archived there too; the PDF lists the settings needed for its present results.
+and negative outcomes retained separately. Table 7 combines the study settings with the retained inventory of all 12
+requested models and 49 model-effort combinations on one page. The original
+inventory remains archived for provenance.
 
 Acquisition records are documented in ../docs/availability_20261013.md; no raw
 experiment result is overwritten by this editing pass. The abstract is plain
