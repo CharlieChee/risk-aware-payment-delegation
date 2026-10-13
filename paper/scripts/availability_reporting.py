@@ -112,8 +112,8 @@ def build():
         legend=ax.legend(loc='lower left',bbox_to_anchor=(-.05,1.02),fontsize=8.1,frameon=True,
                          borderpad=.4,labelspacing=.3,handlelength=2.6)
         legend.get_frame().set_edgecolor('black');legend.get_frame().set_facecolor('white');legend.get_frame().set_alpha(1)
-        fig.text(.5,.063,f"Within 8 removals: {len(main)} exposed ({stats['AvailExposedPct']}%)",ha='center',fontsize=7.7)
-        fig.text(.5,.007,f"{cover['requests']} requests | {len(cover['templates'])}/20 templates | 4 families",ha='center',fontsize=7.7)
+        fig.text(.5,.063,f"Within 8 removals: {len(main)}/{planned:,} units ({stats['AvailExposedPct']}%)",ha='center',fontsize=7.5)
+        fig.text(.5,.007,f"{cover['requests']} distinct requests | {len(cover['templates'])}/20 templates | 4 families",ha='center',fontsize=7.1)
         for ext in ['pdf','svg','png']:
             fig.savefig(ROOT/'figures'/f'13_authorization_diagnostics.{ext}',dpi=400,bbox_inches='tight',pad_inches=.04)
         plt.close(fig)

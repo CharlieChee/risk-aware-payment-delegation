@@ -61,7 +61,7 @@ Stratum & Candidates & Margin (subunits) & Cases\\
 The design fixes unique feasibility, balanced acceptance/refusal, and complete catalogues. The task balance is not an estimate of real purchasing frequencies.
 
 \subsection{Reference calculations and freezing}
-A cash-flow ledger evaluates bitmask events with integer or rational arithmetic, and a separate expression implementation uses the rule engine. Before model evaluation, we compare candidate feasibility, worst loss, guaranteed utility, and final decisions. They agree on all 6,712,320 candidate--event checks. Twenty fresh attribute assignments per template are also checked on all 64 subsets, yielding $20\times20\times64=25{,}600$ checks, plus three hand-calculated threshold witnesses. Both implementations arose within one development workflow and may share a misunderstanding of a clause despite agreeing numerically.
+A cash-flow ledger evaluates bitmask events with integer or rational arithmetic, and a separate expression implementation uses the rule engine. Before model evaluation, we compare candidate feasibility, worst loss, guaranteed utility, and final decisions. They agree on all 6,712,320 candidate--event checks. Twenty fresh attribute assignments per template are also checked on all 64 subsets, yielding $20\times20\times64=25{,}600$ checks, plus three hand-calculated threshold witnesses. These references implement the stipulated benchmark contracts. Cross-implementation, fresh-attribute, and hand-worked checks test internal consistency; they do not establish validity for unobserved merchant terms. Both implementations arose within one development workflow and may share a misunderstanding of a clause despite agreeing numerically.
 
 Tasks, references, prompts, and evaluator code are frozen before model evaluation. Public inputs exclude construction seeds, reference matrices, labels, and designated safe identifiers. Candidate visibility follows Table~\ref{tab:visibility}.
 
@@ -119,7 +119,10 @@ Table~\ref{tab:configurations} combines settings for the primary, intent, and pr
 \label{app:reproduction}
 The anonymous artifact provides implementation code, benchmark inputs and references, prompts, generation settings, retained outputs, and reporting materials at \url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}. Its documentation gives the environment setup and commands for rebuilding the reported results and running the corresponding checks. Table~\ref{tab:artifact-map} distinguishes report reconstruction, retained-output verification, and reference recomputation. These offline checks make no model calls and leave experimental records unchanged; new inference runs are documented separately.
 
-\begin{table*}[p]
+\paragraph{Primary result provenance.}
+The reporting loader indexes two aggregate reports under \path{paper/data/author_reports/}: \path{20261011_confirmed_aggregates.json} records externally supplied GLM high, Astra max, and Sol medium updates; \path{20261011_primary200_completion.json} completes their error and useful-completion counts and replaces the partial Opus display with 200 tasks per method. Together they supply the displayed GLM high, Astra max, Sol medium, and Opus medium rows. Sol's Direct counts also agree with the retained local observations. The other seven configurations use archived per-trial outcomes with complete-domain rescoring where applicable. The external replacement outputs have not been imported: their supplied counts can be reconstructed and checked arithmetically, but cannot currently be rescored or matched case by case. Earlier local outputs are archived separately and do not substitute for those replacements. The artifact's provenance index maps each arm to its input file; paired statistics use retained observations rather than inferred pairings from aggregates.
+
+\begin{table*}[!t]
 \centering\small\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{.20\textwidth}p{.39\textwidth}p{.36\textwidth}@{}}
 \toprule

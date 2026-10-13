@@ -5,12 +5,14 @@
 \paragraph{Tasks and frozen specifications.}
 We fix 800 distinct request--contract inputs before generation: 40 numerical instances of each of the 20 templates in Table~\ref{tab:templates}, across four contract families. Each has 128 candidates. DeepSeek Flash (\texttt{deepseek-flash}), GLM (\texttt{glm-5.3}), and Qwen Max (\texttt{qwen3.8-max}) use low effort and a 32,768-token output budget. Preparation receives the request, contract, and schema, excluding candidates and reference information.
 
-We evaluate permissions and required utilities over the complete catalogue. Determinate evaluation does not imply agreement with reference semantics. Percentages use all planned trials. Generation settings and per-request records are provided in the artifact.
+Each request--configuration unit contributes its first fully evaluable specification, with unchanged inputs repeated when needed. Retention depends only on complete-domain evaluability, without reference to correctness, safety, or exposure. We evaluate permissions and required utilities over the complete catalogue; determinate evaluation does not imply agreement with reference semantics. Percentages use all 800 planned units per model, or 2,400 overall. Generation settings and per-request records are provided in the artifact.
 
 \paragraph{Catalogue construction and reference checks.}
 The construction allocates 32 offers each to authorized positive-value purchases, unauthorized boundary cases, contract-branch controls, and ordinary sampled attributes. Construction categories differ from authorization labels: the latter two blocks may add authorized purchases. Boundary distances include one monetary subunit and approximately 1\%, 5\%, and 20\% of the risk limit. Attributes remain contract-consistent.
 
 Each template has 20 S and 20 T requests. In S, the best unrestricted reference-valued offer is authorized; 1, 4, 8, 16, or 24 high-value authorized offers form a ranking barrier, with four requests per size. In T, some unauthorized offer has greater reference value than every authorized offer. These strata and all candidates are fixed before generation. The study therefore probes a controlled pressure distribution. Independent cash-ledger and expression references agree on all 5,836,800 candidate--event checks; input uniqueness, branch coverage, and random-removal plans are also checked before calls.
+
+S provides opportunities for a false admission to be masked by an authorized reference-valued winner; T makes unauthorized alternatives more attractive under the reference. Neither stratum fixes the generated permissions. Generated values can also differ from reference values, so exposure in S is an observation rather than a consequence of the stratum definition. All observed primary exposures occur in S, limiting the empirical claim to this constructed setting.
 
 \paragraph{Frozen interventions and endpoint.}
 The original catalogue, 128 random-removal conditions (32 each for $k\in\{1,4,8,16\}$), 16 generated-rank prefixes, and one unauthorized-only catalogue define 146 conditions per specification. Random plans are fixed in advance and shared across models. Ranked removals order originally admitted offers by generated utility, retaining original candidate order for ties; the removal rule uses no reference labels. Surviving attributes, permissions, utilities, and the selector remain unchanged. The unauthorized-only condition retains all reference-unauthorized offers and is an extreme control.
@@ -19,6 +21,8 @@ The primary endpoint requires an originally safe acceptance, an unauthorized sel
 
 \subsection{Complete results and controls}
 \label{app:availability-results}
+The retained cohort contains 2,373 fully evaluable specifications, including 2,298 initially safe purchases and 2,221 exact purchases. The primary endpoint occurs in 48 of the former (2.09\%) and eight of the latter (0.36\%). Ten exact purchases have false admissions (0.45\%), of which eight are exposed within the primary budget. Figure~\ref{fig:ablations} retains the planned-unit denominator: 48/2,400 (2.00\%). These 48 specifications correspond to 48 distinct request inputs; 48/800 would instead describe request coverage across any of the three configurations. Unobserved exposure is not a certificate of safety for the remaining planned units.
+
 \begin{table}[!t]
 \centering\small\setlength{\tabcolsep}{3pt}
 \input{tables/availability_models}
@@ -46,6 +50,8 @@ Every observed transition and attainable minimum-deletion witness is independent
 \end{table}
 
 Across all 71 initially safe specifications with false admissions, the unauthorized-only control exposes a positive-valued unauthorized offer. Of these, 48 are exposed within eight ranked removals and 61 within sixteen; the rest require a larger prefix. Exact minimum-deletion certificates accompany the full trajectories in the artifact. Template-cluster percentile intervals use 5,000 resamples with seed 2026101307, keeping each template's requests, model outputs, and replay conditions together. They are descriptive for these 20 structures, with no deployment or model-ranking inference.
+
+Using the same planned-unit denominator as Figure~\ref{fig:ablations}, the 95\% intervals for primary exposure are $[0.00,3.50]\%$ for DeepSeek, $[2.13,6.38]\%$ for GLM, and $[0.00,0.75]\%$ for Qwen. The corresponding hidden-error intervals are $[0.00,3.50]\%$, $[3.75,10.38]\%$, and $[0.00,1.13]\%$. These intervals retain template dependence and are distinct from the safe-purchase conditional percentages above.
 
 \subsection{Original-expression verification}
 \label{app:availability-witness}

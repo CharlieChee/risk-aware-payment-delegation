@@ -3,7 +3,9 @@
 \subsection{Primary outcomes and matched comparisons}
 Table~\ref{tab:main} gives the counts underlying Figure~\ref{fig:completion}, with 200 tasks per method in each of eleven configurations. Error categories and feasible-task completion use the same cohorts. Table~\ref{tab:configurations} specifies the generation settings.
 
-\begin{table*}[p]
+Residual error categories do not improve uniformly. Luna's Other outcomes rise from 2 to 28 even as exact outcomes increase from 41 to 91; Terra's Other outcomes rise from 1 to 15 while exact outcomes increase from 81 to 158. Other combines value errors and incomplete execution and is never credited as correct completion. These marginal counts do not identify which individual errors changed category. Appendix~\ref{app:reproduction} identifies the aggregate updates and the records available for paired analysis.
+
+\begin{table*}[!t]
 \centering\small
 \input{tables/main}
 \caption{\textbf{Primary comparison: Direct$\to$SET.} Here $n$ counts tasks per method. Exact requires decision and value correctness. Unsafe acceptance, false refusal (Refusal), and Other partition errors; Accept is exact completion among feasible cases.}

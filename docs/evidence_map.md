@@ -44,7 +44,7 @@ reporting code supplied with the paper. `docs/protocol.md` describes the
 preserved protocol; `docs/reproduction.md` separates offline reconstruction,
 reference verification, and new inference runs.
 
-Reconstructing a figure from aggregate inputs is not raw-response rescoring.
+Reconstructing a figure from aggregate inputs is not raw-response rescoring. The [primary provenance index](primary_provenance.md) identifies every displayed arm, the aggregate updates, and their verification limits.
 Likewise, a hash or a successful interpreter run does not certify that generated
 conditions faithfully express the request. The paper's rule and component
 diagnostics address that separate semantic question.

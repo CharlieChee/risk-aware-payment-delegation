@@ -45,7 +45,7 @@ Delegated purchasing requires an agent to pursue useful purchases within bounded
 \input{evaluation}
 
 \section{Conclusion}
-SET makes authorization explicit before optimizing worst-case value, improving useful purchasing decisions on the evaluated tasks. Current success, however, can leave false permissions for unselected offers undetected. Our frozen-specification study shows that these errors can affect purchasing when preferred offers become unavailable, even while viable authorized alternatives remain. Cross-template replays and original-expression checks connect the resulting actions to permissions already encoded in the specification. A delegated agent may need to choose a different offer, but must still respect the same authorization. Evaluating the path from intent to executable decisions therefore requires examining both the purchase made and the admitted domain.
+SET makes authorization explicit before optimizing worst-case value, improving useful purchasing decisions across the tested primary configurations. Current success can nevertheless leave false permissions for unselected offers undetected. Our frozen-specification study shows that these errors affect purchasing when preferred offers become unavailable, even while viable authorized alternatives remain. Cross-template replays and original-expression checks connect the resulting actions to permissions already encoded in the specification. Where reference semantics are available, evaluation should report decision correctness, false admissions and exclusions, and their behavioral consequences under specified availability changes. These checks connect intent fidelity to executable decisions. A delegated agent may choose a different offer; doing so must still respect the same authorization.
 \label{mainend}
 
 \section*{Limitations}
@@ -66,5 +66,5 @@ All purchases are synthetic, with no monetary transfers or customer records. Fin
 \setlength{\@dblfpsep}{18pt}
 \setlength{\@dblfpbot}{0pt plus 1fil}
 \makeatother
-\input{appendix}
+\input{sections/appendix}
 \end{document}

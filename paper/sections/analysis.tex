@@ -13,6 +13,8 @@ The difference $\widehat F_C\setminus F_C$ contains unauthorized offers the rule
 
 The reverse difference, $F_C\setminus\widehat F_C$, contains authorized offers the rule excludes, potentially removing the best purchase or causing false refusal. An empty domain is sound but can miss an authorized task. Refusal is correct only when no reference-authorized purchase has positive guaranteed value. We therefore evaluate useful completion alongside authorization soundness.
 
+These objects require different evidence. Decision scoring compares the selected purchase and reported value with the reference answer. Domain checking evaluates generated permission for every candidate, including alternatives that the current ranking never selects. A behavioral test then asks whether any false admission becomes a purchase under a specified change in availability. An exact answer, an empty false-admission set, and the absence of a bounded exposure are consequently distinct outcomes. Reporting them separately identifies whether a successful decision reflects faithful permissions or leaves a consequential error unexercised. This diagnostic requires reference semantics over the tested finite catalogue; it supplies no guarantee about unseen offers.
+
 \subsection{Exposing Hidden Permissions through Availability}
 For a fixed request and fully evaluated specification, restricting $C$ to $C'\subseteq C$ leaves surviving offers' permissions and utilities unchanged: $\widehat F_{C'}=\widehat F_C\cap C'$ and $F_{C'}=F_C\cap C'$. Thus a sound domain remains sound under deletion. Availability can expose an existing false permission, not create one.
 

@@ -15,7 +15,16 @@ Gifts must satisfy recipients' preferences and wrapping requirements. ``Buy one 
 All requests explicitly signal unresolved reference or scope. Methods receive identical user text, complete catalogue attributes, synthetic utility formulas, and the common decision policy. Compilation in this historical panel is catalogue-visible; the primary SET protocol excludes the catalogue. Models receive no reference expressions, answers, or subsequent user clarification. The study evaluates decisions under the signaled ambiguity and does not test automatic discovery of unrestricted interpretations.
 
 \subsection{Parameter design and findings}
-Three families, seven settings, and two frozen seeds give 42 API variants. Within each parameter group the candidates and identifiers stay fixed. The authorized risk limit takes values of 0, 500, and 1,000 subunits, and the risk penalty takes values of 1, 3, and 10. A value offset places the best common candidate at exactly zero or one. Each seed has 18 acceptance and three zero-value refusal variants. The refusal cases have a nonempty feasible intersection and test the value boundary. The second seed changes the instance within the same templates.
+Three families, seven settings, and two frozen seeds (26092101 and 26092111) give 42 API variants. Within each family--seed group the candidates and identifiers stay fixed. The frozen manifest uses the following triples $(r,\lambda,V)$ of authorized risk limit, risk penalty, and value baseline:
+\[
+\begin{gathered}
+(500,3,100{,}000),\quad (500,1,100{,}000),\\
+(500,10,100{,}000),\quad (1{,}000,3,100{,}000),\\
+(0,3,100{,}000),\quad (500,3,V_0+1),\\
+(500,3,V_0).
+\end{gathered}
+\]
+Here $V_0$ is the family--seed reference threshold at which the best common purchase has zero worst-case utility under $r=500$ and $\lambda=3$. Amounts use stored monetary subunits. The first five settings comprise the baseline and four single-parameter changes; the last two isolate the positive-value boundary. Each seed has 18 acceptance and three zero-value refusal variants. The refusal cases have a nonempty feasible intersection. The second seed changes the numerical instance within the same templates; this design does not enumerate the full parameter cross-product.
 
 Table~\ref{tab:intent-figure3} supplies all four paired configurations in Figure~\ref{fig:intent}: 42 variants per method for DeepSeek low/max and GLM low, and 21 for Qwen Max low. Reference-arithmetic checks and response replay reproduce these recorded evaluations.
 
@@ -30,5 +39,3 @@ Table~\ref{tab:intent-figure3} supplies all four paired configurations in Figure
 \subsection{Semantic boundary checks}
 \label{app:intent-boundaries}
 Separate capability checks instantiate common feasible purchases, empty intersections, worst-case ranking, and the zero-value refusal boundary. The empty-intersection case complements the parameter panel, whose refusal cases instead have zero best value. These checks exercise the prescribed behaviors without establishing a comparative advantage; their repeated-generation records remain in the artifact. Appendix~\ref{app:observed-trace} gives a recorded common-purchase/empty-intersection trace.
-
-The small capability checks and earlier input interventions remain separate from the formal intent panel.
