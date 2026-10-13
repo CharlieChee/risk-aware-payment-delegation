@@ -22,6 +22,7 @@
 \newcommand{\A}{\mathcal A}
 \newcommand{\ours}{\textsc{SET}}
 \newcommand{\direct}{\textsc{Direct}}
+% Begin tables/primary_stats.tex
 \newcommand{\PrimaryProfileCount}{11}
 \newcommand{\PrimaryDisplayCount}{11}
 \newcommand{\PrimaryCompleteDisplayCount}{11}
@@ -32,6 +33,8 @@
 \newcommand{\PrimaryExtensionCount}{2000}
 \newcommand{\PrimaryExtensionProfiles}{5}
 
+% End tables/primary_stats.tex
+% Begin tables/evaluation_inventory_stats.tex
 \newcommand{\ProcessRecordCount}{34{,}510}
 \newcommand{\ProcessBatchCount}{113}
 \newcommand{\ProcessProjectCount}{12}
@@ -39,6 +42,8 @@
 \newcommand{\ProcessEarlyRisk}{1{,}229}
 \newcommand{\ProcessCoreLab}{21{,}638}
 
+% End tables/evaluation_inventory_stats.tex
+% Begin tables/availability_stats.tex
 % Generated from the closed availability cohort.
 \newcommand{\AvailHiddenPct}{2.96}
 \newcommand{\AvailExposedPct}{2.00}
@@ -48,6 +53,7 @@
 \newcommand{\AvailBackupMax}{67}
 \newcommand{\AvailExactExposed}{8}
 
+% End tables/availability_stats.tex
 \DeclareMathOperator*{\argmax}{arg\,max}
 \title{Risk-Aware Payment Delegation:\\From Intent to Executable Decisions}
 \author{Anonymous authors}
@@ -57,30 +63,33 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Delegated purchasing must respect existing authorization when interpretations or contractual outcomes remain uncertain. We formulate purchase or refusal without further user interaction by separating joint authorization from worst-case utility. We introduce SET, our executable decision workflow, which selects a purchase admissible across retained states with the highest positive worst-case value, or refuses when none qualifies. On synthetic contractual-boundary tasks across model families, it improves exact decisions and useful completion while reducing unsafe acceptances and false refusals relative to direct decisions under the same policy. Yet a correct current choice does not certify the permissions encoded by the generated conditions. We analyze how ranking conceals false admissions and test this distinction by freezing specifications and varying candidate availability. Across 800 requests and three model configurations, removing at most eight high-ranked offers exposes unauthorized purchases on 48 requests spanning 15 contract templates and all four families. Every witness retains alternatives authorized and positively valued under both generated conditions and references; eight begin with exact decisions. These findings connect intent fidelity to executable decisions and motivate checking the admitted domain alongside the selected purchase: losing a preferred offer does not expand the user's authorization.
+Delegated purchasing requires an agent to pursue useful purchases within bounded authority. Uncertain interpretations and contractual outcomes complicate this task: choosing a convenient reading may exceed permission, while refusing every uncertain request discards useful options. We introduce SET, an executable workflow that requires authorization across retained states before ranking purchases by worst-case utility, accepting only a positive-value option without another user turn. On synthetic contractual-boundary tasks, SET improves exact decisions while reducing unauthorized acceptances and false refusals relative to direct decisions under the same policy; primary DeepSeek exactness rises from 62.0\% to 92.25\%. Yet better current decisions do not establish that generated permissions are correct. We analyze how ranking conceals false admissions and test this distinction by freezing generated conditions while changing candidate availability. Across 800 requests and three model configurations, removing at most eight high-ranked offers exposes unauthorized purchases on 48 requests spanning 15 templates and four contract families. Every witness retains alternatives permitted and positively valued under both generated conditions and references; eight begin with exact decisions. These findings connect intent fidelity to executable decisions: choosing a different offer must still respect the same authorization. Evaluating delegation requires examining both the selected purchase and the admitted domain.
 \end{abstract}
 
+% Begin sections/introduction.tex
 \section{Introduction}
 \label{sec:introduction}
-Language agents use external tools to carry out multi-step tasks \citep{react,schick2023toolformer}. Benchmarks cover shopping, travel, and service workflows \citep{webshop,travelplanner,taubench}, as well as broader web tasks \citep{zhou2024webarena,deng2023mind2web}. ST-WebAgentBench counts completion as successful only when applicable policies are satisfied \citep{stwebagentbench}. In delegated purchasing, the commitment and its possible consequences must stay within the user's authorization. Cancellation, return, or replacement costs can exceed that authorization even when the initial price is within budget.
+An agent entrusted to purchase can commit the user to both a price and contractual consequences such as cancellation fees. Meeting a shopping objective is therefore insufficient: the commitment must stay within the authority the user granted. The Agent Payments Protocol (AP2) explicitly targets purchases under pre-approved conditions when the user is absent \citep{ap2}. Before payment execution, an agent must determine whether a proposed purchase satisfies those conditions. We study this semantic decision, with authentication and settlement outside our scope.
 
-Requests can have several readings, and future events determine financial consequences. We study purchase or refusal without another user turn, using only existing authorization. Choosing a convenient reading can permit an unauthorized purchase; refusing every uncertain request can discard useful options. Yet one purchase may satisfy every retained possibility. The task is to find a common authorized purchase with positive worst-case value.
+Existing authorization can still leave uncertainty about what a request requires or what a purchase will cost under future events. Choosing a convenient reading can permit an action the user did not authorize; refusing every uncertain request can discard useful purchases. The question is whether a valuable purchase is already justified across the retained possibilities. We study purchase or refusal without another user turn, using only existing authorization. Clarification methods obtain additional information \citep{knowno,voi,sage}; here, the agent must act within what is already permitted or decline the task.
 
-Clarification and uncertainty-aware planning use additional information to improve decisions \citep{knowno,voi,sage}. We apply the fixed-set max--min principle of Risk-Averse Calibration (RAC) \citep{rac}, with purchasing permissions that cannot be traded against utility. Turning intent into executable decisions requires preserving which conditions apply under each reading or event. For example, a loss limit restricts permission; it is not compensation that reduces the loss. That distinction affects both admissibility and value.
+We introduce \ours, an executable workflow that separates authorization from value. It first requires the same purchase to satisfy the hard requirements and financial permissions of every retained state, then ranks admissible purchases by worst-case utility and accepts only a positive-value option. This instantiates the fixed-set max--min principle of Risk-Averse Calibration (RAC) \citep{rac} for delegated purchasing. Utility cannot compensate for violating authorization: a loss limit restricts permission, whereas contractual compensation changes the loss itself. Fixed execution consistently applies the generated conditions; fidelity to the user's request is an additional requirement.
 
-We introduce \ours\ to evaluate authorization across retained states and rank admissible purchases by worst-case utility through a fixed procedure. We assess how reliably this workflow turns natural-language delegation into purchasing decisions across model families.
+A correct current decision does not establish that the underlying permissions are correct. An unauthorized alternative may already be admitted but lose to a higher-valued authorized offer. If the preferred offer becomes unavailable, the same specification can select the unauthorized alternative even while other authorized, positive-value purchases remain. The executor need not change its rules or receive a new model response. The false permission was already present; the original choice did not reveal it. This distinction matters whenever a delegated agent must choose among alternatives under unchanged authorization.
 
-A preferred offer becoming unavailable does not expand the user's authorization. Yet a safe purchase can reflect either a rule that excludes unauthorized offers or a ranking that keeps them from winning. In one controlled replay, a specification initially makes an exact decision, but selects an unauthorized offer after four high-ranked offers are removed, while 59 alternatives remain permitted and positively valued under both its conditions and the reference. The request, permissions, utilities, and surviving offers are unchanged. We therefore distinguish a correct current decision from a sound admitted domain. Frozen-specification tests examine whether candidate unavailability exposes permissions the original selection left untested, connecting the fidelity of generated authorization to executable decisions.
+Our evaluation examines both useful decisions and the permissions behind them. Paired contractual-boundary tests ask whether decisions respond when a purchase crosses an authorization limit; intent tests ask whether common purchases remain possible under ambiguity. A separate frozen-specification study changes only candidate availability to test permissions that safe choices can conceal. SET improves the primary workflow, while availability changes expose hidden errors across 15 templates and all four contract families. Together, these results connect executable decision processing to its essential semantic requirement: choosing a different offer must still respect the same authorization.
 
 The paper makes three contributions:
 \begin{itemize}
-\item \textbf{Risk-aware decisions under unresolved uncertainty:} a formulation of purchase or refusal that requires a common authorized action and separates its permission from its worst-case value.
-\item \textbf{Authorization beyond the selected action:} an analysis distinguishing current decision correctness from domain soundness, including how errors in generated conditions can remain hidden by ranking.
-\item \textbf{Decision reliability and authorization fidelity:} multi-model boundary and intent tests, together with a prospective frozen-specification study that exposes hidden permissions across contract structures while viable authorized alternatives remain.
+\item \textbf{Useful decisions under existing authorization:} a purchase-or-refusal formulation that separates joint admissibility from worst-case value, and its realization in SET without resolving all retained uncertainty.
+\item \textbf{Authorization beyond current correctness:} a distinction between selected-action safety and domain soundness, with conditions under which candidate removal exposes false permissions while viable authorized alternatives remain.
+\item \textbf{Controlled evidence of gains and hidden errors:} multi-model boundary and intent tests of workflow reliability, followed by a prospective availability study identifying authorization failures across contract structures, including failures from exact starting decisions.
 \end{itemize}
 
 Code, benchmark materials, retained responses, evaluation records, and reproduction tools are available in our anonymous artifact package (Appendix~\ref{app:reproduction}).\footnote{\url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}}
 
+% End sections/introduction.tex
+% Begin sections/related_work.tex
 \section{Related Work}
 \label{sec:related}
 \paragraph{Decisions under uncertainty.}
@@ -90,11 +99,14 @@ KnowNo and AmbiK address ambiguous planning instructions \citep{knowno,ambik}; I
 Complex-policy studies identify workflow-governing rules as a major reasoning difficulty \citep{complexpolicy}. AgentIF examines conditional constraints and rules governing which constraints apply and take priority \citep{agentif}. These findings motivate attention to relationships among conditions. Executable reasoning separates interpretation from computation \citep{pal,logiclm,linc}; semantic parsing captures compositional requests and constrains their representation \citep{gupta2018hierarchical,shin2021constrained}. Genie maps assistant commands to ThingTalk programs \citep{campagna2019genie}, while financial contract languages define interpretation and valuation rules \citep{composingcontracts}. Formalization studies examine translation errors \citep{folcode,fover,verify}. We study their consequences for authorization and worst-case value under retained readings and events.
 
 \paragraph{Agent safeguards and policy compliance.}
+Tool-using agents \citep{react,schick2023toolformer} are evaluated in shopping, travel, service, and web workflows \citep{webshop,travelplanner,taubench,zhou2024webarena,deng2023mind2web}. ST-WebAgentBench requires applicable policies to be satisfied for successful completion \citep{stwebagentbench}.
 ToolEmu and ToolSword evaluate risks in tool use \citep{toolemu,ye2024toolsword}; AgentDojo and AgentHarm study prompt injection and harmful tasks \citep{agentdojo,agentharm}. GuardAgent, DeAction, AgentSpec, and VeriGuard generate or enforce behavioral constraints \citep{guardagent,deaction,agentspec,veriguard}. AgentAuditor assesses evaluator reliability, using strict and lenient standards for ambiguous risk judgments \citep{agentauditor}. Our experiments use explicit purchasing permissions and assess both unauthorized acceptance and missed authorized purchases.
 
 \paragraph{Errors hidden by outcomes.}
 OpenAgentSafety distinguishes safe behavior from unsuccessful unsafe attempts and failures before exposure to risk \citep{openagentsafety}. Near-Miss, published at the Generation, Evaluation and Metrics (GEM) workshop, detects missing information checks before state-changing actions even when the final outcome is correct \citep{nearmiss}. These studies complement challenge sets, behavioral tests, and contrast sets \citep{mccoy2019right,checklist,contrastsets}. We examine false permissions already encoded in a purchase specification but hidden by its selected action. Frozen-specification tests vary availability while viable authorized alternatives remain. They connect the fidelity of executable conditions to the admitted domain, whose soundness cannot be inferred from current decision correctness.
 
+% End sections/related_work.tex
+% Begin sections/method.tex
 \section{Risk-Aware Delegation under Uncertainty}
 \label{sec:method}
 \label{sec:contract}
@@ -122,7 +134,7 @@ In our ticket tasks, Zhang and Li need tickets within 3,000 monetary units (MU),
 
 These equations define the target semantics used for offline references. Experimental inputs state events, permissions, and utility conventions, but do not supply their executable reference expressions. Errors in deriving the conditions, including omitted readings and incorrect clause binding, remain part of the end-to-end evaluation.
 
-\subsection{Purchase, Refusal, and Incomplete Evaluation}
+\subsection{From Intent to Executable Decisions}
 \label{sec:realization}
 \label{sec:contracts}
 \label{sec:intent-dsl}
@@ -154,14 +166,16 @@ The procedure exactly solves the compiled version of Equation~\eqref{eq:decision
 \emph{Fixed evaluator: lines 2--13. Reference answers are used only in offline evaluation.}
 \end{algorithm}
 
-\textsc{Refuse} establishes that the evaluated conditions admit no positive-value solution. \textsc{Fail} means the required compilation or evaluation did not complete. Both prevent purchase, but only the former is a decision about the evaluated domain. The procedure computes all maximizers; the response may name a nonempty subset of tied optima with their correct value, from which one complete purchase is chosen. Exhaustive evaluation costs $O(MKT)$ for $M$ candidates, $K$ generated states, and expression cost $T$. Appendix~\ref{app:interface} gives the execution rules and guarantee conditions.
+\textsc{Refuse} establishes that the evaluated conditions admit no positive-value solution. \textsc{Fail} means compilation or required evaluation did not complete. Both prevent purchase, but only refusal is a decision about the evaluated domain. Appendix~\ref{app:interface} gives the tie protocol, execution cost, and guarantee conditions. We next examine what a correct current purchase can establish about the generated permissions.
 
-\section{Why Safe Choices Can Hide Authorization Errors}
+% End sections/method.tex
+% Begin sections/analysis.tex
+\section{Authorization beyond Current Correctness}
 \label{sec:analysis}
 \label{sec:verification}
-A safe purchase does not show whether a rule excludes unauthorized offers or merely ranks them lower. Executable delegation requires permissions that hold independently of ranking. We distinguish that requirement from correctness of the selected action.
+Section~\ref{sec:method} separates faithful conditions from their correct execution. This distinction cannot be resolved by checking the current purchase alone: an unauthorized offer may be excluded by the rule, or admitted but ranked lower. We analyze how availability can distinguish these explanations without changing the authorization of any surviving offer.
 
-\subsection{Selected Actions and Admitted Domains}
+\subsection{Current Correctness and Domain Soundness}
 Write $F_C=C\cap F(x)$ for the reference-authorized domain. A selected purchase $z^\star$ is safe when $z^\star\in F_C$. Soundness of the generated authorization domain is stronger:
 \begin{equation}
 \widehat F_C\subseteq F_C.
@@ -171,20 +185,7 @@ The difference $\widehat F_C\setminus F_C$ contains unauthorized offers the rule
 
 The reverse difference, $F_C\setminus\widehat F_C$, contains authorized offers the rule excludes, potentially removing the best purchase or causing false refusal. An empty domain is sound but can miss an authorized task. Refusal is correct only when no reference-authorized purchase has positive guaranteed value. We therefore evaluate useful completion alongside authorization soundness.
 
-\subsection{Omitted States Affect Permission and Value}
-Fix $x$ and write $\Theta=\Theta(x)$. For a nonempty $S\subseteq\Theta$, let $F_S$ and $\psi_S$ denote the intersection in Equation~\eqref{eq:common} and the worst-case utility in Equation~\eqref{eq:robust}, restricted to states in $S$. Retaining only $\Theta'\subseteq\Theta$, with $\Theta'\ne\varnothing$ and all remaining state functions unchanged, gives
-\begin{equation}
-F_\Theta\subseteq F_{\Theta'},\qquad
-\psi_{\Theta'}(z)\ge\psi_\Theta(z).
-\label{eq:omission}
-\end{equation}
-Removing conjuncts cannot shrink the admissible set, and removing terms cannot lower the worst-case value. A single omission can thus weaken authorization and inflate the value used for selection. Both inequalities can be equalities: a redundant state changes neither quantity. The relevant issue is whether its conditions affect the aggregate, not the number of labels emitted. Equivalent merged conditions preserve the decision semantics.
-
-In the hotel tasks, ``his room'' binds one guest to the arrival-dependent cancellation deadline, fee checked against the cap, and utility penalty. Omitting that reading can remove both a permission check and a source of low value. Incorrect binding is a separate error; Equation~\eqref{eq:omission} assumes deletion with all remaining functions fixed. Appendix~\ref{app:intent} gives the task semantics.
-
-State omission is one source of incorrect permission. Clause aggregation and financial-consequence calculations can also be wrong even when all relevant event terms are present. The availability analysis below applies to the resulting domain, regardless of the error source.
-
-\subsection{Availability and Ranking Can Mask Permission Errors}
+\subsection{Exposing Hidden Permissions through Availability}
 For a fixed request and fully evaluated specification, restricting $C$ to $C'\subseteq C$ leaves surviving offers' permissions and utilities unchanged: $\widehat F_{C'}=\widehat F_C\cap C'$ and $F_{C'}=F_C\cap C'$. Thus a sound domain remains sound under deletion. Availability can expose an existing false permission, not create one.
 
 Suppose the only admitted offers are reference-authorized $a,c$ and unauthorized $b$, with $\psi_x(c)>0$ and
@@ -192,15 +193,17 @@ Suppose the only admitted offers are reference-authorized $a,c$ and unauthorized
 \widehat\psi(a)>\widehat\psi(b)>\widehat\psi(c)>0.
 \label{eq:masking}
 \end{equation}
-The selector chooses $a$. Removing it exposes $b$, although $c$ remains permitted and positively valued under both the specification and reference. The failure does not require losing all viable authorized choices. An incorrectly admitted offer with nonpositive estimated value, however, cannot win under deletion alone. Domain errors and unsafe purchases therefore need separate measurements.
+The selector chooses $a$. Removing it exposes $b$, although $c$ remains permitted and positively valued under both the specification and reference. The failure does not require losing all viable authorized choices. Conversely, a sound admitted domain prevents unauthorized selection regardless of the surviving offers' ranking. An incorrectly admitted offer with nonpositive estimated value cannot win under deletion alone; a low-ranked one may require many removals. Domain errors and behavior under a bounded intervention therefore need separate measurements.
 
-Section~\ref{sec:permissions} tests these conditions on model-generated specifications, changing availability alone while retaining viable authorized alternatives. It asks whether the executable conditions preserve the user's permission beyond the currently selected purchase.
+Errors can enter through omitted interpretations, incorrect binding, or contractual aggregation. State omission can simultaneously relax permissions and increase worst-case value (Appendix~\ref{app:omission-analysis}), but the availability analysis depends on the resulting domain and ranking, not a particular error source. Section~\ref{sec:permissions} tests whether these differences affect purchases made by model-generated specifications. With conditions fixed and viable authorized alternatives retained, it examines permissions that current success can leave untested.
 
+% End sections/analysis.tex
 
+% Begin evaluation.tex
 \section{Experimental Study}
 \label{sec:evaluation}
 \label{sec:results}
-Boundary and intent tests assess decision reliability under a shared policy (Sections~\ref{sec:boundaries}--\ref{sec:intent-decisions}); frozen-specification replays test authorization beyond the selected purchase, following the analysis in Section~\ref{sec:analysis} (Section~\ref{sec:permissions}). Table~\ref{tab:evaluation-coverage} maps these questions to their evidence.
+Useful delegation must respond when a purchase crosses an authorization boundary and remain within unchanged authorization when available offers change. Boundary and intent comparisons first test useful decision-making under the policy of Section~\ref{sec:method}. Frozen-specification replays then test permissions that a correct current choice may leave unexamined, following Section~\ref{sec:analysis}. Table~\ref{tab:evaluation-coverage} maps these questions to their evidence.
 
 \begin{table*}[t]
 \centering\small
@@ -211,8 +214,8 @@ Research question & Controlled evidence & Purpose and protocol\\
 \midrule
 Can the agent complete safely? & 200 tasks, 20 contract templates, 100 feasibility pairs; 11 configurations & Authorization boundaries\newline App.~\mbox{\ref{app:protocol}--\ref{app:statistics}}\\
 Can it act across unresolved readings? & Three intent families; 147 paired task--configuration units & Common actions and value\newline App.~\ref{app:intent}\\
-What can a safe choice conceal? & 800 new requests, 20 templates, three configurations; frozen-specification availability tests & Permissions and viable alternatives\newline App.~\ref{app:permissionaudit}\\
 How do settings affect the workflow? & Effort and language panels; prompt and output-budget controls & Configuration sensitivity\newline App.~\ref{app:execution}\\
+What can a safe choice conceal? & 800 new requests, 20 templates, three configurations; frozen-specification availability tests & Permissions and viable alternatives\newline App.~\ref{app:permissionaudit}\\
 \bottomrule
 \end{tabular}
 \caption{\textbf{Questions, evidence, and scope.} Primary compilation excludes catalogues; intent tests supply them. Availability replays freeze generated permissions and utilities. Studies share tasks and are not pooled as independent samples.}
@@ -222,9 +225,9 @@ How do settings affect the workflow? & Effort and language panels; prompt and ou
 \subsection{Tasks, Comparisons, and Scoring}
 \label{sec:setup}
 \paragraph{Contractual boundaries.}
-We construct 200 tasks from 20 templates in four families: coupon cancellation, insured cancellation, threshold-dependent returns, and service replacement. Contracts combine overlapping groups, compensation layers, shipping charges, and item/order caps. Each purchase has six components; all subsets of up to four affected components give 57 events, including the empty event. Catalogues contain 128--1,024 candidates. One MU equals 100 integer subunits.
+We construct 200 tasks from 20 templates in four families: coupon cancellation, insured cancellation, threshold-dependent returns, and service replacement. Contracts combine overlapping groups, compensation layers, shipping charges, and item/order caps. Catalogues contain 128--1,024 candidates; Appendix~\ref{app:data} specifies attributes, events, and monetary units.
 
-Each template contributes five feasible/infeasible pairs. A feasible task has exactly one authorized positive-value candidate. Increasing its fee by the feasible margin plus one subunit puts its worst loss exactly one subunit above the limit; other attributes and offer order remain fixed. The pairs isolate responsiveness to authorization boundaries \citep{checklist,contrastsets}. Separate cash-ledger and expression implementations agree on 6,712,320 candidate--event checks, supplemented by 25,600 random-attribute checks and three hand-calculated witnesses. Inputs and references were frozen before primary calls (Appendix~\ref{app:data}).
+Each template contributes five feasible/infeasible pairs. A feasible task has exactly one authorized positive-value candidate. Raising its fee puts its worst loss one monetary subunit above the limit, with other attributes and offer order fixed. The correct decision changes from purchase to refusal. These pairs isolate responsiveness to authorization boundaries \citep{checklist,contrastsets}. Inputs and references were frozen before primary calls; separate cash-ledger and expression calculations, random-attribute checks, and hand-calculated witnesses verify the contract semantics (Appendix~\ref{app:data}).
 
 \paragraph{Decision workflows.}
 \direct\ receives the request, schema, catalogue, and the joint-feasibility, worst-value, and refusal rules of Section~\ref{sec:method}. It returns a decision and utility without external execution. \ours\ separates preparation of the state-dependent conditions from fixed catalogue evaluation. The preparation stage receives the request and schema but excludes the catalogue. Conditions use exact arithmetic and retain clause scope, compensation order, and value binding. Evaluation semantics and observed compilations are in Appendix~\ref{app:proofs}. The shared decision policy fixes the target behavior for both methods; the comparison measures how reliably each complete workflow realizes that behavior. Appendix~\ref{app:execution} reports the textual-checklist baseline and sensitivity analyses.
@@ -244,12 +247,6 @@ An \emph{exact decision} agrees with the reference and, for acceptance, returns 
 \label{fig:intent}
 \end{figure}
 
-\begin{figure}[!t]
-\centering\includegraphics[width=\columnwidth]{13_authorization_diagnostics.pdf}
-\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of planned trials with a safe-to-unsafe transition within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. The primary budget is $k=8$. Curves measure cumulative directed exposure, not random-stockout probability. Appendix~\ref{app:availability-results} gives coverage and controls.}
-\label{fig:ablations}
-\end{figure}
-
 \subsection{Useful Completion at Authorization Boundaries}
 \label{sec:boundaries}
 All eleven primary configurations improve exactness and safe completion while reducing unsafe acceptances and false refusals (Figure~\ref{fig:completion}). For DeepSeek low/high, exact decisions rise from 248/400 (62.0\%) to 369/400 (92.25\%). The gain is 30.25 percentage points, with a 95\% template-cluster bootstrap interval of $[22.75,37.25]$, retaining both settings within each template. Exact purchases rise from 100 to 186 across 200 feasible outcomes; unsafe acceptances fall from 79 to 9 and false refusals from 53 to 1. On these tasks, stronger safety accompanies more useful purchases and fewer missed opportunities.
@@ -262,6 +259,10 @@ Figure~\ref{fig:intent} reports 294 outcomes from 147 matched task--configuratio
 
 SET improves exactness in all four configurations as risk limits, penalties, and the positive-value boundary vary. Qwen records six unsafe acceptances with SET and five with Direct, so better exactness does not ensure fewer unsafe actions in every panel. Separate checks illustrate common purchases, empty intersections, worst-case ranking, and the zero-value boundary (Appendix~\ref{app:intent-boundaries}); they do not establish a comparative accuracy advantage.
 
+\paragraph{Checks on the workflow comparison.}
+\label{sec:robustness}
+On the 60-task reasoning panel, SET improves exactness in 17 of 18 Sol/Terra/Luna settings; Luna off falls from 25/60 to 13/60. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and SET 55--59/60. Appendix~\ref{app:execution} gives these panels (Figure~\ref{fig:robustness}), textual-guidance and output-budget controls, and their scope. These checks assess the observed workflow gains, but do not establish that every permission encoded by a successful specification is correct. We next freeze the specification to examine that stronger requirement.
+
 \subsection{Authorization beyond the Selected Purchase}
 \label{sec:permissions}
 \label{sec:components}
@@ -270,30 +271,25 @@ We freeze 800 new requests from 20 templates in four contract families, each wit
 
 The primary stress test removes prefixes of the original generated ranking, without using reference labels to choose removals. Exposure requires an initially safe purchase to become unauthorized within eight removals, while an alternative remains permitted and positively valued under both generated conditions and references. Permissions, utilities, surviving attributes, and the selector stay fixed; replays make no model calls.
 
+\begin{figure}[!t]
+\centering\includegraphics[width=\columnwidth]{13_authorization_diagnostics.pdf}
+\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of planned trials with a safe-to-unsafe transition within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. The primary budget is $k=8$. Curves measure cumulative directed exposure, not random-stockout probability. Appendix~\ref{app:availability-results} gives coverage and controls.}
+\label{fig:ablations}
+\end{figure}
+
 \paragraph{Hidden permissions and behavioral exposure.}
 Across the planned cohort, \AvailHiddenPct\% produce safe purchases that conceal false admissions; the primary budget exposes \AvailExposedPct\%. Figure~\ref{fig:ablations} shows cumulative exposure by removal budget and its structural coverage. The exposed specifications span \AvailExposedRequests{} distinct requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Their minimum witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized, so these transitions do not depend on mixed-authorization ties. Native-expression replay and independent contract calculations verify the witnesses.
 
 \paragraph{Exposure from exact decisions.}
-\AvailExactExposed{} exposed specifications initially select a reference maximizer and report its value correctly, spanning four templates and two configurations. In one GLM coupon-cancellation case, removing four offers exposes an unauthorized purchase while 59 viable authorized alternatives remain. Its risk expression includes all 57 event terms but omits a group charge within one term. The generated worst loss is 263,194 subunits, whereas the reference loss is 268,094 against a limit of 267,994. The original exact choice had left this false permission untested (Appendix~\ref{app:availability-witness}).
+\AvailExactExposed{} exposed specifications initially select a reference maximizer and report its value correctly, spanning four templates and two configurations. In one GLM coupon-cancellation case, removing four high-ranked offers makes the frozen specification select an unauthorized purchase while 59 viable authorized alternatives remain. The specification omits a contractual charge when evaluating the newly selected offer, underestimating its loss and admitting it despite a reference loss above the authorized cap. Its original answer was correct; its permission for the alternative was not. Appendix~\ref{app:availability-witness} traces the omitted charge through the original expression and event ledger.
 
 \paragraph{From intent to executable decisions.}
-These transitions expose permissions already present in the frozen specification. Candidate removal changes which admitted offer wins, not whether an unchanged offer is authorized. The surviving alternatives also remain permitted and positively valued by the specification itself. Thus the failure requires neither a new model response nor the loss of all viable authorized choices. It reflects the distinction in Section~\ref{sec:method}: complete execution can consistently apply generated conditions without establishing their fidelity to the request. Appendix~\ref{app:availability-results} reports all templates, random removals, reverse transitions, and non-triggering cases.
+Candidate removal changes which admitted offer wins, not whether a surviving offer is authorized. The remaining viable alternatives are also permitted and positively valued by the specification itself. Thus the observed failure requires neither a new model response nor the loss of all useful authorized choices. Workflow gains and these failures address different requirements of the same delegation: explicit execution improves current decisions, but cannot by itself establish fidelity to the request. Examining the admitted domain reveals false permissions that a successful current purchase may never exercise. Appendix~\ref{app:availability-results} reports all templates, random removals, reverse transitions, and non-triggering cases.
 
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
-\caption{\textbf{Method performance across reasoning settings and task languages.} (a) Sol, Terra, and Luna: 18 settings, 60 tasks per method. Off denotes none; L/M/H/XH denote low/medium/high/xhigh. (b) DeepSeek: 60 tasks per language and method. Plain bars denote Chinese (ZH), hatched bars English (EN). Tables~\ref{tab:grid} and~\ref{tab:language} give counts.}
-\label{fig:robustness}
-\end{figure*}
-
-\subsection{Sensitivity Analyses}
-\label{sec:robustness}
-On the 60-task panel, SET improves exactness in 17 of 18 Sol/Terra/Luna settings (Figure~\ref{fig:robustness}a); Luna off falls from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Requested effort does not measure equal provider computation.
-
-Chinese/English wording preserves quantities, events, and authorization. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and SET 55--59/60 (Figure~\ref{fig:robustness}b). Appendix~\ref{app:execution} gives complete results and prompt and output-budget controls.
-
+% End evaluation.tex
 
 \section{Conclusion}
-SET separates authorization across retained states from worst-case value to make executable purchase-or-refusal decisions. On controlled tasks, it improves useful completion while reducing unsafe acceptances and false refusals. Frozen-specification tests reveal a limit of current-outcome evaluation: a safe or exact purchase can conceal false permissions that candidate unavailability exposes, even while viable authorized alternatives remain. Cross-template replays and original-expression checks trace these transitions to errors already present in the generated conditions. Faithful payment delegation requires checking the admitted domain alongside the selected purchase. Losing a preferred offer does not expand the user's authorization.
+SET makes authorization explicit before optimizing worst-case value, improving useful purchasing decisions on the evaluated tasks. Current success, however, can leave false permissions for unselected offers undetected. Our frozen-specification study shows that these errors can affect purchasing when preferred offers become unavailable, even while viable authorized alternatives remain. Cross-template replays and original-expression checks connect the resulting actions to permissions already encoded in the specification. A delegated agent may need to choose a different offer, but must still respect the same authorization. Evaluating the path from intent to executable decisions therefore requires examining both the purchase made and the admitted domain.
 \label{mainend}
 
 \section*{Limitations}
@@ -314,10 +310,12 @@ All purchases are synthetic, with no monetary transfers or customer records. Fin
 \setlength{\@dblfpsep}{18pt}
 \setlength{\@dblfpbot}{0pt plus 1fil}
 \makeatother
+% Begin appendix.tex
 % Method and evidence supplement; development records remain in the archive.
 \noindent\textbf{Appendix guide.} A: decision semantics and implementation; B: tasks and protocol;
 C: complete primary results; D: retained-intent decisions;
 E: textual guidance and sensitivity; F: availability study and verification.
+% Begin sections/formal_details.tex
 \section{Decision Semantics and Implementation Details}
 \label{app:proofs}
 \subsection{Decision semantics and assumptions}
@@ -341,7 +339,7 @@ After these checks, membership in $\widehat F_C$ is decided for every $z\in C$, 
 
 Incomplete or uncertified execution counts as Other in the outcome protocol (Appendix~\ref{app:implementation}).
 
-Concrete syntax, serialization, decoding, and runtime bounds are documented with the implementation in the artifact. The evaluation semantics and certification conditions above apply to the generated specification.
+Exhaustive evaluation costs $O(MKT)$ for $M$ candidates, $K$ generated states, and expression cost $T$. Concrete syntax, serialization, decoding, and runtime bounds are documented with the implementation in the artifact. The evaluation semantics and certification conditions above apply to the generated specification.
 
 \begin{table}[t]
 \centering\small
@@ -405,6 +403,20 @@ D & 2,800 & Both & Yes & $1/5$\\
 \label{tab:observed-trace}
 \end{table}
 
+\subsection{How state omission affects permission and value}
+\label{app:omission-analysis}
+Fix $x$ and write $\Theta=\Theta(x)$. For a nonempty $S\subseteq\Theta$, let $F_S$ and $\psi_S$ denote the intersection in Equation~\eqref{eq:common} and the worst-case utility in Equation~\eqref{eq:robust}, restricted to states in $S$. Retaining only $\Theta'\subseteq\Theta$, with $\Theta'\ne\varnothing$ and all remaining state functions unchanged, gives
+\begin{equation}
+F_\Theta\subseteq F_{\Theta'},\qquad
+\psi_{\Theta'}(z)\ge\psi_\Theta(z).
+\label{eq:omission}
+\end{equation}
+Removing conjuncts cannot shrink the admissible set, and removing terms cannot lower the worst-case value. A single omission can thus weaken authorization and inflate the value used for selection. Both inequalities can be equalities: a redundant state changes neither quantity. The relevant issue is whether its conditions affect the aggregate, not the number of labels emitted. Equivalent merged conditions preserve the decision semantics.
+
+In the hotel tasks, ``his room'' binds one guest to the arrival-dependent cancellation deadline, fee checked against the cap, and utility penalty. Omitting that reading can remove both a permission check and a source of low value. Incorrect binding is a separate error; Equation~\eqref{eq:omission} assumes deletion with all remaining functions fixed. Appendix~\ref{app:intent} gives the task semantics. Clause aggregation and financial-consequence calculations can also be wrong even when all relevant event terms are present. The availability analysis in Section~\ref{sec:analysis} applies to the resulting domain regardless of the error source.
+
+% End sections/formal_details.tex
+% Begin sections/benchmark.tex
 \section{Benchmark Construction and Experimental Protocol}
 \label{app:data}
 \label{app:protocol}
@@ -513,6 +525,7 @@ Table~\ref{tab:configurations} combines settings for the primary, intent, and pr
 \centering\fontsize{9}{10.5}\selectfont
 \setlength{\tabcolsep}{4pt}
 \textbf{A. Settings for the main evaluation cohorts}\par\smallskip
+% Begin tables/model_configurations.tex
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{.30\textwidth}>{\raggedright\arraybackslash}p{.255\textwidth}>{\raggedleft\arraybackslash}p{.23\textwidth}>{\raggedleft\arraybackslash}p{.135\textwidth}@{}}
 \toprule
 Configuration & Requested model & Output cap & Deadline\\
@@ -541,8 +554,10 @@ Qwen Max low & \texttt{qwen3.8-max} & \multicolumn{2}{r@{}}{32,768}\\
 \bottomrule
 \end{tabular}
 
+% End tables/model_configurations.tex
 \par\medskip
 \textbf{B. Model and effort inventory}\par\smallskip
+% Begin tables/model_configurations_extended.tex
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{.30\textwidth}>{\raggedright\arraybackslash}p{.255\textwidth}>{\raggedright\arraybackslash}p{.23\textwidth}>{\raggedright\arraybackslash}p{.135\textwidth}@{}}
 \toprule
 Configuration & Requested model & Output caps & Deadlines\\
@@ -574,6 +589,7 @@ Configuration & Requested model & Output caps & Deadlines\\
 \bottomrule
 \end{tabular}
 
+% End tables/model_configurations_extended.tex
 \caption{Requested models and generation settings. Caps are in tokens and deadlines in seconds. Panel A gives cohort settings; each primary configuration uses 200 tasks per method, intent counts appear in Table~\ref{tab:intent-figure3}, and availability follows Appendix~\ref{app:availability}. Panel B lists the 49 model--effort combinations in the retained inventory; its caps and deadlines summarize primary, sensitivity, and archived runs, not all possible pairings. Names denote requested configurations, not independently attested backend versions.}
 \label{tab:configurations}
 \label{tab:configurations-extended}
@@ -600,6 +616,8 @@ Decision contract and plots & Evaluator, reference ledger, reporting inputs, and
 \label{tab:artifact-map}
 \end{table*}
 
+% End sections/benchmark.tex
+% Begin sections/primary_results.tex
 \section{Complete Results and Statistical Analysis}
 \label{app:statistics}
 \subsection{Primary outcomes and matched comparisons}
@@ -607,6 +625,7 @@ Table~\ref{tab:main} gives the counts underlying Figure~\ref{fig:completion}, wi
 
 \begin{table*}[p]
 \centering\small
+% Begin tables/main.tex
 \begin{tabular}{lrrrrrr}
 \toprule
 Model & $n$ & Exact $\uparrow$ & Unsafe $\downarrow$ & Refusal $\downarrow$ & Other $\downarrow$ & Accept / feasible $\uparrow$ \\
@@ -625,6 +644,7 @@ Opus 5.5 medium & 200 & $142\to\mathbf{194}$ & $8\to\mathbf{1}$ & $14\to\mathbf{
 \bottomrule
 \end{tabular}
 
+% End tables/main.tex
 \caption{\textbf{Primary comparison: Direct$\to$SET.} Here $n$ counts tasks per method. Exact requires decision and value correctness. Unsafe acceptance, false refusal (Refusal), and Other partition errors; Accept is exact completion among feasible cases.}
 \label{tab:main}
 \end{table*}
@@ -634,6 +654,7 @@ Table~\ref{tab:templates-results} reports the primary DeepSeek comparison for al
 
 \begin{table}[!t]
 \centering\small
+% Begin tables/primary_templates.tex
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Template & DS low & DS high\\
@@ -664,6 +685,7 @@ d5 & $0\to9$ & $4\to8$\\
 \bottomrule
 \end{tabular}
 
+% End tables/primary_templates.tex
 \caption{Primary DeepSeek (DS) template coverage: Direct$\to$SET exact decisions, each out of ten. All 20 templates are included; family boundaries follow Table~\ref{tab:templates}.}
 \label{tab:templates-results}
 \end{table}
@@ -673,6 +695,7 @@ Paired bootstrap resampling keeps the two methods' outcomes together \citep{stat
 
 \begin{table}[!htbp]
 \centering\small
+% Begin tables/intervals.tex
 \begin{tabular}{llrr}
 \toprule
 Control & Metric & Difference & 95\% interval \\
@@ -682,10 +705,13 @@ Direct & Unsafe & -17.50 & [-24.75, -10.25] \\
 \bottomrule
 \end{tabular}
 
+% End tables/intervals.tex
 \caption{Paired template-bootstrap differences, \ours\ minus the listed control, on the pooled DeepSeek primary results. Larger exactness and smaller unsafe rate are desirable. Intervals are descriptive, without multiplicity-adjusted hypothesis claims.}
 \label{tab:intervals}
 \end{table}
 
+% End sections/primary_results.tex
+% Begin sections/intent_ambiguity.tex
 \section{Controlled Decisions under Retained Intent Ambiguity}
 \label{app:intent}
 \subsection{Task semantics and controlled inputs}
@@ -710,6 +736,7 @@ Table~\ref{tab:intent-figure3} supplies all four paired configurations in Figure
 \begin{table*}[!tbp]
 \centering\small
 \setlength{\tabcolsep}{6pt}
+% Begin tables/intent_figure3.tex
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
 Configuration & $n$ & Exact $\uparrow$ & Unsafe $\downarrow$ & False refusal $\downarrow$ & Other $\downarrow$\\
@@ -721,6 +748,7 @@ Qwen Max low & 21 & 1$\to$13 & 5$\to$6 & 7$\to$0 & 8$\to$2\\
 \bottomrule
 \end{tabular}
 
+% End tables/intent_figure3.tex
 \caption{Complete results underlying Figure~\ref{fig:intent}. Each arrow is Direct$\to$SET; $n$ is the number of matched tasks per method. Exact, unsafe acceptance, false refusal, and Other form a disjoint partition of each method's $n$ outcomes. Other includes remaining value and execution failures. The four rows contain 294 evaluations in total and are separate from the primary 200-task benchmark.}
 \label{tab:intent-figure3}
 \end{table*}
@@ -731,6 +759,8 @@ Separate capability checks instantiate common feasible purchases, empty intersec
 
 The small capability checks and earlier input interventions remain separate from the formal intent panel.
 
+% End sections/intent_ambiguity.tex
+% Begin sections/execution_controls.tex
 \section{Additional Controls and Sensitivity}
 \label{app:execution}
 \subsection{Textual Guidance}
@@ -741,6 +771,7 @@ We make 200 new calls per configuration for DeepSeek low/high and Sol/Luna/Terra
 
 \begin{table*}[!tbp]
 \centering\small\setlength{\tabcolsep}{6pt}
+% Begin tables/prompt_control.tex
 \begin{tabular}{@{}lrrrrrr@{}}
 \toprule
 Configuration & $n$ & Direct & Prompt & SET & Prompt U/R/O & $\Delta$ (pp)\\
@@ -753,6 +784,7 @@ Terra medium & 200 & 40.5 & 41.5 & 79.0 & 74/41/2 & $+1.0$\\
 \bottomrule
 \end{tabular}
 
+% End tables/prompt_control.tex
 \caption{\textbf{Textual guidance and fixed decision processing.} Direct, Prompt, and SET are exact-decision percentages on the same 200 tasks per configuration. SET uses the primary results in Table~\ref{tab:main}. Prompt U/R/O gives unsafe acceptance, false refusal, and other errors; $\Delta$ is Prompt minus Direct in percentage points (pp). All outcomes remain in their denominators.}
 \label{tab:prompt-control}
 \end{table*}
@@ -761,10 +793,17 @@ The checklist changes exactness by $-6.5$ to $+1.0$ percentage points, with an i
 
 \subsection{Requested Reasoning Settings}
 \label{app:grid}
-The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. SET improves in 17, with Luna off decreasing from 25/60 to 13/60. Each reported configuration has 60 tasks per method.
+The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. SET improves in 17, with Luna off decreasing from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Each reported configuration has 60 tasks per method. Requested effort does not measure equal provider computation.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
+\caption{\textbf{Method performance across reasoning settings and task languages.} (a) Sol, Terra, and Luna: 18 settings, 60 tasks per method. Off denotes none; L/M/H/XH denote low/medium/high/xhigh. (b) DeepSeek: 60 tasks per language and method. Plain bars denote Chinese (ZH), hatched bars English (EN). Tables~\ref{tab:grid} and~\ref{tab:language} give counts.}
+\label{fig:robustness}
+\end{figure*}
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
+% Begin tables/appendix_grid.tex
 \begin{tabular}{@{}llrrrr@{}}
 \toprule
 &&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{SET}\\
@@ -793,16 +832,18 @@ Luna & off & 25/60 & 6/28/1 & 13/60 & 24/12/11\\
 \bottomrule
 \end{tabular}
 
+% End tables/appendix_grid.tex
 \caption{All complete GPT-5.6 reasoning settings: exact/$n$ and unsafe/false-refusal/other (U/R/O), with $n=60$ in every cell. The 18 configurations cover six settings each for Sol, Terra, and Luna. Settings denote requested effort, not equal or measured compute.}
 \label{tab:grid}
 \end{table*}
 
 \subsection{Task Language}
 \label{app:language}
-We report paired Direct and SET evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete Direct/SET outcomes for these paired 60-task runs. The results concern these controlled Chinese/English renderings, not language invariance in general.
+We report paired Direct and SET evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete Direct/SET outcomes for these paired 60-task runs. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and SET 55--59/60 (Figure~\ref{fig:robustness}b). The results concern these controlled Chinese/English renderings, not language invariance in general.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
+% Begin tables/appendix_language.tex
 \begin{tabular}{@{}llrrrr@{}}
 \toprule
 &&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{SET}\\
@@ -822,6 +863,7 @@ Astra max & ZH & 55/60 & 0/4/1 & 60/60 & 0/0/0\\
 \bottomrule
 \end{tabular}
 
+% End tables/appendix_language.tex
 \caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Each setting--language cell has $n=60$ per method. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
 \label{tab:language}
 \end{table*}
@@ -844,6 +886,8 @@ DS low & Direct & 25 & $6\to14$ & $11\to1$ & $0\to1$ & $7\to7$ & $1\to2$\\
 \label{tab:budget}
 \end{table*}
 
+% End sections/execution_controls.tex
+% Begin sections/authorization.tex
 \section{Availability Study and Verification}
 \label{app:permissionaudit}
 \subsection{Design and frozen interventions}
@@ -867,6 +911,7 @@ The primary endpoint requires an originally safe acceptance, an unauthorized sel
 \label{app:availability-results}
 \begin{table}[!t]
 \centering\small\setlength{\tabcolsep}{3pt}
+% Begin tables/availability_models.tex
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
 Model & Hidden (\%) & Exposed (\%) & Requests & Templates\\
@@ -879,12 +924,14 @@ All & 2.96 & 2.00 & 48 & 15\\
 \bottomrule
 \end{tabular}
 
+% End tables/availability_models.tex
 \caption{Availability outcomes over the planned cohort. Hidden counts safe purchases concealing false admissions; Exposed requires a transition within eight removals with a viable authorized alternative. Requests and Templates count exposure coverage.}
 \label{tab:availability-models}
 \end{table}
 
 \begin{table}[t]
 \centering\small\setlength{\tabcolsep}{3pt}
+% Begin tables/availability_templates.tex
 \begin{tabular}{@{}lrrr@{}}
 \toprule
 Template & Hidden (\%) & Exposed (\%) & Requests\\
@@ -915,6 +962,7 @@ d5 & 6.67 & 5.00 & 6\\
 \bottomrule
 \end{tabular}
 
+% End tables/availability_templates.tex
 \caption{All 20 templates, including zero-event structures. Percentages use each template's planned cohort across models. Shared requests and numerical variants are not independent logical structures.}
 \label{tab:availability-templates}
 \end{table}
@@ -926,6 +974,7 @@ Every observed transition and attainable minimum-deletion witness is independent
 
 \begin{table}[!t]
 \centering\small\setlength{\tabcolsep}{3pt}
+% Begin tables/availability_controls.tex
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
 Budget $k$ & 1 & 4 & 8 & 16\\
@@ -937,6 +986,7 @@ Random unsafe to safe & 0.003 & 0.009 & 0.014 & 0.044\\
 \bottomrule
 \end{tabular}
 
+% End tables/availability_controls.tex
 \caption{Availability controls as percentages of all planned trials. Directed rows count whether a transition occurs at any prefix within the budget; random rows average observed transition fractions over 32 draws per trial. Safe-to-unsafe requires a viable authorized alternative. Forward and reverse cumulative events need not occur at the same prefix.}
 \label{tab:availability-controls}
 \end{table}
@@ -953,5 +1003,7 @@ After four originally higher-ranked offers become unavailable, the admitted unau
 \paragraph{Archived exploratory scope.}
 The artifact separately archives earlier catalogue probes, selected-output component interventions, supplied-reading tests, and exploratory input, price, and component changes. They use different cohorts and are not pooled with this study. Selected reversals were accompanied by non-triggering checks and improving transitions; they do not establish that more accurate valuation generally increases unsafe purchasing. Complete protocols and positive and negative outcomes remain in the archival reports.
 
+% End sections/authorization.tex
 
+% End appendix.tex
 \end{document}

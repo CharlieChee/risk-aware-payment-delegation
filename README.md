@@ -2,11 +2,12 @@
 
 **From Intent to Executable Decisions**
 
-An executable research framework for purchasing decisions when the user cannot
-provide further clarification. A state-wise intent DSL retains relevant
-interpretations and contractual events. A fixed evaluator checks joint
+An executable workflow for purchasing within existing authorization when the
+user cannot provide further clarification. SET encodes retained interpretations
+and contractual events as decision conditions. A fixed evaluator checks joint
 admissibility, compares worst-case utility, and selects a positive-value purchase
-or refuses. No payment is executed by this artifact.
+or refuses. The evaluation connects workflow gains to the fidelity of the
+permissions behind a successful decision. No payment is executed by this artifact.
 
 [Anonymous artifact](https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/) · [Read the paper](paper/paper.pdf) · [Experimental protocol](docs/protocol.md) ·
 [Data guide](docs/data.md) · [Reproduction guide](docs/reproduction.md) ·
@@ -43,7 +44,7 @@ python reproduce.py
 ```
 
 This runs decision and checkpoint tests, rebuilds reporting tables and the four
-main figures, checks the retained primary request/response records, independently
+figures (three in the main text and one in Appendix E), checks the retained primary request/response records, independently
 rescores 3,520 supporting records for the prompt engineering and four-method
 controls, and verifies the paired retained-intent outcomes. Results are written
 to `paper/output/reproduction/report.json`.

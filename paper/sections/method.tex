@@ -25,7 +25,7 @@ In our ticket tasks, Zhang and Li need tickets within 3,000 monetary units (MU),
 
 These equations define the target semantics used for offline references. Experimental inputs state events, permissions, and utility conventions, but do not supply their executable reference expressions. Errors in deriving the conditions, including omitted readings and incorrect clause binding, remain part of the end-to-end evaluation.
 
-\subsection{Purchase, Refusal, and Incomplete Evaluation}
+\subsection{From Intent to Executable Decisions}
 \label{sec:realization}
 \label{sec:contracts}
 \label{sec:intent-dsl}
@@ -57,4 +57,4 @@ The procedure exactly solves the compiled version of Equation~\eqref{eq:decision
 \emph{Fixed evaluator: lines 2--13. Reference answers are used only in offline evaluation.}
 \end{algorithm}
 
-\textsc{Refuse} establishes that the evaluated conditions admit no positive-value solution. \textsc{Fail} means the required compilation or evaluation did not complete. Both prevent purchase, but only the former is a decision about the evaluated domain. The procedure computes all maximizers; the response may name a nonempty subset of tied optima with their correct value, from which one complete purchase is chosen. Exhaustive evaluation costs $O(MKT)$ for $M$ candidates, $K$ generated states, and expression cost $T$. Appendix~\ref{app:interface} gives the execution rules and guarantee conditions.
+\textsc{Refuse} establishes that the evaluated conditions admit no positive-value solution. \textsc{Fail} means compilation or required evaluation did not complete. Both prevent purchase, but only refusal is a decision about the evaluated domain. Appendix~\ref{app:interface} gives the tie protocol, execution cost, and guarantee conditions. We next examine what a correct current purchase can establish about the generated permissions.

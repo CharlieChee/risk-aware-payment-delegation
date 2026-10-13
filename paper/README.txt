@@ -1,37 +1,36 @@
 Risk-Aware Payment Delegation: From Intent to Executable Decisions
 
-October 13, 2026 narrative-focused revision. Main text: 8 pages. Complete PDF:
-22 pages, with 45 cited references. The SET formulation and primary workflow
-comparison remain unchanged. Figure 3 carries availability budgets and coverage;
-the former main-text component table is absent from the entire PDF, and no
-replacement family-summary table is introduced.
+October 13, 2026 narrative revision. Main text: 8 pages; complete PDF: 23 pages;
+199-word abstract; 46 cited references. The title, decision policy, experimental
+results, numerical table sources, and all figure assets are unchanged.
 
 Build: latexmk -pdf -interaction=nonstopmode -halt-on-error paper.tex
 Offline reconstruction: python reproduce.py --pdf
 Native availability witnesses: python ../scripts/availability_20261013/verify.py --native-witnesses
 
-Figure 3 uses 800 planned trials per model (2,400 pooled), with the original
-curves unchanged and the primary budget of eight removals highlighted. The
-endpoint covers 48 requests, 15 templates, and four families, retaining viable
-authorized alternatives. Eight exposed specifications begin with exact decisions.
-Appendix F contains design, complete distributions and controls, and original-
-expression verification. Historical component, input, price, and catalogue
-studies are indexed in ../docs/diagnostic_archive/README.md, with all positive
-and negative outcomes retained separately. Table 7 combines the study settings with the retained inventory of all 12
-requested models and 49 model-effort combinations on one page. The original
-inventory remains archived for provenance.
+The manuscript now follows one argument: bounded authorization makes delegated
+purchasing different from optimizing a shopping objective; SET makes the
+purchase-or-refusal decision explicit; workflow gains do not certify every
+generated permission; frozen availability tests expose the gap. The introduction
+uses the official AP2 announcement only to motivate pre-authorized purchasing,
+not as a claim about an AP2 vulnerability or payment-system deployment.
 
-Acquisition records are documented in ../docs/availability_20261013.md; no raw
-experiment result is overwritten by this editing pass. The abstract is plain
-text, with SET uppercase. Figure colors have line/marker/hatch distinctions for
-grayscale. Official ACL styling is unchanged; hyperlink color is #000099.
+Section 4 connects current correctness directly to authorization-domain
+soundness and availability exposure. The state-omission derivation is retained
+in Appendix A.5, with its unchanged assumptions and formula. Equation numbers
+are updated automatically. Figure 4 and the full reasoning/language panels are
+in Appendix E; the availability study is the final main-text empirical result.
+The 4/59 case explains behavior and cause in Section 5.4, with event terms,
+monetary values, and original-expression checks in Appendix F.3.
 
-The final scope trim removes the two-request reuse-cost study and the extra
-200-task Astra language aggregate from the PDF. Five capability checks are
-retained as semantic boundary descriptions, without their repeated 30/30
-score table. Paired 60-task language, Prompt and output-budget controls remain.
-Recorded method examples are shortened; the monotonicity argument is explicitly
-limited to the displayed deductible-coinsurance contract. Complete prior
-branches remain in the diagnostic archive.
+Figure 3 keeps 800 planned trials per model, 2,400 pooled, and its original
+removal-budget curves. Exposure covers 48 requests, 15 templates, and four
+families while viable authorized alternatives remain; eight exposed outputs
+begin with exact decisions. Complete distributions and controls remain in
+Appendix F. Acquisition records are in ../docs/availability_20261013.md.
+Historical studies remain separately archived in ../docs/diagnostic_archive/.
 
-Terminology and readability revision: the 191-word abstract explicitly introduces SET as the proposed executable workflow. Related Work defines VoI, GEM, and SAGE-Agent on first mention. Figures, table headers, captions, and plot generators use uppercase SET. Table 1 and Appendix B.3 index the experiment protocols. Equations, numbering, and experimental data are unchanged.
+Table 7 remains one table with main-study settings and the retained inventory
+of 12 requested models and 49 model-effort combinations, on page 16. The former
+component Table 2 is absent from the PDF; no family-summary table replaces it.
+The official ACL style, anonymity, and uppercase SET labels are preserved.

@@ -21,7 +21,7 @@ After these checks, membership in $\widehat F_C$ is decided for every $z\in C$, 
 
 Incomplete or uncertified execution counts as Other in the outcome protocol (Appendix~\ref{app:implementation}).
 
-Concrete syntax, serialization, decoding, and runtime bounds are documented with the implementation in the artifact. The evaluation semantics and certification conditions above apply to the generated specification.
+Exhaustive evaluation costs $O(MKT)$ for $M$ candidates, $K$ generated states, and expression cost $T$. Concrete syntax, serialization, decoding, and runtime bounds are documented with the implementation in the artifact. The evaluation semantics and certification conditions above apply to the generated specification.
 
 \begin{table}[t]
 \centering\small
@@ -84,3 +84,15 @@ D & 2,800 & Both & Yes & $1/5$\\
 \caption{\textbf{Observed request-to-decision trace.} Astra max generates both clauses: the executor selects D, but refuses a catalogue containing only B and C. Utility is stipulated. Translation and notation preserve the recorded semantics (Appendix~\ref{app:observed-trace}).}
 \label{tab:observed-trace}
 \end{table}
+
+\subsection{How state omission affects permission and value}
+\label{app:omission-analysis}
+Fix $x$ and write $\Theta=\Theta(x)$. For a nonempty $S\subseteq\Theta$, let $F_S$ and $\psi_S$ denote the intersection in Equation~\eqref{eq:common} and the worst-case utility in Equation~\eqref{eq:robust}, restricted to states in $S$. Retaining only $\Theta'\subseteq\Theta$, with $\Theta'\ne\varnothing$ and all remaining state functions unchanged, gives
+\begin{equation}
+F_\Theta\subseteq F_{\Theta'},\qquad
+\psi_{\Theta'}(z)\ge\psi_\Theta(z).
+\label{eq:omission}
+\end{equation}
+Removing conjuncts cannot shrink the admissible set, and removing terms cannot lower the worst-case value. A single omission can thus weaken authorization and inflate the value used for selection. Both inequalities can be equalities: a redundant state changes neither quantity. The relevant issue is whether its conditions affect the aggregate, not the number of labels emitted. Equivalent merged conditions preserve the decision semantics.
+
+In the hotel tasks, ``his room'' binds one guest to the arrival-dependent cancellation deadline, fee checked against the cap, and utility penalty. Omitting that reading can remove both a permission check and a source of low value. Incorrect binding is a separate error; Equation~\eqref{eq:omission} assumes deletion with all remaining functions fixed. Appendix~\ref{app:intent} gives the task semantics. Clause aggregation and financial-consequence calculations can also be wrong even when all relevant event terms are present. The availability analysis in Section~\ref{sec:analysis} applies to the resulting domain regardless of the error source.

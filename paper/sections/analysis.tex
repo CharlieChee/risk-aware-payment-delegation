@@ -1,9 +1,9 @@
-\section{Why Safe Choices Can Hide Authorization Errors}
+\section{Authorization beyond Current Correctness}
 \label{sec:analysis}
 \label{sec:verification}
-A safe purchase does not show whether a rule excludes unauthorized offers or merely ranks them lower. Executable delegation requires permissions that hold independently of ranking. We distinguish that requirement from correctness of the selected action.
+Section~\ref{sec:method} separates faithful conditions from their correct execution. This distinction cannot be resolved by checking the current purchase alone: an unauthorized offer may be excluded by the rule, or admitted but ranked lower. We analyze how availability can distinguish these explanations without changing the authorization of any surviving offer.
 
-\subsection{Selected Actions and Admitted Domains}
+\subsection{Current Correctness and Domain Soundness}
 Write $F_C=C\cap F(x)$ for the reference-authorized domain. A selected purchase $z^\star$ is safe when $z^\star\in F_C$. Soundness of the generated authorization domain is stronger:
 \begin{equation}
 \widehat F_C\subseteq F_C.
@@ -13,20 +13,7 @@ The difference $\widehat F_C\setminus F_C$ contains unauthorized offers the rule
 
 The reverse difference, $F_C\setminus\widehat F_C$, contains authorized offers the rule excludes, potentially removing the best purchase or causing false refusal. An empty domain is sound but can miss an authorized task. Refusal is correct only when no reference-authorized purchase has positive guaranteed value. We therefore evaluate useful completion alongside authorization soundness.
 
-\subsection{Omitted States Affect Permission and Value}
-Fix $x$ and write $\Theta=\Theta(x)$. For a nonempty $S\subseteq\Theta$, let $F_S$ and $\psi_S$ denote the intersection in Equation~\eqref{eq:common} and the worst-case utility in Equation~\eqref{eq:robust}, restricted to states in $S$. Retaining only $\Theta'\subseteq\Theta$, with $\Theta'\ne\varnothing$ and all remaining state functions unchanged, gives
-\begin{equation}
-F_\Theta\subseteq F_{\Theta'},\qquad
-\psi_{\Theta'}(z)\ge\psi_\Theta(z).
-\label{eq:omission}
-\end{equation}
-Removing conjuncts cannot shrink the admissible set, and removing terms cannot lower the worst-case value. A single omission can thus weaken authorization and inflate the value used for selection. Both inequalities can be equalities: a redundant state changes neither quantity. The relevant issue is whether its conditions affect the aggregate, not the number of labels emitted. Equivalent merged conditions preserve the decision semantics.
-
-In the hotel tasks, ``his room'' binds one guest to the arrival-dependent cancellation deadline, fee checked against the cap, and utility penalty. Omitting that reading can remove both a permission check and a source of low value. Incorrect binding is a separate error; Equation~\eqref{eq:omission} assumes deletion with all remaining functions fixed. Appendix~\ref{app:intent} gives the task semantics.
-
-State omission is one source of incorrect permission. Clause aggregation and financial-consequence calculations can also be wrong even when all relevant event terms are present. The availability analysis below applies to the resulting domain, regardless of the error source.
-
-\subsection{Availability and Ranking Can Mask Permission Errors}
+\subsection{Exposing Hidden Permissions through Availability}
 For a fixed request and fully evaluated specification, restricting $C$ to $C'\subseteq C$ leaves surviving offers' permissions and utilities unchanged: $\widehat F_{C'}=\widehat F_C\cap C'$ and $F_{C'}=F_C\cap C'$. Thus a sound domain remains sound under deletion. Availability can expose an existing false permission, not create one.
 
 Suppose the only admitted offers are reference-authorized $a,c$ and unauthorized $b$, with $\psi_x(c)>0$ and
@@ -34,6 +21,6 @@ Suppose the only admitted offers are reference-authorized $a,c$ and unauthorized
 \widehat\psi(a)>\widehat\psi(b)>\widehat\psi(c)>0.
 \label{eq:masking}
 \end{equation}
-The selector chooses $a$. Removing it exposes $b$, although $c$ remains permitted and positively valued under both the specification and reference. The failure does not require losing all viable authorized choices. An incorrectly admitted offer with nonpositive estimated value, however, cannot win under deletion alone. Domain errors and unsafe purchases therefore need separate measurements.
+The selector chooses $a$. Removing it exposes $b$, although $c$ remains permitted and positively valued under both the specification and reference. The failure does not require losing all viable authorized choices. Conversely, a sound admitted domain prevents unauthorized selection regardless of the surviving offers' ranking. An incorrectly admitted offer with nonpositive estimated value cannot win under deletion alone; a low-ranked one may require many removals. Domain errors and behavior under a bounded intervention therefore need separate measurements.
 
-Section~\ref{sec:permissions} tests these conditions on model-generated specifications, changing availability alone while retaining viable authorized alternatives. It asks whether the executable conditions preserve the user's permission beyond the currently selected purchase.
+Errors can enter through omitted interpretations, incorrect binding, or contractual aggregation. State omission can simultaneously relax permissions and increase worst-case value (Appendix~\ref{app:omission-analysis}), but the availability analysis depends on the resulting domain and ranking, not a particular error source. Section~\ref{sec:permissions} tests whether these differences affect purchases made by model-generated specifications. With conditions fixed and viable authorized alternatives retained, it examines permissions that current success can leave untested.
