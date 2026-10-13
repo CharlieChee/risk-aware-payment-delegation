@@ -231,13 +231,13 @@ An \emph{exact decision} agrees with the reference and, for acceptance, returns 
 \label{sec:boundaries}
 All eleven primary configurations improve exactness and safe completion while reducing unsafe acceptances and false refusals (Figure~\ref{fig:completion}). For DeepSeek low/high, exact decisions rise from 248/400 (62.0\%) to 369/400 (92.25\%). The gain is 30.25 percentage points, with a 95\% template-cluster bootstrap interval of $[22.75,37.25]$, retaining both settings within each template. Exact purchases rise from 100 to 186 across 200 feasible outcomes; unsafe acceptances fall from 79 to 9 and false refusals from 53 to 1. On these tasks, stronger safety accompanies more useful purchases and fewer missed opportunities.
 
-Gains cover all four contract families and 18 of 20 templates at each DeepSeek setting. They vary across models: GLM high improves from 64/200 to 188/200, Sol medium from 137/200 to 196/200, and Opus medium from 142/200 to 194/200. Qwen Max low rises from 59 to 87 exact outcomes but retains 46 unsafe acceptances. Appendix~\ref{app:statistics} gives complete partitions and template results. These pairs test authorization boundaries; their unique feasible offers limit conclusions about ranking.
+Both DeepSeek settings improve exactness across all four contract families and 18 of 20 templates. Across the eleven primary configurations, exactness gains range from 8 percentage points for Astra max to 64 for Qwen Flash low. Qwen Max low rises from 59/200 to 87/200 exact outcomes but retains 46 unsafe acceptances. Appendix~\ref{app:statistics} gives complete partitions and template results. These pairs test authorization boundaries; their unique feasible offers limit conclusions about ranking.
 
 \subsection{Purchasing under Signaled Intent Ambiguity}
 \label{sec:intent-decisions}
 Figure~\ref{fig:intent} reports 294 outcomes from 147 matched task--configuration pairs covering ticket-holder reference, conditional hotel cancellation, and individual versus batch exchange-cost limits. Both methods receive the catalogue, ambiguity cues, and decision policy; SET's primary compilation instead withholds catalogues. Table~\ref{tab:intent-figure3} gives denominators.
 
-SET improves exactness in all four configurations as risk limits, penalties, and the positive-value boundary vary. Qwen records six unsafe acceptances with SET and five with Direct, so better exactness does not ensure fewer unsafe actions in every panel. Separate checks illustrate common purchases, empty intersections, worst-case ranking, and the zero-value boundary (Appendix~\ref{app:intent-boundaries}); they do not establish a comparative accuracy advantage.
+SET improves exactness in all four configurations as risk limits, penalties, and the positive-value boundary vary. Qwen Max low records six unsafe acceptances with SET and five with Direct, so better exactness does not ensure fewer unsafe actions in every panel. Separate checks illustrate common purchases, empty intersections, worst-case ranking, and the zero-value boundary (Appendix~\ref{app:intent-boundaries}); they do not establish a comparative accuracy advantage.
 
 \paragraph{Checks on the workflow comparison.}
 \label{sec:robustness}
@@ -271,7 +271,7 @@ Candidate removal changes which admitted offer wins, not whether a surviving off
 These results motivate three separate evaluation outputs when reference semantics are available: current-decision correctness, catalogue-wide false admissions and exclusions, and behavioral exposure under specified availability changes. The first measures useful completion, the second checks fidelity beyond the selected purchase, and the third connects a domain error to an observable action. A replay certificate identifies the unchanged specification, removed offers, unauthorized winner, and surviving viable alternatives. Such certificates provide controlled counterexamples. Passing a bounded availability test does not certify the admitted domain, and evaluating that domain cannot replace the value and completion checks needed for useful delegation.
 
 \section{Conclusion}
-Risk-aware delegation must preserve authorization from intent to decision. SET makes generated permissions inspectable and improves useful decisions across the tested configurations. Our frozen-specification tests nevertheless expose false admissions under changed availability, even while viable authorized alternatives remain. Cross-template results and original-expression checks connect these purchases to existing permission errors. Where reference semantics are available, evaluation should distinguish current-decision correctness, domain errors, and their behavioral exposure. Passing a bounded availability test cannot certify the admitted domain. A delegated agent may choose a different offer; doing so must still respect the same authorization.
+Risk-aware delegation must preserve authorization from intent to decision. SET makes generated permissions inspectable and improves useful decisions across the primary configurations. Our frozen-specification tests nevertheless expose false admissions under changed availability, even while viable authorized alternatives remain. Cross-template results and original-expression checks connect these purchases to existing permission errors. Where reference semantics are available, evaluation should distinguish current-decision correctness, domain errors, and their behavioral exposure. Passing a bounded availability test cannot certify the admitted domain. A delegated agent may choose a different offer; doing so must still respect the same authorization.
 \label{mainend}
 
 \section*{Limitations}
@@ -835,7 +835,7 @@ Opus 5.5 medium & 200 & $142\to\mathbf{194}$ & $8\to\mathbf{1}$ & $14\to\mathbf{
 \end{table*}
 
 \subsection{Structural coverage}
-Table~\ref{tab:templates-results} reports the primary DeepSeek comparison for all 20 ten-task templates. Each setting improves over Direct on 18 templates, ties on one, and declines on one. The four families have 50 cases each. Low-effort service replacement improves from 20 to 42 exact decisions, and high-effort threshold returns from 30 to 49. Table~\ref{tab:main} reports Astra's 180-to-196 comparison.
+Table~\ref{tab:templates-results} compares Direct and SET exact decisions for DeepSeek low/high across all 20 ten-task templates. At each setting, SET improves on 18 templates, ties on one, and declines on one. Each family contains 50 tasks. Exact counts rise from 20 to 42 for service replacement at low effort and from 30 to 49 for threshold returns at high effort.
 
 \begin{table}[!t]
 \centering\small
@@ -967,7 +967,7 @@ The checklist changes exactness by $-6.5$ to $+1.0$ percentage points, with an i
 
 \subsection{Requested Reasoning Settings}
 \label{app:grid}
-The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. SET improves in 17, with Luna off decreasing from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Each reported configuration has 60 tasks per method. Requested effort does not measure equal provider computation.
+The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness}(a) and Table~\ref{tab:grid} cover 18 Sol/Terra/Luna configurations. SET increases exact decisions relative to Direct in 17, with Luna off decreasing from 25/60 to 13/60. With SET, Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Each configuration has 60 tasks per method. Requested effort does not measure equal provider computation.
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
@@ -1010,7 +1010,7 @@ Luna & off & 25/60 & 6/28/1 & 13/60 & 24/12/11\\
 
 \subsection{Task Language}
 \label{app:language}
-We report paired Direct and SET evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete Direct/SET outcomes for these paired 60-task runs. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and SET 55--59/60 (Figure~\ref{fig:robustness}b). The results concern these controlled Chinese/English renderings, not language invariance in general.
+We report paired Direct and SET evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete outcomes for DeepSeek low/high/max and Astra max. Figure~\ref{fig:robustness}(b) shows the six DeepSeek setting--language cells, where Direct achieves 33--36/60 exact decisions and SET 55--59/60. The results concern these controlled Chinese/English renderings, not language invariance in general.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
@@ -1032,13 +1032,13 @@ Astra max & ZH & 55/60 & 0/4/1 & 60/60 & 0/0/0\\
  & EN & 49/60 & 0/9/2 & 60/60 & 0/0/0\\
 \bottomrule
 \end{tabular}
-\caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Each setting--language cell has $n=60$ per method. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
+\caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Each setting--language cell has $n=60$ per method. Figure~\ref{fig:robustness}(b) shows the DeepSeek subset.}
 \label{tab:language}
 \end{table*}
 
 \subsection{Output-Budget Control}
 \label{app:budget}
-On 46 historically budget-sensitive Direct tasks, 92 new calls compare the original cap with 262,144 tokens under the same 1,800-second deadline. Exact decisions rise from 10/46 to 26/46, with unsafe acceptance and false refusal still observed. The original outcomes remain in their cohorts. Results on this selected subset do not estimate general failure rates.
+For DeepSeek low/high, 46 historically budget-sensitive Direct tasks receive 92 new calls comparing the original cap with 262,144 tokens under the same 1,800-second deadline. Exact decisions rise from 10/46 to 26/46, with unsafe acceptance and false refusal still observed. The original outcomes remain in their cohorts. Results on this selected subset do not estimate general failure rates.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}

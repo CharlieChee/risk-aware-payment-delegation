@@ -17,7 +17,7 @@ The checklist changes exactness by $-6.5$ to $+1.0$ percentage points, with an i
 
 \subsection{Requested Reasoning Settings}
 \label{app:grid}
-The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. SET improves in 17, with Luna off decreasing from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Each reported configuration has 60 tasks per method. Requested effort does not measure equal provider computation.
+The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness}(a) and Table~\ref{tab:grid} cover 18 Sol/Terra/Luna configurations. SET increases exact decisions relative to Direct in 17, with Luna off decreasing from 25/60 to 13/60. With SET, Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Each configuration has 60 tasks per method. Requested effort does not measure equal provider computation.
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
@@ -34,18 +34,18 @@ The 60-task panel combines ten historical feasibility pairs and one pair from ea
 
 \subsection{Task Language}
 \label{app:language}
-We report paired Direct and SET evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete Direct/SET outcomes for these paired 60-task runs. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and SET 55--59/60 (Figure~\ref{fig:robustness}b). The results concern these controlled Chinese/English renderings, not language invariance in general.
+We report paired Direct and SET evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete outcomes for DeepSeek low/high/max and Astra max. Figure~\ref{fig:robustness}(b) shows the six DeepSeek setting--language cells, where Direct achieves 33--36/60 exact decisions and SET 55--59/60. The results concern these controlled Chinese/English renderings, not language invariance in general.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
 \input{tables/appendix_language}
-\caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Each setting--language cell has $n=60$ per method. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
+\caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Each setting--language cell has $n=60$ per method. Figure~\ref{fig:robustness}(b) shows the DeepSeek subset.}
 \label{tab:language}
 \end{table*}
 
 \subsection{Output-Budget Control}
 \label{app:budget}
-On 46 historically budget-sensitive Direct tasks, 92 new calls compare the original cap with 262,144 tokens under the same 1,800-second deadline. Exact decisions rise from 10/46 to 26/46, with unsafe acceptance and false refusal still observed. The original outcomes remain in their cohorts. Results on this selected subset do not estimate general failure rates.
+For DeepSeek low/high, 46 historically budget-sensitive Direct tasks receive 92 new calls comparing the original cap with 262,144 tokens under the same 1,800-second deadline. Exact decisions rise from 10/46 to 26/46, with unsafe acceptance and false refusal still observed. The original outcomes remain in their cohorts. Results on this selected subset do not estimate general failure rates.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}

@@ -48,11 +48,10 @@ These are parsed-output projections, not byte-identical raw transcript exports.
 
 ## Reporting and re-scoring
 
-The reporting scripts rebuild the manuscript's tables and figures from their
-designated inputs. `paper/data/author_reports/` supplies aggregate reporting
-inputs; `data/artifacts/` supplies archived trial-level projections. Aggregate
-reconstruction and response-level re-scoring are separate operations. Cohort
-identifiers and source metadata select the appropriate input for each analysis.
+The reporting scripts rebuild tables and figures from the designated inputs.
+The [primary-result source note](primary_provenance.md) specifies those inputs
+and their verification coverage. Cohort identifiers and source metadata select
+the appropriate records for each analysis.
 
 The requested model/configuration inventory covers 12 model identifiers and
 52 model--effort settings. It describes observed request coverage, including

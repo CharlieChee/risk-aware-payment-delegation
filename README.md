@@ -71,7 +71,7 @@ feasibility pairs, and verifies 60 Chinese/English input pairs.
 | `benchmarks/intent/` | 66 translated intent-task variants, including the 42-variant API panel and 24 stress variants; reference states and outcomes |
 | `bilingual/` | 60 original Chinese/English task pairs, translation audits, the original 800-record release, and a 3,520-record prompt/control archive including 1,000 new calls |
 | `data/artifacts/` | 8,046 archived Direct/Set parsed-output projections with per-record source hashes, usage, and scored outcomes |
-| `paper/data/` | Retained per-trial reporting data, diagnostics, controls, and separately identified aggregate updates |
+| `paper/data/` | Reporting inputs, diagnostics, and controls; sources are indexed in the [data guide](docs/data.md) |
 | `paper/` | Editable LaTeX, references, figure sources, plotting code, result tables, and PDF |
 | `tests/` | Exact boundaries, unresolved evidence, joint decisions, failure classification, and interrupted-run recovery |
 
@@ -112,12 +112,11 @@ failures; there is no silent retry or replacement by a more favorable answer.
 The repository provides the implementation, benchmark inputs and references,
 prompts, model configurations, evaluation records, and frozen reporting inputs.
 It includes original request/response records from the primary DeepSeek cohorts,
-a 3,520-record prompt/control archive, and 8,046 archived parsed-output records. These overlapping
-collections support response-level inspection; separately identified aggregate
-inputs support reconstruction of the corresponding tables and figures. English
-release translations are provided for inspection and new runs. See the
-[data guide](docs/data.md) for cohort definitions, source mappings, and the
-distinction between reporting and re-scoring.
+a 3,520-record prompt/control archive, and 8,046 archived parsed-output records.
+English release translations are provided for inspection and new runs. The
+[data guide](docs/data.md) defines these overlapping cohorts, and the
+[source note](docs/primary_provenance.md) specifies the primary reporting inputs
+and their verification coverage.
 
 The complete-catalogue decision procedure reports unresolved relevant evidence
 as a failure, not as a certified optimum or justified refusal. Its guarantees are
@@ -135,7 +134,7 @@ cohorts, retained responses, and offline verification commands.
 
 Implementation controls and their original provenance are indexed in
 [the code supplement](docs/implementation_archive/README.md). The manuscript
-retains the original primary Set cohort. Figure 3 and Appendix F report the
+retains the original primary SET cohort. Figure 3 and Appendix F report the
 prospective availability study; earlier component, input, price, and catalogue
 explorations remain in [the diagnostic archive](docs/diagnostic_archive/README.md),
 with their full controls and non-triggering results.

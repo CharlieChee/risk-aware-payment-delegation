@@ -1,26 +1,16 @@
-# Primary-result sources and verification
+# Primary-result inputs
 
-The primary comparison has eleven configurations and 200 tasks per method.
-`paper/scripts/primary_profiles.py::display_primary` selects each reporting input.
-The [machine-readable source map](../paper/reporting_checks/review_revision_evidence.json)
-records the configuration, arm, input path, and available evidence.
+`paper/scripts/primary_profiles.py::display_primary` selects the inputs for the
+eleven primary configurations. The [source map](../paper/reporting_checks/review_revision_evidence.json)
+records each configuration, method, and input path.
 
-Seven configurations use archived per-trial outcomes, with complete-domain
-rescoring where applicable. GLM high, Astra max, Sol medium, and Opus medium use
-the supplied aggregate updates in these two files:
+GLM high, Astra max, Sol medium, and Opus medium use supplied updates in
+`paper/data/author_reports/20261011_confirmed_aggregates.json` and
+`paper/data/author_reports/20261011_primary200_completion.json`. These support
+aggregate reconstruction and arithmetic checks. Replacement raw responses are
+not included in this release, so these updates do not support case-level
+rescoring or paired analysis. The other configurations use archived trial
+outcomes. DeepSeek template counts and paired statistics use retained trials.
 
-- `paper/data/author_reports/20261011_confirmed_aggregates.json`: GLM, Astra, and Sol updates.
-- `paper/data/author_reports/20261011_primary200_completion.json`: completed error partitions and useful-completion counts, including the completed Opus comparison that supersedes its earlier partial display.
-
-The original replacement responses have not yet been imported. These inputs
-support reconstruction of the displayed aggregates and arithmetic checks;
-case-level rescoring, pairing, template counts, and usage cannot be recovered
-from the aggregates alone. Sol Direct's supplied counts also agree with the
-retained local observations. Earlier local runs remain separately archived.
-Paired statistics use retained observations, including the DeepSeek records
-used for the primary template-bootstrap analysis.
-
-The [evidence map](evidence_map.md) indexes the remaining results. Report
-reconstruction, rescoring a retained response, and recomputing a benchmark
-reference are separate checks; the [reproduction guide](reproduction.md)
-provides their commands and coverage. None requires new model calls.
+The [reproduction guide](reproduction.md) provides verification commands;
+the [evidence map](evidence_map.md) indexes the other experiments.
