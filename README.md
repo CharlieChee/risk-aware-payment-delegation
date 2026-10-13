@@ -2,12 +2,14 @@
 
 **From Intent to Executable Decisions**
 
-An executable workflow for purchasing within existing authorization when the
-user cannot provide further clarification. SET encodes retained interpretations
-and contractual events as decision conditions. A fixed evaluator checks joint
-admissibility, compares worst-case utility, and selects a positive-value purchase
-or refuses. The evaluation connects workflow gains to the fidelity of the
-permissions behind a successful decision. No payment is executed by this artifact.
+A study of whether executable purchasing conditions preserve the user's
+natural-language authorization, and how permission errors affect selection.
+SET makes the risk-aware purchase-or-refusal policy executable and its admitted
+domain inspectable. Workflow comparisons measure useful decision-making;
+reference-domain checks and frozen-specification tests connect false permissions
+to unauthorized purchases under changed availability. The study retains viable
+authorized alternatives and verifies the exposed errors in the original
+expressions. No payment is executed by this artifact.
 
 [Anonymous artifact](https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/) · [Read the paper](paper/paper.pdf) · [Experimental protocol](docs/protocol.md) ·
 [Data guide](docs/data.md) · [Reproduction guide](docs/reproduction.md) ·
