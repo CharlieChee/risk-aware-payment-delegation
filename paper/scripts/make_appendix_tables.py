@@ -69,7 +69,7 @@ def build(root, table_dir=None):
     grid = {(r['profile'], r['arm']): r for r in certified_summaries(root, 'data/derived/grid_summary.json') if r['group'] == 'all'}
     arms = ('direct', 'set')
     lines = table('@{}llrrrr@{}',
-        r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Set}\\' + '\n' +
+        r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{SET}\\' + '\n' +
         r'Model & Setting & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O\\')
     for model, label in [('gpt56_sol', 'Sol'), ('gpt56_terra', 'Terra'), ('gpt56_luna', 'Luna')]:
         first = True
@@ -91,7 +91,7 @@ def build(root, table_dir=None):
     original = {(r['profile'], r['arm'], r['language']): r
                 for r in certified_summaries(root, 'data/derived/language_all_methods_matched.json')}
     lines = table('@{}llrrrr@{}',
-        r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Set}\\' + '\n' +
+        r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{SET}\\' + '\n' +
         r'Configuration & Language & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O\\')
     for profile, label, source in [('ds_flash_low','DS low', original), ('ds_flash_high','DS high', original),
             ('ds_flash_max','DS max', original), ('astra_max','Astra max', original)]:
@@ -106,7 +106,7 @@ def build(root, table_dir=None):
     labels = [('ds_flash_low','DS low'), ('ds_flash_max','DS max'), ('glm53_low','GLM low'),
               ('glm53_max','GLM max'), ('qwen_max_low','Qwen Max low'), ('qwen_max_xhigh','Qwen Max xhigh')]
     lines = table('@{}llrrrrrr@{}',
-        r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Merged}&\multicolumn{2}{c}{Set}\\' + '\n' +
+        r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Merged}&\multicolumn{2}{c}{SET}\\' + '\n' +
         r'Cohort & Configuration & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O\\')
     for partition, label in [('discovery','Discovery'), ('held_out_instances','Validation'), ('boundary_search','Stress')]:
         profiles = [('gpt6_max','Astra max')] if partition == 'boundary_search' else labels

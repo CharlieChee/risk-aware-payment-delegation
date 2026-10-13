@@ -218,4 +218,4 @@ build_prompt_controls(R, T)
 import re
 for table_path in T.glob("*.tex"):
  text = table_path.read_text().replace("Set-DSL", "Set").replace("Set (DSL)", "Set").replace("Set contract", "Set")
- table_path.write_text(text)
+ table_path.write_text(re.sub(r'\bSet\b', 'SET', text))

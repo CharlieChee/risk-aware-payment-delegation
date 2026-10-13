@@ -32,3 +32,5 @@ score table. Paired 60-task language, Prompt and output-budget controls remain.
 Recorded method examples are shortened; the monotonicity argument is explicitly
 limited to the displayed deductible-coinsurance contract. Complete prior
 branches remain in the diagnostic archive.
+
+Terminology and readability revision: the 191-word abstract explicitly introduces SET as the proposed executable workflow. Related Work defines VoI, GEM, and SAGE-Agent on first mention. Figures, table headers, captions, and plot generators use uppercase SET. Table 1 and Appendix B.3 index the experiment protocols. Equations, numbering, and experimental data are unchanged.

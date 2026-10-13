@@ -58,7 +58,7 @@ Stratum & Candidates & Margin (subunits) & Cases\\
 \label{tab:strata}
 \end{table}
 
-The design fixes unique feasibility, balanced acceptance/refusal, and complete catalogues. Size, margin, and seed vary together across strata, so their individual effects cannot be estimated separately. The task balance is not an estimate of real purchasing frequencies.
+The design fixes unique feasibility, balanced acceptance/refusal, and complete catalogues. The task balance is not an estimate of real purchasing frequencies.
 
 \subsection{Reference calculations and freezing}
 A cash-flow ledger evaluates bitmask events with integer or rational arithmetic, and a separate expression implementation uses the rule engine. Before model evaluation, we compare candidate feasibility, worst loss, guaranteed utility, and final decisions. They agree on all 6,712,320 candidate--event checks. Twenty fresh attribute assignments per template are also checked on all 64 subsets, yielding $20\times20\times64=25{,}600$ checks, plus three hand-calculated threshold witnesses. Both implementations arose within one development workflow and may share a misunderstanding of a clause despite agreeing numerically.
@@ -67,17 +67,19 @@ Tasks, references, prompts, and evaluator code are frozen before model evaluatio
 
 \subsection{Common instructions and outcome protocol}
 \label{app:implementation}
+Table~\ref{tab:evaluation-coverage} is the protocol index. This section defines primary inputs, policy, and scoring; Section~\ref{app:model-configurations} specifies model settings. Appendix~\ref{app:intent} records the catalogue-visible intent variant, Appendix~\ref{app:execution} the sensitivity controls, and Appendix~\ref{app:availability} the frozen-specification interventions. These cohorts retain their own inputs and denominators.
+
 All primary routes receive the same substantive policy, summarized below in English. The frozen model-facing prompts retain their original language and are unchanged by this summary.
 \begin{quote}\small
 Retain applicable interpretations. Respect current authorization in every retained state. Evaluate hard requirements and the complete risk permission, then maximize the minimum state-dependent utility. Buy only for positive guaranteed value; otherwise refuse. Do not ask the user or change permissions.
 \end{quote}
-Direct returns a decision, allowed identifiers, and guaranteed utility. Set returns the state-wise expressions of Appendix~\ref{app:interface}. Exactness requires agreement with the reference decision and, for acceptance, a nonempty subset of authorized maximizers and correct value. Disjoint failures are unsafe acceptance, false refusal, and Other (remaining value or invalid-execution failures). Set executions must satisfy the complete-domain checks in Algorithm~\ref{alg:decision}. Failed or unresolved execution counts as Other, including a no-action output whose reference decision is refusal.
+Direct returns a decision, allowed identifiers, and guaranteed utility. SET returns the state-wise expressions of Appendix~\ref{app:interface}. Exactness requires agreement with the reference decision and, for acceptance, a nonempty subset of authorized maximizers and correct value. Disjoint failures are unsafe acceptance, false refusal, and Other (remaining value or invalid-execution failures). SET executions must satisfy the complete-domain checks in Algorithm~\ref{alg:decision}. Failed or unresolved execution counts as Other, including a no-action output whose reference decision is refusal.
 
 \begin{table}[!htbp]
 \centering\small
 \begin{tabular}{lcc}
 \toprule
-Property & Direct & Set\\
+Property & Direct & SET\\
 \midrule
 Natural-language records & Yes & Yes\\
 Attribute schema & Yes & Yes\\
@@ -98,7 +100,7 @@ A primary comparison trial allows one semantic attempt. Transport failures may b
 \label{app:model-configurations}
 \label{app:qwen}
 \label{app:primary-extensions}
-Table~\ref{tab:configurations} specifies the primary, intent, and prospective availability settings. The effort panel uses off, low, medium, high, xhigh, and max for each of Sol, Terra, and Luna; language tests use DeepSeek low/high/max and Astra max. Their requested identities follow the same table. Complete per-study settings, including archived explorations, remain in the artifact. Paired Direct/Set comparisons share requested generation settings. Primary command-line interface (CLI) calls use fresh contexts with tools and delegation disabled; application programming interface (API) outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
+Table~\ref{tab:configurations} specifies the primary, intent, and prospective availability settings. The effort panel uses off, low, medium, high, xhigh, and max for each of Sol, Terra, and Luna; language tests use DeepSeek low/high/max and Astra max. Their requested identities follow the same table. Complete per-study settings, including archived explorations, remain in the artifact. Paired Direct/SET comparisons share requested generation settings. Primary command-line interface (CLI) calls use fresh contexts with tools and delegation disabled; application programming interface (API) outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
 
 \begin{table*}[p]
 \centering\small

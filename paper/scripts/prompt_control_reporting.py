@@ -93,7 +93,7 @@ def build(root, table_dir=None):
         comparisons=result['paper_comparisons'], set_sources=result['paper_set_sources'],
         n_per_method=200, new_model_calls=0), indent=2) + '\n')
     lines = [r'\begin{tabular}{@{}lrrrrrr@{}}', r'\toprule',
-             r'Configuration & $n$ & Direct & Prompt & Set & Prompt U/R/O & $\Delta$ (pp)\\', r'\midrule']
+             r'Configuration & $n$ & Direct & Prompt & SET & Prompt U/R/O & $\Delta$ (pp)\\', r'\midrule']
     for r in result['paper_comparisons']:
         b = r['prompt_errors']
         lines.append(f"{r['label']} & {r['n']} & {r['direct_percent']:.1f} & {r['prompt_percent']:.1f} & "
@@ -104,7 +104,7 @@ def build(root, table_dir=None):
     lines = [r'\begin{tabular}{@{}llrrrr@{}}', r'\toprule',
              r'& & & & \multicolumn{2}{c}{Framework implementations}\\',
              r'\cmidrule(l){5-6}',
-             r'Configuration & $n$ & Direct & Prompt & Set (DSL) & Set-Py\\', r'\midrule']
+             r'Configuration & $n$ & Direct & Prompt & SET (DSL) & SET-Py\\', r'\midrule']
     for r in result['four_way_comparisons']:
         cells = []
         for method in ['direct', 'prompt', 'set', 'python']:

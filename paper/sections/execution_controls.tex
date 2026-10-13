@@ -9,7 +9,7 @@ We make 200 new calls per configuration for DeepSeek low/high and Sol/Luna/Terra
 \begin{table*}[!tbp]
 \centering\small\setlength{\tabcolsep}{6pt}
 \input{tables/prompt_control}
-\caption{\textbf{Textual guidance and fixed decision processing.} Direct, Prompt, and Set are exact-decision percentages on the same 200 tasks per configuration. Set uses the primary results in Table~\ref{tab:main}. Prompt U/R/O gives unsafe acceptance, false refusal, and other errors; $\Delta$ is Prompt minus Direct in percentage points (pp). All outcomes remain in their denominators.}
+\caption{\textbf{Textual guidance and fixed decision processing.} Direct, Prompt, and SET are exact-decision percentages on the same 200 tasks per configuration. SET uses the primary results in Table~\ref{tab:main}. Prompt U/R/O gives unsafe acceptance, false refusal, and other errors; $\Delta$ is Prompt minus Direct in percentage points (pp). All outcomes remain in their denominators.}
 \label{tab:prompt-control}
 \end{table*}
 
@@ -17,7 +17,7 @@ The checklist changes exactness by $-6.5$ to $+1.0$ percentage points, with an i
 
 \subsection{Requested Reasoning Settings}
 \label{app:grid}
-The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. Set improves in 17, with Luna off decreasing from 25/60 to 13/60. Each reported configuration has 60 tasks per method.
+The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. SET improves in 17, with Luna off decreasing from 25/60 to 13/60. Each reported configuration has 60 tasks per method.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
@@ -28,7 +28,7 @@ The 60-task panel combines ten historical feasibility pairs and one pair from ea
 
 \subsection{Task Language}
 \label{app:language}
-We report paired Direct and Set evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete Direct/Set outcomes for these paired 60-task runs. The results concern these controlled Chinese/English renderings, not language invariance in general.
+We report paired Direct and SET evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete Direct/SET outcomes for these paired 60-task runs. The results concern these controlled Chinese/English renderings, not language invariance in general.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}

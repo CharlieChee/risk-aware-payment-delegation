@@ -8,12 +8,12 @@ Boundary and intent tests assess decision reliability under a shared policy (Sec
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{.25\textwidth}p{.36\textwidth}p{.34\textwidth}@{}}
 \toprule
-Research question & Controlled evidence & Interpretation\\
+Research question & Controlled evidence & Purpose and protocol\\
 \midrule
-Can the agent complete safely? & 200 tasks, 20 contract templates, 100 feasibility pairs; 11 configurations & Responsiveness to authorization boundaries\\
-Can it act across unresolved readings? & Three intent families; 147 paired task--configuration units & Signaled ambiguity, common actions, and value boundaries\\
-What can a safe choice conceal? & 800 new requests, 20 templates, three configurations; frozen-specification availability tests & Hidden permissions, viable alternatives, and bounded exposure\\
-How do settings affect the workflow? & Effort and language panels; prompt and output-budget controls & Configuration sensitivity\\
+Can the agent complete safely? & 200 tasks, 20 contract templates, 100 feasibility pairs; 11 configurations & Authorization boundaries\newline App.~\mbox{\ref{app:protocol}--\ref{app:statistics}}\\
+Can it act across unresolved readings? & Three intent families; 147 paired task--configuration units & Common actions and value\newline App.~\ref{app:intent}\\
+What can a safe choice conceal? & 800 new requests, 20 templates, three configurations; frozen-specification availability tests & Permissions and viable alternatives\newline App.~\ref{app:permissionaudit}\\
+How do settings affect the workflow? & Effort and language panels; prompt and output-budget controls & Configuration sensitivity\newline App.~\ref{app:execution}\\
 \bottomrule
 \end{tabular}
 \caption{\textbf{Questions, evidence, and scope.} Primary compilation excludes catalogues; intent tests supply them. Availability replays freeze generated permissions and utilities. Studies share tasks and are not pooled as independent samples.}
@@ -35,7 +35,7 @@ An \emph{exact decision} agrees with the reference and, for acceptance, returns 
 
 \begin{figure*}[t]
 \centering\includegraphics[width=\textwidth]{14_safe_completion.pdf}
-\caption{\textbf{Risk-aware decisions across models and contract structures.} Plain bars denote Direct; hatched bars denote Set. (a) Exact-decision rates by configuration (DS: DeepSeek). (b) All eleven configurations: unsafe acceptance over 2,200 outcomes and safe completion over 1,100 feasible outcomes per method. (c) DeepSeek low/high across four contract families, each pooling 100 outcomes per method from five templates. Axes start at zero; configurations share tasks.}
+\caption{\textbf{Risk-aware decisions across models and contract structures.} Plain bars denote Direct; hatched bars denote SET. (a) Exact-decision rates by configuration (DS: DeepSeek). (b) All eleven configurations: unsafe acceptance over 2,200 outcomes and safe completion over 1,100 feasible outcomes per method. (c) DeepSeek low/high across four contract families, each pooling 100 outcomes per method from five templates. Axes start at zero; configurations share tasks.}
 \label{fig:completion}
 \end{figure*}
 
@@ -55,13 +55,13 @@ An \emph{exact decision} agrees with the reference and, for acceptance, returns 
 \label{sec:boundaries}
 All eleven primary configurations improve exactness and safe completion while reducing unsafe acceptances and false refusals (Figure~\ref{fig:completion}). For DeepSeek low/high, exact decisions rise from 248/400 (62.0\%) to 369/400 (92.25\%). The gain is 30.25 percentage points, with a 95\% template-cluster bootstrap interval of $[22.75,37.25]$, retaining both settings within each template. Exact purchases rise from 100 to 186 across 200 feasible outcomes; unsafe acceptances fall from 79 to 9 and false refusals from 53 to 1. On these tasks, stronger safety accompanies more useful purchases and fewer missed opportunities.
 
-Gains cover all four contract families and 18 of 20 templates at each DeepSeek setting. They vary across models: GLM high improves from 64/200 to 188/200, Sol medium from 137/200 to 196/200, and Opus medium from 142/200 to 194/200. Qwen Max low rises from 59 to 87 exact outcomes but retains 46 unsafe acceptances. Appendix~\ref{app:statistics} gives complete partitions and template results. The paired design measures boundary responsiveness; its single feasible offer does not establish general ranking performance.
+Gains cover all four contract families and 18 of 20 templates at each DeepSeek setting. They vary across models: GLM high improves from 64/200 to 188/200, Sol medium from 137/200 to 196/200, and Opus medium from 142/200 to 194/200. Qwen Max low rises from 59 to 87 exact outcomes but retains 46 unsafe acceptances. Appendix~\ref{app:statistics} gives complete partitions and template results. These pairs test authorization boundaries; their unique feasible offers limit conclusions about ranking.
 
 \subsection{Purchasing under Signaled Intent Ambiguity}
 \label{sec:intent-decisions}
-Figure~\ref{fig:intent} reports 294 outcomes from 147 matched task--configuration units across ticket-holder reference, conditional hotel cancellation, and per-recipient versus whole-batch exchange-cost limits. Both methods receive the same catalogue, explicit ambiguity cues, and decision rules. Compilation here is catalogue-visible, unlike the primary protocol. Table~\ref{tab:intent-figure3} specifies the denominators.
+Figure~\ref{fig:intent} reports 294 outcomes from 147 matched task--configuration pairs covering ticket-holder reference, conditional hotel cancellation, and individual versus batch exchange-cost limits. Both methods receive the catalogue, ambiguity cues, and decision policy; SET's primary compilation instead withholds catalogues. Table~\ref{tab:intent-figure3} gives denominators.
 
-Set improves exactness in all four configurations as risk limits, penalties, and the positive-value boundary vary. Qwen records six unsafe acceptances with Set and five with Direct, so better exactness does not ensure fewer unsafe actions in every panel. Separate checks illustrate common purchases, empty intersections, worst-case ranking, and the zero-value boundary (Appendix~\ref{app:intent-boundaries}); they do not establish a comparative accuracy advantage.
+SET improves exactness in all four configurations as risk limits, penalties, and the positive-value boundary vary. Qwen records six unsafe acceptances with SET and five with Direct, so better exactness does not ensure fewer unsafe actions in every panel. Separate checks illustrate common purchases, empty intersections, worst-case ranking, and the zero-value boundary (Appendix~\ref{app:intent-boundaries}); they do not establish a comparative accuracy advantage.
 
 \subsection{Authorization beyond the Selected Purchase}
 \label{sec:permissions}
@@ -88,6 +88,6 @@ These transitions expose permissions already present in the frozen specification
 
 \subsection{Sensitivity Analyses}
 \label{sec:robustness}
-On the 60-task panel, Set improves exactness in 17 of 18 Sol/Terra/Luna settings (Figure~\ref{fig:robustness}a); Luna off falls from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Requested effort does not measure equal provider computation.
+On the 60-task panel, SET improves exactness in 17 of 18 Sol/Terra/Luna settings (Figure~\ref{fig:robustness}a); Luna off falls from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Requested effort does not measure equal provider computation.
 
-Chinese/English wording preserves quantities, events, and authorization. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and Set 55--59/60 (Figure~\ref{fig:robustness}b). Appendix~\ref{app:execution} gives complete results and prompt and output-budget controls.
+Chinese/English wording preserves quantities, events, and authorization. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and SET 55--59/60 (Figure~\ref{fig:robustness}b). Appendix~\ref{app:execution} gives complete results and prompt and output-budget controls.

@@ -66,7 +66,7 @@ def draw_intent(root):
     ax.set_xlabel('Exact decisions (%)',fontsize=8,labelpad=4)
     ax.grid(axis='x',color=LINE,lw=.6);ax.set_axisbelow(True)
     fig.legend(handles=[Rectangle((0,0),1,1,facecolor=DIRECT,edgecolor='black',label='Direct'),
-                        Rectangle((0,0),1,1,facecolor=SET,edgecolor='black',hatch=METHOD_HATCH['set'],label='Set')],
+                        Rectangle((0,0),1,1,facecolor=SET,edgecolor='black',hatch=METHOD_HATCH['set'],label='SET')],
                loc='upper center',bbox_to_anchor=(.54,.985),ncol=2,
                fontsize=8,handlelength=1.1,handletextpad=.5,columnspacing=1.7,borderaxespad=0)
     (root/'figures/16_retained_intent_values.json').write_text(json.dumps(values,indent=2)+'\n')
@@ -141,7 +141,7 @@ def draw_completion(root):
     fig.text(.005,.478,'(b)  Safety and useful completion',fontsize=9.0,weight='bold')
     fig.text(.505,.478,'(c)  Results across contract families',fontsize=9.0,weight='bold')
     fig.legend(handles=[Rectangle((0,0),1,1,facecolor=DIRECT,edgecolor='black',label='Direct'),
-                        Rectangle((0,0),1,1,facecolor=SET,edgecolor='black',hatch=METHOD_HATCH['set'],label='Set')],
+                        Rectangle((0,0),1,1,facecolor=SET,edgecolor='black',hatch=METHOD_HATCH['set'],label='SET')],
                loc='upper right',bbox_to_anchor=(.987,1.001),ncol=2,
                fontsize=8.2,handlelength=1.2,handletextpad=.5,columnspacing=1.4,borderaxespad=0)
     def setup(ax,ylabel):
@@ -244,7 +244,7 @@ def draw_robustness(root):
             ('set',METHOD_LINE['set'],'s','-')]
     fig.legend(handles=[Line2D([0],[0],color=color,marker=marker,ls=ls,
                     markersize=4,lw=1.4,markerfacecolor='white' if arm=='direct' else color,
-                    label='Direct' if arm=='direct' else 'Set') for arm,color,marker,ls in styles],
+                    label='Direct' if arm=='direct' else 'SET') for arm,color,marker,ls in styles],
                loc='upper center',bbox_to_anchor=(.42,.916),ncol=2,
                fontsize=8.2,handlelength=2.4,columnspacing=2.3,borderaxespad=0)
     fig.legend(handles=[Patch(facecolor=color,edgecolor='black',hatch=hatch,label=label)
@@ -304,7 +304,7 @@ def draw_robustness(root):
     for i,(p,name,center) in enumerate(zip(ps,names,centers)):
         if i%2==0:ax.axvspan(center-.69,center+.69,color='#F3F3F3',zorder=0)
         for arm,offset in [('direct',-.30),('set',.30)]:
-            ticks.append(center+offset);ticklabels.append('Direct' if arm=='direct' else 'Set')
+            ticks.append(center+offset);ticklabels.append('Direct' if arm=='direct' else 'SET')
             for language,shift,color,hatch in [('zh',-.105,LANGUAGE_COLOR['zh'],''),
                                                ('en',.105,LANGUAGE_COLOR['en'],'///')]:
                 row=lb[p,arm,language];pct=100*row['exact']/row['n']

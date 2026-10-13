@@ -66,7 +66,7 @@ def save(fig,n,sources,role):
  if not selected_figures or n in selected_figures:
   for artist in fig.findobj(Text):
    old = artist.get_text().replace('Set-DSL', 'Set').replace('Set (DSL)', 'Set').replace('Set contract', 'Set')
-   artist.set_text(old)
+   artist.set_text(re.sub(r'\bSet\b', 'SET', old))
   if n in PAPER_FIGURES:publication_style(fig)
   for ext in ['pdf','svg','png']:fig.savefig(F/f'{n}.{ext}',dpi=400,bbox_inches='tight',pad_inches=.065)
  manifest.append(dict(figure=n,sources=sources,placement=role,dpi=400));plt.close(fig)
