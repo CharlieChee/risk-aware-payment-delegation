@@ -34,3 +34,6 @@ Table 7 remains one table with main-study settings and the retained inventory
 of 12 requested models and 49 model-effort combinations, on page 16. The former
 component Table 2 is absent from the PDF; no family-summary table replaces it.
 The official ACL style, anonymity, and uppercase SET labels are preserved.
+
+Figure layout: the panel captions in Figures 1 and 4 are centered below their
+respective panels, with axis labels kept separate. Plot data are unchanged.

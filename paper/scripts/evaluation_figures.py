@@ -134,12 +134,16 @@ def draw_completion(root):
     values['family_pooled']=family_pooled
 
     fig=plt.figure(figsize=(7.15,4.85))
-    a=fig.add_axes([.085,.635,.900,.285])
-    b=fig.add_axes([.085,.170,.365,.255])
-    c=fig.add_axes([.585,.170,.400,.255])
-    fig.text(.005,.973,'(a)  Exact decisions across model configurations',fontsize=9.4,weight='bold')
-    fig.text(.005,.478,'(b)  Safety and useful completion',fontsize=9.0,weight='bold')
-    fig.text(.505,.478,'(c)  Results across contract families',fontsize=9.0,weight='bold')
+    a=fig.add_axes([.085,.660,.900,.285])
+    b=fig.add_axes([.085,.200,.365,.255])
+    c=fig.add_axes([.585,.200,.400,.255])
+    # Subfigure captions follow each panel's tick labels and share its center.
+    fig.text(.535,.510,'(a)  Exact decisions across model configurations',
+             ha='center',va='center',fontsize=9.4,weight='bold')
+    fig.text(.2675,.052,'(b)  Safety and useful completion',
+             ha='center',va='center',fontsize=9.0,weight='bold')
+    fig.text(.785,.052,'(c)  Results across contract families',
+             ha='center',va='center',fontsize=9.0,weight='bold')
     fig.legend(handles=[Rectangle((0,0),1,1,facecolor=DIRECT,edgecolor='black',label='Direct'),
                         Rectangle((0,0),1,1,facecolor=SET,edgecolor='black',hatch=METHOD_HATCH['set'],label='SET')],
                loc='upper right',bbox_to_anchor=(.987,1.001),ncol=2,
@@ -238,22 +242,24 @@ def draw_robustness(root):
         point_or_bar_value_labels=False,cohorts_pooled=False,new_model_calls=0)
     values['family_setting_order']={}
     fig=plt.figure(figsize=(7.15,3.40))
-    fig.text(.01,.967,'(a)  Sensitivity to reasoning settings',fontsize=9.2,weight='bold')
-    fig.text(.684,.967,'(b)  Method comparison',fontsize=9.2,weight='bold')
+    fig.text(.356,.055,'(a)  Sensitivity to reasoning settings',
+             ha='center',va='center',fontsize=9.2,weight='bold')
+    fig.text(.863,.055,'(b)  Method comparison',
+             ha='center',va='center',fontsize=9.2,weight='bold')
     styles=[('direct',METHOD_LINE['direct'],'o','--'),
             ('set',METHOD_LINE['set'],'s','-')]
     fig.legend(handles=[Line2D([0],[0],color=color,marker=marker,ls=ls,
                     markersize=4,lw=1.4,markerfacecolor='white' if arm=='direct' else color,
                     label='Direct' if arm=='direct' else 'SET') for arm,color,marker,ls in styles],
-               loc='upper center',bbox_to_anchor=(.42,.916),ncol=2,
+               loc='upper center',bbox_to_anchor=(.356,.985),ncol=2,
                fontsize=8.2,handlelength=2.4,columnspacing=2.3,borderaxespad=0)
     fig.legend(handles=[Patch(facecolor=color,edgecolor='black',hatch=hatch,label=label)
                         for label,color,hatch in [('ZH',LANGUAGE_COLOR['zh'],''),
                                                   ('EN',LANGUAGE_COLOR['en'],'///')]],
-               loc='upper center',bbox_to_anchor=(.858,.916),ncol=2,
+               loc='upper center',bbox_to_anchor=(.863,.985),ncol=2,
                fontsize=8.2,handlelength=1.25,columnspacing=1.1,borderaxespad=0)
-    positions=[(.072,.300,.180,.440),(.266,.300,.180,.440),
-               (.460,.300,.180,.440)]
+    positions=[(.072,.380,.180,.440),(.266,.380,.180,.440),
+               (.460,.380,.180,.440)]
     changes=[]
     for (prefix,label),pos in zip(families,positions):
         ax=fig.add_axes(pos)
@@ -288,15 +294,16 @@ def draw_robustness(root):
         ax.tick_params(axis='x',labelsize=6.7,pad=4)
         ax.tick_params(axis='y',labelsize=7.1,pad=3)
         if prefix!='gpt56_sol':ax.tick_params(axis='y',labelleft=False)
-        ax.set_title(label,loc='left',fontsize=8.7,weight='bold',pad=7)
+        fig.text(pos[0]+pos[2]/2,.245,label,ha='center',va='center',
+                 fontsize=8.7,weight='bold')
         ax.grid(axis='y',color=LINE,lw=.6);ax.set_axisbelow(True)
     assert len(changes)==18 and sum(d>0 for d in changes)==17 and sum(d<0 for d in changes)==1
     values['complete_effort_configurations']=len(changes)
-    fig.text(.008,.520,'Exact decisions (%)',rotation=90,va='center',ha='center',fontsize=9)
-    fig.text(.350,.150,'Requested reasoning setting',ha='center',fontsize=9)
+    fig.text(.008,.600,'Exact decisions (%)',rotation=90,va='center',ha='center',fontsize=9)
+    fig.text(.356,.155,'Requested reasoning setting',ha='center',fontsize=9)
     # Methods are explicit on the x-axis. Language uses its own palette and
     # plain/hatched fills, independent of the method colors in panel (a).
-    ax=fig.add_axes([.731,.300,.264,.440])
+    ax=fig.add_axes([.731,.380,.264,.440])
     ps=['ds_flash_low','ds_flash_high','ds_flash_max']
     names=['DS low','DS high','DS max']
     centers=np.arange(3)*1.5
