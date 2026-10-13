@@ -6,7 +6,7 @@ from certified_primary import summary_rows, intervals as primary_intervals
 
 def build(root, table_dir=None):
     root = Path(root)
-    dest = Path(table_dir) if table_dir else root / 'tables'
+    dest = Path(table_dir) if table_dir else root / ('tables' if (root/'paper.tex').exists() else 'tex/tables')
     dest.mkdir(parents=True, exist_ok=True)
     (root / 'output').mkdir(exist_ok=True)
     def load(name):

@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 from collections import Counter
+from certified_reporting import summary_rows as certified_summaries
 
 REPORT = 'data/author_reports/20261011_confirmed_aggregates.json'
 OPUS_REVIEW = 'data/author_reports/20261011_opus_output_review.json'
@@ -98,7 +99,7 @@ def author_report(root):
 
 
 def display_language(root):
-    rows = json.loads((Path(root) / 'data/derived/language_all_methods_matched.json').read_text())
+    rows = certified_summaries(root, 'data/derived/language_all_methods_matched.json')
     by = {(r['profile'], r['arm'], r['language']): r for r in rows}
     report = author_report(root)
     # No 200-case Python outcomes accompanied the newly reported Astra results.

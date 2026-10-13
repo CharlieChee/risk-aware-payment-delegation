@@ -4,7 +4,7 @@
 \subsection{Contract structures and paired boundaries}
 The primary dataset contains 20 templates (Table~\ref{tab:templates}), with five feasible/infeasible pairs per template. Each purchase has six components; the retained events are the 57 affected subsets of size at most four, including the empty event. Empty events have zero assessment. A nonempty event incurs one administrative fee, outside insurance or compensation offsets. Public contracts state that no additional hidden clauses apply.
 
-The master construction seed is 39071007, with predetermined template and stratum offsets. In each feasible instance the unique authorized positive-value candidate has margin $m$ in Table~\ref{tab:strata}. Increasing only its administrative fee by $m+1$ makes the paired task infeasible, with maximum loss of 200,001 subunits against a 200,000-subunit limit. The resulting violation is always one subunit, although the fee increment depends on the feasible margin. Other candidates already exceed the limit by 1--20,000 subunits. Opaque candidate identifiers contain no answer labels, and positions are sampled before attributes are generated. Amounts are reported in MU without changing the stored values.
+The master construction seed is 39071007, with predetermined template and stratum offsets. The unique authorized positive-value candidate has loss margin $m$: the authorized cap minus its worst loss, in subunits (Table~\ref{tab:strata}). Increasing only its administrative fee by $m+1$ makes the paired task infeasible, with maximum loss of 200,001 subunits against a 200,000-subunit limit. The resulting violation is always one subunit, although the fee increment depends on the feasible margin. Other candidates already exceed the limit by 1--20,000 subunits. Opaque candidate identifiers contain no answer labels, and positions are sampled before attributes are generated. Amounts are reported in MU without changing the stored values.
 
 \begin{table*}[!tbp]
 \centering\small
@@ -71,7 +71,7 @@ All primary routes receive the same substantive policy, summarized below in Engl
 \begin{quote}\small
 Retain applicable interpretations. Respect current authorization in every retained state. Evaluate hard requirements and the complete risk permission, then maximize the minimum state-dependent utility. Buy only for positive guaranteed value; otherwise refuse. Do not ask the user or change permissions.
 \end{quote}
-Direct returns a decision, allowed identifiers, and guaranteed utility. Set returns the state-wise expressions of Appendix~\ref{app:interface}. Exactness requires agreement with the reference decision and, for acceptance, a nonempty subset of authorized maximizers and correct value. Disjoint failures are unsafe acceptance, false refusal, and Other (remaining value or invalid-execution failures). An invalid execution is not a correct refusal. Outside the primary DeepSeek comparison, archived cohorts use recorded action-and-value agreement; an unresolved no-action outcome may match the reference without certifying infeasibility.
+Direct returns a decision, allowed identifiers, and guaranteed utility. Set returns the state-wise expressions of Appendix~\ref{app:interface}. Exactness requires agreement with the reference decision and, for acceptance, a nonempty subset of authorized maximizers and correct value. Disjoint failures are unsafe acceptance, false refusal, and Other (remaining value or invalid-execution failures). Set executions must satisfy the complete-domain checks in Algorithm~\ref{alg:decision}. Failed or unresolved execution counts as Other, including a no-action output whose reference decision is refusal.
 
 \begin{table}[!htbp]
 \centering\small
@@ -92,13 +92,13 @@ Model calls per primary trial & 1 & 1\\
 \label{tab:visibility}
 \end{table}
 
-A trial allows one semantic attempt. Transport failures may be retried within the recorded limit; formatting, semantic, and output-budget failures end the trial. We save every received response before scoring and count all failures in completed cohorts. Calls not issued remain missing. We reuse an earlier result only when the messages, schema, requested model, effort setting, deadline, output budget, and both task and reference data are unchanged. Sources are selected without using the outcome. Each panel notes any differences from this protocol.
+A primary comparison trial allows one semantic attempt. Transport failures may be retried within the recorded limit; formatting, semantic, and output-budget failures end the trial. We save every received response before scoring and count all failures in completed cohorts. Calls not issued remain missing. We reuse an earlier result only when the messages, schema, requested model, effort setting, deadline, output budget, and both task and reference data are unchanged. Sources are selected without using the outcome. The availability study's first-evaluable retention rule is specified in Appendix~\ref{app:availability}.
 
 \subsection{Model configurations}
 \label{app:model-configurations}
 \label{app:qwen}
 \label{app:primary-extensions}
-Table~\ref{tab:configurations} specifies the primary and intent settings. Its continuation lists 49 model--setting combinations across 12 requested identities. Exploratory settings document configuration coverage and do not add to the primary trial count. Paired Direct/Set comparisons share requested generation settings. Primary CLI calls use fresh contexts with tools and delegation disabled, and API outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
+Table~\ref{tab:configurations} specifies the primary and intent settings. Its continuation lists 49 model--setting combinations across 12 requested identities. Exploratory settings document configuration coverage and do not add to the primary trial count. Paired Direct/Set comparisons share requested generation settings. Primary command-line interface (CLI) calls use fresh contexts with tools and delegation disabled; application programming interface (API) outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
 
 \begin{table*}[!tbp]
 \centering\small

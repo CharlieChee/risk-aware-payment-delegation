@@ -4,13 +4,14 @@ from primary_profiles import complete_primary, display_primary
 from reported_results import display_language
 from intent_ambiguity_reporting import build as build_intent_tables
 from certified_primary import summary_rows, intervals, build as build_final_primary
-R=Path(__file__).resolve().parents[1];D=R/'data/derived';T=R/'tables';T.mkdir(exist_ok=True)
+from certified_reporting import summary_rows as certified_summaries
+R=Path(__file__).resolve().parents[1];D=R/'data/derived';T=R / ('tables' if (R/'paper.tex').exists() else 'tex/tables');T.mkdir(exist_ok=True)
 build_intent_tables(R)
 build_final_primary(R)
 def load(n):return json.loads((D/(n+'.json')).read_text())
 main=summary_rows(R);by={(r['profile'],r['arm']):r for r in main}
 profiles=['ds_flash_low','ds_flash_high','astra_max']; labels=['DeepSeek low','DeepSeek high','Astra max']
-grid=load('grid_summary');gb={(r['profile'],r['arm']):r for r in grid if r['group']=='all'}
+grid=certified_summaries(R,'data/derived/grid_summary.json');gb={(r['profile'],r['arm']):r for r in grid if r['group']=='all'}
 # Auto-generated LaTeX tables (Qwen supplements do not change old evidence).
 def put(n,s):(T/(n+'.tex')).write_text(s+'\n')
 primary=complete_primary(R)
@@ -99,7 +100,7 @@ for partial in display['partials']:
  partial_details.extend([r'\begin{table*}[t]',r'\centering\scriptsize',r'\begin{tabular}{llrrrrrrrrr}',r'\toprule',r'Subset & Method & $n$ & Exact & Unsafe & Refusal & Budget & Timeout & Transport & Invalid & Value \\',r'\midrule'])
  for subset,records in [('Matched pairs',paired),('All observed',all_observed)]:
   for i,r in enumerate(records):
-   o=r['outcomes'];vals=[r['n'],r['exact'],r['unsafe'],r['false_refusal'],o.get('output_budget',0),o.get('timeout',0),o.get('transport_or_provider_failure',0),o.get('invalid_output',0),o.get('certificate_underclaim',0)+o.get('certificate_overclaim',0)+o.get('suboptimal',0)+o.get('other_error',0)]
+   o=r['outcomes'];vals=[r['n'],r['exact'],r['unsafe'],r['false_refusal'],o.get('output_budget',0),o.get('timeout',0),o.get('transport_or_provider_failure',0),o.get('invalid_output',0)+o.get('uncertified_execution',0),o.get('certificate_underclaim',0)+o.get('certificate_overclaim',0)+o.get('suboptimal',0)+o.get('other_error',0)]
    assert sum(vals[1:])==r['n']
    partial_details.append((subset if i==0 else '')+' & '+('Direct' if r['arm']=='direct' else 'Set')+' & '+' & '.join(map(str,vals))+r' \\')
   partial_details.append(r'\midrule')
@@ -112,7 +113,7 @@ for p,label in [('qwen_flash_low','Flash low'),('qwen_max_low','Max low')]:
  for i,arm in enumerate(['direct','set']):
   r=primary_by[p,arm];o=r['outcomes']
   values=[r['exact'],r['unsafe'],r['false_refusal'],o.get('output_budget',0),o.get('timeout',0),
-          o.get('transport_or_provider_failure',0),o.get('invalid_output',0),
+          o.get('transport_or_provider_failure',0),o.get('invalid_output',0)+o.get('uncertified_execution',0),
           o.get('certificate_underclaim',0)+o.get('certificate_overclaim',0)]
   assert sum(values)==200
   lines.append((label if i==0 else '')+' & '+('Direct' if arm=='direct' else 'Set')+' & '+' & '.join(map(str,values))+r' \\')
@@ -125,7 +126,7 @@ for pi,p in enumerate(extension_profiles):
  for i,arm in enumerate(['direct','set']):
   r=primary_by[p,arm];o=r['outcomes']
   values=[r['exact'],r['unsafe'],r['false_refusal'],o.get('output_budget',0),o.get('timeout',0),
-          o.get('transport_or_provider_failure',0),o.get('invalid_output',0),
+          o.get('transport_or_provider_failure',0),o.get('invalid_output',0)+o.get('uncertified_execution',0),
           o.get('certificate_underclaim',0)+o.get('certificate_overclaim',0)+o.get('suboptimal',0)+o.get('other_error',0)]
   if not r.get('error_partition_reported',True):values=[r['exact']]+[None]*7
   elif not r.get('failure_subtypes_reported',True):values=[r['exact'],r['unsafe'],r['false_refusal']]+[None]*5

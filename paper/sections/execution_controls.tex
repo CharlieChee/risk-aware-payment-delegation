@@ -9,7 +9,7 @@ We make 200 new calls per configuration for DeepSeek low/high and Sol/Luna/Terra
 \begin{table*}[!tbp]
 \centering\small\setlength{\tabcolsep}{6pt}
 \input{tables/prompt_control}
-\caption{\textbf{Textual guidance and fixed decision processing.} Direct, Prompt, and Set are exact-decision percentages on the same 200 tasks per configuration. Set uses the primary results in Table~\ref{tab:main}. Prompt U/R/O gives unsafe acceptance, false refusal, and other errors; $\Delta$ is Prompt minus Direct in percentage points. All outcomes remain in their denominators.}
+\caption{\textbf{Textual guidance and fixed decision processing.} Direct, Prompt, and Set are exact-decision percentages on the same 200 tasks per configuration. Set uses the primary results in Table~\ref{tab:main}. Prompt U/R/O gives unsafe acceptance, false refusal, and other errors; $\Delta$ is Prompt minus Direct in percentage points (pp). All outcomes remain in their denominators.}
 \label{tab:prompt-control}
 \end{table*}
 
@@ -17,7 +17,7 @@ The checklist changes exactness by $-6.5$ to $+1.0$ percentage points, with an i
 
 \subsection{Requested Reasoning Settings}
 \label{app:grid}
-The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. Set improves in 17, with Luna off decreasing from 25/60 to 14/60. Each reported configuration has 60 tasks per method.
+The 60-task panel combines ten historical feasibility pairs and one pair from each primary template. Figure~\ref{fig:robustness} and Table~\ref{tab:grid} cover 18 complete Sol/Terra/Luna settings. Set improves in 17, with Luna off decreasing from 25/60 to 13/60. Each reported configuration has 60 tasks per method.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
@@ -33,7 +33,7 @@ We report paired Direct and Set evaluations on the same 60 task identifiers in C
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
 \input{tables/appendix_language}
-\caption{Language outcomes and failure partitions in one table. U/R/O denotes unsafe/false-refusal/other. Panels with $n=60$ and $n=200$ are identified separately. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
+\caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Panels with $n=60$ and $n=200$ are identified separately. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
 \label{tab:language}
 \end{table*}
 
@@ -51,7 +51,7 @@ DS high & Direct & 21 & $4\to12$ & $11\to0$ & $0\to3$ & $6\to6$ & $0\to0$\\
 DS low & Direct & 25 & $6\to14$ & $11\to1$ & $0\to1$ & $7\to7$ & $1\to2$\\
 \bottomrule
 \end{tabular}
-\caption{Original$\to$expanded output cap for Direct; the columns partition each row's outcomes. Other denotes a remaining value error. Selection of historically budget-sensitive tasks limits prevalence estimates.}
+\caption{Original$\to$expanded output cap for Direct; the outcome columns partition each row's $n$ tasks. Budget counts output-token exhaustion; Other denotes remaining value errors. Selection of historically budget-sensitive tasks limits prevalence estimates.}
 \label{tab:budget}
 \end{table*}
 

@@ -1,0 +1,79 @@
+{
+  "description": "Closed availability diagnostic; first fully evaluable output per fixed slot; unresolved slots retained as failures.",
+  "planned": 2400,
+  "auditable": 2373,
+  "failed": 27,
+  "semantic_attempt_records": 4849,
+  "source_final_manifest_sha256": "9bfc4ff93f9046505b37c3676895611f2a36096c452d0ea0564dfe8eef395d2b",
+  "raw_projection": "Original answer text, generated expressions, identity/usage/completion receipts, and original-byte hashes. Provider event streams remain local; no credentials or workstation paths are released.",
+  "attempt_counts": [
+    {
+      "profile": "deepseek_low",
+      "certification": "FAIL",
+      "count": 106
+    },
+    {
+      "profile": "deepseek_low",
+      "certification": "PASS",
+      "count": 800
+    },
+    {
+      "profile": "glm_low",
+      "certification": "FAIL",
+      "count": 493
+    },
+    {
+      "profile": "glm_low",
+      "certification": "PASS",
+      "count": 800
+    },
+    {
+      "profile": "qwen_low",
+      "certification": "FAIL",
+      "count": 1877
+    },
+    {
+      "profile": "qwen_low",
+      "certification": "PASS",
+      "count": 773
+    }
+  ],
+  "shards": [
+    {
+      "path": "bilingual/availability_20261013/tasks.jsonl.gz",
+      "records": 800,
+      "bytes": 19556618,
+      "sha256": "36879bff2c4a485f9df45bb51fb89334d2460b4f7bf33595409e82ff834d6ae1"
+    },
+    {
+      "path": "bilingual/availability_20261013/requests.jsonl.gz",
+      "records": 2400,
+      "bytes": 1291044,
+      "sha256": "c8677344d198575b21b22c625071b540290d5e85b1528447cf01eb93fb7a702c"
+    },
+    {
+      "path": "bilingual/availability_20261013/attempt_outputs.jsonl.gz",
+      "records": 4849,
+      "bytes": 9036279,
+      "sha256": "cdbe4ed2aad27abd27578635e63f6ff777361e2ee7f62f6f5b7ada051b83b8b2"
+    },
+    {
+      "path": "data/availability_20261013/attempt_index.jsonl.gz",
+      "records": 4849,
+      "bytes": 404080,
+      "sha256": "ec1076bef3542f32fde2fdbda915ee56feddf93fd01cf9a77a820df9b5afe0e8"
+    },
+    {
+      "path": "bilingual/availability_20261013/retained.jsonl.gz",
+      "records": 2400,
+      "bytes": 16242755,
+      "sha256": "6d8729792ce1e1d5098c386213230e6661f8325a783ddb11af3a789ee3d4cdce"
+    },
+    {
+      "path": "bilingual/availability_20261013/failures.jsonl.gz",
+      "records": 27,
+      "bytes": 39039,
+      "sha256": "1a94d8cf299acc571803378e2d7f44dfa6b532a1760dd4299ce234eca25b7087"
+    }
+  ]
+}

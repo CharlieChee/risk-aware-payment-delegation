@@ -1,7 +1,7 @@
 \section{Why Safe Choices Can Hide Authorization Errors}
 \label{sec:analysis}
 \label{sec:verification}
-Authorization determines which purchases enter the choice set; utility determines which of them is selected. An error in either quantity can change the decision, but errors can also conceal one another.
+A safe purchase does not show whether a rule excludes unauthorized offers or merely ranks them lower. Executable delegation requires permissions that hold independently of ranking. We distinguish that requirement from correctness of the selected action.
 
 \subsection{Selected Actions and Admitted Domains}
 Write $F_C=C\cap F(x)$ for the reference-authorized domain. A selected purchase $z^\star$ is safe when $z^\star\in F_C$. Soundness of the generated authorization domain is stronger:
@@ -9,12 +9,12 @@ Write $F_C=C\cap F(x)$ for the reference-authorized domain. A selected purchase 
 \widehat F_C\subseteq F_C.
 \label{eq:domain-soundness}
 \end{equation}
-The difference $\widehat F_C\setminus F_C$ contains unauthorized offers the rule admits, including those never selected. Checking one safe action cannot establish that this difference is empty. Moreover, safety alone does not establish an exact decision: the purchase must maximize reference worst-case utility and report its value correctly.
+The difference $\widehat F_C\setminus F_C$ contains unauthorized offers the rule admits, including those never selected. An exact acceptance selects a reference maximizer and reports its value correctly. Even this stronger outcome check does not establish that the difference is empty. It checks the chosen purchase, leaving permissions for unselected offers untested.
 
-The reverse difference, $F_C\setminus\widehat F_C$, contains authorized offers the rule excludes. Such exclusions can cause false refusal or remove the best purchase. A rule admitting nothing is sound by Equation~\eqref{eq:domain-soundness}, yet may fail to complete an authorized task. Refusal is correct only when no reference-authorized purchase has positive guaranteed value. Our evaluation therefore checks useful completion and refusal alongside unsafe acceptance and admitted domains.
+The reverse difference, $F_C\setminus\widehat F_C$, contains authorized offers the rule excludes, potentially removing the best purchase or causing false refusal. An empty domain is sound but can miss an authorized task. Refusal is correct only when no reference-authorized purchase has positive guaranteed value. We therefore evaluate useful completion alongside authorization soundness.
 
 \subsection{Omitted States Affect Permission and Value}
-For fixed $x$, consider a nonempty retained subset $\Theta'\subseteq\Theta$, with all remaining state functions unchanged. Equations~\eqref{eq:common} and~\eqref{eq:robust} imply
+Fix $x$ and write $\Theta=\Theta(x)$. For a nonempty $S\subseteq\Theta$, let $F_S$ and $\psi_S$ denote the intersection in Equation~\eqref{eq:common} and the worst-case utility in Equation~\eqref{eq:robust}, restricted to states in $S$. Retaining only $\Theta'\subseteq\Theta$, with $\Theta'\ne\varnothing$ and all remaining state functions unchanged, gives
 \begin{equation}
 F_\Theta\subseteq F_{\Theta'},\qquad
 \psi_{\Theta'}(z)\ge\psi_\Theta(z).
@@ -22,16 +22,20 @@ F_\Theta\subseteq F_{\Theta'},\qquad
 \end{equation}
 Removing conjuncts cannot shrink the admissible set, and removing terms cannot lower the worst-case value. A single omission can thus weaken authorization and inflate the value used for selection. Both inequalities can be equalities: a redundant state changes neither quantity. The relevant issue is whether its conditions affect the aggregate, not the number of labels emitted. Equivalent merged conditions preserve the decision semantics.
 
-An interpretation can bind several quantities at once. In the hotel tasks, ``his room'' links the same guest to an arrival-dependent cancellation deadline, the fee checked against the authorized cap, and the utility penalty. Omitting that reading can remove both a permission check and a source of low value. Binding those quantities to different guests is another error; Equation~\eqref{eq:omission} applies specifically to deletion with the other state functions held fixed. Appendix~\ref{app:intent} gives the task semantics.
+In the hotel tasks, ``his room'' binds one guest to the arrival-dependent cancellation deadline, fee checked against the cap, and utility penalty. Omitting that reading can remove both a permission check and a source of low value. Incorrect binding is a separate error; Equation~\eqref{eq:omission} assumes deletion with all remaining functions fixed. Appendix~\ref{app:intent} gives the task semantics.
 
 \subsection{Availability and Ranking Can Mask Permission Errors}
-Suppose a fixed rule admits two offers, a reference-safe $a$ and an unauthorized $b$, with
+For a fixed request and fully evaluated specification, restricting $C$ to $C'\subseteq C$ leaves surviving offers' permissions and utilities unchanged: $\widehat F_{C'}=\widehat F_C\cap C'$ and $F_{C'}=F_C\cap C'$. Thus a sound domain remains sound under deletion. Availability can expose an existing false permission, not create one.
+
+Suppose the only admitted offers are reference-authorized $a,c$ and unauthorized $b$, with $\psi_x(c)>0$ and
 \begin{equation}
-\widehat\psi(a)>\widehat\psi(b)>0.
+\widehat\psi(a)>\widehat\psi(b)>\widehat\psi(c)>0.
 \label{eq:masking}
 \end{equation}
-If these are the only admitted offers, the rule selects $a$. Its safe choice leaves the permission for $b$ untested. Removing $a$ makes $b$ the positive-value maximizer without changing either offer's conditions. More generally, a singleton catalogue exposes any unauthorized offer that the frozen rule admits with positive estimated value. An admitted offer with nonpositive value need not be selected, even when it is the only option. Domain errors and unsafe purchases therefore need separate measurements.
+The selector chooses $a$. Removing it exposes $b$, although $c$ remains permitted and positively valued under both the specification and reference. The failure does not require losing all viable authorized choices. An incorrectly admitted offer with nonpositive estimated value, however, cannot win under deletion alone. Domain errors and unsafe purchases therefore need separate measurements.
 
-The same separation explains component interventions. Replacing utility by a function $v$ for which $v(b)>\max\{0,v(a)\}$ changes the choice to $b$ while leaving permission unchanged. Even a correct utility function cannot repair an overbroad authorization domain: an unauthorized purchase can have high task value. Conversely, correcting permission can prevent an unsafe choice while leaving incorrect values or rankings among the remaining offers.
+Under a sound domain, changing utility cannot produce an unauthorized selection either. On the unchanged three-offer catalogue, replacing $\widehat\psi$ by reference utility selects $b$ if $\psi_x(b)>\max\{0,\psi_x(a),\psi_x(c)\}$. An unauthorized purchase can have positive task value. Correct valuation does not repair an overbroad domain.
 
-These observations motivate two checks in Section~\ref{sec:permissions}. Catalogue replays hold generated rules and the selector fixed while changing available offers. Component interventions substitute reference permission or utility separately. They test whether availability and ranking conceal an existing permission error; their selected cases establish a mechanism rather than its prevalence in deployment.
+Equation~\eqref{eq:omission} explains how this masking can arise. Omitting a state may inflate the safe offer's value more than the unauthorized offer's, enough to reverse their reference ranking. Restoring utility then removes the safe offer's artificial advantage while leaving permission overbroad. A single omission can thus produce two interacting errors. Conversely, correcting permission excludes unauthorized offers but can leave wrong values among the remaining offers. Restoring the omitted state's conditions and utilities addresses both effects of the omission.
+
+State omission is one source of the mismatch. Incorrect clause aggregation or consequence calculations can also corrupt the admitted domain. Section~\ref{sec:permissions} tests availability on a prospective cohort of frozen specifications and valuation through separate reference-assisted interventions. The availability mechanism depends on the resulting permissions and ranking, not a particular source of error.

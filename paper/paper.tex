@@ -24,6 +24,7 @@
 \newcommand{\direct}{\textsc{Direct}}
 \input{tables/primary_stats}
 \input{tables/evaluation_inventory_stats}
+\input{tables/availability_stats}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \title{Risk-Aware Payment Delegation:\\From Intent to Executable Decisions}
 \author{Anonymous authors}
@@ -33,7 +34,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Delegated purchasing must respect the user's authorization even when a request admits several interpretations or contractual outcomes remain uncertain. We formulate risk-aware purchase or refusal by separating authorization across retained states from worst-case utility. SET implements this formulation, selecting a jointly admissible purchase with the highest positive worst-case value, or refusing when none qualifies. This permits useful decisions without further user interaction. We analyze why a safe selected action can coexist with an incorrect authorization domain: omitted states can weaken permissions and inflate guaranteed value, while ranking can conceal the resulting errors. On synthetic contractual-boundary tasks across multiple model families, SET improves exact decisions and useful completion while reducing unsafe acceptances and false refusals relative to direct decisions under the same stated policy. Controlled intent tests examine unresolved reference and scope. Frozen-rule replays and selected-output interventions show how changes in candidate availability or utility expose permissions that safe current purchases leave undetected.
+Delegated purchasing must respect existing authorization when interpretations or contractual outcomes remain uncertain. We formulate purchase or refusal without further user interaction by separating joint authorization from worst-case utility. SET selects a purchase admissible across retained states with the highest positive worst-case value, or refuses. On synthetic contractual-boundary tasks across model families, it improves exact decisions and useful completion while reducing unsafe acceptances and false refusals relative to direct decisions under the same policy. Yet an unauthorized alternative may be admitted but lose in ranking. A prospective study freezes decision conditions and varies candidate availability: removing a few high-ranked offers exposes unauthorized purchases across contract families, even while alternatives remain authorized and positively valued under both the specification and the reference. One specification starts from an exact decision but purchases an unauthorized offer after four removals, with 59 viable authorized alternatives remaining. Separate reference-assisted interventions on selected faulty outputs show how correcting utility can also expose overbroad permissions. These analyses distinguish correctness of the selected purchase from soundness of the admitted domain: losing a preferred offer does not expand the user's authorization.
 \end{abstract}
 
 \input{sections/introduction}
@@ -44,11 +45,11 @@ Delegated purchasing must respect the user's authorization even when a request a
 \input{evaluation}
 
 \section{Conclusion}
-Risk-aware delegation requires a common authorized purchase, not necessarily a unique interpretation of the request. Set evaluates each candidate's authorization and worst-case value across retained interpretations and contractual events. Across controlled contractual boundaries, the method improves useful completion while reducing unsafe acceptance and false refusal. Our analysis and interventions show why a safe selected purchase does not establish authorization-domain soundness: omitted states can weaken permission and inflate value, while availability and ranking can conceal the permission error. Assessing both the chosen purchase and the alternatives a rule permits gives a more informative account of whether the delegation has been respected.
+SET separates authorization across retained states from worst-case value to make executable purchase-or-refusal decisions. On controlled tasks, it improves useful completion while reducing unsafe acceptances and false refusals. Frozen-specification tests expose hidden permissions through bounded removal of preferred offers, even while viable authorized alternatives remain. Separate component interventions show why correcting value cannot substitute for correcting permission. Faithful payment delegation requires checking the admitted domain alongside the selected purchase. Losing a preferred offer does not expand the user's authorization.
 \label{mainend}
 
 \section*{Limitations}
-The evaluated contracts are synthetic, with complete catalogues, known attributes, correct item grounding, and finite state sets. Risk limits and utility are supplied as inputs. The main benchmark isolates authorization boundaries. Its unique feasible candidate provides limited evidence about ranking among several admissible purchases. Intent tests signal unresolved readings explicitly. The evaluation does not cover open-ended interpretation discovery, hidden merchant terms, incomplete inventory, fraud, or settlement.
+The evaluated contracts are synthetic, with complete catalogues, known attributes, correct item grounding, and finite state sets. Risk limits and utility are supplied as inputs. The main benchmark isolates authorization boundaries. Its unique feasible candidate provides limited evidence about ranking among several admissible purchases. The availability study instead retains multiple viable purchases and tests a constructed, reference-stratified distribution. Its directed-removal rates describe pressure on frozen specifications, not random stockouts or deployment frequencies. Intent tests signal unresolved readings explicitly. The evaluation does not cover open-ended interpretation discovery, hidden merchant terms, unknown inventory, fraud, or settlement.
 
 Decision conditions can omit a relevant requirement or bind it to the wrong state, even when the resulting specification executes successfully. Reference implementations check consistency with stipulated semantics and share a development workflow. Configuration, language, and diagnostic panels overlap and do not provide independent task samples. Catalogue visibility and provider compute differ across some controls. The appendix specifies each cohort's execution and scoring protocol, including reference-assisted interventions. The reported gains concern the complete workflow. The selected-output interventions establish specific error mechanisms, not their frequency across requests or deployed systems.
 
@@ -65,5 +66,5 @@ All purchases are synthetic, with no monetary transfers or customer records. Fin
 \setlength{\@dblfpsep}{18pt}
 \setlength{\@dblfpbot}{0pt plus 1fil}
 \makeatother
-\input{sections/appendix}
+\input{appendix}
 \end{document}

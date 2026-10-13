@@ -1,43 +1,80 @@
 {
-  "source": "data/diagnostics/stress_chart_data.json",
-  "scope": "Pooled diagnostic collection across three DeepSeek settings; preparation strata remain indexed in the artifact",
-  "unit": "Frozen rule artifacts, not independent natural-language requests",
-  "base_tasks": 72,
-  "artifacts": 648,
-  "catalogue_replays": 1296,
+  "cohort": "first fully evaluable completion cohort, closed 2026-10-13",
+  "source": "data/supplements/availability_20261013/summary.json",
+  "metric": "cumulative directed exposure with strict authorized backup",
+  "planned": 2400,
+  "auditable": 2373,
+  "failed": 27,
+  "budgets": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "unit": "one retained specification per request and model; replay conditions are dependent",
   "profiles": [
     {
-      "profile": "ds_flash_low",
-      "label": "Low",
-      "n": 216,
-      "grid_unsafe_domain": 5,
-      "grid_unsafe_selection": 0,
-      "single_unsafe_selection": 2,
-      "grid_invalid": 7,
-      "single_invalid": 7
+      "profile": "deepseek_low",
+      "label": "DeepSeek",
+      "denominator": 791,
+      "percentages": [
+        0.6321112515802781,
+        1.011378002528445,
+        1.5170670037926675,
+        1.5170670037926675
+      ],
+      "counts": [
+        5,
+        8,
+        12,
+        12
+      ]
     },
     {
-      "profile": "ds_flash_high",
-      "label": "High",
-      "n": 216,
-      "grid_unsafe_domain": 8,
-      "grid_unsafe_selection": 0,
-      "single_unsafe_selection": 1,
-      "grid_invalid": 1,
-      "single_invalid": 1
+      "profile": "glm_low",
+      "label": "GLM",
+      "denominator": 741,
+      "percentages": [
+        1.484480431848853,
+        3.2388663967611335,
+        4.4534412955465585,
+        6.207827260458839
+      ],
+      "counts": [
+        11,
+        24,
+        33,
+        46
+      ]
     },
     {
-      "profile": "ds_flash_max",
-      "label": "Max",
-      "n": 216,
-      "grid_unsafe_domain": 10,
-      "grid_unsafe_selection": 0,
-      "single_unsafe_selection": 5,
-      "grid_invalid": 4,
-      "single_invalid": 4
+      "profile": "qwen_low",
+      "label": "Qwen",
+      "denominator": 766,
+      "percentages": [
+        0.13054830287206268,
+        0.26109660574412535,
+        0.391644908616188,
+        0.391644908616188
+      ],
+      "counts": [
+        1,
+        2,
+        3,
+        3
+      ]
     }
   ],
-  "invalid_per_catalogue": 12,
-  "original_responses_modified": false,
-  "new_model_calls": 0
+  "stats": {
+    "AvailSafeDS": 791,
+    "AvailSafeGLM": 741,
+    "AvailSafeQwen": 766,
+    "AvailHiddenPct": "3.09",
+    "AvailExposedPct": "2.09",
+    "AvailExposedRequests": 48,
+    "AvailExposedTemplates": 15,
+    "AvailBackupMin": 40,
+    "AvailBackupMax": 67,
+    "AvailExactExposed": 8
+  }
 }

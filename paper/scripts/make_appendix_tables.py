@@ -8,11 +8,12 @@ from collections import Counter
 import json
 from primary_profiles import display_primary
 from reported_results import display_language, opus_output_review
+from certified_reporting import summary_rows as certified_summaries, intent_rows
 
 
 def build(root, table_dir=None):
     root = Path(root)
-    dest = Path(table_dir) if table_dir else root / 'tables'
+    dest = Path(table_dir) if table_dir else root / ('tables' if (root/'paper.tex').exists() else 'tex/tables')
     dest.mkdir(parents=True, exist_ok=True)
     def load(name):
         return json.loads((root / name).read_text())
@@ -65,7 +66,7 @@ def build(root, table_dir=None):
                          + ' & '.join(str(row[k]) for k in ('n', 'exact', 'unsafe', 'false_refusal', 'other')) + r'\\')
     finish('appendix_opus', lines)
 
-    grid = {(r['profile'], r['arm']): r for r in load('data/derived/grid_summary.json') if r['group'] == 'all'}
+    grid = {(r['profile'], r['arm']): r for r in certified_summaries(root, 'data/derived/grid_summary.json') if r['group'] == 'all'}
     arms = ('direct', 'set')
     lines = table('@{}llrrrr@{}',
         r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Set}\\' + '\n' +
@@ -89,7 +90,7 @@ def build(root, table_dir=None):
 
     language = display_language(root)
     original = {(r['profile'], r['arm'], r['language']): r
-                for r in load('data/derived/language_all_methods_matched.json')}
+                for r in certified_summaries(root, 'data/derived/language_all_methods_matched.json')}
     lines = table('@{}llrrrr@{}',
         r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Set}\\' + '\n' +
         r'Configuration & Language & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O\\')
@@ -103,7 +104,7 @@ def build(root, table_dir=None):
     finish('appendix_language', lines[:-1])
 
     # All three ambiguity routes, with explicit denominators and disjoint errors.
-    records = load('data/supplements/intent_ambiguity_20261011/parameter_rows.json')
+    records = intent_rows(root)
     labels = [('ds_flash_low','DS low'), ('ds_flash_max','DS max'), ('glm53_low','GLM low'),
               ('glm53_max','GLM max'), ('qwen_max_low','Qwen Max low'), ('qwen_max_xhigh','Qwen Max xhigh')]
     lines = table('@{}llrrrrrr@{}',

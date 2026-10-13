@@ -12,7 +12,7 @@ Research question & Controlled evidence & Interpretation\\
 \midrule
 Can the agent complete safely? & 200 tasks, 20 contract templates, 100 feasibility pairs; 11 configurations & Responsiveness to authorization boundaries\\
 Can it act across unresolved readings? & Three intent families; 147 paired task--configuration units; five capability checks & Signaled ambiguity, common actions, and value boundaries\\
-What can a safe choice conceal? & 648 frozen rules, 1,296 replays; 16 selected-output interventions; 36 input-intervention runs & Effects of availability, permission, value, and interpretation information\\
+What can a safe choice conceal? & 800 new requests, 20 templates, three configurations; frozen-specification replays and component interventions & Hidden permissions, viable alternatives, and permission--value interactions\\
 How do settings affect the workflow? & Effort and language panels; prompt and output-budget controls; 16 catalogue snapshots & Configuration sensitivity and reuse\\
 \bottomrule
 \end{tabular}
@@ -31,35 +31,35 @@ Each template contributes five feasible/infeasible pairs. A feasible task has ex
 \direct\ receives the request, schema, catalogue, and the joint-feasibility, worst-value, and refusal rules of Section~\ref{sec:method}. It returns a decision and utility without external execution. \ours\ separates preparation of the state-dependent conditions from fixed catalogue evaluation. The preparation stage receives the request and schema but excludes the catalogue. Conditions use exact arithmetic and retain clause scope, compensation order, and value binding. Evaluation semantics and observed compilations are in Appendix~\ref{app:proofs}. The shared decision policy fixes the target behavior for both methods; the comparison measures how reliably each complete workflow realizes that behavior. Appendix~\ref{app:execution} reports the textual-checklist baseline and sensitivity analyses.
 
 \paragraph{Outcomes.}
-An \emph{exact decision} agrees with the reference and, for acceptance, returns authorized maximizers with correct utility. \emph{Safe completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} selects a reference-infeasible offer; \emph{false refusal} rejects an available authorized positive-value purchase. \emph{Other} contains remaining value and execution failures. All outcomes remain in their cohort denominators. Primary DeepSeek \ours{} results count failed or unresolved execution as errors; other archived cohorts retain action--value scoring without requiring certified refusal (Appendix~\ref{app:implementation}). Comparisons are paired within configurations, with one semantic attempt per trial and bounded transport retries (Appendix~\ref{app:protocol}). The artifact provides the inputs, prompts, records, and offline evaluation tools; Appendix~\ref{app:reproduction} gives the reproduction map.
+An \emph{exact decision} agrees with the reference and, for acceptance, returns authorized maximizers with correct utility. \emph{Safe completion} is exact acceptance on a feasible task. \emph{Unsafe acceptance} selects a reference-infeasible offer; \emph{false refusal} rejects an available authorized positive-value purchase. \emph{Other} includes value errors and failed or unresolved execution, never credited as correct refusal. All outcomes remain in cohort denominators. Workflow comparisons are paired within configurations, with one semantic attempt and bounded transport retries (Appendix~\ref{app:protocol}). Inputs and evaluation records accompany the artifact (Appendix~\ref{app:reproduction}).
 
 \begin{figure*}[t]
 \centering\includegraphics[width=\textwidth]{14_safe_completion.pdf}
-\caption{\textbf{Risk-aware decisions across models and contract structures.} Open bars denote Direct; hatched bars denote Set. (a) Exact-decision rates across model configurations. (b) All eleven configurations: unsafe acceptance over 2,200 task--configuration outcomes and safe completion over 1,100 feasible outcomes per method. (c) DeepSeek low/high across four contract families, each pooling 100 outcomes per method from five templates. All axes start at zero; failures remain in the denominators. Configurations share task sets.}
+\caption{\textbf{Risk-aware decisions across models and contract structures.} Plain bars denote Direct; hatched bars denote Set. (a) Exact-decision rates by configuration (DS: DeepSeek). (b) All eleven configurations: unsafe acceptance over 2,200 outcomes and safe completion over 1,100 feasible outcomes per method. (c) DeepSeek low/high across four contract families, each pooling 100 outcomes per method from five templates. Axes start at zero; configurations share tasks.}
 \label{fig:completion}
 \end{figure*}
 
 \begin{figure}[!t]
 \centering\includegraphics[width=\columnwidth]{16_retained_intent.pdf}
-\caption{\textbf{Decisions with unresolved user intent.} Exact-decision rates over 294 outcomes from 147 matched task--configuration pairs. Percentages use each configuration's denominator, retaining failures. Compilation is catalogue-visible and ambiguity is explicitly signaled. Appendix~\ref{app:intent} gives full counts and errors.}
+\caption{\textbf{Decisions with unresolved user intent.} Exact-decision rates over 294 outcomes from 147 matched task--configuration pairs, using each configuration's denominator. Compilation is catalogue-visible and ambiguity is explicitly signaled. Appendix~\ref{app:intent} gives counts and errors.}
 \label{fig:intent}
 \end{figure}
 
 \begin{figure}[!t]
 \centering\includegraphics[width=\columnwidth]{13_authorization_diagnostics.pdf}
-\caption{\textbf{A safe choice can mask an unsafe rule.} The pooled diagnostic collection contains 648 saved outputs from 72 tasks, with 216 per DeepSeek effort setting and 1,296 catalogue replays. Bars show unsafe admission in mixed catalogues and unsafe selection in unsafe-only catalogues. No valid mixed-catalogue run selects an unauthorized offer; each catalogue condition has 12 invalid executions. Collection settings and per-output provenance are indexed in the artifact.}
+\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of initially safe, fully evaluated purchases exposed within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. Curves measure cumulative directed exposure, not random-stockout probability. Denominators appear in the legend; Appendix~\ref{app:availability} gives coverage and controls.}
 \label{fig:ablations}
 \end{figure}
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
-\caption{\textbf{Method performance across reasoning settings and task languages.} (a) Direct and Set for Sol, Terra, and Luna across 18 complete settings on the 60-task panel. Lines connect requested settings, not measured compute. (b) Direct and Set are grouped within each DeepSeek configuration; open and hatched bars denote Chinese (ZH) and English (EN), with 60 tasks per language and method. Failures remain in the denominators. Tables~\ref{tab:grid} and~\ref{tab:language} report the counts.}
+\caption{\textbf{Method performance across reasoning settings and task languages.} (a) Sol, Terra, and Luna: 18 settings, 60 tasks per method. Off denotes none; L/M/H/XH denote low/medium/high/xhigh. (b) DeepSeek: 60 tasks per language and method. Plain bars denote Chinese (ZH), hatched bars English (EN). Tables~\ref{tab:grid} and~\ref{tab:language} give counts.}
 \label{fig:robustness}
 \end{figure*}
 
 \subsection{Useful Completion at Authorization Boundaries}
 \label{sec:boundaries}
-All eleven primary configurations improve exactness and safe completion while reducing unsafe acceptances and false refusals (Figure~\ref{fig:completion}). For DeepSeek low/high, exact decisions rise from 248/400 (62.0\%) to 369/400 (92.25\%). The gain is 30.25 percentage points, with a 95\% template-cluster bootstrap interval of $[22.75,37.25]$, retaining both settings within each template. Exact purchases rise from 100 to 186 across 200 feasible outcomes; unsafe acceptances fall from 79 to 9 and false refusals from 53 to 1. Better risk control thus accompanies more completed tasks.
+All eleven primary configurations improve exactness and safe completion while reducing unsafe acceptances and false refusals (Figure~\ref{fig:completion}). For DeepSeek low/high, exact decisions rise from 248/400 (62.0\%) to 369/400 (92.25\%). The gain is 30.25 percentage points, with a 95\% template-cluster bootstrap interval of $[22.75,37.25]$, retaining both settings within each template. Exact purchases rise from 100 to 186 across 200 feasible outcomes; unsafe acceptances fall from 79 to 9 and false refusals from 53 to 1. On these tasks, stronger safety accompanies more useful purchases and fewer missed opportunities.
 
 Gains cover all four contract families and 18 of 20 templates at each DeepSeek setting. They vary across models: GLM high improves from 64/200 to 188/200, Sol medium from 137/200 to 196/200, and Opus medium from 142/200 to 194/200. Qwen Max low rises from 59 to 87 exact outcomes but retains 46 unsafe acceptances. Appendix~\ref{app:statistics} gives complete partitions and template results. The paired design measures boundary responsiveness; its single feasible offer does not establish general ranking performance.
 
@@ -72,13 +72,20 @@ Set improves exactness in all four configurations as risk limits, penalties, and
 \subsection{Testing the Mechanisms behind Safe Choices}
 \label{sec:permissions}
 \label{sec:components}
-\paragraph{Changing candidate availability.}
-We examine 648 saved decision specifications from our framework, pooled across 72 tasks under DeepSeek low, high, and max. Each is replayed on mixed and unsafe-only catalogues, holding its conditions and selector fixed without further model calls. Valid mixed-catalogue executions select no unauthorized offer, although 23 specifications admit one. When only the unauthorized offer remains, eight select it (Figure~\ref{fig:ablations}). Each catalogue condition has 12 invalid executions. These changes expose existing permission errors, as predicted by the availability mechanism in Section~\ref{sec:analysis}.
+\paragraph{Availability with authorized alternatives.}
+We freeze 800 new requests from 20 templates in four contract families, each with 128 offers. DeepSeek Flash, GLM, and Qwen Max, all at low effort, receive requests, contracts, and schemas without catalogues. We retain the first fully evaluable specification per request and configuration. Catalogues are fixed before generation and stratified by whether their highest-reference-value offer is authorized (Appendix~\ref{app:availability}).
 
-\paragraph{Changing permission or value.}
-Table~\ref{tab:oracle} examines 16 faulty Set outputs selected from one ambiguous ticket request. They omit Li's refund conditions and utility binding, yet select safe offers. Replacing only utility with the reference makes all 16 select an unauthorized offer. Replacing permission alone repairs the domain but leaves the value error. Both-component replacement or restoration of the omitted state's full semantics recovers exact decisions. Duplicating the remaining state's label changes nothing.
+The primary stress test removes prefixes of the original generated ranking, without using reference labels to choose removals. Exposure requires an initially safe purchase to become unauthorized within eight removals, while an alternative remains permitted and positively valued under both generated conditions and references. Permissions, utilities, surviving attributes, and the selector stay fixed; replays make no model calls.
 
-The utility intervention changes the rank of an offer that was already permitted. It demonstrates why correcting value cannot substitute for checking authorization. These reference-assisted interventions test the mechanism on selected faulty outputs; they are neither an automatic repair method nor a prevalence estimate (Appendix~\ref{app:permissionaudit}).
+Among initially safe, fully evaluated purchases, \AvailHiddenPct\% conceal false admissions; the primary budget exposes \AvailExposedPct\% (Figure~\ref{fig:ablations}), spanning \AvailExposedRequests{} requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Minimal witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized. Native-expression replay and independent contract checks verify the witnesses; Appendix~\ref{app:availability} reports random removals and reverse transitions.
+
+\paragraph{An exact starting decision.}
+\AvailExactExposed{} exposed specifications initially make exact decisions. In one GLM coupon-cancellation case, removing four offers causes an unauthorized purchase while 59 viable authorized alternatives remain. Its risk expression includes all 57 event terms but omits a group charge within one term. The true worst loss exceeds the limit by 100 subunits. The original exact choice had left this false permission untested (Appendix~\ref{app:availability}).
+
+\paragraph{Correcting utility alone.}
+With the catalogue and permission conditions fixed, Table~\ref{tab:oracle} examines 16 selected faulty Set outputs from one ambiguous ticket request. All select safe offers despite admitting an unauthorized candidate. Replacing only utility with the reference makes all 16 select an unauthorized offer: incorrect valuation had prevented its selection.
+
+Each output omits Li's refund conditions and utility binding. Correcting permission alone repairs the domain but leaves the value error. Correcting both components, or restoring the omitted reading, recovers all 16 exact decisions; duplicating a label changes nothing. These reference-assisted interventions diagnose selected outputs, without estimating prevalence or implementing automatic repair (Appendix~\ref{app:oracle}).
 
 \begin{table}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
@@ -98,31 +105,13 @@ Restore omitted state & 16 & 0 & 0\\
 \label{tab:oracle}
 \end{table}
 
-\paragraph{Making both readings explicit.}
-We vary the input for one ambiguous ticket request with 512 offers. Six configurations and two samples per condition give 36 generations (Appendix~\ref{app:intent-input}). We compare the original input, withholding the catalogue during condition preparation, and researcher-supplied descriptions of both possible referents with their utility bindings. The last condition retains both readings and supplies neither a selected offer nor an executable reference expression; no additional user turn is involved.
-
-\begin{table}[t]
-\centering\small\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}lrr@{}}
-\toprule
-Input condition & Exact & Overbroad / valid\\
-\midrule
-Original input & 5/12 & 6/11\\
-Catalogue withheld & 6/12 & 5/12\\
-Both readings supplied & 11/12 & 0/11\\
-\bottomrule
-\end{tabular}
-\caption{\textbf{Input interventions under unresolved ambiguity.} Exact includes all 12 outputs per condition. Overbroad / valid counts domains admitting an unauthorized offer among valid outputs.}
-\label{tab:intent-input}
-\end{table}
-
-Withholding the catalogue leaves five overbroad domains (Table~\ref{tab:intent-input}). Supplying both readings gives 11/12 exact decisions and no overbroad domains among eleven valid outputs. No condition selects an unsafe offer on the original catalogue: action safety misses these authorization differences. This one-request study tests sensitivity to supplied interpretations and utility bindings while preserving ambiguity; it does not measure population-level effects.
+Appendices~\ref{app:intent-input} and~\ref{app:followup} retain supplied-reading controls, archived checks, and non-triggering results.
 
 \subsection{Sensitivity and Reuse}
 \label{sec:robustness}
-On the 60-task reasoning panel, Set improves exactness in 17 of 18 complete Sol/Terra/Luna settings (Figure~\ref{fig:robustness}a). Luna with reasoning disabled declines from 25/60 to 14/60. At medium, high, and max, Sol reaches 60/60; Terra reaches 59/60 at xhigh and max. These requested settings change the reliability of the generated conditions while the evaluator stays fixed. They do not measure equal computation across models.
+On the 60-task panel, Set improves exactness in 17 of 18 Sol/Terra/Luna settings (Figure~\ref{fig:robustness}a); Luna off falls from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Requested effort does not measure equal provider computation.
 
-The language study preserves identifiers, quantities, events, and authorization while changing Chinese/English wording. Across the six DeepSeek setting--language cells, Direct makes 33--36 exact decisions out of 60, and Set makes 55--59 (Figure~\ref{fig:robustness}b). All gains lie between 21 and 25. Appendix~\ref{app:execution} reports complete results, the textual-checklist comparison, and output-budget controls.
+Chinese/English wording preserves quantities, events, and authorization. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and Set 55--59/60 (Figure~\ref{fig:robustness}b). Appendix~\ref{app:execution} gives complete results and prompt and output-budget controls.
 
 \label{sec:reuse}
-With requirements and attribute meanings fixed, the generated conditions can be reused across catalogues. Over two requirements with eight snapshots each, Astra uses two compilations and 22,160 tokens versus 16 Direct calls and 175,429 tokens, with 16/16 exact decisions for both. The 87.4\% workflow-level reduction includes compilation. Every new catalogue is evaluated again; changed authorization requires new conditions. Appendix~\ref{app:cost} reports the resource accounting.
+For two requests with eight catalogues each, Astra uses two compilations and 22,160 tokens versus 16 Direct calls and 175,429 tokens (87.4\% less); both achieve 16/16 exact decisions. Reuse re-evaluates every catalogue and requires unchanged authorization and attribute meanings (Appendix~\ref{app:cost}).

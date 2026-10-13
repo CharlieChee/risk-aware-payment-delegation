@@ -10,7 +10,10 @@ from primary_profiles import display_primary
 from reported_results import display_language
 
 INK='#000000'; MUTED='#595959'; LINE='#D9D9D9'
-DIRECT='#FFFFFF'; SET='#BFBFBF'
+# Muted sand and slate blue retain a clear lightness difference in print.
+DIRECT='#D8B78E'; SET='#5B7F99'
+METHOD_LINE={'direct':'#956C3E', 'set':'#315E7D'}
+LANGUAGE_COLOR={'zh':'#70998E', 'en':'#E0CAA8'}
 METHOD_HATCH={'direct':'', 'set':'///'}
 
 
@@ -220,15 +223,16 @@ def draw_robustness(root):
     is synthesized. The language panel retains its own reported denominators.
     """
     root=Path(root)
-    grid=read(root,'data/derived/grid_summary.json')
+    from certified_reporting import summary_rows as certified_summaries, REPORT as SCORING_REPORT
+    grid=certified_summaries(root,'data/derived/grid_summary.json')
     gb={(r['profile'],r['arm']):r for r in grid if r['group']=='all'}
     lb=display_language(root)
     efforts=['none','low','medium','high','xhigh','max']
     settings=['Off','L','M','H','XH','Max']
     families=[('gpt56_sol','Sol'),('gpt56_terra','Terra'),('gpt56_luna','Luna')]
     values=dict(metric='Exact decisions (%)',y_axis_limits=[0,100],
-        effort_source='data/derived/grid_summary.json',
-        language_sources=['data/derived/language_all_methods_matched.json'],
+        effort_source=SCORING_REPORT,
+        language_sources=[SCORING_REPORT],
         effort_order=efforts,setting_labels=settings,effort=[],language=[],
         interpolation='None; straight segments only between adjacent complete requested settings',
         point_or_bar_value_labels=False,cohorts_pooled=False,new_model_calls=0)
@@ -236,14 +240,16 @@ def draw_robustness(root):
     fig=plt.figure(figsize=(7.15,3.40))
     fig.text(.01,.967,'(a)  Sensitivity to reasoning settings',fontsize=9.2,weight='bold')
     fig.text(.684,.967,'(b)  Method comparison',fontsize=9.2,weight='bold')
-    styles=[('direct','black','o','--'),('set','black','s','-')]
+    styles=[('direct',METHOD_LINE['direct'],'o','--'),
+            ('set',METHOD_LINE['set'],'s','-')]
     fig.legend(handles=[Line2D([0],[0],color=color,marker=marker,ls=ls,
                     markersize=4,lw=1.4,markerfacecolor='white' if arm=='direct' else color,
                     label='Direct' if arm=='direct' else 'Set') for arm,color,marker,ls in styles],
                loc='upper center',bbox_to_anchor=(.42,.916),ncol=2,
                fontsize=8.2,handlelength=2.4,columnspacing=2.3,borderaxespad=0)
     fig.legend(handles=[Patch(facecolor=color,edgecolor='black',hatch=hatch,label=label)
-                        for label,color,hatch in [('ZH',DIRECT,''),('EN',SET,'///')]],
+                        for label,color,hatch in [('ZH',LANGUAGE_COLOR['zh'],''),
+                                                  ('EN',LANGUAGE_COLOR['en'],'///')]],
                loc='upper center',bbox_to_anchor=(.858,.916),ncol=2,
                fontsize=8.2,handlelength=1.25,columnspacing=1.1,borderaxespad=0)
     positions=[(.072,.300,.180,.440),(.266,.300,.180,.440),
@@ -288,8 +294,8 @@ def draw_robustness(root):
     values['complete_effort_configurations']=len(changes)
     fig.text(.008,.520,'Exact decisions (%)',rotation=90,va='center',ha='center',fontsize=9)
     fig.text(.350,.150,'Requested reasoning setting',ha='center',fontsize=9)
-    # The x-axis identifies the methods; language is encoded by the bar hatch.
-    # Language uses open/hatched bars; method is explicit on the x-axis.
+    # Methods are explicit on the x-axis. Language uses its own palette and
+    # plain/hatched fills, independent of the method colors in panel (a).
     ax=fig.add_axes([.731,.300,.264,.440])
     ps=['ds_flash_low','ds_flash_high','ds_flash_max']
     names=['DS low','DS high','DS max']
@@ -299,7 +305,8 @@ def draw_robustness(root):
         if i%2==0:ax.axvspan(center-.69,center+.69,color='#F3F3F3',zorder=0)
         for arm,offset in [('direct',-.30),('set',.30)]:
             ticks.append(center+offset);ticklabels.append('Direct' if arm=='direct' else 'Set')
-            for language,shift,color,hatch in [('zh',-.105,DIRECT,''),('en',.105,SET,'///')]:
+            for language,shift,color,hatch in [('zh',-.105,LANGUAGE_COLOR['zh'],''),
+                                               ('en',.105,LANGUAGE_COLOR['en'],'///')]:
                 row=lb[p,arm,language];pct=100*row['exact']/row['n']
                 assert row['n']==60
                 ax.bar(center+offset+shift,pct,width=.185,color=color,
@@ -318,7 +325,8 @@ def draw_robustness(root):
     ax.grid(axis='y',color=LINE,lw=.6);ax.set_axisbelow(True)
     values['language_visual_encoding']=dict(x_axis='Method',groups=ps,
         method_order=['direct','set'],language_order=['zh','en'],
-        color={'zh':DIRECT,'en':SET},hatch={'zh':'','en':'///'},
-        palette='grayscale',method_encoding='x-axis labels and subgroup position')
+        color=LANGUAGE_COLOR.copy(),hatch={'zh':'','en':'///'},
+        palette='muted color with grayscale-distinguishable fills',
+        method_encoding='x-axis labels and subgroup position')
     (root/'figures/15_configuration_robustness_values.json').write_text(json.dumps(values,indent=2)+'\n')
     return fig

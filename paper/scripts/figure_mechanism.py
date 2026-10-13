@@ -41,9 +41,9 @@ def draw_authorization(stress):
     fig, ax = plt.subplots(figsize=(3.45, 2.95))
     fig.subplots_adjust(left=.160, right=.965, bottom=.270, top=.645)
     x = np.arange(len(rows)); width = .28
-    series = [('grid_unsafe_domain', '#FFFFFF', '', -.17,
+    series = [('grid_unsafe_domain', '#A9BBC7', '', -.17,
                'Unsafe admission - mixed catalogue'),
-              ('single_unsafe_selection', '#BFBFBF', '///', .17,
+              ('single_unsafe_selection', '#B07759', '///', .17,
                'Unsafe selection - unsafe-only catalogue')]
     for key, color, hatch, offset, label in series:
         bars = ax.bar(x+offset, [r[key] for r in rows], width=width,

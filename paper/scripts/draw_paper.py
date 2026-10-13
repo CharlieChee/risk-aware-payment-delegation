@@ -240,10 +240,16 @@ fig=draw_ablations(st, data('historical_oracle_ablation'), data('risk_tradeoff')
 save(fig,'12_mechanism_ablations',[
  'data/diagnostics/stress_chart_data.json','data/derived/historical_oracle_ablation.json',
  'data/derived/risk_tradeoff.json','data/derived/reuse_summary.json'],'execution_ablation')
-fig=draw_authorization(st)
-(F/'13_authorization_diagnostics_values.json').write_text(json.dumps(authorization_replay_values(st),indent=2)+'\n')
-save(fig,'13_authorization_diagnostics',[
- 'data/diagnostics/stress_chart_data.json'],'main')
+if (R/'data/supplements/availability_20261013/summary.json').exists():
+ if not selected_figures or '13_authorization_diagnostics' in selected_figures:
+  from availability_reporting import build as build_availability
+  build_availability()
+ manifest.append(dict(figure='13_authorization_diagnostics',sources=['data/supplements/availability_20261013/summary.json'],placement='main',dpi=400))
+else:
+ fig=draw_authorization(st)
+ (F/'13_authorization_diagnostics_values.json').write_text(json.dumps(authorization_replay_values(st),indent=2)+'\n')
+ save(fig,'13_authorization_diagnostics',[
+  'data/diagnostics/stress_chart_data.json'],'main')
 save(draw_completion(R),'14_safe_completion',primary['sources']+[
  'data/derived/template_summary.json',
  'data/supplements/evaluation_redesign_20261010/verified_claims.json'], 'main')

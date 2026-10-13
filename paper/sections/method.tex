@@ -5,9 +5,9 @@ We define which purchases a delegation permits before deciding which is most val
 
 \subsection{Authorization and Value across States}
 \label{sec:formulation}
-Let $x=(P,c)$ contain a natural-language request and context, and let $z\in C\subseteq\Z$ be one complete purchase in a finite catalogue. A nonempty $\Theta(x)$ contains retained interpretations, relevant future events, or their combinations. Interpretations determine what the user requires; events determine the consequences of committing to a purchase. We evaluate the same purchase under each state without further user interaction or a probability distribution over states.
+Let $P$ be the natural-language request, $c$ its context, and $x=(P,c)$. Let $\Z$ be the space of complete purchases, $C\subseteq\Z$ a finite catalogue, and $z\in C$ a candidate purchase. The nonempty state set $\Theta(x)$ contains retained interpretations, future events, or their combinations. Interpretations determine requirements; events determine purchase consequences. The same purchase is evaluated in every state without further user interaction or state probabilities.
 
-For state $\theta$, let $H_\theta(x,z)$ encode hard requirements, $\ell_\theta(x,z)$ financial consequences, $\A_\theta(x)$ the authorized risk region, and $u_\theta(x,z)$ utility on a common cardinal scale. Define
+For $\theta\in\Theta(x)$, let $H_\theta(x,z)$ encode hard requirements, $\ell_\theta(x,z)$ financial consequences, $\A_\theta(x)$ the authorized risk region, and $u_\theta(x,z)$ utility on a common cardinal scale. Define
 \begin{align}
 F_\theta(x)&=\{z:H_\theta(x,z)=1,\ \ell_\theta(x,z)\in\A_\theta(x)\},\label{eq:state}\\
 F(x)&=\bigcap_{\theta\in\Theta(x)}F_\theta(x),\label{eq:common}\\
@@ -29,7 +29,7 @@ These equations define the target semantics used for offline references. Experim
 \label{sec:realization}
 \label{sec:contracts}
 \label{sec:intent-dsl}
-Let $Q$ denote the executable decision conditions used by \ours, with hats marking quantities evaluated from them. A clause supplies a hard predicate $\widehat H_j$, financial permission $\widehat R_j$, and utility $\widehat u_j$ for one retained state. Their conjunction defines the admitted catalogue domain $\widehat F_C$; their minimum gives $\widehat\psi$. Section~\ref{sec:setup} specifies the experimental inputs and execution protocol. Algorithm~\ref{alg:decision} applies a fixed selection rule to them.
+The preparation procedure $f$ maps $x$ and attribute schema $\Sigma$ (names and types) to executable conditions $Q$. A valid $Q$ has $K\ge1$ clauses, indexed by $j=1,\ldots,K$, each specifying a hard predicate $\widehat H_j$, financial-permission predicate $\widehat R_j$, and utility $\widehat u_j$. Hats denote quantities computed from $Q$ for fixed $x$. Predicate conjunction defines $\widehat F_C$, the admitted catalogue domain; minimum utility gives $\widehat\psi$. Algorithm~\ref{alg:decision} performs selection.
 
 The procedure exactly solves the compiled version of Equation~\eqref{eq:decision} on a complete, resolved finite catalogue. Every candidate's admissibility, and every admitted candidate's state utilities, must be known. A feasible offer cannot be certified optimal while a competitor has unknown value. Correctness relative to the request additionally requires the decision conditions to preserve its target semantics.
 
@@ -37,7 +37,7 @@ The procedure exactly solves the compiled version of Equation~\eqref{eq:decision
 \caption{Risk-aware purchase selection}
 \label{alg:decision}
 \small
-\textbf{Input:} request/context $x$, schema $\Sigma$, catalogue $C$\par
+\textbf{Input:} request/context $x$, attribute schema $\Sigma$, catalogue $C$\par
 \textbf{Output:} \textsc{Accept}, \textsc{Refuse}, or \textsc{Fail}, with diagnostics\par\smallskip
 \begin{tabular}{@{}r@{\quad}p{.88\columnwidth}@{}}
 1 & $Q\leftarrow f(x,\Sigma)$ \quad\emph{derive conditions; no $C$}\\

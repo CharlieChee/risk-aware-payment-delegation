@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 from certified_primary import summary_rows, REPLAY
+from certified_reporting import summary_rows as certified_summaries, REPORT as CERTIFIED_REPORT
 
 ORDER = [
     ('ds_flash_low', 'DeepSeek low'),
@@ -21,13 +22,13 @@ ORDER = [
 def complete_primary(root):
     root = Path(root)
     base = summary_rows(root)
-    sources = ['data/derived/main_summary.json', 'data/supplements/qwen_primary200/summary.json', REPLAY]
-    rows = base + json.loads((root / sources[1]).read_text())
+    sources = ['data/derived/main_summary.json', 'data/supplements/qwen_primary200/summary.json', REPLAY, CERTIFIED_REPORT]
+    rows = base + certified_summaries(root, sources[1])
     extensions = []
     for folder in sorted((root / 'data/supplements').glob('primary200_*')):
         path = folder / 'summary.json'
         assert path.exists() and (folder / 'provenance.json').exists()
-        data = json.loads(path.read_text())
+        data = certified_summaries(root, str(path.relative_to(root)))
         assert len(data) == 2 and all(v['n'] == 200 for v in data)
         assert {v['arm'] for v in data} == {'direct', 'set'}
         rows.extend(data)

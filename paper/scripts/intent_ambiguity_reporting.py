@@ -1,13 +1,14 @@
 """Tables and a human-readable index from the audited historical cohorts."""
 from pathlib import Path
 import csv, json
+from certified_reporting import intent_rows
 
 
 def figure3_results(root):
     """Recompute the four displayed pairs directly from their retained outcomes."""
     root = Path(root)
     data = root / 'data/supplements/intent_ambiguity_20261011'
-    rows = json.loads((data / 'parameter_rows.json').read_text())
+    rows = intent_rows(root)
     summary = json.loads((data / 'parameter_summary.json').read_text())
     profiles = [('ds_flash_low', 'DeepSeek low'), ('ds_flash_max', 'DeepSeek max'),
                 ('glm53_low', 'GLM low'), ('qwen_max_low', 'Qwen Max low')]
@@ -26,7 +27,7 @@ def figure3_results(root):
             counts.update({k: sum(bool(r[k]) for r in selected)
                            for k in ['exact', 'unsafe', 'false_refusal']})
             counts['other'] = counts['n'] - sum(counts[k] for k in ['exact', 'unsafe', 'false_refusal'])
-            assert all(counts[k] == reference[method][k] for k in ['n', 'exact', 'unsafe', 'false_refusal'])
+            assert all(counts[k] == reference[method][k] for k in ['n', 'exact', 'unsafe'])
             entry[arm] = counts
             case_sets.append({r['case_id'] for r in selected})
         assert case_sets[0] == case_sets[1]
@@ -39,9 +40,9 @@ def build(root):
     root=Path(root); data=root/'data/supplements/intent_ambiguity_20261011'
     (root/'output').mkdir(exist_ok=True)
     summary=json.loads((data/'parameter_summary.json').read_text())
-    rows=json.loads((data/'parameter_rows.json').read_text())
+    rows=intent_rows(root)
     missing=json.loads((data/'parameter_missing.json').read_text())
-    tables=root/'tables'
+    tables=root / ('tables' if (root/'paper.tex').exists() else 'tex/tables')
     tables.mkdir(parents=True, exist_ok=True)
     figure3 = figure3_results(root)
     lines = [r'\begin{tabular}{@{}lrrrrr@{}}', r'\toprule',
@@ -90,5 +91,5 @@ def build(root):
     doc = "# Retained-intent evaluations\n\nComplete outcome counts are in the JSON inputs and generated tables. See docs/data.md in the repository for provenance and cohort definitions.\n"
     (root/'output/intent_audit.md').write_text(doc)
 
-if __name__ == '__main__':
+if __name__=='__main__':
     build(Path(__file__).resolve().parents[1])

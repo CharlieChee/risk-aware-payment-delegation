@@ -10,7 +10,25 @@ or refuses. No payment is executed by this artifact.
 
 [Anonymous artifact](https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/) · [Read the paper](paper/paper.pdf) · [Experimental protocol](docs/protocol.md) ·
 [Data guide](docs/data.md) · [Reproduction guide](docs/reproduction.md) ·
-[Prompt engineering controls](docs/prompt_controls.md)
+[Prompt engineering controls](docs/prompt_controls.md) ·
+[Availability study and complete acquisition records](docs/availability_20261013.md)
+
+The October 13 availability study freezes generated decision conditions and
+changes only which offers remain available. Its bounded-removal endpoint
+exposes unauthorized purchases in 48 requests across 15 contract templates,
+while viable authorized alternatives remain. Figure 3 reports conditional
+percentages with explicit denominators. The release retains all 2,400 planned
+slots, all 4,849 acquisition attempts, the initial single-attempt cohort, and
+the 27 unresolved final slots; it does not treat those slots as safe decisions.
+
+```bash
+python scripts/availability_20261013/verify.py --native-witnesses
+```
+
+This additional offline check reconstructs all retained-slot catalogue tests
+and re-evaluates all 48 primary witnesses from their original expressions.
+It makes no model calls. See the linked study protocol for retention rules,
+reference construction, controls, and the scope of the released raw projection.
 
 ## Reproduce the results
 
