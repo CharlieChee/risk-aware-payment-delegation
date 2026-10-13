@@ -15,20 +15,13 @@ Condition generation sees requests, contracts and schemas, without catalogues
 or reference labels. Numerical variants and model repetitions are not new
 independent logical structures.
 
-The initial cohort allows one semantic attempt per slot. After that cohort,
-unchanged requests were retried to obtain the **first fully evaluable output**
-per slot. Selection uses only complete-domain evaluability, never reference
-correctness, safety, or exposure. Full evaluability does not certify semantic
-faithfulness. This completion cohort measures retained-specification behavior,
-not single-attempt workflow reliability.
-
-Acquisition is closed. All 2,400 planned slots are accounted for: 2,373 are
-evaluable and 27 remain failures. The remaining slots are all Qwen responses
-without a terminal completion event, including incomplete chunked transfers.
-They receive no credit as safe decisions or correct refusals. Every initial
-and subsequent acquisition record is retained; there are 4,849 recorded
-attempts, not 4,849 independent tasks or completed model outputs. The initial
-single-attempt cohort and final retention rule are separately reconstructible.
+Each fixed request-model pair contributes its first fully evaluable output,
+with unchanged requests repeated when needed. Retention depends only on
+complete-domain evaluability, not correctness, safety, or exposure; evaluability
+does not certify semantic faithfulness. These results describe retained
+specifications rather than single-attempt workflow reliability. The closed
+cohort contains 2,373 evaluable outputs and 27 unresolved Qwen responses without
+a terminal completion event. All attempts are indexed below.
 
 | Model | Planned | Evaluable | Initially safe | Hidden false admission | Exposure within 8 removals |
 |---|---:|---:|---:|---:|---:|
@@ -47,10 +40,10 @@ reporting rule and its template-cluster intervals. `summary.json` additionally
 preserves the initial-safety-conditional rates used by the diagnostic engine;
 those conditional rates are not the Figure 3 percentages.
 
-The complete single-attempt cohort has 1,592 evaluable outputs, 1,553 initially
-safe purchases, 43 hidden false admissions and 31 primary exposures across
-12 templates. Those outputs overlap the retained cohort and must not be added
-to it. The 03:11 interim snapshot is an earlier, incomplete collection cutoff.
+For comparison, `first_attempt_summary.json` records 1,592 evaluable outputs,
+1,553 initially safe purchases, 43 hidden false admissions, and 31 primary
+exposures across 12 templates. These initial outputs overlap the retained
+cohort reporting 48 exposures; the two counts must not be added.
 
 ## Interventions
 
@@ -106,8 +99,8 @@ local bytes; the public projection removes credentials and workstation paths.
 
 The bilingual directory preserves original-language text. Compressed JSONL is
 a documented projection, not a byte-for-byte copy of provider event streams;
-those streams remain in the local experiment archive. No failed attempt is
-replaced by a fabricated answer or credited as a justified refusal.
+those streams remain in the local experiment archive. Attempt records are not
+independent tasks.
 
 Reconstruct all retained-slot endpoints and check every primary witness:
 
