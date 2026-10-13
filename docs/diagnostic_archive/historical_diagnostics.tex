@@ -1,0 +1,98 @@
+% Historical source excerpt; excluded from the current manuscript build.
+\subsection{Omitted-interpretation and component interventions}
+\label{app:oracle}
+The source pool contains 56 Qwen/GLM Set generations for one ambiguous ticket request and two catalogues (128 and 512 offers). We select sixteen outputs that admit a reference-unsafe candidate. Each omits the reading in which ``his'' refers to Li and retains only Zhang's fee-free-refund conditions and delay-weighted utility. These are 16 faulty outputs, not 16 independent requests. Restoring Li's state adds its conditions and utility. Duplicating Zhang's label leaves the missing semantics unchanged.
+
+Table~\ref{tab:oracle} gives all six interventions and their outcomes, testing the distinction between permission and ranking in Section~\ref{sec:analysis}. Each replacement substitutes reference conditions or utilities while holding the remaining components fixed. State restoration supplies both for the omitted reading. All interventions are performed offline on the retained outputs.
+
+\paragraph{Permission and value as separate interventions.}
+The availability study keeps valuation fixed. Here, on the unchanged three-offer catalogue of Equation~\eqref{eq:masking}, replacing $\widehat\psi$ by reference utility selects the unauthorized $b$ if $\psi_x(b)>\max\{0,\psi_x(a),\psi_x(c)\}$. An unauthorized purchase can have positive task value. Correct valuation does not repair an overbroad domain; under a sound domain, changing utility cannot produce an unauthorized selection.
+
+Equation~\eqref{eq:omission} explains how this masking can arise. Omitting a state may inflate the safe offer's value more than the unauthorized offer's, enough to reverse their reference ranking. Restoring utility then removes the safe offer's artificial advantage while leaving permission overbroad. Conversely, correcting permission excludes unauthorized offers but can leave wrong values among the remaining offers. Restoring the omitted state's conditions and utilities addresses both effects of the omission.
+
+All 16 original outputs select safe offers despite admitting an unauthorized candidate. Replacing only utility with the reference makes all 16 select an unauthorized offer. Correcting permission alone repairs the domain but leaves the value error. Correcting both components, or restoring the omitted reading, recovers all 16 exact decisions; duplicating a label changes nothing. These reference-assisted interventions diagnose selected outputs, without estimating prevalence or implementing automatic repair.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Intervention & Exact & Unsafe & Unsafe domain\\
+\midrule
+Original & 0 & 0 & 16\\
+Duplicate label & 0 & 0 & 16\\
+Reference permission & 0 & 0 & 0\\
+Reference utility & 0 & 16 & 16\\
+Both components & 16 & 0 & 0\\
+Restore omitted state & 16 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Safe selections can conceal overbroad authorization.} Counts cover 16 selected faulty outputs from one request. Unsafe counts unauthorized selections; Unsafe domain counts outputs admitting one. Original selections are safe despite domain and value errors. Interventions use offline references (Appendix~\ref{app:oracle}).}
+\label{tab:oracle}
+\end{table}
+
+
+\subsection{Input intervention on the same request}
+\label{app:intent-input}
+For the 512-offer request, we use six configurations, three input conditions, and two samples, giving 36 calls and 12 generations per condition. Configurations are Qwen Max off/medium, Qwen Flash low, GLM Flash low, GLM low, and Astra max. In the reference-interpretation condition, researcher-supplied input states both possible referents and the corresponding utility binding. It supplies neither a selected offer nor a reference formula, and there is no additional user response.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Input condition & Exact & Overbroad / valid\\
+\midrule
+Original input & 5/12 & 6/11\\
+Catalogue withheld & 6/12 & 5/12\\
+Both readings supplied & 11/12 & 0/11\\
+\bottomrule
+\end{tabular}
+\caption{Input interventions under unresolved ambiguity. Exact includes all 12 outputs per condition; the authorization-domain check uses valid outputs. None selects an unauthorized offer on the original catalogue.}
+\label{tab:intent-input}
+\end{table}
+
+Table~\ref{tab:intent-input} reports the results. All 12 generations per condition enter the exactness denominator; the domain check uses the 11, 12, and 11 valid outputs, respectively. Invalid outputs count as Other. The original and supplied-readings conditions include the catalogue; only the catalogue-withheld condition excludes it during preparation. All conditions are evaluated on the same original catalogue.
+
+\subsection{Two primary decision examples}
+\label{app:witnesses}
+Reference evaluation checks all 57 events. In one Astra Direct return-cost case, the reported loss of 1,954.33~MU understates the contractual loss of 2,054.33~MU against a 2,000~MU limit; no offer is feasible. In a coupon-cancellation case, Direct rejects all 1,024 offers although one has positive value and loss of 1,999.99~MU. These primary examples illustrate unsafe acceptance and false refusal at the same authorization boundary.
+
+\subsection{Additional domain audits and exploratory checks}
+\label{app:followup}
+These checks examine whether executable conditions preserve authorization beyond the selected purchase. They are exploratory and use separate cohorts; they do not estimate deployment frequencies or extend the selected-output result in Table~\ref{tab:oracle} to a general trend.
+
+\paragraph{Cohorts and complete-domain checks.}
+The cross-structure cohort contains 24 requests: four families, three logical templates per family, and two parameter instances per template, with 64 offers per request. The families cover referent binding, conditional clauses, individual versus collective scope, and contractual events. DeepSeek Flash low, Qwen Max low (requested identifier \texttt{qwen3.8-max}), and GLM low each supply one specification per request without seeing the catalogue. All 72 specifications are auditable. Four local interventions independently use generated or reference permission and utility, with the request, catalogue order, and selector fixed. Reference utility is evaluated even for unauthorized offers. Utility correction causes no safe-to-unsafe switch on these catalogues. Two Qwen outputs nevertheless make exact decisions while admitting seven and three unauthorized offers; both concern conditional fee waivers.
+
+We also audit all 1,080 Set outputs from the 18-setting effort panel. Of these, 1,024 support complete permission and utility evaluation. Three exact outputs have overbroad domains: Luna medium and Sol off on coupon cancellation, and Luna high on service replacement. Together with the two fee-waiver outputs, they cover three templates; all five remain safe after utility correction on their original catalogues. Greater reasoning effort generally improves both decisions and authorization domains in this panel. These observations separate current decision correctness from domain soundness without establishing that reasoning increases hidden errors.
+
+\paragraph{Fixed-permission price changes.}
+We lower one offer's price at a time by predefined 1\%, 2\%, 5\%, or 10\% steps, rounding the new price down to integer subunits and retaining every other offer. Reference consequences are recomputed. A valid intervention preserves reference authorization; the ranking-only subset also preserves generated authorization. In the 72-output cohort, 66 specifications permit independent price changes: 16,416 valid replays include 16,402 ranking-only replays, with no safe-to-unsafe switch under either generated or reference utility. The remaining six specifications have price tied to other contract attributes and are excluded.
+
+In the effort archive, 586 specifications satisfy the stronger requirements for exact affine-price evaluation and unchanged permission guards, yielding 1,392,640 ranking-only replays. Exclusions comprise 56 non-auditable outputs and 438 with unsupported or linked price expressions. Generated utility produces one safe-to-unsafe and ten unsafe-to-safe transitions; reference utility produces one and fifteen, respectively. The two adverse transitions concern the same Luna high specification and price change, not two independent examples.
+
+That service-replacement specification initially selects the reference-optimal offer with correct value. A 10\% price step reduces a different offer from 652,644 to 587,379 subunits. Its worst loss stays at 206,562, above the 200,000 limit, while the original authorized offer remains available. Both permission classifications remain unchanged. The discounted offer's reference utility rises from 1,140,794 to 1,206,059, exceeding the safe offer's 1,183,108. Thus it wins even with reference utility. Independent integer enumeration of all 57 events verifies the losses. This is one specification-level witness; 10\% is a tested grid point, not an exact minimum trigger.
+
+\paragraph{Input and component checks.}
+A separate 48-output pilot uses eight templates, Qwen Max low and GLM low, and three conditions: original input, an identical-input repeat, and a utility-base increase of 50,000 subunits. Catalogues, reference permissions, and optimal choices stay fixed. Compared with the original, Qwen changes one domain under both repetition and the value shift, removing the same seven false admissions; GLM changes one domain under repetition and none under the shift. Neither shift introduces a new false admission or a safe-to-unsafe switch. This additive-shift test does not establish a broader preference effect.
+
+\begin{table*}[!t]
+\centering\small\setlength{\tabcolsep}{5pt}
+\input{tables/appendix_replay}
+\caption{Frozen-specification replay results, grouped by DeepSeek effort setting. Each row pools 216 saved outputs collected on 72 tasks. Unsafe domain counts specifications admitting an unauthorized offer; Unsafe selection counts unauthorized purchases. Invalid counts refer to the mixed and unsafe-only catalogues, respectively; invalid executions are not treated as safe.}
+\label{tab:replay}
+\end{table*}
+
+Crossing the three models' permission and utility components on all 24 requests gives 216 local combinations. Twelve substitutions reduce full-catalogue utility error; none changes safety to unsafety, and two change unsafety to safety. Retrospective parameter checks in two earlier cohorts lack identical-input controls and do not establish a repeated input effect. The artifact retains protocols, exclusions, both transition directions, and complete evaluation records. These checks delimit the observed mechanisms without treating non-triggering outcomes as proof of general domain soundness.
+
+\subsection{Historical frozen-rule replay}
+\label{app:legacy-replay}
+This earlier study tests the availability mechanism in Section~\ref{sec:analysis}: a frozen rule may admit an unauthorized offer without selecting it when a safe alternative is available.
+We use a pooled collection of 648 saved decision specifications from our framework, covering 72 tasks under DeepSeek low, high, and max settings, with 216 outputs per setting. The tasks cross six templates, three authorization conditions, two catalogue sizes, and feasible/infeasible pairs. Each specification is evaluated on two new catalogues, giving 1,296 local replays without further model calls. Its decision conditions and selector remain fixed between replays, with no private reference information. Generation settings, catalogue visibility during preparation, and per-output provenance are indexed in the artifact. Legal candidate attributes are retained, administrative cost is set to zero, and only the first component's replacement/loss attribute changes. The mixed catalogue targets the following reference worst losses in integer subunits:
+\begin{quote}\small
+100000, 199999, 200000, 200001, 210000, 225000, 250000, 300000, 350000, 399999, 400000, 400001, 500000, 600000.
+\end{quote}
+The second catalogue contains only the 400,000-subunit offer, above the 200,000 limit. Other hard constraints remain satisfied. Numerical and symbolic references agree on 53,460 candidate--state checks. The catalogue changes are chosen to probe the generated consequence functions, so their outcomes do not estimate error rates in a randomly sampled purchasing population.
+
+
+
+The results are grouped by effort setting. Outputs share tasks and are not treated as independent task samples.

@@ -1,24 +1,34 @@
 Risk-Aware Payment Delegation: From Intent to Executable Decisions
 
-October 13, 2026 revision. The main text ends on page 8; the complete document
-has 26 pages and 45 cited references. The title, SET decision formulation,
-primary workflow comparison, and separate component interventions are retained.
+October 13, 2026 narrative-focused revision. Main text: 8 pages. Complete PDF:
+21 pages, with 45 cited references. The SET formulation and primary workflow
+comparison remain unchanged. Figure 3 carries availability budgets and coverage;
+the former main-text component table is absent from the entire PDF, and no
+replacement family-summary table is introduced.
 
 Build: latexmk -pdf -interaction=nonstopmode -halt-on-error paper.tex
-Rebuild reporting inputs: python reproduce.py --pdf
-Run the new catalogue replay: python ../scripts/availability_20261013/verify.py --native-witnesses
+Offline reconstruction: python reproduce.py --pdf
+Native availability witnesses: python ../scripts/availability_20261013/verify.py --native-witnesses
 
-Figure 3 uses the closed frozen-specification cohort. It plots
-cumulative ranked-removal exposure, using every planned
-trial. Each model contributes 800 planned trials to the denominator. The primary
-endpoint covers 48 requests and 15 templates, retaining viable authorized
-alternatives. Appendix F.1 supplies the protocol and full distribution; F.6
-preserves the historical replay. Table 2 remains a separate utility-intervention
-study on selected outputs from one request. Input-intervention details are in F.3.
+Figure 3 uses 800 planned trials per model (2,400 pooled), with the original
+curves unchanged and the primary budget of eight removals highlighted. The
+endpoint covers 48 requests, 15 templates, and four families, retaining viable
+authorized alternatives. Eight exposed specifications begin with exact decisions.
+Appendix F contains design, complete distributions and controls, and original-
+expression verification. Historical component, input, price, and catalogue
+studies are indexed in ../docs/diagnostic_archive/README.md, with all positive
+and negative outcomes retained separately. The old configuration inventory is
+archived there too; the PDF lists the settings needed for its present results.
 
-Acquisition records, including all initial attempts and the final unresolved
-slots, are documented in ../docs/availability_20261013.md. Raw answer text and
-expressions retain their original language in ../bilingual/availability_20261013/.
-No API calls are made by offline reproduction. The abstract is plain text, with
-SET uppercase. Figure colors also have line/marker/hatch distinctions for grayscale.
-Official ACL styling is unchanged; hyperlink color is #000099.
+Acquisition records are documented in ../docs/availability_20261013.md; no raw
+experiment result is overwritten by this editing pass. The abstract is plain
+text, with SET uppercase. Figure colors have line/marker/hatch distinctions for
+grayscale. Official ACL styling is unchanged; hyperlink color is #000099.
+
+The final scope trim removes the two-request reuse-cost study and the extra
+200-task Astra language aggregate from the PDF. Five capability checks are
+retained as semantic boundary descriptions, without their repeated 30/30
+score table. Paired 60-task language, Prompt and output-budget controls remain.
+Recorded method examples are shortened; the monotonicity argument is explicitly
+limited to the displayed deductible-coinsurance contract. Complete prior
+branches remain in the diagnostic archive.

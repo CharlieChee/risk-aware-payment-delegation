@@ -24,6 +24,8 @@ Removing conjuncts cannot shrink the admissible set, and removing terms cannot l
 
 In the hotel tasks, ``his room'' binds one guest to the arrival-dependent cancellation deadline, fee checked against the cap, and utility penalty. Omitting that reading can remove both a permission check and a source of low value. Incorrect binding is a separate error; Equation~\eqref{eq:omission} assumes deletion with all remaining functions fixed. Appendix~\ref{app:intent} gives the task semantics.
 
+State omission is one source of incorrect permission. Clause aggregation and financial-consequence calculations can also be wrong even when all relevant event terms are present. The availability analysis below applies to the resulting domain, regardless of the error source.
+
 \subsection{Availability and Ranking Can Mask Permission Errors}
 For a fixed request and fully evaluated specification, restricting $C$ to $C'\subseteq C$ leaves surviving offers' permissions and utilities unchanged: $\widehat F_{C'}=\widehat F_C\cap C'$ and $F_{C'}=F_C\cap C'$. Thus a sound domain remains sound under deletion. Availability can expose an existing false permission, not create one.
 
@@ -34,8 +36,4 @@ Suppose the only admitted offers are reference-authorized $a,c$ and unauthorized
 \end{equation}
 The selector chooses $a$. Removing it exposes $b$, although $c$ remains permitted and positively valued under both the specification and reference. The failure does not require losing all viable authorized choices. An incorrectly admitted offer with nonpositive estimated value, however, cannot win under deletion alone. Domain errors and unsafe purchases therefore need separate measurements.
 
-Under a sound domain, changing utility cannot produce an unauthorized selection either. On the unchanged three-offer catalogue, replacing $\widehat\psi$ by reference utility selects $b$ if $\psi_x(b)>\max\{0,\psi_x(a),\psi_x(c)\}$. An unauthorized purchase can have positive task value. Correct valuation does not repair an overbroad domain.
-
-Equation~\eqref{eq:omission} explains how this masking can arise. Omitting a state may inflate the safe offer's value more than the unauthorized offer's, enough to reverse their reference ranking. Restoring utility then removes the safe offer's artificial advantage while leaving permission overbroad. A single omission can thus produce two interacting errors. Conversely, correcting permission excludes unauthorized offers but can leave wrong values among the remaining offers. Restoring the omitted state's conditions and utilities addresses both effects of the omission.
-
-State omission is one source of the mismatch. Incorrect clause aggregation or consequence calculations can also corrupt the admitted domain. Section~\ref{sec:permissions} tests availability on a prospective cohort of frozen specifications and valuation through separate reference-assisted interventions. The availability mechanism depends on the resulting permissions and ranking, not a particular source of error.
+This availability test depends on the frozen permissions and ranking, not on a particular error source or a valuation change. Conversely, a sound admitted domain prevents unauthorized selection regardless of which surviving offer has the highest value. Section~\ref{sec:permissions} tests this distinction on model-generated specifications while retaining viable authorized alternatives. The question is whether the executable conditions preserve the user's permission beyond the currently selected purchase.

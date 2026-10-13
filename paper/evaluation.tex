@@ -1,7 +1,7 @@
 \section{Experimental Study}
 \label{sec:evaluation}
 \label{sec:results}
-Boundary and intent tests assess decision reliability under a shared policy (Sections~\ref{sec:boundaries}--\ref{sec:intent-decisions}); controlled replays and interventions examine the mechanisms analyzed in Section~\ref{sec:analysis} (Section~\ref{sec:permissions}). Table~\ref{tab:evaluation-coverage} maps these questions to their evidence.
+Boundary and intent tests assess decision reliability under a shared policy (Sections~\ref{sec:boundaries}--\ref{sec:intent-decisions}); frozen-specification replays test authorization beyond the selected purchase, following the analysis in Section~\ref{sec:analysis} (Section~\ref{sec:permissions}). Table~\ref{tab:evaluation-coverage} maps these questions to their evidence.
 
 \begin{table*}[t]
 \centering\small
@@ -11,12 +11,12 @@ Boundary and intent tests assess decision reliability under a shared policy (Sec
 Research question & Controlled evidence & Interpretation\\
 \midrule
 Can the agent complete safely? & 200 tasks, 20 contract templates, 100 feasibility pairs; 11 configurations & Responsiveness to authorization boundaries\\
-Can it act across unresolved readings? & Three intent families; 147 paired task--configuration units; five capability checks & Signaled ambiguity, common actions, and value boundaries\\
-What can a safe choice conceal? & 800 new requests, 20 templates, three configurations; frozen-specification replays and component interventions & Hidden permissions, viable alternatives, and permission--value interactions\\
-How do settings affect the workflow? & Effort and language panels; prompt and output-budget controls; 16 catalogue snapshots & Configuration sensitivity and reuse\\
+Can it act across unresolved readings? & Three intent families; 147 paired task--configuration units & Signaled ambiguity, common actions, and value boundaries\\
+What can a safe choice conceal? & 800 new requests, 20 templates, three configurations; frozen-specification availability tests & Hidden permissions, viable alternatives, and bounded exposure\\
+How do settings affect the workflow? & Effort and language panels; prompt and output-budget controls & Configuration sensitivity\\
 \bottomrule
 \end{tabular}
-\caption{\textbf{Questions, evidence, and scope.} Primary compilation excludes catalogues; intent tests supply them. Replays freeze generated rules; interventions use offline references. Studies share tasks and are not pooled as independent samples.}
+\caption{\textbf{Questions, evidence, and scope.} Primary compilation excludes catalogues; intent tests supply them. Availability replays freeze generated permissions and utilities. Studies share tasks and are not pooled as independent samples.}
 \label{tab:evaluation-coverage}
 \end{table*}
 
@@ -47,15 +47,9 @@ An \emph{exact decision} agrees with the reference and, for acceptance, returns 
 
 \begin{figure}[!t]
 \centering\includegraphics[width=\columnwidth]{13_authorization_diagnostics.pdf}
-\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of planned trials with a safe-to-unsafe transition within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. Curves measure cumulative directed exposure, not random-stockout probability. Appendix~\ref{app:availability} gives coverage and controls.}
+\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of planned trials with a safe-to-unsafe transition within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. The primary budget is $k=8$. Curves measure cumulative directed exposure, not random-stockout probability. Appendix~\ref{app:availability-results} gives coverage and controls.}
 \label{fig:ablations}
 \end{figure}
-
-\begin{figure*}[!t]
-\centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
-\caption{\textbf{Method performance across reasoning settings and task languages.} (a) Sol, Terra, and Luna: 18 settings, 60 tasks per method. Off denotes none; L/M/H/XH denote low/medium/high/xhigh. (b) DeepSeek: 60 tasks per language and method. Plain bars denote Chinese (ZH), hatched bars English (EN). Tables~\ref{tab:grid} and~\ref{tab:language} give counts.}
-\label{fig:robustness}
-\end{figure*}
 
 \subsection{Useful Completion at Authorization Boundaries}
 \label{sec:boundaries}
@@ -67,51 +61,33 @@ Gains cover all four contract families and 18 of 20 templates at each DeepSeek s
 \label{sec:intent-decisions}
 Figure~\ref{fig:intent} reports 294 outcomes from 147 matched task--configuration units across ticket-holder reference, conditional hotel cancellation, and per-recipient versus whole-batch exchange-cost limits. Both methods receive the same catalogue, explicit ambiguity cues, and decision rules. Compilation here is catalogue-visible, unlike the primary protocol. Table~\ref{tab:intent-figure3} specifies the denominators.
 
-Set improves exactness in all four configurations as risk limits, penalties, and the positive-value boundary vary. Qwen records six unsafe acceptances with Set and five with Direct, so better exactness does not ensure fewer unsafe actions in every panel. Separate checks exercise common purchases, empty intersections, and max--min ranking; all evaluated routes pass them (Table~\ref{tab:intent-behaviors}). These checks demonstrate the prescribed behavior without establishing a comparative ranking advantage.
+Set improves exactness in all four configurations as risk limits, penalties, and the positive-value boundary vary. Qwen records six unsafe acceptances with Set and five with Direct, so better exactness does not ensure fewer unsafe actions in every panel. Separate checks illustrate common purchases, empty intersections, worst-case ranking, and the zero-value boundary (Appendix~\ref{app:intent-boundaries}); they do not establish a comparative accuracy advantage.
 
-\subsection{Testing the Mechanisms behind Safe Choices}
+\subsection{Authorization beyond the Selected Purchase}
 \label{sec:permissions}
 \label{sec:components}
-\paragraph{Availability with authorized alternatives.}
+\paragraph{Frozen-specification test.}
 We freeze 800 new requests from 20 templates in four contract families, each with 128 offers. DeepSeek Flash, GLM, and Qwen Max, all at low effort, receive requests, contracts, and schemas without catalogues. Catalogues are fixed before generation and stratified by whether their highest-reference-value offer is authorized (Appendix~\ref{app:availability}).
 
 The primary stress test removes prefixes of the original generated ranking, without using reference labels to choose removals. Exposure requires an initially safe purchase to become unauthorized within eight removals, while an alternative remains permitted and positively valued under both generated conditions and references. Permissions, utilities, surviving attributes, and the selector stay fixed; replays make no model calls.
 
-Across the planned cohort, \AvailHiddenPct\% produce safe purchases that conceal false admissions; the primary budget exposes \AvailExposedPct\% (Figure~\ref{fig:ablations}), spanning \AvailExposedRequests{} requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Minimal witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized. Native-expression replay and independent contract checks verify the witnesses; Appendix~\ref{app:availability} reports random removals and reverse transitions.
+\paragraph{Hidden permissions and behavioral exposure.}
+Across the planned cohort, \AvailHiddenPct\% produce safe purchases that conceal false admissions; the primary budget exposes \AvailExposedPct\%. Figure~\ref{fig:ablations} shows cumulative exposure by removal budget and its structural coverage. The exposed specifications span \AvailExposedRequests{} distinct requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Their minimum witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized, so these transitions do not depend on mixed-authorization ties. Native-expression replay and independent contract calculations verify the witnesses.
 
-\paragraph{An exact starting decision.}
-\AvailExactExposed{} exposed specifications initially make exact decisions. In one GLM coupon-cancellation case, removing four offers causes an unauthorized purchase while 59 viable authorized alternatives remain. Its risk expression includes all 57 event terms but omits a group charge within one term. The true worst loss exceeds the limit by 100 subunits. The original exact choice had left this false permission untested (Appendix~\ref{app:availability}).
+\paragraph{Exposure from exact decisions.}
+\AvailExactExposed{} exposed specifications initially select a reference maximizer and report its value correctly, spanning four templates and two configurations. In one GLM coupon-cancellation case, removing four offers exposes an unauthorized purchase while 59 viable authorized alternatives remain. Its risk expression includes all 57 event terms but omits a group charge within one term. The generated worst loss is 263,194 subunits, whereas the reference loss is 268,094 against a limit of 267,994. The original exact choice had left this false permission untested (Appendix~\ref{app:availability-witness}).
 
-\paragraph{Correcting utility alone.}
-With the catalogue and permission conditions fixed, Table~\ref{tab:oracle} examines 16 selected faulty Set outputs from one ambiguous ticket request. All select safe offers despite admitting an unauthorized candidate. Replacing only utility with the reference makes all 16 select an unauthorized offer: incorrect valuation had prevented its selection.
+\paragraph{From intent to executable decisions.}
+These transitions expose permissions already present in the frozen specification. Candidate removal changes which admitted offer wins, not whether an unchanged offer is authorized. The surviving alternatives also remain permitted and positively valued by the specification itself. Thus the failure requires neither a new model response nor the loss of all viable authorized choices. It reflects the distinction in Section~\ref{sec:method}: complete execution can consistently apply generated conditions without establishing their fidelity to the request. Appendix~\ref{app:availability-results} reports all templates, random removals, reverse transitions, and non-triggering cases.
 
-Each output omits Li's refund conditions and utility binding. Correcting permission alone repairs the domain but leaves the value error. Correcting both components, or restoring the omitted reading, recovers all 16 exact decisions; duplicating a label changes nothing. These reference-assisted interventions diagnose selected outputs, without estimating prevalence or implementing automatic repair (Appendix~\ref{app:oracle}).
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{15_configuration_robustness.pdf}
+\caption{\textbf{Method performance across reasoning settings and task languages.} (a) Sol, Terra, and Luna: 18 settings, 60 tasks per method. Off denotes none; L/M/H/XH denote low/medium/high/xhigh. (b) DeepSeek: 60 tasks per language and method. Plain bars denote Chinese (ZH), hatched bars English (EN). Tables~\ref{tab:grid} and~\ref{tab:language} give counts.}
+\label{fig:robustness}
+\end{figure*}
 
-\begin{table}[t]
-\centering\small\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}lrrr@{}}
-\toprule
-Intervention & Exact & Unsafe & Unsafe domain\\
-\midrule
-Original & 0 & 0 & 16\\
-Duplicate label & 0 & 0 & 16\\
-Reference permission & 0 & 0 & 0\\
-Reference utility & 0 & 16 & 16\\
-Both components & 16 & 0 & 0\\
-Restore omitted state & 16 & 0 & 0\\
-\bottomrule
-\end{tabular}
-\caption{\textbf{Safe selections can conceal overbroad authorization.} Counts cover 16 selected faulty outputs from one request. Unsafe counts unauthorized selections; Unsafe domain counts outputs admitting one. Original selections are safe despite domain and value errors. Interventions use offline references (Appendix~\ref{app:oracle}).}
-\label{tab:oracle}
-\end{table}
-
-Appendices~\ref{app:intent-input} and~\ref{app:followup} retain supplied-reading controls, archived checks, and non-triggering results.
-
-\subsection{Sensitivity and Reuse}
+\subsection{Sensitivity Analyses}
 \label{sec:robustness}
 On the 60-task panel, Set improves exactness in 17 of 18 Sol/Terra/Luna settings (Figure~\ref{fig:robustness}a); Luna off falls from 25/60 to 13/60. Sol reaches 60/60 at medium, high, and max; Terra reaches 59/60 at xhigh and max. Requested effort does not measure equal provider computation.
 
 Chinese/English wording preserves quantities, events, and authorization. Across six DeepSeek setting--language cells, Direct achieves 33--36/60 exact decisions and Set 55--59/60 (Figure~\ref{fig:robustness}b). Appendix~\ref{app:execution} gives complete results and prompt and output-budget controls.
-
-\label{sec:reuse}
-For two requests with eight catalogues each, Astra uses two compilations and 22,160 tokens versus 16 Direct calls and 175,429 tokens (87.4\% less); both achieve 16/16 exact decisions. Reuse re-evaluates every catalogue and requires unchanged authorization and attribute meanings (Appendix~\ref{app:cost}).

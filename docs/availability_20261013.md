@@ -1,6 +1,6 @@
 # Frozen specifications under changing candidate availability
 
-This prospective diagnostic supports Figure 3 and Appendix F.1 of
+This prospective diagnostic supports Figure 3 and Appendix F of
 *Risk-Aware Payment Delegation: From Intent to Executable Decisions*.
 It does not add a new purchase policy. It tests whether generated conditions
 preserve authorization when preferred offers become unavailable.
@@ -123,5 +123,8 @@ reference matrices; the independent reference-preflight receipt is supplied
 separately and is not claimed to be rerun by this command.
 
 The new availability evidence does not establish broad replication of the
-separate utility-correction reversal in Table 2. Those selected-output
-interventions retain their own task source and interpretation.
+separate selected-output utility-correction reversal. That former main-text
+table and all earlier positive and negative explorations are preserved in
+[the diagnostic archive](diagnostic_archive/README.md), outside the current PDF.
+Figure 3 carries the primary budget, request/template/family coverage, and
+planned-cohort percentage; no replacement family-summary table is added.

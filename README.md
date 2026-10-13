@@ -11,7 +11,8 @@ or refuses. No payment is executed by this artifact.
 [Anonymous artifact](https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/) · [Read the paper](paper/paper.pdf) · [Experimental protocol](docs/protocol.md) ·
 [Data guide](docs/data.md) · [Reproduction guide](docs/reproduction.md) ·
 [Prompt engineering controls](docs/prompt_controls.md) ·
-[Availability study and complete acquisition records](docs/availability_20261013.md)
+[Availability study and complete acquisition records](docs/availability_20261013.md) ·
+[Archived diagnostic studies](docs/diagnostic_archive/README.md)
 
 The October 13 availability study freezes generated decision conditions and
 changes only which offers remain available. Its bounded-removal endpoint
@@ -132,5 +133,7 @@ cohorts, retained responses, and offline verification commands.
 
 Implementation controls and their original provenance are indexed in
 [the code supplement](docs/implementation_archive/README.md). The manuscript
-reports the original primary Set cohort and groups the complete frozen-rule
-diagnostic collection by effort setting.
+retains the original primary Set cohort. Figure 3 and Appendix F report the
+prospective availability study; earlier component, input, price, and catalogue
+explorations remain in [the diagnostic archive](docs/diagnostic_archive/README.md),
+with their full controls and non-triggering results.

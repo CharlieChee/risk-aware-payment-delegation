@@ -1,4 +1,4 @@
-\section{Additional Controls, Sensitivity, and Reuse}
+\section{Additional Controls and Sensitivity}
 \label{app:execution}
 \subsection{Textual Guidance}
 \label{app:prompt-controls}
@@ -28,12 +28,12 @@ The 60-task panel combines ten historical feasibility pairs and one pair from ea
 
 \subsection{Task Language}
 \label{app:language}
-We report paired Direct and Set evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports Direct/Set counts from these separate retained runs and the separate 200-task Astra language aggregates. The Astra updates report identical partitions, which alone cannot establish identical outputs or language invariance.
+We report paired Direct and Set evaluations on the same 60 task identifiers in Chinese and English. A reviewed 183-phrase translation map preserves quantities, types, events, and authorization, with system instructions held fixed. Table~\ref{tab:language} reports the complete Direct/Set outcomes for these paired 60-task runs. The results concern these controlled Chinese/English renderings, not language invariance in general.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
 \input{tables/appendix_language}
-\caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Panels with $n=60$ and $n=200$ are identified separately. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
+\caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Each setting--language cell has $n=60$ per method. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
 \label{tab:language}
 \end{table*}
 
@@ -53,25 +53,4 @@ DS low & Direct & 25 & $6\to14$ & $11\to1$ & $0\to1$ & $7\to7$ & $1\to2$\\
 \end{tabular}
 \caption{Original$\to$expanded output cap for Direct; the outcome columns partition each row's $n$ tasks. Budget counts output-token exhaustion; Other denotes remaining value errors. Selection of historically budget-sensitive tasks limits prevalence estimates.}
 \label{tab:budget}
-\end{table*}
-
-\subsection{Rule Reuse and Resource Accounting}
-\label{app:cost}
-Two fixed requirements each have eight catalogue snapshots. Direct calls the model for each snapshot, while Set compiles once per requirement. Table~\ref{tab:reuse} includes the initial compilation and all recorded input/output tokens. Request times are summed across calls and therefore do not measure parallel wall-clock latency. Reuse requires unchanged authorization, state semantics, and attribute meanings.
-
-\begin{table*}[!tbp]
-\centering\small
-\begin{tabular}{llrrr}
-\toprule
-Model & Method & Model calls & Input + output tokens & Serial request seconds\\
-\midrule
-Astra max & Direct & 16 & 175,429 & 344.64\\
-& Set & 2 & 22,160 & 81.69\\
-\midrule
-DeepSeek low & Direct & 16 & 136,345 & 351.47\\
-& Set & 2 & 12,418 & 33.61\\
-\bottomrule
-\end{tabular}
-\caption{Direct/Set reuse costs including cold compilation, over 16 catalogue evaluations per row. Both Astra routes and DeepSeek Set are exact on all snapshots; DeepSeek Direct is exact on 15/16. }
-\label{tab:reuse}
 \end{table*}

@@ -1,0 +1,89 @@
+{
+  "source": "data/supplements/availability_20261013/rows.json",
+  "denominator_policy": "600 planned request-model units per family; 2400 overall",
+  "families": [
+    {
+      "family": "coupon_cancellation",
+      "label": "Coupon cancellation",
+      "planned": 600,
+      "hidden": 24,
+      "exposed": 14,
+      "templates": [
+        "a1",
+        "a3",
+        "a4",
+        "a5"
+      ],
+      "all_templates": [
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5"
+      ],
+      "requests": 14
+    },
+    {
+      "family": "insured_cancellation",
+      "label": "Insured cancellation",
+      "planned": 600,
+      "hidden": 7,
+      "exposed": 5,
+      "templates": [
+        "b1",
+        "b4",
+        "b5"
+      ],
+      "all_templates": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "requests": 5
+    },
+    {
+      "family": "threshold_returns",
+      "label": "Threshold returns",
+      "planned": 600,
+      "hidden": 17,
+      "exposed": 10,
+      "templates": [
+        "c1",
+        "c2",
+        "c4",
+        "c5"
+      ],
+      "all_templates": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "requests": 10
+    },
+    {
+      "family": "service_replacement",
+      "label": "Service replacement",
+      "planned": 600,
+      "hidden": 23,
+      "exposed": 19,
+      "templates": [
+        "d1",
+        "d2",
+        "d3",
+        "d5"
+      ],
+      "all_templates": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5"
+      ],
+      "requests": 19
+    }
+  ]
+}

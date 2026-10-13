@@ -13,6 +13,10 @@ DATA=ROOT/'data/supplements/availability_20261013'
 TABLES=ROOT/('tables' if (ROOT/'paper.tex').exists() else 'tex/tables')
 PROFILES=['deepseek_low','glm_low','qwen_low']
 LABELS={'deepseek_low':'DeepSeek','glm_low':'GLM','qwen_low':'Qwen'}
+FAMILIES=[('coupon_cancellation','Coupon cancellation'),
+          ('insured_cancellation','Insured cancellation'),
+          ('threshold_returns','Threshold returns'),
+          ('service_replacement','Service replacement')]
 
 def read(name):return json.loads((DATA/name).read_text())
 def pct(n,d):return str((Decimal(n)*100/Decimal(d)).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)) if d else '--'
@@ -42,6 +46,24 @@ def build():
         lines.append(f"{LABELS[p]} & {pct(q['latent_safe'],model_n[p])} & {pct(q['rank_le8_safe_to_unsafe_strict_backup'],model_n[p])} & {cov['requests']} & {len(cov['templates'])}"+r'\\')
     lines += [r'\midrule',f"All & {stats['AvailHiddenPct']} & {stats['AvailExposedPct']} & {cover['requests']} & {len(cover['templates'])}"+r'\\',r'\bottomrule',r'\end{tabular}']
     (TABLES/'availability_models.tex').write_text('\n'.join(lines)+'\n')
+    families=[]
+    for family,label in FAMILIES:
+        group=[r for r in rows if r['family']==family]
+        exposed=[r for r in group if r['endpoints']['rank_le8_safe_to_unsafe_strict_backup']]
+        record=dict(family=family,label=label,planned=len(group),
+            hidden=sum(r['endpoints']['latent_safe'] for r in group),exposed=len(exposed),
+            templates=sorted({r['template'] for r in exposed}),
+            all_templates=sorted({r['template'] for r in group}),
+            requests=len({r['case_id'] for r in exposed}))
+        assert record['planned']==600 and len(record['all_templates'])==5
+        families.append(record)
+    assert sum(f['hidden'] for f in families)==e['latent_safe']
+    assert sum(f['exposed'] for f in families)==len(main)
+    assert sum(len(f['templates']) for f in families)==len(cover['templates'])
+    (ROOT/'figures/13_authorization_families.json').write_text(json.dumps(dict(
+        source='data/supplements/availability_20261013/rows.json',
+        denominator_policy='600 planned request-model units per family; 2400 overall',
+        families=families),indent=2)+'\n')
     lines=[r'\begin{tabular}{@{}lrrr@{}}',r'\toprule',r'Template & Hidden (\%) & Exposed (\%) & Requests\\',r'\midrule']
     for t,c in s['by_template'].items():
         q=c['endpoints'];cov=c['event_coverage']['rank_le8_safe_to_unsafe_strict_backup']
@@ -74,7 +96,8 @@ def build():
                          'xtick.color':'black','ytick.color':'black',
                          'axes.spines.top':True,'axes.spines.right':True,
                          'axes.spines.bottom':True,'axes.spines.left':True}):
-        fig,ax=plt.subplots(figsize=(3.42,2.34));fig.subplots_adjust(left=.18,right=.965,bottom=.23,top=.72)
+        fig,ax=plt.subplots(figsize=(3.42,2.56));fig.subplots_adjust(left=.18,right=.965,bottom=.30,top=.75)
+        ax.axvline(8,color='#8A8A8A',lw=.8,ls=(0,(2,3)),zorder=0)
         for p,color,marker,ls in zip(PROFILES,colors,markers,styles):
             c=s['by_model'][p];n=model_n[p]
             y=[100*c['rank_cumulative'][str(k)]['safe_to_unsafe_strict_backup']/n for k in [1,4,8,16]]
@@ -89,7 +112,9 @@ def build():
         legend=ax.legend(loc='lower left',bbox_to_anchor=(-.05,1.02),fontsize=8.1,frameon=True,
                          borderpad=.4,labelspacing=.3,handlelength=2.6)
         legend.get_frame().set_edgecolor('black');legend.get_frame().set_facecolor('white');legend.get_frame().set_alpha(1)
-        for ext in ['pdf','png']:
+        fig.text(.5,.063,f"Within 8 removals: {len(main)} exposed ({stats['AvailExposedPct']}%)",ha='center',fontsize=7.7)
+        fig.text(.5,.007,f"{cover['requests']} requests | {len(cover['templates'])}/20 templates | 4 families",ha='center',fontsize=7.7)
+        for ext in ['pdf','svg','png']:
             fig.savefig(ROOT/'figures'/f'13_authorization_diagnostics.{ext}',dpi=400,bbox_inches='tight',pad_inches=.04)
         plt.close(fig)
     (ROOT/'figures/13_authorization_diagnostics_values.json').write_text(json.dumps(values,indent=2)+'\n')

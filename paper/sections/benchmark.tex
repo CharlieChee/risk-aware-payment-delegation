@@ -98,30 +98,21 @@ A primary comparison trial allows one semantic attempt. Transport failures may b
 \label{app:model-configurations}
 \label{app:qwen}
 \label{app:primary-extensions}
-Table~\ref{tab:configurations} specifies the primary and intent settings. Its continuation lists 49 model--setting combinations across 12 requested identities. Exploratory settings document configuration coverage and do not add to the primary trial count. Paired Direct/Set comparisons share requested generation settings. Primary command-line interface (CLI) calls use fresh contexts with tools and delegation disabled; application programming interface (API) outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
+Table~\ref{tab:configurations} specifies the primary, intent, and prospective availability settings. The effort panel uses off, low, medium, high, xhigh, and max for each of Sol, Terra, and Luna; language tests use DeepSeek low/high/max and Astra max. Their requested identities follow the same table. Complete per-study settings, including archived explorations, remain in the artifact. Paired Direct/Set comparisons share requested generation settings. Primary command-line interface (CLI) calls use fresh contexts with tools and delegation disabled; application programming interface (API) outputs pass the common validator. Requested effort and output caps do not establish equivalent compute across providers.
 
-\begin{table*}[!tbp]
+\begin{table*}[p]
 \centering\small
 \setlength{\tabcolsep}{4pt}
 \input{tables/model_configurations}
-\caption{Requested model configurations. Output caps are in tokens and deadlines in seconds. Each named primary configuration uses 200 tasks per method. The lower block gives the four configurations in Figure~\ref{fig:intent}; their task counts appear in Table~\ref{tab:intent-figure3}. Configuration names refer to requests, not independently attested backend versions.}
+\caption{Requested model configurations. Output caps are in tokens; primary and intent deadlines are in seconds. Each primary configuration uses 200 tasks per method. Intent counts appear in Table~\ref{tab:intent-figure3}; the availability protocol is in Appendix~\ref{app:availability}. Names refer to requested configurations, not independently attested backend versions.}
 \label{tab:configurations}
-\end{table*}
-
-\begin{table*}[!tbp]
-\addtocounter{table}{-1}
-\centering\small
-\setlength{\tabcolsep}{4pt}
-\input{tables/model_configurations_extended}
-\caption{Requested model configurations (continued): recorded model--setting coverage. Off denotes the native \texttt{none} setting. Output caps are in tokens and deadlines in seconds. Multiple values summarize settings observed in separate studies; they are not a fully crossed experimental grid. The primary and retained-intent settings are specified in the preceding part. Performance comparisons retain their own study cohorts.}
-\label{tab:configurations-extended}
 \end{table*}
 
 \subsection{Unified reproduction entry point}
 \label{app:reproduction}
 The anonymous artifact provides implementation code, benchmark inputs and references, prompts, generation settings, retained outputs, and reporting materials at \url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}. Its documentation gives the environment setup and commands for rebuilding the reported results and running the corresponding checks. Table~\ref{tab:artifact-map} distinguishes report reconstruction, retained-output verification, and reference recomputation. These offline checks make no model calls and leave experimental records unchanged; new inference runs are documented separately.
 
-\begin{table*}[t]
+\begin{table*}[p]
 \centering\small\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}p{.20\textwidth}p{.39\textwidth}p{.36\textwidth}@{}}
 \toprule
@@ -130,10 +121,10 @@ Result & Supporting materials & Verification level\\
 Primary outcomes & Benchmark instances, per-trial observations, and separately indexed aggregate updates & Rebuild tables from their designated inputs; reference checking is separate.\\
 Retained requests and decisions & Original requests, responses, configurations, and stored evaluations & Check response integrity and agreement with stored scores; rescore retained prompt-control decisions.\\
 Intent and observed trace & Paired tasks, original generated conditions, and the evidence map & Rebuild intent counts and verify the displayed traces against retained outputs.\\
-Replay and interventions & Frozen specifications, catalogue conditions, and recorded interventions & Recompute diagnostic aggregates with collection settings and per-output provenance retained.\\
+Prospective availability & Fixed requests, frozen specifications, catalogue matrices, and witness certificates & Recompute Figure~\ref{fig:ablations} and complete template counts; verify original-expression witnesses.\\
 Decision contract and plots & Evaluator, reference ledger, reporting inputs, and figure-generation tools & Check Algorithm~\ref{alg:decision} and regenerate figures and tables; reference recomputation is a separate check.\\
 \bottomrule
 \end{tabular}
-\caption{\textbf{Result-to-artifact map.} The artifact documentation links each result to its supporting materials and verification workflow. Report reconstruction, response rescoring, and new model calls are separate procedures. Aggregate updates remain separate from archived per-trial observations.}
+\caption{\textbf{Result-to-artifact map.} Supporting materials distinguish report reconstruction, response rescoring, and reference recomputation. Aggregate updates remain separate from archived per-trial observations; new inference is documented separately.}
 \label{tab:artifact-map}
 \end{table*}

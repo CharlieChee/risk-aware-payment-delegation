@@ -7,7 +7,7 @@ from pathlib import Path
 from collections import Counter
 import json
 from primary_profiles import display_primary
-from reported_results import display_language, opus_output_review
+from reported_results import opus_output_review
 from certified_reporting import summary_rows as certified_summaries, intent_rows
 
 
@@ -88,15 +88,13 @@ def build(root, table_dir=None):
         lines.append(r'\midrule')
     finish('appendix_grid', lines[:-1])
 
-    language = display_language(root)
     original = {(r['profile'], r['arm'], r['language']): r
                 for r in certified_summaries(root, 'data/derived/language_all_methods_matched.json')}
     lines = table('@{}llrrrr@{}',
         r'&&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Set}\\' + '\n' +
         r'Configuration & Language & Exact/$n$ & U/R/O & Exact/$n$ & U/R/O\\')
     for profile, label, source in [('ds_flash_low','DS low', original), ('ds_flash_high','DS high', original),
-            ('ds_flash_max','DS max', original), ('astra_max','Astra max (60)', original),
-            ('astra_max','Astra max (200)', language)]:
+            ('ds_flash_max','DS max', original), ('astra_max','Astra max', original)]:
         for i, lang in enumerate(('zh', 'en')):
             cells = [cell for a in arms for cell in outcome_cells(source.get((profile,a,lang)))]
             lines.append((label if i == 0 else '') + ' & ' + lang.upper() + ' & ' + ' & '.join(cells) + r'\\')

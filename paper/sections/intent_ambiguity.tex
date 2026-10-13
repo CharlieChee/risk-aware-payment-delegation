@@ -27,24 +27,8 @@ Table~\ref{tab:intent-figure3} supplies all four paired configurations in Figure
 \label{tab:intent-figure3}
 \end{table*}
 
-\subsection{Common purchase, empty intersection, and value boundaries}
-Table~\ref{tab:intent-behaviors} reports five earlier base checks, each repeated under three context conditions with two samples per method. Direct and Set each obtain 30/30. These checks confirm the tested behaviors without distinguishing method accuracy. F02a covers the empty intersection absent from the parameter panel.
+\subsection{Semantic boundary checks}
+\label{app:intent-boundaries}
+Separate capability checks instantiate common feasible purchases, empty intersections, worst-case ranking, and the zero-value refusal boundary. The empty-intersection case complements the parameter panel, whose refusal cases instead have zero best value. These checks exercise the prescribed behaviors without establishing a comparative advantage; their repeated-generation records remain in the artifact. Appendix~\ref{app:observed-trace} gives a recorded common-purchase/empty-intersection trace.
 
-\begin{table*}[!tbp]
-\centering\small\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}lp{.57\textwidth}p{.27\textwidth}@{}}
-\toprule
-Base & Retained meanings and candidate control & Reference decision\\
-\midrule
-F01a & Zhang or Li needs a refundable ticket; a 2,800-MU order refunds both within a 3,000-MU budget. & Buy the common refundable order.\\
-F02a & Only two 2,400-MU orders remain: one refunds Zhang, the other Li. Each meaning is separately feasible. & Refuse: the common feasible set is empty.\\
-F02b & Add the 2,800-MU order refunding both to F02a. & Buy: ambiguity itself does not require refusal.\\
-F04a & ``His experience'' may mean Zhang or Li; two feasible options have utilities $(3,-1)$ and $(0.2,0.2)$. & Choose the latter by worst-case value.\\
-F04b & Replace $(0.2,0.2)$ by $(0,0)$, keeping the other option unchanged. & Refuse: the best guarantee is zero.\\
-\bottomrule
-\end{tabular}
-\caption{Recorded capability checks. Each base case has six generations per non-oracle method; these are repeated measurements of the same task. Utility pairs give one value per retained reading. Monetary values follow the paper's MU convention.}
-\label{tab:intent-behaviors}
-\end{table*}
-
-The reported panel contains 294 method outcomes from 147 matched task--configuration units. Each plotted configuration keeps its own denominator. The separate 36-call input intervention and 16-output diagnosis use different source pools (Appendix~\ref{app:oracle}); the artifact indexes their task membership and generation settings.
+The formal intent panel contains 294 outcomes from 147 matched task--configuration units, with each plotted configuration retaining its own denominator. The small capability checks and earlier input interventions are separate cohorts.
