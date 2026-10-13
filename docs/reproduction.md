@@ -71,5 +71,6 @@ are needed for paper statistics and figures, and pypdf for manuscript checks.
 The optional runner is supported on Linux and macOS; no operating-system-specific
 CLI model installation is required.
 
-For a per-result mapping of inputs, cohort units, scorers, and verification levels,
-see [the evidence map](evidence_map.md).
+For result-to-source mappings and verification coverage, see
+[the evidence map](evidence_map.md) and the concise
+[primary-result source note](primary_provenance.md).

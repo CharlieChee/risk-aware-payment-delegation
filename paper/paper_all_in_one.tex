@@ -801,35 +801,15 @@ Configuration & Requested model & Output caps & Deadlines\\
 \label{tab:configurations-extended}
 \end{table*}
 
-\subsection{Unified reproduction entry point}
+\subsection{Reproduction materials}
 \label{app:reproduction}
-The anonymous artifact provides implementation code, benchmark inputs and references, prompts, generation settings, retained outputs, and reporting materials at \url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}. Its documentation gives the environment setup and commands for rebuilding the reported results and running the corresponding checks. Table~\ref{tab:artifact-map} distinguishes report reconstruction, retained-output verification, and reference recomputation. These offline checks make no model calls and leave experimental records unchanged; new inference runs are documented separately.
-
-\paragraph{Primary result provenance.}
-The reporting loader indexes two aggregate reports under \path{paper/data/author_reports/}: \path{20261011_confirmed_aggregates.json} records externally supplied GLM high, Astra max, and Sol medium updates; \path{20261011_primary200_completion.json} completes their error and useful-completion counts and replaces the partial Opus display with 200 tasks per method. Together they supply the displayed GLM high, Astra max, Sol medium, and Opus medium rows. Sol's Direct counts also agree with the retained local observations. The other seven configurations use archived per-trial outcomes with complete-domain rescoring where applicable. The external replacement outputs have not been imported: their supplied counts can be reconstructed and checked arithmetically, but cannot currently be rescored or matched case by case. Earlier local outputs are archived separately and do not substitute for those replacements. The artifact's provenance index maps each arm to its input file; paired statistics use retained observations rather than inferred pairings from aggregates.
-
-\begin{table*}[!t]
-\centering\small\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}p{.20\textwidth}p{.39\textwidth}p{.36\textwidth}@{}}
-\toprule
-Result & Supporting materials & Verification level\\
-\midrule
-Primary outcomes & Benchmark instances, per-trial observations, and separately indexed aggregate updates & Rebuild tables from their designated inputs; reference checking is separate.\\
-Retained requests and decisions & Original requests, responses, configurations, and stored evaluations & Check response integrity and agreement with stored scores; rescore retained prompt-control decisions.\\
-Intent and observed trace & Paired tasks, original generated conditions, and the evidence map & Rebuild intent counts and verify the displayed traces against retained outputs.\\
-Prospective availability & Fixed requests, frozen specifications, catalogue matrices, and witness certificates & Recompute Figure~\ref{fig:ablations} and complete template counts; verify original-expression witnesses.\\
-Decision contract and plots & Evaluator, reference ledger, reporting inputs, and figure-generation tools & Check Algorithm~\ref{alg:decision} and regenerate figures and tables; reference recomputation is a separate check.\\
-\bottomrule
-\end{tabular}
-\caption{\textbf{Result-to-artifact map.} Supporting materials distinguish report reconstruction, response rescoring, and reference recomputation. Aggregate updates remain separate from archived per-trial observations; new inference is documented separately.}
-\label{tab:artifact-map}
-\end{table*}
+The \href{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}{anonymous artifact} contains the implementation, benchmark materials, retained outputs, and reproduction tools. Repository documentation specifies setup, result sources, record coverage, and commands for verification and new inference.
 \section{Complete Results and Statistical Analysis}
 \label{app:statistics}
 \subsection{Primary outcomes and matched comparisons}
 Table~\ref{tab:main} gives the counts underlying Figure~\ref{fig:completion}, with 200 tasks per method in each of eleven configurations. Error categories and feasible-task completion use the same cohorts. Table~\ref{tab:configurations} specifies the generation settings.
 
-Residual error categories do not improve uniformly. Luna's Other outcomes rise from 2 to 28 even as exact outcomes increase from 41 to 91; Terra's Other outcomes rise from 1 to 15 while exact outcomes increase from 81 to 158. Other combines value errors and incomplete execution and is never credited as correct completion. These marginal counts do not identify which individual errors changed category. Appendix~\ref{app:reproduction} identifies the aggregate updates and the records available for paired analysis.
+Residual error categories do not improve uniformly. Luna's Other outcomes rise from 2 to 28 even as exact outcomes increase from 41 to 91; Terra's Other outcomes rise from 1 to 15 while exact outcomes increase from 81 to 158. Other combines value errors and incomplete execution and is never credited as correct completion. These marginal counts do not identify which individual errors changed category.
 
 \begin{table*}[!t]
 \centering\small
@@ -855,7 +835,7 @@ Opus 5.5 medium & 200 & $142\to\mathbf{194}$ & $8\to\mathbf{1}$ & $14\to\mathbf{
 \end{table*}
 
 \subsection{Structural coverage}
-Table~\ref{tab:templates-results} reports the primary DeepSeek comparison for all 20 ten-task templates. Each setting improves over Direct on 18 templates, ties on one, and declines on one. The four families have 50 cases each. Low-effort service replacement improves from 20 to 42 exact decisions, and high-effort threshold returns from 30 to 49. Table~\ref{tab:main} reports Astra's 180-to-196 aggregate.
+Table~\ref{tab:templates-results} reports the primary DeepSeek comparison for all 20 ten-task templates. Each setting improves over Direct on 18 templates, ties on one, and declines on one. The four families have 50 cases each. Low-effort service replacement improves from 20 to 42 exact decisions, and high-effort threshold returns from 30 to 49. Table~\ref{tab:main} reports Astra's 180-to-196 comparison.
 
 \begin{table}[!t]
 \centering\small
