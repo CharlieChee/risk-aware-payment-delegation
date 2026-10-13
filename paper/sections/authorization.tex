@@ -2,10 +2,10 @@
 \label{app:permissionaudit}
 \subsection{Prospective availability study}
 \label{app:availability}
-\paragraph{Tasks and retained specifications.}
+\paragraph{Tasks and frozen specifications.}
 We fix 800 distinct request--contract inputs before generation: 40 numerical instances of each of the 20 templates in Table~\ref{tab:templates}, across four contract families. Each has 128 candidates. DeepSeek Flash (\texttt{deepseek-flash}), GLM (\texttt{glm-5.3}), and Qwen Max (\texttt{qwen3.8-max}) use low effort and a 32,768-token output budget. Preparation receives the request, contract, and schema, excluding candidates and reference information.
 
-For this diagnostic cohort, unchanged inputs are repeated as needed and the first fully evaluable specification is retained, without selecting on correctness, safety, or exposure. Full evaluability means that relevant permissions and required utilities are determined over the complete catalogue; it does not imply agreement with reference semantics. Table~\ref{tab:availability-models} specifies the resulting denominators. The artifact preserves the complete planned 2,400-unit list, every acquisition attempt, and the original single-attempt cohort. These diagnostic rates concern the retained specifications rather than single-attempt workflow reliability.
+We evaluate permissions and required utilities over the complete catalogue. Determinate evaluation does not imply agreement with reference semantics. Percentages use all planned trials. Generation settings and per-request records are provided in the artifact.
 
 \paragraph{Catalogue construction and reference checks.}
 The construction allocates 32 offers each to authorized positive-value purchases, unauthorized boundary cases, contract-branch controls, and ordinary sampled attributes. Construction categories differ from authorization labels: the latter two blocks may add authorized purchases. Boundary distances include one monetary subunit and approximately 1\%, 5\%, and 20\% of the risk limit. Attributes remain contract-consistent.
@@ -15,19 +15,19 @@ Each template has 20 S and 20 T requests. In S, the best unrestricted reference-
 \paragraph{Frozen interventions and endpoint.}
 The original catalogue, 128 random-removal conditions (32 each for $k\in\{1,4,8,16\}$), 16 generated-rank prefixes, and one unauthorized-only catalogue define 146 conditions per specification. Random plans are fixed in advance and shared across models. Ranked removals order originally admitted offers by generated utility, retaining original candidate order for ties; the removal rule uses no reference labels. Surviving attributes, permissions, utilities, and the selector remain unchanged. The unauthorized-only condition retains all reference-unauthorized offers and is an extreme control.
 
-The primary endpoint requires an originally safe acceptance, an unauthorized selection for some prefix of at most eight removals, and at least one surviving offer permitted and positively valued under both generated conditions and the reference. Percentages use fully evaluable, originally safe purchases as the denominator. Each specification counts once per budget. Refusals do not count as safe purchases. Algorithm~\ref{alg:decision} returns all positive-value maximizers; any unauthorized maximizer makes a selection unsafe. Mixed-authorization ties and fixed-first selection are checked separately. Cumulative exposure is distinct from the outcome at exactly $k$ removals, which may return to safety after an unauthorized winner is itself removed.
+The primary endpoint requires an originally safe acceptance, an unauthorized selection for some prefix of at most eight removals, and at least one surviving offer permitted and positively valued under both generated conditions and the reference. Each specification counts once per budget. Refusals do not count as safe purchases. Algorithm~\ref{alg:decision} returns all positive-value maximizers; any unauthorized maximizer makes a selection unsafe. Mixed-authorization ties and fixed-first selection are checked separately. Cumulative exposure is distinct from the outcome at exactly $k$ removals, which may return to safety after an unauthorized winner is itself removed.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
 \input{tables/availability_models}
-\caption{Availability-study denominators and outcomes. Hidden and Exposed are percentages of the initially safe purchases in column Safe $n$; exposure uses the eight-offer budget with a viable authorized alternative. Requests and Templates count exposure coverage, not total task coverage. Each model has 800 planned units.}
+\caption{Availability outcomes over the planned cohort. Hidden counts safe purchases concealing false admissions; Exposed requires a transition within eight removals with a viable authorized alternative. Requests and Templates count exposure coverage.}
 \label{tab:availability-models}
 \end{table*}
 
 \begin{table}[t]
 \centering\small\setlength{\tabcolsep}{3pt}
 \input{tables/availability_templates}
-\caption{All 20 templates, including zero-event structures. Hidden and Exposed use the template's pooled Safe $n$ denominator. Shared requests and numerical variants are not independent logical structures.}
+\caption{All 20 templates, including zero-event structures. Percentages use each template's planned cohort across models. Shared requests and numerical variants are not independent logical structures.}
 \label{tab:availability-templates}
 \end{table}
 
@@ -39,7 +39,7 @@ Every observed transition and attainable minimum-deletion witness is independent
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{7pt}
 \input{tables/availability_controls}
-\caption{Availability controls, in percent. Directed rows count whether a transition occurs at any prefix within the budget; random rows average 32 draw fractions within each specification before averaging specifications. Safe-to-unsafe requires a viable authorized alternative. Forward and reverse denominators are 2,298 originally safe and 69 originally unsafe purchases, respectively, and must not be subtracted as net risk.}
+\caption{Availability controls as percentages of all planned trials. Directed rows count whether a transition occurs at any prefix within the budget; random rows average observed transition fractions over 32 draws per trial. Safe-to-unsafe requires a viable authorized alternative. Forward and reverse cumulative events need not occur at the same prefix.}
 \label{tab:availability-controls}
 \end{table*}
 
@@ -98,7 +98,7 @@ In the effort archive, 586 specifications satisfy the stronger requirements for 
 That service-replacement specification initially selects the reference-optimal offer with correct value. A 10\% price step reduces a different offer from 652,644 to 587,379 subunits. Its worst loss stays at 206,562, above the 200,000 limit, while the original authorized offer remains available. Both permission classifications remain unchanged. The discounted offer's reference utility rises from 1,140,794 to 1,206,059, exceeding the safe offer's 1,183,108. Thus it wins even with reference utility. Independent integer enumeration of all 57 events verifies the losses. This is one specification-level witness; 10\% is a tested grid point, not an exact minimum trigger.
 
 \paragraph{Input and component checks.}
-A separate 48-output pilot uses eight templates, Qwen Max low and GLM low, and three conditions: original input, an identical-input repeat, and a utility-base increase of 50,000 subunits. Catalogues, reference permissions, and optimal choices stay fixed. Compared with the original, Qwen changes one domain under both repetition and the value shift, removing the same seven false admissions; GLM changes one domain under repetition and none under the shift. Neither shift introduces a new false admission or a safe-to-unsafe switch. One syntactically invalid output was regenerated once, giving 49 attempts for 48 current auditable outputs; the first response is retained separately. This additive-shift test does not establish a broader preference effect.
+A separate 48-output pilot uses eight templates, Qwen Max low and GLM low, and three conditions: original input, an identical-input repeat, and a utility-base increase of 50,000 subunits. Catalogues, reference permissions, and optimal choices stay fixed. Compared with the original, Qwen changes one domain under both repetition and the value shift, removing the same seven false admissions; GLM changes one domain under repetition and none under the shift. Neither shift introduces a new false admission or a safe-to-unsafe switch. This additive-shift test does not establish a broader preference effect.
 
 \begin{table*}[!t]
 \centering\small\setlength{\tabcolsep}{5pt}
@@ -107,7 +107,7 @@ A separate 48-output pilot uses eight templates, Qwen Max low and GLM low, and t
 \label{tab:replay}
 \end{table*}
 
-Crossing the three models' permission and utility components on all 24 requests gives 216 local combinations. Twelve substitutions reduce full-catalogue utility error; none changes safety to unsafety, and two change unsafety to safety. Retrospective parameter checks in two earlier cohorts lack identical-input controls and do not establish a repeated input effect. The artifact retains protocols, exclusions, both transition directions, and failed attempts. These checks delimit the observed mechanisms without treating non-triggering outcomes as proof of general domain soundness.
+Crossing the three models' permission and utility components on all 24 requests gives 216 local combinations. Twelve substitutions reduce full-catalogue utility error; none changes safety to unsafety, and two change unsafety to safety. Retrospective parameter checks in two earlier cohorts lack identical-input controls and do not establish a repeated input effect. The artifact retains protocols, exclusions, both transition directions, and complete evaluation records. These checks delimit the observed mechanisms without treating non-triggering outcomes as proof of general domain soundness.
 
 \subsection{Historical frozen-rule replay}
 \label{app:legacy-replay}

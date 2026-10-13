@@ -16,8 +16,8 @@ or refuses. No payment is executed by this artifact.
 The October 13 availability study freezes generated decision conditions and
 changes only which offers remain available. Its bounded-removal endpoint
 exposes unauthorized purchases in 48 requests across 15 contract templates,
-while viable authorized alternatives remain. Figure 3 reports conditional
-percentages with explicit denominators. The release retains all 2,400 planned
+while viable authorized alternatives remain. Figure 3 reports percentages over the planned
+cohort. The release retains all 2,400 planned
 slots, all 4,849 acquisition attempts, the initial single-attempt cohort, and
 the 27 unresolved final slots; it does not treat those slots as safe decisions.
 

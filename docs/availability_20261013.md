@@ -32,15 +32,20 @@ single-attempt cohort and final retention rule are separately reconstructible.
 
 | Model | Planned | Evaluable | Initially safe | Hidden false admission | Exposure within 8 removals |
 |---|---:|---:|---:|---:|---:|
-| DeepSeek Flash low | 800 | 800 | 791 | 12 (1.52%) | 12 (1.52%) |
-| GLM low | 800 | 800 | 741 | 55 (7.42%) | 33 (4.45%) |
-| Qwen Max low | 800 | 773 | 766 | 4 (0.52%) | 3 (0.39%) |
-| All | 2,400 | 2,373 | 2,298 | 71 (3.09%) | 48 (2.09%) |
+| DeepSeek Flash low | 800 | 800 | 791 | 12 (1.50%) | 12 (1.50%) |
+| GLM low | 800 | 800 | 741 | 55 (6.88%) | 33 (4.13%) |
+| Qwen Max low | 800 | 773 | 766 | 4 (0.50%) | 3 (0.38%) |
+| All | 2,400 | 2,373 | 2,298 | 71 (2.96%) | 48 (2.00%) |
 
-The last two columns use initially safe, fully evaluable purchases as their
-denominator. Refusals are excluded from that conditional denominator. The
-evaluable cohort also contains 69 initially unauthorized purchases and six
-false refusals. These conditional results are not a model-reliability ranking.
+The last two columns use all 800 planned slots per model (2,400 pooled) as
+their denominator, including unresolved acquisition outcomes. A numerator
+requires an observed, verified event. No unobserved outcome is asserted safe.
+The evaluable cohort also contains 69 initially unauthorized purchases and six
+false refusals. These are mechanism-event percentages, not a single-attempt
+model-reliability ranking. `publication_reporting.json` records this uniform
+reporting rule and its template-cluster intervals. `summary.json` additionally
+preserves the initial-safety-conditional rates used by the diagnostic engine;
+those conditional rates are not the Figure 3 percentages.
 
 The complete single-attempt cohort has 1,592 evaluable outputs, 1,553 initially
 safe purchases, 43 hidden false admissions and 31 primary exposures across

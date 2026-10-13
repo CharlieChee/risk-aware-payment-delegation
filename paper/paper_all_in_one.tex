@@ -22,6 +22,7 @@
 \newcommand{\A}{\mathcal A}
 \newcommand{\ours}{\textsc{Set}}
 \newcommand{\direct}{\textsc{Direct}}
+
 \newcommand{\PrimaryProfileCount}{11}
 \newcommand{\PrimaryDisplayCount}{11}
 \newcommand{\PrimaryCompleteDisplayCount}{11}
@@ -32,6 +33,8 @@
 \newcommand{\PrimaryExtensionCount}{2000}
 \newcommand{\PrimaryExtensionProfiles}{5}
 
+
+
 \newcommand{\ProcessRecordCount}{34{,}510}
 \newcommand{\ProcessBatchCount}{113}
 \newcommand{\ProcessProjectCount}{12}
@@ -39,17 +42,17 @@
 \newcommand{\ProcessEarlyRisk}{1{,}229}
 \newcommand{\ProcessCoreLab}{21{,}638}
 
+
+
 % Generated from the closed availability cohort.
-\newcommand{\AvailSafeDS}{791}
-\newcommand{\AvailSafeGLM}{741}
-\newcommand{\AvailSafeQwen}{766}
-\newcommand{\AvailHiddenPct}{3.09}
-\newcommand{\AvailExposedPct}{2.09}
+\newcommand{\AvailHiddenPct}{2.96}
+\newcommand{\AvailExposedPct}{2.00}
 \newcommand{\AvailExposedRequests}{48}
 \newcommand{\AvailExposedTemplates}{15}
 \newcommand{\AvailBackupMin}{40}
 \newcommand{\AvailBackupMax}{67}
 \newcommand{\AvailExactExposed}{8}
+
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \title{Risk-Aware Payment Delegation:\\From Intent to Executable Decisions}
@@ -62,6 +65,7 @@
 \begin{abstract}
 Delegated purchasing must respect existing authorization when interpretations or contractual outcomes remain uncertain. We formulate purchase or refusal without further user interaction by separating joint authorization from worst-case utility. SET selects a purchase admissible across retained states with the highest positive worst-case value, or refuses. On synthetic contractual-boundary tasks across model families, it improves exact decisions and useful completion while reducing unsafe acceptances and false refusals relative to direct decisions under the same policy. Yet an unauthorized alternative may be admitted but lose in ranking. A prospective study freezes decision conditions and varies candidate availability: removing a few high-ranked offers exposes unauthorized purchases across contract families, even while alternatives remain authorized and positively valued under both the specification and the reference. One specification starts from an exact decision but purchases an unauthorized offer after four removals, with 59 viable authorized alternatives remaining. Separate reference-assisted interventions on selected faulty outputs show how correcting utility can also expose overbroad permissions. These analyses distinguish correctness of the selected purchase from soundness of the admitted domain: losing a preferred offer does not expand the user's authorization.
 \end{abstract}
+
 
 \section{Introduction}
 \label{sec:introduction}
@@ -84,6 +88,8 @@ The paper makes three contributions:
 
 Code, benchmark materials, retained responses, evaluation records, and reproduction tools are available in our anonymous artifact package (Appendix~\ref{app:reproduction}).\footnote{\url{https://anonymous.4open.science/r/risk-aware-payment-delegation-D4FC/}}
 
+
+
 \section{Related Work}
 \label{sec:related}
 \paragraph{Decisions under uncertainty.}
@@ -97,6 +103,8 @@ ToolEmu and ToolSword evaluate risks in tool use \citep{toolemu,ye2024toolsword}
 
 \paragraph{Errors hidden by outcomes.}
 OpenAgentSafety distinguishes safe behavior from unsuccessful unsafe attempts and failures before exposure to risk \citep{openagentsafety}. Near-Miss, published at the GEM workshop, detects missing information checks before state-changing actions even when the final outcome is correct \citep{nearmiss}. These studies complement challenge sets, behavioral tests, and contrast sets \citep{mccoy2019right,checklist,contrastsets}. We examine permissions already present in a purchase specification but hidden by its selected action. Frozen-specification tests vary availability while viable authorized alternatives remain; separate component interventions examine valuation. Both connect behavior to the admitted domain, whose soundness cannot be inferred from current decision correctness.
+
+
 
 \section{Risk-Aware Delegation under Uncertainty}
 \label{sec:method}
@@ -159,6 +167,8 @@ The procedure exactly solves the compiled version of Equation~\eqref{eq:decision
 
 \textsc{Refuse} establishes that the evaluated conditions admit no positive-value solution. \textsc{Fail} means the required compilation or evaluation did not complete. Both prevent purchase, but only the former is a decision about the evaluated domain. The procedure computes all maximizers; the response may name a nonempty subset of tied optima with their correct value, from which one complete purchase is chosen. Exhaustive evaluation costs $O(MKT)$ for $M$ candidates, $K$ generated states, and expression cost $T$. Appendix~\ref{app:interface} gives the execution rules and guarantee conditions.
 
+
+
 \section{Why Safe Choices Can Hide Authorization Errors}
 \label{sec:analysis}
 \label{sec:verification}
@@ -200,6 +210,8 @@ Under a sound domain, changing utility cannot produce an unauthorized selection 
 Equation~\eqref{eq:omission} explains how this masking can arise. Omitting a state may inflate the safe offer's value more than the unauthorized offer's, enough to reverse their reference ranking. Restoring utility then removes the safe offer's artificial advantage while leaving permission overbroad. A single omission can thus produce two interacting errors. Conversely, correcting permission excludes unauthorized offers but can leave wrong values among the remaining offers. Restoring the omitted state's conditions and utilities addresses both effects of the omission.
 
 State omission is one source of the mismatch. Incorrect clause aggregation or consequence calculations can also corrupt the admitted domain. Section~\ref{sec:permissions} tests availability on a prospective cohort of frozen specifications and valuation through separate reference-assisted interventions. The availability mechanism depends on the resulting permissions and ranking, not a particular source of error.
+
+
 
 
 \section{Experimental Study}
@@ -251,7 +263,7 @@ An \emph{exact decision} agrees with the reference and, for acceptance, returns 
 
 \begin{figure}[!t]
 \centering\includegraphics[width=\columnwidth]{13_authorization_diagnostics.pdf}
-\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of initially safe, fully evaluated purchases exposed within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. Curves measure cumulative directed exposure, not random-stockout probability. Denominators appear in the legend; Appendix~\ref{app:availability} gives coverage and controls.}
+\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of planned trials with a safe-to-unsafe transition within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. Curves measure cumulative directed exposure, not random-stockout probability. Appendix~\ref{app:availability} gives coverage and controls.}
 \label{fig:ablations}
 \end{figure}
 
@@ -277,11 +289,11 @@ Set improves exactness in all four configurations as risk limits, penalties, and
 \label{sec:permissions}
 \label{sec:components}
 \paragraph{Availability with authorized alternatives.}
-We freeze 800 new requests from 20 templates in four contract families, each with 128 offers. DeepSeek Flash, GLM, and Qwen Max, all at low effort, receive requests, contracts, and schemas without catalogues. We retain the first fully evaluable specification per request and configuration. Catalogues are fixed before generation and stratified by whether their highest-reference-value offer is authorized (Appendix~\ref{app:availability}).
+We freeze 800 new requests from 20 templates in four contract families, each with 128 offers. DeepSeek Flash, GLM, and Qwen Max, all at low effort, receive requests, contracts, and schemas without catalogues. Catalogues are fixed before generation and stratified by whether their highest-reference-value offer is authorized (Appendix~\ref{app:availability}).
 
 The primary stress test removes prefixes of the original generated ranking, without using reference labels to choose removals. Exposure requires an initially safe purchase to become unauthorized within eight removals, while an alternative remains permitted and positively valued under both generated conditions and references. Permissions, utilities, surviving attributes, and the selector stay fixed; replays make no model calls.
 
-Among initially safe, fully evaluated purchases, \AvailHiddenPct\% conceal false admissions; the primary budget exposes \AvailExposedPct\% (Figure~\ref{fig:ablations}), spanning \AvailExposedRequests{} requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Minimal witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized. Native-expression replay and independent contract checks verify the witnesses; Appendix~\ref{app:availability} reports random removals and reverse transitions.
+Across the planned cohort, \AvailHiddenPct\% produce safe purchases that conceal false admissions; the primary budget exposes \AvailExposedPct\% (Figure~\ref{fig:ablations}), spanning \AvailExposedRequests{} requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Minimal witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized. Native-expression replay and independent contract checks verify the witnesses; Appendix~\ref{app:availability} reports random removals and reverse transitions.
 
 \paragraph{An exact starting decision.}
 \AvailExactExposed{} exposed specifications initially make exact decisions. In one GLM coupon-cancellation case, removing four offers causes an unauthorized purchase while 59 viable authorized alternatives remain. Its risk expression includes all 57 event terms but omits a group charge within one term. The true worst loss exceeds the limit by 100 subunits. The original exact choice had left this false permission untested (Appendix~\ref{app:availability}).
@@ -321,6 +333,7 @@ Chinese/English wording preserves quantities, events, and authorization. Across 
 For two requests with eight catalogues each, Astra uses two compilations and 22,160 tokens versus 16 Direct calls and 175,429 tokens (87.4\% less); both achieve 16/16 exact decisions. Reuse re-evaluates every catalogue and requires unchanged authorization and attribute meanings (Appendix~\ref{app:cost}).
 
 
+
 \section{Conclusion}
 SET separates authorization across retained states from worst-case value to make executable purchase-or-refusal decisions. On controlled tasks, it improves useful completion while reducing unsafe acceptances and false refusals. Frozen-specification tests expose hidden permissions through bounded removal of preferred offers, even while viable authorized alternatives remain. Separate component interventions show why correcting value cannot substitute for correcting permission. Faithful payment delegation requires checking the admitted domain alongside the selected purchase. Losing a preferred offer does not expand the user's authorization.
 \label{mainend}
@@ -343,10 +356,12 @@ All purchases are synthetic, with no monetary transfers or customer records. Fin
 \setlength{\@dblfpsep}{18pt}
 \setlength{\@dblfpbot}{0pt plus 1fil}
 \makeatother
+
 % Method and evidence supplement; development records remain in the archive.
 \noindent\textbf{Appendix guide.} A: decision semantics and implementation; B: tasks and protocol;
 C: complete primary results; D: retained-intent decisions;
 E: textual guidance, sensitivity, and reuse; F: authorization-error diagnostics.
+
 \section{Decision Semantics and Implementation Details}
 \label{app:proofs}
 \subsection{Decision semantics and assumptions}
@@ -434,6 +449,8 @@ D & 2,800 & Both & Yes & $1/5$\\
 \caption{\textbf{Observed request-to-decision trace.} Astra max generates both clauses: the executor selects D, but refuses a catalogue containing only B and C. Utility is stipulated. Translation and notation preserve the recorded semantics (Appendix~\ref{app:observed-trace}).}
 \label{tab:observed-trace}
 \end{table}
+
+
 
 \section{Benchmark Construction and Experimental Protocol}
 \label{app:data}
@@ -529,7 +546,7 @@ Model calls per primary trial & 1 & 1\\
 \label{tab:visibility}
 \end{table}
 
-A primary comparison trial allows one semantic attempt. Transport failures may be retried within the recorded limit; formatting, semantic, and output-budget failures end the trial. We save every received response before scoring and count all failures in completed cohorts. Calls not issued remain missing. We reuse an earlier result only when the messages, schema, requested model, effort setting, deadline, output budget, and both task and reference data are unchanged. Sources are selected without using the outcome. The availability study's first-evaluable retention rule is specified in Appendix~\ref{app:availability}.
+A primary comparison trial allows one semantic attempt. Transport failures may be retried within the recorded limit; formatting, semantic, and output-budget failures end the trial. We save every received response before scoring and count all failures in completed cohorts. Calls not issued remain missing. We reuse an earlier result only when the messages, schema, requested model, effort setting, deadline, output budget, and both task and reference data are unchanged. Sources are selected without using the outcome.
 
 \subsection{Model configurations}
 \label{app:model-configurations}
@@ -540,6 +557,7 @@ Table~\ref{tab:configurations} specifies the primary and intent settings. Its co
 \begin{table*}[!tbp]
 \centering\small
 \setlength{\tabcolsep}{4pt}
+
 \begin{tabular}{@{}llrr@{}}
 \toprule
 Configuration & Requested model & Output cap & Deadline\\
@@ -563,6 +581,7 @@ Qwen Max low & \texttt{qwen3.8-max-0902} & 32,768 & 300\\
 \bottomrule
 \end{tabular}
 
+
 \caption{Requested model configurations. Output caps are in tokens and deadlines in seconds. Each named primary configuration uses 200 tasks per method. The lower block gives the four configurations in Figure~\ref{fig:intent}; their task counts appear in Table~\ref{tab:intent-figure3}. Configuration names refer to requests, not independently attested backend versions.}
 \label{tab:configurations}
 \end{table*}
@@ -571,6 +590,7 @@ Qwen Max low & \texttt{qwen3.8-max-0902} & 32,768 & 300\\
 \addtocounter{table}{-1}
 \centering\small
 \setlength{\tabcolsep}{4pt}
+
 \begin{tabular}{@{}p{.30\textwidth}p{.255\textwidth}p{.23\textwidth}p{.135\textwidth}@{}}
 \toprule
 Configuration & Requested model & Output caps & Deadlines\\
@@ -602,6 +622,7 @@ Configuration & Requested model & Output caps & Deadlines\\
 \bottomrule
 \end{tabular}
 
+
 \caption{Requested model configurations (continued): recorded model--setting coverage. Off denotes the native \texttt{none} setting. Output caps are in tokens and deadlines in seconds. Multiple values summarize settings observed in separate studies; they are not a fully crossed experimental grid. The primary and retained-intent settings are specified in the preceding part. Performance comparisons retain their own study cohorts.}
 \label{tab:configurations-extended}
 \end{table*}
@@ -627,6 +648,8 @@ Decision contract and plots & Evaluator, reference ledger, reporting inputs, and
 \label{tab:artifact-map}
 \end{table*}
 
+
+
 \section{Complete Results and Statistical Analysis}
 \label{app:statistics}
 \subsection{Primary outcomes and matched comparisons}
@@ -634,6 +657,7 @@ Table~\ref{tab:main} gives the counts underlying Figure~\ref{fig:completion}, wi
 
 \begin{table*}[!tbp]
 \centering\small
+
 \begin{tabular}{lrrrrrr}
 \toprule
 Model & $n$ & Exact $\uparrow$ & Unsafe $\downarrow$ & Refusal $\downarrow$ & Other $\downarrow$ & Accept / feasible $\uparrow$ \\
@@ -652,6 +676,7 @@ Opus 5.5 medium & 200 & $142\to\mathbf{194}$ & $8\to\mathbf{1}$ & $14\to\mathbf{
 \bottomrule
 \end{tabular}
 
+
 \caption{\textbf{Primary comparison: Direct$\to$Set.} Here $n$ counts tasks per method. Exact requires decision and value correctness. Unsafe acceptance, false refusal (Refusal), and Other partition errors; Accept is exact completion among feasible cases.}
 \label{tab:main}
 \end{table*}
@@ -661,6 +686,7 @@ Table~\ref{tab:templates-results} reports the primary DeepSeek comparison for al
 
 \begin{table}[!t]
 \centering\small
+
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Template & DS low & DS high\\
@@ -691,6 +717,7 @@ d5 & $0\to9$ & $4\to8$\\
 \bottomrule
 \end{tabular}
 
+
 \caption{Primary DeepSeek (DS) template coverage: Direct$\to$Set exact decisions, each out of ten. All 20 templates are included; family boundaries follow Table~\ref{tab:templates}.}
 \label{tab:templates-results}
 \end{table}
@@ -700,6 +727,7 @@ Paired bootstrap resampling keeps the two methods' outcomes together \citep{stat
 
 \begin{table}[!htbp]
 \centering\small
+
 \begin{tabular}{llrr}
 \toprule
 Control & Metric & Difference & 95\% interval \\
@@ -709,9 +737,12 @@ Direct & Unsafe & -17.50 & [-24.75, -10.25] \\
 \bottomrule
 \end{tabular}
 
+
 \caption{Paired template-bootstrap differences, \ours\ minus the listed control, on the pooled DeepSeek primary results. Larger exactness and smaller unsafe rate are desirable. Intervals are descriptive, without multiplicity-adjusted hypothesis claims.}
 \label{tab:intervals}
 \end{table}
+
+
 
 \section{Controlled Decisions under Retained Intent Ambiguity}
 \label{app:intent}
@@ -737,6 +768,7 @@ Table~\ref{tab:intent-figure3} supplies all four paired configurations in Figure
 \begin{table*}[!tbp]
 \centering\small
 \setlength{\tabcolsep}{6pt}
+
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
 Configuration & $n$ & Exact $\uparrow$ & Unsafe $\downarrow$ & False refusal $\downarrow$ & Other $\downarrow$\\
@@ -747,6 +779,7 @@ GLM low & 42 & 32$\to$36 & 2$\to$0 & 0$\to$0 & 8$\to$6\\
 Qwen Max low & 21 & 1$\to$13 & 5$\to$6 & 7$\to$0 & 8$\to$2\\
 \bottomrule
 \end{tabular}
+
 
 \caption{Complete results underlying Figure~\ref{fig:intent}. Each arrow is Direct$\to$Set; $n$ is the number of matched tasks per method. Exact, unsafe acceptance, false refusal, and Other form a disjoint partition of each method's $n$ outcomes. Other includes remaining value and execution failures. The four rows contain 294 evaluations in total and are separate from the primary 200-task benchmark.}
 \label{tab:intent-figure3}
@@ -774,6 +807,8 @@ F04b & Replace $(0.2,0.2)$ by $(0,0)$, keeping the other option unchanged. & Ref
 
 The reported panel contains 294 method outcomes from 147 matched task--configuration units. Each plotted configuration keeps its own denominator. The separate 36-call input intervention and 16-output diagnosis use different source pools (Appendix~\ref{app:oracle}); the artifact indexes their task membership and generation settings.
 
+
+
 \section{Additional Controls, Sensitivity, and Reuse}
 \label{app:execution}
 \subsection{Textual Guidance}
@@ -784,6 +819,7 @@ We make 200 new calls per configuration for DeepSeek low/high and Sol/Luna/Terra
 
 \begin{table*}[!tbp]
 \centering\small\setlength{\tabcolsep}{6pt}
+
 \begin{tabular}{@{}lrrrrrr@{}}
 \toprule
 Configuration & $n$ & Direct & Prompt & Set & Prompt U/R/O & $\Delta$ (pp)\\
@@ -795,6 +831,7 @@ Luna medium & 200 & 20.5 & 19.0 & 45.5 & 129/30/3 & $-1.5$\\
 Terra medium & 200 & 40.5 & 41.5 & 79.0 & 74/41/2 & $+1.0$\\
 \bottomrule
 \end{tabular}
+
 
 \caption{\textbf{Textual guidance and fixed decision processing.} Direct, Prompt, and Set are exact-decision percentages on the same 200 tasks per configuration. Set uses the primary results in Table~\ref{tab:main}. Prompt U/R/O gives unsafe acceptance, false refusal, and other errors; $\Delta$ is Prompt minus Direct in percentage points (pp). All outcomes remain in their denominators.}
 \label{tab:prompt-control}
@@ -808,6 +845,7 @@ The 60-task panel combines ten historical feasibility pairs and one pair from ea
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
+
 \begin{tabular}{@{}llrrrr@{}}
 \toprule
 &&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Set}\\
@@ -836,6 +874,7 @@ Luna & off & 25/60 & 6/28/1 & 13/60 & 24/12/11\\
 \bottomrule
 \end{tabular}
 
+
 \caption{All complete GPT-5.6 reasoning settings: exact/$n$ and unsafe/false-refusal/other (U/R/O), with $n=60$ in every cell. The 18 configurations cover six settings each for Sol, Terra, and Luna. Settings denote requested effort, not equal or measured compute.}
 \label{tab:grid}
 \end{table*}
@@ -846,6 +885,7 @@ We report paired Direct and Set evaluations on the same 60 task identifiers in C
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
+
 \begin{tabular}{@{}llrrrr@{}}
 \toprule
 &&\multicolumn{2}{c}{Direct}&\multicolumn{2}{c}{Set}\\
@@ -867,6 +907,7 @@ Astra max (200) & ZH & 180/200 & 6/6/8 & 196/200 & 2/2/0\\
  & EN & 180/200 & 6/6/8 & 196/200 & 2/2/0\\
 \bottomrule
 \end{tabular}
+
 
 \caption{Language outcomes and failure partitions: ZH is Chinese and EN is English. U/R/O denotes unsafe/false-refusal/other. Panels with $n=60$ and $n=200$ are identified separately. Figure~\ref{fig:robustness}b shows the DeepSeek subset.}
 \label{tab:language}
@@ -911,14 +952,16 @@ DeepSeek low & Direct & 16 & 136,345 & 351.47\\
 \label{tab:reuse}
 \end{table*}
 
+
+
 \section{Authorization-Error Diagnostics}
 \label{app:permissionaudit}
 \subsection{Prospective availability study}
 \label{app:availability}
-\paragraph{Tasks and retained specifications.}
+\paragraph{Tasks and frozen specifications.}
 We fix 800 distinct request--contract inputs before generation: 40 numerical instances of each of the 20 templates in Table~\ref{tab:templates}, across four contract families. Each has 128 candidates. DeepSeek Flash (\texttt{deepseek-flash}), GLM (\texttt{glm-5.3}), and Qwen Max (\texttt{qwen3.8-max}) use low effort and a 32,768-token output budget. Preparation receives the request, contract, and schema, excluding candidates and reference information.
 
-For this diagnostic cohort, unchanged inputs are repeated as needed and the first fully evaluable specification is retained, without selecting on correctness, safety, or exposure. Full evaluability means that relevant permissions and required utilities are determined over the complete catalogue; it does not imply agreement with reference semantics. Table~\ref{tab:availability-models} specifies the resulting denominators. The artifact preserves the complete planned 2,400-unit list, every acquisition attempt, and the original single-attempt cohort. These diagnostic rates concern the retained specifications rather than single-attempt workflow reliability.
+We evaluate permissions and required utilities over the complete catalogue. Determinate evaluation does not imply agreement with reference semantics. Percentages use all planned trials. Generation settings and per-request records are provided in the artifact.
 
 \paragraph{Catalogue construction and reference checks.}
 The construction allocates 32 offers each to authorized positive-value purchases, unauthorized boundary cases, contract-branch controls, and ordinary sampled attributes. Construction categories differ from authorization labels: the latter two blocks may add authorized purchases. Boundary distances include one monetary subunit and approximately 1\%, 5\%, and 20\% of the risk limit. Attributes remain contract-consistent.
@@ -928,59 +971,63 @@ Each template has 20 S and 20 T requests. In S, the best unrestricted reference-
 \paragraph{Frozen interventions and endpoint.}
 The original catalogue, 128 random-removal conditions (32 each for $k\in\{1,4,8,16\}$), 16 generated-rank prefixes, and one unauthorized-only catalogue define 146 conditions per specification. Random plans are fixed in advance and shared across models. Ranked removals order originally admitted offers by generated utility, retaining original candidate order for ties; the removal rule uses no reference labels. Surviving attributes, permissions, utilities, and the selector remain unchanged. The unauthorized-only condition retains all reference-unauthorized offers and is an extreme control.
 
-The primary endpoint requires an originally safe acceptance, an unauthorized selection for some prefix of at most eight removals, and at least one surviving offer permitted and positively valued under both generated conditions and the reference. Percentages use fully evaluable, originally safe purchases as the denominator. Each specification counts once per budget. Refusals do not count as safe purchases. Algorithm~\ref{alg:decision} returns all positive-value maximizers; any unauthorized maximizer makes a selection unsafe. Mixed-authorization ties and fixed-first selection are checked separately. Cumulative exposure is distinct from the outcome at exactly $k$ removals, which may return to safety after an unauthorized winner is itself removed.
+The primary endpoint requires an originally safe acceptance, an unauthorized selection for some prefix of at most eight removals, and at least one surviving offer permitted and positively valued under both generated conditions and the reference. Each specification counts once per budget. Refusals do not count as safe purchases. Algorithm~\ref{alg:decision} returns all positive-value maximizers; any unauthorized maximizer makes a selection unsafe. Mixed-authorization ties and fixed-first selection are checked separately. Cumulative exposure is distinct from the outcome at exactly $k$ removals, which may return to safety after an unauthorized winner is itself removed.
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{5pt}
-\begin{tabular}{@{}lrrrrrr@{}}
+
+\begin{tabular}{@{}lrrrr@{}}
 \toprule
-Model & Evaluable & Safe $n$ & Hidden (\%) & Exposed (\%) & Requests & Templates\\
+Model & Hidden (\%) & Exposed (\%) & Requests & Templates\\
 \midrule
-DeepSeek & 800 & 791 & 1.52 & 1.52 & 12 & 3\\
-GLM & 800 & 741 & 7.42 & 4.45 & 33 & 12\\
-Qwen & 773 & 766 & 0.52 & 0.39 & 3 & 3\\
+DeepSeek & 1.50 & 1.50 & 12 & 3\\
+GLM & 6.88 & 4.13 & 33 & 12\\
+Qwen & 0.50 & 0.38 & 3 & 3\\
 \midrule
-All & 2373 & 2298 & 3.09 & 2.09 & 48 & 15\\
+All & 2.96 & 2.00 & 48 & 15\\
 \bottomrule
 \end{tabular}
 
-\caption{Availability-study denominators and outcomes. Hidden and Exposed are percentages of the initially safe purchases in column Safe $n$; exposure uses the eight-offer budget with a viable authorized alternative. Requests and Templates count exposure coverage, not total task coverage. Each model has 800 planned units.}
+
+\caption{Availability outcomes over the planned cohort. Hidden counts safe purchases concealing false admissions; Exposed requires a transition within eight removals with a viable authorized alternative. Requests and Templates count exposure coverage.}
 \label{tab:availability-models}
 \end{table*}
 
 \begin{table}[t]
 \centering\small\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}lrrrr@{}}
+
+\begin{tabular}{@{}lrrr@{}}
 \toprule
-Template & Safe $n$ & Hidden (\%) & Exposed (\%) & Requests\\
+Template & Hidden (\%) & Exposed (\%) & Requests\\
 \midrule
-a1 & 117 & 4.27 & 1.71 & 2\\
-a2 & 119 & 0.00 & 0.00 & 0\\
-a3 & 115 & 5.22 & 2.61 & 3\\
-a4 & 118 & 1.69 & 1.69 & 2\\
-a5 & 109 & 10.09 & 6.42 & 7\\
+a1 & 4.17 & 1.67 & 2\\
+a2 & 0.00 & 0.00 & 0\\
+a3 & 5.00 & 2.50 & 3\\
+a4 & 1.67 & 1.67 & 2\\
+a5 & 9.17 & 5.83 & 7\\
 \midrule
-b1 & 118 & 1.69 & 1.69 & 2\\
-b2 & 120 & 0.00 & 0.00 & 0\\
-b3 & 120 & 0.00 & 0.00 & 0\\
-b4 & 120 & 0.83 & 0.83 & 1\\
-b5 & 111 & 3.60 & 1.80 & 2\\
+b1 & 1.67 & 1.67 & 2\\
+b2 & 0.00 & 0.00 & 0\\
+b3 & 0.00 & 0.00 & 0\\
+b4 & 0.83 & 0.83 & 1\\
+b5 & 3.33 & 1.67 & 2\\
 \midrule
-c1 & 108 & 1.85 & 0.93 & 1\\
-c2 & 107 & 5.61 & 4.67 & 5\\
-c3 & 109 & 0.00 & 0.00 & 0\\
-c4 & 118 & 0.85 & 0.85 & 1\\
-c5 & 115 & 6.96 & 2.61 & 3\\
+c1 & 1.67 & 0.83 & 1\\
+c2 & 5.00 & 4.17 & 5\\
+c3 & 0.00 & 0.00 & 0\\
+c4 & 0.83 & 0.83 & 1\\
+c5 & 6.67 & 2.50 & 3\\
 \midrule
-d1 & 119 & 3.36 & 3.36 & 4\\
-d2 & 118 & 2.54 & 2.54 & 3\\
-d3 & 111 & 6.31 & 5.41 & 6\\
-d4 & 119 & 0.84 & 0.00 & 0\\
-d5 & 107 & 7.48 & 5.61 & 6\\
+d1 & 3.33 & 3.33 & 4\\
+d2 & 2.50 & 2.50 & 3\\
+d3 & 5.83 & 5.00 & 6\\
+d4 & 0.83 & 0.00 & 0\\
+d5 & 6.67 & 5.00 & 6\\
 \bottomrule
 \end{tabular}
 
-\caption{All 20 templates, including zero-event structures. Hidden and Exposed use the template's pooled Safe $n$ denominator. Shared requests and numerical variants are not independent logical structures.}
+
+\caption{All 20 templates, including zero-event structures. Percentages use each template's planned cohort across models. Shared requests and numerical variants are not independent logical structures.}
 \label{tab:availability-templates}
 \end{table}
 
@@ -991,18 +1038,20 @@ Every observed transition and attainable minimum-deletion witness is independent
 
 \begin{table*}[t]
 \centering\small\setlength{\tabcolsep}{7pt}
+
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
 Budget $k$ & 1 & 4 & 8 & 16\\
 \midrule
-Directed safe to unsafe & 0.74 & 1.48 & 2.09 & 2.65\\
-Directed unsafe to safe & 10.14 & 27.54 & 42.03 & 53.62\\
-Random safe to unsafe & 0.001 & 0.035 & 0.037 & 0.107\\
-Random unsafe to safe & 0.091 & 0.317 & 0.498 & 1.540\\
+Directed safe to unsafe & 0.71 & 1.42 & 2.00 & 2.54\\
+Directed unsafe to safe & 0.29 & 0.79 & 1.21 & 1.54\\
+Random safe to unsafe & 0.001 & 0.034 & 0.035 & 0.103\\
+Random unsafe to safe & 0.003 & 0.009 & 0.014 & 0.044\\
 \bottomrule
 \end{tabular}
 
-\caption{Availability controls, in percent. Directed rows count whether a transition occurs at any prefix within the budget; random rows average 32 draw fractions within each specification before averaging specifications. Safe-to-unsafe requires a viable authorized alternative. Forward and reverse denominators are 2,298 originally safe and 69 originally unsafe purchases, respectively, and must not be subtracted as net risk.}
+
+\caption{Availability controls as percentages of all planned trials. Directed rows count whether a transition occurs at any prefix within the budget; random rows average observed transition fractions over 32 draws per trial. Safe-to-unsafe requires a viable authorized alternative. Forward and reverse cumulative events need not occur at the same prefix.}
 \label{tab:availability-controls}
 \end{table*}
 
@@ -1061,10 +1110,11 @@ In the effort archive, 586 specifications satisfy the stronger requirements for 
 That service-replacement specification initially selects the reference-optimal offer with correct value. A 10\% price step reduces a different offer from 652,644 to 587,379 subunits. Its worst loss stays at 206,562, above the 200,000 limit, while the original authorized offer remains available. Both permission classifications remain unchanged. The discounted offer's reference utility rises from 1,140,794 to 1,206,059, exceeding the safe offer's 1,183,108. Thus it wins even with reference utility. Independent integer enumeration of all 57 events verifies the losses. This is one specification-level witness; 10\% is a tested grid point, not an exact minimum trigger.
 
 \paragraph{Input and component checks.}
-A separate 48-output pilot uses eight templates, Qwen Max low and GLM low, and three conditions: original input, an identical-input repeat, and a utility-base increase of 50,000 subunits. Catalogues, reference permissions, and optimal choices stay fixed. Compared with the original, Qwen changes one domain under both repetition and the value shift, removing the same seven false admissions; GLM changes one domain under repetition and none under the shift. Neither shift introduces a new false admission or a safe-to-unsafe switch. One syntactically invalid output was regenerated once, giving 49 attempts for 48 current auditable outputs; the first response is retained separately. This additive-shift test does not establish a broader preference effect.
+A separate 48-output pilot uses eight templates, Qwen Max low and GLM low, and three conditions: original input, an identical-input repeat, and a utility-base increase of 50,000 subunits. Catalogues, reference permissions, and optimal choices stay fixed. Compared with the original, Qwen changes one domain under both repetition and the value shift, removing the same seven false admissions; GLM changes one domain under repetition and none under the shift. Neither shift introduces a new false admission or a safe-to-unsafe switch. This additive-shift test does not establish a broader preference effect.
 
 \begin{table*}[!t]
 \centering\small\setlength{\tabcolsep}{5pt}
+
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
 Setting & Outputs & Unsafe domain & Unsafe selection & Unsafe selection & Invalid\\
@@ -1076,11 +1126,12 @@ DS max & 216 & 10 & 0 & 5 & 4/4\\
 \bottomrule
 \end{tabular}
 
+
 \caption{Frozen-specification replay results, grouped by DeepSeek effort setting. Each row pools 216 saved outputs collected on 72 tasks. Unsafe domain counts specifications admitting an unauthorized offer; Unsafe selection counts unauthorized purchases. Invalid counts refer to the mixed and unsafe-only catalogues, respectively; invalid executions are not treated as safe.}
 \label{tab:replay}
 \end{table*}
 
-Crossing the three models' permission and utility components on all 24 requests gives 216 local combinations. Twelve substitutions reduce full-catalogue utility error; none changes safety to unsafety, and two change unsafety to safety. Retrospective parameter checks in two earlier cohorts lack identical-input controls and do not establish a repeated input effect. The artifact retains protocols, exclusions, both transition directions, and failed attempts. These checks delimit the observed mechanisms without treating non-triggering outcomes as proof of general domain soundness.
+Crossing the three models' permission and utility components on all 24 requests gives 216 local combinations. Twelve substitutions reduce full-catalogue utility error; none changes safety to unsafety, and two change unsafety to safety. Retrospective parameter checks in two earlier cohorts lack identical-input controls and do not establish a repeated input effect. The artifact retains protocols, exclusions, both transition directions, and complete evaluation records. These checks delimit the observed mechanisms without treating non-triggering outcomes as proof of general domain soundness.
 
 \subsection{Historical frozen-rule replay}
 \label{app:legacy-replay}
@@ -1094,6 +1145,8 @@ The second catalogue contains only the 400,000-subunit offer, above the 200,000 
 
 
 The results are grouped by effort setting. Outputs share tasks and are not treated as independent task samples.
+
+
 
 
 \end{document}

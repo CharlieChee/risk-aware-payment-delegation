@@ -2,6 +2,7 @@
   "cohort": "first fully evaluable completion cohort, closed 2026-10-13",
   "source": "data/supplements/availability_20261013/summary.json",
   "metric": "cumulative directed exposure with strict authorized backup",
+  "denominator_policy": "all planned request-model units; observed witnesses divided by 800 per model",
   "planned": 2400,
   "auditable": 2373,
   "failed": 27,
@@ -16,12 +17,12 @@
     {
       "profile": "deepseek_low",
       "label": "DeepSeek",
-      "denominator": 791,
+      "denominator": 800,
       "percentages": [
-        0.6321112515802781,
-        1.011378002528445,
-        1.5170670037926675,
-        1.5170670037926675
+        0.625,
+        1.0,
+        1.5,
+        1.5
       ],
       "counts": [
         5,
@@ -33,12 +34,12 @@
     {
       "profile": "glm_low",
       "label": "GLM",
-      "denominator": 741,
+      "denominator": 800,
       "percentages": [
-        1.484480431848853,
-        3.2388663967611335,
-        4.4534412955465585,
-        6.207827260458839
+        1.375,
+        3.0,
+        4.125,
+        5.75
       ],
       "counts": [
         11,
@@ -50,12 +51,12 @@
     {
       "profile": "qwen_low",
       "label": "Qwen",
-      "denominator": 766,
+      "denominator": 800,
       "percentages": [
-        0.13054830287206268,
-        0.26109660574412535,
-        0.391644908616188,
-        0.391644908616188
+        0.125,
+        0.25,
+        0.375,
+        0.375
       ],
       "counts": [
         1,
@@ -66,11 +67,8 @@
     }
   ],
   "stats": {
-    "AvailSafeDS": 791,
-    "AvailSafeGLM": 741,
-    "AvailSafeQwen": 766,
-    "AvailHiddenPct": "3.09",
-    "AvailExposedPct": "2.09",
+    "AvailHiddenPct": "2.96",
+    "AvailExposedPct": "2.00",
     "AvailExposedRequests": 48,
     "AvailExposedTemplates": 15,
     "AvailBackupMin": 40,

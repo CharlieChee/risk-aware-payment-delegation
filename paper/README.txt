@@ -8,9 +8,9 @@ Build: latexmk -pdf -interaction=nonstopmode -halt-on-error paper.tex
 Rebuild reporting inputs: python reproduce.py --pdf
 Run the new catalogue replay: python ../scripts/availability_20261013/verify.py --native-witnesses
 
-Figure 3 uses the closed first-evaluable-specification cohort. It plots
-cumulative ranked-removal exposure, conditional on initially safe purchases.
-The denominators for DeepSeek / GLM / Qwen are 791 / 741 / 766. The primary
+Figure 3 uses the closed frozen-specification cohort. It plots
+cumulative ranked-removal exposure, using every planned
+trial. Each model contributes 800 planned trials to the denominator. The primary
 endpoint covers 48 requests and 15 templates, retaining viable authorized
 alternatives. Appendix F.1 supplies the protocol and full distribution; F.6
 preserves the historical replay. Table 2 remains a separate utility-intervention

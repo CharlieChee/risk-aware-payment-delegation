@@ -68,10 +68,19 @@ def main():
     assert dict(totals)==expected['total']['endpoints']
     for profile,counts in models.items():assert dict(counts)==expected['by_model'][profile]['endpoints']
     assert len(primary)==48 and len({x[1]for x in primary})==48 and len({x[2]for x in primary})==15
+    publication=read('publication_reporting.json')
+    assert publication['planned_total']==2400
+    assert set(publication['planned_per_model'].values())=={800}
+    assert publication['hidden_count']==totals['latent_safe']==71
+    assert publication['exposed_count']==len(primary)==48
+    assert abs(publication['hidden_percent']-100*71/2400)<.005
+    assert publication['exposed_percent']==100*48/2400==2.0
     failed=list(records(RAW/'failures.jsonl.gz'));assert len(failed)==27
     assert all(not x['inference']['ok']for x in failed)
     result=dict(status='passed',model_calls=0,planned=i,evaluable=certified,
-                primary_exposures=len(primary),requests=len({x[1]for x in primary}),
+                primary_exposures=len(primary),reporting_denominator_per_model=800,
+                reporting_denominator_total=2400,primary_exposure_percent=2.0,
+                requests=len({x[1]for x in primary}),
                 templates=len({x[2]for x in primary}),native_witnesses=native_count,
                 scope='Hash verification, full matrix-based paired catalogue replay, endpoint reconstruction'+
                       (' and native expression checks for all primary witnesses.'if args.native_witnesses else '.'))

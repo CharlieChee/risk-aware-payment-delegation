@@ -47,7 +47,7 @@ An \emph{exact decision} agrees with the reference and, for acceptance, returns 
 
 \begin{figure}[!t]
 \centering\includegraphics[width=\columnwidth]{13_authorization_diagnostics.pdf}
-\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of initially safe, fully evaluated purchases exposed within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. Curves measure cumulative directed exposure, not random-stockout probability. Denominators appear in the legend; Appendix~\ref{app:availability} gives coverage and controls.}
+\caption{\textbf{Availability exposes permission errors despite viable alternatives.} Percentage of planned trials with a safe-to-unsafe transition within $k$ removals, following the original generated ranking. Each witness retains a jointly authorized alternative with positive value under both valuations. Curves measure cumulative directed exposure, not random-stockout probability. Appendix~\ref{app:availability} gives coverage and controls.}
 \label{fig:ablations}
 \end{figure}
 
@@ -73,11 +73,11 @@ Set improves exactness in all four configurations as risk limits, penalties, and
 \label{sec:permissions}
 \label{sec:components}
 \paragraph{Availability with authorized alternatives.}
-We freeze 800 new requests from 20 templates in four contract families, each with 128 offers. DeepSeek Flash, GLM, and Qwen Max, all at low effort, receive requests, contracts, and schemas without catalogues. We retain the first fully evaluable specification per request and configuration. Catalogues are fixed before generation and stratified by whether their highest-reference-value offer is authorized (Appendix~\ref{app:availability}).
+We freeze 800 new requests from 20 templates in four contract families, each with 128 offers. DeepSeek Flash, GLM, and Qwen Max, all at low effort, receive requests, contracts, and schemas without catalogues. Catalogues are fixed before generation and stratified by whether their highest-reference-value offer is authorized (Appendix~\ref{app:availability}).
 
 The primary stress test removes prefixes of the original generated ranking, without using reference labels to choose removals. Exposure requires an initially safe purchase to become unauthorized within eight removals, while an alternative remains permitted and positively valued under both generated conditions and references. Permissions, utilities, surviving attributes, and the selector stay fixed; replays make no model calls.
 
-Among initially safe, fully evaluated purchases, \AvailHiddenPct\% conceal false admissions; the primary budget exposes \AvailExposedPct\% (Figure~\ref{fig:ablations}), spanning \AvailExposedRequests{} requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Minimal witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized. Native-expression replay and independent contract checks verify the witnesses; Appendix~\ref{app:availability} reports random removals and reverse transitions.
+Across the planned cohort, \AvailHiddenPct\% produce safe purchases that conceal false admissions; the primary budget exposes \AvailExposedPct\% (Figure~\ref{fig:ablations}), spanning \AvailExposedRequests{} requests, \AvailExposedTemplates{} templates, all four families, and all three configurations. Minimal witnesses retain \AvailBackupMin{}--\AvailBackupMax{} viable authorized alternatives. Every exposed maximizer is unauthorized. Native-expression replay and independent contract checks verify the witnesses; Appendix~\ref{app:availability} reports random removals and reverse transitions.
 
 \paragraph{An exact starting decision.}
 \AvailExactExposed{} exposed specifications initially make exact decisions. In one GLM coupon-cancellation case, removing four offers causes an unauthorized purchase while 59 viable authorized alternatives remain. Its risk expression includes all 57 event terms but omits a group charge within one term. The true worst loss exceeds the limit by 100 subunits. The original exact choice had left this false permission untested (Appendix~\ref{app:availability}).
